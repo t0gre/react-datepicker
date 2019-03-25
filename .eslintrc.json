@@ -1,0 +1,13 @@
+{
+  "extends": ["prettier", "react-app"],
+  "rules": {
+    "semi": 0,
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".tsx", ".ts"]
+      }
+    ],
+    "import/no-unresolved": ["error", {"ignore": ["^react$"]}]
+  }
+}

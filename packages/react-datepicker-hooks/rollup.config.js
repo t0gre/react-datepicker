@@ -1,5 +1,6 @@
-import { rollup } from "../../config/rollup.config";
+import {rollup} from '../../config/rollup.config'
 
 export default rollup({
-  input: "src/index.js"
-});
+  input: 'src/index.tsx',
+  packageJsonPath: './package.json',
+})

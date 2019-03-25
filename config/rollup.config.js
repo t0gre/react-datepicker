@@ -1,36 +1,35 @@
-import typescript from "rollup-plugin-typescript2";
-import babel from "rollup-plugin-babel";
-import resolve from "rollup-plugin-node-resolve";
-import external from "rollup-plugin-peer-deps-external";
+import typescript from 'rollup-plugin-typescript2'
+import babel from 'rollup-plugin-babel'
+import resolve from 'rollup-plugin-node-resolve'
 
-export function rollup({ input = "./src/index.tsx" }) {
+export function rollup({packageJsonPath, input = './src/index.tsx'}) {
   return {
     input: input,
+    external: ['react', 'react-dom'],
     output: [
       {
-        file: "lib/index.cjs.js",
-        format: "cjs",
-        exports: "named",
-        sourcemap: true
+        file: 'lib/index.cjs.js',
+        format: 'cjs',
+        exports: 'named',
+        sourcemap: true,
       },
       {
-        file: "lib/index.esm.js",
-        format: "es",
-        exports: "named",
-        sourcemap: true
-      }
+        file: 'lib/index.esm.js',
+        format: 'es',
+        exports: 'named',
+        sourcemap: true,
+      },
     ],
     plugins: [
       resolve(),
       babel({
-        exclude: "node_modules/**"
+        exclude: 'node_modules/**',
       }),
       typescript({
-        typescript: require("typescript"),
+        typescript: require('typescript'),
         rollupCommonJSResolveHack: true,
-        clean: true
+        clean: true,
       }),
-      external()
-    ]
-  };
+    ],
+  }
 }
