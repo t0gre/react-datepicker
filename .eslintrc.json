@@ -1,5 +1,7 @@
 {
   "extends": ["prettier", "react-app"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "jsx-a11y", "import", "react-hooks", "@typescript-eslint"],
   "rules": {
     "semi": 0,
     "react/jsx-filename-extension": [
@@ -9,5 +11,12 @@
       }
     ],
     "import/no-unresolved": ["error", {"ignore": ["^react$"]}]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
