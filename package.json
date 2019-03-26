@@ -28,7 +28,9 @@
     "tsc": "lerna run tsc",
     "prebuild": "yarn run tsc && yarn run lint",
     "build": "lerna run build",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Miha Sedej",
   "license": "MIT",
@@ -42,11 +44,18 @@
     "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
+    "@storybook/addon-actions": "^5.1.0-alpha.15",
+    "@storybook/addon-links": "^5.1.0-alpha.15",
+    "@storybook/addons": "^5.1.0-alpha.15",
+    "@storybook/react": "^5.1.0-alpha.15",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.8.8",
+    "@types/storybook__react": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
     "@typescript-eslint/parser": "^1.5.0",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
     "cz-lerna-changelog": "^2.0.2",
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.1.0",
@@ -108,5 +117,6 @@
       "stylelint",
       "git add"
     ]
-  }
+  },
+  "dependencies": {}
 }
