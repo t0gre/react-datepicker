@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid snapshot - responsive 1`] = `
+<div>
+  <div
+    class="sc-bdVaJa tIXvr"
+  >
+    <div>
+      test1
+    </div>
+    <div>
+      test2
+    </div>
+    <div>
+      test3
+    </div>
+    <div>
+      test4
+    </div>
+    <div>
+      test5
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Grid snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdVaJa RlsuF"
+  >
+    <div>
+      test1
+    </div>
+    <div>
+      test2
+    </div>
+    <div>
+      test3
+    </div>
+    <div>
+      test4
+    </div>
+    <div>
+      test5
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-bdVaJa RlsuF"
+  >
+    <div>
+      test1
+    </div>
+    <div>
+      test2
+    </div>
+    <div>
+      test3
+    </div>
+    <div>
+      test4
+    </div>
+    <div>
+      test5
+    </div>
+  </div>
+</div>
+`;
