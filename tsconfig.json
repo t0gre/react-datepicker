@@ -1,4 +1,8 @@
 {
   "extends": "./config/tsconfig.base.json",
-  "references": [{ "path": "packages/react-datepicker-hooks" }]
+  "references": [
+    {"path": "packages/react-datepicker-hooks"},
+    {"path": "packages/react-datepicker-styled"}
+  ],
+  "exclude": ["node_modules", "**/lib"]
 }
