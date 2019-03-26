@@ -26,6 +26,7 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
+    "build:watch": "yarn build -w",
     "format": "prettier --write \"src/**/*.+(ts|tsx)\"",
     "tsc": "tsc --noEmit",
     "prebuild": "rimraf lib"
