@@ -26,7 +26,7 @@
     "lint:ts": "eslint 'packages/**/*.ts{,x}'",
     "lint": "run-p -c lint:*",
     "tsc": "lerna run tsc",
-    "prebuild": "yarn run tsc && yarn run lint",
+    "prebuild": "yarn run tsc && yarn run lint && lerna run prebuild",
     "build": "lerna run build",
     "bootstrap": "lerna bootstrap",
     "storybook": "start-storybook -p 6006",

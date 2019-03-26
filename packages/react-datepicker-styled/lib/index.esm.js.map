@@ -1,0 +1,1 @@
+{"version":3,"file":"index.esm.js","sources":["../src/index.tsx"],"sourcesContent":["import * as React from 'react'\n\nexport default function Demo() {\n  return <div>demo</div>\n}\n"],"names":["React.createElement"],"mappings":";;SAEwB,IAAI;IAC1B,OAAOA,kCAAe,CAAA;CACvB;;;;"}

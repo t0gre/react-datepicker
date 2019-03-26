@@ -1,14 +1,14 @@
 {
-  "name": "@react-datepicker/hooks",
-  "version": "0.0.0",
-  "description": "React hooks for datepicker.",
+  "name": "@react-datepicker/styled",
+  "version": "1.0.0",
+  "description": "A React datepicker build with styled-components.",
   "keywords": [
+    "datepicker",
     "react",
-    "hooks",
-    "datepicker"
+    "styled-components"
   ],
-  "author": "Miha Sedej <sedej.miha@gmail.com>",
-  "homepage": "https://github.com/tresko/react-datepicker/tree/master/packages/react-datepicker-hooks#readme",
+  "author": "Miha Sedej <miha.sedej@lifeonscreen.com>",
+  "homepage": "https://github.com/tresko/react-datepicker/tree/master/packages/react-datepicker-styled#readme",
   "license": "MIT",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
@@ -34,6 +34,7 @@
     "url": "https://github.com/tresko/react-datepicker/issues"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.8.5",
+    "styled-components": "^4.2.0"
   }
 }
