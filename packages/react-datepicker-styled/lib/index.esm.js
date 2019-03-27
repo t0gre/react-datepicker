@@ -965,6 +965,7 @@ var stylis_min = createCommonjsModule(function(module, exports) {
       Re(a)
     return Te
   })
+  //# sourceMappingURL=stylis.min.js.map
 })
 
 var stylisRuleSheet = createCommonjsModule(function(module, exports) {
@@ -5335,6 +5336,7 @@ if (
 
   window['__styled-components-init__'] += 1
 }
+//# sourceMappingURL=styled-components.esm.js.map
 
 function _extends$1() {
   _extends$1 =
@@ -5994,12 +5996,37 @@ var Grid = styled('div')(
   space,
 )
 var templateObject_1
+//# sourceMappingURL=Grid.js.map
+
+//# sourceMappingURL=index.js.map
 
 var Flex = styled('div')(
   templateObject_1$1 ||
     (templateObject_1$1 = __makeTemplateObject(
-      ['\n  display: flex;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-      ['\n  display: flex;\n\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+      [
+        '\n  display: flex;\n\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n',
+      ],
+      [
+        '\n  display: flex;\n\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n',
+      ],
     )),
   space,
   flex,
@@ -6008,8 +6035,13 @@ var Flex = styled('div')(
   alignItems,
   justifyContent,
   gridArea,
+  height,
+  width,
 )
 var templateObject_1$1
+//# sourceMappingURL=Flex.js.map
+
+//# sourceMappingURL=index.js.map
 
 function CalendarIcon(_a) {
   var height = _a.height,
@@ -6035,6 +6067,9 @@ function CalendarIcon(_a) {
     }),
   )
 }
+//# sourceMappingURL=CalendarIcon.js.map
+
+//# sourceMappingURL=index.js.map
 
 var InputLabel = styled('label')(
   templateObject_1$2 ||
@@ -6134,6 +6169,9 @@ function Input() {
   )
 }
 var templateObject_1$2, templateObject_2, templateObject_3
+//# sourceMappingURL=Input.js.map
+
+//# sourceMappingURL=index.js.map
 
 function calculateAngle(direction) {
   switch (direction) {
@@ -6175,34 +6213,758 @@ function ArrowIcon(_a) {
     }),
   )
 }
+//# sourceMappingURL=ArrowIcon.js.map
+
+//# sourceMappingURL=index.js.map
+
+var Text = styled('div')(
+  templateObject_1$3 ||
+    (templateObject_1$3 = __makeTemplateObject(
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+    )),
+  fontFamily,
+  fontSize,
+  fontWeight,
+  color,
+  lineHeight,
+  space,
+)
+var templateObject_1$3
+//# sourceMappingURL=Text.js.map
+
+//# sourceMappingURL=index.js.map
+
+var StyledDate = styled(Text)(
+  templateObject_2$1 ||
+    (templateObject_2$1 = __makeTemplateObject(
+      [
+        "\n  position: relative;\n  display: inline-block;\n  \n  &:after {\n    content: '';\n    position: absolute;\n    height: 2px;\n    width: 100%;\n    bottom: 0;\n    left: 0;\n    z-index: 1;\n  }\n  \n  ",
+        '\n',
+      ],
+      [
+        "\n  position: relative;\n  display: inline-block;\n  \n  &:after {\n    content: '';\n    position: absolute;\n    height: 2px;\n    width: 100%;\n    bottom: 0;\n    left: 0;\n    z-index: 1;\n  }\n  \n  ",
+        '\n',
+      ],
+    )),
+  function(_a) {
+    var isActive = _a.isActive
+    return (
+      isActive &&
+      css(
+        templateObject_1$4 ||
+          (templateObject_1$4 = __makeTemplateObject(
+            ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
+            ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
+          )),
+      )
+    )
+  },
+)
+function Date$1(_a) {
+  var title = _a.title,
+    isActive = _a.isActive,
+    _b = _a.date,
+    date = _b === void 0 ? 'Select' : _b
+  return React__default.createElement(
+    'div',
+    null,
+    React__default.createElement(
+      Text,
+      {fontFamily: 'Montserrat', fontSize: '11px', color: '#929598', mb: '8px'},
+      title,
+    ),
+    React__default.createElement(
+      StyledDate,
+      {
+        as: 'span',
+        color: '#001217',
+        fontSize: '24px',
+        fontWeight: 500,
+        fontFamily: 'Montserrat',
+        pb: '15px',
+        isActive: isActive,
+      },
+      date,
+    ),
+  )
+}
+var templateObject_1$4, templateObject_2$1
+//# sourceMappingURL=Date.js.map
+
+//# sourceMappingURL=index.js.map
+
+var MonthLabel = function(_a) {
+  var label = _a.label
+  return React__default.createElement(
+    Text,
+    {
+      fontFamily: 'Montserrat',
+      fontSize: '14px',
+      fontWeight: 600,
+      lineHeight: 1.57,
+      color: '#343132',
+    },
+    label,
+  )
+}
+//# sourceMappingURL=MonthLabel.js.map
+
+//# sourceMappingURL=index.js.map
+
+var MonthLabel$1 = function(_a) {
+  var label = _a.label
+  return React__default.createElement(
+    Text,
+    {fontFamily: 'Montserrat', fontSize: '11px', fontWeight: 500, color: '#929598'},
+    label,
+  )
+}
+//# sourceMappingURL=DayLabel.js.map
+
+//# sourceMappingURL=index.js.map
+
+var StyledDay = styled('div')(
+  templateObject_4 ||
+    (templateObject_4 = __makeTemplateObject(
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  cursor: pointer;\n  \n  ', '\n  \n  ', '\n'],
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  cursor: pointer;\n  \n  ', '\n  \n  ', '\n'],
+    )),
+  width,
+  height,
+  boxShadow,
+  background,
+  function(_a) {
+    var disabled = _a.disabled
+    return (
+      disabled &&
+      css(
+        templateObject_1$5 ||
+          (templateObject_1$5 = __makeTemplateObject(
+            ['\n      cursor: initial;\n      opacity: 0.4;\n    '],
+            ['\n      cursor: initial;\n      opacity: 0.4;\n    '],
+          )),
+      )
+    )
+  },
+  function(_a) {
+    var disabled = _a.disabled,
+      isActive = _a.isActive,
+      isStartOrEnd = _a.isStartOrEnd
+    if (!disabled && !isActive && !isStartOrEnd) {
+      return css(
+        templateObject_2$2 ||
+          (templateObject_2$2 = __makeTemplateObject(
+            ['\n        &:hover {\n          background: #e6e7e8;\n        }\n      '],
+            ['\n        &:hover {\n          background: #e6e7e8;\n        }\n      '],
+          )),
+      )
+    } else if (isActive && !isStartOrEnd) {
+      return css(
+        templateObject_3$1 ||
+          (templateObject_3$1 = __makeTemplateObject(
+            ['\n        &:hover {\n          background: #39beef;\n        }\n      '],
+            ['\n        &:hover {\n          background: #39beef;\n        }\n      '],
+          )),
+      )
+    }
+    return ''
+  },
+)
+function getBorderColor(isActive, isStartOrEnd) {
+  if (isStartOrEnd) {
+    return '#00aeef'
+  } else if (isActive) {
+    return '#71c9ed'
+  } else {
+    return '#e6e7e8'
+  }
+}
+function getBackgroundColor(isActive, isStartOrEnd) {
+  if (isStartOrEnd) {
+    return '#00aeef'
+  } else if (isActive) {
+    return '#71c9ed'
+  } else {
+    return '#ffffff'
+  }
+}
+function getColor(isActive, isStartOrEnd) {
+  if (isActive || isStartOrEnd) {
+    return '#ffffff'
+  } else {
+    return '#58595b'
+  }
+}
+function Day(_a) {
+  var day = _a.day,
+    isActive = _a.isActive,
+    isStartOrEnd = _a.isStartOrEnd,
+    disabled = _a.disabled
+  var borderColor = getBorderColor(isActive, isStartOrEnd)
+  var background = getBackgroundColor(isActive, isStartOrEnd)
+  var color = getColor(isActive, isStartOrEnd)
+  return React__default.createElement(
+    StyledDay,
+    {
+      disabled: disabled,
+      isActive: isActive,
+      isStartOrEnd: isStartOrEnd,
+      height: '36px',
+      width: '36px',
+      background: background,
+      boxShadow:
+        '1px 0 0 0 ' +
+        borderColor +
+        ',\n        0 1px 0 0 ' +
+        borderColor +
+        ',\n        1px 1px 0 0 ' +
+        borderColor +
+        ',\n        1px 0 0 0 ' +
+        borderColor +
+        ' inset,\n        0 1px 0 0 ' +
+        borderColor +
+        ' inset',
+    },
+    React__default.createElement(
+      Flex,
+      {justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%'},
+      React__default.createElement(
+        Text,
+        {color: color, fontFamily: 'Montserrat', fontWeight: 500, fontSize: '14px'},
+        day,
+      ),
+    ),
+  )
+}
+var templateObject_1$5, templateObject_2$2, templateObject_3$1, templateObject_4
+//# sourceMappingURL=Day.js.map
+
+//# sourceMappingURL=index.js.map
+
+var Month = function(_a) {
+  var montLabel = _a.montLabel,
+    dayLabels = _a.dayLabels
+  return React__default.createElement(
+    'div',
+    null,
+    React__default.createElement(
+      Flex,
+      {justifyContent: 'center', mb: '28px'},
+      React__default.createElement(MonthLabel, {label: montLabel}),
+    ),
+    React__default.createElement(
+      Grid,
+      {gridTemplateColumns: 'repeat(7, 36px)'},
+      dayLabels.map(function(day) {
+        return React__default.createElement(
+          Flex,
+          {key: day, justifyContent: 'center', mb: '16px'},
+          React__default.createElement(MonthLabel$1, {label: day}),
+        )
+      }),
+    ),
+    React__default.createElement(
+      Grid,
+      {gridTemplateColumns: 'repeat(7, 36px)'},
+      React__default.createElement('div', null),
+      React__default.createElement('div', null),
+      React__default.createElement('div', null),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '1',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '2',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '3',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '4',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '5',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '6',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '7',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '8',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '9',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '10',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '11',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '12',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '13',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '14',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '15',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '16',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '17',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '18',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '19',
+        disabled: true,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '20',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '21',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '22',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '23',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '24',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '25',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '26',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: false,
+        day: '27',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: true,
+        day: '28',
+        disabled: false,
+        isStartOrEnd: true,
+      }),
+      React__default.createElement(Day, {
+        isActive: true,
+        day: '29',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: true,
+        day: '30',
+        disabled: false,
+        isStartOrEnd: false,
+      }),
+      React__default.createElement(Day, {
+        isActive: true,
+        day: '31',
+        disabled: false,
+        isStartOrEnd: true,
+      }),
+    ),
+  )
+}
+//# sourceMappingURL=Month.js.map
+
+//# sourceMappingURL=index.js.map
+
+var Box = styled('div')(
+  templateObject_1$6 ||
+    (templateObject_1$6 = __makeTemplateObject(
+      [
+        '\n  box-sizing: border-box;\n\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n',
+      ],
+      [
+        '\n  box-sizing: border-box;\n\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n',
+      ],
+    )),
+  gridArea,
+  height,
+  space,
+  width,
+  position,
+  top,
+  left,
+  right,
+  bottom,
+)
+var templateObject_1$6
+//# sourceMappingURL=Box.js.map
+
+//# sourceMappingURL=index.js.map
+
+function CaretIcon(_a) {
+  var height = _a.height,
+    width = _a.width,
+    color = _a.color,
+    _b = _a.className,
+    className = _b === void 0 ? '' : _b
+  return React__default.createElement(
+    'svg',
+    {
+      width: width,
+      height: height,
+      className: className,
+      color: color,
+      viewBox: '0 0 14 14',
+      xmlns: 'http://www.w3.org/2000/svg',
+    },
+    React__default.createElement('path', {
+      fill: 'currentColor',
+      fillRule: 'nonzero',
+      d:
+        'M9.015 11.15c-.027-.18-.04-.39-.067-.585a3.958 3.958 0 0 1-4.48-.056C2.663 9.241 2.142 6.663 3.292 4.74c1.217-2.02 3.797-2.592 5.696-1.282.589.404 1.03.934 1.35 1.533l-1.216.808L13 7.917l-.174-4.556-1.056.696a5.812 5.812 0 0 0-1.846-2.062C7.25.155 3.64.935 1.901 3.765c-1.672 2.717-.95 6.382 1.605 8.194a5.535 5.535 0 0 0 5.616.501c0-.083 0-.167-.013-.264a9.193 9.193 0 0 0-.094-1.046z',
+    }),
+  )
+}
+//# sourceMappingURL=RedoIcon.js.map
+
+//# sourceMappingURL=index.js.map
+
+function ResetDates() {
+  return React__default.createElement(
+    Flex,
+    {alignItems: 'center'},
+    React__default.createElement(CaretIcon, {height: '14px', width: '14px', color: '58595B'}),
+    React__default.createElement(
+      Text,
+      {
+        ml: '8px',
+        mt: '1px',
+        lineHeight: 1.18,
+        fontFamily: 'Montserrat',
+        fontSize: '11px',
+        color: '#343132',
+      },
+      'Reset dates',
+    ),
+  )
+}
+//# sourceMappingURL=ResetDates.js.map
+
+//# sourceMappingURL=index.js.map
+
+function calculateAngle$1(direction) {
+  switch (direction) {
+    case 'up':
+      return 180
+    case 'down':
+      return 0
+    case 'left':
+      return 90
+    case 'right':
+    default:
+      return -90
+  }
+}
+function CaretIcon$1(_a) {
+  var height = _a.height,
+    width = _a.width,
+    color = _a.color,
+    _b = _a.direction,
+    direction = _b === void 0 ? 'right' : _b,
+    _c = _a.className,
+    className = _c === void 0 ? '' : _c
+  var angle = calculateAngle$1(direction)
+  return React__default.createElement(
+    'svg',
+    {
+      width: width,
+      height: height,
+      className: className,
+      color: color,
+      transform: 'rotate(' + angle + ' 0 0)',
+      viewBox: '0 0 9 6',
+      xmlns: 'http://www.w3.org/2000/svg',
+    },
+    React__default.createElement('path', {
+      fill: 'currentColor',
+      fillRule: 'evenodd',
+      stroke: 'currentColor',
+      d:
+        'M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z',
+    }),
+  )
+}
+//# sourceMappingURL=CaretIcon.js.map
+
+//# sourceMappingURL=index.js.map
+
+var StyledNavButton = styled('button')(
+  templateObject_1$7 ||
+    (templateObject_1$7 = __makeTemplateObject(
+      [
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  display: flex;\n  justify-content: center;\n  align-items: center;\n',
+      ],
+      [
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  display: flex;\n  justify-content: center;\n  align-items: center;\n',
+      ],
+    )),
+  width,
+  height,
+  background,
+  space,
+  border,
+)
+function NavButton(_a) {
+  var type = _a.type
+  return React__default.createElement(
+    StyledNavButton,
+    {width: '30px', height: '30px', background: '#ffffff', border: '1px solid #929598', p: '0'},
+    React__default.createElement(CaretIcon$1, {
+      width: '18px',
+      height: '11px',
+      color: '#808285',
+      direction: type === 'next' ? 'right' : 'left',
+    }),
+  )
+}
+var templateObject_1$7
+//# sourceMappingURL=NavButton.js.map
+
+//# sourceMappingURL=index.js.map
+
+var StyledDatepicker = styled('div')(
+  templateObject_1$8 ||
+    (templateObject_1$8 = __makeTemplateObject(
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+    )),
+  background,
+  space,
+  borderRadius,
+  minWidth,
+)
+var DateWrapper = styled('div')(
+  templateObject_2$3 ||
+    (templateObject_2$3 = __makeTemplateObject(
+      [
+        "\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n",
+      ],
+      [
+        "\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n",
+      ],
+    )),
+)
+function Datepicker() {
+  return React__default.createElement(
+    StyledDatepicker,
+    {minWidth: '535px', background: '#ffffff', p: '32px', borderRadius: '2px'},
+    React__default.createElement(
+      DateWrapper,
+      null,
+      React__default.createElement(
+        Grid,
+        {gridTemplateColumns: '126px 75px 126px'},
+        React__default.createElement(Date$1, {
+          title: 'Start date:',
+          date: 'Select',
+          isActive: true,
+        }),
+        React__default.createElement(
+          Flex,
+          {justifyContent: 'center', alignItems: 'center'},
+          React__default.createElement(ArrowIcon, {
+            height: '12px',
+            width: '15px',
+            color: '#929598',
+          }),
+        ),
+        React__default.createElement(Date$1, {title: 'end date:', date: 'Select', isActive: false}),
+      ),
+    ),
+    React__default.createElement(
+      Box,
+      {mt: '28px', position: 'relative'},
+      React__default.createElement(
+        Box,
+        {position: 'absolute', top: '-5px', left: '0'},
+        React__default.createElement(NavButton, {type: 'prev'}),
+      ),
+      React__default.createElement(
+        Box,
+        {position: 'absolute', top: '-5px', right: '0'},
+        React__default.createElement(NavButton, {type: 'next'}),
+      ),
+      React__default.createElement(
+        Grid,
+        {gridTemplateColumns: '1fr 1fr', gridGap: '0 32px'},
+        React__default.createElement(Month, {
+          montLabel: 'November, 2018',
+          dayLabels: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+        }),
+        React__default.createElement(Month, {
+          montLabel: 'November, 2018',
+          dayLabels: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+        }),
+      ),
+    ),
+    React__default.createElement(Box, {mt: '32px'}, React__default.createElement(ResetDates, null)),
+  )
+}
+var templateObject_1$8, templateObject_2$3
+
+//# sourceMappingURL=index.js.map
 
 var StyledArrowIcon = styled(ArrowIcon)(
-  templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+  templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
   opacity,
 )
 function DateRange() {
   return React__default.createElement(
-    Grid,
-    {gridTemplateColumns: '194px 39px 194px'},
-    React__default.createElement(Input, null),
+    'div',
+    null,
     React__default.createElement(
-      Flex,
-      {alignItems: 'center', justifyContent: 'center'},
-      React__default.createElement(StyledArrowIcon, {
-        width: '15px',
-        height: '12px',
-        color: '#ffffff',
-        opacity: 0.4,
-      }),
+      Grid,
+      {gridTemplateColumns: '194px 39px 194px'},
+      React__default.createElement(Input, null),
+      React__default.createElement(
+        Flex,
+        {alignItems: 'center', justifyContent: 'center'},
+        React__default.createElement(StyledArrowIcon, {
+          width: '15px',
+          height: '12px',
+          color: '#ffffff',
+          opacity: 0.4,
+        }),
+      ),
+      React__default.createElement(Input, null),
     ),
-    React__default.createElement(Input, null),
+    React__default.createElement(Datepicker, null),
   )
 }
-var templateObject_1$3
+var templateObject_1$9
+//# sourceMappingURL=DateRange.js.map
+
+//# sourceMappingURL=index.js.map
 
 function Demo() {
   return createElement('div', null, createElement(DateRange, null))
 }
+//# sourceMappingURL=index.js.map
 
 export default Demo
 //# sourceMappingURL=index.esm.js.map

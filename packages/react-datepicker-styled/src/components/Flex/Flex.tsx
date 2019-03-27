@@ -12,6 +12,10 @@ import {
   SpaceProps,
   gridArea,
   GridAreaProps,
+  height,
+  HeightProps,
+  width,
+  WidthProps,
 } from 'styled-system'
 import styled from 'styled-components'
 
@@ -21,6 +25,8 @@ interface FlexProps
     FlexDirectionProps,
     AlignItemsProps,
     GridAreaProps,
+    HeightProps,
+    WidthProps,
     JustifyContentProps {}
 const Flex = styled('div')<FlexProps>`
   display: flex;
@@ -32,6 +38,8 @@ const Flex = styled('div')<FlexProps>`
   ${alignItems}
   ${justifyContent}
   ${gridArea}
+  ${height}
+  ${width}
 `
 
 export default Flex

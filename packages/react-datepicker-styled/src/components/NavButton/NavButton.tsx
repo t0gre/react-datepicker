@@ -26,6 +26,9 @@ const StyledNavButton = styled('button')<StyledNavButtonProps>`
   ${background}
   ${space}
   ${border}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 interface NavButtonProps {

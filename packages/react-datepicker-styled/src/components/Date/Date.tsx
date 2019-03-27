@@ -1,46 +1,54 @@
 import React from 'react'
-import styled from 'styled-components'
-import {
-  fontFamily,
-  FontFamilyProps,
-  fontSize,
-  FontSizeProps,
-  color,
-  ColorProps,
-  space,
-  SpaceProps,
-  fontWeight,
-  FontWeightProps,
-} from 'styled-system'
+import styled, {css} from 'styled-components'
+import Text from '../Text'
 
-interface DateSmallTextProps extends FontSizeProps, FontFamilyProps, ColorProps, SpaceProps {}
-const DateSmallText = styled('div')<DateSmallTextProps>`
-  ${fontFamily}
-  ${fontSize}
-  ${color}
-  ${space}
-`
+interface StyledDateProps {
+  isActive: boolean
+}
+const StyledDate = styled(Text)<StyledDateProps>`
+  position: relative;
+  display: inline-block;
 
-interface StyledDateProps extends FontWeightProps, FontFamilyProps, ColorProps, FontSizeProps {}
-const StyledDate = styled('div')<StyledDateProps>`
-  ${color}
-  ${fontSize}
-  ${fontFamily}
-  ${fontWeight}
+  &:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  ${({isActive}) =>
+    isActive &&
+    css`
+      &:after {
+        background: #00aeef;
+      }
+    `}
 `
 
 interface DateProps {
   title: string
   date: string
+  isActive: boolean
 }
 
-function Date({title, date = 'Select'}: DateProps) {
+function Date({title, isActive, date = 'Select'}: DateProps) {
   return (
     <div>
-      <DateSmallText fontFamily="Montserrat" fontSize="11px" color="#929598" mb="8px">
+      <Text fontFamily="Montserrat" fontSize="11px" color="#929598" mb="8px">
         {title}
-      </DateSmallText>
-      <StyledDate color="#001217" fontSize="24px" fontWeight={500} fontFamily="Montserrat">
+      </Text>
+      <StyledDate
+        as="span"
+        color="#001217"
+        fontSize="24px"
+        fontWeight={500}
+        fontFamily="Montserrat"
+        pb="15px"
+        isActive={isActive}
+      >
         {date}
       </StyledDate>
     </div>
