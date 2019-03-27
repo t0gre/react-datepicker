@@ -1,2 +1,3 @@
 import useMonth from './useMonth'
-export {useMonth}
+
+export default useMonth

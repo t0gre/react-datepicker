@@ -45,6 +45,6 @@
   },
   "dependencies": {
     "styled-system": "^4.0.8",
-    "@react-datepicker/hooks": "file:../react-datepicker-hooks"
+    "@react-datepicker/hooks": "link:../react-datepicker-hooks"
   }
 }

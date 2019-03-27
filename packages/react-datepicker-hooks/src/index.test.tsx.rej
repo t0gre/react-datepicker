@@ -1,6 +1,0 @@
-diff a/packages/react-datepicker-hooks/src/index.test.tsx b/packages/react-datepicker-hooks/src/index.test.tsx	(rejected hunks)
-@@ -3,3 +3 @@ import {render} from 'react-testing-library'
--test('test', () => {
--  
--})
-+test('test', () => {})

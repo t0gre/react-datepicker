@@ -1,4 +1,5 @@
 import React from 'react'
+import {useMonth} from '@react-datepicker/hooks'
 import styled from 'styled-components'
 import {
   background,
@@ -43,6 +44,8 @@ const DateWrapper = styled('div')`
 `
 
 function Datepicker() {
+  useMonth()
+
   return (
     <StyledDatepicker minWidth="535px" background="#ffffff" p="32px" borderRadius="2px">
       <DateWrapper>
