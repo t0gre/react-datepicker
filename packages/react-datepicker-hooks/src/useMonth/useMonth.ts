@@ -20,23 +20,25 @@ import eachDay from 'date-fns/each_day'
 interface UseMonthProps {
   year: number
   month: number
-  // weekStartsOn: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
   convertDate?(date: Date): string
 }
 
 export default function useMonth({
   year,
   month,
-  // weekStartsOn = 1,
+  weekStartsOn = 1,
   convertDate = date => format(date, 'DD'),
 }: UseMonthProps) {
   const date = new Date(year, month)
 
   const monthStart = startOfMonth(date)
-  const monthStartDay = getDay(monthStart) - 1
+  const monthStartDay = getDay(monthStart)
   const monthEnd = endOfMonth(date)
 
-  const prevMonthDays = Array.from(Array(monthStartDay).keys()).fill(0)
+  const prevMonthDays = Array.from(
+    Array(monthStartDay >= weekStartsOn ? monthStartDay - weekStartsOn : weekStartsOn).keys(),
+  ).fill(0)
   const days = eachDay(monthStart, monthEnd).map(date => ({
     date,
     day: convertDate(date),
