@@ -1,3 +1,5 @@
+import {useMemo} from 'react'
+
 var MILLISECONDS_IN_MINUTE = 60000
 
 /**
@@ -5688,31 +5690,114 @@ var dateFns = {
   subYears: sub_years,
 }
 var dateFns_1 = dateFns.addDays
+var dateFns_36 = dateFns.eachDay
+var dateFns_42 = dateFns.endOfMonth
+var dateFns_47 = dateFns.endOfWeek
+var dateFns_50 = dateFns.format
+var dateFns_52 = dateFns.getDay
+var dateFns_137 = dateFns.startOfMonth
 var dateFns_142 = dateFns.startOfWeek
 
-function matrix(year, month, weekStartsOn) {
-  if (weekStartsOn === void 0) {
-    weekStartsOn = 1
-  }
-  var startDate = dateFns_142(new Date(year, month, 1), {weekStartsOn: weekStartsOn})
-  var rows = 6
-  var cols = 7
-  var length = rows * cols
-  return (
-    Array.from({length: length})
-      // create a list of dates
-      .map(function(_, index) {
-        return dateFns_1(startDate, index).getDate()
-      })
+function getWeekDays(_a) {
+  var _b = _a === void 0 ? {} : _a,
+    _c = _b.weekStartsOn,
+    weekStartsOn = _c === void 0 ? 1 : _c,
+    _d = _b.weekDayFormat,
+    weekDayFormat =
+      _d === void 0
+        ? function(date) {
+            return dateFns_50(date, 'dd')
+          }
+        : _d
+  var now = new Date()
+  var arr = dateFns_36(
+    dateFns_1(dateFns_142(now), weekStartsOn),
+    dateFns_1(dateFns_47(now), weekStartsOn),
   )
-  // fold the array into a matrix
-  // .reduce((matrix, _current, index, days) => !(index % cols !== 0) ? [...matrix, days.slice(index, index + cols)] : matrix, []);
+  return arr.reduce(function(array, date) {
+    // @ts-ignore
+    array.push(weekDayFormat(date))
+    return array
+  }, [])
 }
-function useMonth() {
-  console.log(matrix(2018, 7, 1))
+function getDays(_a) {
+  var year = _a.year,
+    month = _a.month,
+    _b = _a.weekStartsOn,
+    weekStartsOn = _b === void 0 ? 1 : _b,
+    _c = _a.dayFormat,
+    dayFormat =
+      _c === void 0
+        ? function(date) {
+            return dateFns_50(date, 'DD')
+          }
+        : _c
+  var date = new Date(year, month)
+  var monthStart = dateFns_137(date)
+  var monthStartDay = dateFns_52(monthStart)
+  var monthEnd = dateFns_42(date)
+  var prevMonthDays = Array.from(
+    Array(monthStartDay >= weekStartsOn ? monthStartDay - weekStartsOn : weekStartsOn).keys(),
+  ).fill(0)
+  var days = dateFns_36(monthStart, monthEnd).map(function(date) {
+    return {
+      date: date,
+      day: dayFormat(date),
+    }
+  })
+  return prevMonthDays.concat(days)
 }
+//# sourceMappingURL=useMonth.utils.js.map
+
+function useMonth(_a) {
+  var year = _a.year,
+    month = _a.month,
+    _b = _a.weekStartsOn,
+    weekStartsOn = _b === void 0 ? 1 : _b,
+    _c = _a.dayFormat,
+    dayFormat =
+      _c === void 0
+        ? function(date) {
+            return dateFns_50(date, 'DD')
+          }
+        : _c,
+    _d = _a.weekDayFormat,
+    weekDayFormat =
+      _d === void 0
+        ? function(date) {
+            return dateFns_50(date, 'dd')
+          }
+        : _d,
+    _e = _a.monthLabelFormat,
+    monthLabelFormat =
+      _e === void 0
+        ? function(date) {
+            return dateFns_50(date, 'MMMM YYYY')
+          }
+        : _e
+  var days = useMemo(
+    function() {
+      return getDays({year: year, month: month, weekStartsOn: weekStartsOn, dayFormat: dayFormat})
+    },
+    [year, month, weekStartsOn],
+  )
+  var weekDays = useMemo(
+    function() {
+      return getWeekDays({weekStartsOn: weekStartsOn, weekDayFormat: weekDayFormat})
+    },
+    [weekStartsOn],
+  )
+  return {
+    days: days,
+    weekDays: weekDays,
+    monthLabel: monthLabelFormat(new Date(year, month)),
+  }
+}
+//# sourceMappingURL=useMonth.js.map
 
 //# sourceMappingURL=index.js.map
 
-export {useMonth}
+//# sourceMappingURL=index.js.map
+
+export {getDays, getWeekDays, useMonth}
 //# sourceMappingURL=index.esm.js.map

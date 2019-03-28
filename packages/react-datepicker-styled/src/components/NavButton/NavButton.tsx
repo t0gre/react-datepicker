@@ -43,6 +43,7 @@ function NavButton({type}: NavButtonProps) {
       background="#ffffff"
       border="1px solid #929598"
       p="0"
+      type="button"
     >
       <CaretIcon
         width="18px"

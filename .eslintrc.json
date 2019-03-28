@@ -1,7 +1,7 @@
 {
   "extends": ["prettier", "react-app"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "jsx-a11y", "import", "react-hooks", "@typescript-eslint"],
+  "plugins": ["react", "jsx-a11y", "import", "@typescript-eslint", "react-hooks"],
   "rules": {
     "semi": 0,
     "no-unused-vars": "off",

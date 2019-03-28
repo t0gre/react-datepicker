@@ -1,5 +1,8 @@
 {
   "extends": "../../config/tsconfig.base.json",
   "include": ["src"],
-  "exclude": ["node_modules", "lib", "rollup.config.js"]
+  "exclude": ["node_modules", "lib", "rollup.config.js"],
+  "compilerOptions": {
+    "types" : ["jest"]
+  }
 }

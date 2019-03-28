@@ -1,3 +1,4 @@
+import React from 'react'
 interface DayProps {
   day: string
   isActive: boolean
@@ -5,4 +6,5 @@ interface DayProps {
   isStartOrEnd: boolean
 }
 declare function Day({day, isActive, isStartOrEnd, disabled}: DayProps): JSX.Element
-export default Day
+declare const _default: React.MemoExoticComponent<typeof Day>
+export default _default

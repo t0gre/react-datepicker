@@ -113,4 +113,4 @@ function Day({day, isActive, isStartOrEnd, disabled}: DayProps) {
   )
 }
 
-export default Day
+export default React.memo(Day)

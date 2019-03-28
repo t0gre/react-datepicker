@@ -1,5 +1,4 @@
 import React from 'react'
-import {useMonth} from '@react-datepicker/hooks'
 import styled from 'styled-components'
 import {
   background,
@@ -8,8 +7,6 @@ import {
   SpaceProps,
   borderRadius,
   BorderRadiusProps,
-  minWidth,
-  MinWidthProps,
 } from 'styled-system'
 import Date from '../Date'
 import Grid from '../Grid'
@@ -20,12 +17,11 @@ import ResetDates from '../ResetDates'
 import NavButton from '../NavButton'
 import ArrowIcon from '../../icons/ArrowIcon'
 
-interface StyledDatepicker extends BackgroundProps, SpaceProps, BorderRadiusProps, MinWidthProps {}
+interface StyledDatepicker extends BackgroundProps, SpaceProps, BorderRadiusProps {}
 const StyledDatepicker = styled('div')<StyledDatepicker>`
   ${background}
   ${space}
   ${borderRadius}
-  ${minWidth}
 `
 
 const DateWrapper = styled('div')`
@@ -44,10 +40,8 @@ const DateWrapper = styled('div')`
 `
 
 function Datepicker() {
-  useMonth()
-
   return (
-    <StyledDatepicker minWidth="535px" background="#ffffff" p="32px" borderRadius="2px">
+    <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px">
       <DateWrapper>
         <Grid gridTemplateColumns="126px 75px 126px">
           <Date title="Start date:" date="Select" isActive />
@@ -64,15 +58,9 @@ function Datepicker() {
         <Box position="absolute" top="-5px" right="0">
           <NavButton type="next" />
         </Box>
-        <Grid gridTemplateColumns="1fr 1fr" gridGap="0 32px">
-          <Month
-            montLabel="November, 2018"
-            dayLabels={['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']}
-          />
-          <Month
-            montLabel="November, 2018"
-            dayLabels={['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']}
-          />
+        <Grid gridTemplateColumns="repeat(2, 1fr)" gridGap="0 32px">
+          <Month year={2019} month={2} />
+          <Month year={2019} month={3} />
         </Grid>
       </Box>
       <Box mt="32px">

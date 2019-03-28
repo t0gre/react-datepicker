@@ -1,10 +1,10 @@
 import * as React from 'react'
-import DateRange from './components/DateRange'
+import DateRangePicker from './components/DateRangePicker'
 
 export default function Demo() {
   return (
     <div>
-      <DateRange />
+      <DateRangePicker />
     </div>
   )
 }

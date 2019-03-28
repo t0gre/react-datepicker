@@ -1,6 +1,6 @@
 interface MonthProps {
-  montLabel: string
-  dayLabels: string[]
+  year: number
+  month: number
 }
-declare const Month: ({montLabel, dayLabels}: MonthProps) => JSX.Element
+declare const Month: ({year, month}: MonthProps) => JSX.Element
 export default Month

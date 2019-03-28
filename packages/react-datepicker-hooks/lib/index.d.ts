@@ -1,2 +1,20 @@
-import useMonth from './useMonth'
-export {useMonth}
+import {
+  useMonth,
+  UseMonthProps,
+  UseMonthResult,
+  GetDaysProps,
+  GetWeekDaysProps,
+  getWeekDays,
+  getDays,
+  CalendarDay,
+} from './useMonth'
+export {
+  useMonth,
+  UseMonthProps,
+  UseMonthResult,
+  GetDaysProps,
+  GetWeekDaysProps,
+  getWeekDays,
+  getDays,
+  CalendarDay,
+}

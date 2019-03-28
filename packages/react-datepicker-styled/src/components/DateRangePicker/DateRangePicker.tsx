@@ -11,7 +11,7 @@ const StyledArrowIcon = styled(ArrowIcon)<OpacityProps>`
   ${opacity}
 `
 
-function DateRange() {
+function DateRangePicker() {
   return (
     <div>
       <Grid gridTemplateColumns="194px 39px 194px">
@@ -26,4 +26,4 @@ function DateRange() {
   )
 }
 
-export default DateRange
+export default DateRangePicker

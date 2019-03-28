@@ -1,48 +1,35 @@
-// import startOfToday from 'date-fns/start_of_today'
-// import getMonth from 'date-fns/get_month'
-// import getYear from 'date-fns/get_year'
-import getDay from 'date-fns/get_day'
-import endOfMonth from 'date-fns/end_of_month'
-import startOfMonth from 'date-fns/start_of_month'
-import format from 'date-fns/format'
-import eachDay from 'date-fns/each_day'
+import {useMemo} from 'react'
+import {format} from 'date-fns'
+import {getDays, GetDaysProps, getWeekDays, GetWeekDaysProps} from './useMonth.utils'
 
-// function getCurrentYearAndMonth() {
-//   const today = startOfToday()
-//   const year = getYear(today)
-//   const month = getMonth(today)
-//   return {
-//     year,
-//     month,
-//   }
-// }
-
-interface UseMonthProps {
-  year: number
-  month: number
-  weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
-  convertDate?(date: Date): string
+export interface UseMonthResult {
+  weekDays: string[]
+  days: (number | {day: string; date: Date})[]
+  monthLabel: string
 }
 
-export default function useMonth({
+export interface UseMonthProps extends GetWeekDaysProps, GetDaysProps {
+  monthLabelFormat?(date: Date): string
+}
+
+export function useMonth({
   year,
   month,
   weekStartsOn = 1,
-  convertDate = date => format(date, 'DD'),
-}: UseMonthProps) {
-  const date = new Date(year, month)
+  dayFormat = (date: Date) => format(date, 'DD'),
+  weekDayFormat = (date: Date) => format(date, 'dd'),
+  monthLabelFormat = (date: Date) => format(date, 'MMMM YYYY'),
+}: UseMonthProps): UseMonthResult {
+  const days = useMemo(() => getDays({year, month, weekStartsOn, dayFormat}), [
+    year,
+    month,
+    weekStartsOn,
+  ])
+  const weekDays = useMemo(() => getWeekDays({weekStartsOn, weekDayFormat}), [weekStartsOn])
 
-  const monthStart = startOfMonth(date)
-  const monthStartDay = getDay(monthStart)
-  const monthEnd = endOfMonth(date)
-
-  const prevMonthDays = Array.from(
-    Array(monthStartDay >= weekStartsOn ? monthStartDay - weekStartsOn : weekStartsOn).keys(),
-  ).fill(0)
-  const days = eachDay(monthStart, monthEnd).map(date => ({
-    date,
-    day: convertDate(date),
-  }))
-
-  return [...prevMonthDays, ...days]
+  return {
+    days,
+    weekDays,
+    monthLabel: monthLabelFormat(new Date(year, month)),
+  }
 }

@@ -1,4 +1,4 @@
-import React__default, {cloneElement, createContext, Component, createElement} from 'react'
+import React__default, {cloneElement, createContext, Component, createElement, useMemo} from 'react'
 import stream from 'stream'
 import ReactDOM from 'react-dom'
 
@@ -965,6 +965,7 @@ var stylis_min = createCommonjsModule(function(module, exports) {
       Re(a)
     return Te
   })
+  //# sourceMappingURL=stylis.min.js.map
 })
 
 var stylisRuleSheet = createCommonjsModule(function(module, exports) {
@@ -5335,6 +5336,7 @@ if (
 
   window['__styled-components-init__'] += 1
 }
+//# sourceMappingURL=styled-components.esm.js.map
 
 function _extends$1() {
   _extends$1 =
@@ -5994,6 +5996,9 @@ var Grid = styled('div')(
   space,
 )
 var templateObject_1
+//# sourceMappingURL=Grid.js.map
+
+//# sourceMappingURL=index.js.map
 
 var Flex = styled('div')(
   templateObject_1$1 ||
@@ -6034,6 +6039,9 @@ var Flex = styled('div')(
   width,
 )
 var templateObject_1$1
+//# sourceMappingURL=Flex.js.map
+
+//# sourceMappingURL=index.js.map
 
 function CalendarIcon(_a) {
   var height = _a.height,
@@ -6059,6 +6067,9 @@ function CalendarIcon(_a) {
     }),
   )
 }
+//# sourceMappingURL=CalendarIcon.js.map
+
+//# sourceMappingURL=index.js.map
 
 var InputLabel = styled('label')(
   templateObject_1$2 ||
@@ -6158,6 +6169,9 @@ function Input() {
   )
 }
 var templateObject_1$2, templateObject_2, templateObject_3
+//# sourceMappingURL=Input.js.map
+
+//# sourceMappingURL=index.js.map
 
 function calculateAngle(direction) {
   switch (direction) {
@@ -6199,6 +6213,86 @@ function ArrowIcon(_a) {
     }),
   )
 }
+//# sourceMappingURL=ArrowIcon.js.map
+
+//# sourceMappingURL=index.js.map
+
+var Text = styled('div')(
+  templateObject_1$3 ||
+    (templateObject_1$3 = __makeTemplateObject(
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+    )),
+  fontFamily,
+  fontSize,
+  fontWeight,
+  color,
+  lineHeight,
+  space,
+)
+var templateObject_1$3
+//# sourceMappingURL=Text.js.map
+
+//# sourceMappingURL=index.js.map
+
+var StyledDate = styled(Text)(
+  templateObject_2$1 ||
+    (templateObject_2$1 = __makeTemplateObject(
+      [
+        "\n  position: relative;\n  display: inline-block;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 2px;\n    width: 100%;\n    bottom: 0;\n    left: 0;\n    z-index: 1;\n  }\n\n  ",
+        '\n',
+      ],
+      [
+        "\n  position: relative;\n  display: inline-block;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 2px;\n    width: 100%;\n    bottom: 0;\n    left: 0;\n    z-index: 1;\n  }\n\n  ",
+        '\n',
+      ],
+    )),
+  function(_a) {
+    var isActive = _a.isActive
+    return (
+      isActive &&
+      css(
+        templateObject_1$4 ||
+          (templateObject_1$4 = __makeTemplateObject(
+            ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
+            ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
+          )),
+      )
+    )
+  },
+)
+function Date$1(_a) {
+  var title = _a.title,
+    isActive = _a.isActive,
+    _b = _a.date,
+    date = _b === void 0 ? 'Select' : _b
+  return React__default.createElement(
+    'div',
+    null,
+    React__default.createElement(
+      Text,
+      {fontFamily: 'Montserrat', fontSize: '11px', color: '#929598', mb: '8px'},
+      title,
+    ),
+    React__default.createElement(
+      StyledDate,
+      {
+        as: 'span',
+        color: '#001217',
+        fontSize: '24px',
+        fontWeight: 500,
+        fontFamily: 'Montserrat',
+        pb: '15px',
+        isActive: isActive,
+      },
+      date,
+    ),
+  )
+}
+var templateObject_1$4, templateObject_2$1
+//# sourceMappingURL=Date.js.map
+
+//# sourceMappingURL=index.js.map
 
 var MILLISECONDS_IN_MINUTE = 60000
 /**
@@ -11743,104 +11837,118 @@ var dateFns = {
   subYears: sub_years,
 }
 var dateFns_1 = dateFns.addDays
+var dateFns_36 = dateFns.eachDay
+var dateFns_42 = dateFns.endOfMonth
+var dateFns_47 = dateFns.endOfWeek
+var dateFns_50 = dateFns.format
+var dateFns_52 = dateFns.getDay
+var dateFns_137 = dateFns.startOfMonth
 var dateFns_142 = dateFns.startOfWeek
 
-function matrix(year, month, weekStartsOn) {
-  if (weekStartsOn === void 0) {
-    weekStartsOn = 1
-  }
+function getWeekDays(_a) {
+  var _b = _a === void 0 ? {} : _a,
+    _c = _b.weekStartsOn,
+    weekStartsOn = _c === void 0 ? 1 : _c,
+    _d = _b.weekDayFormat,
+    weekDayFormat =
+      _d === void 0
+        ? function(date) {
+            return dateFns_50(date, 'dd')
+          }
+        : _d
 
-  var startDate = dateFns_142(new Date(year, month, 1), {
-    weekStartsOn: weekStartsOn,
-  })
-  var rows = 6
-  var cols = 7
-  var length = rows * cols
-  return Array.from({
-    length: length,
-  }) // create a list of dates
-    .map(function(_, index) {
-      return dateFns_1(startDate, index).getDate()
-    }) // fold the array into a matrix
-    .reduce(function(matrix, _current, index, days) {
-      return !(index % cols !== 0) ? matrix.concat([days.slice(index, index + cols)]) : matrix
-    }, [])
-}
-
-function useMonth() {
-  console.log(matrix(2018, 7, 1))
-}
-
-var Text = styled('div')(
-  templateObject_1$3 ||
-    (templateObject_1$3 = __makeTemplateObject(
-      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-      ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-    )),
-  fontFamily,
-  fontSize,
-  fontWeight,
-  color,
-  lineHeight,
-  space,
-)
-var templateObject_1$3
-
-var StyledDate = styled(Text)(
-  templateObject_2$1 ||
-    (templateObject_2$1 = __makeTemplateObject(
-      [
-        "\n  position: relative;\n  display: inline-block;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 2px;\n    width: 100%;\n    bottom: 0;\n    left: 0;\n    z-index: 1;\n  }\n\n  ",
-        '\n',
-      ],
-      [
-        "\n  position: relative;\n  display: inline-block;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 2px;\n    width: 100%;\n    bottom: 0;\n    left: 0;\n    z-index: 1;\n  }\n\n  ",
-        '\n',
-      ],
-    )),
-  function(_a) {
-    var isActive = _a.isActive
-    return (
-      isActive &&
-      css(
-        templateObject_1$4 ||
-          (templateObject_1$4 = __makeTemplateObject(
-            ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
-            ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
-          )),
-      )
-    )
-  },
-)
-function Date$1(_a) {
-  var title = _a.title,
-    isActive = _a.isActive,
-    _b = _a.date,
-    date = _b === void 0 ? 'Select' : _b
-  return React__default.createElement(
-    'div',
-    null,
-    React__default.createElement(
-      Text,
-      {fontFamily: 'Montserrat', fontSize: '11px', color: '#929598', mb: '8px'},
-      title,
-    ),
-    React__default.createElement(
-      StyledDate,
-      {
-        as: 'span',
-        color: '#001217',
-        fontSize: '24px',
-        fontWeight: 500,
-        fontFamily: 'Montserrat',
-        pb: '15px',
-        isActive: isActive,
-      },
-      date,
-    ),
+  var now = new Date()
+  var arr = dateFns_36(
+    dateFns_1(dateFns_142(now), weekStartsOn),
+    dateFns_1(dateFns_47(now), weekStartsOn),
   )
+  return arr.reduce(function(array, date) {
+    // @ts-ignore
+    array.push(weekDayFormat(date))
+    return array
+  }, [])
 }
-var templateObject_1$4, templateObject_2$1
+
+function getDays(_a) {
+  var year = _a.year,
+    month = _a.month,
+    _b = _a.weekStartsOn,
+    weekStartsOn = _b === void 0 ? 1 : _b,
+    _c = _a.dayFormat,
+    dayFormat =
+      _c === void 0
+        ? function(date) {
+            return dateFns_50(date, 'DD')
+          }
+        : _c
+  var date = new Date(year, month)
+  var monthStart = dateFns_137(date)
+  var monthStartDay = dateFns_52(monthStart)
+  var monthEnd = dateFns_42(date)
+  var prevMonthDays = Array.from(
+    Array(monthStartDay >= weekStartsOn ? monthStartDay - weekStartsOn : weekStartsOn).keys(),
+  ).fill(0)
+  var days = dateFns_36(monthStart, monthEnd).map(function(date) {
+    return {
+      date: date,
+      day: dayFormat(date),
+    }
+  })
+  return prevMonthDays.concat(days)
+}
+
+function useMonth(_a) {
+  var year = _a.year,
+    month = _a.month,
+    _b = _a.weekStartsOn,
+    weekStartsOn = _b === void 0 ? 1 : _b,
+    _c = _a.dayFormat,
+    dayFormat =
+      _c === void 0
+        ? function(date) {
+            return dateFns_50(date, 'DD')
+          }
+        : _c,
+    _d = _a.weekDayFormat,
+    weekDayFormat =
+      _d === void 0
+        ? function(date) {
+            return dateFns_50(date, 'dd')
+          }
+        : _d,
+    _e = _a.monthLabelFormat,
+    monthLabelFormat =
+      _e === void 0
+        ? function(date) {
+            return dateFns_50(date, 'MMMM YYYY')
+          }
+        : _e
+  var days = useMemo(
+    function() {
+      return getDays({
+        year: year,
+        month: month,
+        weekStartsOn: weekStartsOn,
+        dayFormat: dayFormat,
+      })
+    },
+    [year, month, weekStartsOn],
+  )
+  var weekDays = useMemo(
+    function() {
+      return getWeekDays({
+        weekStartsOn: weekStartsOn,
+        weekDayFormat: weekDayFormat,
+      })
+    },
+    [weekStartsOn],
+  )
+  return {
+    days: days,
+    weekDays: weekDays,
+    monthLabel: monthLabelFormat(new Date(year, month)),
+  }
+}
 
 var MonthLabel = function(_a) {
   var label = _a.label
@@ -11856,6 +11964,9 @@ var MonthLabel = function(_a) {
     label,
   )
 }
+//# sourceMappingURL=MonthLabel.js.map
+
+//# sourceMappingURL=index.js.map
 
 var MonthLabel$1 = function(_a) {
   var label = _a.label
@@ -11865,6 +11976,9 @@ var MonthLabel$1 = function(_a) {
     label,
   )
 }
+//# sourceMappingURL=DayLabel.js.map
+
+//# sourceMappingURL=index.js.map
 
 var StyledDay = styled('div')(
   templateObject_4 ||
@@ -11979,23 +12093,31 @@ function Day(_a) {
     ),
   )
 }
+var Day$1 = React__default.memo(Day)
 var templateObject_1$5, templateObject_2$2, templateObject_3$1, templateObject_4
+//# sourceMappingURL=Day.js.map
+
+//# sourceMappingURL=index.js.map
 
 var Month = function(_a) {
-  var montLabel = _a.montLabel,
-    dayLabels = _a.dayLabels
+  var year = _a.year,
+    month = _a.month
+  var _b = useMonth({year: year, month: month}),
+    days = _b.days,
+    weekDays = _b.weekDays,
+    monthLabel = _b.monthLabel
   return React__default.createElement(
     'div',
     null,
     React__default.createElement(
       Flex,
       {justifyContent: 'center', mb: '28px'},
-      React__default.createElement(MonthLabel, {label: montLabel}),
+      React__default.createElement(MonthLabel, {label: monthLabel}),
     ),
     React__default.createElement(
       Grid,
       {gridTemplateColumns: 'repeat(7, 36px)'},
-      dayLabels.map(function(day) {
+      weekDays.map(function(day) {
         return React__default.createElement(
           Flex,
           {key: day, justifyContent: 'center', mb: '16px'},
@@ -12006,198 +12128,24 @@ var Month = function(_a) {
     React__default.createElement(
       Grid,
       {gridTemplateColumns: 'repeat(7, 36px)'},
-      React__default.createElement('div', null),
-      React__default.createElement('div', null),
-      React__default.createElement('div', null),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '1',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '2',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '3',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '4',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '5',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '6',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '7',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '8',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '9',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '10',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '11',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '12',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '13',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '14',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '15',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '16',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '17',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '18',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '19',
-        disabled: true,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '20',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '21',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '22',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '23',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '24',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '25',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '26',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: false,
-        day: '27',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: true,
-        day: '28',
-        disabled: false,
-        isStartOrEnd: true,
-      }),
-      React__default.createElement(Day, {
-        isActive: true,
-        day: '29',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: true,
-        day: '30',
-        disabled: false,
-        isStartOrEnd: false,
-      }),
-      React__default.createElement(Day, {
-        isActive: true,
-        day: '31',
-        disabled: false,
-        isStartOrEnd: true,
+      days.map(function(day, index) {
+        if (typeof day === 'object') {
+          return React__default.createElement(Day$1, {
+            isActive: false,
+            key: day.day,
+            day: day.day,
+            disabled: false,
+            isStartOrEnd: false,
+          })
+        }
+        return React__default.createElement('div', {key: index})
       }),
     ),
   )
 }
+//# sourceMappingURL=Month.js.map
+
+//# sourceMappingURL=index.js.map
 
 var Box = styled('div')(
   templateObject_1$6 ||
@@ -12238,6 +12186,9 @@ var Box = styled('div')(
   bottom,
 )
 var templateObject_1$6
+//# sourceMappingURL=Box.js.map
+
+//# sourceMappingURL=index.js.map
 
 function CaretIcon(_a) {
   var height = _a.height,
@@ -12263,6 +12214,9 @@ function CaretIcon(_a) {
     }),
   )
 }
+//# sourceMappingURL=RedoIcon.js.map
+
+//# sourceMappingURL=index.js.map
 
 function ResetDates() {
   return React__default.createElement(
@@ -12283,6 +12237,9 @@ function ResetDates() {
     ),
   )
 }
+//# sourceMappingURL=ResetDates.js.map
+
+//# sourceMappingURL=index.js.map
 
 function calculateAngle$1(direction) {
   switch (direction) {
@@ -12326,6 +12283,9 @@ function CaretIcon$1(_a) {
     }),
   )
 }
+//# sourceMappingURL=CaretIcon.js.map
+
+//# sourceMappingURL=index.js.map
 
 var StyledNavButton = styled('button')(
   templateObject_1$7 ||
@@ -12357,7 +12317,14 @@ function NavButton(_a) {
   var type = _a.type
   return React__default.createElement(
     StyledNavButton,
-    {width: '30px', height: '30px', background: '#ffffff', border: '1px solid #929598', p: '0'},
+    {
+      width: '30px',
+      height: '30px',
+      background: '#ffffff',
+      border: '1px solid #929598',
+      p: '0',
+      type: 'button',
+    },
     React__default.createElement(CaretIcon$1, {
       width: '18px',
       height: '11px',
@@ -12367,17 +12334,19 @@ function NavButton(_a) {
   )
 }
 var templateObject_1$7
+//# sourceMappingURL=NavButton.js.map
+
+//# sourceMappingURL=index.js.map
 
 var StyledDatepicker = styled('div')(
   templateObject_1$8 ||
     (templateObject_1$8 = __makeTemplateObject(
-      ['\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-      ['\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+      ['\n  ', '\n  ', '\n  ', '\n'],
+      ['\n  ', '\n  ', '\n  ', '\n'],
     )),
   background,
   space,
   borderRadius,
-  minWidth,
 )
 var DateWrapper = styled('div')(
   templateObject_2$3 ||
@@ -12391,10 +12360,9 @@ var DateWrapper = styled('div')(
     )),
 )
 function Datepicker() {
-  useMonth()
   return React__default.createElement(
     StyledDatepicker,
-    {minWidth: '535px', background: '#ffffff', p: '32px', borderRadius: '2px'},
+    {background: '#ffffff', p: '32px', borderRadius: '2px'},
     React__default.createElement(
       DateWrapper,
       null,
@@ -12433,27 +12401,24 @@ function Datepicker() {
       ),
       React__default.createElement(
         Grid,
-        {gridTemplateColumns: '1fr 1fr', gridGap: '0 32px'},
-        React__default.createElement(Month, {
-          montLabel: 'November, 2018',
-          dayLabels: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
-        }),
-        React__default.createElement(Month, {
-          montLabel: 'November, 2018',
-          dayLabels: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
-        }),
+        {gridTemplateColumns: 'repeat(2, 1fr)', gridGap: '0 32px'},
+        React__default.createElement(Month, {year: 2019, month: 2}),
+        React__default.createElement(Month, {year: 2019, month: 3}),
       ),
     ),
     React__default.createElement(Box, {mt: '32px'}, React__default.createElement(ResetDates, null)),
   )
 }
 var templateObject_1$8, templateObject_2$3
+//# sourceMappingURL=Datepicker.js.map
+
+//# sourceMappingURL=index.js.map
 
 var StyledArrowIcon = styled(ArrowIcon)(
   templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
   opacity,
 )
-function DateRange() {
+function DateRangePicker() {
   return React__default.createElement(
     'div',
     null,
@@ -12477,10 +12442,14 @@ function DateRange() {
   )
 }
 var templateObject_1$9
+//# sourceMappingURL=DateRangePicker.js.map
+
+//# sourceMappingURL=index.js.map
 
 function Demo() {
-  return createElement('div', null, createElement(DateRange, null))
+  return createElement('div', null, createElement(DateRangePicker, null))
 }
+//# sourceMappingURL=index.js.map
 
 export default Demo
 //# sourceMappingURL=index.esm.js.map
