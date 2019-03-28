@@ -1,20 +1,8 @@
 import {useMemo} from 'react'
-import startOfToday from 'date-fns/start_of_today'
-import getMonth from 'date-fns/get_month'
-import getYear from 'date-fns/get_year'
+import {getInitialMonths, MonthType} from './useDatepicker.utils'
 
 export const START_DATE = 'startDate'
 export const END_DATE = 'endDate'
-
-export function getCurrentYearAndMonth() {
-  const today = startOfToday()
-  const year = getYear(today)
-  const month = getMonth(today)
-  return {
-    year,
-    month,
-  }
-}
 
 interface UseDatepickerProps {
   minBookingDate?: Date
@@ -26,7 +14,7 @@ interface UseDatepickerProps {
   orientation?: 'horizontal' | 'vertical'
   numberOfMonths?: number
   firstDayOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6
-  initialVisibleMonth?(): {year: number; month: number}
+  initialVisibleMonth?(numberOfMonths: number): MonthType[]
 }
 
 export function useDatepicker({
@@ -37,13 +25,12 @@ export function useDatepicker({
   orientation = 'horizontal',
   numberOfMonths = 2,
   firstDayOfWeek = 1,
-  initialVisibleMonth = getCurrentYearAndMonth,
+  initialVisibleMonth = getInitialMonths,
 }: UseDatepickerProps) {
-  const {year, month} = useMemo(() => initialVisibleMonth(), [])
+  const activeMonths = useMemo(() => getInitialMonths(numberOfMonths), [initialVisibleMonth])
 
   console.log(
-    year,
-    month,
+    activeMonths,
     startDate,
     endDate,
     focusedInput,
@@ -54,6 +41,5 @@ export function useDatepicker({
 
   return {
     firstDayOfWeek,
-    initialVisibleMonth: initialVisibleMonth(),
   }
 }

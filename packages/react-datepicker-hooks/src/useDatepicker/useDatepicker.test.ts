@@ -1,11 +1,51 @@
 import {advanceTo, clear} from 'jest-date-mock'
-import {getCurrentYearAndMonth, isDateSelected, isStartOrEndDate, isDateBlocked} from '.'
+import {
+  getCurrentYearMonthAndDate,
+  getDateMonthAndYear,
+  getInitialMonths,
+  isDateSelected,
+  isStartOrEndDate,
+  isDateBlocked,
+} from '.'
 import {isEqual} from 'date-fns'
 
-test('should return current year and month', () => {
-  advanceTo(new Date(2019, 2, 27, 0, 0, 0))
-  expect(getCurrentYearAndMonth()).toEqual({year: 2019, month: 2})
-  clear()
+describe('getCurrentYearMonthAndDate', () => {
+  test('should return current year and month', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    expect(getCurrentYearMonthAndDate().year).toEqual(2019)
+    expect(getCurrentYearMonthAndDate().month).toEqual(2)
+    clear()
+  })
+})
+
+describe('getDateMonthAndYear', () => {
+  test('should return year and month', () => {
+    const date = new Date(2019, 2, 27, 0, 0, 0)
+    expect(getDateMonthAndYear(date).year).toEqual(2019)
+    expect(getDateMonthAndYear(date).month).toEqual(2)
+  })
+})
+
+describe('getInitialMonths', () => {
+  test('should return 2 months', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const months = getInitialMonths(2)
+    expect(months.length).toBe(2)
+    expect(months[0].year).toEqual(2019)
+    expect(months[0].month).toEqual(2)
+    expect(months[1].year).toEqual(2019)
+    expect(months[1].month).toEqual(3)
+    clear()
+  })
+
+  test('should return 1 month', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const months = getInitialMonths(1)
+    expect(months.length).toBe(1)
+    expect(months[0].year).toEqual(2019)
+    expect(months[0].month).toEqual(2)
+    clear()
+  })
 })
 
 const startDate = new Date(2019, 2, 20, 0, 0, 0)
