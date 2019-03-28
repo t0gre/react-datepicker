@@ -6354,15 +6354,15 @@ var parseTokenYY = /^(\d{2})$/
 var parseTokensYYY = [
   /^([+-]\d{2})$/, // 0 additional digits
   /^([+-]\d{3})$/, // 1 additional digit
-  /^([+-]\d{4})$/, // 2 additional digits
+  /^([+-]\d{4})$/,
 ]
 var parseTokenYYYY = /^(\d{4})/
 var parseTokensYYYYY = [
   /^([+-]\d{4})/, // 0 additional digits
   /^([+-]\d{5})/, // 1 additional digit
-  /^([+-]\d{6})/, // 2 additional digits
-] // date tokens
-
+  /^([+-]\d{6})/,
+]
+// date tokens
 var parseTokenMM = /^-(\d{2})$/
 var parseTokenDDD = /^-?(\d{3})$/
 var parseTokenMMDD = /^-?(\d{2})-?(\d{2})$/
@@ -8154,9 +8154,8 @@ function buildFormatLocale() {
     // a.m., p.m.
     aa: function(date) {
       return date.getHours() / 12 >= 1 ? meridiemFull[1] : meridiemFull[0]
-    },
-  } // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
-
+    }, // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  }
   var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
   ordinalFormatters.forEach(function(formatterToken) {
     formatters[formatterToken + 'o'] = function(date, formatters) {
