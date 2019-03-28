@@ -1,4 +1,4 @@
-import {isWithinRange, isSameDay} from 'date-fns'
+import {isWithinRange, isSameDay, isBefore, isAfter} from 'date-fns'
 
 export function isDateSelected(date: Date, startDate: Date | null, endDate: Date | null) {
   if (startDate && endDate) {
@@ -9,9 +9,18 @@ export function isDateSelected(date: Date, startDate: Date | null, endDate: Date
 }
 
 export function isStartOrEndDate(date: Date, startDate: Date | null, endDate: Date | null) {
-  if ((startDate && isSameDay(date, startDate)) || (endDate && isSameDay(date, endDate))) {
-    return true
-  }
+  return !!((startDate && isSameDay(date, startDate)) || (endDate && isSameDay(date, endDate)))
+}
 
-  return false
+export function isDateBlocked(
+  date: Date,
+  minBookingDate?: Date,
+  maxBookingDate?: Date,
+  isDayBlockedFn?: (date?: Date) => boolean,
+) {
+  return !!(
+    (minBookingDate && isBefore(date, minBookingDate)) ||
+    (maxBookingDate && isAfter(date, maxBookingDate)) ||
+    (isDayBlockedFn && isDayBlockedFn(date))
+  )
 }
