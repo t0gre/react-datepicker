@@ -1,4 +1,4 @@
 import {getCurrentYearAndMonth} from './useDatepicker'
-import {isDateSelected} from './useDatepicker.utils'
+import {isDateSelected, isStartOrEndDate} from './useDatepicker.utils'
 
-export {getCurrentYearAndMonth, isDateSelected}
+export {getCurrentYearAndMonth, isDateSelected, isStartOrEndDate}
