@@ -1,5 +1,6 @@
 import {useState, useCallback} from 'react'
-import {isBefore, isAfter} from 'date-fns'
+import isBefore from 'date-fns/is_before'
+import isAfter from 'date-fns/is_after'
 import {
   getInitialMonths,
   MonthType,

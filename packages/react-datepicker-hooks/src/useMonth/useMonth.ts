@@ -1,5 +1,5 @@
 import {useMemo} from 'react'
-import {format} from 'date-fns'
+import format from 'date-fns/format'
 import {getDays, GetDaysProps, getWeekDays, GetWeekDaysProps} from './useMonth.utils'
 
 export interface UseMonthResult {

@@ -2,45 +2,36 @@ import typescript from 'rollup-plugin-typescript2'
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import analyze from 'rollup-plugin-analyzer'
+// import analyze from 'rollup-plugin-analyzer'
+// import visualizer from 'rollup-plugin-visualizer'
+import replace from 'rollup-plugin-replace'
+import {terser} from 'rollup-plugin-terser'
 
 export function rollup({packageJsonPath, input = './src/index.ts'}) {
   return {
     input: input,
-    external: ['react', 'react-dom'],
+    external: ['react', 'react-dom', 'styled-components'],
     output: [
       {
         file: 'lib/index.cjs.js',
         format: 'cjs',
         exports: 'named',
-        sourcemap: true,
+        sourcemap: false,
       },
       {
         file: 'lib/index.esm.js',
         format: 'es',
         exports: 'named',
-        sourcemap: true,
+        sourcemap: false,
       },
     ],
     plugins: [
-      analyze(),
+      commonjs(),
       resolve(),
-      commonjs({
-        include: 'node_modules/**',
-        // left-hand side can be an absolute path, a path
-        // relative to the current directory, or the name
-        // of a module in node_modules
-        namedExports: {
-          'node_modules/react/index.js': [
-            'cloneElement',
-            'createContext',
-            'Component',
-            'createElement',
-          ],
-          'node_modules/react-dom/index.js': ['render', 'hydrate'],
-          'node_modules/react-is/index.js': ['isElement', 'isValidElementType', 'ForwardRef'],
-        },
+      replace({
+        'process.env.NODE_ENV': JSON.stringify('production'),
       }),
+      // analyze(),
       babel({
         exclude: 'node_modules/**',
       }),
@@ -49,6 +40,8 @@ export function rollup({packageJsonPath, input = './src/index.ts'}) {
         rollupCommonJSResolveHack: true,
         clean: true,
       }),
+      terser(),
+      // visualizer(),
     ],
   }
 }

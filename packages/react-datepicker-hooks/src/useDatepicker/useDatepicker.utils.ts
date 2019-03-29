@@ -1,15 +1,13 @@
-import {
-  isWithinRange,
-  isSameDay,
-  isBefore,
-  isAfter,
-  getYear,
-  getMonth,
-  startOfToday,
-  startOfMonth,
-  addMonths,
-  format,
-} from 'date-fns'
+import isWithinRange from 'date-fns/is_within_range'
+import isSameDay from 'date-fns/is_same_day'
+import isBefore from 'date-fns/is_before'
+import isAfter from 'date-fns/is_after'
+import getYear from 'date-fns/get_year'
+import getMonth from 'date-fns/get_month'
+import startOfToday from 'date-fns/start_of_today'
+import startOfMonth from 'date-fns/start_of_month'
+import addMonths from 'date-fns/add_months'
+import format from 'date-fns/format'
 
 export function isDateSelected(date: Date, startDate: Date | null, endDate: Date | null) {
   if (startDate && endDate) {

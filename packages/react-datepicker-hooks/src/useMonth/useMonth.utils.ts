@@ -1,13 +1,11 @@
-import {
-  addDays,
-  eachDay,
-  endOfMonth,
-  endOfWeek,
-  format,
-  getDay,
-  startOfMonth,
-  startOfWeek,
-} from 'date-fns'
+import addDays from 'date-fns/add_days'
+import eachDay from 'date-fns/each_day'
+import endOfMonth from 'date-fns/end_of_month'
+import endOfWeek from 'date-fns/end_of_week'
+import format from 'date-fns/format'
+import getDay from 'date-fns/get_day'
+import startOfMonth from 'date-fns/start_of_month'
+import startOfWeek from 'date-fns/start_of_week'
 
 type WeekStartsOn = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export interface GetWeekDaysProps {
