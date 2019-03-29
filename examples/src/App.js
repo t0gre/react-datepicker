@@ -1,7 +1,26 @@
-import React from 'react'
+import React, {useReducer} from 'react'
 import {DateRangeInput} from '@react-datepicker/styled'
 
+const initialState = {
+  startDate: null,
+  endDate: null,
+  focusedInput: null,
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'focusChange':
+      return {...state, focusedInput: action.payload}
+    case 'dateChange':
+      return action.payload
+    default:
+      throw new Error()
+  }
+}
+
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
   return (
     <div
       style={{
@@ -19,10 +38,8 @@ function App() {
         maxBookingDate={new Date(2019, 2, 27)}
         startDate={new Date(2019, 2, 12)}
         endDate={new Date(2019, 2, 20)}
-        focusedInput="endDate"
-        onFocusChange={focusedInput => {
-          console.log(focusedInput)
-        }}
+        focusedInput={state.focusedInput}
+        onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
       />
     </div>
   )
