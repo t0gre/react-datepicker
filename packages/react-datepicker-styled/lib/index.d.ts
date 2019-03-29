@@ -1,1 +1,2 @@
-export default function Demo(): JSX.Element
+import DateRangePicker from './components/DateRangePicker';
+export { DateRangePicker };

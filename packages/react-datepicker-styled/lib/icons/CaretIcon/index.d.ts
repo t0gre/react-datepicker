@@ -1,2 +1,2 @@
-import CaretIcon from './CaretIcon'
-export default CaretIcon
+import CaretIcon from './CaretIcon';
+export default CaretIcon;

@@ -1,2 +1,2 @@
-import Close from './Close'
-export default Close
+import Close from './Close';
+export default Close;

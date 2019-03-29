@@ -1,2 +1,2 @@
-declare function ResetDates(): JSX.Element
-export default ResetDates
+declare function ResetDates(): JSX.Element;
+export default ResetDates;

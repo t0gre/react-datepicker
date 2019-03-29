@@ -8,7 +8,8 @@ import {
   borderRadius,
   BorderRadiusProps,
 } from 'styled-system'
-import Date from '../Date'
+import {useDatepicker, MonthType, UseDatepickerProps} from '@react-datepicker/hooks'
+import SelectedDate from '../SelectedDate'
 import Grid from '../Grid'
 import Flex from '../Flex'
 import Month from '../Month'
@@ -39,16 +40,42 @@ const DateWrapper = styled('div')`
   }
 `
 
-function Datepicker() {
+function Datepicker({
+  startDate,
+  endDate,
+  minBookingDate,
+  maxBookingDate,
+  onFocusChange,
+  focusedInput,
+  numberOfMonths,
+  firstDayOfWeek: firstDayOfWeekProp,
+}: UseDatepickerProps) {
+  const {
+    activeMonths,
+    isDateSelected,
+    isStartOrEndDate,
+    isDateBlocked,
+    firstDayOfWeek,
+  } = useDatepicker({
+    startDate,
+    endDate,
+    focusedInput,
+    onFocusChange: onFocusChange,
+    minBookingDate,
+    maxBookingDate,
+    numberOfMonths,
+    firstDayOfWeek: firstDayOfWeekProp,
+  })
+
   return (
     <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px">
       <DateWrapper>
         <Grid gridTemplateColumns="126px 75px 126px">
-          <Date title="Start date:" date="Select" isActive />
+          <SelectedDate title="Start date:" date="Select" isActive />
           <Flex justifyContent="center" alignItems="center">
             <ArrowIcon height="12px" width="15px" color="#929598" />
           </Flex>
-          <Date title="end date:" date="Select" isActive={false} />
+          <SelectedDate title="end date:" date="Select" isActive={false} />
         </Grid>
       </DateWrapper>
       <Box mt="28px" position="relative">
@@ -59,8 +86,17 @@ function Datepicker() {
           <NavButton type="next" />
         </Box>
         <Grid gridTemplateColumns="repeat(2, 1fr)" gridGap="0 32px">
-          <Month year={2019} month={2} />
-          <Month year={2019} month={3} />
+          {activeMonths.map((month: MonthType) => (
+            <Month
+              key={`${month.year}-${month.month}`}
+              year={month.year}
+              month={month.month}
+              firstDayOfWeek={firstDayOfWeek}
+              isDateBlocked={isDateBlocked}
+              isDateSelected={isDateSelected}
+              isStartOrEndDate={isStartOrEndDate}
+            />
+          ))}
         </Grid>
       </Box>
       <Box mt="32px">

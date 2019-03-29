@@ -9,10 +9,21 @@ import Day from '../Day'
 interface MonthProps {
   year: number
   month: number
+  firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  isDateBlocked(date: Date): boolean
+  isDateSelected(date: Date): boolean
+  isStartOrEndDate(date: Date): boolean
 }
 
-const Month = ({year, month}: MonthProps) => {
-  const {days, weekDays, monthLabel} = useMonth({year, month})
+const Month = ({
+  year,
+  month,
+  firstDayOfWeek,
+  isDateBlocked,
+  isDateSelected,
+  isStartOrEndDate,
+}: MonthProps) => {
+  const {days, weekDays, monthLabel} = useMonth({year, month, weekStartsOn: firstDayOfWeek})
 
   return (
     <div>
@@ -31,11 +42,11 @@ const Month = ({year, month}: MonthProps) => {
           if (typeof day === 'object') {
             return (
               <Day
-                isActive={false}
+                isActive={isDateSelected(day.date)}
                 key={day.day}
                 day={day.day}
-                disabled={false}
-                isStartOrEnd={false}
+                disabled={isDateBlocked(day.date)}
+                isStartOrEnd={isStartOrEndDate(day.date)}
               />
             )
           }

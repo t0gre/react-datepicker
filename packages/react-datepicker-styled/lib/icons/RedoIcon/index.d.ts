@@ -1,2 +1,2 @@
-import RedoIcon from './RedoIcon'
-export default RedoIcon
+import RedoIcon from './RedoIcon';
+export default RedoIcon;

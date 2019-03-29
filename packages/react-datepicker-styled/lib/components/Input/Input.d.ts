@@ -1,2 +1,2 @@
-declare function Input(): JSX.Element
-export default Input
+declare function Input(): JSX.Element;
+export default Input;

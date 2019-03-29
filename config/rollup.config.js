@@ -4,7 +4,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import analyze from 'rollup-plugin-analyzer'
 
-export function rollup({packageJsonPath, input = './src/index.tsx'}) {
+export function rollup({packageJsonPath, input = './src/index.ts'}) {
   return {
     input: input,
     external: ['react', 'react-dom'],

@@ -1,6 +1,6 @@
-import {useMemo} from 'react'
+import { useMemo, useCallback } from 'react';
 
-var MILLISECONDS_IN_MINUTE = 60000
+var MILLISECONDS_IN_MINUTE = 60000;
 
 /**
  * Google Chrome as of 67.0.3396.87 introduced timezones with offset that includes seconds.
@@ -13,14 +13,14 @@ var MILLISECONDS_IN_MINUTE = 60000
  *
  * This function returns the timezone offset in milliseconds that takes seconds in account.
  */
-var getTimezoneOffsetInMilliseconds = function getTimezoneOffsetInMilliseconds(dirtyDate) {
-  var date = new Date(dirtyDate.getTime())
-  var baseTimezoneOffset = date.getTimezoneOffset()
-  date.setSeconds(0, 0)
-  var millisecondsPartOfTimezoneOffset = date.getTime() % MILLISECONDS_IN_MINUTE
+var getTimezoneOffsetInMilliseconds = function getTimezoneOffsetInMilliseconds (dirtyDate) {
+  var date = new Date(dirtyDate.getTime());
+  var baseTimezoneOffset = date.getTimezoneOffset();
+  date.setSeconds(0, 0);
+  var millisecondsPartOfTimezoneOffset = date.getTime() % MILLISECONDS_IN_MINUTE;
 
   return baseTimezoneOffset * MILLISECONDS_IN_MINUTE + millisecondsPartOfTimezoneOffset
-}
+};
 
 /**
  * @category Common Helpers
@@ -37,51 +37,51 @@ var getTimezoneOffsetInMilliseconds = function getTimezoneOffsetInMilliseconds(d
  * var result = isDate('mayonnaise')
  * //=> false
  */
-function isDate(argument) {
+function isDate (argument) {
   return argument instanceof Date
 }
 
-var is_date = isDate
+var is_date = isDate;
 
-var MILLISECONDS_IN_HOUR = 3600000
-var MILLISECONDS_IN_MINUTE$1 = 60000
-var DEFAULT_ADDITIONAL_DIGITS = 2
+var MILLISECONDS_IN_HOUR = 3600000;
+var MILLISECONDS_IN_MINUTE$1 = 60000;
+var DEFAULT_ADDITIONAL_DIGITS = 2;
 
-var parseTokenDateTimeDelimeter = /[T ]/
-var parseTokenPlainTime = /:/
+var parseTokenDateTimeDelimeter = /[T ]/;
+var parseTokenPlainTime = /:/;
 
 // year tokens
-var parseTokenYY = /^(\d{2})$/
+var parseTokenYY = /^(\d{2})$/;
 var parseTokensYYY = [
   /^([+-]\d{2})$/, // 0 additional digits
   /^([+-]\d{3})$/, // 1 additional digit
-  /^([+-]\d{4})$/, // 2 additional digits
-]
+  /^([+-]\d{4})$/ // 2 additional digits
+];
 
-var parseTokenYYYY = /^(\d{4})/
+var parseTokenYYYY = /^(\d{4})/;
 var parseTokensYYYYY = [
   /^([+-]\d{4})/, // 0 additional digits
   /^([+-]\d{5})/, // 1 additional digit
-  /^([+-]\d{6})/, // 2 additional digits
-]
+  /^([+-]\d{6})/ // 2 additional digits
+];
 
 // date tokens
-var parseTokenMM = /^-(\d{2})$/
-var parseTokenDDD = /^-?(\d{3})$/
-var parseTokenMMDD = /^-?(\d{2})-?(\d{2})$/
-var parseTokenWww = /^-?W(\d{2})$/
-var parseTokenWwwD = /^-?W(\d{2})-?(\d{1})$/
+var parseTokenMM = /^-(\d{2})$/;
+var parseTokenDDD = /^-?(\d{3})$/;
+var parseTokenMMDD = /^-?(\d{2})-?(\d{2})$/;
+var parseTokenWww = /^-?W(\d{2})$/;
+var parseTokenWwwD = /^-?W(\d{2})-?(\d{1})$/;
 
 // time tokens
-var parseTokenHH = /^(\d{2}([.,]\d*)?)$/
-var parseTokenHHMM = /^(\d{2}):?(\d{2}([.,]\d*)?)$/
-var parseTokenHHMMSS = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/
+var parseTokenHH = /^(\d{2}([.,]\d*)?)$/;
+var parseTokenHHMM = /^(\d{2}):?(\d{2}([.,]\d*)?)$/;
+var parseTokenHHMMSS = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/;
 
 // timezone tokens
-var parseTokenTimezone = /([Z+-].*)$/
-var parseTokenTimezoneZ = /^(Z)$/
-var parseTokenTimezoneHH = /^([+-])(\d{2})$/
-var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/
+var parseTokenTimezone = /([Z+-].*)$/;
+var parseTokenTimezoneZ = /^(Z)$/;
+var parseTokenTimezoneHH = /^([+-])(\d{2})$/;
+var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/;
 
 /**
  * @category Common Helpers
@@ -116,7 +116,7 @@ var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/
  * var result = parse('+02014101', {additionalDigits: 1})
  * //=> Fri Apr 11 2014 00:00:00
  */
-function parse(argument, dirtyOptions) {
+function parse (argument, dirtyOptions) {
   if (is_date(argument)) {
     // Prevent the date to lose the milliseconds when passed to new Date() in IE10
     return new Date(argument.getTime())
@@ -124,47 +124,47 @@ function parse(argument, dirtyOptions) {
     return new Date(argument)
   }
 
-  var options = dirtyOptions || {}
-  var additionalDigits = options.additionalDigits
+  var options = dirtyOptions || {};
+  var additionalDigits = options.additionalDigits;
   if (additionalDigits == null) {
-    additionalDigits = DEFAULT_ADDITIONAL_DIGITS
+    additionalDigits = DEFAULT_ADDITIONAL_DIGITS;
   } else {
-    additionalDigits = Number(additionalDigits)
+    additionalDigits = Number(additionalDigits);
   }
 
-  var dateStrings = splitDateString(argument)
+  var dateStrings = splitDateString(argument);
 
-  var parseYearResult = parseYear(dateStrings.date, additionalDigits)
-  var year = parseYearResult.year
-  var restDateString = parseYearResult.restDateString
+  var parseYearResult = parseYear(dateStrings.date, additionalDigits);
+  var year = parseYearResult.year;
+  var restDateString = parseYearResult.restDateString;
 
-  var date = parseDate(restDateString, year)
+  var date = parseDate(restDateString, year);
 
   if (date) {
-    var timestamp = date.getTime()
-    var time = 0
-    var offset
+    var timestamp = date.getTime();
+    var time = 0;
+    var offset;
 
     if (dateStrings.time) {
-      time = parseTime(dateStrings.time)
+      time = parseTime(dateStrings.time);
     }
 
     if (dateStrings.timezone) {
-      offset = parseTimezone(dateStrings.timezone) * MILLISECONDS_IN_MINUTE$1
+      offset = parseTimezone(dateStrings.timezone) * MILLISECONDS_IN_MINUTE$1;
     } else {
-      var fullTime = timestamp + time
-      var fullTimeDate = new Date(fullTime)
+      var fullTime = timestamp + time;
+      var fullTimeDate = new Date(fullTime);
 
-      offset = getTimezoneOffsetInMilliseconds(fullTimeDate)
+      offset = getTimezoneOffsetInMilliseconds(fullTimeDate);
 
       // Adjust time when it's coming from DST
-      var fullTimeDateNextDay = new Date(fullTime)
-      fullTimeDateNextDay.setDate(fullTimeDate.getDate() + 1)
+      var fullTimeDateNextDay = new Date(fullTime);
+      fullTimeDateNextDay.setDate(fullTimeDate.getDate() + 1);
       var offsetDiff =
         getTimezoneOffsetInMilliseconds(fullTimeDateNextDay) -
-        getTimezoneOffsetInMilliseconds(fullTimeDate)
+        getTimezoneOffsetInMilliseconds(fullTimeDate);
       if (offsetDiff > 0) {
-        offset += offsetDiff
+        offset += offsetDiff;
       }
     }
 
@@ -174,122 +174,122 @@ function parse(argument, dirtyOptions) {
   }
 }
 
-function splitDateString(dateString) {
-  var dateStrings = {}
-  var array = dateString.split(parseTokenDateTimeDelimeter)
-  var timeString
+function splitDateString (dateString) {
+  var dateStrings = {};
+  var array = dateString.split(parseTokenDateTimeDelimeter);
+  var timeString;
 
   if (parseTokenPlainTime.test(array[0])) {
-    dateStrings.date = null
-    timeString = array[0]
+    dateStrings.date = null;
+    timeString = array[0];
   } else {
-    dateStrings.date = array[0]
-    timeString = array[1]
+    dateStrings.date = array[0];
+    timeString = array[1];
   }
 
   if (timeString) {
-    var token = parseTokenTimezone.exec(timeString)
+    var token = parseTokenTimezone.exec(timeString);
     if (token) {
-      dateStrings.time = timeString.replace(token[1], '')
-      dateStrings.timezone = token[1]
+      dateStrings.time = timeString.replace(token[1], '');
+      dateStrings.timezone = token[1];
     } else {
-      dateStrings.time = timeString
+      dateStrings.time = timeString;
     }
   }
 
   return dateStrings
 }
 
-function parseYear(dateString, additionalDigits) {
-  var parseTokenYYY = parseTokensYYY[additionalDigits]
-  var parseTokenYYYYY = parseTokensYYYYY[additionalDigits]
+function parseYear (dateString, additionalDigits) {
+  var parseTokenYYY = parseTokensYYY[additionalDigits];
+  var parseTokenYYYYY = parseTokensYYYYY[additionalDigits];
 
-  var token
+  var token;
 
   // YYYY or ±YYYYY
-  token = parseTokenYYYY.exec(dateString) || parseTokenYYYYY.exec(dateString)
+  token = parseTokenYYYY.exec(dateString) || parseTokenYYYYY.exec(dateString);
   if (token) {
-    var yearString = token[1]
+    var yearString = token[1];
     return {
       year: parseInt(yearString, 10),
-      restDateString: dateString.slice(yearString.length),
+      restDateString: dateString.slice(yearString.length)
     }
   }
 
   // YY or ±YYY
-  token = parseTokenYY.exec(dateString) || parseTokenYYY.exec(dateString)
+  token = parseTokenYY.exec(dateString) || parseTokenYYY.exec(dateString);
   if (token) {
-    var centuryString = token[1]
+    var centuryString = token[1];
     return {
       year: parseInt(centuryString, 10) * 100,
-      restDateString: dateString.slice(centuryString.length),
+      restDateString: dateString.slice(centuryString.length)
     }
   }
 
   // Invalid ISO-formatted year
   return {
-    year: null,
+    year: null
   }
 }
 
-function parseDate(dateString, year) {
+function parseDate (dateString, year) {
   // Invalid ISO-formatted year
   if (year === null) {
     return null
   }
 
-  var token
-  var date
-  var month
-  var week
+  var token;
+  var date;
+  var month;
+  var week;
 
   // YYYY
   if (dateString.length === 0) {
-    date = new Date(0)
-    date.setUTCFullYear(year)
+    date = new Date(0);
+    date.setUTCFullYear(year);
     return date
   }
 
   // YYYY-MM
-  token = parseTokenMM.exec(dateString)
+  token = parseTokenMM.exec(dateString);
   if (token) {
-    date = new Date(0)
-    month = parseInt(token[1], 10) - 1
-    date.setUTCFullYear(year, month)
+    date = new Date(0);
+    month = parseInt(token[1], 10) - 1;
+    date.setUTCFullYear(year, month);
     return date
   }
 
   // YYYY-DDD or YYYYDDD
-  token = parseTokenDDD.exec(dateString)
+  token = parseTokenDDD.exec(dateString);
   if (token) {
-    date = new Date(0)
-    var dayOfYear = parseInt(token[1], 10)
-    date.setUTCFullYear(year, 0, dayOfYear)
+    date = new Date(0);
+    var dayOfYear = parseInt(token[1], 10);
+    date.setUTCFullYear(year, 0, dayOfYear);
     return date
   }
 
   // YYYY-MM-DD or YYYYMMDD
-  token = parseTokenMMDD.exec(dateString)
+  token = parseTokenMMDD.exec(dateString);
   if (token) {
-    date = new Date(0)
-    month = parseInt(token[1], 10) - 1
-    var day = parseInt(token[2], 10)
-    date.setUTCFullYear(year, month, day)
+    date = new Date(0);
+    month = parseInt(token[1], 10) - 1;
+    var day = parseInt(token[2], 10);
+    date.setUTCFullYear(year, month, day);
     return date
   }
 
   // YYYY-Www or YYYYWww
-  token = parseTokenWww.exec(dateString)
+  token = parseTokenWww.exec(dateString);
   if (token) {
-    week = parseInt(token[1], 10) - 1
+    week = parseInt(token[1], 10) - 1;
     return dayOfISOYear(year, week)
   }
 
   // YYYY-Www-D or YYYYWwwD
-  token = parseTokenWwwD.exec(dateString)
+  token = parseTokenWwwD.exec(dateString);
   if (token) {
-    week = parseInt(token[1], 10) - 1
-    var dayOfWeek = parseInt(token[2], 10) - 1
+    week = parseInt(token[1], 10) - 1;
+    var dayOfWeek = parseInt(token[2], 10) - 1;
     return dayOfISOYear(year, week, dayOfWeek)
   }
 
@@ -297,78 +297,81 @@ function parseDate(dateString, year) {
   return null
 }
 
-function parseTime(timeString) {
-  var token
-  var hours
-  var minutes
+function parseTime (timeString) {
+  var token;
+  var hours;
+  var minutes;
 
   // hh
-  token = parseTokenHH.exec(timeString)
+  token = parseTokenHH.exec(timeString);
   if (token) {
-    hours = parseFloat(token[1].replace(',', '.'))
+    hours = parseFloat(token[1].replace(',', '.'));
     return (hours % 24) * MILLISECONDS_IN_HOUR
   }
 
   // hh:mm or hhmm
-  token = parseTokenHHMM.exec(timeString)
+  token = parseTokenHHMM.exec(timeString);
   if (token) {
-    hours = parseInt(token[1], 10)
-    minutes = parseFloat(token[2].replace(',', '.'))
-    return (hours % 24) * MILLISECONDS_IN_HOUR + minutes * MILLISECONDS_IN_MINUTE$1
+    hours = parseInt(token[1], 10);
+    minutes = parseFloat(token[2].replace(',', '.'));
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE$1
   }
 
   // hh:mm:ss or hhmmss
-  token = parseTokenHHMMSS.exec(timeString)
+  token = parseTokenHHMMSS.exec(timeString);
   if (token) {
-    hours = parseInt(token[1], 10)
-    minutes = parseInt(token[2], 10)
-    var seconds = parseFloat(token[3].replace(',', '.'))
-    return (hours % 24) * MILLISECONDS_IN_HOUR + minutes * MILLISECONDS_IN_MINUTE$1 + seconds * 1000
+    hours = parseInt(token[1], 10);
+    minutes = parseInt(token[2], 10);
+    var seconds = parseFloat(token[3].replace(',', '.'));
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE$1 +
+      seconds * 1000
   }
 
   // Invalid ISO-formatted time
   return null
 }
 
-function parseTimezone(timezoneString) {
-  var token
-  var absoluteOffset
+function parseTimezone (timezoneString) {
+  var token;
+  var absoluteOffset;
 
   // Z
-  token = parseTokenTimezoneZ.exec(timezoneString)
+  token = parseTokenTimezoneZ.exec(timezoneString);
   if (token) {
     return 0
   }
 
   // ±hh
-  token = parseTokenTimezoneHH.exec(timezoneString)
+  token = parseTokenTimezoneHH.exec(timezoneString);
   if (token) {
-    absoluteOffset = parseInt(token[2], 10) * 60
-    return token[1] === '+' ? -absoluteOffset : absoluteOffset
+    absoluteOffset = parseInt(token[2], 10) * 60;
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
   }
 
   // ±hh:mm or ±hhmm
-  token = parseTokenTimezoneHHMM.exec(timezoneString)
+  token = parseTokenTimezoneHHMM.exec(timezoneString);
   if (token) {
-    absoluteOffset = parseInt(token[2], 10) * 60 + parseInt(token[3], 10)
-    return token[1] === '+' ? -absoluteOffset : absoluteOffset
+    absoluteOffset = parseInt(token[2], 10) * 60 + parseInt(token[3], 10);
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
   }
 
   return 0
 }
 
-function dayOfISOYear(isoYear, week, day) {
-  week = week || 0
-  day = day || 0
-  var date = new Date(0)
-  date.setUTCFullYear(isoYear, 0, 4)
-  var fourthOfJanuaryDay = date.getUTCDay() || 7
-  var diff = week * 7 + day + 1 - fourthOfJanuaryDay
-  date.setUTCDate(date.getUTCDate() + diff)
+function dayOfISOYear (isoYear, week, day) {
+  week = week || 0;
+  day = day || 0;
+  var date = new Date(0);
+  date.setUTCFullYear(isoYear, 0, 4);
+  var fourthOfJanuaryDay = date.getUTCDay() || 7;
+  var diff = week * 7 + day + 1 - fourthOfJanuaryDay;
+  date.setUTCDate(date.getUTCDate() + diff);
   return date
 }
 
-var parse_1 = parse
+var parse_1 = parse;
 
 /**
  * @category Day Helpers
@@ -386,14 +389,14 @@ var parse_1 = parse
  * var result = addDays(new Date(2014, 8, 1), 10)
  * //=> Thu Sep 11 2014 00:00:00
  */
-function addDays(dirtyDate, dirtyAmount) {
-  var date = parse_1(dirtyDate)
-  var amount = Number(dirtyAmount)
-  date.setDate(date.getDate() + amount)
+function addDays (dirtyDate, dirtyAmount) {
+  var date = parse_1(dirtyDate);
+  var amount = Number(dirtyAmount);
+  date.setDate(date.getDate() + amount);
   return date
 }
 
-var add_days = addDays
+var add_days = addDays;
 
 /**
  * @category Millisecond Helpers
@@ -411,15 +414,15 @@ var add_days = addDays
  * var result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
  * //=> Thu Jul 10 2014 12:45:30.750
  */
-function addMilliseconds(dirtyDate, dirtyAmount) {
-  var timestamp = parse_1(dirtyDate).getTime()
-  var amount = Number(dirtyAmount)
+function addMilliseconds (dirtyDate, dirtyAmount) {
+  var timestamp = parse_1(dirtyDate).getTime();
+  var amount = Number(dirtyAmount);
   return new Date(timestamp + amount)
 }
 
-var add_milliseconds = addMilliseconds
+var add_milliseconds = addMilliseconds;
 
-var MILLISECONDS_IN_HOUR$1 = 3600000
+var MILLISECONDS_IN_HOUR$1 = 3600000;
 
 /**
  * @category Hour Helpers
@@ -437,12 +440,12 @@ var MILLISECONDS_IN_HOUR$1 = 3600000
  * var result = addHours(new Date(2014, 6, 10, 23, 0), 2)
  * //=> Fri Jul 11 2014 01:00:00
  */
-function addHours(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function addHours (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_milliseconds(dirtyDate, amount * MILLISECONDS_IN_HOUR$1)
 }
 
-var add_hours = addHours
+var add_hours = addHours;
 
 /**
  * @category Week Helpers
@@ -467,19 +470,19 @@ var add_hours = addHours
  * var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
  * //=> Mon Sep 01 2014 00:00:00
  */
-function startOfWeek(dirtyDate, dirtyOptions) {
-  var weekStartsOn = dirtyOptions ? Number(dirtyOptions.weekStartsOn) || 0 : 0
+function startOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0;
 
-  var date = parse_1(dirtyDate)
-  var day = date.getDay()
-  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn
+  var date = parse_1(dirtyDate);
+  var day = date.getDay();
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
 
-  date.setDate(date.getDate() - diff)
-  date.setHours(0, 0, 0, 0)
+  date.setDate(date.getDate() - diff);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var start_of_week = startOfWeek
+var start_of_week = startOfWeek;
 
 /**
  * @category ISO Week Helpers
@@ -499,11 +502,11 @@ var start_of_week = startOfWeek
  * var result = startOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Mon Sep 01 2014 00:00:00
  */
-function startOfISOWeek(dirtyDate) {
+function startOfISOWeek (dirtyDate) {
   return start_of_week(dirtyDate, {weekStartsOn: 1})
 }
 
-var start_of_iso_week = startOfISOWeek
+var start_of_iso_week = startOfISOWeek;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -523,19 +526,19 @@ var start_of_iso_week = startOfISOWeek
  * var result = getISOYear(new Date(2005, 0, 2))
  * //=> 2004
  */
-function getISOYear(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var year = date.getFullYear()
+function getISOYear (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var year = date.getFullYear();
 
-  var fourthOfJanuaryOfNextYear = new Date(0)
-  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4)
-  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0)
-  var startOfNextYear = start_of_iso_week(fourthOfJanuaryOfNextYear)
+  var fourthOfJanuaryOfNextYear = new Date(0);
+  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4);
+  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0);
+  var startOfNextYear = start_of_iso_week(fourthOfJanuaryOfNextYear);
 
-  var fourthOfJanuaryOfThisYear = new Date(0)
-  fourthOfJanuaryOfThisYear.setFullYear(year, 0, 4)
-  fourthOfJanuaryOfThisYear.setHours(0, 0, 0, 0)
-  var startOfThisYear = start_of_iso_week(fourthOfJanuaryOfThisYear)
+  var fourthOfJanuaryOfThisYear = new Date(0);
+  fourthOfJanuaryOfThisYear.setFullYear(year, 0, 4);
+  fourthOfJanuaryOfThisYear.setHours(0, 0, 0, 0);
+  var startOfThisYear = start_of_iso_week(fourthOfJanuaryOfThisYear);
 
   if (date.getTime() >= startOfNextYear.getTime()) {
     return year + 1
@@ -546,7 +549,7 @@ function getISOYear(dirtyDate) {
   }
 }
 
-var get_iso_year = getISOYear
+var get_iso_year = getISOYear;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -567,16 +570,16 @@ var get_iso_year = getISOYear
  * var result = startOfISOYear(new Date(2005, 6, 2))
  * //=> Mon Jan 03 2005 00:00:00
  */
-function startOfISOYear(dirtyDate) {
-  var year = get_iso_year(dirtyDate)
-  var fourthOfJanuary = new Date(0)
-  fourthOfJanuary.setFullYear(year, 0, 4)
-  fourthOfJanuary.setHours(0, 0, 0, 0)
-  var date = start_of_iso_week(fourthOfJanuary)
+function startOfISOYear (dirtyDate) {
+  var year = get_iso_year(dirtyDate);
+  var fourthOfJanuary = new Date(0);
+  fourthOfJanuary.setFullYear(year, 0, 4);
+  fourthOfJanuary.setHours(0, 0, 0, 0);
+  var date = start_of_iso_week(fourthOfJanuary);
   return date
 }
 
-var start_of_iso_year = startOfISOYear
+var start_of_iso_year = startOfISOYear;
 
 /**
  * @category Day Helpers
@@ -594,16 +597,16 @@ var start_of_iso_year = startOfISOYear
  * var result = startOfDay(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Tue Sep 02 2014 00:00:00
  */
-function startOfDay(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setHours(0, 0, 0, 0)
+function startOfDay (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var start_of_day = startOfDay
+var start_of_day = startOfDay;
 
-var MILLISECONDS_IN_MINUTE$2 = 60000
-var MILLISECONDS_IN_DAY = 86400000
+var MILLISECONDS_IN_MINUTE$2 = 60000;
+var MILLISECONDS_IN_DAY = 86400000;
 
 /**
  * @category Day Helpers
@@ -625,14 +628,14 @@ var MILLISECONDS_IN_DAY = 86400000
  * )
  * //=> 366
  */
-function differenceInCalendarDays(dirtyDateLeft, dirtyDateRight) {
-  var startOfDayLeft = start_of_day(dirtyDateLeft)
-  var startOfDayRight = start_of_day(dirtyDateRight)
+function differenceInCalendarDays (dirtyDateLeft, dirtyDateRight) {
+  var startOfDayLeft = start_of_day(dirtyDateLeft);
+  var startOfDayRight = start_of_day(dirtyDateRight);
 
-  var timestampLeft =
-    startOfDayLeft.getTime() - startOfDayLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2
-  var timestampRight =
-    startOfDayRight.getTime() - startOfDayRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2
+  var timestampLeft = startOfDayLeft.getTime() -
+    startOfDayLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2;
+  var timestampRight = startOfDayRight.getTime() -
+    startOfDayRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2;
 
   // Round the number of days to the nearest integer
   // because the number of milliseconds in a day is not constant
@@ -640,7 +643,7 @@ function differenceInCalendarDays(dirtyDateLeft, dirtyDateRight) {
   return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_DAY)
 }
 
-var difference_in_calendar_days = differenceInCalendarDays
+var difference_in_calendar_days = differenceInCalendarDays;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -661,19 +664,19 @@ var difference_in_calendar_days = differenceInCalendarDays
  * var result = setISOYear(new Date(2008, 11, 29), 2007)
  * //=> Mon Jan 01 2007 00:00:00
  */
-function setISOYear(dirtyDate, dirtyISOYear) {
-  var date = parse_1(dirtyDate)
-  var isoYear = Number(dirtyISOYear)
-  var diff = difference_in_calendar_days(date, start_of_iso_year(date))
-  var fourthOfJanuary = new Date(0)
-  fourthOfJanuary.setFullYear(isoYear, 0, 4)
-  fourthOfJanuary.setHours(0, 0, 0, 0)
-  date = start_of_iso_year(fourthOfJanuary)
-  date.setDate(date.getDate() + diff)
+function setISOYear (dirtyDate, dirtyISOYear) {
+  var date = parse_1(dirtyDate);
+  var isoYear = Number(dirtyISOYear);
+  var diff = difference_in_calendar_days(date, start_of_iso_year(date));
+  var fourthOfJanuary = new Date(0);
+  fourthOfJanuary.setFullYear(isoYear, 0, 4);
+  fourthOfJanuary.setHours(0, 0, 0, 0);
+  date = start_of_iso_year(fourthOfJanuary);
+  date.setDate(date.getDate() + diff);
   return date
 }
 
-var set_iso_year = setISOYear
+var set_iso_year = setISOYear;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -693,14 +696,14 @@ var set_iso_year = setISOYear
  * var result = addISOYears(new Date(2010, 6, 2), 5)
  * //=> Fri Jun 26 2015 00:00:00
  */
-function addISOYears(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function addISOYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return set_iso_year(dirtyDate, get_iso_year(dirtyDate) + amount)
 }
 
-var add_iso_years = addISOYears
+var add_iso_years = addISOYears;
 
-var MILLISECONDS_IN_MINUTE$3 = 60000
+var MILLISECONDS_IN_MINUTE$3 = 60000;
 
 /**
  * @category Minute Helpers
@@ -718,12 +721,12 @@ var MILLISECONDS_IN_MINUTE$3 = 60000
  * var result = addMinutes(new Date(2014, 6, 10, 12, 0), 30)
  * //=> Thu Jul 10 2014 12:30:00
  */
-function addMinutes(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function addMinutes (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_milliseconds(dirtyDate, amount * MILLISECONDS_IN_MINUTE$3)
 }
 
-var add_minutes = addMinutes
+var add_minutes = addMinutes;
 
 /**
  * @category Month Helpers
@@ -740,17 +743,17 @@ var add_minutes = addMinutes
  * var result = getDaysInMonth(new Date(2000, 1))
  * //=> 29
  */
-function getDaysInMonth(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var year = date.getFullYear()
-  var monthIndex = date.getMonth()
-  var lastDayOfMonth = new Date(0)
-  lastDayOfMonth.setFullYear(year, monthIndex + 1, 0)
-  lastDayOfMonth.setHours(0, 0, 0, 0)
+function getDaysInMonth (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var year = date.getFullYear();
+  var monthIndex = date.getMonth();
+  var lastDayOfMonth = new Date(0);
+  lastDayOfMonth.setFullYear(year, monthIndex + 1, 0);
+  lastDayOfMonth.setHours(0, 0, 0, 0);
   return lastDayOfMonth.getDate()
 }
 
-var get_days_in_month = getDaysInMonth
+var get_days_in_month = getDaysInMonth;
 
 /**
  * @category Month Helpers
@@ -768,21 +771,21 @@ var get_days_in_month = getDaysInMonth
  * var result = addMonths(new Date(2014, 8, 1), 5)
  * //=> Sun Feb 01 2015 00:00:00
  */
-function addMonths(dirtyDate, dirtyAmount) {
-  var date = parse_1(dirtyDate)
-  var amount = Number(dirtyAmount)
-  var desiredMonth = date.getMonth() + amount
-  var dateWithDesiredMonth = new Date(0)
-  dateWithDesiredMonth.setFullYear(date.getFullYear(), desiredMonth, 1)
-  dateWithDesiredMonth.setHours(0, 0, 0, 0)
-  var daysInMonth = get_days_in_month(dateWithDesiredMonth)
+function addMonths (dirtyDate, dirtyAmount) {
+  var date = parse_1(dirtyDate);
+  var amount = Number(dirtyAmount);
+  var desiredMonth = date.getMonth() + amount;
+  var dateWithDesiredMonth = new Date(0);
+  dateWithDesiredMonth.setFullYear(date.getFullYear(), desiredMonth, 1);
+  dateWithDesiredMonth.setHours(0, 0, 0, 0);
+  var daysInMonth = get_days_in_month(dateWithDesiredMonth);
   // Set the last day of the new month
   // if the original date was the last day of the longer month
-  date.setMonth(desiredMonth, Math.min(daysInMonth, date.getDate()))
+  date.setMonth(desiredMonth, Math.min(daysInMonth, date.getDate()));
   return date
 }
 
-var add_months = addMonths
+var add_months = addMonths;
 
 /**
  * @category Quarter Helpers
@@ -800,13 +803,13 @@ var add_months = addMonths
  * var result = addQuarters(new Date(2014, 8, 1), 1)
  * //=> Mon Dec 01 2014 00:00:00
  */
-function addQuarters(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
-  var months = amount * 3
+function addQuarters (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
+  var months = amount * 3;
   return add_months(dirtyDate, months)
 }
 
-var add_quarters = addQuarters
+var add_quarters = addQuarters;
 
 /**
  * @category Second Helpers
@@ -824,12 +827,12 @@ var add_quarters = addQuarters
  * var result = addSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
  * //=> Thu Jul 10 2014 12:45:30
  */
-function addSeconds(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function addSeconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_milliseconds(dirtyDate, amount * 1000)
 }
 
-var add_seconds = addSeconds
+var add_seconds = addSeconds;
 
 /**
  * @category Week Helpers
@@ -847,13 +850,13 @@ var add_seconds = addSeconds
  * var result = addWeeks(new Date(2014, 8, 1), 4)
  * //=> Mon Sep 29 2014 00:00:00
  */
-function addWeeks(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
-  var days = amount * 7
+function addWeeks (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
+  var days = amount * 7;
   return add_days(dirtyDate, days)
 }
 
-var add_weeks = addWeeks
+var add_weeks = addWeeks;
 
 /**
  * @category Year Helpers
@@ -871,12 +874,12 @@ var add_weeks = addWeeks
  * var result = addYears(new Date(2014, 8, 1), 5)
  * //=> Sun Sep 01 2019 00:00:00
  */
-function addYears(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function addYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_months(dirtyDate, amount * 12)
 }
 
-var add_years = addYears
+var add_years = addYears;
 
 /**
  * @category Range Helpers
@@ -906,16 +909,11 @@ var add_years = addYears
  * )
  * //=> false
  */
-function areRangesOverlapping(
-  dirtyInitialRangeStartDate,
-  dirtyInitialRangeEndDate,
-  dirtyComparedRangeStartDate,
-  dirtyComparedRangeEndDate,
-) {
-  var initialStartTime = parse_1(dirtyInitialRangeStartDate).getTime()
-  var initialEndTime = parse_1(dirtyInitialRangeEndDate).getTime()
-  var comparedStartTime = parse_1(dirtyComparedRangeStartDate).getTime()
-  var comparedEndTime = parse_1(dirtyComparedRangeEndDate).getTime()
+function areRangesOverlapping (dirtyInitialRangeStartDate, dirtyInitialRangeEndDate, dirtyComparedRangeStartDate, dirtyComparedRangeEndDate) {
+  var initialStartTime = parse_1(dirtyInitialRangeStartDate).getTime();
+  var initialEndTime = parse_1(dirtyInitialRangeEndDate).getTime();
+  var comparedStartTime = parse_1(dirtyComparedRangeStartDate).getTime();
+  var comparedEndTime = parse_1(dirtyComparedRangeEndDate).getTime();
 
   if (initialStartTime > initialEndTime || comparedStartTime > comparedEndTime) {
     throw new Error('The start of the range cannot be after the end of the range')
@@ -924,7 +922,7 @@ function areRangesOverlapping(
   return initialStartTime < comparedEndTime && comparedStartTime < initialEndTime
 }
 
-var are_ranges_overlapping = areRangesOverlapping
+var are_ranges_overlapping = areRangesOverlapping;
 
 /**
  * @category Common Helpers
@@ -949,30 +947,30 @@ var are_ranges_overlapping = areRangesOverlapping
  * var result = closestIndexTo(dateToCompare, datesArray)
  * //=> 1
  */
-function closestIndexTo(dirtyDateToCompare, dirtyDatesArray) {
+function closestIndexTo (dirtyDateToCompare, dirtyDatesArray) {
   if (!(dirtyDatesArray instanceof Array)) {
     throw new TypeError(toString.call(dirtyDatesArray) + ' is not an instance of Array')
   }
 
-  var dateToCompare = parse_1(dirtyDateToCompare)
-  var timeToCompare = dateToCompare.getTime()
+  var dateToCompare = parse_1(dirtyDateToCompare);
+  var timeToCompare = dateToCompare.getTime();
 
-  var result
-  var minDistance
+  var result;
+  var minDistance;
 
-  dirtyDatesArray.forEach(function(dirtyDate, index) {
-    var currentDate = parse_1(dirtyDate)
-    var distance = Math.abs(timeToCompare - currentDate.getTime())
+  dirtyDatesArray.forEach(function (dirtyDate, index) {
+    var currentDate = parse_1(dirtyDate);
+    var distance = Math.abs(timeToCompare - currentDate.getTime());
     if (result === undefined || distance < minDistance) {
-      result = index
-      minDistance = distance
+      result = index;
+      minDistance = distance;
     }
-  })
+  });
 
   return result
 }
 
-var closest_index_to = closestIndexTo
+var closest_index_to = closestIndexTo;
 
 /**
  * @category Common Helpers
@@ -995,30 +993,30 @@ var closest_index_to = closestIndexTo
  * ])
  * //=> Tue Jan 01 2030 00:00:00
  */
-function closestTo(dirtyDateToCompare, dirtyDatesArray) {
+function closestTo (dirtyDateToCompare, dirtyDatesArray) {
   if (!(dirtyDatesArray instanceof Array)) {
     throw new TypeError(toString.call(dirtyDatesArray) + ' is not an instance of Array')
   }
 
-  var dateToCompare = parse_1(dirtyDateToCompare)
-  var timeToCompare = dateToCompare.getTime()
+  var dateToCompare = parse_1(dirtyDateToCompare);
+  var timeToCompare = dateToCompare.getTime();
 
-  var result
-  var minDistance
+  var result;
+  var minDistance;
 
-  dirtyDatesArray.forEach(function(dirtyDate) {
-    var currentDate = parse_1(dirtyDate)
-    var distance = Math.abs(timeToCompare - currentDate.getTime())
+  dirtyDatesArray.forEach(function (dirtyDate) {
+    var currentDate = parse_1(dirtyDate);
+    var distance = Math.abs(timeToCompare - currentDate.getTime());
     if (result === undefined || distance < minDistance) {
-      result = currentDate
-      minDistance = distance
+      result = currentDate;
+      minDistance = distance;
     }
-  })
+  });
 
   return result
 }
 
-var closest_to = closestTo
+var closest_to = closestTo;
 
 /**
  * @category Common Helpers
@@ -1053,11 +1051,11 @@ var closest_to = closestTo
  * //   Sun Jul 02 1995 00:00:00
  * // ]
  */
-function compareAsc(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var timeLeft = dateLeft.getTime()
-  var dateRight = parse_1(dirtyDateRight)
-  var timeRight = dateRight.getTime()
+function compareAsc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var timeLeft = dateLeft.getTime();
+  var dateRight = parse_1(dirtyDateRight);
+  var timeRight = dateRight.getTime();
 
   if (timeLeft < timeRight) {
     return -1
@@ -1068,7 +1066,7 @@ function compareAsc(dirtyDateLeft, dirtyDateRight) {
   }
 }
 
-var compare_asc = compareAsc
+var compare_asc = compareAsc;
 
 /**
  * @category Common Helpers
@@ -1103,11 +1101,11 @@ var compare_asc = compareAsc
  * //   Wed Feb 11 1987 00:00:00
  * // ]
  */
-function compareDesc(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var timeLeft = dateLeft.getTime()
-  var dateRight = parse_1(dirtyDateRight)
-  var timeRight = dateRight.getTime()
+function compareDesc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var timeLeft = dateLeft.getTime();
+  var dateRight = parse_1(dirtyDateRight);
+  var timeRight = dateRight.getTime();
 
   if (timeLeft > timeRight) {
     return -1
@@ -1118,10 +1116,10 @@ function compareDesc(dirtyDateLeft, dirtyDateRight) {
   }
 }
 
-var compare_desc = compareDesc
+var compare_desc = compareDesc;
 
-var MILLISECONDS_IN_MINUTE$4 = 60000
-var MILLISECONDS_IN_WEEK = 604800000
+var MILLISECONDS_IN_MINUTE$4 = 60000;
+var MILLISECONDS_IN_WEEK = 604800000;
 
 /**
  * @category ISO Week Helpers
@@ -1144,15 +1142,14 @@ var MILLISECONDS_IN_WEEK = 604800000
  * )
  * //=> 3
  */
-function differenceInCalendarISOWeeks(dirtyDateLeft, dirtyDateRight) {
-  var startOfISOWeekLeft = start_of_iso_week(dirtyDateLeft)
-  var startOfISOWeekRight = start_of_iso_week(dirtyDateRight)
+function differenceInCalendarISOWeeks (dirtyDateLeft, dirtyDateRight) {
+  var startOfISOWeekLeft = start_of_iso_week(dirtyDateLeft);
+  var startOfISOWeekRight = start_of_iso_week(dirtyDateRight);
 
-  var timestampLeft =
-    startOfISOWeekLeft.getTime() - startOfISOWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$4
-  var timestampRight =
-    startOfISOWeekRight.getTime() -
-    startOfISOWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$4
+  var timestampLeft = startOfISOWeekLeft.getTime() -
+    startOfISOWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$4;
+  var timestampRight = startOfISOWeekRight.getTime() -
+    startOfISOWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$4;
 
   // Round the number of days to the nearest integer
   // because the number of milliseconds in a week is not constant
@@ -1160,7 +1157,7 @@ function differenceInCalendarISOWeeks(dirtyDateLeft, dirtyDateRight) {
   return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_WEEK)
 }
 
-var difference_in_calendar_iso_weeks = differenceInCalendarISOWeeks
+var difference_in_calendar_iso_weeks = differenceInCalendarISOWeeks;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -1183,11 +1180,11 @@ var difference_in_calendar_iso_weeks = differenceInCalendarISOWeeks
  * )
  * //=> 2
  */
-function differenceInCalendarISOYears(dirtyDateLeft, dirtyDateRight) {
+function differenceInCalendarISOYears (dirtyDateLeft, dirtyDateRight) {
   return get_iso_year(dirtyDateLeft) - get_iso_year(dirtyDateRight)
 }
 
-var difference_in_calendar_iso_years = differenceInCalendarISOYears
+var difference_in_calendar_iso_years = differenceInCalendarISOYears;
 
 /**
  * @category Month Helpers
@@ -1208,17 +1205,17 @@ var difference_in_calendar_iso_years = differenceInCalendarISOYears
  * )
  * //=> 8
  */
-function differenceInCalendarMonths(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInCalendarMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
 
-  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear()
-  var monthDiff = dateLeft.getMonth() - dateRight.getMonth()
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
+  var monthDiff = dateLeft.getMonth() - dateRight.getMonth();
 
   return yearDiff * 12 + monthDiff
 }
 
-var difference_in_calendar_months = differenceInCalendarMonths
+var difference_in_calendar_months = differenceInCalendarMonths;
 
 /**
  * @category Quarter Helpers
@@ -1235,13 +1232,13 @@ var difference_in_calendar_months = differenceInCalendarMonths
  * var result = getQuarter(new Date(2014, 6, 2))
  * //=> 3
  */
-function getQuarter(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var quarter = Math.floor(date.getMonth() / 3) + 1
+function getQuarter (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var quarter = Math.floor(date.getMonth() / 3) + 1;
   return quarter
 }
 
-var get_quarter = getQuarter
+var get_quarter = getQuarter;
 
 /**
  * @category Quarter Helpers
@@ -1262,20 +1259,20 @@ var get_quarter = getQuarter
  * )
  * //=> 3
  */
-function differenceInCalendarQuarters(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInCalendarQuarters (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
 
-  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear()
-  var quarterDiff = get_quarter(dateLeft) - get_quarter(dateRight)
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
+  var quarterDiff = get_quarter(dateLeft) - get_quarter(dateRight);
 
   return yearDiff * 4 + quarterDiff
 }
 
-var difference_in_calendar_quarters = differenceInCalendarQuarters
+var difference_in_calendar_quarters = differenceInCalendarQuarters;
 
-var MILLISECONDS_IN_MINUTE$5 = 60000
-var MILLISECONDS_IN_WEEK$1 = 604800000
+var MILLISECONDS_IN_MINUTE$5 = 60000;
+var MILLISECONDS_IN_WEEK$1 = 604800000;
 
 /**
  * @category Week Helpers
@@ -1308,14 +1305,14 @@ var MILLISECONDS_IN_WEEK$1 = 604800000
  * )
  * //=> 2
  */
-function differenceInCalendarWeeks(dirtyDateLeft, dirtyDateRight, dirtyOptions) {
-  var startOfWeekLeft = start_of_week(dirtyDateLeft, dirtyOptions)
-  var startOfWeekRight = start_of_week(dirtyDateRight, dirtyOptions)
+function differenceInCalendarWeeks (dirtyDateLeft, dirtyDateRight, dirtyOptions) {
+  var startOfWeekLeft = start_of_week(dirtyDateLeft, dirtyOptions);
+  var startOfWeekRight = start_of_week(dirtyDateRight, dirtyOptions);
 
-  var timestampLeft =
-    startOfWeekLeft.getTime() - startOfWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$5
-  var timestampRight =
-    startOfWeekRight.getTime() - startOfWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$5
+  var timestampLeft = startOfWeekLeft.getTime() -
+    startOfWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$5;
+  var timestampRight = startOfWeekRight.getTime() -
+    startOfWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$5;
 
   // Round the number of days to the nearest integer
   // because the number of milliseconds in a week is not constant
@@ -1323,7 +1320,7 @@ function differenceInCalendarWeeks(dirtyDateLeft, dirtyDateRight, dirtyOptions) 
   return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_WEEK$1)
 }
 
-var difference_in_calendar_weeks = differenceInCalendarWeeks
+var difference_in_calendar_weeks = differenceInCalendarWeeks;
 
 /**
  * @category Year Helpers
@@ -1344,14 +1341,14 @@ var difference_in_calendar_weeks = differenceInCalendarWeeks
  * )
  * //=> 2
  */
-function differenceInCalendarYears(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInCalendarYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
 
   return dateLeft.getFullYear() - dateRight.getFullYear()
 }
 
-var difference_in_calendar_years = differenceInCalendarYears
+var difference_in_calendar_years = differenceInCalendarYears;
 
 /**
  * @category Day Helpers
@@ -1373,21 +1370,21 @@ var difference_in_calendar_years = differenceInCalendarYears
  * )
  * //=> 365
  */
-function differenceInDays(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInDays (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
 
-  var sign = compare_asc(dateLeft, dateRight)
-  var difference = Math.abs(difference_in_calendar_days(dateLeft, dateRight))
-  dateLeft.setDate(dateLeft.getDate() - sign * difference)
+  var sign = compare_asc(dateLeft, dateRight);
+  var difference = Math.abs(difference_in_calendar_days(dateLeft, dateRight));
+  dateLeft.setDate(dateLeft.getDate() - sign * difference);
 
   // Math.abs(diff in full days - diff in calendar days) === 1 if last calendar day is not full
   // If so, result must be decreased by 1 in absolute value
-  var isLastDayNotFull = compare_asc(dateLeft, dateRight) === -sign
+  var isLastDayNotFull = compare_asc(dateLeft, dateRight) === -sign;
   return sign * (difference - isLastDayNotFull)
 }
 
-var difference_in_days = differenceInDays
+var difference_in_days = differenceInDays;
 
 /**
  * @category Millisecond Helpers
@@ -1409,15 +1406,15 @@ var difference_in_days = differenceInDays
  * )
  * //=> 1100
  */
-function differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInMilliseconds (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
   return dateLeft.getTime() - dateRight.getTime()
 }
 
-var difference_in_milliseconds = differenceInMilliseconds
+var difference_in_milliseconds = differenceInMilliseconds;
 
-var MILLISECONDS_IN_HOUR$2 = 3600000
+var MILLISECONDS_IN_HOUR$2 = 3600000;
 
 /**
  * @category Hour Helpers
@@ -1438,12 +1435,12 @@ var MILLISECONDS_IN_HOUR$2 = 3600000
  * )
  * //=> 12
  */
-function differenceInHours(dirtyDateLeft, dirtyDateRight) {
-  var diff = difference_in_milliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_HOUR$2
+function differenceInHours (dirtyDateLeft, dirtyDateRight) {
+  var diff = difference_in_milliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_HOUR$2;
   return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
 }
 
-var difference_in_hours = differenceInHours
+var difference_in_hours = differenceInHours;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -1463,12 +1460,12 @@ var difference_in_hours = differenceInHours
  * var result = subISOYears(new Date(2014, 8, 1), 5)
  * //=> Mon Aug 31 2009 00:00:00
  */
-function subISOYears(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subISOYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_iso_years(dirtyDate, -amount)
 }
 
-var sub_iso_years = subISOYears
+var sub_iso_years = subISOYears;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -1491,24 +1488,24 @@ var sub_iso_years = subISOYears
  * )
  * //=> 1
  */
-function differenceInISOYears(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInISOYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
 
-  var sign = compare_asc(dateLeft, dateRight)
-  var difference = Math.abs(difference_in_calendar_iso_years(dateLeft, dateRight))
-  dateLeft = sub_iso_years(dateLeft, sign * difference)
+  var sign = compare_asc(dateLeft, dateRight);
+  var difference = Math.abs(difference_in_calendar_iso_years(dateLeft, dateRight));
+  dateLeft = sub_iso_years(dateLeft, sign * difference);
 
   // Math.abs(diff in full ISO years - diff in calendar ISO years) === 1
   // if last calendar ISO year is not full
   // If so, result must be decreased by 1 in absolute value
-  var isLastISOYearNotFull = compare_asc(dateLeft, dateRight) === -sign
+  var isLastISOYearNotFull = compare_asc(dateLeft, dateRight) === -sign;
   return sign * (difference - isLastISOYearNotFull)
 }
 
-var difference_in_iso_years = differenceInISOYears
+var difference_in_iso_years = differenceInISOYears;
 
-var MILLISECONDS_IN_MINUTE$6 = 60000
+var MILLISECONDS_IN_MINUTE$6 = 60000;
 
 /**
  * @category Minute Helpers
@@ -1529,12 +1526,12 @@ var MILLISECONDS_IN_MINUTE$6 = 60000
  * )
  * //=> 12
  */
-function differenceInMinutes(dirtyDateLeft, dirtyDateRight) {
-  var diff = difference_in_milliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_MINUTE$6
+function differenceInMinutes (dirtyDateLeft, dirtyDateRight) {
+  var diff = difference_in_milliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_MINUTE$6;
   return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
 }
 
-var difference_in_minutes = differenceInMinutes
+var difference_in_minutes = differenceInMinutes;
 
 /**
  * @category Month Helpers
@@ -1555,21 +1552,21 @@ var difference_in_minutes = differenceInMinutes
  * )
  * //=> 7
  */
-function differenceInMonths(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
 
-  var sign = compare_asc(dateLeft, dateRight)
-  var difference = Math.abs(difference_in_calendar_months(dateLeft, dateRight))
-  dateLeft.setMonth(dateLeft.getMonth() - sign * difference)
+  var sign = compare_asc(dateLeft, dateRight);
+  var difference = Math.abs(difference_in_calendar_months(dateLeft, dateRight));
+  dateLeft.setMonth(dateLeft.getMonth() - sign * difference);
 
   // Math.abs(diff in full months - diff in calendar months) === 1 if last calendar month is not full
   // If so, result must be decreased by 1 in absolute value
-  var isLastMonthNotFull = compare_asc(dateLeft, dateRight) === -sign
+  var isLastMonthNotFull = compare_asc(dateLeft, dateRight) === -sign;
   return sign * (difference - isLastMonthNotFull)
 }
 
-var difference_in_months = differenceInMonths
+var difference_in_months = differenceInMonths;
 
 /**
  * @category Quarter Helpers
@@ -1590,12 +1587,12 @@ var difference_in_months = differenceInMonths
  * )
  * //=> 2
  */
-function differenceInQuarters(dirtyDateLeft, dirtyDateRight) {
-  var diff = difference_in_months(dirtyDateLeft, dirtyDateRight) / 3
+function differenceInQuarters (dirtyDateLeft, dirtyDateRight) {
+  var diff = difference_in_months(dirtyDateLeft, dirtyDateRight) / 3;
   return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
 }
 
-var difference_in_quarters = differenceInQuarters
+var difference_in_quarters = differenceInQuarters;
 
 /**
  * @category Second Helpers
@@ -1617,12 +1614,12 @@ var difference_in_quarters = differenceInQuarters
  * )
  * //=> 12
  */
-function differenceInSeconds(dirtyDateLeft, dirtyDateRight) {
-  var diff = difference_in_milliseconds(dirtyDateLeft, dirtyDateRight) / 1000
+function differenceInSeconds (dirtyDateLeft, dirtyDateRight) {
+  var diff = difference_in_milliseconds(dirtyDateLeft, dirtyDateRight) / 1000;
   return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
 }
 
-var difference_in_seconds = differenceInSeconds
+var difference_in_seconds = differenceInSeconds;
 
 /**
  * @category Week Helpers
@@ -1643,12 +1640,12 @@ var difference_in_seconds = differenceInSeconds
  * )
  * //=> 2
  */
-function differenceInWeeks(dirtyDateLeft, dirtyDateRight) {
-  var diff = difference_in_days(dirtyDateLeft, dirtyDateRight) / 7
+function differenceInWeeks (dirtyDateLeft, dirtyDateRight) {
+  var diff = difference_in_days(dirtyDateLeft, dirtyDateRight) / 7;
   return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
 }
 
-var difference_in_weeks = differenceInWeeks
+var difference_in_weeks = differenceInWeeks;
 
 /**
  * @category Year Helpers
@@ -1669,102 +1666,102 @@ var difference_in_weeks = differenceInWeeks
  * )
  * //=> 1
  */
-function differenceInYears(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function differenceInYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
 
-  var sign = compare_asc(dateLeft, dateRight)
-  var difference = Math.abs(difference_in_calendar_years(dateLeft, dateRight))
-  dateLeft.setFullYear(dateLeft.getFullYear() - sign * difference)
+  var sign = compare_asc(dateLeft, dateRight);
+  var difference = Math.abs(difference_in_calendar_years(dateLeft, dateRight));
+  dateLeft.setFullYear(dateLeft.getFullYear() - sign * difference);
 
   // Math.abs(diff in full years - diff in calendar years) === 1 if last calendar year is not full
   // If so, result must be decreased by 1 in absolute value
-  var isLastYearNotFull = compare_asc(dateLeft, dateRight) === -sign
+  var isLastYearNotFull = compare_asc(dateLeft, dateRight) === -sign;
   return sign * (difference - isLastYearNotFull)
 }
 
-var difference_in_years = differenceInYears
+var difference_in_years = differenceInYears;
 
-function buildDistanceInWordsLocale() {
+function buildDistanceInWordsLocale () {
   var distanceInWordsLocale = {
     lessThanXSeconds: {
       one: 'less than a second',
-      other: 'less than {{count}} seconds',
+      other: 'less than {{count}} seconds'
     },
 
     xSeconds: {
       one: '1 second',
-      other: '{{count}} seconds',
+      other: '{{count}} seconds'
     },
 
     halfAMinute: 'half a minute',
 
     lessThanXMinutes: {
       one: 'less than a minute',
-      other: 'less than {{count}} minutes',
+      other: 'less than {{count}} minutes'
     },
 
     xMinutes: {
       one: '1 minute',
-      other: '{{count}} minutes',
+      other: '{{count}} minutes'
     },
 
     aboutXHours: {
       one: 'about 1 hour',
-      other: 'about {{count}} hours',
+      other: 'about {{count}} hours'
     },
 
     xHours: {
       one: '1 hour',
-      other: '{{count}} hours',
+      other: '{{count}} hours'
     },
 
     xDays: {
       one: '1 day',
-      other: '{{count}} days',
+      other: '{{count}} days'
     },
 
     aboutXMonths: {
       one: 'about 1 month',
-      other: 'about {{count}} months',
+      other: 'about {{count}} months'
     },
 
     xMonths: {
       one: '1 month',
-      other: '{{count}} months',
+      other: '{{count}} months'
     },
 
     aboutXYears: {
       one: 'about 1 year',
-      other: 'about {{count}} years',
+      other: 'about {{count}} years'
     },
 
     xYears: {
       one: '1 year',
-      other: '{{count}} years',
+      other: '{{count}} years'
     },
 
     overXYears: {
       one: 'over 1 year',
-      other: 'over {{count}} years',
+      other: 'over {{count}} years'
     },
 
     almostXYears: {
       one: 'almost 1 year',
-      other: 'almost {{count}} years',
-    },
-  }
+      other: 'almost {{count}} years'
+    }
+  };
 
-  function localize(token, count, options) {
-    options = options || {}
+  function localize (token, count, options) {
+    options = options || {};
 
-    var result
+    var result;
     if (typeof distanceInWordsLocale[token] === 'string') {
-      result = distanceInWordsLocale[token]
+      result = distanceInWordsLocale[token];
     } else if (count === 1) {
-      result = distanceInWordsLocale[token].one
+      result = distanceInWordsLocale[token].one;
     } else {
-      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count);
     }
 
     if (options.addSuffix) {
@@ -1779,165 +1776,113 @@ function buildDistanceInWordsLocale() {
   }
 
   return {
-    localize: localize,
+    localize: localize
   }
 }
 
-var build_distance_in_words_locale = buildDistanceInWordsLocale
+var build_distance_in_words_locale = buildDistanceInWordsLocale;
 
 var commonFormatterKeys = [
-  'M',
-  'MM',
-  'Q',
-  'D',
-  'DD',
-  'DDD',
-  'DDDD',
-  'd',
-  'E',
-  'W',
-  'WW',
-  'YY',
-  'YYYY',
-  'GG',
-  'GGGG',
-  'H',
-  'HH',
-  'h',
-  'hh',
-  'm',
-  'mm',
-  's',
-  'ss',
-  'S',
-  'SS',
-  'SSS',
-  'Z',
-  'ZZ',
-  'X',
-  'x',
-]
+  'M', 'MM', 'Q', 'D', 'DD', 'DDD', 'DDDD', 'd',
+  'E', 'W', 'WW', 'YY', 'YYYY', 'GG', 'GGGG',
+  'H', 'HH', 'h', 'hh', 'm', 'mm',
+  's', 'ss', 'S', 'SS', 'SSS',
+  'Z', 'ZZ', 'X', 'x'
+];
 
-function buildFormattingTokensRegExp(formatters) {
-  var formatterKeys = []
+function buildFormattingTokensRegExp (formatters) {
+  var formatterKeys = [];
   for (var key in formatters) {
     if (formatters.hasOwnProperty(key)) {
-      formatterKeys.push(key)
+      formatterKeys.push(key);
     }
   }
 
   var formattingTokens = commonFormatterKeys
     .concat(formatterKeys)
     .sort()
-    .reverse()
+    .reverse();
   var formattingTokensRegExp = new RegExp(
-    '(\\[[^\\[]*\\])|(\\\\)?' + '(' + formattingTokens.join('|') + '|.)',
-    'g',
-  )
+    '(\\[[^\\[]*\\])|(\\\\)?' + '(' + formattingTokens.join('|') + '|.)', 'g'
+  );
 
   return formattingTokensRegExp
 }
 
-var build_formatting_tokens_reg_exp = buildFormattingTokensRegExp
+var build_formatting_tokens_reg_exp = buildFormattingTokensRegExp;
 
-function buildFormatLocale() {
+function buildFormatLocale () {
   // Note: in English, the names of days of the week and months are capitalized.
   // If you are making a new locale based on this one, check if the same is true for the language you're working on.
   // Generally, formatted dates should look like they are in the middle of a sentence,
   // e.g. in Spanish language the weekdays and months should be in the lowercase.
-  var months3char = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
-  var monthsFull = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
-  var weekdays2char = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
-  var weekdays3char = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-  var weekdaysFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-  var meridiemUppercase = ['AM', 'PM']
-  var meridiemLowercase = ['am', 'pm']
-  var meridiemFull = ['a.m.', 'p.m.']
+  var months3char = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var monthsFull = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var weekdays2char = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+  var weekdays3char = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var weekdaysFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var meridiemUppercase = ['AM', 'PM'];
+  var meridiemLowercase = ['am', 'pm'];
+  var meridiemFull = ['a.m.', 'p.m.'];
 
   var formatters = {
     // Month: Jan, Feb, ..., Dec
-    MMM: function(date) {
+    'MMM': function (date) {
       return months3char[date.getMonth()]
     },
 
     // Month: January, February, ..., December
-    MMMM: function(date) {
+    'MMMM': function (date) {
       return monthsFull[date.getMonth()]
     },
 
     // Day of week: Su, Mo, ..., Sa
-    dd: function(date) {
+    'dd': function (date) {
       return weekdays2char[date.getDay()]
     },
 
     // Day of week: Sun, Mon, ..., Sat
-    ddd: function(date) {
+    'ddd': function (date) {
       return weekdays3char[date.getDay()]
     },
 
     // Day of week: Sunday, Monday, ..., Saturday
-    dddd: function(date) {
+    'dddd': function (date) {
       return weekdaysFull[date.getDay()]
     },
 
     // AM, PM
-    A: function(date) {
-      return date.getHours() / 12 >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
     },
 
     // am, pm
-    a: function(date) {
-      return date.getHours() / 12 >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
     },
 
     // a.m., p.m.
-    aa: function(date) {
-      return date.getHours() / 12 >= 1 ? meridiemFull[1] : meridiemFull[0]
-    },
-  }
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  };
 
   // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
-  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
-  ordinalFormatters.forEach(function(formatterToken) {
-    formatters[formatterToken + 'o'] = function(date, formatters) {
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W'];
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
       return ordinal(formatters[formatterToken](date))
-    }
-  })
+    };
+  });
 
   return {
     formatters: formatters,
-    formattingTokensRegExp: build_formatting_tokens_reg_exp(formatters),
+    formattingTokensRegExp: build_formatting_tokens_reg_exp(formatters)
   }
 }
 
-function ordinal(number) {
-  var rem100 = number % 100
+function ordinal (number) {
+  var rem100 = number % 100;
   if (rem100 > 20 || rem100 < 10) {
     switch (rem100 % 10) {
       case 1:
@@ -1951,7 +1896,7 @@ function ordinal(number) {
   return number + 'th'
 }
 
-var build_format_locale = buildFormatLocale
+var build_format_locale = buildFormatLocale;
 
 /**
  * @category Locales
@@ -1959,13 +1904,13 @@ var build_format_locale = buildFormatLocale
  */
 var en = {
   distanceInWords: build_distance_in_words_locale(),
-  format: build_format_locale(),
-}
+  format: build_format_locale()
+};
 
-var MINUTES_IN_DAY = 1440
-var MINUTES_IN_ALMOST_TWO_DAYS = 2520
-var MINUTES_IN_MONTH = 43200
-var MINUTES_IN_TWO_MONTHS = 86400
+var MINUTES_IN_DAY = 1440;
+var MINUTES_IN_ALMOST_TWO_DAYS = 2520;
+var MINUTES_IN_MONTH = 43200;
+var MINUTES_IN_TWO_MONTHS = 86400;
 
 /**
  * @category Common Helpers
@@ -2049,35 +1994,35 @@ var MINUTES_IN_TWO_MONTHS = 86400
  * )
  * //=> 'pli ol 1 jaro'
  */
-function distanceInWords(dirtyDateToCompare, dirtyDate, dirtyOptions) {
-  var options = dirtyOptions || {}
+function distanceInWords (dirtyDateToCompare, dirtyDate, dirtyOptions) {
+  var options = dirtyOptions || {};
 
-  var comparison = compare_desc(dirtyDateToCompare, dirtyDate)
+  var comparison = compare_desc(dirtyDateToCompare, dirtyDate);
 
-  var locale = options.locale
-  var localize = en.distanceInWords.localize
+  var locale = options.locale;
+  var localize = en.distanceInWords.localize;
   if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
-    localize = locale.distanceInWords.localize
+    localize = locale.distanceInWords.localize;
   }
 
   var localizeOptions = {
     addSuffix: Boolean(options.addSuffix),
-    comparison: comparison,
-  }
+    comparison: comparison
+  };
 
-  var dateLeft, dateRight
+  var dateLeft, dateRight;
   if (comparison > 0) {
-    dateLeft = parse_1(dirtyDateToCompare)
-    dateRight = parse_1(dirtyDate)
+    dateLeft = parse_1(dirtyDateToCompare);
+    dateRight = parse_1(dirtyDate);
   } else {
-    dateLeft = parse_1(dirtyDate)
-    dateRight = parse_1(dirtyDateToCompare)
+    dateLeft = parse_1(dirtyDate);
+    dateRight = parse_1(dirtyDateToCompare);
   }
 
-  var seconds = difference_in_seconds(dateRight, dateLeft)
-  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
-  var minutes = Math.round(seconds / 60) - offset
-  var months
+  var seconds = difference_in_seconds(dateRight, dateLeft);
+  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset();
+  var minutes = Math.round(seconds / 60) - offset;
+  var months;
 
   // 0 up to 2 mins
   if (minutes < 2) {
@@ -2103,66 +2048,66 @@ function distanceInWords(dirtyDateToCompare, dirtyDate, dirtyOptions) {
       }
     }
 
-    // 2 mins up to 0.75 hrs
+  // 2 mins up to 0.75 hrs
   } else if (minutes < 45) {
     return localize('xMinutes', minutes, localizeOptions)
 
-    // 0.75 hrs up to 1.5 hrs
+  // 0.75 hrs up to 1.5 hrs
   } else if (minutes < 90) {
     return localize('aboutXHours', 1, localizeOptions)
 
-    // 1.5 hrs up to 24 hrs
+  // 1.5 hrs up to 24 hrs
   } else if (minutes < MINUTES_IN_DAY) {
-    var hours = Math.round(minutes / 60)
+    var hours = Math.round(minutes / 60);
     return localize('aboutXHours', hours, localizeOptions)
 
-    // 1 day up to 1.75 days
+  // 1 day up to 1.75 days
   } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
     return localize('xDays', 1, localizeOptions)
 
-    // 1.75 days up to 30 days
+  // 1.75 days up to 30 days
   } else if (minutes < MINUTES_IN_MONTH) {
-    var days = Math.round(minutes / MINUTES_IN_DAY)
+    var days = Math.round(minutes / MINUTES_IN_DAY);
     return localize('xDays', days, localizeOptions)
 
-    // 1 month up to 2 months
+  // 1 month up to 2 months
   } else if (minutes < MINUTES_IN_TWO_MONTHS) {
-    months = Math.round(minutes / MINUTES_IN_MONTH)
+    months = Math.round(minutes / MINUTES_IN_MONTH);
     return localize('aboutXMonths', months, localizeOptions)
   }
 
-  months = difference_in_months(dateRight, dateLeft)
+  months = difference_in_months(dateRight, dateLeft);
 
   // 2 months up to 12 months
   if (months < 12) {
-    var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH)
+    var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH);
     return localize('xMonths', nearestMonth, localizeOptions)
 
-    // 1 year up to max Date
+  // 1 year up to max Date
   } else {
-    var monthsSinceStartOfYear = months % 12
-    var years = Math.floor(months / 12)
+    var monthsSinceStartOfYear = months % 12;
+    var years = Math.floor(months / 12);
 
     // N years up to 1 years 3 months
     if (monthsSinceStartOfYear < 3) {
       return localize('aboutXYears', years, localizeOptions)
 
-      // N years 3 months up to N years 9 months
+    // N years 3 months up to N years 9 months
     } else if (monthsSinceStartOfYear < 9) {
       return localize('overXYears', years, localizeOptions)
 
-      // N years 9 months up to N year 12 months
+    // N years 9 months up to N year 12 months
     } else {
       return localize('almostXYears', years + 1, localizeOptions)
     }
   }
 }
 
-var distance_in_words = distanceInWords
+var distance_in_words = distanceInWords;
 
-var MINUTES_IN_DAY$1 = 1440
-var MINUTES_IN_MONTH$1 = 43200
-var MINUTES_IN_YEAR = 525600
+var MINUTES_IN_DAY$1 = 1440;
+var MINUTES_IN_MONTH$1 = 43200;
+var MINUTES_IN_YEAR = 525600;
 
 /**
  * @category Common Helpers
@@ -2248,53 +2193,53 @@ var MINUTES_IN_YEAR = 525600
  * )
  * //=> '1 jaro'
  */
-function distanceInWordsStrict(dirtyDateToCompare, dirtyDate, dirtyOptions) {
-  var options = dirtyOptions || {}
+function distanceInWordsStrict (dirtyDateToCompare, dirtyDate, dirtyOptions) {
+  var options = dirtyOptions || {};
 
-  var comparison = compare_desc(dirtyDateToCompare, dirtyDate)
+  var comparison = compare_desc(dirtyDateToCompare, dirtyDate);
 
-  var locale = options.locale
-  var localize = en.distanceInWords.localize
+  var locale = options.locale;
+  var localize = en.distanceInWords.localize;
   if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
-    localize = locale.distanceInWords.localize
+    localize = locale.distanceInWords.localize;
   }
 
   var localizeOptions = {
     addSuffix: Boolean(options.addSuffix),
-    comparison: comparison,
-  }
+    comparison: comparison
+  };
 
-  var dateLeft, dateRight
+  var dateLeft, dateRight;
   if (comparison > 0) {
-    dateLeft = parse_1(dirtyDateToCompare)
-    dateRight = parse_1(dirtyDate)
+    dateLeft = parse_1(dirtyDateToCompare);
+    dateRight = parse_1(dirtyDate);
   } else {
-    dateLeft = parse_1(dirtyDate)
-    dateRight = parse_1(dirtyDateToCompare)
+    dateLeft = parse_1(dirtyDate);
+    dateRight = parse_1(dirtyDateToCompare);
   }
 
-  var unit
-  var mathPartial = Math[options.partialMethod ? String(options.partialMethod) : 'floor']
-  var seconds = difference_in_seconds(dateRight, dateLeft)
-  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
-  var minutes = mathPartial(seconds / 60) - offset
-  var hours, days, months, years
+  var unit;
+  var mathPartial = Math[options.partialMethod ? String(options.partialMethod) : 'floor'];
+  var seconds = difference_in_seconds(dateRight, dateLeft);
+  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset();
+  var minutes = mathPartial(seconds / 60) - offset;
+  var hours, days, months, years;
 
   if (options.unit) {
-    unit = String(options.unit)
+    unit = String(options.unit);
   } else {
     if (minutes < 1) {
-      unit = 's'
+      unit = 's';
     } else if (minutes < 60) {
-      unit = 'm'
+      unit = 'm';
     } else if (minutes < MINUTES_IN_DAY$1) {
-      unit = 'h'
+      unit = 'h';
     } else if (minutes < MINUTES_IN_MONTH$1) {
-      unit = 'd'
+      unit = 'd';
     } else if (minutes < MINUTES_IN_YEAR) {
-      unit = 'M'
+      unit = 'M';
     } else {
-      unit = 'Y'
+      unit = 'Y';
     }
   }
 
@@ -2302,35 +2247,35 @@ function distanceInWordsStrict(dirtyDateToCompare, dirtyDate, dirtyOptions) {
   if (unit === 's') {
     return localize('xSeconds', seconds, localizeOptions)
 
-    // 1 up to 60 mins
+  // 1 up to 60 mins
   } else if (unit === 'm') {
     return localize('xMinutes', minutes, localizeOptions)
 
-    // 1 up to 24 hours
+  // 1 up to 24 hours
   } else if (unit === 'h') {
-    hours = mathPartial(minutes / 60)
+    hours = mathPartial(minutes / 60);
     return localize('xHours', hours, localizeOptions)
 
-    // 1 up to 30 days
+  // 1 up to 30 days
   } else if (unit === 'd') {
-    days = mathPartial(minutes / MINUTES_IN_DAY$1)
+    days = mathPartial(minutes / MINUTES_IN_DAY$1);
     return localize('xDays', days, localizeOptions)
 
-    // 1 up to 12 months
+  // 1 up to 12 months
   } else if (unit === 'M') {
-    months = mathPartial(minutes / MINUTES_IN_MONTH$1)
+    months = mathPartial(minutes / MINUTES_IN_MONTH$1);
     return localize('xMonths', months, localizeOptions)
 
-    // 1 year up to max Date
+  // 1 year up to max Date
   } else if (unit === 'Y') {
-    years = mathPartial(minutes / MINUTES_IN_YEAR)
+    years = mathPartial(minutes / MINUTES_IN_YEAR);
     return localize('xYears', years, localizeOptions)
   }
 
   throw new Error('Unknown unit: ' + unit)
 }
 
-var distance_in_words_strict = distanceInWordsStrict
+var distance_in_words_strict = distanceInWordsStrict;
 
 /**
  * @category Common Helpers
@@ -2410,11 +2355,11 @@ var distance_in_words_strict = distanceInWordsStrict
  * )
  * //=> 'pli ol 1 jaro'
  */
-function distanceInWordsToNow(dirtyDate, dirtyOptions) {
+function distanceInWordsToNow (dirtyDate, dirtyOptions) {
   return distance_in_words(Date.now(), dirtyDate, dirtyOptions)
 }
 
-var distance_in_words_to_now = distanceInWordsToNow
+var distance_in_words_to_now = distanceInWordsToNow;
 
 /**
  * @category Day Helpers
@@ -2443,31 +2388,31 @@ var distance_in_words_to_now = distanceInWordsToNow
  * //   Fri Oct 10 2014 00:00:00
  * // ]
  */
-function eachDay(dirtyStartDate, dirtyEndDate, dirtyStep) {
-  var startDate = parse_1(dirtyStartDate)
-  var endDate = parse_1(dirtyEndDate)
-  var step = dirtyStep !== undefined ? dirtyStep : 1
+function eachDay (dirtyStartDate, dirtyEndDate, dirtyStep) {
+  var startDate = parse_1(dirtyStartDate);
+  var endDate = parse_1(dirtyEndDate);
+  var step = dirtyStep !== undefined ? dirtyStep : 1;
 
-  var endTime = endDate.getTime()
+  var endTime = endDate.getTime();
 
   if (startDate.getTime() > endTime) {
     throw new Error('The first date cannot be after the second date')
   }
 
-  var dates = []
+  var dates = [];
 
-  var currentDate = startDate
-  currentDate.setHours(0, 0, 0, 0)
+  var currentDate = startDate;
+  currentDate.setHours(0, 0, 0, 0);
 
   while (currentDate.getTime() <= endTime) {
-    dates.push(parse_1(currentDate))
-    currentDate.setDate(currentDate.getDate() + step)
+    dates.push(parse_1(currentDate));
+    currentDate.setDate(currentDate.getDate() + step);
   }
 
   return dates
 }
 
-var each_day = eachDay
+var each_day = eachDay;
 
 /**
  * @category Day Helpers
@@ -2485,13 +2430,13 @@ var each_day = eachDay
  * var result = endOfDay(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Tue Sep 02 2014 23:59:59.999
  */
-function endOfDay(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setHours(23, 59, 59, 999)
+function endOfDay (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setHours(23, 59, 59, 999);
   return date
 }
 
-var end_of_day = endOfDay
+var end_of_day = endOfDay;
 
 /**
  * @category Hour Helpers
@@ -2509,13 +2454,13 @@ var end_of_day = endOfDay
  * var result = endOfHour(new Date(2014, 8, 2, 11, 55))
  * //=> Tue Sep 02 2014 11:59:59.999
  */
-function endOfHour(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setMinutes(59, 59, 999)
+function endOfHour (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setMinutes(59, 59, 999);
   return date
 }
 
-var end_of_hour = endOfHour
+var end_of_hour = endOfHour;
 
 /**
  * @category Week Helpers
@@ -2540,19 +2485,19 @@ var end_of_hour = endOfHour
  * var result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
  * //=> Sun Sep 07 2014 23:59:59.999
  */
-function endOfWeek(dirtyDate, dirtyOptions) {
-  var weekStartsOn = dirtyOptions ? Number(dirtyOptions.weekStartsOn) || 0 : 0
+function endOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0;
 
-  var date = parse_1(dirtyDate)
-  var day = date.getDay()
-  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn)
+  var date = parse_1(dirtyDate);
+  var day = date.getDay();
+  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn);
 
-  date.setDate(date.getDate() + diff)
-  date.setHours(23, 59, 59, 999)
+  date.setDate(date.getDate() + diff);
+  date.setHours(23, 59, 59, 999);
   return date
 }
 
-var end_of_week = endOfWeek
+var end_of_week = endOfWeek;
 
 /**
  * @category ISO Week Helpers
@@ -2572,11 +2517,11 @@ var end_of_week = endOfWeek
  * var result = endOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Sun Sep 07 2014 23:59:59.999
  */
-function endOfISOWeek(dirtyDate) {
+function endOfISOWeek (dirtyDate) {
   return end_of_week(dirtyDate, {weekStartsOn: 1})
 }
 
-var end_of_iso_week = endOfISOWeek
+var end_of_iso_week = endOfISOWeek;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -2597,17 +2542,17 @@ var end_of_iso_week = endOfISOWeek
  * var result = endOfISOYear(new Date(2005, 6, 2))
  * //=> Sun Jan 01 2006 23:59:59.999
  */
-function endOfISOYear(dirtyDate) {
-  var year = get_iso_year(dirtyDate)
-  var fourthOfJanuaryOfNextYear = new Date(0)
-  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4)
-  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0)
-  var date = start_of_iso_week(fourthOfJanuaryOfNextYear)
-  date.setMilliseconds(date.getMilliseconds() - 1)
+function endOfISOYear (dirtyDate) {
+  var year = get_iso_year(dirtyDate);
+  var fourthOfJanuaryOfNextYear = new Date(0);
+  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4);
+  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0);
+  var date = start_of_iso_week(fourthOfJanuaryOfNextYear);
+  date.setMilliseconds(date.getMilliseconds() - 1);
   return date
 }
 
-var end_of_iso_year = endOfISOYear
+var end_of_iso_year = endOfISOYear;
 
 /**
  * @category Minute Helpers
@@ -2625,13 +2570,13 @@ var end_of_iso_year = endOfISOYear
  * var result = endOfMinute(new Date(2014, 11, 1, 22, 15, 45, 400))
  * //=> Mon Dec 01 2014 22:15:59.999
  */
-function endOfMinute(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setSeconds(59, 999)
+function endOfMinute (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setSeconds(59, 999);
   return date
 }
 
-var end_of_minute = endOfMinute
+var end_of_minute = endOfMinute;
 
 /**
  * @category Month Helpers
@@ -2649,15 +2594,15 @@ var end_of_minute = endOfMinute
  * var result = endOfMonth(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Tue Sep 30 2014 23:59:59.999
  */
-function endOfMonth(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var month = date.getMonth()
-  date.setFullYear(date.getFullYear(), month + 1, 0)
-  date.setHours(23, 59, 59, 999)
+function endOfMonth (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var month = date.getMonth();
+  date.setFullYear(date.getFullYear(), month + 1, 0);
+  date.setHours(23, 59, 59, 999);
   return date
 }
 
-var end_of_month = endOfMonth
+var end_of_month = endOfMonth;
 
 /**
  * @category Quarter Helpers
@@ -2675,16 +2620,16 @@ var end_of_month = endOfMonth
  * var result = endOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Tue Sep 30 2014 23:59:59.999
  */
-function endOfQuarter(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var currentMonth = date.getMonth()
-  var month = currentMonth - (currentMonth % 3) + 3
-  date.setMonth(month, 0)
-  date.setHours(23, 59, 59, 999)
+function endOfQuarter (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var currentMonth = date.getMonth();
+  var month = currentMonth - currentMonth % 3 + 3;
+  date.setMonth(month, 0);
+  date.setHours(23, 59, 59, 999);
   return date
 }
 
-var end_of_quarter = endOfQuarter
+var end_of_quarter = endOfQuarter;
 
 /**
  * @category Second Helpers
@@ -2702,13 +2647,13 @@ var end_of_quarter = endOfQuarter
  * var result = endOfSecond(new Date(2014, 11, 1, 22, 15, 45, 400))
  * //=> Mon Dec 01 2014 22:15:45.999
  */
-function endOfSecond(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setMilliseconds(999)
+function endOfSecond (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setMilliseconds(999);
   return date
 }
 
-var end_of_second = endOfSecond
+var end_of_second = endOfSecond;
 
 /**
  * @category Day Helpers
@@ -2724,11 +2669,11 @@ var end_of_second = endOfSecond
  * var result = endOfToday()
  * //=> Mon Oct 6 2014 23:59:59.999
  */
-function endOfToday() {
+function endOfToday () {
   return end_of_day(new Date())
 }
 
-var end_of_today = endOfToday
+var end_of_today = endOfToday;
 
 /**
  * @category Day Helpers
@@ -2744,19 +2689,19 @@ var end_of_today = endOfToday
  * var result = endOfTomorrow()
  * //=> Tue Oct 7 2014 23:59:59.999
  */
-function endOfTomorrow() {
-  var now = new Date()
-  var year = now.getFullYear()
-  var month = now.getMonth()
-  var day = now.getDate()
+function endOfTomorrow () {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth();
+  var day = now.getDate();
 
-  var date = new Date(0)
-  date.setFullYear(year, month, day + 1)
-  date.setHours(23, 59, 59, 999)
+  var date = new Date(0);
+  date.setFullYear(year, month, day + 1);
+  date.setHours(23, 59, 59, 999);
   return date
 }
 
-var end_of_tomorrow = endOfTomorrow
+var end_of_tomorrow = endOfTomorrow;
 
 /**
  * @category Year Helpers
@@ -2774,15 +2719,15 @@ var end_of_tomorrow = endOfTomorrow
  * var result = endOfYear(new Date(2014, 8, 2, 11, 55, 00))
  * //=> Wed Dec 31 2014 23:59:59.999
  */
-function endOfYear(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var year = date.getFullYear()
-  date.setFullYear(year + 1, 0, 0)
-  date.setHours(23, 59, 59, 999)
+function endOfYear (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var year = date.getFullYear();
+  date.setFullYear(year + 1, 0, 0);
+  date.setHours(23, 59, 59, 999);
   return date
 }
 
-var end_of_year = endOfYear
+var end_of_year = endOfYear;
 
 /**
  * @category Day Helpers
@@ -2798,19 +2743,19 @@ var end_of_year = endOfYear
  * var result = endOfYesterday()
  * //=> Sun Oct 5 2014 23:59:59.999
  */
-function endOfYesterday() {
-  var now = new Date()
-  var year = now.getFullYear()
-  var month = now.getMonth()
-  var day = now.getDate()
+function endOfYesterday () {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth();
+  var day = now.getDate();
 
-  var date = new Date(0)
-  date.setFullYear(year, month, day - 1)
-  date.setHours(23, 59, 59, 999)
+  var date = new Date(0);
+  date.setFullYear(year, month, day - 1);
+  date.setHours(23, 59, 59, 999);
   return date
 }
 
-var end_of_yesterday = endOfYesterday
+var end_of_yesterday = endOfYesterday;
 
 /**
  * @category Year Helpers
@@ -2828,15 +2773,15 @@ var end_of_yesterday = endOfYesterday
  * var result = startOfYear(new Date(2014, 8, 2, 11, 55, 00))
  * //=> Wed Jan 01 2014 00:00:00
  */
-function startOfYear(dirtyDate) {
-  var cleanDate = parse_1(dirtyDate)
-  var date = new Date(0)
-  date.setFullYear(cleanDate.getFullYear(), 0, 1)
-  date.setHours(0, 0, 0, 0)
+function startOfYear (dirtyDate) {
+  var cleanDate = parse_1(dirtyDate);
+  var date = new Date(0);
+  date.setFullYear(cleanDate.getFullYear(), 0, 1);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var start_of_year = startOfYear
+var start_of_year = startOfYear;
 
 /**
  * @category Day Helpers
@@ -2853,16 +2798,16 @@ var start_of_year = startOfYear
  * var result = getDayOfYear(new Date(2014, 6, 2))
  * //=> 183
  */
-function getDayOfYear(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var diff = difference_in_calendar_days(date, start_of_year(date))
-  var dayOfYear = diff + 1
+function getDayOfYear (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var diff = difference_in_calendar_days(date, start_of_year(date));
+  var dayOfYear = diff + 1;
   return dayOfYear
 }
 
-var get_day_of_year = getDayOfYear
+var get_day_of_year = getDayOfYear;
 
-var MILLISECONDS_IN_WEEK$2 = 604800000
+var MILLISECONDS_IN_WEEK$2 = 604800000;
 
 /**
  * @category ISO Week Helpers
@@ -2881,9 +2826,9 @@ var MILLISECONDS_IN_WEEK$2 = 604800000
  * var result = getISOWeek(new Date(2005, 0, 2))
  * //=> 53
  */
-function getISOWeek(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var diff = start_of_iso_week(date).getTime() - start_of_iso_year(date).getTime()
+function getISOWeek (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var diff = start_of_iso_week(date).getTime() - start_of_iso_year(date).getTime();
 
   // Round the number of days to the nearest integer
   // because the number of milliseconds in a week is not constant
@@ -2891,7 +2836,7 @@ function getISOWeek(dirtyDate) {
   return Math.round(diff / MILLISECONDS_IN_WEEK$2) + 1
 }
 
-var get_iso_week = getISOWeek
+var get_iso_week = getISOWeek;
 
 /**
  * @category Common Helpers
@@ -2917,7 +2862,7 @@ var get_iso_week = getISOWeek
  * var result = isValid(new Date(''))
  * //=> false
  */
-function isValid(dirtyDate) {
+function isValid (dirtyDate) {
   if (is_date(dirtyDate)) {
     return !isNaN(dirtyDate)
   } else {
@@ -2925,7 +2870,7 @@ function isValid(dirtyDate) {
   }
 }
 
-var is_valid = isValid
+var is_valid = isValid;
 
 /**
  * @category Common Helpers
@@ -3010,121 +2955,121 @@ var is_valid = isValid
  * )
  * //=> '2-a de julio 2014'
  */
-function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
-  var formatStr = dirtyFormatStr ? String(dirtyFormatStr) : 'YYYY-MM-DDTHH:mm:ss.SSSZ'
-  var options = dirtyOptions || {}
+function format (dirtyDate, dirtyFormatStr, dirtyOptions) {
+  var formatStr = dirtyFormatStr ? String(dirtyFormatStr) : 'YYYY-MM-DDTHH:mm:ss.SSSZ';
+  var options = dirtyOptions || {};
 
-  var locale = options.locale
-  var localeFormatters = en.format.formatters
-  var formattingTokensRegExp = en.format.formattingTokensRegExp
+  var locale = options.locale;
+  var localeFormatters = en.format.formatters;
+  var formattingTokensRegExp = en.format.formattingTokensRegExp;
   if (locale && locale.format && locale.format.formatters) {
-    localeFormatters = locale.format.formatters
+    localeFormatters = locale.format.formatters;
 
     if (locale.format.formattingTokensRegExp) {
-      formattingTokensRegExp = locale.format.formattingTokensRegExp
+      formattingTokensRegExp = locale.format.formattingTokensRegExp;
     }
   }
 
-  var date = parse_1(dirtyDate)
+  var date = parse_1(dirtyDate);
 
   if (!is_valid(date)) {
     return 'Invalid Date'
   }
 
-  var formatFn = buildFormatFn(formatStr, localeFormatters, formattingTokensRegExp)
+  var formatFn = buildFormatFn(formatStr, localeFormatters, formattingTokensRegExp);
 
   return formatFn(date)
 }
 
 var formatters = {
   // Month: 1, 2, ..., 12
-  M: function(date) {
+  'M': function (date) {
     return date.getMonth() + 1
   },
 
   // Month: 01, 02, ..., 12
-  MM: function(date) {
+  'MM': function (date) {
     return addLeadingZeros(date.getMonth() + 1, 2)
   },
 
   // Quarter: 1, 2, 3, 4
-  Q: function(date) {
+  'Q': function (date) {
     return Math.ceil((date.getMonth() + 1) / 3)
   },
 
   // Day of month: 1, 2, ..., 31
-  D: function(date) {
+  'D': function (date) {
     return date.getDate()
   },
 
   // Day of month: 01, 02, ..., 31
-  DD: function(date) {
+  'DD': function (date) {
     return addLeadingZeros(date.getDate(), 2)
   },
 
   // Day of year: 1, 2, ..., 366
-  DDD: function(date) {
+  'DDD': function (date) {
     return get_day_of_year(date)
   },
 
   // Day of year: 001, 002, ..., 366
-  DDDD: function(date) {
+  'DDDD': function (date) {
     return addLeadingZeros(get_day_of_year(date), 3)
   },
 
   // Day of week: 0, 1, ..., 6
-  d: function(date) {
+  'd': function (date) {
     return date.getDay()
   },
 
   // Day of ISO week: 1, 2, ..., 7
-  E: function(date) {
+  'E': function (date) {
     return date.getDay() || 7
   },
 
   // ISO week: 1, 2, ..., 53
-  W: function(date) {
+  'W': function (date) {
     return get_iso_week(date)
   },
 
   // ISO week: 01, 02, ..., 53
-  WW: function(date) {
+  'WW': function (date) {
     return addLeadingZeros(get_iso_week(date), 2)
   },
 
   // Year: 00, 01, ..., 99
-  YY: function(date) {
+  'YY': function (date) {
     return addLeadingZeros(date.getFullYear(), 4).substr(2)
   },
 
   // Year: 1900, 1901, ..., 2099
-  YYYY: function(date) {
+  'YYYY': function (date) {
     return addLeadingZeros(date.getFullYear(), 4)
   },
 
   // ISO week-numbering year: 00, 01, ..., 99
-  GG: function(date) {
+  'GG': function (date) {
     return String(get_iso_year(date)).substr(2)
   },
 
   // ISO week-numbering year: 1900, 1901, ..., 2099
-  GGGG: function(date) {
+  'GGGG': function (date) {
     return get_iso_year(date)
   },
 
   // Hour: 0, 1, ... 23
-  H: function(date) {
+  'H': function (date) {
     return date.getHours()
   },
 
   // Hour: 00, 01, ..., 23
-  HH: function(date) {
+  'HH': function (date) {
     return addLeadingZeros(date.getHours(), 2)
   },
 
   // Hour: 1, 2, ..., 12
-  h: function(date) {
-    var hours = date.getHours()
+  'h': function (date) {
+    var hours = date.getHours();
     if (hours === 0) {
       return 12
     } else if (hours > 12) {
@@ -3135,119 +3080,119 @@ var formatters = {
   },
 
   // Hour: 01, 02, ..., 12
-  hh: function(date) {
+  'hh': function (date) {
     return addLeadingZeros(formatters['h'](date), 2)
   },
 
   // Minute: 0, 1, ..., 59
-  m: function(date) {
+  'm': function (date) {
     return date.getMinutes()
   },
 
   // Minute: 00, 01, ..., 59
-  mm: function(date) {
+  'mm': function (date) {
     return addLeadingZeros(date.getMinutes(), 2)
   },
 
   // Second: 0, 1, ..., 59
-  s: function(date) {
+  's': function (date) {
     return date.getSeconds()
   },
 
   // Second: 00, 01, ..., 59
-  ss: function(date) {
+  'ss': function (date) {
     return addLeadingZeros(date.getSeconds(), 2)
   },
 
   // 1/10 of second: 0, 1, ..., 9
-  S: function(date) {
+  'S': function (date) {
     return Math.floor(date.getMilliseconds() / 100)
   },
 
   // 1/100 of second: 00, 01, ..., 99
-  SS: function(date) {
+  'SS': function (date) {
     return addLeadingZeros(Math.floor(date.getMilliseconds() / 10), 2)
   },
 
   // Millisecond: 000, 001, ..., 999
-  SSS: function(date) {
+  'SSS': function (date) {
     return addLeadingZeros(date.getMilliseconds(), 3)
   },
 
   // Timezone: -01:00, +00:00, ... +12:00
-  Z: function(date) {
+  'Z': function (date) {
     return formatTimezone(date.getTimezoneOffset(), ':')
   },
 
   // Timezone: -0100, +0000, ... +1200
-  ZZ: function(date) {
+  'ZZ': function (date) {
     return formatTimezone(date.getTimezoneOffset())
   },
 
   // Seconds timestamp: 512969520
-  X: function(date) {
+  'X': function (date) {
     return Math.floor(date.getTime() / 1000)
   },
 
   // Milliseconds timestamp: 512969520900
-  x: function(date) {
+  'x': function (date) {
     return date.getTime()
-  },
-}
+  }
+};
 
-function buildFormatFn(formatStr, localeFormatters, formattingTokensRegExp) {
-  var array = formatStr.match(formattingTokensRegExp)
-  var length = array.length
+function buildFormatFn (formatStr, localeFormatters, formattingTokensRegExp) {
+  var array = formatStr.match(formattingTokensRegExp);
+  var length = array.length;
 
-  var i
-  var formatter
+  var i;
+  var formatter;
   for (i = 0; i < length; i++) {
-    formatter = localeFormatters[array[i]] || formatters[array[i]]
+    formatter = localeFormatters[array[i]] || formatters[array[i]];
     if (formatter) {
-      array[i] = formatter
+      array[i] = formatter;
     } else {
-      array[i] = removeFormattingTokens(array[i])
+      array[i] = removeFormattingTokens(array[i]);
     }
   }
 
-  return function(date) {
-    var output = ''
+  return function (date) {
+    var output = '';
     for (var i = 0; i < length; i++) {
       if (array[i] instanceof Function) {
-        output += array[i](date, formatters)
+        output += array[i](date, formatters);
       } else {
-        output += array[i]
+        output += array[i];
       }
     }
     return output
   }
 }
 
-function removeFormattingTokens(input) {
+function removeFormattingTokens (input) {
   if (input.match(/\[[\s\S]/)) {
     return input.replace(/^\[|]$/g, '')
   }
   return input.replace(/\\/g, '')
 }
 
-function formatTimezone(offset, delimeter) {
-  delimeter = delimeter || ''
-  var sign = offset > 0 ? '-' : '+'
-  var absOffset = Math.abs(offset)
-  var hours = Math.floor(absOffset / 60)
-  var minutes = absOffset % 60
+function formatTimezone (offset, delimeter) {
+  delimeter = delimeter || '';
+  var sign = offset > 0 ? '-' : '+';
+  var absOffset = Math.abs(offset);
+  var hours = Math.floor(absOffset / 60);
+  var minutes = absOffset % 60;
   return sign + addLeadingZeros(hours, 2) + delimeter + addLeadingZeros(minutes, 2)
 }
 
-function addLeadingZeros(number, targetLength) {
-  var output = Math.abs(number).toString()
+function addLeadingZeros (number, targetLength) {
+  var output = Math.abs(number).toString();
   while (output.length < targetLength) {
-    output = '0' + output
+    output = '0' + output;
   }
   return output
 }
 
-var format_1 = format
+var format_1 = format;
 
 /**
  * @category Day Helpers
@@ -3264,13 +3209,13 @@ var format_1 = format
  * var result = getDate(new Date(2012, 1, 29))
  * //=> 29
  */
-function getDate(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var dayOfMonth = date.getDate()
+function getDate (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var dayOfMonth = date.getDate();
   return dayOfMonth
 }
 
-var get_date = getDate
+var get_date = getDate;
 
 /**
  * @category Weekday Helpers
@@ -3287,13 +3232,13 @@ var get_date = getDate
  * var result = getDay(new Date(2012, 1, 29))
  * //=> 3
  */
-function getDay(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var day = date.getDay()
+function getDay (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var day = date.getDay();
   return day
 }
 
-var get_day = getDay
+var get_day = getDay;
 
 /**
  * @category Year Helpers
@@ -3310,13 +3255,13 @@ var get_day = getDay
  * var result = isLeapYear(new Date(2012, 8, 1))
  * //=> true
  */
-function isLeapYear(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var year = date.getFullYear()
-  return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)
+function isLeapYear (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var year = date.getFullYear();
+  return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0
 }
 
-var is_leap_year = isLeapYear
+var is_leap_year = isLeapYear;
 
 /**
  * @category Year Helpers
@@ -3333,11 +3278,11 @@ var is_leap_year = isLeapYear
  * var result = getDaysInYear(new Date(2012, 0, 1))
  * //=> 366
  */
-function getDaysInYear(dirtyDate) {
+function getDaysInYear (dirtyDate) {
   return is_leap_year(dirtyDate) ? 366 : 365
 }
 
-var get_days_in_year = getDaysInYear
+var get_days_in_year = getDaysInYear;
 
 /**
  * @category Hour Helpers
@@ -3354,13 +3299,13 @@ var get_days_in_year = getDaysInYear
  * var result = getHours(new Date(2012, 1, 29, 11, 45))
  * //=> 11
  */
-function getHours(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var hours = date.getHours()
+function getHours (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var hours = date.getHours();
   return hours
 }
 
-var get_hours = getHours
+var get_hours = getHours;
 
 /**
  * @category Weekday Helpers
@@ -3380,20 +3325,20 @@ var get_hours = getHours
  * var result = getISODay(new Date(2012, 1, 26))
  * //=> 7
  */
-function getISODay(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var day = date.getDay()
+function getISODay (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var day = date.getDay();
 
   if (day === 0) {
-    day = 7
+    day = 7;
   }
 
   return day
 }
 
-var get_iso_day = getISODay
+var get_iso_day = getISODay;
 
-var MILLISECONDS_IN_WEEK$3 = 604800000
+var MILLISECONDS_IN_WEEK$3 = 604800000;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -3412,17 +3357,17 @@ var MILLISECONDS_IN_WEEK$3 = 604800000
  * var result = getISOWeeksInYear(new Date(2015, 1, 11))
  * //=> 53
  */
-function getISOWeeksInYear(dirtyDate) {
-  var thisYear = start_of_iso_year(dirtyDate)
-  var nextYear = start_of_iso_year(add_weeks(thisYear, 60))
-  var diff = nextYear.valueOf() - thisYear.valueOf()
+function getISOWeeksInYear (dirtyDate) {
+  var thisYear = start_of_iso_year(dirtyDate);
+  var nextYear = start_of_iso_year(add_weeks(thisYear, 60));
+  var diff = nextYear.valueOf() - thisYear.valueOf();
   // Round the number of weeks to the nearest integer
   // because the number of milliseconds in a week is not constant
   // (e.g. it's different in the week of the daylight saving time clock shift)
   return Math.round(diff / MILLISECONDS_IN_WEEK$3)
 }
 
-var get_iso_weeks_in_year = getISOWeeksInYear
+var get_iso_weeks_in_year = getISOWeeksInYear;
 
 /**
  * @category Millisecond Helpers
@@ -3439,13 +3384,13 @@ var get_iso_weeks_in_year = getISOWeeksInYear
  * var result = getMilliseconds(new Date(2012, 1, 29, 11, 45, 5, 123))
  * //=> 123
  */
-function getMilliseconds(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var milliseconds = date.getMilliseconds()
+function getMilliseconds (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var milliseconds = date.getMilliseconds();
   return milliseconds
 }
 
-var get_milliseconds = getMilliseconds
+var get_milliseconds = getMilliseconds;
 
 /**
  * @category Minute Helpers
@@ -3462,13 +3407,13 @@ var get_milliseconds = getMilliseconds
  * var result = getMinutes(new Date(2012, 1, 29, 11, 45, 5))
  * //=> 45
  */
-function getMinutes(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var minutes = date.getMinutes()
+function getMinutes (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var minutes = date.getMinutes();
   return minutes
 }
 
-var get_minutes = getMinutes
+var get_minutes = getMinutes;
 
 /**
  * @category Month Helpers
@@ -3485,15 +3430,15 @@ var get_minutes = getMinutes
  * var result = getMonth(new Date(2012, 1, 29))
  * //=> 1
  */
-function getMonth(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var month = date.getMonth()
+function getMonth (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var month = date.getMonth();
   return month
 }
 
-var get_month = getMonth
+var get_month = getMonth;
 
-var MILLISECONDS_IN_DAY$1 = 24 * 60 * 60 * 1000
+var MILLISECONDS_IN_DAY$1 = 24 * 60 * 60 * 1000;
 
 /**
  * @category Range Helpers
@@ -3523,37 +3468,36 @@ var MILLISECONDS_IN_DAY$1 = 24 * 60 * 60 * 1000
  * )
  * //=> 0
  */
-function getOverlappingDaysInRanges(
-  dirtyInitialRangeStartDate,
-  dirtyInitialRangeEndDate,
-  dirtyComparedRangeStartDate,
-  dirtyComparedRangeEndDate,
-) {
-  var initialStartTime = parse_1(dirtyInitialRangeStartDate).getTime()
-  var initialEndTime = parse_1(dirtyInitialRangeEndDate).getTime()
-  var comparedStartTime = parse_1(dirtyComparedRangeStartDate).getTime()
-  var comparedEndTime = parse_1(dirtyComparedRangeEndDate).getTime()
+function getOverlappingDaysInRanges (dirtyInitialRangeStartDate, dirtyInitialRangeEndDate, dirtyComparedRangeStartDate, dirtyComparedRangeEndDate) {
+  var initialStartTime = parse_1(dirtyInitialRangeStartDate).getTime();
+  var initialEndTime = parse_1(dirtyInitialRangeEndDate).getTime();
+  var comparedStartTime = parse_1(dirtyComparedRangeStartDate).getTime();
+  var comparedEndTime = parse_1(dirtyComparedRangeEndDate).getTime();
 
   if (initialStartTime > initialEndTime || comparedStartTime > comparedEndTime) {
     throw new Error('The start of the range cannot be after the end of the range')
   }
 
-  var isOverlapping = initialStartTime < comparedEndTime && comparedStartTime < initialEndTime
+  var isOverlapping = initialStartTime < comparedEndTime && comparedStartTime < initialEndTime;
 
   if (!isOverlapping) {
     return 0
   }
 
-  var overlapStartDate = comparedStartTime < initialStartTime ? initialStartTime : comparedStartTime
+  var overlapStartDate = comparedStartTime < initialStartTime
+    ? initialStartTime
+    : comparedStartTime;
 
-  var overlapEndDate = comparedEndTime > initialEndTime ? initialEndTime : comparedEndTime
+  var overlapEndDate = comparedEndTime > initialEndTime
+    ? initialEndTime
+    : comparedEndTime;
 
-  var differenceInMs = overlapEndDate - overlapStartDate
+  var differenceInMs = overlapEndDate - overlapStartDate;
 
   return Math.ceil(differenceInMs / MILLISECONDS_IN_DAY$1)
 }
 
-var get_overlapping_days_in_ranges = getOverlappingDaysInRanges
+var get_overlapping_days_in_ranges = getOverlappingDaysInRanges;
 
 /**
  * @category Second Helpers
@@ -3570,13 +3514,13 @@ var get_overlapping_days_in_ranges = getOverlappingDaysInRanges
  * var result = getSeconds(new Date(2012, 1, 29, 11, 45, 5, 123))
  * //=> 5
  */
-function getSeconds(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var seconds = date.getSeconds()
+function getSeconds (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var seconds = date.getSeconds();
   return seconds
 }
 
-var get_seconds = getSeconds
+var get_seconds = getSeconds;
 
 /**
  * @category Timestamp Helpers
@@ -3593,13 +3537,13 @@ var get_seconds = getSeconds
  * var result = getTime(new Date(2012, 1, 29, 11, 45, 5, 123))
  * //=> 1330515905123
  */
-function getTime(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var timestamp = date.getTime()
+function getTime (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var timestamp = date.getTime();
   return timestamp
 }
 
-var get_time = getTime
+var get_time = getTime;
 
 /**
  * @category Year Helpers
@@ -3616,13 +3560,13 @@ var get_time = getTime
  * var result = getYear(new Date(2014, 6, 2))
  * //=> 2014
  */
-function getYear(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var year = date.getFullYear()
+function getYear (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var year = date.getFullYear();
   return year
 }
 
-var get_year = getYear
+var get_year = getYear;
 
 /**
  * @category Common Helpers
@@ -3640,13 +3584,13 @@ var get_year = getYear
  * var result = isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))
  * //=> true
  */
-function isAfter(dirtyDate, dirtyDateToCompare) {
-  var date = parse_1(dirtyDate)
-  var dateToCompare = parse_1(dirtyDateToCompare)
+function isAfter (dirtyDate, dirtyDateToCompare) {
+  var date = parse_1(dirtyDate);
+  var dateToCompare = parse_1(dirtyDateToCompare);
   return date.getTime() > dateToCompare.getTime()
 }
 
-var is_after = isAfter
+var is_after = isAfter;
 
 /**
  * @category Common Helpers
@@ -3664,13 +3608,13 @@ var is_after = isAfter
  * var result = isBefore(new Date(1989, 6, 10), new Date(1987, 1, 11))
  * //=> false
  */
-function isBefore(dirtyDate, dirtyDateToCompare) {
-  var date = parse_1(dirtyDate)
-  var dateToCompare = parse_1(dirtyDateToCompare)
+function isBefore (dirtyDate, dirtyDateToCompare) {
+  var date = parse_1(dirtyDate);
+  var dateToCompare = parse_1(dirtyDateToCompare);
   return date.getTime() < dateToCompare.getTime()
 }
 
-var is_before = isBefore
+var is_before = isBefore;
 
 /**
  * @category Common Helpers
@@ -3691,13 +3635,13 @@ var is_before = isBefore
  * )
  * //=> false
  */
-function isEqual(dirtyLeftDate, dirtyRightDate) {
-  var dateLeft = parse_1(dirtyLeftDate)
-  var dateRight = parse_1(dirtyRightDate)
+function isEqual (dirtyLeftDate, dirtyRightDate) {
+  var dateLeft = parse_1(dirtyLeftDate);
+  var dateRight = parse_1(dirtyRightDate);
   return dateLeft.getTime() === dateRight.getTime()
 }
 
-var is_equal = isEqual
+var is_equal = isEqual;
 
 /**
  * @category Month Helpers
@@ -3714,11 +3658,11 @@ var is_equal = isEqual
  * var result = isFirstDayOfMonth(new Date(2014, 8, 1))
  * //=> true
  */
-function isFirstDayOfMonth(dirtyDate) {
+function isFirstDayOfMonth (dirtyDate) {
   return parse_1(dirtyDate).getDate() === 1
 }
 
-var is_first_day_of_month = isFirstDayOfMonth
+var is_first_day_of_month = isFirstDayOfMonth;
 
 /**
  * @category Weekday Helpers
@@ -3735,11 +3679,11 @@ var is_first_day_of_month = isFirstDayOfMonth
  * var result = isFriday(new Date(2014, 8, 26))
  * //=> true
  */
-function isFriday(dirtyDate) {
+function isFriday (dirtyDate) {
   return parse_1(dirtyDate).getDay() === 5
 }
 
-var is_friday = isFriday
+var is_friday = isFriday;
 
 /**
  * @category Common Helpers
@@ -3756,11 +3700,11 @@ var is_friday = isFriday
  * var result = isFuture(new Date(2014, 11, 31))
  * //=> true
  */
-function isFuture(dirtyDate) {
+function isFuture (dirtyDate) {
   return parse_1(dirtyDate).getTime() > new Date().getTime()
 }
 
-var is_future = isFuture
+var is_future = isFuture;
 
 /**
  * @category Month Helpers
@@ -3777,12 +3721,12 @@ var is_future = isFuture
  * var result = isLastDayOfMonth(new Date(2014, 1, 28))
  * //=> true
  */
-function isLastDayOfMonth(dirtyDate) {
-  var date = parse_1(dirtyDate)
+function isLastDayOfMonth (dirtyDate) {
+  var date = parse_1(dirtyDate);
   return end_of_day(date).getTime() === end_of_month(date).getTime()
 }
 
-var is_last_day_of_month = isLastDayOfMonth
+var is_last_day_of_month = isLastDayOfMonth;
 
 /**
  * @category Weekday Helpers
@@ -3799,11 +3743,11 @@ var is_last_day_of_month = isLastDayOfMonth
  * var result = isMonday(new Date(2014, 8, 22))
  * //=> true
  */
-function isMonday(dirtyDate) {
+function isMonday (dirtyDate) {
   return parse_1(dirtyDate).getDay() === 1
 }
 
-var is_monday = isMonday
+var is_monday = isMonday;
 
 /**
  * @category Common Helpers
@@ -3820,11 +3764,11 @@ var is_monday = isMonday
  * var result = isPast(new Date(2014, 6, 2))
  * //=> true
  */
-function isPast(dirtyDate) {
+function isPast (dirtyDate) {
   return parse_1(dirtyDate).getTime() < new Date().getTime()
 }
 
-var is_past = isPast
+var is_past = isPast;
 
 /**
  * @category Day Helpers
@@ -3845,14 +3789,14 @@ var is_past = isPast
  * )
  * //=> true
  */
-function isSameDay(dirtyDateLeft, dirtyDateRight) {
-  var dateLeftStartOfDay = start_of_day(dirtyDateLeft)
-  var dateRightStartOfDay = start_of_day(dirtyDateRight)
+function isSameDay (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfDay = start_of_day(dirtyDateLeft);
+  var dateRightStartOfDay = start_of_day(dirtyDateRight);
 
   return dateLeftStartOfDay.getTime() === dateRightStartOfDay.getTime()
 }
 
-var is_same_day = isSameDay
+var is_same_day = isSameDay;
 
 /**
  * @category Hour Helpers
@@ -3870,13 +3814,13 @@ var is_same_day = isSameDay
  * var result = startOfHour(new Date(2014, 8, 2, 11, 55))
  * //=> Tue Sep 02 2014 11:00:00
  */
-function startOfHour(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setMinutes(0, 0, 0)
+function startOfHour (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setMinutes(0, 0, 0);
   return date
 }
 
-var start_of_hour = startOfHour
+var start_of_hour = startOfHour;
 
 /**
  * @category Hour Helpers
@@ -3897,14 +3841,14 @@ var start_of_hour = startOfHour
  * )
  * //=> true
  */
-function isSameHour(dirtyDateLeft, dirtyDateRight) {
-  var dateLeftStartOfHour = start_of_hour(dirtyDateLeft)
-  var dateRightStartOfHour = start_of_hour(dirtyDateRight)
+function isSameHour (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfHour = start_of_hour(dirtyDateLeft);
+  var dateRightStartOfHour = start_of_hour(dirtyDateRight);
 
   return dateLeftStartOfHour.getTime() === dateRightStartOfHour.getTime()
 }
 
-var is_same_hour = isSameHour
+var is_same_hour = isSameHour;
 
 /**
  * @category Week Helpers
@@ -3937,14 +3881,14 @@ var is_same_hour = isSameHour
  * )
  * //=> false
  */
-function isSameWeek(dirtyDateLeft, dirtyDateRight, dirtyOptions) {
-  var dateLeftStartOfWeek = start_of_week(dirtyDateLeft, dirtyOptions)
-  var dateRightStartOfWeek = start_of_week(dirtyDateRight, dirtyOptions)
+function isSameWeek (dirtyDateLeft, dirtyDateRight, dirtyOptions) {
+  var dateLeftStartOfWeek = start_of_week(dirtyDateLeft, dirtyOptions);
+  var dateRightStartOfWeek = start_of_week(dirtyDateRight, dirtyOptions);
 
   return dateLeftStartOfWeek.getTime() === dateRightStartOfWeek.getTime()
 }
 
-var is_same_week = isSameWeek
+var is_same_week = isSameWeek;
 
 /**
  * @category ISO Week Helpers
@@ -3967,11 +3911,11 @@ var is_same_week = isSameWeek
  * )
  * //=> true
  */
-function isSameISOWeek(dirtyDateLeft, dirtyDateRight) {
+function isSameISOWeek (dirtyDateLeft, dirtyDateRight) {
   return is_same_week(dirtyDateLeft, dirtyDateRight, {weekStartsOn: 1})
 }
 
-var is_same_iso_week = isSameISOWeek
+var is_same_iso_week = isSameISOWeek;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -3994,14 +3938,14 @@ var is_same_iso_week = isSameISOWeek
  * )
  * //=> true
  */
-function isSameISOYear(dirtyDateLeft, dirtyDateRight) {
-  var dateLeftStartOfYear = start_of_iso_year(dirtyDateLeft)
-  var dateRightStartOfYear = start_of_iso_year(dirtyDateRight)
+function isSameISOYear (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfYear = start_of_iso_year(dirtyDateLeft);
+  var dateRightStartOfYear = start_of_iso_year(dirtyDateRight);
 
   return dateLeftStartOfYear.getTime() === dateRightStartOfYear.getTime()
 }
 
-var is_same_iso_year = isSameISOYear
+var is_same_iso_year = isSameISOYear;
 
 /**
  * @category Minute Helpers
@@ -4019,13 +3963,13 @@ var is_same_iso_year = isSameISOYear
  * var result = startOfMinute(new Date(2014, 11, 1, 22, 15, 45, 400))
  * //=> Mon Dec 01 2014 22:15:00
  */
-function startOfMinute(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setSeconds(0, 0)
+function startOfMinute (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setSeconds(0, 0);
   return date
 }
 
-var start_of_minute = startOfMinute
+var start_of_minute = startOfMinute;
 
 /**
  * @category Minute Helpers
@@ -4047,14 +3991,14 @@ var start_of_minute = startOfMinute
  * )
  * //=> true
  */
-function isSameMinute(dirtyDateLeft, dirtyDateRight) {
-  var dateLeftStartOfMinute = start_of_minute(dirtyDateLeft)
-  var dateRightStartOfMinute = start_of_minute(dirtyDateRight)
+function isSameMinute (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfMinute = start_of_minute(dirtyDateLeft);
+  var dateRightStartOfMinute = start_of_minute(dirtyDateRight);
 
   return dateLeftStartOfMinute.getTime() === dateRightStartOfMinute.getTime()
 }
 
-var is_same_minute = isSameMinute
+var is_same_minute = isSameMinute;
 
 /**
  * @category Month Helpers
@@ -4075,16 +4019,14 @@ var is_same_minute = isSameMinute
  * )
  * //=> true
  */
-function isSameMonth(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
-  return (
-    dateLeft.getFullYear() === dateRight.getFullYear() &&
+function isSameMonth (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
+  return dateLeft.getFullYear() === dateRight.getFullYear() &&
     dateLeft.getMonth() === dateRight.getMonth()
-  )
 }
 
-var is_same_month = isSameMonth
+var is_same_month = isSameMonth;
 
 /**
  * @category Quarter Helpers
@@ -4102,16 +4044,16 @@ var is_same_month = isSameMonth
  * var result = startOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Tue Jul 01 2014 00:00:00
  */
-function startOfQuarter(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var currentMonth = date.getMonth()
-  var month = currentMonth - (currentMonth % 3)
-  date.setMonth(month, 1)
-  date.setHours(0, 0, 0, 0)
+function startOfQuarter (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var currentMonth = date.getMonth();
+  var month = currentMonth - currentMonth % 3;
+  date.setMonth(month, 1);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var start_of_quarter = startOfQuarter
+var start_of_quarter = startOfQuarter;
 
 /**
  * @category Quarter Helpers
@@ -4132,14 +4074,14 @@ var start_of_quarter = startOfQuarter
  * )
  * //=> true
  */
-function isSameQuarter(dirtyDateLeft, dirtyDateRight) {
-  var dateLeftStartOfQuarter = start_of_quarter(dirtyDateLeft)
-  var dateRightStartOfQuarter = start_of_quarter(dirtyDateRight)
+function isSameQuarter (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfQuarter = start_of_quarter(dirtyDateLeft);
+  var dateRightStartOfQuarter = start_of_quarter(dirtyDateRight);
 
   return dateLeftStartOfQuarter.getTime() === dateRightStartOfQuarter.getTime()
 }
 
-var is_same_quarter = isSameQuarter
+var is_same_quarter = isSameQuarter;
 
 /**
  * @category Second Helpers
@@ -4157,13 +4099,13 @@ var is_same_quarter = isSameQuarter
  * var result = startOfSecond(new Date(2014, 11, 1, 22, 15, 45, 400))
  * //=> Mon Dec 01 2014 22:15:45.000
  */
-function startOfSecond(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setMilliseconds(0)
+function startOfSecond (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setMilliseconds(0);
   return date
 }
 
-var start_of_second = startOfSecond
+var start_of_second = startOfSecond;
 
 /**
  * @category Second Helpers
@@ -4185,14 +4127,14 @@ var start_of_second = startOfSecond
  * )
  * //=> true
  */
-function isSameSecond(dirtyDateLeft, dirtyDateRight) {
-  var dateLeftStartOfSecond = start_of_second(dirtyDateLeft)
-  var dateRightStartOfSecond = start_of_second(dirtyDateRight)
+function isSameSecond (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfSecond = start_of_second(dirtyDateLeft);
+  var dateRightStartOfSecond = start_of_second(dirtyDateRight);
 
   return dateLeftStartOfSecond.getTime() === dateRightStartOfSecond.getTime()
 }
 
-var is_same_second = isSameSecond
+var is_same_second = isSameSecond;
 
 /**
  * @category Year Helpers
@@ -4213,13 +4155,13 @@ var is_same_second = isSameSecond
  * )
  * //=> true
  */
-function isSameYear(dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse_1(dirtyDateLeft)
-  var dateRight = parse_1(dirtyDateRight)
+function isSameYear (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse_1(dirtyDateLeft);
+  var dateRight = parse_1(dirtyDateRight);
   return dateLeft.getFullYear() === dateRight.getFullYear()
 }
 
-var is_same_year = isSameYear
+var is_same_year = isSameYear;
 
 /**
  * @category Weekday Helpers
@@ -4236,11 +4178,11 @@ var is_same_year = isSameYear
  * var result = isSaturday(new Date(2014, 8, 27))
  * //=> true
  */
-function isSaturday(dirtyDate) {
+function isSaturday (dirtyDate) {
   return parse_1(dirtyDate).getDay() === 6
 }
 
-var is_saturday = isSaturday
+var is_saturday = isSaturday;
 
 /**
  * @category Weekday Helpers
@@ -4257,11 +4199,11 @@ var is_saturday = isSaturday
  * var result = isSunday(new Date(2014, 8, 21))
  * //=> true
  */
-function isSunday(dirtyDate) {
+function isSunday (dirtyDate) {
   return parse_1(dirtyDate).getDay() === 0
 }
 
-var is_sunday = isSunday
+var is_sunday = isSunday;
 
 /**
  * @category Hour Helpers
@@ -4279,11 +4221,11 @@ var is_sunday = isSunday
  * var result = isThisHour(new Date(2014, 8, 25, 18))
  * //=> true
  */
-function isThisHour(dirtyDate) {
+function isThisHour (dirtyDate) {
   return is_same_hour(new Date(), dirtyDate)
 }
 
-var is_this_hour = isThisHour
+var is_this_hour = isThisHour;
 
 /**
  * @category ISO Week Helpers
@@ -4302,11 +4244,11 @@ var is_this_hour = isThisHour
  * var result = isThisISOWeek(new Date(2014, 8, 22))
  * //=> true
  */
-function isThisISOWeek(dirtyDate) {
+function isThisISOWeek (dirtyDate) {
   return is_same_iso_week(new Date(), dirtyDate)
 }
 
-var is_this_iso_week = isThisISOWeek
+var is_this_iso_week = isThisISOWeek;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -4326,11 +4268,11 @@ var is_this_iso_week = isThisISOWeek
  * var result = isThisISOYear(new Date(2013, 11, 30))
  * //=> true
  */
-function isThisISOYear(dirtyDate) {
+function isThisISOYear (dirtyDate) {
   return is_same_iso_year(new Date(), dirtyDate)
 }
 
-var is_this_iso_year = isThisISOYear
+var is_this_iso_year = isThisISOYear;
 
 /**
  * @category Minute Helpers
@@ -4348,11 +4290,11 @@ var is_this_iso_year = isThisISOYear
  * var result = isThisMinute(new Date(2014, 8, 25, 18, 30))
  * //=> true
  */
-function isThisMinute(dirtyDate) {
+function isThisMinute (dirtyDate) {
   return is_same_minute(new Date(), dirtyDate)
 }
 
-var is_this_minute = isThisMinute
+var is_this_minute = isThisMinute;
 
 /**
  * @category Month Helpers
@@ -4369,11 +4311,11 @@ var is_this_minute = isThisMinute
  * var result = isThisMonth(new Date(2014, 8, 15))
  * //=> true
  */
-function isThisMonth(dirtyDate) {
+function isThisMonth (dirtyDate) {
   return is_same_month(new Date(), dirtyDate)
 }
 
-var is_this_month = isThisMonth
+var is_this_month = isThisMonth;
 
 /**
  * @category Quarter Helpers
@@ -4390,11 +4332,11 @@ var is_this_month = isThisMonth
  * var result = isThisQuarter(new Date(2014, 6, 2))
  * //=> true
  */
-function isThisQuarter(dirtyDate) {
+function isThisQuarter (dirtyDate) {
   return is_same_quarter(new Date(), dirtyDate)
 }
 
-var is_this_quarter = isThisQuarter
+var is_this_quarter = isThisQuarter;
 
 /**
  * @category Second Helpers
@@ -4412,11 +4354,11 @@ var is_this_quarter = isThisQuarter
  * var result = isThisSecond(new Date(2014, 8, 25, 18, 30, 15))
  * //=> true
  */
-function isThisSecond(dirtyDate) {
+function isThisSecond (dirtyDate) {
   return is_same_second(new Date(), dirtyDate)
 }
 
-var is_this_second = isThisSecond
+var is_this_second = isThisSecond;
 
 /**
  * @category Week Helpers
@@ -4441,11 +4383,11 @@ var is_this_second = isThisSecond
  * var result = isThisWeek(new Date(2014, 8, 21), {weekStartsOn: 1})
  * //=> false
  */
-function isThisWeek(dirtyDate, dirtyOptions) {
+function isThisWeek (dirtyDate, dirtyOptions) {
   return is_same_week(new Date(), dirtyDate, dirtyOptions)
 }
 
-var is_this_week = isThisWeek
+var is_this_week = isThisWeek;
 
 /**
  * @category Year Helpers
@@ -4462,11 +4404,11 @@ var is_this_week = isThisWeek
  * var result = isThisYear(new Date(2014, 6, 2))
  * //=> true
  */
-function isThisYear(dirtyDate) {
+function isThisYear (dirtyDate) {
   return is_same_year(new Date(), dirtyDate)
 }
 
-var is_this_year = isThisYear
+var is_this_year = isThisYear;
 
 /**
  * @category Weekday Helpers
@@ -4483,11 +4425,11 @@ var is_this_year = isThisYear
  * var result = isThursday(new Date(2014, 8, 25))
  * //=> true
  */
-function isThursday(dirtyDate) {
+function isThursday (dirtyDate) {
   return parse_1(dirtyDate).getDay() === 4
 }
 
-var is_thursday = isThursday
+var is_thursday = isThursday;
 
 /**
  * @category Day Helpers
@@ -4504,11 +4446,11 @@ var is_thursday = isThursday
  * var result = isToday(new Date(2014, 9, 6, 14, 0))
  * //=> true
  */
-function isToday(dirtyDate) {
+function isToday (dirtyDate) {
   return start_of_day(dirtyDate).getTime() === start_of_day(new Date()).getTime()
 }
 
-var is_today = isToday
+var is_today = isToday;
 
 /**
  * @category Day Helpers
@@ -4525,13 +4467,13 @@ var is_today = isToday
  * var result = isTomorrow(new Date(2014, 9, 7, 14, 0))
  * //=> true
  */
-function isTomorrow(dirtyDate) {
-  var tomorrow = new Date()
-  tomorrow.setDate(tomorrow.getDate() + 1)
+function isTomorrow (dirtyDate) {
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
   return start_of_day(dirtyDate).getTime() === start_of_day(tomorrow).getTime()
 }
 
-var is_tomorrow = isTomorrow
+var is_tomorrow = isTomorrow;
 
 /**
  * @category Weekday Helpers
@@ -4548,11 +4490,11 @@ var is_tomorrow = isTomorrow
  * var result = isTuesday(new Date(2014, 8, 23))
  * //=> true
  */
-function isTuesday(dirtyDate) {
+function isTuesday (dirtyDate) {
   return parse_1(dirtyDate).getDay() === 2
 }
 
-var is_tuesday = isTuesday
+var is_tuesday = isTuesday;
 
 /**
  * @category Weekday Helpers
@@ -4569,11 +4511,11 @@ var is_tuesday = isTuesday
  * var result = isWednesday(new Date(2014, 8, 24))
  * //=> true
  */
-function isWednesday(dirtyDate) {
+function isWednesday (dirtyDate) {
   return parse_1(dirtyDate).getDay() === 3
 }
 
-var is_wednesday = isWednesday
+var is_wednesday = isWednesday;
 
 /**
  * @category Weekday Helpers
@@ -4590,13 +4532,13 @@ var is_wednesday = isWednesday
  * var result = isWeekend(new Date(2014, 9, 5))
  * //=> true
  */
-function isWeekend(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var day = date.getDay()
+function isWeekend (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var day = date.getDay();
   return day === 0 || day === 6
 }
 
-var is_weekend = isWeekend
+var is_weekend = isWeekend;
 
 /**
  * @category Range Helpers
@@ -4625,10 +4567,10 @@ var is_weekend = isWeekend
  * )
  * //=> false
  */
-function isWithinRange(dirtyDate, dirtyStartDate, dirtyEndDate) {
-  var time = parse_1(dirtyDate).getTime()
-  var startTime = parse_1(dirtyStartDate).getTime()
-  var endTime = parse_1(dirtyEndDate).getTime()
+function isWithinRange (dirtyDate, dirtyStartDate, dirtyEndDate) {
+  var time = parse_1(dirtyDate).getTime();
+  var startTime = parse_1(dirtyStartDate).getTime();
+  var endTime = parse_1(dirtyEndDate).getTime();
 
   if (startTime > endTime) {
     throw new Error('The start of the range cannot be after the end of the range')
@@ -4637,7 +4579,7 @@ function isWithinRange(dirtyDate, dirtyStartDate, dirtyEndDate) {
   return time >= startTime && time <= endTime
 }
 
-var is_within_range = isWithinRange
+var is_within_range = isWithinRange;
 
 /**
  * @category Day Helpers
@@ -4654,13 +4596,13 @@ var is_within_range = isWithinRange
  * var result = isYesterday(new Date(2014, 9, 5, 14, 0))
  * //=> true
  */
-function isYesterday(dirtyDate) {
-  var yesterday = new Date()
-  yesterday.setDate(yesterday.getDate() - 1)
+function isYesterday (dirtyDate) {
+  var yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
   return start_of_day(dirtyDate).getTime() === start_of_day(yesterday).getTime()
 }
 
-var is_yesterday = isYesterday
+var is_yesterday = isYesterday;
 
 /**
  * @category Week Helpers
@@ -4685,19 +4627,19 @@ var is_yesterday = isYesterday
  * var result = lastDayOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
  * //=> Sun Sep 07 2014 00:00:00
  */
-function lastDayOfWeek(dirtyDate, dirtyOptions) {
-  var weekStartsOn = dirtyOptions ? Number(dirtyOptions.weekStartsOn) || 0 : 0
+function lastDayOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0;
 
-  var date = parse_1(dirtyDate)
-  var day = date.getDay()
-  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn)
+  var date = parse_1(dirtyDate);
+  var day = date.getDay();
+  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn);
 
-  date.setHours(0, 0, 0, 0)
-  date.setDate(date.getDate() + diff)
+  date.setHours(0, 0, 0, 0);
+  date.setDate(date.getDate() + diff);
   return date
 }
 
-var last_day_of_week = lastDayOfWeek
+var last_day_of_week = lastDayOfWeek;
 
 /**
  * @category ISO Week Helpers
@@ -4717,11 +4659,11 @@ var last_day_of_week = lastDayOfWeek
  * var result = lastDayOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Sun Sep 07 2014 00:00:00
  */
-function lastDayOfISOWeek(dirtyDate) {
+function lastDayOfISOWeek (dirtyDate) {
   return last_day_of_week(dirtyDate, {weekStartsOn: 1})
 }
 
-var last_day_of_iso_week = lastDayOfISOWeek
+var last_day_of_iso_week = lastDayOfISOWeek;
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -4742,17 +4684,17 @@ var last_day_of_iso_week = lastDayOfISOWeek
  * var result = lastDayOfISOYear(new Date(2005, 6, 2))
  * //=> Sun Jan 01 2006 00:00:00
  */
-function lastDayOfISOYear(dirtyDate) {
-  var year = get_iso_year(dirtyDate)
-  var fourthOfJanuary = new Date(0)
-  fourthOfJanuary.setFullYear(year + 1, 0, 4)
-  fourthOfJanuary.setHours(0, 0, 0, 0)
-  var date = start_of_iso_week(fourthOfJanuary)
-  date.setDate(date.getDate() - 1)
+function lastDayOfISOYear (dirtyDate) {
+  var year = get_iso_year(dirtyDate);
+  var fourthOfJanuary = new Date(0);
+  fourthOfJanuary.setFullYear(year + 1, 0, 4);
+  fourthOfJanuary.setHours(0, 0, 0, 0);
+  var date = start_of_iso_week(fourthOfJanuary);
+  date.setDate(date.getDate() - 1);
   return date
 }
 
-var last_day_of_iso_year = lastDayOfISOYear
+var last_day_of_iso_year = lastDayOfISOYear;
 
 /**
  * @category Month Helpers
@@ -4770,15 +4712,15 @@ var last_day_of_iso_year = lastDayOfISOYear
  * var result = lastDayOfMonth(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Tue Sep 30 2014 00:00:00
  */
-function lastDayOfMonth(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var month = date.getMonth()
-  date.setFullYear(date.getFullYear(), month + 1, 0)
-  date.setHours(0, 0, 0, 0)
+function lastDayOfMonth (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var month = date.getMonth();
+  date.setFullYear(date.getFullYear(), month + 1, 0);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var last_day_of_month = lastDayOfMonth
+var last_day_of_month = lastDayOfMonth;
 
 /**
  * @category Quarter Helpers
@@ -4796,16 +4738,16 @@ var last_day_of_month = lastDayOfMonth
  * var result = lastDayOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Tue Sep 30 2014 00:00:00
  */
-function lastDayOfQuarter(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var currentMonth = date.getMonth()
-  var month = currentMonth - (currentMonth % 3) + 3
-  date.setMonth(month, 0)
-  date.setHours(0, 0, 0, 0)
+function lastDayOfQuarter (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var currentMonth = date.getMonth();
+  var month = currentMonth - currentMonth % 3 + 3;
+  date.setMonth(month, 0);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var last_day_of_quarter = lastDayOfQuarter
+var last_day_of_quarter = lastDayOfQuarter;
 
 /**
  * @category Year Helpers
@@ -4823,15 +4765,15 @@ var last_day_of_quarter = lastDayOfQuarter
  * var result = lastDayOfYear(new Date(2014, 8, 2, 11, 55, 00))
  * //=> Wed Dec 31 2014 00:00:00
  */
-function lastDayOfYear(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  var year = date.getFullYear()
-  date.setFullYear(year + 1, 0, 0)
-  date.setHours(0, 0, 0, 0)
+function lastDayOfYear (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  var year = date.getFullYear();
+  date.setFullYear(year + 1, 0, 0);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var last_day_of_year = lastDayOfYear
+var last_day_of_year = lastDayOfYear;
 
 /**
  * @category Common Helpers
@@ -4853,16 +4795,16 @@ var last_day_of_year = lastDayOfYear
  * )
  * //=> Sun Jul 02 1995 00:00:00
  */
-function max() {
-  var dirtyDates = Array.prototype.slice.call(arguments)
-  var dates = dirtyDates.map(function(dirtyDate) {
+function max () {
+  var dirtyDates = Array.prototype.slice.call(arguments);
+  var dates = dirtyDates.map(function (dirtyDate) {
     return parse_1(dirtyDate)
-  })
-  var latestTimestamp = Math.max.apply(null, dates)
+  });
+  var latestTimestamp = Math.max.apply(null, dates);
   return new Date(latestTimestamp)
 }
 
-var max_1 = max
+var max_1 = max;
 
 /**
  * @category Common Helpers
@@ -4884,16 +4826,16 @@ var max_1 = max
  * )
  * //=> Wed Feb 11 1987 00:00:00
  */
-function min() {
-  var dirtyDates = Array.prototype.slice.call(arguments)
-  var dates = dirtyDates.map(function(dirtyDate) {
+function min () {
+  var dirtyDates = Array.prototype.slice.call(arguments);
+  var dates = dirtyDates.map(function (dirtyDate) {
     return parse_1(dirtyDate)
-  })
-  var earliestTimestamp = Math.min.apply(null, dates)
+  });
+  var earliestTimestamp = Math.min.apply(null, dates);
   return new Date(earliestTimestamp)
 }
 
-var min_1 = min
+var min_1 = min;
 
 /**
  * @category Day Helpers
@@ -4911,14 +4853,14 @@ var min_1 = min
  * var result = setDate(new Date(2014, 8, 1), 30)
  * //=> Tue Sep 30 2014 00:00:00
  */
-function setDate(dirtyDate, dirtyDayOfMonth) {
-  var date = parse_1(dirtyDate)
-  var dayOfMonth = Number(dirtyDayOfMonth)
-  date.setDate(dayOfMonth)
+function setDate (dirtyDate, dirtyDayOfMonth) {
+  var date = parse_1(dirtyDate);
+  var dayOfMonth = Number(dirtyDayOfMonth);
+  date.setDate(dayOfMonth);
   return date
 }
 
-var set_date = setDate
+var set_date = setDate;
 
 /**
  * @category Weekday Helpers
@@ -4943,20 +4885,20 @@ var set_date = setDate
  * var result = setDay(new Date(2014, 8, 1), 0, {weekStartsOn: 1})
  * //=> Sun Sep 07 2014 00:00:00
  */
-function setDay(dirtyDate, dirtyDay, dirtyOptions) {
-  var weekStartsOn = dirtyOptions ? Number(dirtyOptions.weekStartsOn) || 0 : 0
-  var date = parse_1(dirtyDate)
-  var day = Number(dirtyDay)
-  var currentDay = date.getDay()
+function setDay (dirtyDate, dirtyDay, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0;
+  var date = parse_1(dirtyDate);
+  var day = Number(dirtyDay);
+  var currentDay = date.getDay();
 
-  var remainder = day % 7
-  var dayIndex = (remainder + 7) % 7
+  var remainder = day % 7;
+  var dayIndex = (remainder + 7) % 7;
 
-  var diff = (dayIndex < weekStartsOn ? 7 : 0) + day - currentDay
+  var diff = (dayIndex < weekStartsOn ? 7 : 0) + day - currentDay;
   return add_days(date, diff)
 }
 
-var set_day = setDay
+var set_day = setDay;
 
 /**
  * @category Day Helpers
@@ -4974,15 +4916,15 @@ var set_day = setDay
  * var result = setDayOfYear(new Date(2014, 6, 2), 2)
  * //=> Thu Jan 02 2014 00:00:00
  */
-function setDayOfYear(dirtyDate, dirtyDayOfYear) {
-  var date = parse_1(dirtyDate)
-  var dayOfYear = Number(dirtyDayOfYear)
-  date.setMonth(0)
-  date.setDate(dayOfYear)
+function setDayOfYear (dirtyDate, dirtyDayOfYear) {
+  var date = parse_1(dirtyDate);
+  var dayOfYear = Number(dirtyDayOfYear);
+  date.setMonth(0);
+  date.setDate(dayOfYear);
   return date
 }
 
-var set_day_of_year = setDayOfYear
+var set_day_of_year = setDayOfYear;
 
 /**
  * @category Hour Helpers
@@ -5000,14 +4942,14 @@ var set_day_of_year = setDayOfYear
  * var result = setHours(new Date(2014, 8, 1, 11, 30), 4)
  * //=> Mon Sep 01 2014 04:30:00
  */
-function setHours(dirtyDate, dirtyHours) {
-  var date = parse_1(dirtyDate)
-  var hours = Number(dirtyHours)
-  date.setHours(hours)
+function setHours (dirtyDate, dirtyHours) {
+  var date = parse_1(dirtyDate);
+  var hours = Number(dirtyHours);
+  date.setHours(hours);
   return date
 }
 
-var set_hours = setHours
+var set_hours = setHours;
 
 /**
  * @category Weekday Helpers
@@ -5027,15 +4969,15 @@ var set_hours = setHours
  * var result = setISODay(new Date(2014, 8, 1), 7)
  * //=> Sun Sep 07 2014 00:00:00
  */
-function setISODay(dirtyDate, dirtyDay) {
-  var date = parse_1(dirtyDate)
-  var day = Number(dirtyDay)
-  var currentDay = get_iso_day(date)
-  var diff = day - currentDay
+function setISODay (dirtyDate, dirtyDay) {
+  var date = parse_1(dirtyDate);
+  var day = Number(dirtyDay);
+  var currentDay = get_iso_day(date);
+  var diff = day - currentDay;
   return add_days(date, diff)
 }
 
-var set_iso_day = setISODay
+var set_iso_day = setISODay;
 
 /**
  * @category ISO Week Helpers
@@ -5055,15 +4997,15 @@ var set_iso_day = setISODay
  * var result = setISOWeek(new Date(2004, 7, 7), 53)
  * //=> Sat Jan 01 2005 00:00:00
  */
-function setISOWeek(dirtyDate, dirtyISOWeek) {
-  var date = parse_1(dirtyDate)
-  var isoWeek = Number(dirtyISOWeek)
-  var diff = get_iso_week(date) - isoWeek
-  date.setDate(date.getDate() - diff * 7)
+function setISOWeek (dirtyDate, dirtyISOWeek) {
+  var date = parse_1(dirtyDate);
+  var isoWeek = Number(dirtyISOWeek);
+  var diff = get_iso_week(date) - isoWeek;
+  date.setDate(date.getDate() - diff * 7);
   return date
 }
 
-var set_iso_week = setISOWeek
+var set_iso_week = setISOWeek;
 
 /**
  * @category Millisecond Helpers
@@ -5081,14 +5023,14 @@ var set_iso_week = setISOWeek
  * var result = setMilliseconds(new Date(2014, 8, 1, 11, 30, 40, 500), 300)
  * //=> Mon Sep 01 2014 11:30:40.300
  */
-function setMilliseconds(dirtyDate, dirtyMilliseconds) {
-  var date = parse_1(dirtyDate)
-  var milliseconds = Number(dirtyMilliseconds)
-  date.setMilliseconds(milliseconds)
+function setMilliseconds (dirtyDate, dirtyMilliseconds) {
+  var date = parse_1(dirtyDate);
+  var milliseconds = Number(dirtyMilliseconds);
+  date.setMilliseconds(milliseconds);
   return date
 }
 
-var set_milliseconds = setMilliseconds
+var set_milliseconds = setMilliseconds;
 
 /**
  * @category Minute Helpers
@@ -5106,14 +5048,14 @@ var set_milliseconds = setMilliseconds
  * var result = setMinutes(new Date(2014, 8, 1, 11, 30, 40), 45)
  * //=> Mon Sep 01 2014 11:45:40
  */
-function setMinutes(dirtyDate, dirtyMinutes) {
-  var date = parse_1(dirtyDate)
-  var minutes = Number(dirtyMinutes)
-  date.setMinutes(minutes)
+function setMinutes (dirtyDate, dirtyMinutes) {
+  var date = parse_1(dirtyDate);
+  var minutes = Number(dirtyMinutes);
+  date.setMinutes(minutes);
   return date
 }
 
-var set_minutes = setMinutes
+var set_minutes = setMinutes;
 
 /**
  * @category Month Helpers
@@ -5131,23 +5073,23 @@ var set_minutes = setMinutes
  * var result = setMonth(new Date(2014, 8, 1), 1)
  * //=> Sat Feb 01 2014 00:00:00
  */
-function setMonth(dirtyDate, dirtyMonth) {
-  var date = parse_1(dirtyDate)
-  var month = Number(dirtyMonth)
-  var year = date.getFullYear()
-  var day = date.getDate()
+function setMonth (dirtyDate, dirtyMonth) {
+  var date = parse_1(dirtyDate);
+  var month = Number(dirtyMonth);
+  var year = date.getFullYear();
+  var day = date.getDate();
 
-  var dateWithDesiredMonth = new Date(0)
-  dateWithDesiredMonth.setFullYear(year, month, 15)
-  dateWithDesiredMonth.setHours(0, 0, 0, 0)
-  var daysInMonth = get_days_in_month(dateWithDesiredMonth)
+  var dateWithDesiredMonth = new Date(0);
+  dateWithDesiredMonth.setFullYear(year, month, 15);
+  dateWithDesiredMonth.setHours(0, 0, 0, 0);
+  var daysInMonth = get_days_in_month(dateWithDesiredMonth);
   // Set the last day of the new month
   // if the original date was the last day of the longer month
-  date.setMonth(month, Math.min(day, daysInMonth))
+  date.setMonth(month, Math.min(day, daysInMonth));
   return date
 }
 
-var set_month = setMonth
+var set_month = setMonth;
 
 /**
  * @category Quarter Helpers
@@ -5165,15 +5107,15 @@ var set_month = setMonth
  * var result = setQuarter(new Date(2014, 6, 2), 2)
  * //=> Wed Apr 02 2014 00:00:00
  */
-function setQuarter(dirtyDate, dirtyQuarter) {
-  var date = parse_1(dirtyDate)
-  var quarter = Number(dirtyQuarter)
-  var oldQuarter = Math.floor(date.getMonth() / 3) + 1
-  var diff = quarter - oldQuarter
+function setQuarter (dirtyDate, dirtyQuarter) {
+  var date = parse_1(dirtyDate);
+  var quarter = Number(dirtyQuarter);
+  var oldQuarter = Math.floor(date.getMonth() / 3) + 1;
+  var diff = quarter - oldQuarter;
   return set_month(date, date.getMonth() + diff * 3)
 }
 
-var set_quarter = setQuarter
+var set_quarter = setQuarter;
 
 /**
  * @category Second Helpers
@@ -5191,14 +5133,14 @@ var set_quarter = setQuarter
  * var result = setSeconds(new Date(2014, 8, 1, 11, 30, 40), 45)
  * //=> Mon Sep 01 2014 11:30:45
  */
-function setSeconds(dirtyDate, dirtySeconds) {
-  var date = parse_1(dirtyDate)
-  var seconds = Number(dirtySeconds)
-  date.setSeconds(seconds)
+function setSeconds (dirtyDate, dirtySeconds) {
+  var date = parse_1(dirtyDate);
+  var seconds = Number(dirtySeconds);
+  date.setSeconds(seconds);
   return date
 }
 
-var set_seconds = setSeconds
+var set_seconds = setSeconds;
 
 /**
  * @category Year Helpers
@@ -5216,14 +5158,14 @@ var set_seconds = setSeconds
  * var result = setYear(new Date(2014, 8, 1), 2013)
  * //=> Sun Sep 01 2013 00:00:00
  */
-function setYear(dirtyDate, dirtyYear) {
-  var date = parse_1(dirtyDate)
-  var year = Number(dirtyYear)
-  date.setFullYear(year)
+function setYear (dirtyDate, dirtyYear) {
+  var date = parse_1(dirtyDate);
+  var year = Number(dirtyYear);
+  date.setFullYear(year);
   return date
 }
 
-var set_year = setYear
+var set_year = setYear;
 
 /**
  * @category Month Helpers
@@ -5241,14 +5183,14 @@ var set_year = setYear
  * var result = startOfMonth(new Date(2014, 8, 2, 11, 55, 0))
  * //=> Mon Sep 01 2014 00:00:00
  */
-function startOfMonth(dirtyDate) {
-  var date = parse_1(dirtyDate)
-  date.setDate(1)
-  date.setHours(0, 0, 0, 0)
+function startOfMonth (dirtyDate) {
+  var date = parse_1(dirtyDate);
+  date.setDate(1);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var start_of_month = startOfMonth
+var start_of_month = startOfMonth;
 
 /**
  * @category Day Helpers
@@ -5264,11 +5206,11 @@ var start_of_month = startOfMonth
  * var result = startOfToday()
  * //=> Mon Oct 6 2014 00:00:00
  */
-function startOfToday() {
+function startOfToday () {
   return start_of_day(new Date())
 }
 
-var start_of_today = startOfToday
+var start_of_today = startOfToday;
 
 /**
  * @category Day Helpers
@@ -5284,19 +5226,19 @@ var start_of_today = startOfToday
  * var result = startOfTomorrow()
  * //=> Tue Oct 7 2014 00:00:00
  */
-function startOfTomorrow() {
-  var now = new Date()
-  var year = now.getFullYear()
-  var month = now.getMonth()
-  var day = now.getDate()
+function startOfTomorrow () {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth();
+  var day = now.getDate();
 
-  var date = new Date(0)
-  date.setFullYear(year, month, day + 1)
-  date.setHours(0, 0, 0, 0)
+  var date = new Date(0);
+  date.setFullYear(year, month, day + 1);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var start_of_tomorrow = startOfTomorrow
+var start_of_tomorrow = startOfTomorrow;
 
 /**
  * @category Day Helpers
@@ -5312,19 +5254,19 @@ var start_of_tomorrow = startOfTomorrow
  * var result = startOfYesterday()
  * //=> Sun Oct 5 2014 00:00:00
  */
-function startOfYesterday() {
-  var now = new Date()
-  var year = now.getFullYear()
-  var month = now.getMonth()
-  var day = now.getDate()
+function startOfYesterday () {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = now.getMonth();
+  var day = now.getDate();
 
-  var date = new Date(0)
-  date.setFullYear(year, month, day - 1)
-  date.setHours(0, 0, 0, 0)
+  var date = new Date(0);
+  date.setFullYear(year, month, day - 1);
+  date.setHours(0, 0, 0, 0);
   return date
 }
 
-var start_of_yesterday = startOfYesterday
+var start_of_yesterday = startOfYesterday;
 
 /**
  * @category Day Helpers
@@ -5342,12 +5284,12 @@ var start_of_yesterday = startOfYesterday
  * var result = subDays(new Date(2014, 8, 1), 10)
  * //=> Fri Aug 22 2014 00:00:00
  */
-function subDays(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subDays (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_days(dirtyDate, -amount)
 }
 
-var sub_days = subDays
+var sub_days = subDays;
 
 /**
  * @category Hour Helpers
@@ -5365,12 +5307,12 @@ var sub_days = subDays
  * var result = subHours(new Date(2014, 6, 11, 1, 0), 2)
  * //=> Thu Jul 10 2014 23:00:00
  */
-function subHours(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subHours (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_hours(dirtyDate, -amount)
 }
 
-var sub_hours = subHours
+var sub_hours = subHours;
 
 /**
  * @category Millisecond Helpers
@@ -5388,12 +5330,12 @@ var sub_hours = subHours
  * var result = subMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
  * //=> Thu Jul 10 2014 12:45:29.250
  */
-function subMilliseconds(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subMilliseconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_milliseconds(dirtyDate, -amount)
 }
 
-var sub_milliseconds = subMilliseconds
+var sub_milliseconds = subMilliseconds;
 
 /**
  * @category Minute Helpers
@@ -5411,12 +5353,12 @@ var sub_milliseconds = subMilliseconds
  * var result = subMinutes(new Date(2014, 6, 10, 12, 0), 30)
  * //=> Thu Jul 10 2014 11:30:00
  */
-function subMinutes(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subMinutes (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_minutes(dirtyDate, -amount)
 }
 
-var sub_minutes = subMinutes
+var sub_minutes = subMinutes;
 
 /**
  * @category Month Helpers
@@ -5434,12 +5376,12 @@ var sub_minutes = subMinutes
  * var result = subMonths(new Date(2015, 1, 1), 5)
  * //=> Mon Sep 01 2014 00:00:00
  */
-function subMonths(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subMonths (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_months(dirtyDate, -amount)
 }
 
-var sub_months = subMonths
+var sub_months = subMonths;
 
 /**
  * @category Quarter Helpers
@@ -5457,12 +5399,12 @@ var sub_months = subMonths
  * var result = subQuarters(new Date(2014, 8, 1), 3)
  * //=> Sun Dec 01 2013 00:00:00
  */
-function subQuarters(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subQuarters (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_quarters(dirtyDate, -amount)
 }
 
-var sub_quarters = subQuarters
+var sub_quarters = subQuarters;
 
 /**
  * @category Second Helpers
@@ -5480,12 +5422,12 @@ var sub_quarters = subQuarters
  * var result = subSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
  * //=> Thu Jul 10 2014 12:44:30
  */
-function subSeconds(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subSeconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_seconds(dirtyDate, -amount)
 }
 
-var sub_seconds = subSeconds
+var sub_seconds = subSeconds;
 
 /**
  * @category Week Helpers
@@ -5503,12 +5445,12 @@ var sub_seconds = subSeconds
  * var result = subWeeks(new Date(2014, 8, 1), 4)
  * //=> Mon Aug 04 2014 00:00:00
  */
-function subWeeks(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subWeeks (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_weeks(dirtyDate, -amount)
 }
 
-var sub_weeks = subWeeks
+var sub_weeks = subWeeks;
 
 /**
  * @category Year Helpers
@@ -5526,12 +5468,12 @@ var sub_weeks = subWeeks
  * var result = subYears(new Date(2014, 8, 1), 5)
  * //=> Tue Sep 01 2009 00:00:00
  */
-function subYears(dirtyDate, dirtyAmount) {
-  var amount = Number(dirtyAmount)
+function subYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount);
   return add_years(dirtyDate, -amount)
 }
 
-var sub_years = subYears
+var sub_years = subYears;
 
 var dateFns = {
   addDays: add_days,
@@ -5687,117 +5629,131 @@ var dateFns = {
   subQuarters: sub_quarters,
   subSeconds: sub_seconds,
   subWeeks: sub_weeks,
-  subYears: sub_years,
-}
-var dateFns_1 = dateFns.addDays
-var dateFns_36 = dateFns.eachDay
-var dateFns_42 = dateFns.endOfMonth
-var dateFns_47 = dateFns.endOfWeek
-var dateFns_50 = dateFns.format
-var dateFns_52 = dateFns.getDay
-var dateFns_137 = dateFns.startOfMonth
-var dateFns_142 = dateFns.startOfWeek
+  subYears: sub_years
+};
+var dateFns_1 = dateFns.addDays;
+var dateFns_6 = dateFns.addMonths;
+var dateFns_36 = dateFns.eachDay;
+var dateFns_42 = dateFns.endOfMonth;
+var dateFns_47 = dateFns.endOfWeek;
+var dateFns_50 = dateFns.format;
+var dateFns_52 = dateFns.getDay;
+var dateFns_63 = dateFns.getMonth;
+var dateFns_68 = dateFns.getYear;
+var dateFns_69 = dateFns.isAfter;
+var dateFns_70 = dateFns.isBefore;
+var dateFns_80 = dateFns.isSameDay;
+var dateFns_108 = dateFns.isWithinRange;
+var dateFns_137 = dateFns.startOfMonth;
+var dateFns_140 = dateFns.startOfToday;
+var dateFns_142 = dateFns.startOfWeek;
 
 function getWeekDays(_a) {
-  var _b = _a === void 0 ? {} : _a,
-    _c = _b.weekStartsOn,
-    weekStartsOn = _c === void 0 ? 1 : _c,
-    _d = _b.weekDayFormat,
-    weekDayFormat =
-      _d === void 0
-        ? function(date) {
-            return dateFns_50(date, 'dd')
-          }
-        : _d
-  var now = new Date()
-  var arr = dateFns_36(
-    dateFns_1(dateFns_142(now), weekStartsOn),
-    dateFns_1(dateFns_47(now), weekStartsOn),
-  )
-  return arr.reduce(function(array, date) {
-    // @ts-ignore
-    array.push(weekDayFormat(date))
-    return array
-  }, [])
+    var _b = _a === void 0 ? {} : _a, _c = _b.weekStartsOn, weekStartsOn = _c === void 0 ? 1 : _c, _d = _b.weekDayFormat, weekDayFormat = _d === void 0 ? function (date) { return dateFns_50(date, 'dd'); } : _d;
+    var now = new Date();
+    var arr = dateFns_36(dateFns_1(dateFns_142(now), weekStartsOn), dateFns_1(dateFns_47(now), weekStartsOn));
+    return arr.reduce(function (array, date) {
+        // @ts-ignore
+        array.push(weekDayFormat(date));
+        return array;
+    }, []);
 }
 function getDays(_a) {
-  var year = _a.year,
-    month = _a.month,
-    _b = _a.weekStartsOn,
-    weekStartsOn = _b === void 0 ? 1 : _b,
-    _c = _a.dayFormat,
-    dayFormat =
-      _c === void 0
-        ? function(date) {
-            return dateFns_50(date, 'DD')
-          }
-        : _c
-  var date = new Date(year, month)
-  var monthStart = dateFns_137(date)
-  var monthStartDay = dateFns_52(monthStart)
-  var monthEnd = dateFns_42(date)
-  var prevMonthDays = Array.from(
-    Array(monthStartDay >= weekStartsOn ? monthStartDay - weekStartsOn : weekStartsOn).keys(),
-  ).fill(0)
-  var days = dateFns_36(monthStart, monthEnd).map(function(date) {
-    return {
-      date: date,
-      day: dayFormat(date),
-    }
-  })
-  return prevMonthDays.concat(days)
+    var year = _a.year, month = _a.month, _b = _a.weekStartsOn, weekStartsOn = _b === void 0 ? 1 : _b, _c = _a.dayFormat, dayFormat = _c === void 0 ? function (date) { return dateFns_50(date, 'DD'); } : _c;
+    var date = new Date(year, month);
+    var monthStart = dateFns_137(date);
+    var monthStartDay = dateFns_52(monthStart);
+    var monthEnd = dateFns_42(date);
+    var prevMonthDays = Array.from(Array(monthStartDay >= weekStartsOn ? monthStartDay - weekStartsOn : weekStartsOn).keys()).fill(0);
+    var days = dateFns_36(monthStart, monthEnd).map(function (date) { return ({
+        date: date,
+        day: dayFormat(date),
+    }); });
+    return prevMonthDays.concat(days);
 }
 //# sourceMappingURL=useMonth.utils.js.map
 
 function useMonth(_a) {
-  var year = _a.year,
-    month = _a.month,
-    _b = _a.weekStartsOn,
-    weekStartsOn = _b === void 0 ? 1 : _b,
-    _c = _a.dayFormat,
-    dayFormat =
-      _c === void 0
-        ? function(date) {
-            return dateFns_50(date, 'DD')
-          }
-        : _c,
-    _d = _a.weekDayFormat,
-    weekDayFormat =
-      _d === void 0
-        ? function(date) {
-            return dateFns_50(date, 'dd')
-          }
-        : _d,
-    _e = _a.monthLabelFormat,
-    monthLabelFormat =
-      _e === void 0
-        ? function(date) {
-            return dateFns_50(date, 'MMMM YYYY')
-          }
-        : _e
-  var days = useMemo(
-    function() {
-      return getDays({year: year, month: month, weekStartsOn: weekStartsOn, dayFormat: dayFormat})
-    },
-    [year, month, weekStartsOn],
-  )
-  var weekDays = useMemo(
-    function() {
-      return getWeekDays({weekStartsOn: weekStartsOn, weekDayFormat: weekDayFormat})
-    },
-    [weekStartsOn],
-  )
-  return {
-    days: days,
-    weekDays: weekDays,
-    monthLabel: monthLabelFormat(new Date(year, month)),
-  }
+    var year = _a.year, month = _a.month, _b = _a.weekStartsOn, weekStartsOn = _b === void 0 ? 1 : _b, _c = _a.dayFormat, dayFormat = _c === void 0 ? function (date) { return dateFns_50(date, 'DD'); } : _c, _d = _a.weekDayFormat, weekDayFormat = _d === void 0 ? function (date) { return dateFns_50(date, 'dd'); } : _d, _e = _a.monthLabelFormat, monthLabelFormat = _e === void 0 ? function (date) { return dateFns_50(date, 'MMMM YYYY'); } : _e;
+    var days = useMemo(function () { return getDays({ year: year, month: month, weekStartsOn: weekStartsOn, dayFormat: dayFormat }); }, [
+        year,
+        month,
+        weekStartsOn,
+    ]);
+    var weekDays = useMemo(function () { return getWeekDays({ weekStartsOn: weekStartsOn, weekDayFormat: weekDayFormat }); }, [weekStartsOn]);
+    return {
+        days: days,
+        weekDays: weekDays,
+        monthLabel: monthLabelFormat(new Date(year, month)),
+    };
 }
 //# sourceMappingURL=useMonth.js.map
 
 //# sourceMappingURL=index.js.map
 
+function isDateSelected(date, startDate, endDate) {
+    if (startDate && endDate) {
+        return dateFns_108(date, startDate, endDate);
+    }
+    return false;
+}
+function isStartOrEndDate(date, startDate, endDate) {
+    return !!((startDate && dateFns_80(date, startDate)) || (endDate && dateFns_80(date, endDate)));
+}
+function isDateBlocked(date, minBookingDate, maxBookingDate, isDayBlockedFn) {
+    return !!((minBookingDate && dateFns_70(date, minBookingDate)) ||
+        (maxBookingDate && dateFns_69(date, maxBookingDate)) ||
+        (isDayBlockedFn && isDayBlockedFn(date)));
+}
+function getDateMonthAndYear(date) {
+    var today = dateFns_137(date);
+    var year = dateFns_68(today);
+    var month = dateFns_63(today);
+    return {
+        year: year,
+        month: month,
+        date: today,
+    };
+}
+function getCurrentYearMonthAndDate() {
+    return getDateMonthAndYear(dateFns_140());
+}
+function getInitialMonths(numberOfMonths) {
+    var firstMonth = getCurrentYearMonthAndDate();
+    var prevMonthDate = firstMonth.date;
+    var months = [firstMonth];
+    if (numberOfMonths > 1) {
+        months = Array.from(Array(numberOfMonths - 1).keys()).reduce(function (m) {
+            prevMonthDate = dateFns_6(m[m.length - 1].date, 1);
+            return m.concat([getDateMonthAndYear(prevMonthDate)]);
+        }, months);
+    }
+    return months;
+}
+//# sourceMappingURL=useDatepicker.utils.js.map
+
+function useDatepicker(_a) {
+    var startDate = _a.startDate, endDate = _a.endDate, focusedInput = _a.focusedInput, onFocusChange = _a.onFocusChange, minBookingDate = _a.minBookingDate, maxBookingDate = _a.maxBookingDate, _b = _a.orientation, orientation = _b === void 0 ? 'horizontal' : _b, _c = _a.numberOfMonths, numberOfMonths = _c === void 0 ? 2 : _c, _d = _a.firstDayOfWeek, firstDayOfWeek = _d === void 0 ? 1 : _d, _e = _a.initialVisibleMonth, initialVisibleMonth = _e === void 0 ? getInitialMonths : _e;
+    var activeMonths = useMemo(function () { return getInitialMonths(numberOfMonths); }, [initialVisibleMonth]);
+    var isDateSelected$1 = useCallback(function (date) { return isDateSelected(date, startDate, endDate); }, [
+        startDate,
+        endDate,
+    ]);
+    var isStartOrEndDate$1 = useCallback(function (date) { return isStartOrEndDate(date, startDate, endDate); }, [startDate, endDate]);
+    var isDateBlocked$1 = useCallback(function (date) { return isDateBlocked(date, minBookingDate, maxBookingDate); }, [minBookingDate, maxBookingDate]);
+    console.log(activeMonths, startDate, endDate, focusedInput, onFocusChange, orientation, numberOfMonths, minBookingDate, maxBookingDate);
+    return {
+        firstDayOfWeek: firstDayOfWeek,
+        activeMonths: activeMonths,
+        isDateSelected: isDateSelected$1,
+        isStartOrEndDate: isStartOrEndDate$1,
+        isDateBlocked: isDateBlocked$1,
+    };
+}
+
 //# sourceMappingURL=index.js.map
 
-export {getDays, getWeekDays, useMonth}
+//# sourceMappingURL=index.js.map
+
+export { getCurrentYearMonthAndDate, getDateMonthAndYear, getDays, getInitialMonths, getWeekDays, isDateBlocked, isDateSelected, isStartOrEndDate, useDatepicker, useMonth };
 //# sourceMappingURL=index.esm.js.map

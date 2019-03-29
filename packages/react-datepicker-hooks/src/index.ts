@@ -8,6 +8,17 @@ import {
   getDays,
   CalendarDay,
 } from './useMonth'
+import {
+  isDateSelected,
+  isStartOrEndDate,
+  isDateBlocked,
+  getCurrentYearMonthAndDate,
+  getDateMonthAndYear,
+  getInitialMonths,
+  MonthType,
+  useDatepicker,
+  UseDatepickerProps,
+} from './useDatepicker'
 
 export {
   useMonth,
@@ -18,4 +29,13 @@ export {
   getWeekDays,
   getDays,
   CalendarDay,
+  isDateSelected,
+  isStartOrEndDate,
+  isDateBlocked,
+  getCurrentYearMonthAndDate,
+  getDateMonthAndYear,
+  getInitialMonths,
+  MonthType,
+  useDatepicker,
+  UseDatepickerProps,
 }

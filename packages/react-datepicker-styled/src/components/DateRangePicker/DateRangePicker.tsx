@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {opacity, OpacityProps} from 'styled-system'
+import {UseDatepickerProps} from '@react-datepicker/hooks'
 import Grid from '../Grid'
 import Flex from '../Flex'
 import Input from '../Input'
@@ -11,7 +12,18 @@ const StyledArrowIcon = styled(ArrowIcon)<OpacityProps>`
   ${opacity}
 `
 
-function DateRangePicker() {
+export interface DateRangePickerProps extends UseDatepickerProps {}
+
+function DateRangePicker({
+  startDate,
+  endDate,
+  minBookingDate,
+  maxBookingDate,
+  firstDayOfWeek,
+  onFocusChange,
+  numberOfMonths,
+  focusedInput,
+}: DateRangePickerProps) {
   return (
     <div>
       <Grid gridTemplateColumns="194px 39px 194px">
@@ -21,7 +33,16 @@ function DateRangePicker() {
         </Flex>
         <Input />
       </Grid>
-      <Datepicker />
+      <Datepicker
+        startDate={startDate}
+        endDate={endDate}
+        minBookingDate={minBookingDate}
+        maxBookingDate={maxBookingDate}
+        firstDayOfWeek={firstDayOfWeek}
+        onFocusChange={onFocusChange}
+        numberOfMonths={numberOfMonths}
+        focusedInput={focusedInput}
+      />
     </div>
   )
 }
