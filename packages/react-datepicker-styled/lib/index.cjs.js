@@ -989,7 +989,6 @@ var stylis_min = createCommonjsModule(function(module, exports) {
       Re(a)
     return Te
   })
-  //# sourceMappingURL=stylis.min.js.map
 })
 
 var stylisRuleSheet = createCommonjsModule(function(module, exports) {
@@ -5360,7 +5359,6 @@ if (
 
   window['__styled-components-init__'] += 1
 }
-//# sourceMappingURL=styled-components.esm.js.map
 
 function _extends$1() {
   _extends$1 =
@@ -11813,7 +11811,6 @@ var dateRangeInputPhrases = __assign({}, datepickerPhrases, {
   startDatePlaceholder: 'Set start date',
   endDatePlaceholder: 'Set end date',
 })
-//# sourceMappingURL=phrases.js.map
 
 var Grid = styled('div')(
   templateObject_1 ||
@@ -11863,9 +11860,6 @@ var Grid = styled('div')(
   space,
 )
 var templateObject_1
-//# sourceMappingURL=Grid.js.map
-
-//# sourceMappingURL=index.js.map
 
 var Flex = styled('div')(
   templateObject_1$1 ||
@@ -11906,9 +11900,46 @@ var Flex = styled('div')(
   width,
 )
 var templateObject_1$1
-//# sourceMappingURL=Flex.js.map
 
-//# sourceMappingURL=index.js.map
+var Box = styled('div')(
+  templateObject_1$2 ||
+    (templateObject_1$2 = __makeTemplateObject(
+      [
+        '\n  box-sizing: border-box;\n\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n',
+      ],
+      [
+        '\n  box-sizing: border-box;\n\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n  ',
+        '\n',
+      ],
+    )),
+  gridArea,
+  height,
+  space,
+  width,
+  position,
+  top,
+  left,
+  right,
+  bottom,
+)
+var templateObject_1$2
 
 function CalendarIcon(_a) {
   var height = _a.height,
@@ -11934,13 +11965,10 @@ function CalendarIcon(_a) {
     }),
   )
 }
-//# sourceMappingURL=CalendarIcon.js.map
-
-//# sourceMappingURL=index.js.map
 
 var InputLabel = styled('label')(
-  templateObject_1$2 ||
-    (templateObject_1$2 = __makeTemplateObject(
+  templateObject_1$3 ||
+    (templateObject_1$3 = __makeTemplateObject(
       ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
     )),
@@ -12044,10 +12072,7 @@ function Input(_a) {
     }),
   )
 }
-var templateObject_1$2, templateObject_2, templateObject_3
-//# sourceMappingURL=Input.js.map
-
-//# sourceMappingURL=index.js.map
+var templateObject_1$3, templateObject_2, templateObject_3
 
 function calculateAngle(direction) {
   switch (direction) {
@@ -12089,13 +12114,10 @@ function ArrowIcon(_a) {
     }),
   )
 }
-//# sourceMappingURL=ArrowIcon.js.map
-
-//# sourceMappingURL=index.js.map
 
 var Text = styled('div')(
-  templateObject_1$3 ||
-    (templateObject_1$3 = __makeTemplateObject(
+  templateObject_1$4 ||
+    (templateObject_1$4 = __makeTemplateObject(
       ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
     )),
@@ -12106,10 +12128,7 @@ var Text = styled('div')(
   lineHeight,
   space,
 )
-var templateObject_1$3
-//# sourceMappingURL=Text.js.map
-
-//# sourceMappingURL=index.js.map
+var templateObject_1$4
 
 var StyledDate = styled(Text)(
   templateObject_2$1 ||
@@ -12128,8 +12147,8 @@ var StyledDate = styled(Text)(
     return (
       isActive &&
       css(
-        templateObject_1$4 ||
-          (templateObject_1$4 = __makeTemplateObject(
+        templateObject_1$5 ||
+          (templateObject_1$5 = __makeTemplateObject(
             ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
             ['\n      &:after {\n        background: #00aeef;\n      }\n    '],
           )),
@@ -12165,10 +12184,7 @@ function Date$1(_a) {
     ),
   )
 }
-var templateObject_1$4, templateObject_2$1
-//# sourceMappingURL=Date.js.map
-
-//# sourceMappingURL=index.js.map
+var templateObject_1$5, templateObject_2$1
 
 var MonthLabel = function(_a) {
   var label = _a.label
@@ -12184,9 +12200,6 @@ var MonthLabel = function(_a) {
     label,
   )
 }
-//# sourceMappingURL=MonthLabel.js.map
-
-//# sourceMappingURL=index.js.map
 
 var MonthLabel$1 = function(_a) {
   var label = _a.label
@@ -12196,9 +12209,6 @@ var MonthLabel$1 = function(_a) {
     label,
   )
 }
-//# sourceMappingURL=DayLabel.js.map
-
-//# sourceMappingURL=index.js.map
 
 var StyledDay = styled('button')(
   templateObject_4 ||
@@ -12231,8 +12241,8 @@ var StyledDay = styled('button')(
     return (
       disabled &&
       css(
-        templateObject_1$5 ||
-          (templateObject_1$5 = __makeTemplateObject(
+        templateObject_1$6 ||
+          (templateObject_1$6 = __makeTemplateObject(
             ['\n      cursor: initial;\n      opacity: 0.4;\n    '],
             ['\n      cursor: initial;\n      opacity: 0.4;\n    '],
           )),
@@ -12336,10 +12346,7 @@ function Day(_a) {
   )
 }
 var Day$1 = React__default.memo(Day)
-var templateObject_1$5, templateObject_2$2, templateObject_3$1, templateObject_4
-//# sourceMappingURL=Day.js.map
-
-//# sourceMappingURL=index.js.map
+var templateObject_1$6, templateObject_2$2, templateObject_3$1, templateObject_4
 
 var Month = function(_a) {
   var year = _a.year,
@@ -12392,52 +12399,6 @@ var Month = function(_a) {
     ),
   )
 }
-//# sourceMappingURL=Month.js.map
-
-//# sourceMappingURL=index.js.map
-
-var Box = styled('div')(
-  templateObject_1$6 ||
-    (templateObject_1$6 = __makeTemplateObject(
-      [
-        '\n  box-sizing: border-box;\n\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n',
-      ],
-      [
-        '\n  box-sizing: border-box;\n\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n  ',
-        '\n',
-      ],
-    )),
-  gridArea,
-  height,
-  space,
-  width,
-  position,
-  top,
-  left,
-  right,
-  bottom,
-)
-var templateObject_1$6
-//# sourceMappingURL=Box.js.map
-
-//# sourceMappingURL=index.js.map
 
 function CaretIcon(_a) {
   var height = _a.height,
@@ -12463,9 +12424,6 @@ function CaretIcon(_a) {
     }),
   )
 }
-//# sourceMappingURL=RedoIcon.js.map
-
-//# sourceMappingURL=index.js.map
 
 function ResetDates(_a) {
   var onResetDates = _a.onResetDates
@@ -12487,9 +12445,6 @@ function ResetDates(_a) {
     ),
   )
 }
-//# sourceMappingURL=ResetDates.js.map
-
-//# sourceMappingURL=index.js.map
 
 function calculateAngle$1(direction) {
   switch (direction) {
@@ -12533,9 +12488,6 @@ function CaretIcon$1(_a) {
     }),
   )
 }
-//# sourceMappingURL=CaretIcon.js.map
-
-//# sourceMappingURL=index.js.map
 
 var StyledNavButton = styled('button')(
   templateObject_1$7 ||
@@ -12586,9 +12538,6 @@ function NavButton(_a) {
   )
 }
 var templateObject_1$7
-//# sourceMappingURL=NavButton.js.map
-
-//# sourceMappingURL=index.js.map
 
 var StyledDatepicker = styled('div')(
   templateObject_1$8 ||
@@ -12712,8 +12661,6 @@ function Datepicker(_a) {
 }
 var templateObject_1$8, templateObject_2$3
 
-//# sourceMappingURL=index.js.map
-
 var StyledArrowIcon = styled(ArrowIcon)(
   templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
   opacity,
@@ -12732,9 +12679,29 @@ function DateRangeInput(_a) {
     displayFormat = _b === void 0 ? 'MM/DD/YYYY' : _b,
     _c = _a.phrases,
     phrases = _c === void 0 ? dateRangeInputPhrases : _c
+  var datepickerWrapperRef = React.useRef(null)
+  React.useEffect(function() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('click', onClickOutsideHandler)
+    }
+    return function() {
+      window.removeEventListener('click', onClickOutsideHandler)
+    }
+  })
+  function onClickOutsideHandler(event) {
+    if (
+      focusedInput !== null &&
+      datepickerWrapperRef &&
+      datepickerWrapperRef.current &&
+      // @ts-ignore
+      !datepickerWrapperRef.current.contains(event.target)
+    ) {
+      onFocusChange(null)
+    }
+  }
   return React__default.createElement(
-    'div',
-    null,
+    Box,
+    {position: 'relative'},
     React__default.createElement(
       Grid,
       {gridTemplateColumns: '194px 39px 194px'},
@@ -12767,25 +12734,25 @@ function DateRangeInput(_a) {
         },
       }),
     ),
-    React__default.createElement(Datepicker, {
-      startDate: startDate,
-      endDate: endDate,
-      minBookingDate: minBookingDate,
-      maxBookingDate: maxBookingDate,
-      firstDayOfWeek: firstDayOfWeek,
-      numberOfMonths: numberOfMonths,
-      focusedInput: focusedInput,
-      displayFormat: displayFormat,
-      onDateChange: onDateChange,
-    }),
+    React__default.createElement(
+      Box,
+      {ref: datepickerWrapperRef, position: 'absolute', bottom: '64px', left: '0'},
+      focusedInput !== null &&
+        React__default.createElement(Datepicker, {
+          startDate: startDate,
+          endDate: endDate,
+          minBookingDate: minBookingDate,
+          maxBookingDate: maxBookingDate,
+          firstDayOfWeek: firstDayOfWeek,
+          numberOfMonths: numberOfMonths,
+          focusedInput: focusedInput,
+          displayFormat: displayFormat,
+          onDateChange: onDateChange,
+        }),
+    ),
   )
 }
 var templateObject_1$9
-//# sourceMappingURL=DateRangeInput.js.map
-
-//# sourceMappingURL=index.js.map
-
-//# sourceMappingURL=index.js.map
 
 exports.DateRangeInput = DateRangeInput
 //# sourceMappingURL=index.cjs.js.map
