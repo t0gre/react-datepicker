@@ -72,6 +72,20 @@ export function getInitialMonths(numberOfMonths: number, startDate: Date | null)
   return months
 }
 
+export function getNextActiveMonth(
+  activeMonth: MonthType[],
+  numberOfMonths: number,
+  counter: number,
+): MonthType[] {
+  const prevMonth = counter > 0 ? activeMonth.length - 1 : 0
+  let prevMonthDate = activeMonth[prevMonth].date
+
+  return Array.from(Array(numberOfMonths).keys()).reduce((m: MonthType[]) => {
+    prevMonthDate = addMonths(prevMonthDate, counter)
+    return m.concat([getDateMonthAndYear(prevMonthDate)])
+  }, [])
+}
+
 export type FormatFunction = (date: Date) => string
 export function getInputValue(
   date: Date | null,

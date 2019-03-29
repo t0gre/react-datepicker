@@ -9,5 +9,6 @@ export interface MonthType {
 export declare function getDateMonthAndYear(date: Date): MonthType;
 export declare function getCurrentYearMonthAndDate(): MonthType;
 export declare function getInitialMonths(numberOfMonths: number, startDate: Date | null): MonthType[];
+export declare function getNextActiveMonth(activeMonth: MonthType[], numberOfMonths: number, counter: number): MonthType[];
 export declare type FormatFunction = (date: Date) => string;
 export declare function getInputValue(date: Date | null, displayFormat: string | FormatFunction, defaultValue: string): string;

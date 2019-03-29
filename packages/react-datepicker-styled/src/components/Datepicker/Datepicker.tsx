@@ -74,6 +74,8 @@ function Datepicker({
     firstDayOfWeek,
     onDaySelect,
     onResetDates,
+    goToPreviousMonths,
+    goToNextMonths,
   } = useDatepicker({
     startDate,
     endDate,
@@ -84,8 +86,6 @@ function Datepicker({
     numberOfMonths,
     firstDayOfWeek: firstDayOfWeekProp,
   })
-
-  console.log(startDate)
 
   return (
     <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px">
@@ -108,10 +108,10 @@ function Datepicker({
       </DateWrapper>
       <Box mt="28px" position="relative">
         <Box position="absolute" top="-5px" left="0">
-          <NavButton type="prev" />
+          <NavButton type="prev" onClick={goToPreviousMonths} />
         </Box>
         <Box position="absolute" top="-5px" right="0">
-          <NavButton type="next" />
+          <NavButton type="next" onClick={goToNextMonths} />
         </Box>
         <Grid gridTemplateColumns="repeat(2, 1fr)" gridGap="0 32px">
           {activeMonths.map((month: MonthType) => (

@@ -13,6 +13,7 @@ import {
   getDateMonthAndYear,
   getInitialMonths,
   getInputValue,
+  getNextActiveMonth,
   FormatFunction,
   MonthType,
 } from './useDatepicker.utils'
@@ -26,6 +27,7 @@ export {
   getDateMonthAndYear,
   getInitialMonths,
   getInputValue,
+  getNextActiveMonth,
   FormatFunction,
   MonthType,
   UseDatepickerProps,

@@ -33,9 +33,10 @@ const StyledNavButton = styled('button')<StyledNavButtonProps>`
 
 interface NavButtonProps {
   type: 'next' | 'prev'
+  onClick(): void
 }
 
-function NavButton({type}: NavButtonProps) {
+function NavButton({type, onClick}: NavButtonProps) {
   return (
     <StyledNavButton
       width="30px"
@@ -44,6 +45,7 @@ function NavButton({type}: NavButtonProps) {
       border="1px solid #929598"
       p="0"
       type="button"
+      onClick={onClick}
     >
       <CaretIcon
         width="18px"

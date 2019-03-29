@@ -11685,6 +11685,15 @@ function getInitialMonths(numberOfMonths, startDate) {
   return months
 }
 
+function getNextActiveMonth(activeMonth, numberOfMonths, counter) {
+  var prevMonth = counter > 0 ? activeMonth.length - 1 : 0
+  var prevMonthDate = activeMonth[prevMonth].date
+  return Array.from(Array(numberOfMonths).keys()).reduce(function(m) {
+    prevMonthDate = dateFns_6(prevMonthDate, counter)
+    return m.concat([getDateMonthAndYear(prevMonthDate)])
+  }, [])
+}
+
 function getInputValue(date, displayFormat, defaultValue) {
   if (date && typeof displayFormat === 'string') {
     return dateFns_50(date, displayFormat)
@@ -11711,9 +11720,13 @@ function useDatepicker(_a) {
     numberOfMonths = _b === void 0 ? 2 : _b,
     _c = _a.firstDayOfWeek,
     firstDayOfWeek = _c === void 0 ? 1 : _c
-  var activeMonths = useState(function() {
-    return getInitialMonths(numberOfMonths, startDate)
-  })[0]
+
+  var _d = useState(function() {
+      return getInitialMonths(numberOfMonths, startDate)
+    }),
+    activeMonths = _d[0],
+    setActiveMonths = _d[1]
+
   var isDateSelected$1 = useCallback(
     function(date) {
       return isDateSelected(date, startDate, endDate)
@@ -11733,7 +11746,7 @@ function useDatepicker(_a) {
     [minBookingDate, maxBookingDate],
   )
 
-  var onResetDates = function() {
+  function onResetDates() {
     onDateChange({
       startDate: null,
       endDate: null,
@@ -11766,6 +11779,14 @@ function useDatepicker(_a) {
     }
   }
 
+  function goToPreviousMonths() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1))
+  }
+
+  function goToNextMonths() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1))
+  }
+
   return {
     firstDayOfWeek: firstDayOfWeek,
     activeMonths: activeMonths,
@@ -11774,6 +11795,8 @@ function useDatepicker(_a) {
     isDateBlocked: isDateBlocked$1,
     onResetDates: onResetDates,
     onDaySelect: onDaySelect,
+    goToPreviousMonths: goToPreviousMonths,
+    goToNextMonths: goToNextMonths,
   }
 }
 
@@ -12540,7 +12563,8 @@ var StyledNavButton = styled('button')(
   border,
 )
 function NavButton(_a) {
-  var type = _a.type
+  var type = _a.type,
+    onClick = _a.onClick
   return React.createElement(
     StyledNavButton,
     {
@@ -12550,6 +12574,7 @@ function NavButton(_a) {
       border: '1px solid #929598',
       p: '0',
       type: 'button',
+      onClick: onClick,
     },
     React.createElement(CaretIcon$1, {
       width: '18px',
@@ -12614,8 +12639,9 @@ function Datepicker(_a) {
     isDateBlocked = _d.isDateBlocked,
     firstDayOfWeek = _d.firstDayOfWeek,
     onDaySelect = _d.onDaySelect,
-    onResetDates = _d.onResetDates
-  console.log(startDate)
+    onResetDates = _d.onResetDates,
+    goToPreviousMonths = _d.goToPreviousMonths,
+    goToNextMonths = _d.goToNextMonths
   return React.createElement(
     StyledDatepicker,
     {background: '#ffffff', p: '32px', borderRadius: '2px'},
@@ -12648,12 +12674,12 @@ function Datepicker(_a) {
       React.createElement(
         Box,
         {position: 'absolute', top: '-5px', left: '0'},
-        React.createElement(NavButton, {type: 'prev'}),
+        React.createElement(NavButton, {type: 'prev', onClick: goToPreviousMonths}),
       ),
       React.createElement(
         Box,
         {position: 'absolute', top: '-5px', right: '0'},
-        React.createElement(NavButton, {type: 'next'}),
+        React.createElement(NavButton, {type: 'next', onClick: goToNextMonths}),
       ),
       React.createElement(
         Grid,
@@ -12680,7 +12706,6 @@ function Datepicker(_a) {
   )
 }
 var templateObject_1$8, templateObject_2$3
-//# sourceMappingURL=Datepicker.js.map
 
 //# sourceMappingURL=index.js.map
 

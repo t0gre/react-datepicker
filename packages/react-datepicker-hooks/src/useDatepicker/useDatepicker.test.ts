@@ -8,6 +8,7 @@ import {
   isStartOrEndDate,
   isDateBlocked,
   getInputValue,
+  getNextActiveMonth,
 } from '.'
 
 describe('getCurrentYearMonthAndDate', () => {
@@ -24,6 +25,32 @@ describe('getDateMonthAndYear', () => {
     const date = new Date(2019, 2, 27, 0, 0, 0)
     expect(getDateMonthAndYear(date).year).toEqual(2019)
     expect(getDateMonthAndYear(date).month).toEqual(2)
+  })
+})
+
+describe('getNextActiveMonth', () => {
+  test('get next 2 months', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const months = getInitialMonths(2, null)
+    const nextMonths = getNextActiveMonth(months, 2, 1)
+    expect(nextMonths.length).toBe(2)
+    expect(nextMonths[0].year).toEqual(2019)
+    expect(nextMonths[0].month).toEqual(4)
+    expect(nextMonths[1].year).toEqual(2019)
+    expect(nextMonths[1].month).toEqual(5)
+    clear()
+  })
+
+  test('get past 2 months', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const months = getInitialMonths(2, null)
+    const nextMonths = getNextActiveMonth(months, 2, -1)
+    expect(nextMonths.length).toBe(2)
+    expect(nextMonths[0].year).toEqual(2019)
+    expect(nextMonths[0].month).toEqual(1)
+    expect(nextMonths[1].year).toEqual(2019)
+    expect(nextMonths[1].month).toEqual(0)
+    clear()
   })
 })
 

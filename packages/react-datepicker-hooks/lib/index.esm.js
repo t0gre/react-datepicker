@@ -5730,6 +5730,14 @@ function getInitialMonths(numberOfMonths, startDate) {
     }
     return months;
 }
+function getNextActiveMonth(activeMonth, numberOfMonths, counter) {
+    var prevMonth = counter > 0 ? activeMonth.length - 1 : 0;
+    var prevMonthDate = activeMonth[prevMonth].date;
+    return Array.from(Array(numberOfMonths).keys()).reduce(function (m) {
+        prevMonthDate = dateFns_6(prevMonthDate, counter);
+        return m.concat([getDateMonthAndYear(prevMonthDate)]);
+    }, []);
+}
 function getInputValue(date, displayFormat, defaultValue) {
     if (date && typeof displayFormat === 'string') {
         return dateFns_50(date, displayFormat);
@@ -5751,20 +5759,22 @@ function useDatepicker(_a) {
     _b = _a.numberOfMonths, 
     // orientation = 'horizontal',
     numberOfMonths = _b === void 0 ? 2 : _b, _c = _a.firstDayOfWeek, firstDayOfWeek = _c === void 0 ? 1 : _c;
-    var activeMonths = useState(function () { return getInitialMonths(numberOfMonths, startDate); })[0];
+    var _d = useState(function () {
+        return getInitialMonths(numberOfMonths, startDate);
+    }), activeMonths = _d[0], setActiveMonths = _d[1];
     var isDateSelected$1 = useCallback(function (date) { return isDateSelected(date, startDate, endDate); }, [
         startDate,
         endDate,
     ]);
     var isStartOrEndDate$1 = useCallback(function (date) { return isStartOrEndDate(date, startDate, endDate); }, [startDate, endDate]);
     var isDateBlocked$1 = useCallback(function (date) { return isDateBlocked(date, minBookingDate, maxBookingDate); }, [minBookingDate, maxBookingDate]);
-    var onResetDates = function () {
+    function onResetDates() {
         onDateChange({
             startDate: null,
             endDate: null,
             focusedInput: START_DATE,
         });
-    };
+    }
     function onDaySelect(date) {
         if ((focusedInput === END_DATE && startDate && dateFns_70(date, startDate)) ||
             (focusedInput === START_DATE && endDate && dateFns_69(date, endDate))) {
@@ -5789,6 +5799,12 @@ function useDatepicker(_a) {
             });
         }
     }
+    function goToPreviousMonths() {
+        setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1));
+    }
+    function goToNextMonths() {
+        setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1));
+    }
     return {
         firstDayOfWeek: firstDayOfWeek,
         activeMonths: activeMonths,
@@ -5797,6 +5813,8 @@ function useDatepicker(_a) {
         isDateBlocked: isDateBlocked$1,
         onResetDates: onResetDates,
         onDaySelect: onDaySelect,
+        goToPreviousMonths: goToPreviousMonths,
+        goToNextMonths: goToNextMonths,
     };
 }
 

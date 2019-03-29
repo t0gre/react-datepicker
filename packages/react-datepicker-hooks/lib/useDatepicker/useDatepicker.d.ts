@@ -27,4 +27,6 @@ export declare function useDatepicker({ startDate, endDate, focusedInput, minBoo
     isDateBlocked: (date: Date) => boolean;
     onResetDates: () => void;
     onDaySelect: (date: Date) => void;
+    goToPreviousMonths: () => void;
+    goToNextMonths: () => void;
 };

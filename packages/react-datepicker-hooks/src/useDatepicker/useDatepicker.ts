@@ -3,6 +3,7 @@ import {isBefore, isAfter} from 'date-fns'
 import {
   getInitialMonths,
   MonthType,
+  getNextActiveMonth,
   isDateSelected as isDateSelectedFn,
   isDateBlocked as isDateBlockedFn,
   isStartOrEndDate as isStartOrEndDateFn,
@@ -44,7 +45,9 @@ export function useDatepicker({
   firstDayOfWeek = 1,
 }: // initialVisibleMonth = getInitialMonths,
 UseDatepickerProps) {
-  const [activeMonths] = useState(() => getInitialMonths(numberOfMonths, startDate))
+  const [activeMonths, setActiveMonths] = useState(() =>
+    getInitialMonths(numberOfMonths, startDate),
+  )
   const isDateSelected = useCallback((date: Date) => isDateSelectedFn(date, startDate, endDate), [
     startDate,
     endDate,
@@ -57,7 +60,8 @@ UseDatepickerProps) {
     (date: Date) => isDateBlockedFn(date, minBookingDate, maxBookingDate),
     [minBookingDate, maxBookingDate],
   )
-  const onResetDates = () => {
+
+  function onResetDates() {
     onDateChange({
       startDate: null,
       endDate: null,
@@ -90,6 +94,14 @@ UseDatepickerProps) {
     }
   }
 
+  function goToPreviousMonths() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1))
+  }
+
+  function goToNextMonths() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1))
+  }
+
   return {
     firstDayOfWeek,
     activeMonths,
@@ -98,5 +110,7 @@ UseDatepickerProps) {
     isDateBlocked,
     onResetDates,
     onDaySelect,
+    goToPreviousMonths,
+    goToNextMonths,
   }
 }
