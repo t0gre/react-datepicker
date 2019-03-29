@@ -1,4 +1,4 @@
-import {useMemo, useCallback} from 'react'
+import {useState, useCallback} from 'react'
 import {isBefore, isAfter} from 'date-fns'
 import {
   getInitialMonths,
@@ -42,9 +42,9 @@ export function useDatepicker({
   // orientation = 'horizontal',
   numberOfMonths = 2,
   firstDayOfWeek = 1,
-  initialVisibleMonth = getInitialMonths,
-}: UseDatepickerProps) {
-  const activeMonths = useMemo(() => getInitialMonths(numberOfMonths), [initialVisibleMonth])
+}: // initialVisibleMonth = getInitialMonths,
+UseDatepickerProps) {
+  const [activeMonths] = useState(() => getInitialMonths(numberOfMonths, startDate))
   const isDateSelected = useCallback((date: Date) => isDateSelectedFn(date, startDate, endDate), [
     startDate,
     endDate,

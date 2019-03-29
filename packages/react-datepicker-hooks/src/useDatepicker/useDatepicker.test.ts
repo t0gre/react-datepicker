@@ -30,7 +30,7 @@ describe('getDateMonthAndYear', () => {
 describe('getInitialMonths', () => {
   test('should return 2 months', () => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
-    const months = getInitialMonths(2)
+    const months = getInitialMonths(2, null)
     expect(months.length).toBe(2)
     expect(months[0].year).toEqual(2019)
     expect(months[0].month).toEqual(2)
@@ -39,9 +39,20 @@ describe('getInitialMonths', () => {
     clear()
   })
 
+  test('should return 2 months (june and july)', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const months = getInitialMonths(2, new Date(2019, 5, 25))
+    expect(months.length).toBe(2)
+    expect(months[0].year).toEqual(2019)
+    expect(months[0].month).toEqual(5)
+    expect(months[1].year).toEqual(2019)
+    expect(months[1].month).toEqual(6)
+    clear()
+  })
+
   test('should return 1 month', () => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
-    const months = getInitialMonths(1)
+    const months = getInitialMonths(1, null)
     expect(months.length).toBe(1)
     expect(months[0].year).toEqual(2019)
     expect(months[0].month).toEqual(2)

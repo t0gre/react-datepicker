@@ -57,8 +57,8 @@ export function getCurrentYearMonthAndDate(): MonthType {
   return getDateMonthAndYear(startOfToday())
 }
 
-export function getInitialMonths(numberOfMonths: number): MonthType[] {
-  const firstMonth = getCurrentYearMonthAndDate()
+export function getInitialMonths(numberOfMonths: number, startDate: Date | null): MonthType[] {
+  const firstMonth = startDate ? getDateMonthAndYear(startDate) : getCurrentYearMonthAndDate()
   let prevMonthDate = firstMonth.date
   let months = [firstMonth]
 

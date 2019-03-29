@@ -36,7 +36,7 @@ function App() {
     >
       <DateRangeInput
         minBookingDate={new Date(2019, 2, 10)}
-        maxBookingDate={new Date(2019, 2, 27)}
+        maxBookingDate={new Date(2019, 6, 27)}
         startDate={state.startDate}
         endDate={state.endDate}
         onDateChange={data => dispatch({type: 'dateChange', payload: data})}
