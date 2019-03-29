@@ -8,7 +8,16 @@ import {
   borderRadius,
   BorderRadiusProps,
 } from 'styled-system'
-import {useDatepicker, MonthType, UseDatepickerProps} from '@react-datepicker/hooks'
+import {
+  useDatepicker,
+  MonthType,
+  UseDatepickerProps,
+  getInputValue,
+  START_DATE,
+  END_DATE,
+  FormatFunction,
+} from '@react-datepicker/hooks'
+import {datepickerPhrases, DatepickerPhrases} from '../../phrases'
 import SelectedDate from '../SelectedDate'
 import Grid from '../Grid'
 import Flex from '../Flex'
@@ -40,6 +49,11 @@ const DateWrapper = styled('div')`
   }
 `
 
+export interface DatepickerProps extends UseDatepickerProps {
+  phrases?: DatepickerPhrases
+  displayFormat: string | FormatFunction
+}
+
 function Datepicker({
   startDate,
   endDate,
@@ -49,7 +63,9 @@ function Datepicker({
   focusedInput,
   numberOfMonths,
   firstDayOfWeek: firstDayOfWeekProp,
-}: UseDatepickerProps) {
+  displayFormat = 'MM/DD/YYYY',
+  phrases = datepickerPhrases,
+}: DatepickerProps) {
   const {
     activeMonths,
     isDateSelected,
@@ -67,15 +83,25 @@ function Datepicker({
     firstDayOfWeek: firstDayOfWeekProp,
   })
 
+  console.log(startDate)
+
   return (
     <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px">
       <DateWrapper>
         <Grid gridTemplateColumns="126px 75px 126px">
-          <SelectedDate title="Start date:" date="Select" isActive />
+          <SelectedDate
+            title={phrases.datepickerStartDateLabel}
+            date={getInputValue(startDate, displayFormat, phrases.datepickerStartDatePlaceholder)}
+            isActive={focusedInput === START_DATE}
+          />
           <Flex justifyContent="center" alignItems="center">
             <ArrowIcon height="12px" width="15px" color="#929598" />
           </Flex>
-          <SelectedDate title="end date:" date="Select" isActive={false} />
+          <SelectedDate
+            title={phrases.datepickerEndDateLabel}
+            date={getInputValue(endDate, displayFormat, phrases.datepickerEndDatePlaceholder)}
+            isActive={focusedInput === END_DATE}
+          />
         </Grid>
       </DateWrapper>
       <Box mt="28px" position="relative">

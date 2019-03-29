@@ -5734,8 +5734,21 @@ function getInitialMonths(numberOfMonths) {
     }
     return months;
 }
+function getInputValue(date, displayFormat, defaultValue) {
+    if (date && typeof displayFormat === 'string') {
+        return dateFns_50(date, displayFormat);
+    }
+    else if (date && typeof displayFormat === 'function') {
+        return displayFormat(date);
+    }
+    else {
+        return defaultValue;
+    }
+}
 //# sourceMappingURL=useDatepicker.utils.js.map
 
+var START_DATE = 'startDate';
+var END_DATE = 'endDate';
 function useDatepicker(_a) {
     var startDate = _a.startDate, endDate = _a.endDate, focusedInput = _a.focusedInput, onFocusChange = _a.onFocusChange, minBookingDate = _a.minBookingDate, maxBookingDate = _a.maxBookingDate, _b = _a.orientation, orientation = _b === void 0 ? 'horizontal' : _b, _c = _a.numberOfMonths, numberOfMonths = _c === void 0 ? 2 : _c, _d = _a.firstDayOfWeek, firstDayOfWeek = _d === void 0 ? 1 : _d, _e = _a.initialVisibleMonth, initialVisibleMonth = _e === void 0 ? getInitialMonths : _e;
     var activeMonths = react.useMemo(function () { return getInitialMonths(numberOfMonths); }, [initialVisibleMonth]);
@@ -5754,15 +5767,17 @@ function useDatepicker(_a) {
         isDateBlocked: isDateBlocked$1,
     };
 }
+//# sourceMappingURL=useDatepicker.js.map
 
 //# sourceMappingURL=index.js.map
 
-//# sourceMappingURL=index.js.map
-
+exports.END_DATE = END_DATE;
+exports.START_DATE = START_DATE;
 exports.getCurrentYearMonthAndDate = getCurrentYearMonthAndDate;
 exports.getDateMonthAndYear = getDateMonthAndYear;
 exports.getDays = getDays;
 exports.getInitialMonths = getInitialMonths;
+exports.getInputValue = getInputValue;
 exports.getWeekDays = getWeekDays;
 exports.isDateBlocked = isDateBlocked;
 exports.isDateSelected = isDateSelected;

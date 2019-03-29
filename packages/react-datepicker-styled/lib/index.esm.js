@@ -16,6 +16,19 @@ MERCHANTABLITY OR NON-INFRINGEMENT.
 See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
+var __assign = function () {
+  __assign = Object.assign || function __assign(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
 function __makeTemplateObject(cooked, raw) {
   if (Object.defineProperty) {
     Object.defineProperty(cooked, "raw", {
@@ -4231,64 +4244,6 @@ var colorStyle = variant({
   key: 'colorStyles',
   prop: 'colors'
 });
-
-var Grid = styled('div')(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: grid;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  display: grid;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), gridAutoColumns, gridAutoFlow, gridAutoRows, gridColumnGap, gridGap, gridRowGap, gridTemplateAreas, gridTemplateColumns, gridTemplateRows, alignItems, justifyContent, space);
-var templateObject_1;
-//# sourceMappingURL=Grid.js.map
-
-//# sourceMappingURL=index.js.map
-
-var Flex = styled('div')(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: flex;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  display: flex;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), space, flex, flexWrap, flexDirection, alignItems, justifyContent, gridArea, height, width);
-var templateObject_1$1;
-//# sourceMappingURL=Flex.js.map
-
-//# sourceMappingURL=index.js.map
-
-function CalendarIcon(_a) {
-    var height = _a.height, width = _a.width, color = _a.color, _b = _a.className, className = _b === void 0 ? '' : _b;
-    return (React.createElement("svg", { width: width, height: height, className: className, color: color, viewBox: "0 0 12 12", xmlns: "http://www.w3.org/2000/svg" },
-        React.createElement("path", { d: "M8 1H7v1h1V1zM6.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM6 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 6 3zm3.5 5.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0-2h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM9 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 9 3zm-.5 2.5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-3 0h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-2 3h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM11 1h-1v1h1v9H1V2h1V1H1a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM3.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM5 1H4v1h1V1zm1.5 7.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm-4-3h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zM3 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 3 3z", fill: "currentColor", fillRule: "nonzero" })));
-}
-//# sourceMappingURL=CalendarIcon.js.map
-
-//# sourceMappingURL=index.js.map
-
-var InputLabel = styled('label')(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), position, border, background, display, borderRadius);
-var CalendarWrapper = styled('div')(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  \n  svg {\n    display: block;\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  \n  svg {\n    display: block;\n  }\n"])), position, left, top, height, width);
-var StyledInput = styled('input')(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  cursor: pointer;\n  box-sizing: border-box;\n  \n  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */\n    font-weight: 500;\n    color: #929598;\n  }\n  ::-moz-placeholder { /* Firefox 19+ */\n    font-weight: 500;\n    color: #929598;\n  }\n  :-moz-placeholder { /* Firefox 18- */\n    font-weight: 500;\n    color: #929598;\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  cursor: pointer;\n  box-sizing: border-box;\n  \n  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */\n    font-weight: 500;\n    color: #929598;\n  }\n  ::-moz-placeholder { /* Firefox 19+ */\n    font-weight: 500;\n    color: #929598;\n  }\n  :-moz-placeholder { /* Firefox 18- */\n    font-weight: 500;\n    color: #929598;\n  }\n"])), background, space, fontFamily, fontSize, color, fontWeight, space, border, width, height);
-function Input() {
-    return (React.createElement(InputLabel, { htmlFor: "test", display: "block", position: "relative", border: "1px solid #d0d0d0", background: "#ffffff", borderRadius: "2px" },
-        React.createElement(CalendarWrapper, { position: "absolute", height: "12px", width: "12px", top: "18px", left: "16px" },
-            React.createElement(CalendarIcon, { width: "12px", height: "12px", color: "#BCBEC0" })),
-        React.createElement(StyledInput, { border: "0", px: "44px", width: "100%", height: "46px", background: "#ffffff", fontFamily: "Montserrat", color: "#001217", fontSize: "14px", fontWeight: 600, id: "test", placeholder: "Set end date", readOnly: true })));
-}
-var templateObject_1$2, templateObject_2, templateObject_3;
-//# sourceMappingURL=Input.js.map
-
-//# sourceMappingURL=index.js.map
-
-function calculateAngle(direction) {
-    switch (direction) {
-        case 'up':
-            return 0;
-        case 'down':
-            return 180;
-        case 'left':
-            return -90;
-        case 'right':
-        default:
-            return 90;
-    }
-}
-function ArrowIcon(_a) {
-    var height = _a.height, width = _a.width, color = _a.color, _b = _a.direction, direction = _b === void 0 ? 'right' : _b, _c = _a.className, className = _c === void 0 ? '' : _c;
-    var angle = calculateAngle(direction);
-    return (React.createElement("svg", { width: width, height: height, className: className, color: color, transform: "rotate(" + angle + " 0 0)", viewBox: "0 0 9 12", xmlns: "http://www.w3.org/2000/svg" },
-        React.createElement("path", { fill: "currentColor", d: "M4.46.001a.538.538 0 0 0-.358.174L.156 4.48a.538.538 0 1 0 .796.724l3.01-3.285v13.689a.563.563 0 0 0 .538.55.563.563 0 0 0 .538-.55V1.918l3.01 3.286a.538.538 0 1 0 .796-.724L4.898.175a.538.538 0 0 0-.437-.174z" })));
-}
-//# sourceMappingURL=ArrowIcon.js.map
-
-//# sourceMappingURL=index.js.map
 
 var MILLISECONDS_IN_MINUTE = 60000;
 /**
@@ -9903,6 +9858,19 @@ function getInitialMonths(numberOfMonths) {
   return months;
 }
 
+function getInputValue(date, displayFormat, defaultValue) {
+  if (date && typeof displayFormat === 'string') {
+    return dateFns_50(date, displayFormat);
+  } else if (date && typeof displayFormat === 'function') {
+    return displayFormat(date);
+  } else {
+    return defaultValue;
+  }
+}
+
+var START_DATE = 'startDate';
+var END_DATE = 'endDate';
+
 function useDatepicker(_a) {
   var startDate = _a.startDate,
       endDate = _a.endDate,
@@ -9939,6 +9907,74 @@ function useDatepicker(_a) {
     isDateBlocked: isDateBlocked$1
   };
 }
+
+var datepickerPhrases = {
+    datepickerStartDatePlaceholder: 'Select',
+    datepickerStartDateLabel: 'Start date:',
+    datepickerEndDatePlaceholder: 'Select',
+    datepickerEndDateLabel: 'End date:',
+};
+var dateRangeInputPhrases = __assign({}, datepickerPhrases, { startDateAriaLabel: 'Start date', endDateAriaLabel: 'End date', startDatePlaceholder: 'Set start date', endDatePlaceholder: 'Set end date' });
+//# sourceMappingURL=phrases.js.map
+
+var Grid = styled('div')(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: grid;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  display: grid;\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), gridAutoColumns, gridAutoFlow, gridAutoRows, gridColumnGap, gridGap, gridRowGap, gridTemplateAreas, gridTemplateColumns, gridTemplateRows, alignItems, justifyContent, space);
+var templateObject_1;
+//# sourceMappingURL=Grid.js.map
+
+//# sourceMappingURL=index.js.map
+
+var Flex = styled('div')(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: flex;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  display: flex;\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), space, flex, flexWrap, flexDirection, alignItems, justifyContent, gridArea, height, width);
+var templateObject_1$1;
+//# sourceMappingURL=Flex.js.map
+
+//# sourceMappingURL=index.js.map
+
+function CalendarIcon(_a) {
+    var height = _a.height, width = _a.width, color = _a.color, _b = _a.className, className = _b === void 0 ? '' : _b;
+    return (React.createElement("svg", { width: width, height: height, className: className, color: color, viewBox: "0 0 12 12", xmlns: "http://www.w3.org/2000/svg" },
+        React.createElement("path", { d: "M8 1H7v1h1V1zM6.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM6 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 6 3zm3.5 5.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0-2h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM9 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 9 3zm-.5 2.5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-3 0h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-2 3h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM11 1h-1v1h1v9H1V2h1V1H1a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM3.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM5 1H4v1h1V1zm1.5 7.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm-4-3h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zM3 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 3 3z", fill: "currentColor", fillRule: "nonzero" })));
+}
+//# sourceMappingURL=CalendarIcon.js.map
+
+//# sourceMappingURL=index.js.map
+
+var InputLabel = styled('label')(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), position, border, background, display, borderRadius);
+var CalendarWrapper = styled('div')(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  \n  svg {\n    display: block;\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  \n  svg {\n    display: block;\n  }\n"])), position, left, top, height, width);
+var StyledInput = styled('input')(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  cursor: pointer;\n  box-sizing: border-box;\n  \n  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */\n    font-weight: 500;\n    color: #929598;\n  }\n  ::-moz-placeholder { /* Firefox 19+ */\n    font-weight: 500;\n    color: #929598;\n  }\n  :-moz-placeholder { /* Firefox 18- */\n    font-weight: 500;\n    color: #929598;\n  }\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  cursor: pointer;\n  box-sizing: border-box;\n  \n  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */\n    font-weight: 500;\n    color: #929598;\n  }\n  ::-moz-placeholder { /* Firefox 19+ */\n    font-weight: 500;\n    color: #929598;\n  }\n  :-moz-placeholder { /* Firefox 18- */\n    font-weight: 500;\n    color: #929598;\n  }\n"])), background, space, fontFamily, fontSize, color, fontWeight, space, border, width, height);
+function Input(_a) {
+    var placeholder = _a.placeholder, id = _a.id, ariaLabel = _a.ariaLabel, onClick = _a.onClick, value = _a.value;
+    return (React.createElement(InputLabel, { htmlFor: id, display: "block", position: "relative", border: "1px solid #d0d0d0", background: "#ffffff", borderRadius: "2px", onClick: onClick },
+        React.createElement(CalendarWrapper, { position: "absolute", height: "12px", width: "12px", top: "16px", left: "16px" },
+            React.createElement(CalendarIcon, { width: "12px", height: "12px", color: "#BCBEC0" })),
+        React.createElement(StyledInput, { border: "0", px: "44px", width: "100%", height: "46px", background: "#ffffff", fontFamily: "Montserrat", color: "#001217", fontSize: "14px", fontWeight: 600, id: id, placeholder: placeholder, "aria-label": ariaLabel, value: value, autoComplete: "off", readOnly: true })));
+}
+var templateObject_1$2, templateObject_2, templateObject_3;
+//# sourceMappingURL=Input.js.map
+
+//# sourceMappingURL=index.js.map
+
+function calculateAngle(direction) {
+    switch (direction) {
+        case 'up':
+            return 0;
+        case 'down':
+            return 180;
+        case 'left':
+            return -90;
+        case 'right':
+        default:
+            return 90;
+    }
+}
+function ArrowIcon(_a) {
+    var height = _a.height, width = _a.width, color = _a.color, _b = _a.direction, direction = _b === void 0 ? 'right' : _b, _c = _a.className, className = _c === void 0 ? '' : _c;
+    var angle = calculateAngle(direction);
+    return (React.createElement("svg", { width: width, height: height, className: className, color: color, transform: "rotate(" + angle + " 0 0)", viewBox: "0 0 9 12", xmlns: "http://www.w3.org/2000/svg" },
+        React.createElement("path", { fill: "currentColor", d: "M4.46.001a.538.538 0 0 0-.358.174L.156 4.48a.538.538 0 1 0 .796.724l3.01-3.285v13.689a.563.563 0 0 0 .538.55.563.563 0 0 0 .538-.55V1.918l3.01 3.286a.538.538 0 1 0 .796-.724L4.898.175a.538.538 0 0 0-.437-.174z" })));
+}
+//# sourceMappingURL=ArrowIcon.js.map
+
+//# sourceMappingURL=index.js.map
 
 var Text = styled('div')(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), fontFamily, fontSize, fontWeight, color, lineHeight, space);
 var templateObject_1$3;
@@ -10118,8 +10154,8 @@ var templateObject_1$7;
 var StyledDatepicker = styled('div')(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n"])), background, space, borderRadius);
 var DateWrapper = styled('div')(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n"])));
 function Datepicker(_a) {
-    var startDate = _a.startDate, endDate = _a.endDate, minBookingDate = _a.minBookingDate, maxBookingDate = _a.maxBookingDate, onFocusChange = _a.onFocusChange, focusedInput = _a.focusedInput, numberOfMonths = _a.numberOfMonths, firstDayOfWeekProp = _a.firstDayOfWeek;
-    var _b = useDatepicker({
+    var startDate = _a.startDate, endDate = _a.endDate, minBookingDate = _a.minBookingDate, maxBookingDate = _a.maxBookingDate, onFocusChange = _a.onFocusChange, focusedInput = _a.focusedInput, numberOfMonths = _a.numberOfMonths, firstDayOfWeekProp = _a.firstDayOfWeek, _b = _a.displayFormat, displayFormat = _b === void 0 ? 'MM/DD/YYYY' : _b, _c = _a.phrases, phrases = _c === void 0 ? datepickerPhrases : _c;
+    var _d = useDatepicker({
         startDate: startDate,
         endDate: endDate,
         focusedInput: focusedInput,
@@ -10128,14 +10164,15 @@ function Datepicker(_a) {
         maxBookingDate: maxBookingDate,
         numberOfMonths: numberOfMonths,
         firstDayOfWeek: firstDayOfWeekProp,
-    }), activeMonths = _b.activeMonths, isDateSelected = _b.isDateSelected, isStartOrEndDate = _b.isStartOrEndDate, isDateBlocked = _b.isDateBlocked, firstDayOfWeek = _b.firstDayOfWeek;
+    }), activeMonths = _d.activeMonths, isDateSelected = _d.isDateSelected, isStartOrEndDate = _d.isStartOrEndDate, isDateBlocked = _d.isDateBlocked, firstDayOfWeek = _d.firstDayOfWeek;
+    console.log(startDate);
     return (React.createElement(StyledDatepicker, { background: "#ffffff", p: "32px", borderRadius: "2px" },
         React.createElement(DateWrapper, null,
             React.createElement(Grid, { gridTemplateColumns: "126px 75px 126px" },
-                React.createElement(Date$1, { title: "Start date:", date: "Select", isActive: true }),
+                React.createElement(Date$1, { title: phrases.datepickerStartDateLabel, date: getInputValue(startDate, displayFormat, phrases.datepickerStartDatePlaceholder), isActive: focusedInput === START_DATE }),
                 React.createElement(Flex, { justifyContent: "center", alignItems: "center" },
                     React.createElement(ArrowIcon, { height: "12px", width: "15px", color: "#929598" })),
-                React.createElement(Date$1, { title: "end date:", date: "Select", isActive: false }))),
+                React.createElement(Date$1, { title: phrases.datepickerEndDateLabel, date: getInputValue(endDate, displayFormat, phrases.datepickerEndDatePlaceholder), isActive: focusedInput === END_DATE }))),
         React.createElement(Box, { mt: "28px", position: "relative" },
             React.createElement(Box, { position: "absolute", top: "-5px", left: "0" },
                 React.createElement(NavButton, { type: "prev" })),
@@ -10151,15 +10188,15 @@ var templateObject_1$8, templateObject_2$3;
 //# sourceMappingURL=index.js.map
 
 var StyledArrowIcon = styled(ArrowIcon)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), opacity);
-function DateRangePicker(_a) {
-    var startDate = _a.startDate, endDate = _a.endDate, minBookingDate = _a.minBookingDate, maxBookingDate = _a.maxBookingDate, firstDayOfWeek = _a.firstDayOfWeek, onFocusChange = _a.onFocusChange, numberOfMonths = _a.numberOfMonths, focusedInput = _a.focusedInput;
+function DateRangeInput(_a) {
+    var startDate = _a.startDate, endDate = _a.endDate, minBookingDate = _a.minBookingDate, maxBookingDate = _a.maxBookingDate, firstDayOfWeek = _a.firstDayOfWeek, onFocusChange = _a.onFocusChange, numberOfMonths = _a.numberOfMonths, focusedInput = _a.focusedInput, _b = _a.displayFormat, displayFormat = _b === void 0 ? 'MM/DD/YYYY' : _b, _c = _a.phrases, phrases = _c === void 0 ? dateRangeInputPhrases : _c;
     return (React.createElement("div", null,
         React.createElement(Grid, { gridTemplateColumns: "194px 39px 194px" },
-            React.createElement(Input, null),
+            React.createElement(Input, { id: "startDate", ariaLabel: phrases.startDateAriaLabel, placeholder: phrases.startDatePlaceholder, value: getInputValue(startDate, displayFormat, ''), onClick: function () { return onFocusChange(START_DATE); } }),
             React.createElement(Flex, { alignItems: "center", justifyContent: "center" },
                 React.createElement(StyledArrowIcon, { width: "15px", height: "12px", color: "#ffffff", opacity: 0.4 })),
-            React.createElement(Input, null)),
-        React.createElement(Datepicker, { startDate: startDate, endDate: endDate, minBookingDate: minBookingDate, maxBookingDate: maxBookingDate, firstDayOfWeek: firstDayOfWeek, onFocusChange: onFocusChange, numberOfMonths: numberOfMonths, focusedInput: focusedInput })));
+            React.createElement(Input, { id: "startDate", ariaLabel: phrases.endDateAriaLabel, placeholder: phrases.endDatePlaceholder, value: getInputValue(endDate, displayFormat, ''), onClick: function () { return onFocusChange(END_DATE); } })),
+        React.createElement(Datepicker, { startDate: startDate, endDate: endDate, minBookingDate: minBookingDate, maxBookingDate: maxBookingDate, firstDayOfWeek: firstDayOfWeek, onFocusChange: onFocusChange, numberOfMonths: numberOfMonths, focusedInput: focusedInput, displayFormat: displayFormat })));
 }
 var templateObject_1$9;
 
@@ -10167,5 +10204,5 @@ var templateObject_1$9;
 
 //# sourceMappingURL=index.js.map
 
-export { DateRangePicker };
+export { DateRangeInput };
 //# sourceMappingURL=index.esm.js.map

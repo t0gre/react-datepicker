@@ -1,4 +1,4 @@
-import {useDatepicker, UseDatepickerProps} from './useDatepicker'
+import {useDatepicker, UseDatepickerProps, END_DATE, START_DATE} from './useDatepicker'
 import {
   isDateSelected,
   isStartOrEndDate,
@@ -6,6 +6,8 @@ import {
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
   getInitialMonths,
+  getInputValue,
+  FormatFunction,
   MonthType,
 } from './useDatepicker.utils'
 
@@ -17,6 +19,10 @@ export {
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
   getInitialMonths,
+  getInputValue,
+  FormatFunction,
   MonthType,
   UseDatepickerProps,
+  END_DATE,
+  START_DATE,
 }

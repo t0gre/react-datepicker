@@ -102,17 +102,26 @@ const StyledInput = styled('input')<StyledInputProps>`
   }
 `
 
-function Input() {
+interface InputProps {
+  placeholder: string
+  value: string
+  id: string
+  ariaLabel: string
+  onClick(): void
+}
+
+function Input({placeholder, id, ariaLabel, onClick, value}: InputProps) {
   return (
     <InputLabel
-      htmlFor="test"
+      htmlFor={id}
       display="block"
       position="relative"
       border="1px solid #d0d0d0"
       background="#ffffff"
       borderRadius="2px"
+      onClick={onClick}
     >
-      <CalendarWrapper position="absolute" height="12px" width="12px" top="18px" left="16px">
+      <CalendarWrapper position="absolute" height="12px" width="12px" top="16px" left="16px">
         <CalendarIcon width="12px" height="12px" color="#BCBEC0" />
       </CalendarWrapper>
       <StyledInput
@@ -125,8 +134,11 @@ function Input() {
         color="#001217"
         fontSize="14px"
         fontWeight={600}
-        id="test"
-        placeholder="Set end date"
+        id={id}
+        placeholder={placeholder}
+        aria-label={ariaLabel}
+        value={value}
+        autoComplete="off"
         readOnly
       />
     </InputLabel>

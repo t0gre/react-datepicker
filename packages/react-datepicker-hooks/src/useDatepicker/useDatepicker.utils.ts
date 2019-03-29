@@ -8,6 +8,7 @@ import {
   startOfToday,
   startOfMonth,
   addMonths,
+  format,
 } from 'date-fns'
 
 export function isDateSelected(date: Date, startDate: Date | null, endDate: Date | null) {
@@ -69,4 +70,19 @@ export function getInitialMonths(numberOfMonths: number): MonthType[] {
   }
 
   return months
+}
+
+export type FormatFunction = (date: Date) => string
+export function getInputValue(
+  date: Date | null,
+  displayFormat: string | FormatFunction,
+  defaultValue: string,
+) {
+  if (date && typeof displayFormat === 'string') {
+    return format(date, displayFormat)
+  } else if (date && typeof displayFormat === 'function') {
+    return displayFormat(date)
+  } else {
+    return defaultValue
+  }
 }

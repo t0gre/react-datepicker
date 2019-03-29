@@ -60,7 +60,6 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "cz-lerna-changelog": "^2.0.2",
-    "date-fns": "^1.30.1",
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-react-app": "^3.0.8",

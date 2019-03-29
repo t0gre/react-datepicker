@@ -7,7 +7,7 @@ export interface UseDatepickerProps {
     startDate: Date | null;
     endDate: Date | null;
     focusedInput: 'startDate' | 'endDate' | null;
-    onFocusChange(focusedInput: string): void;
+    onFocusChange(focusedInput: string | null): void;
     orientation?: 'horizontal' | 'vertical';
     numberOfMonths?: number;
     firstDayOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6;

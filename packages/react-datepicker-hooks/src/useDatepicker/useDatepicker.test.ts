@@ -1,4 +1,5 @@
 import {advanceTo, clear} from 'jest-date-mock'
+import {isEqual, format} from 'date-fns'
 import {
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
@@ -6,8 +7,8 @@ import {
   isDateSelected,
   isStartOrEndDate,
   isDateBlocked,
+  getInputValue,
 } from '.'
-import {isEqual} from 'date-fns'
 
 describe('getCurrentYearMonthAndDate', () => {
   test('should return current year and month', () => {
@@ -106,5 +107,16 @@ describe('isDateBlocked', () => {
     expect(
       isDateBlocked(new Date(2019, 2, 26, 0, 0, 0), minBookingDate, maxBookingDate, isDayBlockedFn),
     ).toBe(false)
+  })
+})
+
+describe('getInputValue', () => {
+  test('should return formatted value', () => {
+    const date = new Date(2019, 2, 10, 0, 0, 0)
+    expect(getInputValue(date, 'DD/MM/YYYY', 'default value')).toBe('10/03/2019')
+    expect(getInputValue(date, (date: Date) => format(date, 'YYYY'), 'default value')).toBe('2019')
+  })
+  test('should return default value', () => {
+    expect(getInputValue(null, 'DD/MM/YYYY', 'default value')).toBe('default value')
   })
 })

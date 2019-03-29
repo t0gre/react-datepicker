@@ -1,3 +1,3 @@
-import DateRangePicker from './components/DateRangePicker'
+import DateRangeInput from './components/DateRangeInput'
 
-export {DateRangePicker}
+export {DateRangeInput}

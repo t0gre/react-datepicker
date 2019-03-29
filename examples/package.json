@@ -5,7 +5,6 @@
   "dependencies": {
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
-    "date-fns": "link:../node_modules/date-fns",
     "react-scripts": "2.1.8",
     "styled-components": "^4.2.0",
     "@react-datepicker/styled": "link:../packages/react-datepicker-styled"

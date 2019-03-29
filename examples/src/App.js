@@ -1,5 +1,5 @@
 import React from 'react'
-import {DateRangePicker} from '@react-datepicker/styled'
+import {DateRangeInput} from '@react-datepicker/styled'
 
 function App() {
   return (
@@ -14,12 +14,12 @@ function App() {
         justifyContent: 'center',
       }}
     >
-      <DateRangePicker
+      <DateRangeInput
         minBookingDate={new Date(2019, 2, 10)}
         maxBookingDate={new Date(2019, 2, 27)}
         startDate={new Date(2019, 2, 12)}
         endDate={new Date(2019, 2, 20)}
-        focusedInput={null}
+        focusedInput="endDate"
         onFocusChange={focusedInput => {
           console.log(focusedInput)
         }}
