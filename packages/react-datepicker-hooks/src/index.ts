@@ -22,6 +22,7 @@ import {
   END_DATE,
   getInputValue,
   FormatFunction,
+  FocusedInput,
 } from './useDatepicker'
 
 export {
@@ -46,4 +47,5 @@ export {
   END_DATE,
   getInputValue,
   FormatFunction,
+  FocusedInput,
 }

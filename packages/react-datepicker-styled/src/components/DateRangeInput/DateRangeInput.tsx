@@ -7,6 +7,7 @@ import {
   FormatFunction,
   getInputValue,
   END_DATE,
+  FocusedInput,
 } from '@react-datepicker/hooks'
 import {dateRangeInputPhrases, DateRangeInputPhrases} from '../../phrases'
 import Grid from '../Grid'
@@ -19,9 +20,10 @@ const StyledArrowIcon = styled(ArrowIcon)<OpacityProps>`
   ${opacity}
 `
 
-export interface DateRangePickerProps extends UseDatepickerProps {
+export interface DateRangeInputProps extends UseDatepickerProps {
   displayFormat: string | FormatFunction
   phrases?: DateRangeInputPhrases
+  onFocusChange(focusInput: FocusedInput): void
 }
 
 function DateRangeInput({
@@ -33,9 +35,10 @@ function DateRangeInput({
   onFocusChange,
   numberOfMonths,
   focusedInput,
+  onDateChange,
   displayFormat = 'MM/DD/YYYY',
   phrases = dateRangeInputPhrases,
-}: DateRangePickerProps) {
+}: DateRangeInputProps) {
   return (
     <div>
       <Grid gridTemplateColumns="194px 39px 194px">
@@ -63,10 +66,10 @@ function DateRangeInput({
         minBookingDate={minBookingDate}
         maxBookingDate={maxBookingDate}
         firstDayOfWeek={firstDayOfWeek}
-        onFocusChange={onFocusChange}
         numberOfMonths={numberOfMonths}
         focusedInput={focusedInput}
         displayFormat={displayFormat}
+        onDateChange={onDateChange}
       />
     </div>
   )

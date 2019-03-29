@@ -1,4 +1,10 @@
-import {useDatepicker, UseDatepickerProps, END_DATE, START_DATE} from './useDatepicker'
+import {
+  useDatepicker,
+  UseDatepickerProps,
+  END_DATE,
+  START_DATE,
+  FocusedInput,
+} from './useDatepicker'
 import {
   isDateSelected,
   isStartOrEndDate,
@@ -25,4 +31,5 @@ export {
   UseDatepickerProps,
   END_DATE,
   START_DATE,
+  FocusedInput,
 }

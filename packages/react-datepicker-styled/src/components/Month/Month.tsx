@@ -13,6 +13,7 @@ interface MonthProps {
   isDateBlocked(date: Date): boolean
   isDateSelected(date: Date): boolean
   isStartOrEndDate(date: Date): boolean
+  onDaySelect(date: Date): void
 }
 
 const Month = ({
@@ -22,6 +23,7 @@ const Month = ({
   isDateBlocked,
   isDateSelected,
   isStartOrEndDate,
+  onDaySelect,
 }: MonthProps) => {
   const {days, weekDays, monthLabel} = useMonth({year, month, weekStartsOn: firstDayOfWeek})
 
@@ -43,10 +45,12 @@ const Month = ({
             return (
               <Day
                 isActive={isDateSelected(day.date)}
+                date={day.date}
                 key={day.day}
                 day={day.day}
                 disabled={isDateBlocked(day.date)}
                 isStartOrEnd={isStartOrEndDate(day.date)}
+                onDaySelect={onDaySelect}
               />
             )
           }

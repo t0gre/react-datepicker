@@ -1,8 +1,9 @@
-import { UseDatepickerProps, FormatFunction } from '@react-datepicker/hooks';
+import { UseDatepickerProps, FormatFunction, FocusedInput } from '@react-datepicker/hooks';
 import { DateRangeInputPhrases } from '../../phrases';
-export interface DateRangePickerProps extends UseDatepickerProps {
+export interface DateRangeInputProps extends UseDatepickerProps {
     displayFormat: string | FormatFunction;
     phrases?: DateRangeInputPhrases;
+    onFocusChange(focusInput: FocusedInput): void;
 }
-declare function DateRangeInput({ startDate, endDate, minBookingDate, maxBookingDate, firstDayOfWeek, onFocusChange, numberOfMonths, focusedInput, displayFormat, phrases, }: DateRangePickerProps): JSX.Element;
+declare function DateRangeInput({ startDate, endDate, minBookingDate, maxBookingDate, firstDayOfWeek, onFocusChange, numberOfMonths, focusedInput, onDateChange, displayFormat, phrases, }: DateRangeInputProps): JSX.Element;
 export default DateRangeInput;

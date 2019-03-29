@@ -5863,17 +5863,17 @@ function useDatepicker(_a) {
   var startDate = _a.startDate,
     endDate = _a.endDate,
     focusedInput = _a.focusedInput,
-    onFocusChange = _a.onFocusChange,
     minBookingDate = _a.minBookingDate,
     maxBookingDate = _a.maxBookingDate,
-    _b = _a.orientation,
-    orientation = _b === void 0 ? 'horizontal' : _b,
-    _c = _a.numberOfMonths,
-    numberOfMonths = _c === void 0 ? 2 : _c,
-    _d = _a.firstDayOfWeek,
-    firstDayOfWeek = _d === void 0 ? 1 : _d,
-    _e = _a.initialVisibleMonth,
-    initialVisibleMonth = _e === void 0 ? getInitialMonths : _e
+    onDateChange = _a.onDateChange,
+    // orientation = 'horizontal',
+    _b = _a.numberOfMonths,
+    // orientation = 'horizontal',
+    numberOfMonths = _b === void 0 ? 2 : _b,
+    _c = _a.firstDayOfWeek,
+    firstDayOfWeek = _c === void 0 ? 1 : _c,
+    _d = _a.initialVisibleMonth,
+    initialVisibleMonth = _d === void 0 ? getInitialMonths : _d
   var activeMonths = useMemo(
     function() {
       return getInitialMonths(numberOfMonths)
@@ -5898,23 +5898,45 @@ function useDatepicker(_a) {
     },
     [minBookingDate, maxBookingDate],
   )
-  console.log(
-    activeMonths,
-    startDate,
-    endDate,
-    focusedInput,
-    onFocusChange,
-    orientation,
-    numberOfMonths,
-    minBookingDate,
-    maxBookingDate,
-  )
+  var onResetDates = function() {
+    onDateChange({
+      startDate: null,
+      endDate: null,
+      focusedInput: START_DATE,
+    })
+  }
+  function onDaySelect(date) {
+    if (
+      (focusedInput === END_DATE && startDate && dateFns_70(date, startDate)) ||
+      (focusedInput === START_DATE && endDate && dateFns_69(date, endDate))
+    ) {
+      onDateChange({
+        endDate: null,
+        startDate: date,
+        focusedInput: END_DATE,
+      })
+    } else if (focusedInput === START_DATE) {
+      onDateChange({
+        endDate: endDate,
+        startDate: date,
+        focusedInput: END_DATE,
+      })
+    } else if (focusedInput === END_DATE && startDate && !dateFns_70(date, startDate)) {
+      onDateChange({
+        startDate: startDate,
+        endDate: date,
+        focusedInput: null,
+      })
+    }
+  }
   return {
     firstDayOfWeek: firstDayOfWeek,
     activeMonths: activeMonths,
     isDateSelected: isDateSelected$1,
     isStartOrEndDate: isStartOrEndDate$1,
     isDateBlocked: isDateBlocked$1,
+    onResetDates: onResetDates,
+    onDaySelect: onDaySelect,
   }
 }
 //# sourceMappingURL=useDatepicker.js.map

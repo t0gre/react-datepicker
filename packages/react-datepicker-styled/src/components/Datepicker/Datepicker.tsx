@@ -59,9 +59,9 @@ function Datepicker({
   endDate,
   minBookingDate,
   maxBookingDate,
-  onFocusChange,
   focusedInput,
   numberOfMonths,
+  onDateChange,
   firstDayOfWeek: firstDayOfWeekProp,
   displayFormat = 'MM/DD/YYYY',
   phrases = datepickerPhrases,
@@ -72,11 +72,13 @@ function Datepicker({
     isStartOrEndDate,
     isDateBlocked,
     firstDayOfWeek,
+    onDaySelect,
+    onResetDates,
   } = useDatepicker({
     startDate,
     endDate,
     focusedInput,
-    onFocusChange: onFocusChange,
+    onDateChange,
     minBookingDate,
     maxBookingDate,
     numberOfMonths,
@@ -121,12 +123,13 @@ function Datepicker({
               isDateBlocked={isDateBlocked}
               isDateSelected={isDateSelected}
               isStartOrEndDate={isStartOrEndDate}
+              onDaySelect={onDaySelect}
             />
           ))}
         </Grid>
       </Box>
       <Box mt="32px">
-        <ResetDates />
+        <ResetDates onResetDates={onResetDates} />
       </Box>
     </StyledDatepicker>
   )

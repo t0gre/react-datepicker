@@ -18,12 +18,15 @@ interface StyledDayProps extends HeightProps, WidthProps, BoxShadowProps, Backgr
   disabled: boolean
   isStartOrEnd: boolean
 }
-const StyledDay = styled('div')<StyledDayProps>`
+const StyledDay = styled('button')<StyledDayProps>`
   ${width}
   ${height}
   ${boxShadow}
   ${background}
   cursor: pointer;
+  border: 0;
+  padding: 0;
+  outline: 0;
   
   ${({disabled}) =>
     disabled &&
@@ -81,17 +84,21 @@ function getColor(isActive: boolean, isStartOrEnd: boolean) {
 
 interface DayProps {
   day: string
+  date: Date
   isActive: boolean
   disabled: boolean
   isStartOrEnd: boolean
+  onDaySelect(date: Date): void
 }
-function Day({day, isActive, isStartOrEnd, disabled}: DayProps) {
+function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date}: DayProps) {
   const borderColor = getBorderColor(isActive, isStartOrEnd)
   const background = getBackgroundColor(isActive, isStartOrEnd)
   const color = getColor(isActive, isStartOrEnd)
 
   return (
     <StyledDay
+      role="button"
+      onClick={() => onDaySelect(date)}
       disabled={disabled}
       isActive={isActive}
       isStartOrEnd={isStartOrEnd}

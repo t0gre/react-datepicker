@@ -3,9 +3,13 @@ import RedoIcon from '../../icons/RedoIcon'
 import Text from '../Text'
 import Flex from '../Flex'
 
-function ResetDates() {
+interface onResetDatesProps {
+  onResetDates(): void
+}
+
+function ResetDates({onResetDates}: onResetDatesProps) {
   return (
-    <Flex alignItems="center">
+    <Flex role="button" onClick={onResetDates} alignItems="center">
       <RedoIcon height="14px" width="14px" color="58595B" />
       <Text
         ml="8px"

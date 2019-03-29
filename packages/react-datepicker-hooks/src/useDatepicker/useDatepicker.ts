@@ -1,4 +1,5 @@
 import {useMemo, useCallback} from 'react'
+import {isBefore, isAfter} from 'date-fns'
 import {
   getInitialMonths,
   MonthType,
@@ -10,13 +11,21 @@ import {
 export const START_DATE = 'startDate'
 export const END_DATE = 'endDate'
 
+export type FocusedInput = 'startDate' | 'endDate' | null
+
+export interface OnDateChange {
+  focusedInput: FocusedInput
+  startDate: Date | null
+  endDate: Date | null
+}
+
 export interface UseDatepickerProps {
+  onDateChange(data: OnDateChange): void
   minBookingDate?: Date
   maxBookingDate?: Date
   startDate: Date | null
   endDate: Date | null
-  focusedInput: 'startDate' | 'endDate' | null
-  onFocusChange(focusedInput: string | null): void
+  focusedInput: FocusedInput
   orientation?: 'horizontal' | 'vertical'
   numberOfMonths?: number
   firstDayOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6
@@ -27,10 +36,10 @@ export function useDatepicker({
   startDate,
   endDate,
   focusedInput,
-  onFocusChange,
   minBookingDate,
   maxBookingDate,
-  orientation = 'horizontal',
+  onDateChange,
+  // orientation = 'horizontal',
   numberOfMonths = 2,
   firstDayOfWeek = 1,
   initialVisibleMonth = getInitialMonths,
@@ -48,18 +57,38 @@ export function useDatepicker({
     (date: Date) => isDateBlockedFn(date, minBookingDate, maxBookingDate),
     [minBookingDate, maxBookingDate],
   )
+  const onResetDates = () => {
+    onDateChange({
+      startDate: null,
+      endDate: null,
+      focusedInput: START_DATE,
+    })
+  }
 
-  console.log(
-    activeMonths,
-    startDate,
-    endDate,
-    focusedInput,
-    onFocusChange,
-    orientation,
-    numberOfMonths,
-    minBookingDate,
-    maxBookingDate,
-  )
+  function onDaySelect(date: Date) {
+    if (
+      (focusedInput === END_DATE && startDate && isBefore(date, startDate)) ||
+      (focusedInput === START_DATE && endDate && isAfter(date, endDate))
+    ) {
+      onDateChange({
+        endDate: null,
+        startDate: date,
+        focusedInput: END_DATE,
+      })
+    } else if (focusedInput === START_DATE) {
+      onDateChange({
+        endDate,
+        startDate: date,
+        focusedInput: END_DATE,
+      })
+    } else if (focusedInput === END_DATE && startDate && !isBefore(date, startDate)) {
+      onDateChange({
+        startDate,
+        endDate: date,
+        focusedInput: null,
+      })
+    }
+  }
 
   return {
     firstDayOfWeek,
@@ -67,5 +96,7 @@ export function useDatepicker({
     isDateSelected,
     isStartOrEndDate,
     isDateBlocked,
+    onResetDates,
+    onDaySelect,
   }
 }
