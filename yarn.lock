@@ -13690,7 +13690,7 @@ react-dom@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
-"react-dom@link:packages/node_modules/react-dom":
+"react-dom@link:node_modules/react-dom":
   version "0.0.0"
   uid ""
 
@@ -13945,7 +13945,7 @@ react@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
-"react@link:packages/node_modules/react":
+"react@link:node_modules/react":
   version "0.0.0"
   uid ""
 

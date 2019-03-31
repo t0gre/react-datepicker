@@ -45,7 +45,6 @@
   },
   "dependencies": {
     "@datepicker-react/hooks": "^1.0.0",
-    "examples": "^0.1.0",
     "styled-system": "^4.0.8"
   },
   "publishConfig": {
