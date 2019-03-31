@@ -1,6 +1,8 @@
 {
-  "name": "react-datepicker",
-  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "description": "A datepicker library for the web.",
   "repository": {
     "type": "git",
@@ -11,7 +13,6 @@
     "datepicker",
     "styled-components",
     "react",
-    "emotion",
     "hooks"
   ],
   "scripts": {
@@ -59,6 +60,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "commitizen": "^3.0.7",
     "cz-lerna-changelog": "^2.0.2",
     "eslint": "^5.15.3",
     "eslint-config-prettier": "^4.1.0",
@@ -128,5 +130,8 @@
       "git add"
     ]
   },
-  "dependencies": {}
+  "dependencies": {},
+  "resolutions": {
+    "@types/react": "^16.8.0"
+  }
 }
