@@ -41,6 +41,7 @@
   "devDependencies": {
     "@types/styled-components": "^4.1.12",
     "@types/styled-system": "^4.0.0",
+    "csstype": "^2.6.3",
     "styled-components": "^4.2.0"
   },
   "dependencies": {

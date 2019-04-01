@@ -1,7 +1,11 @@
 import React from 'react'
 
-interface Props extends IconProps {
+interface Props {
   direction?: 'up' | 'down' | 'left' | 'right'
+  height: string
+  width: string
+  className?: string
+  iconColor?: string
 }
 
 function calculateAngle(direction: Props['direction']) {
@@ -18,14 +22,14 @@ function calculateAngle(direction: Props['direction']) {
   }
 }
 
-function ArrowIcon({height, width, color, direction = 'right', className = ''}: Props) {
+function ArrowIcon({height, width, iconColor, direction = 'right', className = ''}: Props) {
   const angle = calculateAngle(direction)
   return (
     <svg
       width={width}
       height={height}
       className={className}
-      color={color}
+      color={iconColor}
       transform={`rotate(${angle} 0 0)`}
       viewBox="0 0 9 12"
       xmlns="http://www.w3.org/2000/svg"

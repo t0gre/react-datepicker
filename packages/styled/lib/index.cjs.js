@@ -53,7 +53,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
     f = n ? Symbol.for('react.suspense') : 60113,
     m = n ? Symbol.for('react.memo') : 60115,
     _ = n ? Symbol.for('react.lazy') : 60116
-  function y(e) {
+  function g(e) {
     if ('object' == typeof e && null !== e) {
       var t = e.$$typeof
       switch (t) {
@@ -83,10 +83,10 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
       }
     }
   }
-  function g(e) {
-    return y(e) === p
+  function y(e) {
+    return g(e) === p
   }
-  ;(t.typeOf = y),
+  ;(t.typeOf = g),
     (t.AsyncMode = u),
     (t.ConcurrentMode = p),
     (t.ContextConsumer = s),
@@ -119,41 +119,41 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
       )
     }),
     (t.isAsyncMode = function(e) {
-      return g(e) || y(e) === u
+      return y(e) || g(e) === u
     }),
-    (t.isConcurrentMode = g),
+    (t.isConcurrentMode = y),
     (t.isContextConsumer = function(e) {
-      return y(e) === s
+      return g(e) === s
     }),
     (t.isContextProvider = function(e) {
-      return y(e) === l
+      return g(e) === l
     }),
     (t.isElement = function(e) {
       return 'object' == typeof e && null !== e && e.$$typeof === r
     }),
     (t.isForwardRef = function(e) {
-      return y(e) === d
+      return g(e) === d
     }),
     (t.isFragment = function(e) {
-      return y(e) === o
+      return g(e) === o
     }),
     (t.isLazy = function(e) {
-      return y(e) === _
+      return g(e) === _
     }),
     (t.isMemo = function(e) {
-      return y(e) === m
+      return g(e) === m
     }),
     (t.isPortal = function(e) {
-      return y(e) === a
+      return g(e) === a
     }),
     (t.isProfiler = function(e) {
-      return y(e) === c
+      return g(e) === c
     }),
     (t.isStrictMode = function(e) {
-      return y(e) === i
+      return g(e) === i
     }),
     (t.isSuspense = function(e) {
-      return y(e) === f
+      return g(e) === f
     })
 })
 unwrapExports(reactIs_production_min)
@@ -386,12 +386,12 @@ var factoryWithThrowingShims = function() {
             }
           }
         } else {
-          for (var y in t) {
-            var g,
-              h = l[y],
+          for (var g in t) {
+            var y,
+              h = l[g],
               b = createMediaQuery(h),
-              v = i(t[y])
-            if (h) p.push((((g = {})[b] = v), g))
+              v = i(t[g])
+            if (h) p.push((((y = {})[b] = v), y))
             else p.unshift(v)
           }
           p.sort()
@@ -700,8 +700,8 @@ var b = function(e, t) {
     r = null == r ? i : Number(r)
     var _,
       b,
-      k,
-      I = (function(e) {
+      I,
+      k = (function(e) {
         var t,
           n = {},
           r = e.split(s)
@@ -724,7 +724,7 @@ var b = function(e, t) {
           return {year: 100 * parseInt(i, 10), restDateString: e.slice(i.length)}
         }
         return {year: null}
-      })(I.date, r),
+      })(k.date, r),
       R = O.year,
       j = (function(e, t) {
         if (null === t) return null
@@ -753,7 +753,7 @@ var b = function(e, t) {
         E = j.getTime(),
         P = 0
       if (
-        (I.time &&
+        (k.time &&
           (P = (function(e) {
             var t, n, r
             if ((t = M.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * u
@@ -769,17 +769,17 @@ var b = function(e, t) {
               return (n % 24) * u + r * o + 1e3 * a
             }
             return null
-          })(I.time)),
-        I.timezone)
+          })(k.time)),
+        k.timezone)
       )
-        (_ = I.timezone),
+        (_ = k.timezone),
           (C =
             ((b = Y.exec(_))
               ? 0
               : (b = w.exec(_))
-              ? ((k = 60 * parseInt(b[2], 10)), '+' === b[1] ? -k : k)
+              ? ((I = 60 * parseInt(b[2], 10)), '+' === b[1] ? -I : I)
               : (b = F.exec(_))
-              ? ((k = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -k : k)
+              ? ((I = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -I : I)
               : 0) * o)
       else {
         var $ = E + P,
@@ -1360,7 +1360,7 @@ function Ye(e) {
       },
       [t, n],
     ),
-    y = React.useCallback(
+    g = React.useCallback(
       function(e) {
         return De(e, a, o)
       },
@@ -1371,7 +1371,7 @@ function Ye(e) {
     activeMonths: d,
     isDateSelected: m,
     isStartOrEndDate: _,
-    isDateBlocked: y,
+    isDateBlocked: g,
     onResetDates: function() {
       i({startDate: null, endDate: null, focusedInput: pe})
     },
@@ -1558,20 +1558,35 @@ var templateObject_1$3,
   InputLabel = styled__default('label')(
     templateObject_1$3 ||
       (templateObject_1$3 = __makeTemplateObject(
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
     position,
     border,
     background,
     display,
     borderRadius,
+    space,
   ),
   CalendarWrapper = styled__default('div')(
     templateObject_2 ||
       (templateObject_2 = __makeTemplateObject(
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  \n  svg {\n    display: block;\n  }\n'],
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  \n  svg {\n    display: block;\n  }\n'],
+        [
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  cursor: pointer;\n  \n  svg {\n    display: block;\n  }\n',
+        ],
+        [
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  cursor: pointer;\n  \n  svg {\n    display: block;\n  }\n',
+        ],
       )),
     position,
     left,
@@ -1618,35 +1633,45 @@ var templateObject_1$3,
     space,
     border,
     width,
-    height,
+    minHeight,
   )
 function Input(e) {
   var t = e.placeholder,
     n = e.id,
     r = e.ariaLabel,
     a = e.onClick,
-    o = e.value
+    o = e.value,
+    i = e.showCalendarIcon,
+    c = e.inputBorder,
+    l = e.inputMinHeight,
+    s = e.inputPadding,
+    u = e.calendarWrapperTop
   return React__default.createElement(
     InputLabel,
     {
       htmlFor: n,
       display: 'block',
       position: 'relative',
-      border: '1px solid #d0d0d0',
+      border: c || '1px solid #d0d0d0',
       background: '#ffffff',
       borderRadius: '2px',
-      onClick: a,
+      mb: '0',
     },
-    React__default.createElement(
-      CalendarWrapper,
-      {position: 'absolute', height: '12px', width: '12px', top: '16px', left: '16px'},
-      React__default.createElement(CalendarIcon, {width: '12px', height: '12px', color: '#BCBEC0'}),
-    ),
+    i &&
+      React__default.createElement(
+        CalendarWrapper,
+        {position: 'absolute', height: '12px', width: '12px', top: u || '16px', left: '16px'},
+        React__default.createElement(CalendarIcon, {
+          width: '12px',
+          height: '12px',
+          color: '#BCBEC0',
+        }),
+      ),
     React__default.createElement(StyledInput, {
       border: '0',
-      px: '44px',
+      p: s || '0 44px',
       width: '100%',
-      height: '46px',
+      minHeight: l || '46px',
       background: '#ffffff',
       fontFamily: 'Montserrat',
       color: '#001217',
@@ -1658,6 +1683,7 @@ function Input(e) {
       value: o,
       autoComplete: 'off',
       readOnly: !0,
+      onFocus: a,
     }),
   )
 }
@@ -1677,7 +1703,7 @@ function calculateAngle(e) {
 function ArrowIcon(e) {
   var t = e.height,
     n = e.width,
-    r = e.color,
+    r = e.iconColor,
     a = e.direction,
     o = void 0 === a ? 'right' : a,
     i = e.className,
@@ -2147,8 +2173,8 @@ function Datepicker(e) {
     }),
     m = f.activeMonths,
     _ = f.isDateSelected,
-    y = f.isStartOrEndDate,
-    g = f.isDateBlocked,
+    g = f.isStartOrEndDate,
+    y = f.isDateBlocked,
     h = f.firstDayOfWeek,
     b = f.onDaySelect,
     v = f.onResetDates,
@@ -2174,7 +2200,7 @@ function Datepicker(e) {
           React__default.createElement(ArrowIcon, {
             height: '12px',
             width: '15px',
-            color: '#929598',
+            iconColor: '#929598',
           }),
         ),
         React__default.createElement(Date$1, {
@@ -2206,9 +2232,9 @@ function Datepicker(e) {
             year: e.year,
             month: e.month,
             firstDayOfWeek: h,
-            isDateBlocked: g,
+            isDateBlocked: y,
             isDateSelected: _,
-            isStartOrEndDate: y,
+            isStartOrEndDate: g,
             onDaySelect: b,
           })
         }),
@@ -2222,10 +2248,22 @@ function Datepicker(e) {
   )
 }
 var templateObject_1$9,
-  StyledArrowIcon = styled__default(ArrowIcon)(
+  templateObject_2$4,
+  InputArrowIcon = styled__default(ArrowIcon)(
     templateObject_1$9 ||
-      (templateObject_1$9 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+      (templateObject_1$9 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     opacity,
+    color,
+  ),
+  InputGrid = styled__default(Grid)(
+    templateObject_2$4 ||
+      (templateObject_2$4 = __makeTemplateObject(
+        ['\n  ', '\n  ', '\n  ', '\n'],
+        ['\n  ', '\n  ', '\n  ', '\n'],
+      )),
+    background,
+    border,
+    borderRadius,
   )
 function DateRangeInput(e) {
   var t = e.startDate,
@@ -2237,20 +2275,26 @@ function DateRangeInput(e) {
     c = e.numberOfMonths,
     l = e.focusedInput,
     s = e.onDateChange,
-    u = e.displayFormat,
-    p = void 0 === u ? 'MM/DD/YYYY' : u,
-    d = e.phrases,
-    f = void 0 === d ? dateRangeInputPhrases : d,
-    m = React.useRef(null)
-  function _(e) {
-    null !== l && m && m.current && !m.current.contains(e.target) && i(null)
+    u = e.showStartDateCalendarIcon,
+    p = void 0 === u || u,
+    d = e.showEndDateCalendarIcon,
+    f = void 0 === d || d,
+    m = e.styles,
+    _ = void 0 === m ? {} : m,
+    g = e.displayFormat,
+    y = void 0 === g ? 'MM/DD/YYYY' : g,
+    h = e.phrases,
+    b = void 0 === h ? dateRangeInputPhrases : h,
+    v = React.useRef(null)
+  function x(e) {
+    null !== l && v && v.current && !v.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', _),
+        'undefined' != typeof window && window.addEventListener('click', x),
         function() {
-          window.removeEventListener('click', _)
+          window.removeEventListener('click', x)
         }
       )
     }),
@@ -2258,40 +2302,55 @@ function DateRangeInput(e) {
       Box,
       {position: 'relative'},
       React__default.createElement(
-        Grid,
-        {gridTemplateColumns: '194px 39px 194px'},
+        InputGrid,
+        {
+          background: _.inputGridBackground || 'transparent',
+          gridTemplateColumns: _.inputGridTemplateColumns || '194px 39px 194px',
+          border: _.inputGridBorder || '0',
+          borderRadius: _.inputGridBorderRadius || '0',
+        },
         React__default.createElement(Input, {
           id: 'startDate',
-          ariaLabel: f.startDateAriaLabel,
-          placeholder: f.startDatePlaceholder,
-          value: Te(t, p, ''),
+          ariaLabel: b.startDateAriaLabel,
+          placeholder: b.startDatePlaceholder,
+          value: Te(t, y, ''),
           onClick: function() {
             return i(pe)
           },
+          showCalendarIcon: p,
+          inputBorder: _.inputBorder,
+          inputMinHeight: _.inputMinHeight,
+          inputPadding: _.inputStartDatePadding || _.inputPadding,
+          calendarWrapperTop: _.inputCalendarWrapperTop,
         }),
         React__default.createElement(
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
-          React__default.createElement(StyledArrowIcon, {
+          React__default.createElement(InputArrowIcon, {
             width: '15px',
             height: '12px',
-            color: '#ffffff',
-            opacity: 0.4,
+            color: _.inputArrowIconColor || '#ffffff',
+            opacity: _.inputArrowIconOpacity || 0.4,
           }),
         ),
         React__default.createElement(Input, {
           id: 'startDate',
-          ariaLabel: f.endDateAriaLabel,
-          placeholder: f.endDatePlaceholder,
-          value: Te(n, p, ''),
+          ariaLabel: b.endDateAriaLabel,
+          placeholder: b.endDatePlaceholder,
+          value: Te(n, y, ''),
           onClick: function() {
             return i(Se)
           },
+          showCalendarIcon: f,
+          inputBorder: _.inputBorder,
+          inputMinHeight: _.inputMinHeight,
+          calendarWrapperTop: _.inputCalendarWrapperTop,
+          inputPadding: _.inputEndDatePadding || _.inputPadding,
         }),
       ),
       React__default.createElement(
         Box,
-        {ref: m, position: 'absolute', bottom: '64px', left: '0'},
+        {ref: v, position: 'absolute', bottom: '64px', left: '0'},
         null !== l &&
           React__default.createElement(Datepicker, {
             startDate: t,
@@ -2301,7 +2360,7 @@ function DateRangeInput(e) {
             firstDayOfWeek: o,
             numberOfMonths: c,
             focusedInput: l,
-            displayFormat: p,
+            displayFormat: y,
             onDateChange: s,
           }),
       ),

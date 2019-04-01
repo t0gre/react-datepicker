@@ -34,15 +34,32 @@ function App() {
         justifyContent: 'center',
       }}
     >
-      <DateRangeInput
-        minBookingDate={new Date(2019, 2, 10)}
-        maxBookingDate={new Date(2019, 6, 27)}
-        startDate={state.startDate}
-        endDate={state.endDate}
-        onDateChange={data => dispatch({type: 'dateChange', payload: data})}
-        focusedInput={state.focusedInput}
-        onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-      />
+      <div style={{width: '279px'}}>
+        <DateRangeInput
+          minBookingDate={new Date(2019, 2, 10)}
+          maxBookingDate={new Date(2019, 6, 27)}
+          startDate={state.startDate}
+          endDate={state.endDate}
+          onDateChange={data => dispatch({type: 'dateChange', payload: data})}
+          focusedInput={state.focusedInput}
+          onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
+          styles={{
+            inputGridTemplateColumns: '1fr 10px 1fr',
+            inputGridBackground: '#ffffff',
+            inputGridBorder: '1px solid #d0d0d0',
+            inputGridBorderRadius: '2px',
+
+            inputBorder: '0',
+            inputMinHeight: '48px',
+            inputStartDatePadding: '0 0 0 44px',
+            inputEndDatePadding: '0',
+            inputArrowIconColor: 'red',
+            inputArrowIconOpacity: 1,
+            inputCalendarWrapperTop: '18px',
+          }}
+          showEndDateCalendarIcon={false}
+        />
+      </div>
     </div>
   )
 }

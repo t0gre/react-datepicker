@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import {BorderProperty, MinHeightProperty, TopProperty, PaddingProperty} from 'csstype'
+import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
 import {
   background,
   BackgroundProps,
@@ -29,6 +31,8 @@ import {
   HeightProps,
   display,
   DisplayProps,
+  minHeight,
+  MinHeightProps,
 } from 'styled-system'
 import CalendarIcon from '../../icons/CalendarIcon'
 
@@ -37,6 +41,7 @@ interface InputLabelProps
     BorderProps,
     BackgroundProps,
     DisplayProps,
+    SpaceProps,
     BorderRadiusProps {}
 const InputLabel = styled('label')<InputLabelProps>`
   ${position}
@@ -44,6 +49,7 @@ const InputLabel = styled('label')<InputLabelProps>`
   ${background}
   ${display}
   ${borderRadius}
+  ${space}
 `
 
 interface CalendarWrapperProps
@@ -58,6 +64,7 @@ const CalendarWrapper = styled('div')<CalendarWrapperProps>`
   ${top}
   ${height}
   ${width}
+  cursor: pointer;
   
   svg {
     display: block;
@@ -72,7 +79,7 @@ interface StyledInputProps
     FontWeightProps,
     BorderProps,
     WidthProps,
-    HeightProps,
+    MinHeightProps,
     FontSizeProps {}
 const StyledInput = styled('input')<StyledInputProps>`
   ${background}
@@ -84,7 +91,7 @@ const StyledInput = styled('input')<StyledInputProps>`
   ${space}
   ${border}
   ${width}
-  ${height}
+  ${minHeight}
   cursor: pointer;
   box-sizing: border-box;
   
@@ -108,27 +115,53 @@ interface InputProps {
   id: string
   ariaLabel: string
   onClick(): void
+  showCalendarIcon: boolean
+
+  inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  inputMinHeight?: ResponsiveValue<MinHeightProperty<TLengthStyledSystem>>
+  inputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  calendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
 }
 
-function Input({placeholder, id, ariaLabel, onClick, value}: InputProps) {
+function Input({
+  placeholder,
+  id,
+  ariaLabel,
+  onClick,
+  value,
+  showCalendarIcon,
+
+  inputBorder,
+  inputMinHeight,
+  inputPadding,
+  calendarWrapperTop,
+}: InputProps) {
   return (
     <InputLabel
       htmlFor={id}
       display="block"
       position="relative"
-      border="1px solid #d0d0d0"
+      border={inputBorder || '1px solid #d0d0d0'}
       background="#ffffff"
       borderRadius="2px"
-      onClick={onClick}
+      mb="0"
     >
-      <CalendarWrapper position="absolute" height="12px" width="12px" top="16px" left="16px">
-        <CalendarIcon width="12px" height="12px" color="#BCBEC0" />
-      </CalendarWrapper>
+      {showCalendarIcon && (
+        <CalendarWrapper
+          position="absolute"
+          height="12px"
+          width="12px"
+          top={calendarWrapperTop || '16px'}
+          left="16px"
+        >
+          <CalendarIcon width="12px" height="12px" color="#BCBEC0" />
+        </CalendarWrapper>
+      )}
       <StyledInput
         border="0"
-        px="44px"
+        p={inputPadding || '0 44px'}
         width="100%"
-        height="46px"
+        minHeight={inputMinHeight || '46px'}
         background="#ffffff"
         fontFamily="Montserrat"
         color="#001217"
@@ -140,6 +173,7 @@ function Input({placeholder, id, ariaLabel, onClick, value}: InputProps) {
         value={value}
         autoComplete="off"
         readOnly
+        onFocus={onClick}
       />
     </InputLabel>
   )

@@ -12,7 +12,7 @@ const IconDirections = {
 
 storiesOf('Components/Icons', module).add('ArrowIcon', () => (
   <ArrowIcon
-    color={color('Color', '#000')}
+    iconColor={color('Color', '#000')}
     height={text('Height', '30px')}
     width={text('Width', '30px')}
     // @ts-ignore

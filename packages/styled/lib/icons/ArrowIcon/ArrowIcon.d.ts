@@ -1,6 +1,9 @@
-/// <reference types="./src/@types" />
-interface Props extends IconProps {
+interface Props {
   direction?: 'up' | 'down' | 'left' | 'right'
+  height: string
+  width: string
+  className?: string
+  iconColor?: string
 }
-declare function ArrowIcon({height, width, color, direction, className}: Props): JSX.Element
+declare function ArrowIcon({height, width, iconColor, direction, className}: Props): JSX.Element
 export default ArrowIcon

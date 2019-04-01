@@ -1,6 +1,29 @@
 import React, {useRef, useEffect} from 'react'
+import {
+  GridTemplateColumnsProperty,
+  BackgroundProperty,
+  BorderProperty,
+  BorderRadiusProperty,
+  MinHeightProperty,
+  TopProperty,
+  PaddingProperty,
+  ColorProperty,
+  GlobalsNumber,
+} from 'csstype'
+import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
 import styled from 'styled-components'
-import {opacity, OpacityProps} from 'styled-system'
+import {
+  opacity,
+  OpacityProps,
+  background,
+  BackgroundProps,
+  border,
+  BorderProps,
+  borderRadius,
+  BorderRadiusProps,
+  color,
+  ColorProps,
+} from 'styled-system'
 import {
   UseDatepickerProps,
   START_DATE,
@@ -17,14 +40,42 @@ import Input from '../Input'
 import ArrowIcon from '../../icons/ArrowIcon'
 import Datepicker from '../Datepicker'
 
-const StyledArrowIcon = styled(ArrowIcon)<OpacityProps>`
+interface InputArrowIconProps extends OpacityProps, ColorProps {}
+const InputArrowIcon = styled(ArrowIcon)<InputArrowIconProps>`
   ${opacity}
+  ${color}
 `
 
+interface StyledGridProps extends BackgroundProps, BorderProps, BorderRadiusProps {}
+const InputGrid = styled(Grid)<StyledGridProps>`
+  ${background}
+  ${border}
+  ${borderRadius}
+`
+
+export interface DateRangeInputStyles {
+  inputGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
+  inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  inputGridBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  inputGridBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
+
+  inputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  inputStartDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  inputEndDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  inputMinHeight?: ResponsiveValue<MinHeightProperty<TLengthStyledSystem>>
+  inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+  inputArrowIconColor?: ResponsiveValue<ColorProperty>
+  inputArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
+}
+
 export interface DateRangeInputProps extends UseDatepickerProps {
-  displayFormat: string | FormatFunction
+  displayFormat?: string | FormatFunction
   phrases?: DateRangeInputPhrases
   onFocusChange(focusInput: FocusedInput): void
+  styles?: DateRangeInputStyles
+  showStartDateCalendarIcon?: boolean
+  showEndDateCalendarIcon?: boolean
 }
 
 function DateRangeInput({
@@ -37,6 +88,9 @@ function DateRangeInput({
   numberOfMonths,
   focusedInput,
   onDateChange,
+  showStartDateCalendarIcon = true,
+  showEndDateCalendarIcon = true,
+  styles = {},
   displayFormat = 'MM/DD/YYYY',
   phrases = dateRangeInputPhrases,
 }: DateRangeInputProps) {
@@ -65,16 +119,31 @@ function DateRangeInput({
 
   return (
     <Box position="relative">
-      <Grid gridTemplateColumns="194px 39px 194px">
+      <InputGrid
+        background={styles.inputGridBackground || 'transparent'}
+        gridTemplateColumns={styles.inputGridTemplateColumns || '194px 39px 194px'}
+        border={styles.inputGridBorder || '0'}
+        borderRadius={styles.inputGridBorderRadius || '0'}
+      >
         <Input
           id="startDate"
           ariaLabel={phrases.startDateAriaLabel}
           placeholder={phrases.startDatePlaceholder}
           value={getInputValue(startDate, displayFormat, '')}
           onClick={() => onFocusChange(START_DATE)}
+          showCalendarIcon={showStartDateCalendarIcon}
+          inputBorder={styles.inputBorder}
+          inputMinHeight={styles.inputMinHeight}
+          inputPadding={styles.inputStartDatePadding || styles.inputPadding}
+          calendarWrapperTop={styles.inputCalendarWrapperTop}
         />
         <Flex alignItems="center" justifyContent="center">
-          <StyledArrowIcon width="15px" height="12px" color="#ffffff" opacity={0.4} />
+          <InputArrowIcon
+            width="15px"
+            height="12px"
+            color={styles.inputArrowIconColor || '#ffffff'}
+            opacity={styles.inputArrowIconOpacity || 0.4}
+          />
         </Flex>
         <Input
           id="startDate"
@@ -82,8 +151,13 @@ function DateRangeInput({
           placeholder={phrases.endDatePlaceholder}
           value={getInputValue(endDate, displayFormat, '')}
           onClick={() => onFocusChange(END_DATE)}
+          showCalendarIcon={showEndDateCalendarIcon}
+          inputBorder={styles.inputBorder}
+          inputMinHeight={styles.inputMinHeight}
+          calendarWrapperTop={styles.inputCalendarWrapperTop}
+          inputPadding={styles.inputEndDatePadding || styles.inputPadding}
         />
-      </Grid>
+      </InputGrid>
       <Box ref={datepickerWrapperRef} position="absolute" bottom="64px" left="0">
         {focusedInput !== null && (
           <Datepicker

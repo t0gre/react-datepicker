@@ -97,7 +97,7 @@ function Datepicker({
             isActive={focusedInput === START_DATE}
           />
           <Flex justifyContent="center" alignItems="center">
-            <ArrowIcon height="12px" width="15px" color="#929598" />
+            <ArrowIcon height="12px" width="15px" iconColor="#929598" />
           </Flex>
           <SelectedDate
             title={phrases.datepickerEndDateLabel}
