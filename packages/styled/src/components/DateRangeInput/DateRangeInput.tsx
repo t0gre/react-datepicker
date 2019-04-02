@@ -9,6 +9,8 @@ import {
   PaddingProperty,
   ColorProperty,
   GlobalsNumber,
+  HeightProperty,
+  BottomProperty,
 } from 'csstype'
 import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
 import styled from 'styled-components'
@@ -54,6 +56,8 @@ const InputGrid = styled(Grid)<StyledGridProps>`
 `
 
 export interface DateRangeInputStyles {
+  datepickerBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+
   inputGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
   inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   inputGridBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
@@ -67,6 +71,8 @@ export interface DateRangeInputStyles {
   inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   inputArrowIconColor?: ResponsiveValue<ColorProperty>
   inputArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
+  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  selectDateGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
 }
 
 export interface DateRangeInputProps extends UseDatepickerProps {
@@ -118,7 +124,7 @@ function DateRangeInput({
   }
 
   return (
-    <Box position="relative">
+    <Box position="relative" ref={datepickerWrapperRef}>
       <InputGrid
         background={styles.inputGridBackground || 'transparent'}
         gridTemplateColumns={styles.inputGridTemplateColumns || '194px 39px 194px'}
@@ -150,7 +156,7 @@ function DateRangeInput({
           ariaLabel={phrases.endDateAriaLabel}
           placeholder={phrases.endDatePlaceholder}
           value={getInputValue(endDate, displayFormat, '')}
-          onClick={() => onFocusChange(END_DATE)}
+          onClick={() => onFocusChange(!startDate ? START_DATE : END_DATE)}
           showCalendarIcon={showEndDateCalendarIcon}
           inputBorder={styles.inputBorder}
           inputMinHeight={styles.inputMinHeight}
@@ -158,7 +164,7 @@ function DateRangeInput({
           inputPadding={styles.inputEndDatePadding || styles.inputPadding}
         />
       </InputGrid>
-      <Box ref={datepickerWrapperRef} position="absolute" bottom="64px" left="0">
+      <Box position="absolute" bottom={styles.datepickerBottom || '65px'} left="0">
         {focusedInput !== null && (
           <Datepicker
             startDate={startDate}
@@ -170,6 +176,10 @@ function DateRangeInput({
             focusedInput={focusedInput}
             displayFormat={displayFormat}
             onDateChange={onDateChange}
+            styles={{
+              daySize: styles.daySize,
+              selectDateGridTemplateColumns: styles.selectDateGridTemplateColumns,
+            }}
           />
         )}
       </Box>

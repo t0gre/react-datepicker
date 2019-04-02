@@ -33,7 +33,6 @@ function CaretIcon({height, width, color, direction = 'right', className = ''}: 
       <path
         fill="currentColor"
         fillRule="evenodd"
-        stroke="currentColor"
         d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
       />
     </svg>

@@ -7,6 +7,7 @@ export interface OnDateChange {
   startDate: Date | null
   endDate: Date | null
 }
+export declare type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export interface UseDatepickerProps {
   onDateChange(data: OnDateChange): void
   minBookingDate?: Date
@@ -16,7 +17,7 @@ export interface UseDatepickerProps {
   focusedInput: FocusedInput
   orientation?: 'horizontal' | 'vertical'
   numberOfMonths?: number
-  firstDayOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
 }
 export declare function useDatepicker({
@@ -29,7 +30,7 @@ export declare function useDatepicker({
   numberOfMonths,
   firstDayOfWeek,
 }: UseDatepickerProps): {
-  firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  firstDayOfWeek: FirstDayOfWeek
   activeMonths: MonthType[]
   isDateSelected: (date: Date) => boolean
   isStartOrEndDate: (date: Date) => boolean

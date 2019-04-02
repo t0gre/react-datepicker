@@ -1,3 +1,5 @@
+import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
+import {HeightProperty} from 'csstype'
 interface MonthProps {
   year: number
   month: number
@@ -6,6 +8,7 @@ interface MonthProps {
   isDateSelected(date: Date): boolean
   isStartOrEndDate(date: Date): boolean
   onDaySelect(date: Date): void
+  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
 }
 declare const Month: ({
   year,
@@ -15,5 +18,6 @@ declare const Month: ({
   isDateSelected,
   isStartOrEndDate,
   onDaySelect,
+  daySize,
 }: MonthProps) => JSX.Element
 export default Month

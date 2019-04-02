@@ -7,7 +7,10 @@ import {
   SpaceProps,
   borderRadius,
   BorderRadiusProps,
+  ResponsiveValue,
+  TLengthStyledSystem,
 } from 'styled-system'
+import {GridTemplateColumnsProperty, HeightProperty} from 'csstype'
 import {
   useDatepicker,
   MonthType,
@@ -49,9 +52,16 @@ const DateWrapper = styled('div')`
   }
 `
 
+export interface DatepickerStyles {
+  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  selectDateGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
+}
+
 export interface DatepickerProps extends UseDatepickerProps {
   phrases?: DatepickerPhrases
   displayFormat: string | FormatFunction
+
+  styles?: DatepickerStyles
 }
 
 function Datepicker({
@@ -65,6 +75,7 @@ function Datepicker({
   firstDayOfWeek: firstDayOfWeekProp,
   displayFormat = 'MM/DD/YYYY',
   phrases = datepickerPhrases,
+  styles = {},
 }: DatepickerProps) {
   const {
     activeMonths,
@@ -90,7 +101,7 @@ function Datepicker({
   return (
     <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px">
       <DateWrapper>
-        <Grid gridTemplateColumns="126px 75px 126px">
+        <Grid gridTemplateColumns={styles.selectDateGridTemplateColumns || '126px 75px 126px'}>
           <SelectedDate
             title={phrases.datepickerStartDateLabel}
             date={getInputValue(startDate, displayFormat, phrases.datepickerStartDatePlaceholder)}
@@ -113,7 +124,7 @@ function Datepicker({
         <Box position="absolute" top="-5px" right="0">
           <NavButton type="next" onClick={goToNextMonths} />
         </Box>
-        <Grid gridTemplateColumns="repeat(2, 1fr)" gridGap="0 32px">
+        <Grid gridTemplateColumns={`repeat(${numberOfMonths}, 1fr)`} gridGap="0 32px">
           {activeMonths.map((month: MonthType) => (
             <Month
               key={`${month.year}-${month.month}`}
@@ -124,6 +135,7 @@ function Datepicker({
               isDateSelected={isDateSelected}
               isStartOrEndDate={isStartOrEndDate}
               onDaySelect={onDaySelect}
+              daySize={styles.daySize}
             />
           ))}
         </Grid>

@@ -23,6 +23,8 @@ import {
   getInputValue,
   FormatFunction,
   FocusedInput,
+  FirstDayOfWeek,
+  OnDateChange,
 } from './useDatepicker'
 
 export {
@@ -48,4 +50,6 @@ export {
   getInputValue,
   FormatFunction,
   FocusedInput,
+  FirstDayOfWeek,
+  OnDateChange,
 }

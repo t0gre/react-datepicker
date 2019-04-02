@@ -4,6 +4,8 @@ import {
   END_DATE,
   START_DATE,
   FocusedInput,
+  FirstDayOfWeek,
+  OnDateChange,
 } from './useDatepicker'
 import {
   isDateSelected,
@@ -33,4 +35,6 @@ export {
   END_DATE,
   START_DATE,
   FocusedInput,
+  FirstDayOfWeek,
+  OnDateChange,
 }

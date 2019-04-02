@@ -1,9 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should match snapshot 1`] = `
+.c2 {
+  margin-left: 16px;
+  margin-top: 1px;
+  float: left;
+  font-family: Montserrat,sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #929598;
+  -webkit-transition: color 0.15s;
+  transition: color 0.15s;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c0 svg {
+  -webkit-transition: color 0.15s;
+  transition: color 0.15s;
+}
+
+.c0:hover .c1 {
+  color: #343132;
+}
+
+.c0:hover svg {
+  color: #343132;
+}
+
 <div>
   <div
-    class="sc-bwzfXH iZnLxo"
+    class="c0"
   >
     <svg
       class=""
@@ -20,7 +57,7 @@ exports[`should match snapshot 1`] = `
       />
     </svg>
     <div
-      class="sc-bdVaJa dDQrwb"
+      class="c1 c2"
     >
       Close
     </div>

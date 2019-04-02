@@ -21,6 +21,8 @@ export interface OnDateChange {
   endDate: Date | null
 }
 
+export type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
+
 export interface UseDatepickerProps {
   onDateChange(data: OnDateChange): void
   minBookingDate?: Date
@@ -30,7 +32,7 @@ export interface UseDatepickerProps {
   focusedInput: FocusedInput
   orientation?: 'horizontal' | 'vertical'
   numberOfMonths?: number
-  firstDayOfWeek?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
 }
 

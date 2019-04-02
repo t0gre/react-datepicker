@@ -8,11 +8,14 @@ import {
   PaddingProperty,
   ColorProperty,
   GlobalsNumber,
+  HeightProperty,
+  BottomProperty,
 } from 'csstype'
 import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
 import {UseDatepickerProps, FormatFunction, FocusedInput} from '@datepicker-react/hooks'
 import {DateRangeInputPhrases} from '../../phrases'
 export interface DateRangeInputStyles {
+  datepickerBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
   inputGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
   inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   inputGridBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
@@ -25,6 +28,8 @@ export interface DateRangeInputStyles {
   inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   inputArrowIconColor?: ResponsiveValue<ColorProperty>
   inputArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
+  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  selectDateGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
 }
 export interface DateRangeInputProps extends UseDatepickerProps {
   displayFormat?: string | FormatFunction

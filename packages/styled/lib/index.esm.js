@@ -1248,8 +1248,8 @@ var $t,
   Ut = s({}, _t, {
     startDateAriaLabel: 'Start date',
     endDateAriaLabel: 'End date',
-    startDatePlaceholder: 'Set start date',
-    endDatePlaceholder: 'Set end date',
+    startDatePlaceholder: 'Start date',
+    endDatePlaceholder: 'End date',
   }),
   Xt = i('div')(
     $t ||
@@ -1731,13 +1731,14 @@ var gn,
       a = t.disabled,
       i = t.onDaySelect,
       u = t.date,
-      s = (function(e, t) {
+      s = t.daySize,
+      c = (function(e, t) {
         return t ? '#00aeef' : e ? '#71c9ed' : '#e6e7e8'
       })(r, o),
-      c = (function(e, t) {
+      l = (function(e, t) {
         return t ? '#00aeef' : e ? '#71c9ed' : '#ffffff'
       })(r, o),
-      l = (function(e, t) {
+      p = (function(e, t) {
         return e || t ? '#ffffff' : '#58595b'
       })(r, o)
     return e.createElement(
@@ -1750,20 +1751,20 @@ var gn,
         disabled: a,
         isActive: r,
         isStartOrEnd: o,
-        height: '36px',
-        width: '36px',
-        background: c,
+        height: s || '36px',
+        width: s || '36px',
+        background: l,
         boxShadow:
           '1px 0 0 0 ' +
-          s +
+          c +
           ',\n        0 1px 0 0 ' +
-          s +
+          c +
           ',\n        1px 1px 0 0 ' +
-          s +
+          c +
           ',\n        1px 0 0 0 ' +
-          s +
+          c +
           ' inset,\n        0 1px 0 0 ' +
-          s +
+          c +
           ' inset',
       },
       e.createElement(
@@ -1771,7 +1772,7 @@ var gn,
         {justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%'},
         e.createElement(
           ln,
-          {color: l, fontFamily: 'Montserrat', fontWeight: 500, fontSize: '14px'},
+          {color: p, fontFamily: 'Montserrat', fontWeight: 500, fontSize: '14px'},
           n,
         ),
       ),
@@ -1785,18 +1786,19 @@ var gn,
       i = t.isDateSelected,
       u = t.isStartOrEndDate,
       s = t.onDaySelect,
-      c = Tt({year: n, month: r, weekStartsOn: o}),
-      l = c.days,
-      p = c.weekDays,
-      f = c.monthLabel
+      c = t.daySize,
+      l = Tt({year: n, month: r, weekStartsOn: o}),
+      p = l.days,
+      f = l.weekDays,
+      d = l.monthLabel
     return e.createElement(
       'div',
       null,
-      e.createElement(Zt, {justifyContent: 'center', mb: '28px'}, e.createElement(dn, {label: f})),
+      e.createElement(Zt, {justifyContent: 'center', mb: '28px'}, e.createElement(dn, {label: d})),
       e.createElement(
         Xt,
-        {gridTemplateColumns: 'repeat(7, 36px)'},
-        p.map(function(t) {
+        {gridTemplateColumns: 'repeat(7, 1fr)'},
+        f.map(function(t) {
           return e.createElement(
             Zt,
             {key: t, justifyContent: 'center', mb: '16px'},
@@ -1806,8 +1808,8 @@ var gn,
       ),
       e.createElement(
         Xt,
-        {gridTemplateColumns: 'repeat(7, 36px)'},
-        l.map(function(t, n) {
+        {gridTemplateColumns: 'repeat(7, 1fr)'},
+        p.map(function(t, n) {
           return 'object' == typeof t
             ? e.createElement(Dn, {
                 isActive: i(t.date),
@@ -1817,6 +1819,7 @@ var gn,
                 disabled: a(t.date),
                 isStartOrEnd: u(t.date),
                 onDaySelect: s,
+                daySize: c,
               })
             : e.createElement('div', {key: n})
         }),
@@ -1902,7 +1905,6 @@ function Sn(t) {
     e.createElement('path', {
       fill: 'currentColor',
       fillRule: 'evenodd',
-      stroke: 'currentColor',
       d:
         'M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z',
     }),
@@ -1989,7 +1991,9 @@ function Pn(t) {
     p = void 0 === l ? 'MM/DD/YYYY' : l,
     f = t.phrases,
     d = void 0 === f ? _t : f,
-    m = Lt({
+    m = t.styles,
+    h = void 0 === m ? {} : m,
+    g = Lt({
       startDate: n,
       endDate: r,
       focusedInput: i,
@@ -1999,15 +2003,15 @@ function Pn(t) {
       numberOfMonths: u,
       firstDayOfWeek: c,
     }),
-    h = m.activeMonths,
-    g = m.isDateSelected,
-    y = m.isStartOrEndDate,
-    v = m.isDateBlocked,
-    b = m.firstDayOfWeek,
-    D = m.onDaySelect,
-    x = m.onResetDates,
-    w = m.goToPreviousMonths,
-    k = m.goToNextMonths
+    y = g.activeMonths,
+    v = g.isDateSelected,
+    b = g.isStartOrEndDate,
+    D = g.isDateBlocked,
+    x = g.firstDayOfWeek,
+    w = g.onDaySelect,
+    k = g.onResetDates,
+    S = g.goToPreviousMonths,
+    M = g.goToNextMonths
   return e.createElement(
     Fn,
     {background: '#ffffff', p: '32px', borderRadius: '2px'},
@@ -2016,7 +2020,7 @@ function Pn(t) {
       null,
       e.createElement(
         Xt,
-        {gridTemplateColumns: '126px 75px 126px'},
+        {gridTemplateColumns: h.selectDateGridTemplateColumns || '126px 75px 126px'},
         e.createElement(fn, {
           title: d.datepickerStartDateLabel,
           date: Vt(n, p, d.datepickerStartDatePlaceholder),
@@ -2040,31 +2044,32 @@ function Pn(t) {
       e.createElement(
         Jt,
         {position: 'absolute', top: '-5px', left: '0'},
-        e.createElement(Tn, {type: 'prev', onClick: w}),
+        e.createElement(Tn, {type: 'prev', onClick: S}),
       ),
       e.createElement(
         Jt,
         {position: 'absolute', top: '-5px', right: '0'},
-        e.createElement(Tn, {type: 'next', onClick: k}),
+        e.createElement(Tn, {type: 'next', onClick: M}),
       ),
       e.createElement(
         Xt,
-        {gridTemplateColumns: 'repeat(2, 1fr)', gridGap: '0 32px'},
-        h.map(function(t) {
+        {gridTemplateColumns: 'repeat(' + u + ', 1fr)', gridGap: '0 32px'},
+        y.map(function(t) {
           return e.createElement(xn, {
             key: t.year + '-' + t.month,
             year: t.year,
             month: t.month,
-            firstDayOfWeek: b,
-            isDateBlocked: v,
-            isDateSelected: g,
-            isStartOrEndDate: y,
-            onDaySelect: D,
+            firstDayOfWeek: x,
+            isDateBlocked: D,
+            isDateSelected: v,
+            isStartOrEndDate: b,
+            onDaySelect: w,
+            daySize: h.daySize,
           })
         }),
       ),
     ),
-    e.createElement(Jt, {mt: '32px'}, e.createElement(kn, {onResetDates: x})),
+    e.createElement(Jt, {mt: '32px'}, e.createElement(kn, {onResetDates: k})),
   )
 }
 var Yn,
@@ -2111,7 +2116,7 @@ function Wn(t) {
     }),
     e.createElement(
       Jt,
-      {position: 'relative'},
+      {position: 'relative', ref: k},
       e.createElement(
         In,
         {
@@ -2150,7 +2155,7 @@ function Wn(t) {
           placeholder: w.endDatePlaceholder,
           value: Vt(r, D, ''),
           onClick: function() {
-            return c(Bt)
+            return c(n ? Bt : Rt)
           },
           showCalendarIcon: g,
           inputBorder: v.inputBorder,
@@ -2161,7 +2166,7 @@ function Wn(t) {
       ),
       e.createElement(
         Jt,
-        {ref: k, position: 'absolute', bottom: '64px', left: '0'},
+        {position: 'absolute', bottom: v.datepickerBottom || '65px', left: '0'},
         null !== p &&
           e.createElement(Pn, {
             startDate: n,
@@ -2173,6 +2178,10 @@ function Wn(t) {
             focusedInput: p,
             displayFormat: D,
             onDateChange: f,
+            styles: {
+              daySize: v.daySize,
+              selectDateGridTemplateColumns: v.selectDateGridTemplateColumns,
+            },
           }),
       ),
     )

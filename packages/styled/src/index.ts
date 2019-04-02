@@ -1,3 +1,4 @@
+import {FirstDayOfWeek} from '@datepicker-react/hooks'
 import DateRangeInput from './components/DateRangeInput'
 
-export {DateRangeInput}
+export {DateRangeInput, FirstDayOfWeek}

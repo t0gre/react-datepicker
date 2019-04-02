@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
+import {HeightProperty} from 'csstype'
 import {
   height,
   HeightProps,
@@ -9,6 +10,8 @@ import {
   BoxShadowProps,
   background,
   BackgroundProps,
+  ResponsiveValue,
+  TLengthStyledSystem,
 } from 'styled-system'
 import Text from '../Text'
 import Flex from '../Flex'
@@ -89,8 +92,9 @@ interface DayProps {
   disabled: boolean
   isStartOrEnd: boolean
   onDaySelect(date: Date): void
+  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
 }
-function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date}: DayProps) {
+function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}: DayProps) {
   const borderColor = getBorderColor(isActive, isStartOrEnd)
   const background = getBackgroundColor(isActive, isStartOrEnd)
   const color = getColor(isActive, isStartOrEnd)
@@ -102,8 +106,8 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date}: DayProp
       disabled={disabled}
       isActive={isActive}
       isStartOrEnd={isStartOrEnd}
-      height="36px"
-      width="36px"
+      height={daySize || '36px'}
+      width={daySize || '36px'}
       background={background}
       boxShadow={`1px 0 0 0 ${borderColor},
         0 1px 0 0 ${borderColor},
