@@ -713,6 +713,7 @@ function Ye(e) {
     isDateSelected: m,
     isStartOrEndDate: h,
     isDateBlocked: y,
+    numberOfMonths: f,
     onResetDates: function() {
       s({startDate: null, endDate: null, focusedInput: pe})
     },

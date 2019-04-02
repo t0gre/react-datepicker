@@ -1218,6 +1218,7 @@ function Lt(e) {
     isDateSelected: g,
     isStartOrEndDate: y,
     isDateBlocked: v,
+    numberOfMonths: l,
     onResetDates: function() {
       s({startDate: null, endDate: null, focusedInput: Rt})
     },
@@ -1984,8 +1985,8 @@ function Pn(t) {
     o = t.minBookingDate,
     a = t.maxBookingDate,
     i = t.focusedInput,
-    u = t.numberOfMonths,
-    s = t.onDateChange,
+    u = t.onDateChange,
+    s = t.numberOfMonths,
     c = t.firstDayOfWeek,
     l = t.displayFormat,
     p = void 0 === l ? 'MM/DD/YYYY' : l,
@@ -1997,10 +1998,10 @@ function Pn(t) {
       startDate: n,
       endDate: r,
       focusedInput: i,
-      onDateChange: s,
+      onDateChange: u,
       minBookingDate: o,
       maxBookingDate: a,
-      numberOfMonths: u,
+      numberOfMonths: s,
       firstDayOfWeek: c,
     }),
     y = g.activeMonths,
@@ -2011,7 +2012,8 @@ function Pn(t) {
     w = g.onDaySelect,
     k = g.onResetDates,
     S = g.goToPreviousMonths,
-    M = g.goToNextMonths
+    M = g.goToNextMonths,
+    E = g.numberOfMonths
   return e.createElement(
     Fn,
     {background: '#ffffff', p: '32px', borderRadius: '2px'},
@@ -2053,7 +2055,7 @@ function Pn(t) {
       ),
       e.createElement(
         Xt,
-        {gridTemplateColumns: 'repeat(' + u + ', 1fr)', gridGap: '0 32px'},
+        {gridTemplateColumns: 'repeat(' + E + ', 1fr)', gridGap: '0 32px'},
         y.map(function(t) {
           return e.createElement(xn, {
             key: t.year + '-' + t.month,

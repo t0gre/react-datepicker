@@ -751,6 +751,7 @@ function useDatepicker(e) {
     isDateSelected: g,
     isStartOrEndDate: l,
     isDateBlocked: m,
+    numberOfMonths: u,
     onResetDates: function() {
       s({startDate: null, endDate: null, focusedInput: START_DATE})
     },

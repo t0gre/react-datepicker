@@ -70,8 +70,8 @@ function Datepicker({
   minBookingDate,
   maxBookingDate,
   focusedInput,
-  numberOfMonths,
   onDateChange,
+  numberOfMonths: numberOfMonthsProp,
   firstDayOfWeek: firstDayOfWeekProp,
   displayFormat = 'MM/DD/YYYY',
   phrases = datepickerPhrases,
@@ -87,6 +87,7 @@ function Datepicker({
     onResetDates,
     goToPreviousMonths,
     goToNextMonths,
+    numberOfMonths,
   } = useDatepicker({
     startDate,
     endDate,
@@ -94,7 +95,7 @@ function Datepicker({
     onDateChange,
     minBookingDate,
     maxBookingDate,
-    numberOfMonths,
+    numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })
 

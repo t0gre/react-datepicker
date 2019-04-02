@@ -1372,6 +1372,7 @@ function Ye(e) {
     isDateSelected: f,
     isStartOrEndDate: _,
     isDateBlocked: g,
+    numberOfMonths: l,
     onResetDates: function() {
       i({startDate: null, endDate: null, focusedInput: pe})
     },
@@ -2156,8 +2157,8 @@ function Datepicker(e) {
     r = e.minBookingDate,
     a = e.maxBookingDate,
     o = e.focusedInput,
-    i = e.numberOfMonths,
-    c = e.onDateChange,
+    i = e.onDateChange,
+    c = e.numberOfMonths,
     l = e.firstDayOfWeek,
     s = e.displayFormat,
     u = void 0 === s ? 'MM/DD/YYYY' : s,
@@ -2169,10 +2170,10 @@ function Datepicker(e) {
       startDate: t,
       endDate: n,
       focusedInput: o,
-      onDateChange: c,
+      onDateChange: i,
       minBookingDate: r,
       maxBookingDate: a,
-      numberOfMonths: i,
+      numberOfMonths: c,
       firstDayOfWeek: l,
     }),
     g = _.activeMonths,
@@ -2183,7 +2184,8 @@ function Datepicker(e) {
     x = _.onDaySelect,
     D = _.onResetDates,
     S = _.goToPreviousMonths,
-    I = _.goToNextMonths
+    I = _.goToNextMonths,
+    k = _.numberOfMonths
   return React__default.createElement(
     StyledDatepicker,
     {background: '#ffffff', p: '32px', borderRadius: '2px'},
@@ -2229,7 +2231,7 @@ function Datepicker(e) {
       ),
       React__default.createElement(
         Grid,
-        {gridTemplateColumns: 'repeat(' + i + ', 1fr)', gridGap: '0 32px'},
+        {gridTemplateColumns: 'repeat(' + k + ', 1fr)', gridGap: '0 32px'},
         g.map(function(e) {
           return React__default.createElement(Month, {
             key: e.year + '-' + e.month,

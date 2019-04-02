@@ -111,6 +111,7 @@ UseDatepickerProps) {
     isDateSelected,
     isStartOrEndDate,
     isDateBlocked,
+    numberOfMonths,
     onResetDates,
     onDaySelect,
     goToPreviousMonths,

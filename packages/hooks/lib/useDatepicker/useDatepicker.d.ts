@@ -35,6 +35,7 @@ export declare function useDatepicker({
   isDateSelected: (date: Date) => boolean
   isStartOrEndDate: (date: Date) => boolean
   isDateBlocked: (date: Date) => boolean
+  numberOfMonths: number
   onResetDates: () => void
   onDaySelect: (date: Date) => void
   goToPreviousMonths: () => void
