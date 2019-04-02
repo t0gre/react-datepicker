@@ -1,9 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`direction - left 1`] = `
+exports[`should be facing down 1`] = `
 <div>
   <svg
-    class=""
+    color="red"
+    height="30px"
+    transform="rotate(0 0 0)"
+    viewBox="0 0 9 6"
+    width="30px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
+      fill="currentColor"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`should be facing to the left 1`] = `
+<div>
+  <svg
     color="red"
     height="30px"
     transform="rotate(90 0 0)"
@@ -20,10 +38,47 @@ exports[`direction - left 1`] = `
 </div>
 `;
 
-exports[`snapshot 1`] = `
+exports[`should be facing to the right 1`] = `
 <div>
   <svg
-    class=""
+    color="red"
+    height="30px"
+    transform="rotate(-90 0 0)"
+    viewBox="0 0 9 6"
+    width="30px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
+      fill="currentColor"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`should be facing up 1`] = `
+<div>
+  <svg
+    color="red"
+    height="30px"
+    transform="rotate(180 0 0)"
+    viewBox="0 0 9 6"
+    width="30px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
+      fill="currentColor"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`should match snapshot 1`] = `
+<div>
+  <svg
     color="red"
     height="30px"
     transform="rotate(-90 0 0)"

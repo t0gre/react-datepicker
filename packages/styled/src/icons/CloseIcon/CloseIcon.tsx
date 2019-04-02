@@ -1,11 +1,10 @@
 import React from 'react'
 
-function CloseIcon({height, width, color, className = ''}: IconProps) {
+function CloseIcon({height, width, color}: IconProps) {
   return (
     <svg
       width={width}
       height={height}
-      className={className}
       color={color}
       viewBox="0 0 15 16"
       xmlns="http://www.w3.org/2000/svg"

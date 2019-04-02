@@ -1,9 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `
+exports[`should be facing to the down 1`] = `
 <div>
   <svg
-    class=""
+    color="red"
+    height="14px"
+    transform="rotate(180 0 0)"
+    viewBox="0 0 9 12"
+    width="14px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.46.001a.538.538 0 0 0-.358.174L.156 4.48a.538.538 0 1 0 .796.724l3.01-3.285v13.689a.563.563 0 0 0 .538.55.563.563 0 0 0 .538-.55V1.918l3.01 3.286a.538.538 0 1 0 .796-.724L4.898.175a.538.538 0 0 0-.437-.174z"
+      fill="currentColor"
+    />
+  </svg>
+</div>
+`;
+
+exports[`should be facing to the left 1`] = `
+<div>
+  <svg
+    color="red"
+    height="14px"
+    transform="rotate(-90 0 0)"
+    viewBox="0 0 9 12"
+    width="14px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.46.001a.538.538 0 0 0-.358.174L.156 4.48a.538.538 0 1 0 .796.724l3.01-3.285v13.689a.563.563 0 0 0 .538.55.563.563 0 0 0 .538-.55V1.918l3.01 3.286a.538.538 0 1 0 .796-.724L4.898.175a.538.538 0 0 0-.437-.174z"
+      fill="currentColor"
+    />
+  </svg>
+</div>
+`;
+
+exports[`should be facing to the right 1`] = `
+<div>
+  <svg
     color="red"
     height="14px"
     transform="rotate(90 0 0)"
@@ -19,13 +54,30 @@ exports[`matches snapshot 1`] = `
 </div>
 `;
 
-exports[`supports direction 1`] = `
+exports[`should be facing to the up 1`] = `
 <div>
   <svg
-    class=""
     color="red"
     height="14px"
-    transform="rotate(-90 0 0)"
+    transform="rotate(0 0 0)"
+    viewBox="0 0 9 12"
+    width="14px"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.46.001a.538.538 0 0 0-.358.174L.156 4.48a.538.538 0 1 0 .796.724l3.01-3.285v13.689a.563.563 0 0 0 .538.55.563.563 0 0 0 .538-.55V1.918l3.01 3.286a.538.538 0 1 0 .796-.724L4.898.175a.538.538 0 0 0-.437-.174z"
+      fill="currentColor"
+    />
+  </svg>
+</div>
+`;
+
+exports[`should match snapshot 1`] = `
+<div>
+  <svg
+    color="red"
+    height="14px"
+    transform="rotate(90 0 0)"
     viewBox="0 0 9 12"
     width="14px"
     xmlns="http://www.w3.org/2000/svg"

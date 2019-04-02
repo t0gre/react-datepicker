@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot 1`] = `
+exports[`should match snapshot 1`] = `
 <div>
   <svg
-    class=""
     color="red"
     height="30px"
     viewBox="0 0 15 16"

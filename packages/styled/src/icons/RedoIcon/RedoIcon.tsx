@@ -1,11 +1,10 @@
 import React from 'react'
 
-function CaretIcon({height, width, color, className = ''}: IconProps) {
+function CaretIcon({height, width, color}: IconProps) {
   return (
     <svg
       width={width}
       height={height}
-      className={className}
       color={color}
       viewBox="0 0 14 14"
       xmlns="http://www.w3.org/2000/svg"

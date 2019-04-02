@@ -3,7 +3,6 @@
 exports[`snapshot 1`] = `
 <div>
   <svg
-    class=""
     color="red"
     height="30px"
     viewBox="0 0 12 12"
