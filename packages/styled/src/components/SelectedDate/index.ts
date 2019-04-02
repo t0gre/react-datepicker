@@ -1,3 +1,3 @@
-import Date from './Date'
+import SelectedDate from './SelectedDate'
 
-export default Date
+export default SelectedDate

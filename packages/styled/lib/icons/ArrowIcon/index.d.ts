@@ -1,2 +1,2 @@
-import ArrowIcon from './ArrowIcon'
-export default ArrowIcon
+import ArrowIcon from './ArrowIcon';
+export default ArrowIcon;

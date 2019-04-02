@@ -18,13 +18,14 @@ function calculateAngle(direction: Props['direction']) {
   }
 }
 
-function CaretIcon({height, width, color, direction = 'right'}: Props) {
+function CaretIcon({height, width, color, direction = 'right', className = ''}: Props) {
   const angle = calculateAngle(direction)
   return (
     <svg
       width={width}
       height={height}
       color={color}
+      className={className}
       transform={`rotate(${angle} 0 0)`}
       viewBox="0 0 9 6"
       xmlns="http://www.w3.org/2000/svg"

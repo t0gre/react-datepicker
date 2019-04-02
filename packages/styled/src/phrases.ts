@@ -3,6 +3,7 @@ export interface DatepickerPhrases {
   datepickerStartDateLabel: string
   datepickerEndDateLabel: string
   datepickerEndDatePlaceholder: string
+  resetDates: string
 }
 
 export interface DateRangeInputPhrases extends DatepickerPhrases {
@@ -17,6 +18,7 @@ export const datepickerPhrases = {
   datepickerStartDateLabel: 'Start date:',
   datepickerEndDatePlaceholder: 'Select',
   datepickerEndDateLabel: 'End date:',
+  resetDates: 'Reset dates',
 }
 
 export const dateRangeInputPhrases = {

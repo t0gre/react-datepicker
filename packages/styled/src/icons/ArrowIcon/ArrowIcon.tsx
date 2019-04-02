@@ -5,6 +5,7 @@ interface Props {
   height: string
   width: string
   iconColor?: string
+  className?: string
 }
 
 function calculateAngle(direction: Props['direction']) {
@@ -21,13 +22,14 @@ function calculateAngle(direction: Props['direction']) {
   }
 }
 
-function ArrowIcon({height, width, iconColor, direction = 'right'}: Props) {
+function ArrowIcon({height, width, iconColor, direction = 'right', className = ''}: Props) {
   const angle = calculateAngle(direction)
   return (
     <svg
       width={width}
       height={height}
       color={iconColor}
+      className={className}
       transform={`rotate(${angle} 0 0)`}
       viewBox="0 0 9 12"
       xmlns="http://www.w3.org/2000/svg"

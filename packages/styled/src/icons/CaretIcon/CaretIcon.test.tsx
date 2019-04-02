@@ -7,6 +7,11 @@ test('should match snapshot', () => {
   expect(container).toMatchSnapshot()
 })
 
+test('should get classname', () => {
+  const {container} = render(<CaretIcon height="30px" width="30px" color="red" className="test" />)
+  expect(container).toMatchSnapshot()
+})
+
 test('should be facing to the left', () => {
   const {container} = render(<CaretIcon height="30px" width="30px" color="red" direction="left" />)
   expect(container).toMatchSnapshot()

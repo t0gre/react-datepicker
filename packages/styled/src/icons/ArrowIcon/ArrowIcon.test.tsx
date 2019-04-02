@@ -7,6 +7,13 @@ test('should match snapshot', () => {
   expect(container).toMatchSnapshot()
 })
 
+test('should get className', () => {
+  const {container} = render(
+    <ArrowIcon height="14px" width="14px" iconColor="red" className="test" />,
+  )
+  expect(container).toMatchSnapshot()
+})
+
 test('should be facing to the left', () => {
   const {container} = render(
     <ArrowIcon direction="left" height="14px" width="14px" iconColor="red" />,

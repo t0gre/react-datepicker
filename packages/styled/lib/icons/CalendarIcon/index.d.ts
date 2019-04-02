@@ -1,2 +1,2 @@
-import CalendarIcon from './CalendarIcon'
-export default CalendarIcon
+import CalendarIcon from './CalendarIcon';
+export default CalendarIcon;

@@ -1,2 +1,2 @@
-import DayLabel from './DayLabel'
-export default DayLabel
+import DayLabel from './DayLabel';
+export default DayLabel;

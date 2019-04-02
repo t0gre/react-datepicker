@@ -1,2 +1,2 @@
-import DateRangeInput from './DateRangeInput'
-export default DateRangeInput
+import DateRangeInput from './DateRangeInput';
+export default DateRangeInput;

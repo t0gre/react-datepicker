@@ -1,5 +1,5 @@
 interface MonthLabelProps {
-  label: string
+    label: string;
 }
-declare const MonthLabel: ({label}: MonthLabelProps) => JSX.Element
-export default MonthLabel
+declare const MonthLabel: ({ label }: MonthLabelProps) => JSX.Element;
+export default MonthLabel;

@@ -1,2 +1,2 @@
-import Text from './Text'
-export default Text
+import Text from './Text';
+export default Text;

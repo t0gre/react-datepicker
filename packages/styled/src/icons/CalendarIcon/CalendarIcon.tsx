@@ -1,11 +1,12 @@
 import React from 'react'
 
-function CalendarIcon({height, width, color}: IconProps) {
+function CalendarIcon({height, width, color, className = ''}: IconProps) {
   return (
     <svg
       width={width}
       height={height}
       color={color}
+      className={className}
       viewBox="0 0 12 12"
       xmlns="http://www.w3.org/2000/svg"
     >
