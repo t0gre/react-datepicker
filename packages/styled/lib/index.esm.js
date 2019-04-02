@@ -2168,7 +2168,7 @@ function Wn(t) {
       ),
       e.createElement(
         Jt,
-        {position: 'absolute', bottom: v.datepickerBottom || '65px', left: '0'},
+        {position: 'absolute', bottom: v.datepickerBottom || '65px', left: v.datepickerLeft || '0'},
         null !== p &&
           e.createElement(Pn, {
             startDate: n,

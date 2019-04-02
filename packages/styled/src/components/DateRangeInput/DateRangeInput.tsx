@@ -11,6 +11,7 @@ import {
   GlobalsNumber,
   HeightProperty,
   BottomProperty,
+  LeftProperty,
 } from 'csstype'
 import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
 import styled from 'styled-components'
@@ -57,6 +58,7 @@ const InputGrid = styled(Grid)<StyledGridProps>`
 
 export interface DateRangeInputStyles {
   datepickerBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+  datepickerLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
 
   inputGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
   inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
@@ -164,7 +166,11 @@ function DateRangeInput({
           inputPadding={styles.inputEndDatePadding || styles.inputPadding}
         />
       </InputGrid>
-      <Box position="absolute" bottom={styles.datepickerBottom || '65px'} left="0">
+      <Box
+        position="absolute"
+        bottom={styles.datepickerBottom || '65px'}
+        left={styles.datepickerLeft || '0'}
+      >
         {focusedInput !== null && (
           <Datepicker
             startDate={startDate}

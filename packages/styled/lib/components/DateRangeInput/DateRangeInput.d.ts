@@ -10,12 +10,14 @@ import {
   GlobalsNumber,
   HeightProperty,
   BottomProperty,
+  LeftProperty,
 } from 'csstype'
 import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
 import {UseDatepickerProps, FormatFunction, FocusedInput} from '@datepicker-react/hooks'
 import {DateRangeInputPhrases} from '../../phrases'
 export interface DateRangeInputStyles {
   datepickerBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+  datepickerLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
   inputGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
   inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   inputGridBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>

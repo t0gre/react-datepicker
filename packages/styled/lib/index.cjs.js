@@ -2357,7 +2357,7 @@ function DateRangeInput(e) {
       ),
       React__default.createElement(
         Box,
-        {position: 'absolute', bottom: _.datepickerBottom || '65px', left: '0'},
+        {position: 'absolute', bottom: _.datepickerBottom || '65px', left: _.datepickerLeft || '0'},
         null !== l &&
           React__default.createElement(Datepicker, {
             startDate: t,
