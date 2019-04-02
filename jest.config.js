@@ -10,5 +10,8 @@ module.exports = {
       statements: 80,
     },
   },
-  collectCoverageFrom: ['**/packages/*.+(ts|tsx|js)'],
+  collectCoverageFrom: [
+    './packages/styled/src/**/*.+(ts|tsx)',
+    './packages/hooks/src/**/*.+(ts|tsx)',
+  ],
 }

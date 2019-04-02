@@ -1,3 +1,4 @@
+const {defaults} = require('jest-config')
 const path = require('path')
 
 module.exports = {
@@ -12,8 +13,8 @@ module.exports = {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js'],
-  coveragePathIgnorePatterns: ['**/*.test.+(ts|tsx|js)', '**/*.stories.+(ts|tsx|js)'],
-  roots: ['<rootDir>packages'],
+  coveragePathIgnorePatterns: [...defaults.coveragePathIgnorePatterns, '.stories.tsx', '.d.ts'],
+  // coveragePathIgnorePatterns: ['**/**/*.d.ts', '**/**/*.test.+(ts|tsx|js)', '++/**/*.stories.+(ts|tsx)'],
   snapshotSerializers: ['jest-serializer-html'],
   watchPlugins: [
     'jest-watch-typeahead/filename',

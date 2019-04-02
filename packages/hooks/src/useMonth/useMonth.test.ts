@@ -1,4 +1,5 @@
 import {renderHook, cleanup} from 'react-hooks-testing-library'
+import {format} from 'date-fns'
 import {useMonth, getDays, getWeekDays} from '.'
 
 afterEach(cleanup)
@@ -156,6 +157,34 @@ describe('useMonth', () => {
 
   test('should return days for march 2019 start with saturday', () => {
     const {result} = renderHook(() => useMonth({year: 2019, month: 2, weekStartsOn: 6}))
+
+    // Days
+    expect(result.current.days.length).toBe(37)
+    expect(typeof result.current.days[0]).toBe('number')
+    expect(typeof result.current.days[5]).toBe('number')
+    expect(typeof result.current.days[6]).toBe('object')
+    // @ts-ignore
+    expect(result.current.days[6].day).toBe('01')
+    // @ts-ignore
+    expect(result.current.days[result.current.days.length - 1].day).toBe('31')
+
+    // Week days
+    expect(result.current.weekDays.length).toBe(7)
+    expect(result.current.weekDays[0]).toBe('Sa')
+    expect(result.current.weekDays[6]).toBe('Fr')
+  })
+
+  test('should return right formats', () => {
+    const {result} = renderHook(() =>
+      useMonth({
+        year: 2019,
+        month: 2,
+        weekStartsOn: 6,
+        dayFormat: (date: Date) => format(date, 'DD'),
+        weekDayFormat: (date: Date) => format(date, 'dd'),
+        monthLabelFormat: (date: Date) => format(date, 'MMMM YYYY'),
+      }),
+    )
 
     // Days
     expect(result.current.days.length).toBe(37)
