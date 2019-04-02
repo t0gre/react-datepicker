@@ -57,8 +57,8 @@ const InputGrid = styled(Grid)<StyledGridProps>`
 `
 
 export interface DateRangeInputStyles {
-  datepickerBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
   datepickerLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  datepickerBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
 
   inputGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
   inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>

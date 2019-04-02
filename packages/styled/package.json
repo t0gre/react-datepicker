@@ -1,6 +1,6 @@
 {
   "name": "@datepicker-react/styled",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.33+3c29f06",
   "description": "A React datepicker build with styled-components.",
   "keywords": [
     "datepicker",
@@ -50,5 +50,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "3c29f06601ad3f791dcca81d61e013a11a8efa3e"
 }
