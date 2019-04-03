@@ -1,4 +1,5 @@
 import React, {useReducer, useState} from 'react'
+import {ThemeProvider} from 'styled-components'
 import {DateRangeInput} from '@datepicker-react/styled'
 
 const initialState = {
@@ -41,35 +42,49 @@ function App() {
     >
       <button onClick={onClick}>Number of months = 1</button>
       <div style={{width: '279px'}}>
-        <DateRangeInput
-          minBookingDate={new Date(2019, 2, 10)}
-          maxBookingDate={new Date(2019, 6, 27)}
-          startDate={state.startDate}
-          endDate={state.endDate}
-          onDateChange={data => dispatch({type: 'dateChange', payload: data})}
-          numberOfMonths={numberOfMonths}
-          focusedInput={state.focusedInput}
-          onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-          styles={{
-            inputGridTemplateColumns: '1fr 20px 1fr',
-            inputGridBackground: '#ffffff',
-            inputGridBorder: '1px solid #d0d0d0',
-            inputGridBorderRadius: '2px',
-
-            inputBorder: '0',
-            inputMinHeight: '48px',
-            inputStartDatePadding: '0 0 0 44px',
-            inputEndDatePadding: '0',
-            inputArrowIconColor: 'red',
-            inputArrowIconOpacity: 1,
-            inputCalendarWrapperTop: '18px',
-
-            daySize: '45px',
-            selectDateGridTemplateColumns: '126px 50px 126px',
-            datepickerBottom: '100px',
+        <ThemeProvider
+          theme={{
+            reactDatepicker: {
+              fontFamily: 'arial',
+              selectDateLabelFontSize: '20px',
+              selectDateDateFontSize: '30px',
+              selectDateLabelColor: 'red',
+              selectDateDateColor: 'red',
+              selectDateDateFontWeight: 700,
+              selectDateDatePadding: '0 0 50px',
+            },
           }}
-          showEndDateCalendarIcon={false}
-        />
+        >
+          <DateRangeInput
+            minBookingDate={new Date(2019, 2, 10)}
+            maxBookingDate={new Date(2019, 6, 27)}
+            startDate={state.startDate}
+            endDate={state.endDate}
+            onDateChange={data => dispatch({type: 'dateChange', payload: data})}
+            numberOfMonths={numberOfMonths}
+            focusedInput={state.focusedInput}
+            onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
+            styles={{
+              inputGridTemplateColumns: '1fr 20px 1fr',
+              inputGridBackground: '#ffffff',
+              inputGridBorder: '1px solid #d0d0d0',
+              inputGridBorderRadius: '2px',
+
+              inputBorder: '0',
+              inputMinHeight: '48px',
+              inputStartDatePadding: '0 0 0 44px',
+              inputEndDatePadding: '0',
+              inputArrowIconColor: 'red',
+              inputArrowIconOpacity: 1,
+              inputCalendarWrapperTop: '18px',
+
+              daySize: '45px',
+              selectDateGridTemplateColumns: '126px 50px 126px',
+              datepickerBottom: '100px',
+            }}
+            showEndDateCalendarIcon={false}
+          />
+        </ThemeProvider>
       </div>
     </div>
   )

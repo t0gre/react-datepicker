@@ -43,6 +43,7 @@ exports[`should match snapshot 1`] = `
     class="c0"
   >
     <svg
+      class=""
       color="#ADADAD"
       height="16px"
       viewBox="0 0 15 16"

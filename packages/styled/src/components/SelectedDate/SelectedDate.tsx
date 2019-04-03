@@ -1,5 +1,9 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
+import useThemeProps from '../../hooks/useThemeProps'
+// eslint-disable-next-line import/no-unresolved
+import {SelectDateTheme} from '../../@types/theme'
+import globalStyles from '../../globalStyles'
 import Text from '../Text'
 
 interface StyledDateProps {
@@ -35,18 +39,36 @@ interface DateProps {
 }
 
 function Date({title, isActive, date = 'Select'}: DateProps) {
+  const theme: SelectDateTheme = useThemeProps([
+    'fontFamily',
+    'selectDateLabelFontSize',
+    'selectDateLabelColor',
+    'selectDateLabelMargin',
+    'selectDateDateColor',
+    'selectDateDateFontSize',
+    'selectDateDateFontWeight',
+    'selectDateDatePadding',
+  ])
+
   return (
     <div>
-      <Text fontFamily="Montserrat" fontSize="11px" color="#929598" mb="8px">
+      <Text
+        fontFamily={theme.fontFamily || globalStyles.fontFamily}
+        fontSize={theme.selectDateLabelFontSize || '11px'}
+        // @ts-ignore
+        color={theme.selectDateLabelColor || globalStyles.colors.silverCloud}
+        m={theme.selectDateLabelMargin || '0 0 8px'}
+      >
         {title}
       </Text>
       <StyledDate
         as="span"
-        color="#001217"
-        fontSize="24px"
-        fontWeight={500}
-        fontFamily="Montserrat"
-        pb="15px"
+        // @ts-ignore
+        color={theme.selectDateDateColor || globalStyles.colors.charcoal}
+        fontSize={theme.selectDateDateFontSize || '24px'}
+        fontWeight={theme.selectDateDateFontWeight || 500}
+        fontFamily={theme.fontFamily || globalStyles.fontFamily}
+        p={theme.selectDateDatePadding || '0 0 15px'}
         isActive={isActive}
       >
         {date}
