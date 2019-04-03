@@ -5,11 +5,11 @@ import {useMonth, getDays, getWeekDays} from '.'
 afterEach(cleanup)
 
 describe('getWeekDays', () => {
-  test('should return week days start with sunday', () => {
-    expect(getWeekDays({weekStartsOn: 0})).toEqual(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'])
-  })
   test('should return week days start with monday', () => {
     expect(getWeekDays()).toEqual(['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'])
+  })
+  test('should return week days start with sunday', () => {
+    expect(getWeekDays({weekStartsOn: 0})).toEqual(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'])
   })
   test('should return week days start with saturday', () => {
     expect(getWeekDays({weekStartsOn: 6})).toEqual(['Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr'])
