@@ -1,0 +1,140 @@
+0 silly argv { _: [ 'version' ],
+0 silly argv   'conventional-commits': true,
+0 silly argv   conventionalCommits: true,
+0 silly argv   yes: true,
+0 silly argv   y: true,
+0 silly argv   lernaVersion: '3.13.1',
+0 silly argv   '$0': 'lerna' }
+1 notice cli v3.13.1
+2 verbose rootPath /Users/mihasedej/Documents/react-datepicker
+3 info versioning independent
+4 silly isAnythingCommitted
+5 verbose isAnythingCommitted 1
+6 silly currentBranch
+7 verbose currentBranch master
+8 silly remoteBranchExists
+9 silly isBehindUpstream
+10 silly isBehindUpstream master is behind origin/master by 0 commit(s) and ahead by 1
+11 silly hasTags
+12 verbose hasTags true
+13 silly git-describe.sync "3219781" => {"refCount":"41","sha":"3219781","isDirty":false}
+14 info Assuming all packages changed
+15 verbose updated examples
+16 verbose updated @datepicker-react/hooks
+17 verbose updated @datepicker-react/styled
+18 verbose git-describe undefined => "3219781"
+19 silly git-describe parsed => {"refCount":"41","sha":"3219781","isDirty":false}
+20 silly independent for examples at /Users/mihasedej/Documents/react-datepicker/packages/examples
+21 verbose getChangelogConfig using preset "conventional-changelog-angular"
+22 silly npa { type: 'tag',
+22 silly npa   registry: true,
+22 silly npa   where: undefined,
+22 silly npa   raw: 'conventional-changelog-angular',
+22 silly npa   name: 'conventional-changelog-angular',
+22 silly npa   escapedName: 'conventional-changelog-angular',
+22 silly npa   scope: undefined,
+22 silly npa   rawSpec: '',
+22 silly npa   saveSpec: null,
+22 silly npa   fetchSpec: 'latest',
+22 silly npa   gitRange: undefined,
+22 silly npa   gitCommittish: undefined,
+22 silly npa   hosted: undefined }
+23 verbose getChangelogConfig Attempting to resolve preset "conventional-changelog-angular"
+24 info getChangelogConfig Successfully resolved preset "conventional-changelog-angular"
+25 verbose independent increment 0.1.0 by minor
+26 silly independent for @datepicker-react/hooks at /Users/mihasedej/Documents/react-datepicker/packages/hooks
+27 verbose independent increment 1.0.1-alpha.39+190bced by minor
+28 silly independent for @datepicker-react/styled at /Users/mihasedej/Documents/react-datepicker/packages/styled
+29 verbose independent increment 1.0.1-alpha.39+190bced by minor
+30 silly batched [ PackageGraphNode {
+30 silly batched     name: '@datepicker-react/hooks',
+30 silly batched     externalDependencies: Map { 'date-fns' => [Object] },
+30 silly batched     localDependencies: Map {},
+30 silly batched     localDependents: Map { '@datepicker-react/styled' => [PackageGraphNode] } } ]
+31 silly batched [ PackageGraphNode {
+31 silly batched     name: '@datepicker-react/styled',
+31 silly batched     externalDependencies:
+31 silly batched      Map {
+31 silly batched        '@types/styled-components' => [Object],
+31 silly batched        '@types/styled-system' => [Object],
+31 silly batched        'csstype' => [Object],
+31 silly batched        'styled-components' => [Object],
+31 silly batched        'styled-system' => [Object] },
+31 silly batched     localDependencies: Map {},
+31 silly batched     localDependents: Map { 'examples' => [PackageGraphNode] } } ]
+32 silly batched [ PackageGraphNode {
+32 silly batched     name: 'examples',
+32 silly batched     externalDependencies:
+32 silly batched      Map {
+32 silly batched        'react' => [Object],
+32 silly batched        'react-dom' => [Object],
+32 silly batched        'react-scripts' => [Object],
+32 silly batched        'styled-components' => [Object] },
+32 silly batched     localDependencies: Map {},
+32 silly batched     localDependents: Map {} } ]
+33 info auto-confirmed
+34 info execute Skipping GitHub releases
+35 silly lifecycle No script for "preversion" in "react-datepicker", continuing
+36 silly lifecycle No script for "preversion" in "@datepicker-react/hooks", continuing
+37 silly lifecycle No script for "version" in "@datepicker-react/hooks", continuing
+38 silly independent for @datepicker-react/hooks at /Users/mihasedej/Documents/react-datepicker/packages/hooks
+39 silly independent writing new entry: "# 1.1.0 (2019-04-03)\n\n\n### Bug Fixes\n\n* **datepicker:** fix numberOfMonths ([a287c0e](https://github.com/tresko/react-datepicker/commit/a287c0e))\n* **scope:** change packages scope ([2a83211](https://github.com/tresko/react-datepicker/commit/2a83211))\n* **test:** test ([190bced](https://github.com/tresko/react-datepicker/commit/190bced))\n* **versions:** versions ([3219781](https://github.com/tresko/react-datepicker/commit/3219781))\n\n\n### Features\n\n* **release:** first canary ([aedf88c](https://github.com/tresko/react-datepicker/commit/aedf88c))\n\n\n\n"
+40 verbose independent wrote /Users/mihasedej/Documents/react-datepicker/packages/hooks/CHANGELOG.md
+41 silly lifecycle No script for "preversion" in "@datepicker-react/styled", continuing
+42 silly lifecycle No script for "version" in "@datepicker-react/styled", continuing
+43 silly independent for @datepicker-react/styled at /Users/mihasedej/Documents/react-datepicker/packages/styled
+44 silly independent writing new entry: "# 1.1.0 (2019-04-03)\n\n\n### Bug Fixes\n\n* **datepicker:** fix numberOfMonths ([a287c0e](https://github.com/tresko/react-datepicker/commit/a287c0e))\n* **scope:** change packages scope ([2a83211](https://github.com/tresko/react-datepicker/commit/2a83211))\n* **versions:** versions ([3219781](https://github.com/tresko/react-datepicker/commit/3219781))\n\n\n### Features\n\n* **release:** first canary ([aedf88c](https://github.com/tresko/react-datepicker/commit/aedf88c))\n\n\n\n"
+45 verbose independent wrote /Users/mihasedej/Documents/react-datepicker/packages/styled/CHANGELOG.md
+46 silly lifecycle No script for "preversion" in "examples", continuing
+47 silly lifecycle No script for "version" in "examples", continuing
+48 silly independent for examples at /Users/mihasedej/Documents/react-datepicker/packages/examples
+49 silly independent writing new entry: "# 0.2.0 (2019-04-03)\n\n\n### Bug Fixes\n\n* **scope:** change packages scope ([2a83211](https://github.com/tresko/react-datepicker/commit/2a83211))\n* **versions:** versions ([3219781](https://github.com/tresko/react-datepicker/commit/3219781))\n\n\n### Features\n\n* **release:** first canary ([aedf88c](https://github.com/tresko/react-datepicker/commit/aedf88c))\n\n\n\n"
+50 verbose independent wrote /Users/mihasedej/Documents/react-datepicker/packages/examples/CHANGELOG.md
+51 silly lifecycle No script for "version" in "react-datepicker", continuing
+52 silly gitAdd [ '/Users/mihasedej/Documents/react-datepicker/packages/hooks/package.json',
+52 silly gitAdd   '/Users/mihasedej/Documents/react-datepicker/packages/hooks/CHANGELOG.md',
+52 silly gitAdd   '/Users/mihasedej/Documents/react-datepicker/packages/styled/package.json',
+52 silly gitAdd   '/Users/mihasedej/Documents/react-datepicker/packages/styled/CHANGELOG.md',
+52 silly gitAdd   '/Users/mihasedej/Documents/react-datepicker/packages/examples/package.json',
+52 silly gitAdd   '/Users/mihasedej/Documents/react-datepicker/packages/examples/CHANGELOG.md' ]
+53 silly gitCommit Publish
+53 silly gitCommit
+53 silly gitCommit  - examples@0.2.0
+53 silly gitCommit  - @datepicker-react/hooks@1.1.0
+53 silly gitCommit  - @datepicker-react/styled@1.1.0
+54 verbose git [ 'commit',
+54 verbose git   '-F',
+54 verbose git   '/private/var/folders/tz/rqqr5m65581cdgfcsbth1dtc0000gn/T/07e3cac3-4ec8-41d8-a67c-18a40494d251/lerna-commit.txt' ]
+55 error Error: Command failed: git commit -F /private/var/folders/tz/rqqr5m65581cdgfcsbth1dtc0000gn/T/07e3cac3-4ec8-41d8-a67c-18a40494d251/lerna-commit.txt
+55 error husky > pre-commit (node v11.12.0)
+55 error yarn run v1.15.2
+55 error $ lerna run tsc
+55 error lerna notice cli v3.13.1
+55 error lerna info versioning independent
+55 error lerna info Executing command in 2 packages: "yarn run tsc"
+55 error lerna info run Ran npm script 'tsc' in '@datepicker-react/hooks' in 8.0s:
+55 error $ ../../node_modules/.bin/tsc --noEmit
+55 error lerna info run Ran npm script 'tsc' in '@datepicker-react/styled' in 8.0s:
+55 error $ ../../node_modules/.bin/tsc --noEmit
+55 error lerna success run Ran npm script 'tsc' in 2 packages in 15.9s:
+55 error lerna success - @datepicker-react/hooks
+55 error lerna success - @datepicker-react/styled
+55 error Done in 16.57s.
+55 error No staged files match any of provided globs.
+55 error husky > commit-msg (node v11.12.0)
+55 error
+55 error ⧗   input: Publish
+55 error
+55 error  - examples@0.2.0
+55 error  - @datepicker-react/hooks@1.1.0
+55 error  - @datepicker-react/styled@1.1.0
+55 error ✖   subject may not be empty [subject-empty]
+55 error ✖   type may not be empty [type-empty]
+55 error ✖   found 2 problems, 0 warnings
+55 error     (Need help? -> https://github.com/conventional-changelog/commitlint#what-is-commitlint )
+55 error
+55 error
+55 error husky > commit-msg hook failed (add --no-verify to bypass)
+55 error
+55 error     at makeError (/Users/mihasedej/Documents/react-datepicker/node_modules/execa/index.js:174:9)
+55 error     at Promise.all.then.arr (/Users/mihasedej/Documents/react-datepicker/node_modules/execa/index.js:278:16)
