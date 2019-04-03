@@ -1,6 +1,6 @@
 {
   "name": "@datepicker-react/styled",
-  "version": "1.0.1-alpha.33+3c29f06",
+  "version": "1.0.1-alpha.39+190bced",
   "description": "A React datepicker build with styled-components.",
   "keywords": [
     "datepicker",
@@ -45,11 +45,10 @@
     "styled-components": "^4.2.0"
   },
   "dependencies": {
-    "@datepicker-react/hooks": "^1.0.0",
+    "@datepicker-react/hooks": "^1.0.1-alpha.39+190bced",
     "styled-system": "^4.0.8"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "gitHead": "3c29f06601ad3f791dcca81d61e013a11a8efa3e"
+  }
 }

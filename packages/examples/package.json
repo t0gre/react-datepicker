@@ -7,7 +7,7 @@
     "react-dom": "link:../../node_modules/react-dom",
     "react-scripts": "2.1.8",
     "styled-components": "^4.2.0",
-    "@datepicker-react/styled": "^1.0.1-alpha.33+3c29f06"
+    "@datepicker-react/styled": "^1.0.1-alpha.39+190bced"
   },
   "scripts": {
     "start": "react-scripts start",
