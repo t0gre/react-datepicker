@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/mihasedej/.nvm/versions/node/v11.12.0/bin/node /Users/mihasedej/.nvm/versions/node/v11.12.0/bin/yarn add -DW import @types/jest-dom
+  /Users/mihasedej/.nvm/versions/node/v11.12.0/bin/node /Users/mihasedej/.nvm/versions/node/v11.12.0/bin/yarn remove @commitlint/cli @commitlint/config-conventional
 
 PATH: 
   /Users/mihasedej/.nvm/versions/node/v11.12.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mihasedej/Documents/react-datepicker/node_modules/.bin
@@ -14,17 +14,12 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fjest-dom: Not found
-      at Request.params.callback [as _callback] (/Users/mihasedej/.nvm/versions/node/v11.12.0/lib/node_modules/yarn/lib/cli.js:66058:18)
-      at Request.self.callback (/Users/mihasedej/.nvm/versions/node/v11.12.0/lib/node_modules/yarn/lib/cli.js:129541:22)
-      at Request.emit (events.js:197:13)
-      at Request.<anonymous> (/Users/mihasedej/.nvm/versions/node/v11.12.0/lib/node_modules/yarn/lib/cli.js:130513:10)
-      at Request.emit (events.js:197:13)
-      at IncomingMessage.<anonymous> (/Users/mihasedej/.nvm/versions/node/v11.12.0/lib/node_modules/yarn/lib/cli.js:130435:12)
-      at Object.onceWrapper (events.js:285:20)
-      at IncomingMessage.emit (events.js:202:15)
-      at endReadableNT (_stream_readable.js:1132:12)
-      at processTicksAndRejections (internal/process/next_tick.js:76:17)
+  SyntaxError: /Users/mihasedej/Documents/react-datepicker/package.json: Unexpected token } in JSON at position 4162
+      at JSON.parse (<anonymous>)
+      at /Users/mihasedej/.nvm/versions/node/v11.12.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/mihasedej/.nvm/versions/node/v11.12.0/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /Users/mihasedej/.nvm/versions/node/v11.12.0/lib/node_modules/yarn/lib/cli.js:315:13
 
 npm manifest: 
   {
@@ -150,7 +145,6 @@ npm manifest:
     "husky": {
       "hooks": {
         "pre-commit": "yarn tsc && lint-staged",
-        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
       }
     },
     "lint-staged": {
