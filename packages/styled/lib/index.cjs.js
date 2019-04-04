@@ -1789,12 +1789,11 @@ var templateObject_1$4,
       )
     },
   )
-function Date$1(e) {
+function SelectDate(e) {
   var t = e.title,
     n = e.isActive,
     r = e.date,
-    a = void 0 === r ? 'Select' : r,
-    o = useThemeProps({
+    a = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       selectDateLabelFontSize: '11px',
       selectDateLabelColor: globalStyles.colors.silverCloud,
@@ -1810,10 +1809,10 @@ function Date$1(e) {
     React__default.createElement(
       Text,
       {
-        fontFamily: o.fontFamily,
-        fontSize: o.selectDateLabelFontSize,
-        color: o.selectDateLabelColor,
-        m: o.selectDateLabelMargin,
+        fontFamily: a.fontFamily,
+        fontSize: a.selectDateLabelFontSize,
+        color: a.selectDateLabelColor,
+        m: a.selectDateLabelMargin,
       },
       t,
     ),
@@ -1821,14 +1820,14 @@ function Date$1(e) {
       StyledDate,
       {
         as: 'span',
-        color: o.selectDateDateColor,
-        fontSize: o.selectDateDateFontSize,
-        fontWeight: o.selectDateDateFontWeight,
-        fontFamily: o.fontFamily,
-        p: o.selectDateDatePadding,
+        color: a.selectDateDateColor,
+        fontSize: a.selectDateDateFontSize,
+        fontWeight: a.selectDateDateFontWeight,
+        fontFamily: a.fontFamily,
+        p: a.selectDateDatePadding,
         isActive: n,
       },
-      a,
+      r,
     ),
   )
 }
@@ -2053,11 +2052,30 @@ function CaretIcon(e) {
     }),
   )
 }
+var templateObject_1$7,
+  StyledReactDates = styled__default('button')(
+    templateObject_1$7 ||
+      (templateObject_1$7 = __makeTemplateObject(
+        [
+          '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  border: 0;\n  background: transparent;\n  padding: 0;\n\n  &:hover {\n    text-decoration: underline;\n  }\n',
+        ],
+        [
+          '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  border: 0;\n  background: transparent;\n  padding: 0;\n\n  &:hover {\n    text-decoration: underline;\n  }\n',
+        ],
+      )),
+  )
 function ResetDates(e) {
-  var t = e.onResetDates
+  var t = e.onResetDates,
+    n = React.useRef(null)
   return React__default.createElement(
-    Flex,
-    {role: 'button', onClick: t, alignItems: 'center'},
+    StyledReactDates,
+    {
+      onClick: t,
+      onMouseUp: function() {
+        n && n.current && n.current.blur()
+      },
+      ref: n,
+    },
     React__default.createElement(CaretIcon, {height: '14px', width: '14px', color: '58595B'}),
     React__default.createElement(
       Text,
@@ -2114,10 +2132,10 @@ function CaretIcon$1(e) {
     }),
   )
 }
-var templateObject_1$7,
+var templateObject_1$8,
   StyledNavButton = styled__default('button')(
-    templateObject_1$7 ||
-      (templateObject_1$7 = __makeTemplateObject(
+    templateObject_1$8 ||
+      (templateObject_1$8 = __makeTemplateObject(
         [
           '\n  ',
           '\n  ',
@@ -2163,11 +2181,11 @@ function NavButton(e) {
     }),
   )
 }
-var templateObject_1$8,
+var templateObject_1$9,
   templateObject_2$3,
   StyledDatepicker = styled__default('div')(
-    templateObject_1$8 ||
-      (templateObject_1$8 = __makeTemplateObject(
+    templateObject_1$9 ||
+      (templateObject_1$9 = __makeTemplateObject(
         ['\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n'],
       )),
@@ -2230,7 +2248,7 @@ function Datepicker(e) {
       React__default.createElement(
         Grid,
         {gridTemplateColumns: m.selectDateGridTemplateColumns || '126px 75px 126px'},
-        React__default.createElement(Date$1, {
+        React__default.createElement(SelectDate, {
           title: d.datepickerStartDateLabel,
           date: Te(t, u, d.datepickerStartDatePlaceholder),
           isActive: o === pe,
@@ -2244,7 +2262,7 @@ function Datepicker(e) {
             iconColor: '#929598',
           }),
         ),
-        React__default.createElement(Date$1, {
+        React__default.createElement(SelectDate, {
           title: d.datepickerEndDateLabel,
           date: Te(n, u, d.datepickerEndDatePlaceholder),
           isActive: o === Se,
@@ -2289,11 +2307,11 @@ function Datepicker(e) {
     ),
   )
 }
-var templateObject_1$9,
+var templateObject_1$a,
   templateObject_2$4,
   InputArrowIcon = styled__default(ArrowIcon)(
-    templateObject_1$9 ||
-      (templateObject_1$9 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_1$a ||
+      (templateObject_1$a = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     opacity,
     color,
   ),

@@ -1,15 +1,36 @@
-import React from 'react'
+import React, {useRef} from 'react'
+import styled from 'styled-components'
 import RedoIcon from '../../icons/RedoIcon'
 import Text from '../Text'
-import Flex from '../Flex'
+
+const StyledReactDates = styled('button')`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
 
 interface onResetDatesProps {
   onResetDates(): void
 }
 
 function ResetDates({onResetDates}: onResetDatesProps) {
+  const ref = useRef<HTMLButtonElement>(null)
+
+  function handleMouseUp() {
+    if (ref && ref.current) {
+      ref.current.blur()
+    }
+  }
+
   return (
-    <Flex role="button" onClick={onResetDates} alignItems="center">
+    <StyledReactDates onClick={onResetDates} onMouseUp={handleMouseUp} ref={ref}>
       <RedoIcon height="14px" width="14px" color="58595B" />
       <Text
         ml="8px"
@@ -21,7 +42,7 @@ function ResetDates({onResetDates}: onResetDatesProps) {
       >
         Reset dates
       </Text>
-    </Flex>
+    </StyledReactDates>
   )
 }
 
