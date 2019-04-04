@@ -700,8 +700,8 @@ var b = function(e, t) {
     r = null == r ? i : Number(r)
     var _,
       b,
-      I,
-      k = (function(e) {
+      k,
+      I = (function(e) {
         var t,
           n = {},
           r = e.split(s)
@@ -724,7 +724,7 @@ var b = function(e, t) {
           return {year: 100 * parseInt(i, 10), restDateString: e.slice(i.length)}
         }
         return {year: null}
-      })(k.date, r),
+      })(I.date, r),
       R = O.year,
       C = (function(e, t) {
         if (null === t) return null
@@ -753,7 +753,7 @@ var b = function(e, t) {
         E = C.getTime(),
         P = 0
       if (
-        (k.time &&
+        (I.time &&
           (P = (function(e) {
             var t, n, r
             if ((t = M.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * u
@@ -769,17 +769,17 @@ var b = function(e, t) {
               return (n % 24) * u + r * o + 1e3 * a
             }
             return null
-          })(k.time)),
-        k.timezone)
+          })(I.time)),
+        I.timezone)
       )
-        (_ = k.timezone),
+        (_ = I.timezone),
           (j =
             ((b = Y.exec(_))
               ? 0
               : (b = w.exec(_))
-              ? ((I = 60 * parseInt(b[2], 10)), '+' === b[1] ? -I : I)
+              ? ((k = 60 * parseInt(b[2], 10)), '+' === b[1] ? -k : k)
               : (b = F.exec(_))
-              ? ((I = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -I : I)
+              ? ((k = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -k : k)
               : 0) * o)
       else {
         var $ = E + P,
@@ -2219,8 +2219,8 @@ function Datepicker(e) {
     D = _.onDaySelect,
     x = _.onResetDates,
     S = _.goToPreviousMonths,
-    I = _.goToNextMonths,
-    k = _.numberOfMonths
+    k = _.goToNextMonths,
+    I = _.numberOfMonths
   return React__default.createElement(
     StyledDatepicker,
     {background: '#ffffff', p: '32px', borderRadius: '2px'},
@@ -2262,11 +2262,11 @@ function Datepicker(e) {
       React__default.createElement(
         Box,
         {position: 'absolute', top: '-5px', right: '0'},
-        React__default.createElement(NavButton, {type: 'next', onClick: I}),
+        React__default.createElement(NavButton, {type: 'next', onClick: k}),
       ),
       React__default.createElement(
         Grid,
-        {gridTemplateColumns: 'repeat(' + k + ', 1fr)', gridGap: '0 32px'},
+        {gridTemplateColumns: 'repeat(' + I + ', 1fr)', gridGap: '0 32px'},
         y.map(function(e) {
           return React__default.createElement(Month, {
             key: e.year + '-' + e.month,
@@ -2413,4 +2413,4 @@ function DateRangeInput(e) {
     )
   )
 }
-exports.DateRangeInput = DateRangeInput
+;(exports.DateRangeInput = DateRangeInput), (exports.Datepicker = Datepicker)
