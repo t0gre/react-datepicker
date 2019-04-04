@@ -30,6 +30,8 @@ const datepickerTheme = ({children}: {children: any}) => (
   <ThemeProvider theme={{reactDatepicker: {width: '50px'}}}>{children}</ThemeProvider>
 )
 test('should return theme values', () => {
-  const {result} = renderHook(() => useThemeProps(['width', 'height']), {wrapper: datepickerTheme})
-  expect(result.current).toEqual({width: '50px', height: undefined})
+  const {result} = renderHook(() => useThemeProps({width: '60px', height: '100px'}), {
+    wrapper: datepickerTheme,
+  })
+  expect(result.current).toEqual({width: '50px', height: '100px'})
 })

@@ -1628,7 +1628,7 @@ function hn(t) {
     i = t.date,
     u = void 0 === i ? 'Select' : i,
     c = (function(e) {
-      void 0 === e && (e = [])
+      void 0 === e && (e = {})
       var t = o(s)
       return r(
         function() {
@@ -1636,34 +1636,34 @@ function hn(t) {
             'object' == typeof t &&
             t.reactDatepicker &&
             'object' == typeof t.reactDatepicker
-            ? e.reduce(function(e, n) {
-                var r
-                return l({}, e, (((r = {})[n] = t.reactDatepicker[n]), r))
+            ? Object.keys(e).reduce(function(n, r) {
+                var o
+                return l({}, n, (((o = {})[r] = t.reactDatepicker[r] || e[r]), o))
               }, {})
             : {}
         },
-        [t],
+        [t, e],
       )
-    })([
-      'fontFamily',
-      'selectDateLabelFontSize',
-      'selectDateLabelColor',
-      'selectDateLabelMargin',
-      'selectDateDateColor',
-      'selectDateDateFontSize',
-      'selectDateDateFontWeight',
-      'selectDateDatePadding',
-    ])
+    })({
+      fontFamily: fn.fontFamily,
+      selectDateLabelFontSize: '11px',
+      selectDateLabelColor: fn.colors.silverCloud,
+      selectDateLabelMargin: '0 0 8px',
+      selectDateDateColor: fn.colors.charcoal,
+      selectDateDateFontSize: '24px',
+      selectDateDateFontWeight: 500,
+      selectDateDatePadding: '0 0 15px',
+    })
   return e.createElement(
     'div',
     null,
     e.createElement(
       dn,
       {
-        fontFamily: c.fontFamily || fn.fontFamily,
-        fontSize: c.selectDateLabelFontSize || '11px',
-        color: c.selectDateLabelColor || fn.colors.silverCloud,
-        m: c.selectDateLabelMargin || '0 0 8px',
+        fontFamily: c.fontFamily,
+        fontSize: c.selectDateLabelFontSize,
+        color: c.selectDateLabelColor,
+        m: c.selectDateLabelMargin,
       },
       n,
     ),
@@ -1671,11 +1671,11 @@ function hn(t) {
       mn,
       {
         as: 'span',
-        color: c.selectDateDateColor || fn.colors.charcoal,
-        fontSize: c.selectDateDateFontSize || '24px',
-        fontWeight: c.selectDateDateFontWeight || 500,
-        fontFamily: c.fontFamily || fn.fontFamily,
-        p: c.selectDateDatePadding || '0 0 15px',
+        color: c.selectDateDateColor,
+        fontSize: c.selectDateDateFontSize,
+        fontWeight: c.selectDateDateFontWeight,
+        fontFamily: c.fontFamily,
+        p: c.selectDateDatePadding,
         isActive: a,
       },
       u,

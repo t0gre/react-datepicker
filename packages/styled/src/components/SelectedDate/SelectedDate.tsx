@@ -32,43 +32,43 @@ const StyledDate = styled(Text)<StyledDateProps>`
     `}
 `
 
-interface DateProps {
+export interface SelectDateProps {
   title: string
   date: string
   isActive: boolean
 }
 
-function Date({title, isActive, date = 'Select'}: DateProps) {
-  const theme: SelectDateTheme = useThemeProps([
-    'fontFamily',
-    'selectDateLabelFontSize',
-    'selectDateLabelColor',
-    'selectDateLabelMargin',
-    'selectDateDateColor',
-    'selectDateDateFontSize',
-    'selectDateDateFontWeight',
-    'selectDateDatePadding',
-  ])
+function SelectDate({title, isActive, date}: SelectDateProps) {
+  const theme: SelectDateTheme = useThemeProps({
+    fontFamily: globalStyles.fontFamily,
+    selectDateLabelFontSize: '11px',
+    selectDateLabelColor: globalStyles.colors.silverCloud,
+    selectDateLabelMargin: '0 0 8px',
+    selectDateDateColor: globalStyles.colors.charcoal,
+    selectDateDateFontSize: '24px',
+    selectDateDateFontWeight: 500,
+    selectDateDatePadding: '0 0 15px',
+  })
 
   return (
     <div>
       <Text
-        fontFamily={theme.fontFamily || globalStyles.fontFamily}
-        fontSize={theme.selectDateLabelFontSize || '11px'}
+        fontFamily={theme.fontFamily}
+        fontSize={theme.selectDateLabelFontSize}
         // @ts-ignore
-        color={theme.selectDateLabelColor || globalStyles.colors.silverCloud}
-        m={theme.selectDateLabelMargin || '0 0 8px'}
+        color={theme.selectDateLabelColor}
+        m={theme.selectDateLabelMargin}
       >
         {title}
       </Text>
       <StyledDate
         as="span"
         // @ts-ignore
-        color={theme.selectDateDateColor || globalStyles.colors.charcoal}
-        fontSize={theme.selectDateDateFontSize || '24px'}
-        fontWeight={theme.selectDateDateFontWeight || 500}
-        fontFamily={theme.fontFamily || globalStyles.fontFamily}
-        p={theme.selectDateDatePadding || '0 0 15px'}
+        color={theme.selectDateDateColor}
+        fontSize={theme.selectDateDateFontSize}
+        fontWeight={theme.selectDateDateFontWeight}
+        fontFamily={theme.fontFamily}
+        p={theme.selectDateDatePadding}
         isActive={isActive}
       >
         {date}
@@ -77,4 +77,4 @@ function Date({title, isActive, date = 'Select'}: DateProps) {
   )
 }
 
-export default Date
+export default SelectDate

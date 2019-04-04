@@ -1,1 +1,1 @@
-export default function useThemeProps(themeProps?: string[]): {}
+export default function useThemeProps(themeProps?: Record<string, any>): {}

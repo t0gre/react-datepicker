@@ -1730,18 +1730,18 @@ function ArrowIcon(e) {
   )
 }
 function useThemeProps(e) {
-  void 0 === e && (e = [])
+  void 0 === e && (e = {})
   var t = React.useContext(styled.ThemeContext)
   return React.useMemo(
     function() {
       return t && 'object' == typeof t && t.reactDatepicker && 'object' == typeof t.reactDatepicker
-        ? e.reduce(function(e, n) {
-            var r
-            return __assign({}, e, (((r = {})[n] = t.reactDatepicker[n]), r))
+        ? Object.keys(e).reduce(function(n, r) {
+            var a
+            return __assign({}, n, (((a = {})[r] = t.reactDatepicker[r] || e[r]), a))
           }, {})
         : {}
     },
-    [t],
+    [t, e],
   )
 }
 var templateObject_1$4,
@@ -1794,26 +1794,26 @@ function Date$1(e) {
     n = e.isActive,
     r = e.date,
     a = void 0 === r ? 'Select' : r,
-    o = useThemeProps([
-      'fontFamily',
-      'selectDateLabelFontSize',
-      'selectDateLabelColor',
-      'selectDateLabelMargin',
-      'selectDateDateColor',
-      'selectDateDateFontSize',
-      'selectDateDateFontWeight',
-      'selectDateDatePadding',
-    ])
+    o = useThemeProps({
+      fontFamily: globalStyles.fontFamily,
+      selectDateLabelFontSize: '11px',
+      selectDateLabelColor: globalStyles.colors.silverCloud,
+      selectDateLabelMargin: '0 0 8px',
+      selectDateDateColor: globalStyles.colors.charcoal,
+      selectDateDateFontSize: '24px',
+      selectDateDateFontWeight: 500,
+      selectDateDatePadding: '0 0 15px',
+    })
   return React__default.createElement(
     'div',
     null,
     React__default.createElement(
       Text,
       {
-        fontFamily: o.fontFamily || globalStyles.fontFamily,
-        fontSize: o.selectDateLabelFontSize || '11px',
-        color: o.selectDateLabelColor || globalStyles.colors.silverCloud,
-        m: o.selectDateLabelMargin || '0 0 8px',
+        fontFamily: o.fontFamily,
+        fontSize: o.selectDateLabelFontSize,
+        color: o.selectDateLabelColor,
+        m: o.selectDateLabelMargin,
       },
       t,
     ),
@@ -1821,11 +1821,11 @@ function Date$1(e) {
       StyledDate,
       {
         as: 'span',
-        color: o.selectDateDateColor || globalStyles.colors.charcoal,
-        fontSize: o.selectDateDateFontSize || '24px',
-        fontWeight: o.selectDateDateFontWeight || 500,
-        fontFamily: o.fontFamily || globalStyles.fontFamily,
-        p: o.selectDateDatePadding || '0 0 15px',
+        color: o.selectDateDateColor,
+        fontSize: o.selectDateDateFontSize,
+        fontWeight: o.selectDateDateFontWeight,
+        fontFamily: o.fontFamily,
+        p: o.selectDateDatePadding,
         isActive: n,
       },
       a,
