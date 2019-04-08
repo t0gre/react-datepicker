@@ -27,9 +27,30 @@ export function isDateBlocked(
   maxBookingDate?: Date,
   isDayBlockedFn?: (date?: Date) => boolean,
 ) {
+  const compareMinDate = minBookingDate
+    ? new Date(
+        minBookingDate.getFullYear(),
+        minBookingDate.getMonth(),
+        minBookingDate.getDate(),
+        0,
+        0,
+        0,
+      )
+    : minBookingDate
+  const compareMaxDate = maxBookingDate
+    ? new Date(
+        maxBookingDate.getFullYear(),
+        maxBookingDate.getMonth(),
+        maxBookingDate.getDate(),
+        0,
+        0,
+        0,
+      )
+    : maxBookingDate
+
   return !!(
-    (minBookingDate && isBefore(date, minBookingDate)) ||
-    (maxBookingDate && isAfter(date, maxBookingDate)) ||
+    (compareMinDate && isBefore(date, compareMinDate)) ||
+    (compareMaxDate && isAfter(date, compareMaxDate)) ||
     (isDayBlockedFn && isDayBlockedFn(date))
   )
 }
@@ -80,7 +101,9 @@ export function getNextActiveMonth(
 
   return Array.from(Array(numberOfMonths).keys()).reduce((m: MonthType[]) => {
     prevMonthDate = addMonths(prevMonthDate, counter)
-    return m.concat([getDateMonthAndYear(prevMonthDate)])
+    return counter > 0
+      ? m.concat([getDateMonthAndYear(prevMonthDate)])
+      : [getDateMonthAndYear(prevMonthDate)].concat(m)
   }, [])
 }
 

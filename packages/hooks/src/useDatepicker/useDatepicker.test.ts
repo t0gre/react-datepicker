@@ -47,9 +47,9 @@ describe('getNextActiveMonth', () => {
     const nextMonths = getNextActiveMonth(months, 2, -1)
     expect(nextMonths.length).toBe(2)
     expect(nextMonths[0].year).toEqual(2019)
-    expect(nextMonths[0].month).toEqual(1)
+    expect(nextMonths[0].month).toEqual(0)
     expect(nextMonths[1].year).toEqual(2019)
-    expect(nextMonths[1].month).toEqual(0)
+    expect(nextMonths[1].month).toEqual(1)
     clear()
   })
 })
@@ -115,8 +115,8 @@ describe('isStartOrEndDate', () => {
 })
 
 describe('isDateBlocked', () => {
-  const minBookingDate = new Date(2019, 2, 10, 0, 0, 0)
-  const maxBookingDate = new Date(2019, 2, 27, 0, 0, 0)
+  const minBookingDate = new Date(2019, 2, 10, 1, 0, 0)
+  const maxBookingDate = new Date(2019, 2, 27, 1, 0, 0)
   const equalDate = new Date(2019, 2, 25, 0, 0, 0)
 
   test('should be blocked', () => {

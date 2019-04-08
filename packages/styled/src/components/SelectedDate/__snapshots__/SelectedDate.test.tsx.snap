@@ -2,11 +2,23 @@
 
 exports[`should be active 1`] = `
 .c0 {
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  color: #929598;
+  margin: 0 0 8px;
+}
+
+.c1 {
+  font-family: Montserrat,sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #001217;
+  padding: 0 0 15px;
   position: relative;
   display: inline-block;
 }
 
-.c0:after {
+.c1:after {
   content: '';
   position: absolute;
   height: 2px;
@@ -16,19 +28,26 @@ exports[`should be active 1`] = `
   z-index: 1;
 }
 
-.c0:after {
+.c1:after {
   background: #00aeef;
 }
 
 <div>
   <div>
     <div
-      class=""
+      class="c0"
+      color="#929598"
+      font-family="Montserrat, sans-serif"
+      font-size="11px"
     >
       test
     </div>
     <span
-      class="c0"
+      class="c1"
+      color="#001217"
+      font-family="Montserrat, sans-serif"
+      font-size="24px"
+      font-weight="500"
     >
       15.10.2018
     </span>
@@ -38,11 +57,23 @@ exports[`should be active 1`] = `
 
 exports[`should be unactive 1`] = `
 .c0 {
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  color: #929598;
+  margin: 0 0 8px;
+}
+
+.c1 {
+  font-family: Montserrat,sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #001217;
+  padding: 0 0 15px;
   position: relative;
   display: inline-block;
 }
 
-.c0:after {
+.c1:after {
   content: '';
   position: absolute;
   height: 2px;
@@ -55,12 +86,19 @@ exports[`should be unactive 1`] = `
 <div>
   <div>
     <div
-      class=""
+      class="c0"
+      color="#929598"
+      font-family="Montserrat, sans-serif"
+      font-size="11px"
     >
       test
     </div>
     <span
-      class="c0"
+      class="c1"
+      color="#001217"
+      font-family="Montserrat, sans-serif"
+      font-size="24px"
+      font-weight="500"
     >
       15.10.2018
     </span>

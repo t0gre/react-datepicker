@@ -19,7 +19,7 @@ export default function useThemeProps(themeProps: Record<string, any> = {}) {
       )
     }
 
-    return {}
+    return themeProps
   }, [context, themeProps])
 
   return theme

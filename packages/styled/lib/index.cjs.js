@@ -50,10 +50,10 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
     u = n ? Symbol.for('react.async_mode') : 60111,
     p = n ? Symbol.for('react.concurrent_mode') : 60111,
     d = n ? Symbol.for('react.forward_ref') : 60112,
-    f = n ? Symbol.for('react.suspense') : 60113,
-    m = n ? Symbol.for('react.memo') : 60115,
+    m = n ? Symbol.for('react.suspense') : 60113,
+    f = n ? Symbol.for('react.memo') : 60115,
     _ = n ? Symbol.for('react.lazy') : 60116
-  function y(e) {
+  function g(e) {
     if ('object' == typeof e && null !== e) {
       var t = e.$$typeof
       switch (t) {
@@ -64,7 +64,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
             case o:
             case c:
             case i:
-            case f:
+            case m:
               return e
             default:
               switch ((e = e && e.$$typeof)) {
@@ -77,16 +77,16 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
               }
           }
         case _:
-        case m:
+        case f:
         case a:
           return t
       }
     }
   }
-  function g(e) {
-    return y(e) === p
+  function y(e) {
+    return g(e) === p
   }
-  ;(t.typeOf = y),
+  ;(t.typeOf = g),
     (t.AsyncMode = u),
     (t.ConcurrentMode = p),
     (t.ContextConsumer = s),
@@ -95,11 +95,11 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
     (t.ForwardRef = d),
     (t.Fragment = o),
     (t.Lazy = _),
-    (t.Memo = m),
+    (t.Memo = f),
     (t.Portal = a),
     (t.Profiler = c),
     (t.StrictMode = i),
-    (t.Suspense = f),
+    (t.Suspense = m),
     (t.isValidElementType = function(e) {
       return (
         'string' == typeof e ||
@@ -108,52 +108,52 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
         e === p ||
         e === c ||
         e === i ||
-        e === f ||
+        e === m ||
         ('object' == typeof e &&
           null !== e &&
           (e.$$typeof === _ ||
-            e.$$typeof === m ||
+            e.$$typeof === f ||
             e.$$typeof === l ||
             e.$$typeof === s ||
             e.$$typeof === d))
       )
     }),
     (t.isAsyncMode = function(e) {
-      return g(e) || y(e) === u
+      return y(e) || g(e) === u
     }),
-    (t.isConcurrentMode = g),
+    (t.isConcurrentMode = y),
     (t.isContextConsumer = function(e) {
-      return y(e) === s
+      return g(e) === s
     }),
     (t.isContextProvider = function(e) {
-      return y(e) === l
+      return g(e) === l
     }),
     (t.isElement = function(e) {
       return 'object' == typeof e && null !== e && e.$$typeof === r
     }),
     (t.isForwardRef = function(e) {
-      return y(e) === d
+      return g(e) === d
     }),
     (t.isFragment = function(e) {
-      return y(e) === o
+      return g(e) === o
     }),
     (t.isLazy = function(e) {
-      return y(e) === _
+      return g(e) === _
     }),
     (t.isMemo = function(e) {
-      return y(e) === m
+      return g(e) === f
     }),
     (t.isPortal = function(e) {
-      return y(e) === a
+      return g(e) === a
     }),
     (t.isProfiler = function(e) {
-      return y(e) === c
+      return g(e) === c
     }),
     (t.isStrictMode = function(e) {
-      return y(e) === i
+      return g(e) === i
     }),
     (t.isSuspense = function(e) {
-      return y(e) === f
+      return g(e) === m
     })
 })
 unwrapExports(reactIs_production_min)
@@ -378,20 +378,20 @@ var factoryWithThrowingShims = function() {
         if (Array.isArray(t)) {
           p.push(i(t[0]))
           for (var d = 1; d < t.slice(0, l.length + 1).length; d++) {
-            var f = i(t[d])
-            if (f) {
-              var m,
+            var m = i(t[d])
+            if (m) {
+              var f,
                 _ = createMediaQuery(l[d - 1])
-              p.push((((m = {})[_] = f), m))
+              p.push((((f = {})[_] = m), f))
             }
           }
         } else {
-          for (var y in t) {
-            var g,
-              h = l[y],
+          for (var g in t) {
+            var y,
+              h = l[g],
               b = createMediaQuery(h),
-              v = i(t[y])
-            if (h) p.push((((g = {})[b] = v), g))
+              v = i(t[g])
+            if (h) p.push((((y = {})[b] = v), y))
             else p.unshift(v)
           }
           p.sort()
@@ -671,9 +671,9 @@ var factoryWithThrowingShims = function() {
   s = /[T ]/,
   c = /:/,
   f = /^(\d{2})$/,
-  d = [/^([+-]\d{2})$/, /^([+-]\d{3})$/, /^([+-]\d{4})$/],
-  l = /^(\d{4})/,
-  g = [/^([+-]\d{4})/, /^([+-]\d{5})/, /^([+-]\d{6})/],
+  l = [/^([+-]\d{2})$/, /^([+-]\d{3})$/, /^([+-]\d{4})$/],
+  g = /^(\d{4})/,
+  d = [/^([+-]\d{4})/, /^([+-]\d{5})/, /^([+-]\d{6})/],
   v = /^-(\d{2})$/,
   D = /^-?(\d{3})$/,
   m = /^-?(\d{2})-?(\d{2})$/,
@@ -713,9 +713,9 @@ var b = function(e, t) {
       })(e),
       O = (function(e, t) {
         var n,
-          r = d[t],
-          a = g[t]
-        if ((n = l.exec(e) || a.exec(e))) {
+          r = l[t],
+          a = d[t]
+        if ((n = g.exec(e) || a.exec(e))) {
           var o = n[1]
           return {year: parseInt(o, 10), restDateString: e.slice(o.length)}
         }
@@ -1277,30 +1277,32 @@ var ae = function(e, t) {
   fe = function() {
     return k(new Date())
   },
-  de = function(e) {
+  le = function(e) {
     var t = b(e),
       n = t.getFullYear(),
       r = t.getMonth(),
       a = new Date(0)
     return a.setFullYear(n, r + 1, 0), a.setHours(0, 0, 0, 0), a.getDate()
   },
-  le = function(e, t) {
+  ge = function(e, t) {
     var n = b(e),
       r = Number(t),
       a = n.getMonth() + r,
       o = new Date(0)
     o.setFullYear(n.getFullYear(), a, 1), o.setHours(0, 0, 0, 0)
-    var i = de(o)
+    var i = le(o)
     return n.setMonth(a, Math.min(i, n.getDate())), n
   }
-function ge(e, t, n) {
+function de(e, t, n) {
   return !(!t || !n) && oe(e, t, n)
 }
 function ve(e, t, n) {
   return !!((t && ie(e, t)) || (n && ie(e, n)))
 }
 function De(e, t, n, r) {
-  return !!((t && ae(e, t)) || (n && ue(e, n)) || (r && r(e)))
+  var a = t ? new Date(t.getFullYear(), t.getMonth(), t.getDate(), 0, 0, 0) : t,
+    o = n ? new Date(n.getFullYear(), n.getMonth(), n.getDate(), 0, 0, 0) : n
+  return !!((a && ae(e, a)) || (o && ue(e, o)) || (r && r(e)))
 }
 function me(e) {
   var t = ee(e)
@@ -1316,7 +1318,7 @@ function ye(e, t) {
   return (
     e > 1 &&
       (a = Array.from(Array(e - 1).keys()).reduce(function(e) {
-        return (r = le(e[e.length - 1].date, 1)), e.concat([me(r)])
+        return (r = ge(e[e.length - 1].date, 1)), e.concat([me(r)])
       }, a)),
     a
   )
@@ -1324,7 +1326,7 @@ function ye(e, t) {
 function Me(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = le(r, n)), e.concat([me(r)])
+    return (r = ge(r, n)), n > 0 ? e.concat([me(r)]) : [me(r)].concat(e)
   }, [])
 }
 function Te(e, t, n) {
@@ -1347,10 +1349,10 @@ function Ye(e) {
       return ye(l, t)
     }),
     d = p[0],
-    f = p[1],
-    m = React.useCallback(
+    m = p[1],
+    f = React.useCallback(
       function(e) {
-        return ge(e, t, n)
+        return de(e, t, n)
       },
       [t, n],
     ),
@@ -1360,7 +1362,7 @@ function Ye(e) {
       },
       [t, n],
     ),
-    y = React.useCallback(
+    g = React.useCallback(
       function(e) {
         return De(e, a, o)
       },
@@ -1369,9 +1371,9 @@ function Ye(e) {
   return {
     firstDayOfWeek: u,
     activeMonths: d,
-    isDateSelected: m,
+    isDateSelected: f,
     isStartOrEndDate: _,
-    isDateBlocked: y,
+    isDateBlocked: g,
     numberOfMonths: l,
     onResetDates: function() {
       i({startDate: null, endDate: null, focusedInput: pe})
@@ -1384,10 +1386,10 @@ function Ye(e) {
         : r === Se && t && !ae(e, t) && i({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      f(Me(d, l, -1))
+      m(Me(d, l, -1))
     },
     goToNextMonths: function() {
-      f(Me(d, l, 1))
+      m(Me(d, l, 1))
     },
   }
 }
@@ -1739,7 +1741,7 @@ function useThemeProps(e) {
             var a
             return __assign({}, n, (((a = {})[r] = t.reactDatepicker[r] || e[r]), a))
           }, {})
-        : {}
+        : e
     },
     [t, e],
   )
@@ -2217,8 +2219,8 @@ function Datepicker(e) {
     u = void 0 === s ? 'MM/DD/YYYY' : s,
     p = e.phrases,
     d = void 0 === p ? datepickerPhrases : p,
-    f = e.styles,
-    m = void 0 === f ? {} : f,
+    m = e.styles,
+    f = void 0 === m ? {} : m,
     _ = Ye({
       startDate: t,
       endDate: n,
@@ -2229,8 +2231,8 @@ function Datepicker(e) {
       numberOfMonths: c,
       firstDayOfWeek: l,
     }),
-    y = _.activeMonths,
-    g = _.isDateSelected,
+    g = _.activeMonths,
+    y = _.isDateSelected,
     h = _.isStartOrEndDate,
     b = _.isDateBlocked,
     v = _.firstDayOfWeek,
@@ -2247,7 +2249,7 @@ function Datepicker(e) {
       null,
       React__default.createElement(
         Grid,
-        {gridTemplateColumns: m.selectDateGridTemplateColumns || '126px 75px 126px'},
+        {gridTemplateColumns: f.selectDateGridTemplateColumns || '126px 75px 126px'},
         React__default.createElement(SelectDate, {
           title: d.datepickerStartDateLabel,
           date: Te(t, u, d.datepickerStartDatePlaceholder),
@@ -2285,17 +2287,17 @@ function Datepicker(e) {
       React__default.createElement(
         Grid,
         {gridTemplateColumns: 'repeat(' + I + ', 1fr)', gridGap: '0 32px'},
-        y.map(function(e) {
+        g.map(function(e) {
           return React__default.createElement(Month, {
             key: e.year + '-' + e.month,
             year: e.year,
             month: e.month,
             firstDayOfWeek: v,
             isDateBlocked: b,
-            isDateSelected: g,
+            isDateSelected: y,
             isStartOrEndDate: h,
             onDaySelect: D,
-            daySize: m.daySize,
+            daySize: f.daySize,
           })
         }),
       ),
@@ -2338,11 +2340,11 @@ function DateRangeInput(e) {
     u = e.showStartDateCalendarIcon,
     p = void 0 === u || u,
     d = e.showEndDateCalendarIcon,
-    f = void 0 === d || d,
-    m = e.styles,
-    _ = void 0 === m ? {} : m,
-    y = e.displayFormat,
-    g = void 0 === y ? 'MM/DD/YYYY' : y,
+    m = void 0 === d || d,
+    f = e.styles,
+    _ = void 0 === f ? {} : f,
+    g = e.displayFormat,
+    y = void 0 === g ? 'MM/DD/YYYY' : g,
     h = e.phrases,
     b = void 0 === h ? dateRangeInputPhrases : h,
     v = React.useRef(null)
@@ -2373,7 +2375,7 @@ function DateRangeInput(e) {
           id: 'startDate',
           ariaLabel: b.startDateAriaLabel,
           placeholder: b.startDatePlaceholder,
-          value: Te(t, g, ''),
+          value: Te(t, y, ''),
           onClick: function() {
             return i(pe)
           },
@@ -2397,11 +2399,11 @@ function DateRangeInput(e) {
           id: 'startDate',
           ariaLabel: b.endDateAriaLabel,
           placeholder: b.endDatePlaceholder,
-          value: Te(n, g, ''),
+          value: Te(n, y, ''),
           onClick: function() {
             return i(t ? Se : pe)
           },
-          showCalendarIcon: f,
+          showCalendarIcon: m,
           inputBorder: _.inputBorder,
           inputMinHeight: _.inputMinHeight,
           calendarWrapperTop: _.inputCalendarWrapperTop,
@@ -2420,7 +2422,7 @@ function DateRangeInput(e) {
             firstDayOfWeek: o,
             numberOfMonths: c,
             focusedInput: l,
-            displayFormat: g,
+            displayFormat: y,
             onDateChange: s,
             styles: {
               daySize: _.daySize,

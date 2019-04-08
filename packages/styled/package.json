@@ -39,14 +39,14 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
-    "@types/styled-components": "^4.1.12",
-    "@types/styled-system": "^4.0.0",
+    "@types/styled-components": "^4.1.13",
+    "@types/styled-system": "^4.1.0",
     "csstype": "^2.6.3",
     "styled-components": "^4.2.0"
   },
   "dependencies": {
     "@datepicker-react/hooks": "^1.2.0",
-    "styled-system": "^4.0.8"
+    "styled-system": "^4.1.0"
   },
   "publishConfig": {
     "access": "public"
