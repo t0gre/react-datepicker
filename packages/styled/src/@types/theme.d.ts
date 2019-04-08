@@ -20,4 +20,5 @@ export interface SelectDateTheme extends CommonTheme {
   selectDateDateFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
   selectDateDateFontWeight?: ResponsiveValue<FontWeightProperty>
   selectDateDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  selectDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }

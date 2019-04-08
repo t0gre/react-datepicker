@@ -84,6 +84,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   styles?: DateRangeInputStyles
   showStartDateCalendarIcon?: boolean
   showEndDateCalendarIcon?: boolean
+  onClose?(): void
 }
 
 function DateRangeInput({
@@ -96,6 +97,7 @@ function DateRangeInput({
   numberOfMonths,
   focusedInput,
   onDateChange,
+  onClose = () => {},
   showStartDateCalendarIcon = true,
   showEndDateCalendarIcon = true,
   styles = {},
@@ -123,6 +125,11 @@ function DateRangeInput({
     ) {
       onFocusChange(null)
     }
+  }
+
+  function handleDatepickerClose() {
+    onClose()
+    onFocusChange(null)
   }
 
   return (
@@ -173,6 +180,7 @@ function DateRangeInput({
       >
         {focusedInput !== null && (
           <Datepicker
+            onClose={handleDatepickerClose}
             startDate={startDate}
             endDate={endDate}
             minBookingDate={minBookingDate}

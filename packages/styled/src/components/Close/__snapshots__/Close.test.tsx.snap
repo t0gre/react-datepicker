@@ -23,6 +23,9 @@ exports[`should match snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+  background: transparent;
+  padding: 0;
+  border: 0;
 }
 
 .c0 svg {
@@ -39,7 +42,7 @@ exports[`should match snapshot 1`] = `
 }
 
 <div>
-  <div
+  <button
     class="c0"
   >
     <svg
@@ -61,6 +64,6 @@ exports[`should match snapshot 1`] = `
     >
       Close
     </div>
-  </div>
+  </button>
 </div>
 `;

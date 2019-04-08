@@ -17,6 +17,8 @@ import {
   TopProps,
   width,
   WidthProps,
+  zIndex,
+  ZIndexProps,
 } from 'styled-system'
 import styled from 'styled-components'
 
@@ -29,6 +31,7 @@ interface BoxProps
     BottomProps,
     LeftProps,
     RightProps,
+    ZIndexProps,
     WidthProps {}
 
 const Box = styled('div')<BoxProps>`
@@ -43,6 +46,7 @@ const Box = styled('div')<BoxProps>`
   ${left}
   ${right}
   ${bottom}
+  ${zIndex}
 `
 
 export default Box

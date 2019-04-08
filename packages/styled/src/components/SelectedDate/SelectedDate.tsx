@@ -5,6 +5,7 @@ import useThemeProps from '../../hooks/useThemeProps'
 import {SelectDateTheme} from '../../@types/theme'
 import globalStyles from '../../globalStyles'
 import Text from '../Text'
+import Box from '../Box'
 
 interface StyledDateProps {
   isActive: boolean
@@ -48,10 +49,11 @@ function SelectDate({title, isActive, date}: SelectDateProps) {
     selectDateDateFontSize: '24px',
     selectDateDateFontWeight: 500,
     selectDateDatePadding: '0 0 15px',
+    selectDatePadding: '0',
   })
 
   return (
-    <div>
+    <Box p={theme.selectDatePadding}>
       <Text
         fontFamily={theme.fontFamily}
         fontSize={theme.selectDateLabelFontSize}
@@ -73,7 +75,7 @@ function SelectDate({title, isActive, date}: SelectDateProps) {
       >
         {date}
       </StyledDate>
-    </div>
+    </Box>
   )
 }
 

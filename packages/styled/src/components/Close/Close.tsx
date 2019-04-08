@@ -13,10 +13,13 @@ export const Text = styled('div')`
   transition: color 0.15s;
 `
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled('button')`
   display: flex;
   align-items: center;
   cursor: pointer;
+  background: transparent;
+  padding: 0;
+  border: 0;
 
   svg {
     transition: color 0.15s;
@@ -33,13 +36,17 @@ export const Wrapper = styled('div')`
   }
 `
 
-function CloseModal() {
+interface CloseProps {
+  onClick(): void
+}
+
+function Close({onClick}: CloseProps) {
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       <CloseIcon width="15px" height="16px" color="#ADADAD" />
       <Text>Close</Text>
     </Wrapper>
   )
 }
 
-export default CloseModal
+export default Close

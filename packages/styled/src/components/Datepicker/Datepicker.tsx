@@ -7,6 +7,8 @@ import {
   SpaceProps,
   borderRadius,
   BorderRadiusProps,
+  position,
+  PositionProps,
   ResponsiveValue,
   TLengthStyledSystem,
 } from 'styled-system'
@@ -28,13 +30,15 @@ import Month from '../Month'
 import Box from '../Box'
 import ResetDates from '../ResetDates'
 import NavButton from '../NavButton'
+import Close from '../Close'
 import ArrowIcon from '../../icons/ArrowIcon'
 
-interface StyledDatepicker extends BackgroundProps, SpaceProps, BorderRadiusProps {}
+interface StyledDatepicker extends BackgroundProps, SpaceProps, BorderRadiusProps, PositionProps {}
 const StyledDatepicker = styled('div')<StyledDatepicker>`
   ${background}
   ${space}
   ${borderRadius}
+  ${position}
 `
 
 const DateWrapper = styled('div')`
@@ -60,6 +64,7 @@ export interface DatepickerStyles {
 export interface DatepickerProps extends UseDatepickerProps {
   phrases?: DatepickerPhrases
   displayFormat: string | FormatFunction
+  onClose?(): void
 
   styles?: DatepickerStyles
 }
@@ -71,6 +76,7 @@ function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  onClose = () => {},
   numberOfMonths: numberOfMonthsProp,
   firstDayOfWeek: firstDayOfWeekProp,
   displayFormat = 'MM/DD/YYYY',
@@ -100,7 +106,10 @@ function Datepicker({
   })
 
   return (
-    <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px">
+    <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px" position="relative">
+      <Box position="absolute" right="32px" zIndex={1}>
+        <Close onClick={onClose} />
+      </Box>
       <DateWrapper>
         <Grid gridTemplateColumns={styles.selectDateGridTemplateColumns || '126px 75px 126px'}>
           <SelectedDate
