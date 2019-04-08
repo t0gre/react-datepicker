@@ -151,7 +151,7 @@ function Datepicker({
         </Grid>
       </Box>
       <Box mt="32px">
-        <ResetDates onResetDates={onResetDates} />
+        <ResetDates onResetDates={onResetDates} text={phrases.resetDates} />
       </Box>
     </StyledDatepicker>
   )

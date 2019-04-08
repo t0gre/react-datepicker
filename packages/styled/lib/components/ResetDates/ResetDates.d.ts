@@ -1,5 +1,6 @@
 interface onResetDatesProps {
-    onResetDates(): void;
+  onResetDates(): void
+  text: string
 }
-declare function ResetDates({ onResetDates }: onResetDatesProps): JSX.Element;
-export default ResetDates;
+declare function ResetDates({onResetDates, text}: onResetDatesProps): JSX.Element
+export default ResetDates

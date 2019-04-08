@@ -2,6 +2,10 @@ import React, {useRef} from 'react'
 import styled from 'styled-components'
 import RedoIcon from '../../icons/RedoIcon'
 import Text from '../Text'
+// eslint-disable-next-line import/no-unresolved
+import {ResetDatesTheme} from '../../@types/theme'
+import useThemeProps from '../../hooks/useThemeProps'
+import globalStyles from '../../globalStyles'
 
 const StyledReactDates = styled('button')`
   display: flex;
@@ -18,10 +22,21 @@ const StyledReactDates = styled('button')`
 
 interface onResetDatesProps {
   onResetDates(): void
+  text: string
 }
 
-function ResetDates({onResetDates}: onResetDatesProps) {
+function ResetDates({onResetDates, text}: onResetDatesProps) {
   const ref = useRef<HTMLButtonElement>(null)
+  const theme: ResetDatesTheme = useThemeProps({
+    fontFamily: globalStyles.fontFamily,
+    resetDatesIconColor: globalStyles.colors.mud,
+    resetDatesIconHeight: '14px',
+    resetDatesIconWidth: '14px',
+    resetDatesTextColor: globalStyles.colors.darcula,
+    resetDatesTextMargin: '1px 0 0 8px',
+    resetDatesTextLineHeight: 1.18,
+    resetDatesTextFontSize: '11px',
+  })
 
   function handleMouseUp() {
     if (ref && ref.current) {
@@ -31,16 +46,23 @@ function ResetDates({onResetDates}: onResetDatesProps) {
 
   return (
     <StyledReactDates onClick={onResetDates} onMouseUp={handleMouseUp} ref={ref}>
-      <RedoIcon height="14px" width="14px" color="58595B" />
+      <RedoIcon
+        // @ts-ignore
+        height={theme.resetDatesIconHeight}
+        // @ts-ignore
+        width={theme.resetDatesIconWidth}
+        // @ts-ignore
+        color={theme.resetDatesIconColor}
+      />
       <Text
-        ml="8px"
-        mt="1px"
-        lineHeight={1.18}
-        fontFamily="Montserrat"
-        fontSize="11px"
-        color="#343132"
+        m={theme.resetDatesTextMargin}
+        lineHeight={theme.resetDatesTextLineHeight}
+        fontFamily={theme.fontFamily}
+        fontSize={theme.resetDatesTextFontSize}
+        // @ts-ignore
+        color={theme.resetDatesTextColor}
       >
-        Reset dates
+        {text}
       </Text>
     </StyledReactDates>
   )

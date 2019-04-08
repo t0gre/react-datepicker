@@ -12,4 +12,5 @@ test('should execute callback', () => {
   const {container} = render(<CloseModal onClick={onClick} />)
   // @ts-ignore
   fireEvent.click(container.firstChild)
+  expect(onClick).toHaveBeenCalled()
 })

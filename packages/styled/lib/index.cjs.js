@@ -44,8 +44,8 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
     a = n ? Symbol.for('react.portal') : 60106,
     o = n ? Symbol.for('react.fragment') : 60107,
     i = n ? Symbol.for('react.strict_mode') : 60108,
-    c = n ? Symbol.for('react.profiler') : 60114,
-    l = n ? Symbol.for('react.provider') : 60109,
+    l = n ? Symbol.for('react.profiler') : 60114,
+    c = n ? Symbol.for('react.provider') : 60109,
     s = n ? Symbol.for('react.context') : 60110,
     u = n ? Symbol.for('react.async_mode') : 60111,
     p = n ? Symbol.for('react.concurrent_mode') : 60111,
@@ -62,7 +62,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
             case u:
             case p:
             case o:
-            case c:
+            case l:
             case i:
             case f:
               return e
@@ -70,7 +70,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
               switch ((e = e && e.$$typeof)) {
                 case s:
                 case d:
-                case l:
+                case c:
                   return e
                 default:
                   return t
@@ -90,14 +90,14 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
     (t.AsyncMode = u),
     (t.ConcurrentMode = p),
     (t.ContextConsumer = s),
-    (t.ContextProvider = l),
+    (t.ContextProvider = c),
     (t.Element = r),
     (t.ForwardRef = d),
     (t.Fragment = o),
     (t.Lazy = _),
     (t.Memo = m),
     (t.Portal = a),
-    (t.Profiler = c),
+    (t.Profiler = l),
     (t.StrictMode = i),
     (t.Suspense = f),
     (t.isValidElementType = function(e) {
@@ -106,14 +106,14 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
         'function' == typeof e ||
         e === o ||
         e === p ||
-        e === c ||
+        e === l ||
         e === i ||
         e === f ||
         ('object' == typeof e &&
           null !== e &&
           (e.$$typeof === _ ||
             e.$$typeof === m ||
-            e.$$typeof === l ||
+            e.$$typeof === c ||
             e.$$typeof === s ||
             e.$$typeof === d))
       )
@@ -126,7 +126,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
       return g(e) === s
     }),
     (t.isContextProvider = function(e) {
-      return g(e) === l
+      return g(e) === c
     }),
     (t.isElement = function(e) {
       return 'object' == typeof e && null !== e && e.$$typeof === r
@@ -147,7 +147,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
       return g(e) === a
     }),
     (t.isProfiler = function(e) {
-      return g(e) === c
+      return g(e) === l
     }),
     (t.isStrictMode = function(e) {
       return g(e) === i
@@ -258,7 +258,7 @@ var objectAssign = shouldUseNative()
           for (var i in (n = Object(arguments[o]))) hasOwnProperty.call(n, i) && (a[i] = n[i])
           if (getOwnPropertySymbols) {
             r = getOwnPropertySymbols(n)
-            for (var c = 0; c < r.length; c++) propIsEnumerable.call(n, r[c]) && (a[r[c]] = n[r[c]])
+            for (var l = 0; l < r.length; l++) propIsEnumerable.call(n, r[l]) && (a[r[l]] = n[r[l]])
           }
         }
         return a
@@ -360,9 +360,9 @@ var factoryWithThrowingShims = function() {
       a = e.alias,
       o = e.key,
       i = e.transformValue,
-      c = void 0 === i ? getValue : i,
-      l = e.scale,
-      s = void 0 === l ? {} : l,
+      l = void 0 === i ? getValue : i,
+      c = e.scale,
+      s = void 0 === c ? {} : c,
       u = r || n,
       p = function(e) {
         var t = get(e, n, a, null)
@@ -370,25 +370,25 @@ var factoryWithThrowingShims = function() {
         var r = get(e.theme, o, s),
           i = function(e) {
             var t
-            return is(e) ? (((t = {})[u] = c(e, r)), t) : null
+            return is(e) ? (((t = {})[u] = l(e, r)), t) : null
           }
         if (!isObject(t)) return i(t)
-        var l = get(e.theme, 'breakpoints', defaultBreakpoints),
+        var c = get(e.theme, 'breakpoints', defaultBreakpoints),
           p = []
         if (Array.isArray(t)) {
           p.push(i(t[0]))
-          for (var d = 1; d < t.slice(0, l.length + 1).length; d++) {
+          for (var d = 1; d < t.slice(0, c.length + 1).length; d++) {
             var f = i(t[d])
             if (f) {
               var m,
-                _ = createMediaQuery(l[d - 1])
+                _ = createMediaQuery(c[d - 1])
               p.push((((m = {})[_] = f), m))
             }
           }
         } else {
           for (var g in t) {
             var y,
-              h = l[g],
+              h = c[g],
               b = createMediaQuery(h),
               v = i(t[g])
             if (h) p.push((((y = {})[b] = v), y))
@@ -725,8 +725,8 @@ var b = function(e, t) {
         }
         return {year: null}
       })(I.date, r),
-      R = O.year,
-      C = (function(e, t) {
+      C = O.year,
+      R = (function(e, t) {
         if (null === t) return null
         var n, r, a
         if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
@@ -747,10 +747,10 @@ var b = function(e, t) {
           : (n = y.exec(e))
           ? x(t, parseInt(n[1], 10) - 1, parseInt(n[2], 10) - 1)
           : null
-      })(O.restDateString, R)
-    if (C) {
+      })(O.restDateString, C)
+    if (R) {
       var j,
-        E = C.getTime(),
+        E = R.getTime(),
         P = 0
       if (
         (I.time &&
@@ -913,8 +913,8 @@ var b = function(e, t) {
       a = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       o = ['AM', 'PM'],
       i = ['am', 'pm'],
-      c = ['a.m.', 'p.m.'],
-      l = {
+      l = ['a.m.', 'p.m.'],
+      c = {
         MMM: function(t) {
           return e[t.getMonth()]
         },
@@ -937,12 +937,12 @@ var b = function(e, t) {
           return e.getHours() / 12 >= 1 ? i[1] : i[0]
         },
         aa: function(e) {
-          return e.getHours() / 12 >= 1 ? c[1] : c[0]
+          return e.getHours() / 12 >= 1 ? l[1] : l[0]
         },
       }
     return (
       ['M', 'D', 'DDD', 'd', 'Q', 'W'].forEach(function(e) {
-        l[e + 'o'] = function(t, n) {
+        c[e + 'o'] = function(t, n) {
           return (function(e) {
             var t = e % 100
             if (t > 20 || t < 10)
@@ -958,7 +958,7 @@ var b = function(e, t) {
           })(n[e](t))
         }
       }),
-      {formatters: l, formattingTokensRegExp: U(l)}
+      {formatters: c, formattingTokensRegExp: U(c)}
     )
   },
   R = {
@@ -1111,25 +1111,25 @@ var L = function(e, t, n) {
       a.format.formatters &&
       ((o = a.format.formatters),
       a.format.formattingTokensRegExp && (i = a.format.formattingTokensRegExp))
-    var c = b(e)
-    return X(c)
+    var l = b(e)
+    return X(l)
       ? (function(e, t, n) {
           var r,
             a,
             o,
             i = e.match(n),
-            c = i.length
-          for (r = 0; r < c; r++)
+            l = i.length
+          for (r = 0; r < l; r++)
             (a = t[i[r]] || B[i[r]]),
               (i[r] =
                 a ||
                 ((o = i[r]).match(/\[[\s\S]/) ? o.replace(/^\[|]$/g, '') : o.replace(/\\/g, '')))
           return function(e) {
-            for (var t = '', n = 0; n < c; n++)
+            for (var t = '', n = 0; n < l; n++)
               i[n] instanceof Function ? (t += i[n](e, B)) : (t += i[n])
             return t
           }
-        })(r, o, i)(c)
+        })(r, o, i)(l)
       : 'Invalid Date'
   },
   j = function(e, t) {
@@ -1143,8 +1143,8 @@ var L = function(e, t, n) {
       o = b(t).getTime()
     if (r.getTime() > o) throw new Error('The first date cannot be after the second date')
     var i = [],
-      c = r
-    for (c.setHours(0, 0, 0, 0); c.getTime() <= o; ) i.push(b(c)), c.setDate(c.getDate() + a)
+      l = r
+    for (l.setHours(0, 0, 0, 0); l.getTime() <= o; ) i.push(b(l)), l.setDate(l.getDate() + a)
     return i
   },
   K = function(e) {
@@ -1194,12 +1194,12 @@ function re(e) {
             return L(e, 'DD')
           }
         : o,
-    c = new Date(t, n),
-    l = ee(c),
-    s = _(l),
-    u = K(c),
+    l = new Date(t, n),
+    c = ee(l),
+    s = _(c),
+    u = K(l),
     p = Array.from(Array(s >= a ? s - a : a).keys()).fill(0),
-    d = q(l, u).map(function(e) {
+    d = q(c, u).map(function(e) {
       return {date: e, day: i(e)}
     })
   return p.concat(d)
@@ -1216,13 +1216,13 @@ function ne(e) {
             return L(e, 'DD')
           }
         : o,
-    c = e.weekDayFormat,
-    l =
-      void 0 === c
+    l = e.weekDayFormat,
+    c =
+      void 0 === l
         ? function(e) {
             return L(e, 'dd')
           }
-        : c,
+        : l,
     s = e.monthLabelFormat,
     u =
       void 0 === s
@@ -1239,7 +1239,7 @@ function ne(e) {
     ),
     weekDays: React.useMemo(
       function() {
-        return te({weekStartsOn: a, weekDayFormat: l})
+        return te({weekStartsOn: a, weekDayFormat: c})
       },
       [a],
     ),
@@ -1341,12 +1341,12 @@ function Ye(e) {
     a = e.minBookingDate,
     o = e.maxBookingDate,
     i = e.onDateChange,
-    c = e.numberOfMonths,
-    l = void 0 === c ? 2 : c,
+    l = e.numberOfMonths,
+    c = void 0 === l ? 2 : l,
     s = e.firstDayOfWeek,
     u = void 0 === s ? 1 : s,
     p = React.useState(function() {
-      return ye(l, t)
+      return ye(c, t)
     }),
     d = p[0],
     f = p[1],
@@ -1374,7 +1374,7 @@ function Ye(e) {
     isDateSelected: m,
     isStartOrEndDate: _,
     isDateBlocked: g,
-    numberOfMonths: l,
+    numberOfMonths: c,
     onResetDates: function() {
       i({startDate: null, endDate: null, focusedInput: pe})
     },
@@ -1386,10 +1386,10 @@ function Ye(e) {
         : r === Se && t && !ae(e, t) && i({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      f(Me(d, l, -1))
+      f(Me(d, c, -1))
     },
     goToNextMonths: function() {
-      f(Me(d, l, 1))
+      f(Me(d, c, 1))
     },
   }
 }
@@ -1649,8 +1649,8 @@ function Input(e) {
     a = e.onClick,
     o = e.value,
     i = e.showCalendarIcon,
-    c = e.inputBorder,
-    l = e.inputMinHeight,
+    l = e.inputBorder,
+    c = e.inputMinHeight,
     s = e.inputPadding,
     u = e.calendarWrapperTop
   return React__default.createElement(
@@ -1659,7 +1659,7 @@ function Input(e) {
       htmlFor: n,
       display: 'block',
       position: 'relative',
-      border: c || '1px solid #d0d0d0',
+      border: l || '1px solid #d0d0d0',
       background: '#ffffff',
       borderRadius: '2px',
       mb: '0',
@@ -1678,7 +1678,7 @@ function Input(e) {
       border: '0',
       p: s || '0 44px',
       width: '100%',
-      minHeight: l || '46px',
+      minHeight: c || '46px',
       background: '#ffffff',
       fontFamily: 'Montserrat',
       color: '#001217',
@@ -1714,16 +1714,16 @@ function ArrowIcon(e) {
     a = e.direction,
     o = void 0 === a ? 'right' : a,
     i = e.className,
-    c = void 0 === i ? '' : i,
-    l = calculateAngle(o)
+    l = void 0 === i ? '' : i,
+    c = calculateAngle(o)
   return React__default.createElement(
     'svg',
     {
       width: n,
       height: t,
       color: r,
-      className: c,
-      transform: 'rotate(' + l + ' 0 0)',
+      className: l,
+      transform: 'rotate(' + c + ' 0 0)',
       viewBox: '0 0 9 12',
       xmlns: 'http://www.w3.org/2000/svg',
     },
@@ -1754,7 +1754,7 @@ var templateObject_1$4,
   templateObject_2$1,
   globalStyles = {
     fontFamily: 'Montserrat, sans-serif',
-    colors: {silverCloud: '#929598', charcoal: '#001217'},
+    colors: {silverCloud: '#929598', charcoal: '#001217', darcula: '#343132', mud: '#58595B'},
   },
   Text = styled__default('div')(
     templateObject_1$4 ||
@@ -1936,8 +1936,8 @@ function Day(e) {
     a = e.disabled,
     o = e.onDaySelect,
     i = e.date,
-    c = e.daySize,
-    l = getBorderColor(n, r),
+    l = e.daySize,
+    c = getBorderColor(n, r),
     s = getBackgroundColor(n, r),
     u = getColor(n, r)
   return React__default.createElement(
@@ -1950,20 +1950,20 @@ function Day(e) {
       disabled: a,
       isActive: n,
       isStartOrEnd: r,
-      height: c || '36px',
-      width: c || '36px',
+      height: l || '36px',
+      width: l || '36px',
       background: s,
       boxShadow:
         '1px 0 0 0 ' +
-        l +
+        c +
         ',\n        0 1px 0 0 ' +
-        l +
+        c +
         ',\n        1px 1px 0 0 ' +
-        l +
+        c +
         ',\n        1px 0 0 0 ' +
-        l +
+        c +
         ' inset,\n        0 1px 0 0 ' +
-        l +
+        c +
         ' inset',
     },
     React__default.createElement(
@@ -1989,8 +1989,8 @@ var templateObject_1$6,
       a = e.isDateBlocked,
       o = e.isDateSelected,
       i = e.isStartOrEndDate,
-      c = e.onDaySelect,
-      l = e.daySize,
+      l = e.onDaySelect,
+      c = e.daySize,
       s = ne({year: t, month: n, weekStartsOn: r}),
       u = s.days,
       p = s.weekDays,
@@ -2026,8 +2026,8 @@ var templateObject_1$6,
                 day: e.day,
                 disabled: a(e.date),
                 isStartOrEnd: i(e.date),
-                onDaySelect: c,
-                daySize: l,
+                onDaySelect: l,
+                daySize: c,
               })
             : React__default.createElement('div', {key: t})
         }),
@@ -2072,28 +2072,42 @@ var templateObject_1$7,
   )
 function ResetDates(e) {
   var t = e.onResetDates,
-    n = React.useRef(null)
+    n = e.text,
+    r = React.useRef(null),
+    a = useThemeProps({
+      fontFamily: globalStyles.fontFamily,
+      resetDatesIconColor: globalStyles.colors.mud,
+      resetDatesIconHeight: '14px',
+      resetDatesIconWidth: '14px',
+      resetDatesTextColor: globalStyles.colors.darcula,
+      resetDatesTextMargin: '1px 0 0 8px',
+      resetDatesTextLineHeight: 1.18,
+      resetDatesTextFontSize: '11px',
+    })
   return React__default.createElement(
     StyledReactDates,
     {
       onClick: t,
       onMouseUp: function() {
-        n && n.current && n.current.blur()
+        r && r.current && r.current.blur()
       },
-      ref: n,
+      ref: r,
     },
-    React__default.createElement(CaretIcon, {height: '14px', width: '14px', color: '58595B'}),
+    React__default.createElement(CaretIcon, {
+      height: a.resetDatesIconHeight,
+      width: a.resetDatesIconWidth,
+      color: a.resetDatesIconColor,
+    }),
     React__default.createElement(
       Text,
       {
-        ml: '8px',
-        mt: '1px',
-        lineHeight: 1.18,
-        fontFamily: 'Montserrat',
-        fontSize: '11px',
-        color: '#343132',
+        m: a.resetDatesTextMargin,
+        lineHeight: a.resetDatesTextLineHeight,
+        fontFamily: a.fontFamily,
+        fontSize: a.resetDatesTextFontSize,
+        color: a.resetDatesTextColor,
       },
-      'Reset dates',
+      n,
     ),
   )
 }
@@ -2117,16 +2131,16 @@ function CaretIcon$1(e) {
     a = e.direction,
     o = void 0 === a ? 'right' : a,
     i = e.className,
-    c = void 0 === i ? '' : i,
-    l = calculateAngle$1(o)
+    l = void 0 === i ? '' : i,
+    c = calculateAngle$1(o)
   return React__default.createElement(
     'svg',
     {
       width: n,
       height: t,
       color: r,
-      className: c,
-      transform: 'rotate(' + l + ' 0 0)',
+      className: l,
+      transform: 'rotate(' + c + ' 0 0)',
       viewBox: '0 0 9 6',
       xmlns: 'http://www.w3.org/2000/svg',
     },
@@ -2278,8 +2292,8 @@ function Datepicker(e) {
     a = e.maxBookingDate,
     o = e.focusedInput,
     i = e.onDateChange,
-    c = e.onClose,
-    l = void 0 === c ? function() {} : c,
+    l = e.onClose,
+    c = void 0 === l ? function() {} : l,
     s = e.numberOfMonths,
     u = e.firstDayOfWeek,
     p = e.displayFormat,
@@ -2314,7 +2328,7 @@ function Datepicker(e) {
     React__default.createElement(
       Box,
       {position: 'absolute', right: '32px', zIndex: 1},
-      React__default.createElement(Close, {onClick: l}),
+      React__default.createElement(Close, {onClick: c}),
     ),
     React__default.createElement(
       DateWrapper,
@@ -2377,7 +2391,7 @@ function Datepicker(e) {
     React__default.createElement(
       Box,
       {mt: '32px'},
-      React__default.createElement(ResetDates, {onResetDates: k}),
+      React__default.createElement(ResetDates, {onResetDates: k, text: m.resetDates}),
     ),
   )
 }
@@ -2406,8 +2420,8 @@ function DateRangeInput(e) {
     a = e.maxBookingDate,
     o = e.firstDayOfWeek,
     i = e.onFocusChange,
-    c = e.numberOfMonths,
-    l = e.focusedInput,
+    l = e.numberOfMonths,
+    c = e.focusedInput,
     s = e.onDateChange,
     u = e.onClose,
     p = void 0 === u ? function() {} : u,
@@ -2423,7 +2437,7 @@ function DateRangeInput(e) {
     x = void 0 === v ? dateRangeInputPhrases : v,
     D = React.useRef(null)
   function S(e) {
-    null !== l && D && D.current && !D.current.contains(e.target) && i(null)
+    null !== c && D && D.current && !D.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
@@ -2487,7 +2501,7 @@ function DateRangeInput(e) {
       React__default.createElement(
         Box,
         {position: 'absolute', bottom: y.datepickerBottom || '65px', left: y.datepickerLeft || '0'},
-        null !== l &&
+        null !== c &&
           React__default.createElement(Datepicker, {
             onClose: function() {
               p(), i(null)
@@ -2497,8 +2511,8 @@ function DateRangeInput(e) {
             minBookingDate: r,
             maxBookingDate: a,
             firstDayOfWeek: o,
-            numberOfMonths: c,
-            focusedInput: l,
+            numberOfMonths: l,
+            focusedInput: c,
             displayFormat: b,
             onDateChange: s,
             styles: {
