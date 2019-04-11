@@ -1865,10 +1865,21 @@ var MonthLabel = function(e) {
     )
   },
   MonthLabel$1 = function(e) {
-    var t = e.label
+    var t = e.label,
+      n = useThemeProps({
+        fontFamily: globalStyles.fontFamily,
+        dayLabelColor: globalStyles.colors.silverCloud,
+        dayLabelFontWeight: 500,
+        dayLabelFontSize: '11px',
+      })
     return React__default.createElement(
       Text,
-      {fontFamily: 'Montserrat', fontSize: '11px', fontWeight: 500, color: '#929598'},
+      {
+        fontFamily: n.fontFamily,
+        fontSize: n.dayLabelFontSize,
+        fontWeight: n.dayLabelFontWeight,
+        color: n.dayLabelColor,
+      },
       t,
     )
   },

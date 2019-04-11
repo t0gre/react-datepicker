@@ -55,3 +55,9 @@ export interface MonthLabelTheme extends CommonTheme {
   monthLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
   monthLabelColor?: ResponsiveValue<ColorProperty>
 }
+
+export interface DayLabelTheme extends CommonTheme {
+  dayLabelFontWeight?: ResponsiveValue<FontWeightProperty>
+  dayLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
+  dayLabelColor?: ResponsiveValue<ColorProperty>
+}

@@ -327,7 +327,7 @@ var k = m(function(e) {
   P = function(e, t) {
     return E(t, e)
   },
-  I = function(e) {
+  L = function(e) {
     var t,
       n = e.prop,
       r = e.cssProperty,
@@ -379,7 +379,7 @@ var k = m(function(e) {
       p
     )
   },
-  B = function() {
+  I = function() {
     for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n]
     var r = function(e) {
       return t
@@ -396,7 +396,7 @@ var k = m(function(e) {
       r
     )
   },
-  H = function(e) {
+  B = function(e) {
     return function(t) {
       var n = function(n) {
         return t(e(n))
@@ -405,7 +405,7 @@ var k = m(function(e) {
       return n
     }
   },
-  L = function(e) {
+  H = function(e) {
     var t,
       n = e.key,
       r = e.prop,
@@ -415,25 +415,25 @@ var k = m(function(e) {
       }
     return (a.propTypes = (((t = {})[o] = k.oneOfType([k.number, k.string])), t)), a
   },
-  Y = [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  W = function(e, t) {
+  W = [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  Y = function(e, t) {
     if (!F(e)) return O(E(t, e, e))
     var n = e < 0,
       r = Math.abs(e),
       o = E(t, r)
     return F(o) ? O(o * (n ? -1 : 1)) : n ? '-' + o : o
   },
-  A = I({prop: 'margin', alias: 'm', key: 'space', transformValue: W, scale: Y}),
-  j = I({prop: 'marginTop', alias: 'mt', key: 'space', transformValue: W, scale: Y}),
-  V = I({prop: 'marginBottom', alias: 'mb', key: 'space', transformValue: W, scale: Y}),
-  R = I({prop: 'marginLeft', alias: 'ml', key: 'space', transformValue: W, scale: Y}),
-  $ = I({prop: 'marginRight', alias: 'mr', key: 'space', transformValue: W, scale: Y}),
-  N = I({prop: 'padding', alias: 'p', key: 'space', transformValue: W, scale: Y}),
-  G = I({prop: 'paddingTop', alias: 'pt', key: 'space', transformValue: W, scale: Y}),
-  _ = I({prop: 'paddingBottom', alias: 'pb', key: 'space', transformValue: W, scale: Y}),
-  U = I({prop: 'paddingLeft', alias: 'pl', key: 'space', transformValue: W, scale: Y}),
-  X = I({prop: 'paddingRight', alias: 'pr', key: 'space', transformValue: W, scale: Y}),
-  Z = H(function(e) {
+  A = L({prop: 'margin', alias: 'm', key: 'space', transformValue: Y, scale: W}),
+  j = L({prop: 'marginTop', alias: 'mt', key: 'space', transformValue: Y, scale: W}),
+  V = L({prop: 'marginBottom', alias: 'mb', key: 'space', transformValue: Y, scale: W}),
+  R = L({prop: 'marginLeft', alias: 'ml', key: 'space', transformValue: Y, scale: W}),
+  $ = L({prop: 'marginRight', alias: 'mr', key: 'space', transformValue: Y, scale: W}),
+  N = L({prop: 'padding', alias: 'p', key: 'space', transformValue: Y, scale: W}),
+  G = L({prop: 'paddingTop', alias: 'pt', key: 'space', transformValue: Y, scale: W}),
+  _ = L({prop: 'paddingBottom', alias: 'pb', key: 'space', transformValue: Y, scale: W}),
+  U = L({prop: 'paddingLeft', alias: 'pl', key: 'space', transformValue: Y, scale: W}),
+  X = L({prop: 'paddingRight', alias: 'pr', key: 'space', transformValue: Y, scale: W}),
+  Z = B(function(e) {
     return f({}, e, {
       mt: T(e.my) ? e.my : e.mt,
       mb: T(e.my) ? e.my : e.mb,
@@ -444,83 +444,83 @@ var k = m(function(e) {
       pl: T(e.px) ? e.px : e.pl,
       pr: T(e.px) ? e.px : e.pr,
     })
-  })(B(A, j, V, R, $, N, G, _, U, X)),
-  J = B(
-    I({prop: 'color', key: 'colors'}),
-    I({prop: 'backgroundColor', alias: 'bg', key: 'colors'}),
+  })(I(A, j, V, R, $, N, G, _, U, X)),
+  J = I(
+    L({prop: 'color', key: 'colors'}),
+    L({prop: 'backgroundColor', alias: 'bg', key: 'colors'}),
   ),
   q = function(e, t) {
     return !F(e) || e > 1 ? O(e) : 100 * e + '%'
   },
-  Q = I({prop: 'width', key: 'widths', transformValue: q}),
+  Q = L({prop: 'width', key: 'widths', transformValue: q}),
   K = function(e, t) {
     return O(E(t, e))
   },
-  ee = I({
+  ee = L({
     prop: 'fontSize',
     key: 'fontSizes',
     transformValue: K,
     scale: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   }),
-  te = I({prop: 'fontFamily', key: 'fonts'}),
-  ne = I({prop: 'fontWeight', key: 'fontWeights'}),
-  re = I({prop: 'lineHeight', key: 'lineHeights'}),
-  oe = (I({prop: 'textAlign'}),
-  I({prop: 'fontStyle'}),
-  I({prop: 'letterSpacing', key: 'letterSpacings', transformValue: K}),
-  I({prop: 'display'})),
-  ae = (I({prop: 'maxWidth', key: 'maxWidths', transformValue: K}),
-  I({prop: 'minWidth', key: 'minWidths', transformValue: K}),
-  I({prop: 'height', key: 'heights', transformValue: K})),
-  ie = (I({prop: 'maxHeight', key: 'maxHeights', transformValue: K}),
-  I({prop: 'minHeight', key: 'minHeights', transformValue: K})),
-  ue = (H(function(e) {
+  te = L({prop: 'fontFamily', key: 'fonts'}),
+  ne = L({prop: 'fontWeight', key: 'fontWeights'}),
+  re = L({prop: 'lineHeight', key: 'lineHeights'}),
+  oe = (L({prop: 'textAlign'}),
+  L({prop: 'fontStyle'}),
+  L({prop: 'letterSpacing', key: 'letterSpacings', transformValue: K}),
+  L({prop: 'display'})),
+  ae = (L({prop: 'maxWidth', key: 'maxWidths', transformValue: K}),
+  L({prop: 'minWidth', key: 'minWidths', transformValue: K}),
+  L({prop: 'height', key: 'heights', transformValue: K})),
+  ie = (L({prop: 'maxHeight', key: 'maxHeights', transformValue: K}),
+  L({prop: 'minHeight', key: 'minHeights', transformValue: K})),
+  ue = (B(function(e) {
     return f({}, e, {width: e.size, height: e.size})
-  })(B(Q, ae)),
-  I({prop: 'verticalAlign'}),
-  I({prop: 'alignItems'})),
-  se = (I({prop: 'alignContent'}), I({prop: 'justifyItems'}), I({prop: 'justifyContent'})),
-  le = I({prop: 'flexWrap'}),
-  ce = (I({prop: 'flexBasis', transformValue: q}), I({prop: 'flexDirection'})),
-  pe = I({prop: 'flex'}),
-  fe = (I({prop: 'justifySelf'}),
-  I({prop: 'alignSelf'}),
-  I({prop: 'order'}),
-  I({prop: 'gridGap', key: 'space', transformValue: K, scale: Y})),
-  de = I({prop: 'gridColumnGap', key: 'space', transformValue: K, scale: Y}),
-  me = I({prop: 'gridRowGap', key: 'space', transformValue: K, scale: Y}),
-  he = (I({prop: 'gridColumn'}), I({prop: 'gridRow'}), I({prop: 'gridAutoFlow'})),
-  ge = I({prop: 'gridAutoColumns'}),
-  ye = I({prop: 'gridAutoRows'}),
-  ve = I({prop: 'gridTemplateColumns'}),
-  be = I({prop: 'gridTemplateRows'}),
-  De = I({prop: 'gridTemplateAreas'}),
-  xe = I({prop: 'gridArea'}),
-  we = I({prop: 'border', key: 'borders'}),
-  ke = I({prop: 'borderWidth', key: 'borderWidths', transformValue: K}),
-  Se = I({prop: 'borderStyle', key: 'borderStyles'}),
-  Me = I({prop: 'borderColor', key: 'colors'}),
-  Ce = I({prop: 'borderTop', key: 'borders'}),
-  Ee = I({prop: 'borderRight', key: 'borders'}),
-  Te = I({prop: 'borderBottom', key: 'borders'}),
-  Fe = I({prop: 'borderLeft', key: 'borders'}),
-  Oe = I({prop: 'borderRadius', key: 'radii', transformValue: K}),
-  ze = (B(we, Ce, Ee, Te, Fe, ke, Se, Me, Oe), I({prop: 'boxShadow', key: 'shadows'})),
-  Pe = I({prop: 'opacity'}),
-  Ie = (I({prop: 'overflow'}), I({prop: 'background'})),
-  Be = (I({prop: 'backgroundImage'}),
-  I({prop: 'backgroundSize'}),
-  I({prop: 'backgroundPosition'}),
-  I({prop: 'backgroundRepeat'}),
-  I({prop: 'position'})),
-  He = I({prop: 'zIndex', key: 'zIndices'}),
-  Le = I({prop: 'top', transformValue: K}),
-  Ye = I({prop: 'right', transformValue: K}),
-  We = I({prop: 'bottom', transformValue: K}),
-  Ae = I({prop: 'left', transformValue: K}),
-  je = (L({key: 'buttons'}),
-  L({key: 'textStyles', prop: 'textStyle'}),
-  L({key: 'colorStyles', prop: 'colors'}),
+  })(I(Q, ae)),
+  L({prop: 'verticalAlign'}),
+  L({prop: 'alignItems'})),
+  se = (L({prop: 'alignContent'}), L({prop: 'justifyItems'}), L({prop: 'justifyContent'})),
+  le = L({prop: 'flexWrap'}),
+  ce = (L({prop: 'flexBasis', transformValue: q}), L({prop: 'flexDirection'})),
+  pe = L({prop: 'flex'}),
+  fe = (L({prop: 'justifySelf'}),
+  L({prop: 'alignSelf'}),
+  L({prop: 'order'}),
+  L({prop: 'gridGap', key: 'space', transformValue: K, scale: W})),
+  de = L({prop: 'gridColumnGap', key: 'space', transformValue: K, scale: W}),
+  me = L({prop: 'gridRowGap', key: 'space', transformValue: K, scale: W}),
+  he = (L({prop: 'gridColumn'}), L({prop: 'gridRow'}), L({prop: 'gridAutoFlow'})),
+  ge = L({prop: 'gridAutoColumns'}),
+  ye = L({prop: 'gridAutoRows'}),
+  ve = L({prop: 'gridTemplateColumns'}),
+  be = L({prop: 'gridTemplateRows'}),
+  De = L({prop: 'gridTemplateAreas'}),
+  xe = L({prop: 'gridArea'}),
+  we = L({prop: 'border', key: 'borders'}),
+  ke = L({prop: 'borderWidth', key: 'borderWidths', transformValue: K}),
+  Se = L({prop: 'borderStyle', key: 'borderStyles'}),
+  Me = L({prop: 'borderColor', key: 'colors'}),
+  Ce = L({prop: 'borderTop', key: 'borders'}),
+  Ee = L({prop: 'borderRight', key: 'borders'}),
+  Te = L({prop: 'borderBottom', key: 'borders'}),
+  Fe = L({prop: 'borderLeft', key: 'borders'}),
+  Oe = L({prop: 'borderRadius', key: 'radii', transformValue: K}),
+  ze = (I(we, Ce, Ee, Te, Fe, ke, Se, Me, Oe), L({prop: 'boxShadow', key: 'shadows'})),
+  Pe = L({prop: 'opacity'}),
+  Le = (L({prop: 'overflow'}), L({prop: 'background'})),
+  Ie = (L({prop: 'backgroundImage'}),
+  L({prop: 'backgroundSize'}),
+  L({prop: 'backgroundPosition'}),
+  L({prop: 'backgroundRepeat'}),
+  L({prop: 'position'})),
+  Be = L({prop: 'zIndex', key: 'zIndices'}),
+  He = L({prop: 'top', transformValue: K}),
+  We = L({prop: 'right', transformValue: K}),
+  Ye = L({prop: 'bottom', transformValue: K}),
+  Ae = L({prop: 'left', transformValue: K}),
+  je = (H({key: 'buttons'}),
+  H({key: 'textStyles', prop: 'textStyle'}),
+  H({key: 'colorStyles', prop: 'colors'}),
   function(e) {
     var t = new Date(e.getTime()),
       n = t.getTimezoneOffset()
@@ -1117,28 +1117,28 @@ var zt = function(e, t) {
       r = lt(t)
     return n.getTime() > r.getTime()
   },
-  It = function(e, t, n) {
+  Lt = function(e, t, n) {
     var r = lt(e).getTime(),
       o = lt(t).getTime(),
       a = lt(n).getTime()
     if (o > a) throw new Error('The start of the range cannot be after the end of the range')
     return r >= o && r <= a
   },
-  Bt = function(e, t) {
+  It = function(e, t) {
     var n = ct(e),
       r = ct(t)
     return n.getTime() === r.getTime()
   },
-  Ht = function(e) {
+  Bt = function(e) {
     return lt(e).getFullYear()
   },
-  Lt = function(e) {
+  Ht = function(e) {
     return lt(e).getMonth()
   },
-  Yt = function() {
+  Wt = function() {
     return ct(new Date())
   },
-  Wt = function(e, t) {
+  Yt = function(e, t) {
     var n = lt(e),
       r = Number(t),
       o = n.getMonth() + r,
@@ -1155,16 +1155,16 @@ var zt = function(e, t) {
   }
 function At(e) {
   var t = Ft(e)
-  return {year: Ht(t), month: Lt(t), date: t}
+  return {year: Bt(t), month: Ht(t), date: t}
 }
 function jt(e, t) {
-  var n = At(t || Yt()),
+  var n = At(t || Wt()),
     r = n.date,
     o = [n]
   return (
     e > 1 &&
       (o = Array.from(Array(e - 1).keys()).reduce(function(e) {
-        return (r = Wt(e[e.length - 1].date, 1)), e.concat([At(r)])
+        return (r = Yt(e[e.length - 1].date, 1)), e.concat([At(r)])
       }, o)),
     o
   )
@@ -1172,7 +1172,7 @@ function jt(e, t) {
 function Vt(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = Wt(r, n)), n > 0 ? e.concat([At(r)]) : [At(r)].concat(e)
+    return (r = Yt(r, n)), n > 0 ? e.concat([At(r)]) : [At(r)].concat(e)
   }, [])
 }
 function Rt(e, t, n) {
@@ -1199,7 +1199,7 @@ function Gt(e) {
     g = n(
       function(e) {
         return (function(e, t, n) {
-          return !(!t || !n) && It(e, t, n)
+          return !(!t || !n) && Lt(e, t, n)
         })(e, r, o)
       },
       [r, o],
@@ -1207,7 +1207,7 @@ function Gt(e) {
     y = n(
       function(e) {
         return (function(e, t, n) {
-          return !!((t && Bt(e, t)) || (n && Bt(e, n)))
+          return !!((t && It(e, t)) || (n && It(e, n)))
         })(e, r, o)
       },
       [r, o],
@@ -1382,12 +1382,12 @@ var _t,
     ae,
     Z,
     Q,
-    Be,
-    Le,
-    Ae,
-    Ye,
-    We,
+    Ie,
     He,
+    Ae,
+    We,
+    Ye,
+    Be,
   )
 function en(t) {
   var n = t.height,
@@ -1422,9 +1422,9 @@ var tn,
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
-    Be,
-    we,
     Ie,
+    we,
+    Le,
     oe,
     Oe,
     Z,
@@ -1449,9 +1449,9 @@ var tn,
           '\n  cursor: pointer;\n  \n  svg {\n    display: block;\n  }\n',
         ],
       )),
-    Be,
+    Ie,
     Ae,
-    Le,
+    He,
     ae,
     Q,
   ),
@@ -1485,7 +1485,7 @@ var tn,
           '\n  cursor: pointer;\n  box-sizing: border-box;\n  \n  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */\n    font-weight: 500;\n    color: #929598;\n  }\n  ::-moz-placeholder { /* Firefox 19+ */\n    font-weight: 500;\n    color: #929598;\n  }\n  :-moz-placeholder { /* Firefox 18- */\n    font-weight: 500;\n    color: #929598;\n  }\n',
         ],
       )),
-    Ie,
+    Le,
     Z,
     te,
     ee,
@@ -1714,10 +1714,21 @@ var vn = function(t) {
     )
   },
   bn = function(t) {
-    var n = t.label
+    var n = t.label,
+      r = cn({
+        fontFamily: mn.fontFamily,
+        dayLabelColor: mn.colors.silverCloud,
+        dayLabelFontWeight: 500,
+        dayLabelFontSize: '11px',
+      })
     return e.createElement(
       hn,
-      {fontFamily: 'Montserrat', fontSize: '11px', fontWeight: 500, color: '#929598'},
+      {
+        fontFamily: r.fontFamily,
+        fontSize: r.dayLabelFontSize,
+        fontWeight: r.dayLabelFontWeight,
+        color: r.dayLabelColor,
+      },
       n,
     )
   },
@@ -1746,7 +1757,7 @@ var vn = function(t) {
     Q,
     ae,
     ze,
-    Ie,
+    Le,
     function(e) {
       return (
         e.disabled &&
@@ -1967,7 +1978,7 @@ function On(t) {
 }
 var zn,
   Pn,
-  In = u('svg')(Pn || (Pn = p(['\n  ', '\n'], ['\n  ', '\n'])), function(e) {
+  Ln = u('svg')(Pn || (Pn = p(['\n  ', '\n'], ['\n  ', '\n'])), function(e) {
     var t = e.angle
     return l(
       zn ||
@@ -1978,7 +1989,7 @@ var zn,
       t,
     )
   })
-function Bn(t) {
+function In(t) {
   var n = t.height,
     r = t.width,
     o = t.color,
@@ -2000,7 +2011,7 @@ function Bn(t) {
       }
     })(i)
   return e.createElement(
-    In,
+    Ln,
     {
       width: r,
       height: n,
@@ -2018,10 +2029,10 @@ function Bn(t) {
     }),
   )
 }
-var Hn,
-  Ln = u('button')(
-    Hn ||
-      (Hn = p(
+var Bn,
+  Hn = u('button')(
+    Bn ||
+      (Bn = p(
         [
           '\n  ',
           '\n  ',
@@ -2041,11 +2052,11 @@ var Hn,
       )),
     Q,
     ae,
-    Ie,
+    Le,
     Z,
     we,
   )
-function Yn(t) {
+function Wn(t) {
   var n = t.type,
     r = t.onClick,
     o = a(null),
@@ -2060,7 +2071,7 @@ function Yn(t) {
       navButtonIconColor: mn.colors.greey,
     })
   return e.createElement(
-    Ln,
+    Hn,
     {
       width: i.navButtonWidth,
       height: i.navButtonHeight,
@@ -2074,7 +2085,7 @@ function Yn(t) {
       },
       ref: o,
     },
-    e.createElement(Bn, {
+    e.createElement(In, {
       width: i.navButtonIconWidth,
       height: i.navButtonIconHeight,
       color: i.navButtonIconColor,
@@ -2082,7 +2093,7 @@ function Yn(t) {
     }),
   )
 }
-function Wn(t) {
+function Yn(t) {
   var n = t.height,
     r = t.width,
     o = t.color,
@@ -2138,7 +2149,7 @@ function $n(t) {
   return e.createElement(
     Rn,
     {onClick: n},
-    e.createElement(Wn, {width: '15px', height: '16px', color: '#ADADAD'}),
+    e.createElement(Yn, {width: '15px', height: '16px', color: '#ADADAD'}),
     e.createElement(Vn, null, 'Close'),
   )
 }
@@ -2146,10 +2157,10 @@ var Nn,
   Gn,
   _n = u('div')(
     Nn || (Nn = p(['\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n  ', '\n'])),
-    Ie,
+    Le,
     Z,
     Oe,
-    Be,
+    Ie,
   ),
   Un = u('div')(
     Gn ||
@@ -2236,12 +2247,12 @@ function Xn(t) {
       e.createElement(
         Kt,
         {position: 'absolute', top: '-5px', left: '0'},
-        e.createElement(Yn, {type: 'prev', onClick: C}),
+        e.createElement(Wn, {type: 'prev', onClick: C}),
       ),
       e.createElement(
         Kt,
         {position: 'absolute', top: '-5px', right: '0'},
-        e.createElement(Yn, {type: 'next', onClick: E}),
+        e.createElement(Wn, {type: 'next', onClick: E}),
       ),
       e.createElement(
         qt,
@@ -2269,7 +2280,7 @@ var Zn,
   qn = u(ln)(Zn || (Zn = p(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Pe, J),
   Qn = u(qt)(
     Jn || (Jn = p(['\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n'])),
-    Ie,
+    Le,
     we,
     Oe,
   )

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+.c0 {
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #929598;
+}
+
+<div>
+  <div
+    class="c0"
+    color="#929598"
+    font-family="Montserrat, sans-serif"
+    font-size="11px"
+    font-weight="500"
+  >
+    Test
+  </div>
+</div>
+`;
