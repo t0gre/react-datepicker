@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should execute onClick callback 1`] = `
+.c1 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.c0 {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  padding: 0;
+  border: 1px solid #929598;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <button
+    class="c0"
+    height="30px"
+    type="button"
+    width="30px"
+  >
+    <svg
+      class="c1"
+      color="#808285"
+      height="11px"
+      viewBox="0 0 9 6"
+      width="18px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
+        fill="currentColor"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`should match snapshot - left direction 1`] = `
+.c1 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.c0 {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  padding: 0;
+  border: 1px solid #929598;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <button
+    class="c0"
+    height="30px"
+    type="button"
+    width="30px"
+  >
+    <svg
+      class="c1"
+      color="#808285"
+      height="11px"
+      viewBox="0 0 9 6"
+      width="18px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
+        fill="currentColor"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`should match snapshot - right direction 1`] = `
+.c1 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.c0 {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  padding: 0;
+  border: 1px solid #929598;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <button
+    class="c0"
+    height="30px"
+    type="button"
+    width="30px"
+  >
+    <svg
+      class="c1"
+      color="#808285"
+      height="11px"
+      viewBox="0 0 9 6"
+      width="18px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
+        fill="currentColor"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+`;

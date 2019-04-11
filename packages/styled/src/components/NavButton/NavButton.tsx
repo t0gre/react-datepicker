@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import {
   width,
@@ -13,6 +13,10 @@ import {
   BorderProps,
 } from 'styled-system'
 import CaretIcon from '../../icons/CaretIcon'
+// eslint-disable-next-line import/no-unresolved
+import {NavButtonTheme} from '../../@types/theme'
+import useThemeProps from '../../hooks/useThemeProps'
+import globalStyles from '../../globalStyles'
 
 interface StyledNavButtonProps
   extends HeightProps,
@@ -37,20 +41,43 @@ interface NavButtonProps {
 }
 
 function NavButton({type, onClick}: NavButtonProps) {
+  const ref = useRef<HTMLButtonElement>(null)
+  const theme: NavButtonTheme = useThemeProps({
+    navButtonWidth: '30px',
+    navButtonHeight: '30px',
+    navButtonBackground: '#ffffff',
+    navButtonBorder: '1px solid #929598',
+    navButtonPadding: '0',
+    navButtonIconHeight: '11px',
+    navButtonIconWidth: '18px',
+    navButtonIconColor: globalStyles.colors.greey,
+  })
+
+  function handleMouseUp() {
+    if (ref && ref.current) {
+      ref.current.blur()
+    }
+  }
+
   return (
     <StyledNavButton
-      width="30px"
-      height="30px"
-      background="#ffffff"
-      border="1px solid #929598"
-      p="0"
+      width={theme.navButtonWidth}
+      height={theme.navButtonHeight}
+      background={theme.navButtonBackground}
+      border={theme.navButtonBorder}
+      p={theme.navButtonPadding}
       type="button"
       onClick={onClick}
+      onMouseUp={handleMouseUp}
+      ref={ref}
     >
       <CaretIcon
-        width="18px"
-        height="11px"
-        color="#808285"
+        // @ts-ignore
+        width={theme.navButtonIconWidth}
+        // @ts-ignore
+        height={theme.navButtonIconHeight}
+        // @ts-ignore
+        color={theme.navButtonIconColor}
         direction={type === 'next' ? 'right' : 'left'}
       />
     </StyledNavButton>

@@ -5,6 +5,7 @@ declare const _default: {
     charcoal: string
     darcula: string
     mud: string
+    greey: string
   }
 }
 export default _default

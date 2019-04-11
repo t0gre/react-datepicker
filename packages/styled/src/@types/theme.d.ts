@@ -7,6 +7,10 @@ import {
   FontWeightProperty,
   PaddingProperty,
   LineHeightProperty,
+  HeightProperty,
+  WidthProperty,
+  BackgroundProperty,
+  BorderProperty,
 } from 'csstype'
 
 interface CommonTheme {
@@ -32,4 +36,15 @@ export interface ResetDatesTheme extends CommonTheme {
   resetDatesTextMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
   resetDatesTextFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
   resetDatesTextLineHeight?: ResponsiveValue<LineHeightProperty<TLengthStyledSystem>>
+}
+
+export interface NavButtonTheme {
+  navButtonHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  navButtonWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
+  navButtonBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  navButtonBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  navButtonPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  navButtonIconHeight?: string
+  navButtonIconWidth?: string
+  navButtonIconColor?: string
 }

@@ -20,12 +20,12 @@ const StyledReactDates = styled('button')`
   }
 `
 
-interface onResetDatesProps {
+interface ResetDatesProps {
   onResetDates(): void
   text: string
 }
 
-function ResetDates({onResetDates, text}: onResetDatesProps) {
+function ResetDates({onResetDates, text}: ResetDatesProps) {
   const ref = useRef<HTMLButtonElement>(null)
   const theme: ResetDatesTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
