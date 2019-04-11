@@ -50,8 +50,8 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
     u = n ? Symbol.for('react.async_mode') : 60111,
     p = n ? Symbol.for('react.concurrent_mode') : 60111,
     d = n ? Symbol.for('react.forward_ref') : 60112,
-    f = n ? Symbol.for('react.suspense') : 60113,
-    m = n ? Symbol.for('react.memo') : 60115,
+    m = n ? Symbol.for('react.suspense') : 60113,
+    f = n ? Symbol.for('react.memo') : 60115,
     _ = n ? Symbol.for('react.lazy') : 60116
   function g(e) {
     if ('object' == typeof e && null !== e) {
@@ -64,7 +64,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
             case o:
             case l:
             case i:
-            case f:
+            case m:
               return e
             default:
               switch ((e = e && e.$$typeof)) {
@@ -77,7 +77,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
               }
           }
         case _:
-        case m:
+        case f:
         case a:
           return t
       }
@@ -95,11 +95,11 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
     (t.ForwardRef = d),
     (t.Fragment = o),
     (t.Lazy = _),
-    (t.Memo = m),
+    (t.Memo = f),
     (t.Portal = a),
     (t.Profiler = l),
     (t.StrictMode = i),
-    (t.Suspense = f),
+    (t.Suspense = m),
     (t.isValidElementType = function(e) {
       return (
         'string' == typeof e ||
@@ -108,11 +108,11 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
         e === p ||
         e === l ||
         e === i ||
-        e === f ||
+        e === m ||
         ('object' == typeof e &&
           null !== e &&
           (e.$$typeof === _ ||
-            e.$$typeof === m ||
+            e.$$typeof === f ||
             e.$$typeof === c ||
             e.$$typeof === s ||
             e.$$typeof === d))
@@ -141,7 +141,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
       return g(e) === _
     }),
     (t.isMemo = function(e) {
-      return g(e) === m
+      return g(e) === f
     }),
     (t.isPortal = function(e) {
       return g(e) === a
@@ -153,7 +153,7 @@ var reactIs_production_min = createCommonjsModule(function(e, t) {
       return g(e) === i
     }),
     (t.isSuspense = function(e) {
-      return g(e) === f
+      return g(e) === m
     })
 })
 unwrapExports(reactIs_production_min)
@@ -378,11 +378,11 @@ var factoryWithThrowingShims = function() {
         if (Array.isArray(t)) {
           p.push(i(t[0]))
           for (var d = 1; d < t.slice(0, c.length + 1).length; d++) {
-            var f = i(t[d])
-            if (f) {
-              var m,
+            var m = i(t[d])
+            if (m) {
+              var f,
                 _ = createMediaQuery(c[d - 1])
-              p.push((((m = {})[_] = f), m))
+              p.push((((f = {})[_] = m), f))
             }
           }
         } else {
@@ -726,7 +726,7 @@ var b = function(e, t) {
         return {year: null}
       })(I.date, r),
       C = O.year,
-      R = (function(e, t) {
+      j = (function(e, t) {
         if (null === t) return null
         var n, r, a
         if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
@@ -748,13 +748,13 @@ var b = function(e, t) {
           ? x(t, parseInt(n[1], 10) - 1, parseInt(n[2], 10) - 1)
           : null
       })(O.restDateString, C)
-    if (R) {
-      var j,
-        E = R.getTime(),
-        P = 0
+    if (j) {
+      var R,
+        E = j.getTime(),
+        $ = 0
       if (
         (I.time &&
-          (P = (function(e) {
+          ($ = (function(e) {
             var t, n, r
             if ((t = M.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * u
             if ((t = T.exec(e)))
@@ -773,7 +773,7 @@ var b = function(e, t) {
         I.timezone)
       )
         (_ = I.timezone),
-          (j =
+          (R =
             ((b = Y.exec(_))
               ? 0
               : (b = w.exec(_))
@@ -782,15 +782,15 @@ var b = function(e, t) {
               ? ((k = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -k : k)
               : 0) * o)
       else {
-        var $ = E + P,
-          z = new Date($)
-        j = n(z)
-        var A = new Date($)
+        var P = E + $,
+          z = new Date(P)
+        R = n(z)
+        var A = new Date(P)
         A.setDate(z.getDate() + 1)
         var W = n(A) - n(z)
-        W > 0 && (j += W)
+        W > 0 && (R += W)
       }
-      return new Date(E + P + j)
+      return new Date(E + $ + R)
     }
     return new Date(e)
   },
@@ -1349,8 +1349,8 @@ function Ye(e) {
       return ye(c, t)
     }),
     d = p[0],
-    f = p[1],
-    m = React.useCallback(
+    m = p[1],
+    f = React.useCallback(
       function(e) {
         return de(e, t, n)
       },
@@ -1371,7 +1371,7 @@ function Ye(e) {
   return {
     firstDayOfWeek: u,
     activeMonths: d,
-    isDateSelected: m,
+    isDateSelected: f,
     isStartOrEndDate: _,
     isDateBlocked: g,
     numberOfMonths: c,
@@ -1386,10 +1386,10 @@ function Ye(e) {
         : r === Se && t && !ae(e, t) && i({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      f(Me(d, c, -1))
+      m(Me(d, c, -1))
     },
     goToNextMonths: function() {
-      f(Me(d, c, 1))
+      m(Me(d, c, 1))
     },
   }
 }
@@ -2111,6 +2111,23 @@ function ResetDates(e) {
     ),
   )
 }
+var templateObject_1$8,
+  templateObject_2$3,
+  Svg = styled__default('svg')(
+    templateObject_2$3 ||
+      (templateObject_2$3 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+    function(e) {
+      var t = e.angle
+      return styled.css(
+        templateObject_1$8 ||
+          (templateObject_1$8 = __makeTemplateObject(
+            ['transform: rotate(', 'deg)'],
+            ['transform: rotate(', 'deg)'],
+          )),
+        t,
+      )
+    },
+  )
 function calculateAngle$1(e) {
   switch (e) {
     case 'up':
@@ -2134,13 +2151,13 @@ function CaretIcon$1(e) {
     l = void 0 === i ? '' : i,
     c = calculateAngle$1(o)
   return React__default.createElement(
-    'svg',
+    Svg,
     {
       width: n,
       height: t,
       color: r,
       className: l,
-      transform: 'rotate(' + c + ' 0 0)',
+      angle: c,
       viewBox: '0 0 9 6',
       xmlns: 'http://www.w3.org/2000/svg',
     },
@@ -2152,10 +2169,10 @@ function CaretIcon$1(e) {
     }),
   )
 }
-var templateObject_1$8,
+var templateObject_1$9,
   StyledNavButton = styled__default('button')(
-    templateObject_1$8 ||
-      (templateObject_1$8 = __makeTemplateObject(
+    templateObject_1$9 ||
+      (templateObject_1$9 = __makeTemplateObject(
         [
           '\n  ',
           '\n  ',
@@ -2225,11 +2242,11 @@ function CloseIcon(e) {
     }),
   )
 }
-var templateObject_1$9,
-  templateObject_2$3,
+var templateObject_1$a,
+  templateObject_2$4,
   Text$1 = styled__default('div')(
-    templateObject_1$9 ||
-      (templateObject_1$9 = __makeTemplateObject(
+    templateObject_1$a ||
+      (templateObject_1$a = __makeTemplateObject(
         [
           '\n  margin-left: 16px;\n  margin-top: 1px;\n  float: left;\n  font-family: Montserrat, sans-serif;\n  font-size: 12px;\n  font-weight: 600;\n  color: #929598;\n  transition: color 0.15s;\n',
         ],
@@ -2239,8 +2256,8 @@ var templateObject_1$9,
       )),
   ),
   Wrapper = styled__default('button')(
-    templateObject_2$3 ||
-      (templateObject_2$3 = __makeTemplateObject(
+    templateObject_2$4 ||
+      (templateObject_2$4 = __makeTemplateObject(
         [
           '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  background: transparent;\n  padding: 0;\n  border: 0;\n\n  svg {\n    transition: color 0.15s;\n  }\n\n  &:hover {\n    ',
           ' {\n      color: #343132;\n    }\n\n    svg {\n      color: #343132;\n    }\n  }\n',
@@ -2261,11 +2278,11 @@ function Close(e) {
     React__default.createElement(Text$1, null, 'Close'),
   )
 }
-var templateObject_1$a,
-  templateObject_2$4,
+var templateObject_1$b,
+  templateObject_2$5,
   StyledDatepicker = styled__default('div')(
-    templateObject_1$a ||
-      (templateObject_1$a = __makeTemplateObject(
+    templateObject_1$b ||
+      (templateObject_1$b = __makeTemplateObject(
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
@@ -2275,8 +2292,8 @@ var templateObject_1$a,
     position,
   ),
   DateWrapper = styled__default('div')(
-    templateObject_2$4 ||
-      (templateObject_2$4 = __makeTemplateObject(
+    templateObject_2$5 ||
+      (templateObject_2$5 = __makeTemplateObject(
         [
           "\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n",
         ],
@@ -2298,8 +2315,8 @@ function Datepicker(e) {
     u = e.firstDayOfWeek,
     p = e.displayFormat,
     d = void 0 === p ? 'MM/DD/YYYY' : p,
-    f = e.phrases,
-    m = void 0 === f ? datepickerPhrases : f,
+    m = e.phrases,
+    f = void 0 === m ? datepickerPhrases : m,
     _ = e.styles,
     g = void 0 === _ ? {} : _,
     y = Ye({
@@ -2337,8 +2354,8 @@ function Datepicker(e) {
         Grid,
         {gridTemplateColumns: g.selectDateGridTemplateColumns || '126px 75px 126px'},
         React__default.createElement(SelectDate, {
-          title: m.datepickerStartDateLabel,
-          date: Te(t, d, m.datepickerStartDatePlaceholder),
+          title: f.datepickerStartDateLabel,
+          date: Te(t, d, f.datepickerStartDatePlaceholder),
           isActive: o === pe,
         }),
         React__default.createElement(
@@ -2351,8 +2368,8 @@ function Datepicker(e) {
           }),
         ),
         React__default.createElement(SelectDate, {
-          title: m.datepickerEndDateLabel,
-          date: Te(n, d, m.datepickerEndDatePlaceholder),
+          title: f.datepickerEndDateLabel,
+          date: Te(n, d, f.datepickerEndDatePlaceholder),
           isActive: o === Se,
         }),
       ),
@@ -2391,21 +2408,21 @@ function Datepicker(e) {
     React__default.createElement(
       Box,
       {mt: '32px'},
-      React__default.createElement(ResetDates, {onResetDates: k, text: m.resetDates}),
+      React__default.createElement(ResetDates, {onResetDates: k, text: f.resetDates}),
     ),
   )
 }
-var templateObject_1$b,
-  templateObject_2$5,
+var templateObject_1$c,
+  templateObject_2$6,
   InputArrowIcon = styled__default(ArrowIcon)(
-    templateObject_1$b ||
-      (templateObject_1$b = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_1$c ||
+      (templateObject_1$c = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     opacity,
     color,
   ),
   InputGrid = styled__default(Grid)(
-    templateObject_2$5 ||
-      (templateObject_2$5 = __makeTemplateObject(
+    templateObject_2$6 ||
+      (templateObject_2$6 = __makeTemplateObject(
         ['\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n'],
       )),
@@ -2426,9 +2443,9 @@ function DateRangeInput(e) {
     u = e.onClose,
     p = void 0 === u ? function() {} : u,
     d = e.showStartDateCalendarIcon,
-    f = void 0 === d || d,
-    m = e.showEndDateCalendarIcon,
-    _ = void 0 === m || m,
+    m = void 0 === d || d,
+    f = e.showEndDateCalendarIcon,
+    _ = void 0 === f || f,
     g = e.styles,
     y = void 0 === g ? {} : g,
     h = e.displayFormat,
@@ -2467,7 +2484,7 @@ function DateRangeInput(e) {
           onClick: function() {
             return i(pe)
           },
-          showCalendarIcon: f,
+          showCalendarIcon: m,
           inputBorder: y.inputBorder,
           inputMinHeight: y.inputMinHeight,
           inputPadding: y.inputStartDatePadding || y.inputPadding,

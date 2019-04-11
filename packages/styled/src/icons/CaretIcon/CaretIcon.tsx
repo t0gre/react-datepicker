@@ -1,4 +1,15 @@
 import React from 'react'
+import styled, {css} from 'styled-components'
+
+interface SvgProps {
+  angle: number
+}
+const Svg = styled('svg')<SvgProps>`
+  ${({angle}) =>
+    css`
+      transform: rotate(${angle}deg);
+    `}
+`
 
 interface Props extends IconProps {
   direction?: 'up' | 'down' | 'left' | 'right'
@@ -21,12 +32,12 @@ function calculateAngle(direction: Props['direction']) {
 function CaretIcon({height, width, color, direction = 'right', className = ''}: Props) {
   const angle = calculateAngle(direction)
   return (
-    <svg
+    <Svg
       width={width}
       height={height}
       color={color}
       className={className}
-      transform={`rotate(${angle} 0 0)`}
+      angle={angle}
       viewBox="0 0 9 6"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -35,7 +46,7 @@ function CaretIcon({height, width, color, direction = 'right', className = ''}: 
         fillRule="evenodd"
         d="M4.058 4.594L1.185 1.72a.312.312 0 1 1 .442-.442L4.5 4.152l2.873-2.873a.312.312 0 1 1 .442.442L4.723 4.812a.316.316 0 0 1-.446 0l-.219-.218z"
       />
-    </svg>
+    </Svg>
   )
 }
 

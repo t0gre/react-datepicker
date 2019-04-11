@@ -1,12 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should be facing down 1`] = `
+.c0 {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
 <div>
   <svg
-    class=""
+    class="c0"
     color="red"
     height="30px"
-    transform="rotate(0 0 0)"
     viewBox="0 0 9 6"
     width="30px"
     xmlns="http://www.w3.org/2000/svg"
@@ -21,12 +26,17 @@ exports[`should be facing down 1`] = `
 `;
 
 exports[`should be facing to the left 1`] = `
+.c0 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 <div>
   <svg
-    class=""
+    class="c0"
     color="red"
     height="30px"
-    transform="rotate(90 0 0)"
     viewBox="0 0 9 6"
     width="30px"
     xmlns="http://www.w3.org/2000/svg"
@@ -41,12 +51,17 @@ exports[`should be facing to the left 1`] = `
 `;
 
 exports[`should be facing to the right 1`] = `
+.c0 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
 <div>
   <svg
-    class=""
+    class="c0"
     color="red"
     height="30px"
-    transform="rotate(-90 0 0)"
     viewBox="0 0 9 6"
     width="30px"
     xmlns="http://www.w3.org/2000/svg"
@@ -61,12 +76,17 @@ exports[`should be facing to the right 1`] = `
 `;
 
 exports[`should be facing up 1`] = `
+.c0 {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 <div>
   <svg
-    class=""
+    class="c0"
     color="red"
     height="30px"
-    transform="rotate(180 0 0)"
     viewBox="0 0 9 6"
     width="30px"
     xmlns="http://www.w3.org/2000/svg"
@@ -81,12 +101,17 @@ exports[`should be facing up 1`] = `
 `;
 
 exports[`should get classname 1`] = `
+.c0 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
 <div>
   <svg
-    class="test"
+    class="test c0"
     color="red"
     height="30px"
-    transform="rotate(-90 0 0)"
     viewBox="0 0 9 6"
     width="30px"
     xmlns="http://www.w3.org/2000/svg"
@@ -101,12 +126,17 @@ exports[`should get classname 1`] = `
 `;
 
 exports[`should match snapshot 1`] = `
+.c0 {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
 <div>
   <svg
-    class=""
+    class="c0"
     color="red"
     height="30px"
-    transform="rotate(-90 0 0)"
     viewBox="0 0 9 6"
     width="30px"
     xmlns="http://www.w3.org/2000/svg"

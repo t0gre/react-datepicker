@@ -1952,7 +1952,13 @@ function On(t) {
     ),
   )
 }
-function zn(t) {
+var zn,
+  Pn,
+  Yn = s('svg')(Pn || (Pn = p(['\n  ', '\n'], ['\n  ', '\n'])), function(e) {
+    var t = e.angle
+    return c(zn || (zn = p(['transform: rotate(', 'deg)'], ['transform: rotate(', 'deg)'])), t)
+  })
+function In(t) {
   var n = t.height,
     r = t.width,
     o = t.color,
@@ -1974,13 +1980,13 @@ function zn(t) {
       }
     })(i)
   return e.createElement(
-    'svg',
+    Yn,
     {
       width: r,
       height: n,
       color: o,
       className: u,
-      transform: 'rotate(' + c + ' 0 0)',
+      angle: c,
       viewBox: '0 0 9 6',
       xmlns: 'http://www.w3.org/2000/svg',
     },
@@ -1992,10 +1998,10 @@ function zn(t) {
     }),
   )
 }
-var Pn,
-  Yn = s('button')(
-    Pn ||
-      (Pn = p(
+var An,
+  Hn = s('button')(
+    An ||
+      (An = p(
         [
           '\n  ',
           '\n  ',
@@ -2019,11 +2025,11 @@ var Pn,
     Z,
     we,
   )
-function In(t) {
+function Wn(t) {
   var n = t.type,
     r = t.onClick
   return e.createElement(
-    Yn,
+    Hn,
     {
       width: '30px',
       height: '30px',
@@ -2033,7 +2039,7 @@ function In(t) {
       type: 'button',
       onClick: r,
     },
-    e.createElement(zn, {
+    e.createElement(In, {
       width: '18px',
       height: '11px',
       color: '#808285',
@@ -2041,7 +2047,7 @@ function In(t) {
     }),
   )
 }
-function An(t) {
+function jn(t) {
   var n = t.height,
     r = t.width,
     o = t.color,
@@ -2065,11 +2071,11 @@ function An(t) {
     }),
   )
 }
-var Hn,
-  Wn,
-  jn = s('div')(
-    Hn ||
-      (Hn = p(
+var Ln,
+  Vn,
+  Rn = s('div')(
+    Ln ||
+      (Ln = p(
         [
           '\n  margin-left: 16px;\n  margin-top: 1px;\n  float: left;\n  font-family: Montserrat, sans-serif;\n  font-size: 12px;\n  font-weight: 600;\n  color: #929598;\n  transition: color 0.15s;\n',
         ],
@@ -2078,9 +2084,9 @@ var Hn,
         ],
       )),
   ),
-  Ln = s('button')(
-    Wn ||
-      (Wn = p(
+  Bn = s('button')(
+    Vn ||
+      (Vn = p(
         [
           '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  background: transparent;\n  padding: 0;\n  border: 0;\n\n  svg {\n    transition: color 0.15s;\n  }\n\n  &:hover {\n    ',
           ' {\n      color: #343132;\n    }\n\n    svg {\n      color: #343132;\n    }\n  }\n',
@@ -2090,29 +2096,29 @@ var Hn,
           ' {\n      color: #343132;\n    }\n\n    svg {\n      color: #343132;\n    }\n  }\n',
         ],
       )),
-    jn,
+    Rn,
   )
-function Vn(t) {
+function $n(t) {
   var n = t.onClick
   return e.createElement(
-    Ln,
+    Bn,
     {onClick: n},
-    e.createElement(An, {width: '15px', height: '16px', color: '#ADADAD'}),
-    e.createElement(jn, null, 'Close'),
+    e.createElement(jn, {width: '15px', height: '16px', color: '#ADADAD'}),
+    e.createElement(Rn, null, 'Close'),
   )
 }
-var Rn,
-  Bn,
-  $n = s('div')(
-    Rn || (Rn = p(['\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n  ', '\n'])),
+var Nn,
+  Gn,
+  _n = s('div')(
+    Nn || (Nn = p(['\n  ', '\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n  ', '\n'])),
     Ye,
     Z,
     Oe,
     Ie,
   ),
-  Nn = s('div')(
-    Bn ||
-      (Bn = p(
+  Un = s('div')(
+    Gn ||
+      (Gn = p(
         [
           "\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n",
         ],
@@ -2121,7 +2127,7 @@ var Rn,
         ],
       )),
   )
-function Gn(t) {
+function Xn(t) {
   var n = t.startDate,
     r = t.endDate,
     o = t.minBookingDate,
@@ -2159,15 +2165,15 @@ function Gn(t) {
     E = v.goToNextMonths,
     T = v.numberOfMonths
   return e.createElement(
-    $n,
+    _n,
     {background: '#ffffff', p: '32px', borderRadius: '2px', position: 'relative'},
     e.createElement(
       Kt,
       {position: 'absolute', right: '32px', zIndex: 1},
-      e.createElement(Vn, {onClick: c}),
+      e.createElement($n, {onClick: c}),
     ),
     e.createElement(
-      Nn,
+      Un,
       null,
       e.createElement(
         qt,
@@ -2195,12 +2201,12 @@ function Gn(t) {
       e.createElement(
         Kt,
         {position: 'absolute', top: '-5px', left: '0'},
-        e.createElement(In, {type: 'prev', onClick: C}),
+        e.createElement(Wn, {type: 'prev', onClick: C}),
       ),
       e.createElement(
         Kt,
         {position: 'absolute', top: '-5px', right: '0'},
-        e.createElement(In, {type: 'next', onClick: E}),
+        e.createElement(Wn, {type: 'next', onClick: E}),
       ),
       e.createElement(
         qt,
@@ -2223,16 +2229,16 @@ function Gn(t) {
     e.createElement(Kt, {mt: '32px'}, e.createElement(On, {onResetDates: M, text: h.resetDates})),
   )
 }
-var _n,
-  Un,
-  Xn = s(cn)(_n || (_n = p(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Pe, J),
-  Zn = s(qt)(
-    Un || (Un = p(['\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n'])),
+var Zn,
+  Jn,
+  qn = s(cn)(Zn || (Zn = p(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Pe, J),
+  Qn = s(qt)(
+    Jn || (Jn = p(['\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n'])),
     Ye,
     we,
     Oe,
   )
-function Jn(t) {
+function Kn(t) {
   var n = t.startDate,
     r = t.endDate,
     o = t.minBookingDate,
@@ -2271,7 +2277,7 @@ function Jn(t) {
       Kt,
       {position: 'relative', ref: M},
       e.createElement(
-        Zn,
+        Qn,
         {
           background: b.inputGridBackground || 'transparent',
           gridTemplateColumns: b.inputGridTemplateColumns || '194px 39px 194px',
@@ -2295,7 +2301,7 @@ function Jn(t) {
         e.createElement(
           Qt,
           {alignItems: 'center', justifyContent: 'center'},
-          e.createElement(Xn, {
+          e.createElement(qn, {
             width: '15px',
             height: '12px',
             color: b.inputArrowIconColor || '#ffffff',
@@ -2321,7 +2327,7 @@ function Jn(t) {
         Kt,
         {position: 'absolute', bottom: b.datepickerBottom || '65px', left: b.datepickerLeft || '0'},
         null !== p &&
-          e.createElement(Gn, {
+          e.createElement(Xn, {
             onClose: function() {
               m(), c(null)
             },
@@ -2343,4 +2349,4 @@ function Jn(t) {
     )
   )
 }
-export {Jn as DateRangeInput, Gn as Datepicker}
+export {Kn as DateRangeInput, Xn as Datepicker}
