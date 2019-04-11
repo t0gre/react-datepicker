@@ -48,3 +48,10 @@ export interface NavButtonTheme {
   navButtonIconWidth?: string
   navButtonIconColor?: string
 }
+
+export interface MonthLabelTheme extends CommonTheme {
+  monthLabelLineHeight?: ResponsiveValue<LineHeightProperty<TLengthStyledSystem>>
+  monthLabelFontWeight?: ResponsiveValue<FontWeightProperty>
+  monthLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
+  monthLabelColor?: ResponsiveValue<ColorProperty>
+}
