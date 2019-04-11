@@ -1956,7 +1956,14 @@ var zn,
   Pn,
   Yn = s('svg')(Pn || (Pn = p(['\n  ', '\n'], ['\n  ', '\n'])), function(e) {
     var t = e.angle
-    return c(zn || (zn = p(['transform: rotate(', 'deg)'], ['transform: rotate(', 'deg)'])), t)
+    return c(
+      zn ||
+        (zn = p(
+          ['\n      transform: rotate(', 'deg);\n    '],
+          ['\n      transform: rotate(', 'deg);\n    '],
+        )),
+      t,
+    )
   })
 function In(t) {
   var n = t.height,

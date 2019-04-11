@@ -36,3 +36,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * **release:** first canary ([aedf88c](https://github.com/tresko/react-datepicker/commit/aedf88c))
+

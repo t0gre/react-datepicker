@@ -2121,8 +2121,8 @@ var templateObject_1$8,
       return styled.css(
         templateObject_1$8 ||
           (templateObject_1$8 = __makeTemplateObject(
-            ['transform: rotate(', 'deg)'],
-            ['transform: rotate(', 'deg)'],
+            ['\n      transform: rotate(', 'deg);\n    '],
+            ['\n      transform: rotate(', 'deg);\n    '],
           )),
         t,
       )
