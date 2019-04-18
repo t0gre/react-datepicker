@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+.c0 {
+  box-sizing: border-box;
+  grid-area: test;
+  height: 150px;
+  padding: 10px;
+  width: 150px;
+  position: relative;
+  top: 10px;
+  left: 15px;
+  right: 20px;
+  bottom: 30px;
+  z-index: 1;
+}
+
+<div>
+  <div
+    class="c0"
+    height="150px"
+    width="150px"
+  >
+    <div>
+      test1
+    </div>
+    <div>
+      test2
+    </div>
+    <div>
+      test3
+    </div>
+    <div>
+      test4
+    </div>
+    <div>
+      test5
+    </div>
+  </div>
+</div>
+`;
