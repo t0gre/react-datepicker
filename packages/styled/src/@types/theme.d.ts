@@ -61,3 +61,22 @@ export interface DayLabelTheme extends CommonTheme {
   dayLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
   dayLabelColor?: ResponsiveValue<ColorProperty>
 }
+
+export interface DayTheme extends CommonTheme {
+  dayFontWeight?: ResponsiveValue<FontWeightProperty>
+  dayFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
+  dayColor?: ResponsiveValue<ColorProperty>
+  dayHoverColor?: ResponsiveValue<ColorProperty>
+  daySelectedColor?: ResponsiveValue<ColorProperty>
+  daySelectedHoverColor?: ResponsiveValue<ColorProperty>
+  daySelectedFirstOrLastColor?: ResponsiveValue<ColorProperty>
+  dayBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  dayHoverBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  daySelectedBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  daySelectedHoverBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  daySelectedFirstOrLastBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  borderColor?: ColorProperty
+  borderSelectedColor?: ColorProperty
+  borderSelectedFirstOrLastColor?: ColorProperty
+  borderAccessibility?: ColorProperty
+}

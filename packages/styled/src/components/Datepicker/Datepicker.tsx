@@ -145,7 +145,7 @@ function Datepicker({
               isDateSelected={isDateSelected}
               isStartOrEndDate={isStartOrEndDate}
               onDaySelect={onDaySelect}
-              daySize={styles.daySize}
+              // daySize={styles.daySize}
             />
           ))}
         </Grid>

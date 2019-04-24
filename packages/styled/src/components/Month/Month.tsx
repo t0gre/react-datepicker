@@ -1,7 +1,5 @@
 import React from 'react'
 import {useMonth, CalendarDay} from '@datepicker-react/hooks'
-import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
-import {HeightProperty} from 'csstype'
 import MonthLabel from '../MonthLabel'
 import DayLabel from '../DayLabel'
 import Flex from '../Flex'
@@ -17,7 +15,7 @@ interface MonthProps {
   isStartOrEndDate(date: Date): boolean
   onDaySelect(date: Date): void
 
-  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  daySize?: number
 }
 
 const Month = ({
@@ -29,7 +27,7 @@ const Month = ({
   isStartOrEndDate,
   onDaySelect,
 
-  daySize,
+  daySize = 45,
 }: MonthProps) => {
   const {days, weekDays, monthLabel} = useMonth({year, month, weekStartsOn: firstDayOfWeek})
 
@@ -38,14 +36,14 @@ const Month = ({
       <Flex justifyContent="center" mb="28px">
         <MonthLabel label={monthLabel} />
       </Flex>
-      <Grid gridTemplateColumns="repeat(7, 1fr)">
+      <Grid gridTemplateColumns={`repeat(7, ${daySize}px)`}>
         {weekDays.map(day => (
           <Flex key={day} justifyContent="center" mb="16px">
             <DayLabel label={day} />
           </Flex>
         ))}
       </Grid>
-      <Grid gridTemplateColumns="repeat(7, 1fr)">
+      <Grid gridTemplateColumns={`repeat(7, ${daySize}px)`}>
         {days.map((day: CalendarDay, index: number) => {
           if (typeof day === 'object') {
             return (

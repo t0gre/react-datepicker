@@ -22,7 +22,7 @@ function reducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const [numberOfMonths, setNumberOfMonths] = useState(1)
+  const [numberOfMonths, setNumberOfMonths] = useState(2)
 
   function onClick() {
     setNumberOfMonths(1)
@@ -45,7 +45,14 @@ function App() {
         <ThemeProvider
           theme={{
             reactDatepicker: {
-              selectDatePadding: '30px 0 0',
+              dayFontWeight: 700,
+              dayFontSize: '20px',
+              dayBackground: 'red',
+              daySelectedBackground: 'green',
+              daySelectedFirstOrLastBackground: 'yellow',
+              daySelectedHoverBackground: 'yellow',
+              dayHoverBackground: 'yellow',
+              // selectDatePadding: '30px 0 0',
               // fontFamily: 'arial',
               // selectDateLabelFontSize: '20px',
               // selectDateDateFontSize: '30px',
@@ -65,24 +72,24 @@ function App() {
             numberOfMonths={numberOfMonths}
             focusedInput={state.focusedInput}
             onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-            styles={{
-              inputGridTemplateColumns: '1fr 20px 1fr',
-              inputGridBackground: '#ffffff',
-              inputGridBorder: '1px solid #d0d0d0',
-              inputGridBorderRadius: '2px',
-
-              inputBorder: '0',
-              inputMinHeight: '48px',
-              inputStartDatePadding: '0 0 0 44px',
-              inputEndDatePadding: '0',
-              inputArrowIconColor: 'red',
-              inputArrowIconOpacity: 1,
-              inputCalendarWrapperTop: '18px',
-
-              daySize: '45px',
-              selectDateGridTemplateColumns: '126px 50px 126px',
-              datepickerBottom: '100px',
-            }}
+            // styles={{
+            //   inputGridTemplateColumns: '1fr 20px 1fr',
+            //   inputGridBackground: '#ffffff',
+            //   inputGridBorder: '1px solid #d0d0d0',
+            //   inputGridBorderRadius: '2px',
+            //
+            //   inputBorder: '0',
+            //   inputMinHeight: '48px',
+            //   inputStartDatePadding: '0 0 0 44px',
+            //   inputEndDatePadding: '0',
+            //   inputArrowIconColor: 'red',
+            //   inputArrowIconOpacity: 1,
+            //   inputCalendarWrapperTop: '18px',
+            //
+            //   daySize: '45px',
+            //   selectDateGridTemplateColumns: '126px 50px 126px',
+            //   datepickerBottom: '100px',
+            // }}
             showEndDateCalendarIcon={false}
           />
         </ThemeProvider>

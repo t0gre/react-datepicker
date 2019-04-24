@@ -1,31 +1,132 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 import styled, {css} from 'styled-components'
-import {HeightProperty} from 'csstype'
+import {ResponsiveValue, style, TLengthStyledSystem} from 'styled-system'
 import {
-  height,
-  HeightProps,
-  width,
-  WidthProps,
   boxShadow,
   BoxShadowProps,
   background,
   BackgroundProps,
-  ResponsiveValue,
-  TLengthStyledSystem,
+  color,
+  ColorProps,
+  fontFamily,
+  FontFamilyProps,
+  fontWeight,
+  FontWeightProps,
+  fontSize,
+  FontSizeProps,
 } from 'styled-system'
-import Text from '../Text'
 import Flex from '../Flex'
+// eslint-disable-next-line import/no-unresolved
+import {DayTheme} from '../../@types/theme'
+import useThemeProps from '../../hooks/useThemeProps'
+import globalStyles from '../../globalStyles'
+import {BackgroundProperty, ColorProperty} from 'csstype'
 
-interface StyledDayProps extends HeightProps, WidthProps, BoxShadowProps, BackgroundProps {
+const dayHeight = style({
+  // React prop name and CSS property
+  prop: 'dayHeight',
+  // CSS property (if different from prop argument)
+  cssProperty: 'height',
+  // key for theme values
+  key: 'dayHeight',
+  // accessor function for transforming the value
+  transformValue: n => n + 'px',
+  // add a fallback scale object or array, if theme is not present
+  scale: [0, 4, 8, 16, 32],
+})
+
+const dayWidth = style({
+  // React prop name and CSS property
+  prop: 'dayWidth',
+  // CSS property (if different from prop argument)
+  cssProperty: 'width',
+  // key for theme values
+  key: 'dayWidth',
+  // accessor function for transforming the value
+  transformValue: n => n + 'px',
+  // add a fallback scale object or array, if theme is not present
+  scale: [0, 4, 8, 16, 32],
+})
+
+const dayHoverColor = style({
+  // React prop name and CSS property
+  prop: 'dayHoverColor',
+  // CSS property (if different from prop argument)
+  cssProperty: 'color',
+  // key for theme values
+  key: 'dayHoverColor',
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [0, 4, 8, 16, 32],
+})
+
+const daySelectedHoverColor = style({
+  // React prop name and CSS property
+  prop: 'daySelectedHoverColor',
+  // CSS property (if different from prop argument)
+  cssProperty: 'color',
+  // key for theme values
+  key: 'daySelectedHoverColor',
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [0, 4, 8, 16, 32],
+})
+
+const dayHoverBackground = style({
+  // React prop name and CSS property
+  prop: 'dayHoverBackground',
+  // CSS property (if different from prop argument)
+  cssProperty: 'background',
+  // key for theme values
+  key: 'dayHoverBackground',
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [0, 4, 8, 16, 32],
+})
+
+const daySelectedHoverBackground = style({
+  // React prop name and CSS property
+  prop: 'daySelectedHoverBackground',
+  // CSS property (if different from prop argument)
+  cssProperty: 'background',
+  // key for theme values
+  key: 'daySelectedHoverBackground',
+  // accessor function for transforming the value
+  transformValue: n => n,
+  // add a fallback scale object or array, if theme is not present
+  scale: [0, 4, 8, 16, 32],
+})
+
+interface StyledDayProps
+  extends BoxShadowProps,
+    BackgroundProps,
+    ColorProps,
+    FontSizeProps,
+    FontFamilyProps,
+    FontWeightProps {
   isActive: boolean
   disabled: boolean
   isStartOrEnd: boolean
+  dayHeight: number
+  dayWidth: number
+  borderAccessibility: string
+  daySelectedHoverBackground: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  dayHoverBackground: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  dayHoverColor: ResponsiveValue<ColorProperty>
+  daySelectedHoverColor: ResponsiveValue<ColorProperty>
 }
 const StyledDay = styled('button')<StyledDayProps>`
-  ${width}
-  ${height}
+  ${dayHeight}
+  ${dayWidth}
   ${boxShadow}
   ${background}
+  ${color}
+  ${fontFamily}
+  ${fontWeight}
+  ${fontSize}
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -42,46 +143,49 @@ const StyledDay = styled('button')<StyledDayProps>`
     if (!disabled && !isActive && !isStartOrEnd) {
       return css`
         &:hover {
-          background: #e6e7e8;
+          ${dayHoverBackground}
+          ${dayHoverColor}
         }
       `
     } else if (isActive && !isStartOrEnd) {
       return css`
         &:hover {
-          background: #39beef;
+          ${daySelectedHoverBackground}
+          ${daySelectedHoverColor}
         }
       `
     }
 
     return ''
   }}
+  
+  &:focus {
+    ${({borderAccessibility}) => css`
+      box-shadow: none;
+      border: 2px solid ${borderAccessibility};
+    `}
+  }
 `
 
-function getBorderColor(isActive: boolean, isStartOrEnd: boolean) {
+function getColor(
+  isActive: boolean,
+  isStartOrEnd: boolean,
+  {
+    selectedFirstOrLast,
+    normal,
+    selected,
+  }: {
+    selectedFirstOrLast: ResponsiveValue<ColorProperty>
+    selected: ResponsiveValue<ColorProperty>
+    normal: ResponsiveValue<ColorProperty>
+  },
+) {
   if (isStartOrEnd) {
-    return '#00aeef'
+    return selectedFirstOrLast
   } else if (isActive) {
-    return '#71c9ed'
+    return selected
   } else {
-    return '#e6e7e8'
-  }
-}
-
-function getBackgroundColor(isActive: boolean, isStartOrEnd: boolean) {
-  if (isStartOrEnd) {
-    return '#00aeef'
-  } else if (isActive) {
-    return '#71c9ed'
-  } else {
-    return '#ffffff'
-  }
-}
-
-function getColor(isActive: boolean, isStartOrEnd: boolean) {
-  if (isActive || isStartOrEnd) {
-    return '#ffffff'
-  } else {
-    return '#58595b'
+    return normal
   }
 }
 
@@ -92,12 +196,64 @@ interface DayProps {
   disabled: boolean
   isStartOrEnd: boolean
   onDaySelect(date: Date): void
-  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  daySize: number
 }
 function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}: DayProps) {
-  const borderColor = getBorderColor(isActive, isStartOrEnd)
-  const background = getBackgroundColor(isActive, isStartOrEnd)
-  const color = getColor(isActive, isStartOrEnd)
+  const theme: DayTheme = useThemeProps({
+    fontFamily: globalStyles.fontFamily,
+    dayFontWeight: 500,
+    dayFontSize: '14px',
+    dayColor: '#58595b',
+    dayHoverColor: '#58595b',
+    daySelectedColor: '#ffffff',
+    daySelectedHoverColor: '#ffffff',
+    daySelectedFirstOrLastColor: '#ffffff',
+    dayBackground: '#ffffff',
+    dayHoverBackground: '#e6e7e8',
+    daySelectedBackground: '#71c9ed',
+    daySelectedHoverBackground: '#39beef',
+    daySelectedFirstOrLastBackground: '#00aeef',
+    borderColor: '#e6e7e8',
+    borderSelectedColor: '#71c9ed',
+    borderSelectedFirstOrLastColor: '#00aeef',
+    borderAccessibility: '#009fef',
+  })
+  const borderColor = useMemo(
+    () =>
+      getColor(isActive, isStartOrEnd, {
+        // @ts-ignore
+        selectedFirstOrLast: theme.borderSelectedFirstOrLastColor,
+        // @ts-ignore
+        selected: theme.borderSelectedColor,
+        // @ts-ignore
+        normal: theme.borderColor,
+      }),
+    [isActive, isStartOrEnd, theme],
+  )
+  const background = useMemo(
+    () =>
+      getColor(isActive, isStartOrEnd, {
+        // @ts-ignore
+        selectedFirstOrLast: theme.daySelectedFirstOrLastBackground,
+        // @ts-ignore
+        selected: theme.daySelectedBackground,
+        // @ts-ignore
+        normal: theme.dayBackground,
+      }),
+    [isActive, isStartOrEnd, theme],
+  )
+  const color = useMemo(
+    () =>
+      getColor(isActive, isStartOrEnd, {
+        // @ts-ignore
+        selectedFirstOrLast: theme.daySelectedFirstOrLastColor,
+        // @ts-ignore
+        selected: theme.daySelectedColor,
+        // @ts-ignore
+        normal: theme.dayColor,
+      }),
+    [isActive, isStartOrEnd, theme],
+  )
 
   return (
     <StyledDay
@@ -106,9 +262,23 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}
       disabled={disabled}
       isActive={isActive}
       isStartOrEnd={isStartOrEnd}
-      height={daySize || '36px'}
-      width={daySize || '36px'}
+      dayHeight={daySize}
+      dayWidth={daySize}
       background={background}
+      color={color}
+      fontFamily={theme.fontFamily}
+      fontWeight={theme.dayFontWeight}
+      fontSize={theme.dayFontSize}
+      // @ts-ignore
+      daySelectedHoverBackground={theme.daySelectedHoverBackground}
+      // @ts-ignore
+      dayHoverBackground={theme.dayHoverBackground}
+      // @ts-ignore
+      dayHoverColor={theme.dayHoverColor}
+      // @ts-ignore
+      daySelectedHoverColor={theme.daySelectedHoverColor}
+      // @ts-ignore
+      borderAccessibility={theme.borderAccessibility}
       boxShadow={`1px 0 0 0 ${borderColor},
         0 1px 0 0 ${borderColor},
         1px 1px 0 0 ${borderColor},
@@ -116,9 +286,7 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}
         0 1px 0 0 ${borderColor} inset`}
     >
       <Flex justifyContent="center" alignItems="center" height="100%" width="100%">
-        <Text color={color} fontFamily="Montserrat" fontWeight={500} fontSize="14px">
-          {day}
-        </Text>
+        {day}
       </Flex>
     </StyledDay>
   )
