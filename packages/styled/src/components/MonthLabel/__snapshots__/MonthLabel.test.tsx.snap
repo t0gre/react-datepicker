@@ -13,6 +13,7 @@ exports[`should match snapshot 1`] = `
   <div
     class="c0"
     color="#343132"
+    data-testid="MonthLabel"
     font-family="Montserrat, sans-serif"
     font-size="14px"
     font-weight="600"

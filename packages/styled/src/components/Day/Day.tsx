@@ -110,8 +110,8 @@ interface StyledDayProps
   isActive: boolean
   disabled: boolean
   isStartOrEnd: boolean
-  dayHeight: number
-  dayWidth: number
+  dayHeight: number | (number | null)[] | undefined
+  dayWidth: number | (number | null)[] | undefined
   borderAccessibility: string
   daySelectedHoverBackground: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   dayHoverBackground: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
@@ -196,11 +196,11 @@ interface DayProps {
   disabled: boolean
   isStartOrEnd: boolean
   onDaySelect(date: Date): void
-  daySize: number
 }
-function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}: DayProps) {
+function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date}: DayProps) {
   const theme: DayTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
+    daySize: globalStyles.daySize,
     dayFontWeight: 500,
     dayFontSize: '14px',
     dayColor: '#58595b',
@@ -213,20 +213,20 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}
     daySelectedBackground: '#71c9ed',
     daySelectedHoverBackground: '#39beef',
     daySelectedFirstOrLastBackground: '#00aeef',
-    borderColor: '#e6e7e8',
-    borderSelectedColor: '#71c9ed',
-    borderSelectedFirstOrLastColor: '#00aeef',
-    borderAccessibility: '#009fef',
+    dayBorderColor: '#e6e7e8',
+    dayBorderSelectedColor: '#71c9ed',
+    dayBorderSelectedFirstOrLastColor: '#00aeef',
+    dayBorderAccessibility: '#009fef',
   })
   const borderColor = useMemo(
     () =>
       getColor(isActive, isStartOrEnd, {
         // @ts-ignore
-        selectedFirstOrLast: theme.borderSelectedFirstOrLastColor,
+        selectedFirstOrLast: theme.dayBorderSelectedFirstOrLastColor,
         // @ts-ignore
-        selected: theme.borderSelectedColor,
+        selected: theme.dayBorderSelectedColor,
         // @ts-ignore
-        normal: theme.borderColor,
+        normal: theme.dayBorderColor,
       }),
     [isActive, isStartOrEnd, theme],
   )
@@ -262,8 +262,8 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}
       disabled={disabled}
       isActive={isActive}
       isStartOrEnd={isStartOrEnd}
-      dayHeight={daySize}
-      dayWidth={daySize}
+      dayHeight={theme.daySize}
+      dayWidth={theme.daySize}
       background={background}
       color={color}
       fontFamily={theme.fontFamily}
@@ -278,12 +278,13 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date, daySize}
       // @ts-ignore
       daySelectedHoverColor={theme.daySelectedHoverColor}
       // @ts-ignore
-      borderAccessibility={theme.borderAccessibility}
+      borderAccessibility={theme.dayBorderAccessibility}
       boxShadow={`1px 0 0 0 ${borderColor},
         0 1px 0 0 ${borderColor},
         1px 1px 0 0 ${borderColor},
         1px 0 0 0 ${borderColor} inset,
         0 1px 0 0 ${borderColor} inset`}
+      data-testid="Day"
     >
       <Flex justifyContent="center" alignItems="center" height="100%" width="100%">
         {day}

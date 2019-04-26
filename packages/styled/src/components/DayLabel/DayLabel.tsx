@@ -23,6 +23,7 @@ const MonthLabel = ({label}: MonthLabelProps) => {
       fontWeight={theme.dayLabelFontWeight}
       // @ts-ignore
       color={theme.dayLabelColor}
+      data-testid="DayLabel"
     >
       {label}
     </Text>

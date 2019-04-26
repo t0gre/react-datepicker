@@ -7,5 +7,6 @@ declare const _default: {
     mud: string
     greey: string
   }
+  daySize: number
 }
 export default _default

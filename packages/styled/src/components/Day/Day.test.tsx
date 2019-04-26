@@ -10,7 +10,6 @@ test('should render disabled day', () => {
       isStartOrEnd={false}
       date={new Date()}
       day="1"
-      daySize={20}
       onDaySelect={jest.fn()}
     />,
   )
@@ -26,7 +25,6 @@ test('should render normal day', () => {
       isStartOrEnd={false}
       date={new Date()}
       day="1"
-      daySize={20}
       onDaySelect={onDaySelect}
     />,
   )
@@ -44,7 +42,6 @@ test('should render active day', () => {
       isStartOrEnd={false}
       date={new Date()}
       day="1"
-      daySize={20}
       onDaySelect={jest.fn()}
     />,
   )
@@ -59,7 +56,6 @@ test('should render first or last active day', () => {
       disabled={false}
       date={new Date()}
       day="1"
-      daySize={20}
       onDaySelect={jest.fn()}
     />,
   )

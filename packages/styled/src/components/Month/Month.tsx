@@ -5,6 +5,10 @@ import DayLabel from '../DayLabel'
 import Flex from '../Flex'
 import Grid from '../Grid'
 import Day from '../Day'
+import useThemeProps from '../../hooks/useThemeProps'
+import globalStyles from '../../globalStyles'
+// eslint-disable-next-line import/no-unresolved
+import {MonthTheme} from '../../@types/theme'
 
 interface MonthProps {
   year: number
@@ -14,8 +18,6 @@ interface MonthProps {
   isDateSelected(date: Date): boolean
   isStartOrEndDate(date: Date): boolean
   onDaySelect(date: Date): void
-
-  daySize?: number
 }
 
 const Month = ({
@@ -26,24 +28,27 @@ const Month = ({
   isDateSelected,
   isStartOrEndDate,
   onDaySelect,
-
-  daySize = 45,
 }: MonthProps) => {
   const {days, weekDays, monthLabel} = useMonth({year, month, weekStartsOn: firstDayOfWeek})
+  const theme: MonthTheme = useThemeProps({
+    daySize: globalStyles.daySize,
+    monthLabelMargin: '0 0 28px',
+    monthDayLabelMargin: '0 0 16px',
+  })
 
   return (
     <div>
-      <Flex justifyContent="center" mb="28px">
+      <Flex justifyContent="center" m={theme.monthLabelMargin}>
         <MonthLabel label={monthLabel} />
       </Flex>
-      <Grid gridTemplateColumns={`repeat(7, ${daySize}px)`}>
-        {weekDays.map(day => (
-          <Flex key={day} justifyContent="center" mb="16px">
+      <Grid daySizeGridTemplateColumns={theme.daySize}>
+        {weekDays.map((day: string) => (
+          <Flex key={day} justifyContent="center" m={theme.monthDayLabelMargin}>
             <DayLabel label={day} />
           </Flex>
         ))}
       </Grid>
-      <Grid gridTemplateColumns={`repeat(7, ${daySize}px)`}>
+      <Grid daySizeGridTemplateColumns={theme.daySize}>
         {days.map((day: CalendarDay, index: number) => {
           if (typeof day === 'object') {
             return (
@@ -55,7 +60,6 @@ const Month = ({
                 disabled={isDateBlocked(day.date)}
                 isStartOrEnd={isStartOrEndDate(day.date)}
                 onDaySelect={onDaySelect}
-                daySize={daySize}
               />
             )
           }

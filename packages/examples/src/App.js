@@ -52,6 +52,7 @@ function App() {
               daySelectedFirstOrLastBackground: 'yellow',
               daySelectedHoverBackground: 'yellow',
               dayHoverBackground: 'yellow',
+              daySize: [30, 50],
               // selectDatePadding: '30px 0 0',
               // fontFamily: 'arial',
               // selectDateLabelFontSize: '20px',

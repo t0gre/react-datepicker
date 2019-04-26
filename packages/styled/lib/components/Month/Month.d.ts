@@ -6,7 +6,6 @@ interface MonthProps {
   isDateSelected(date: Date): boolean
   isStartOrEndDate(date: Date): boolean
   onDaySelect(date: Date): void
-  daySize?: number
 }
 declare const Month: ({
   year,
@@ -16,6 +15,5 @@ declare const Month: ({
   isDateSelected,
   isStartOrEndDate,
   onDaySelect,
-  daySize,
 }: MonthProps) => JSX.Element
 export default Month

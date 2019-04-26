@@ -7,4 +7,5 @@ export default {
     mud: '#58595B',
     greey: '#808285',
   },
+  daySize: 36,
 }

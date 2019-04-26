@@ -26,6 +26,7 @@ const MonthLabel = ({label}: MonthLabelProps) => {
       lineHeight={theme.monthLabelLineHeight}
       // @ts-ignore
       color={theme.monthLabelColor}
+      data-testid="MonthLabel"
     >
       {label}
     </Text>

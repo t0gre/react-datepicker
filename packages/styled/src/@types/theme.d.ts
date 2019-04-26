@@ -11,10 +11,12 @@ import {
   WidthProperty,
   BackgroundProperty,
   BorderProperty,
+  JustifyContentProperty,
 } from 'csstype'
 
 interface CommonTheme {
   fontFamily?: ResponsiveValue<FontFamilyProperty>
+  daySize?: number | (number | null)[] | undefined
 }
 
 export interface SelectDateTheme extends CommonTheme {
@@ -75,8 +77,13 @@ export interface DayTheme extends CommonTheme {
   daySelectedBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   daySelectedHoverBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   daySelectedFirstOrLastBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-  borderColor?: ColorProperty
-  borderSelectedColor?: ColorProperty
-  borderSelectedFirstOrLastColor?: ColorProperty
-  borderAccessibility?: ColorProperty
+  dayBorderColor?: ColorProperty
+  dayBorderSelectedColor?: ColorProperty
+  dayBorderSelectedFirstOrLastColor?: ColorProperty
+  dayBorderAccessibility?: ColorProperty
+}
+
+export interface MonthTheme extends CommonTheme {
+  monthLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
+  monthDayLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
 }

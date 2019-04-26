@@ -24,6 +24,7 @@ import {
   GridTemplatesRowsProps,
   space,
   SpaceProps,
+  style,
 } from 'styled-system'
 
 interface GridProps
@@ -38,7 +39,22 @@ interface GridProps
     GridTemplatesAreasProps,
     GridTemplatesColumnsProps,
     SpaceProps,
-    GridTemplatesRowsProps {}
+    GridTemplatesRowsProps {
+  daySizeGridTemplateColumns?: number | (number | null)[] | undefined
+}
+
+const daySizeGridTemplateColumns = style({
+  // React prop name and CSS property
+  prop: 'daySizeGridTemplateColumns',
+  // CSS property (if different from prop argument)
+  cssProperty: 'gridTemplateColumns',
+  // key for theme values
+  key: 'gridTemplateColumns',
+  // accessor function for transforming the value
+  transformValue: n => `repeat(7, ${n}px)`,
+  // add a fallback scale object or array, if theme is not present
+  scale: [0, 4, 8, 16, 32],
+})
 
 const Grid = styled('div')<GridProps>`
   display: grid;
@@ -54,6 +70,7 @@ const Grid = styled('div')<GridProps>`
   ${alignItems}
   ${justifyContent}
   ${space}
+  ${daySizeGridTemplateColumns}
 `
 
 export default Grid

@@ -19,8 +19,8 @@ exports[`should render active day 1`] = `
 }
 
 .c0 {
-  height: 20px;
-  width: 20px;
+  height: 36px;
+  width: 36px;
   box-shadow: 1px 0 0 0 #71c9ed, 0 1px 0 0 #71c9ed, 1px 1px 0 0 #71c9ed, 1px 0 0 0 #71c9ed inset, 0 1px 0 0 #71c9ed inset;
   background: #71c9ed;
   color: #ffffff;
@@ -47,6 +47,7 @@ exports[`should render active day 1`] = `
   <button
     class="c0"
     color="#ffffff"
+    data-testid="Day"
     font-family="Montserrat, sans-serif"
     font-size="14px"
     font-weight="500"
@@ -82,8 +83,8 @@ exports[`should render disabled day 1`] = `
 }
 
 .c0 {
-  height: 20px;
-  width: 20px;
+  height: 36px;
+  width: 36px;
   box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
@@ -107,6 +108,7 @@ exports[`should render disabled day 1`] = `
   <button
     class="c0"
     color="#58595b"
+    data-testid="Day"
     disabled=""
     font-family="Montserrat, sans-serif"
     font-size="14px"
@@ -143,8 +145,8 @@ exports[`should render first or last active day 1`] = `
 }
 
 .c0 {
-  height: 20px;
-  width: 20px;
+  height: 36px;
+  width: 36px;
   box-shadow: 1px 0 0 0 #00aeef, 0 1px 0 0 #00aeef, 1px 1px 0 0 #00aeef, 1px 0 0 0 #00aeef inset, 0 1px 0 0 #00aeef inset;
   background: #00aeef;
   color: #ffffff;
@@ -166,6 +168,7 @@ exports[`should render first or last active day 1`] = `
   <button
     class="c0"
     color="#ffffff"
+    data-testid="Day"
     font-family="Montserrat, sans-serif"
     font-size="14px"
     font-weight="500"
@@ -201,8 +204,8 @@ exports[`should render normal day 1`] = `
 }
 
 .c0 {
-  height: 20px;
-  width: 20px;
+  height: 36px;
+  width: 36px;
   box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
@@ -229,6 +232,7 @@ exports[`should render normal day 1`] = `
   <button
     class="c0"
     color="#58595b"
+    data-testid="Day"
     font-family="Montserrat, sans-serif"
     font-size="14px"
     font-weight="500"
