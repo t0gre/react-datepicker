@@ -9,10 +9,7 @@ import {
   BorderRadiusProps,
   position,
   PositionProps,
-  ResponsiveValue,
-  TLengthStyledSystem,
 } from 'styled-system'
-import {GridTemplateColumnsProperty, HeightProperty} from 'csstype'
 import {
   useDatepicker,
   MonthType,
@@ -32,6 +29,10 @@ import ResetDates from '../ResetDates'
 import NavButton from '../NavButton'
 import Close from '../Close'
 import ArrowIcon from '../../icons/ArrowIcon'
+// eslint-disable-next-line import/no-unresolved
+import {DatepickerTheme} from '../../@types/theme'
+import useThemeProps from '../../hooks/useThemeProps'
+import globalStyles from '../../globalStyles'
 
 interface StyledDatepicker extends BackgroundProps, SpaceProps, BorderRadiusProps, PositionProps {}
 const StyledDatepicker = styled('div')<StyledDatepicker>`
@@ -56,17 +57,10 @@ const DateWrapper = styled('div')`
   }
 `
 
-export interface DatepickerStyles {
-  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
-  selectDateGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
-}
-
 export interface DatepickerProps extends UseDatepickerProps {
   phrases?: DatepickerPhrases
   displayFormat: string | FormatFunction
   onClose?(): void
-
-  styles?: DatepickerStyles
 }
 
 function Datepicker({
@@ -81,7 +75,6 @@ function Datepicker({
   firstDayOfWeek: firstDayOfWeekProp,
   displayFormat = 'MM/DD/YYYY',
   phrases = datepickerPhrases,
-  styles = {},
 }: DatepickerProps) {
   const {
     activeMonths,
@@ -104,21 +97,69 @@ function Datepicker({
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })
+  const theme: DatepickerTheme = useThemeProps({
+    datepickerBackground: '#ffffff',
+    datepickerPadding: '32px',
+    datepickerBorderRadius: '2px',
+    datepickerPosition: 'relative',
+    datepickerCloseWrapperPosition: 'absolute',
+    datepickerCloseWrapperRight: '32px',
+    datepickerCloseWrapperTop: 'unset',
+    datepickerCloseWrapperLeft: 'unset',
+    datepickerCloseWrapperBottom: 'unset',
+    datepickerCloseWrapperZIndex: 1,
+    datepickerSelectDateGridTemplateColumns: '126px 75px 126px',
+    datepickerSelectDateArrowIconWidth: '15px',
+    datepickerSelectDateArrowIconHeight: '12px',
+    datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
+    datepickerMonthsWrapperMargin: '28px 0 0',
+    datepickerPreviousMonthButtonPosition: 'absolute',
+    datepickerPreviousMonthButtonTop: '-5px',
+    datepickerPreviousMonthButtonLeft: '0',
+    datepickerPreviousMonthButtonRight: 'unset',
+    datepickerPreviousMonthButtonBottom: 'unset',
+    datepickerNextMonthButtonPosition: 'absolute',
+    datepickerNextMonthButtonTop: '-5px',
+    datepickerNextMonthButtonLeft: 'unset',
+    datepickerNextMonthButtonRight: '0',
+    datepickerNextMonthButtonBottom: 'unset',
+    datepickerMonthsGridGap: '0 32px',
+    datepickerResetDatesWrapperMargin: '32px 0 0',
+  })
 
   return (
-    <StyledDatepicker background="#ffffff" p="32px" borderRadius="2px" position="relative">
-      <Box position="absolute" right="32px" zIndex={1}>
+    <StyledDatepicker
+      background={theme.datepickerBackground}
+      p={theme.datepickerPadding}
+      borderRadius={theme.datepickerBorderRadius}
+      position={theme.datepickerPosition}
+    >
+      <Box
+        position={theme.datepickerCloseWrapperPosition}
+        right={theme.datepickerCloseWrapperRight}
+        top={theme.datepickerCloseWrapperTop}
+        left={theme.datepickerCloseWrapperLeft}
+        bottom={theme.datepickerCloseWrapperBottom}
+        zIndex={theme.datepickerCloseWrapperZIndex}
+      >
         <Close onClick={onClose} />
       </Box>
       <DateWrapper>
-        <Grid gridTemplateColumns={styles.selectDateGridTemplateColumns || '126px 75px 126px'}>
+        <Grid gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}>
           <SelectedDate
             title={phrases.datepickerStartDateLabel}
             date={getInputValue(startDate, displayFormat, phrases.datepickerStartDatePlaceholder)}
             isActive={focusedInput === START_DATE}
           />
           <Flex justifyContent="center" alignItems="center">
-            <ArrowIcon height="12px" width="15px" iconColor="#929598" />
+            <ArrowIcon
+              // @ts-ignore
+              height={theme.datepickerSelectDateArrowIconHeight}
+              // @ts-ignore
+              width={theme.datepickerSelectDateArrowIconWidth}
+              // @ts-ignore
+              iconColor={theme.datepickerSelectDateArrowIconColor}
+            />
           </Flex>
           <SelectedDate
             title={phrases.datepickerEndDateLabel}
@@ -127,14 +168,29 @@ function Datepicker({
           />
         </Grid>
       </DateWrapper>
-      <Box mt="28px" position="relative">
-        <Box position="absolute" top="-5px" left="0">
+      <Box m={theme.datepickerMonthsWrapperMargin} position="relative">
+        <Box
+          position={theme.datepickerPreviousMonthButtonPosition}
+          top={theme.datepickerPreviousMonthButtonTop}
+          left={theme.datepickerPreviousMonthButtonLeft}
+          right={theme.datepickerPreviousMonthButtonRight}
+          bottom={theme.datepickerPreviousMonthButtonBottom}
+        >
           <NavButton type="prev" onClick={goToPreviousMonths} />
         </Box>
-        <Box position="absolute" top="-5px" right="0">
+        <Box
+          position={theme.datepickerNextMonthButtonPosition}
+          top={theme.datepickerNextMonthButtonTop}
+          left={theme.datepickerNextMonthButtonLeft}
+          right={theme.datepickerNextMonthButtonRight}
+          bottom={theme.datepickerNextMonthButtonBottom}
+        >
           <NavButton type="next" onClick={goToNextMonths} />
         </Box>
-        <Grid gridTemplateColumns={`repeat(${numberOfMonths}, 1fr)`} gridGap="0 32px">
+        <Grid
+          numberOfMonthsGridTemplateColumns={numberOfMonths}
+          gridGap={theme.datepickerMonthsGridGap}
+        >
           {activeMonths.map((month: MonthType) => (
             <Month
               key={`${month.year}-${month.month}`}
@@ -145,12 +201,11 @@ function Datepicker({
               isDateSelected={isDateSelected}
               isStartOrEndDate={isStartOrEndDate}
               onDaySelect={onDaySelect}
-              // daySize={styles.daySize}
             />
           ))}
         </Grid>
       </Box>
-      <Box mt="32px">
+      <Box m={theme.datepickerResetDatesWrapperMargin}>
         <ResetDates onResetDates={onResetDates} text={phrases.resetDates} />
       </Box>
     </StyledDatepicker>

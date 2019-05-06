@@ -26,6 +26,7 @@ interface GridProps
     SpaceProps,
     GridTemplatesRowsProps {
   daySizeGridTemplateColumns?: number | (number | null)[] | undefined
+  numberOfMonthsGridTemplateColumns?: number | (number | null)[] | undefined
 }
 declare const Grid: import('styled-components').StyledComponent<'div', any, GridProps, never>
 export default Grid

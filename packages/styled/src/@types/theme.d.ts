@@ -17,6 +17,11 @@ import {
   LeftProperty,
   DisplayProperty,
   BorderRadiusProperty,
+  RightProperty,
+  ZIndexProperty,
+  BottomProperty,
+  GridTemplateColumnsProperty,
+  GridGapProperty,
 } from 'csstype'
 
 interface CommonTheme {
@@ -100,7 +105,6 @@ export interface InputTheme extends CommonTheme {
   inputLabelBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
   inputLabelBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   inputLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-
   inputFontWeight?: ResponsiveValue<FontWeightProperty>
   inputPlaceholderFontWeight?: ResponsiveValue<FontWeightProperty>
   inputFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
@@ -119,4 +123,36 @@ export interface InputTheme extends CommonTheme {
   inputCalendarIconWidth?: string
   inputCalendarIconHeight?: string
   inputCalendarIconColor?: string
+}
+
+export interface DatepickerTheme extends CommonTheme {
+  datepickerBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  datepickerPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  datepickerBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
+  datepickerPosition?: ResponsiveValue<PositionProperty>
+  datepickerCloseWrapperPosition?: ResponsiveValue<PositionProperty>
+  datepickerCloseWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
+  datepickerCloseWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+  datepickerCloseWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  datepickerCloseWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+  datepickerCloseWrapperZIndex?: ResponsiveValue<ZIndexProperty>
+  datepickerSelectDateGridTemplateColumns?: ResponsiveValue<
+    GridTemplateColumnsProperty<TLengthStyledSystem>
+  >
+  datepickerSelectDateArrowIconWidth?: string
+  datepickerSelectDateArrowIconHeight?: string
+  datepickerSelectDateArrowIconColor?: string
+  datepickerMonthsWrapperMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
+  datepickerResetDatesWrapperMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
+  datepickerMonthsGridGap?: ResponsiveValue<GridGapProperty<TLengthStyledSystem>>
+  datepickerPreviousMonthButtonPosition?: ResponsiveValue<PositionProperty>
+  datepickerPreviousMonthButtonRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
+  datepickerPreviousMonthButtonTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+  datepickerPreviousMonthButtonLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  datepickerPreviousMonthButtonBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+  datepickerNextMonthButtonPosition?: ResponsiveValue<PositionProperty>
+  datepickerNextMonthButtonRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
+  datepickerNextMonthButtonTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+  datepickerNextMonthButtonLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  datepickerNextMonthButtonBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
 }

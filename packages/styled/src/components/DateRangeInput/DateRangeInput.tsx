@@ -177,10 +177,6 @@ function DateRangeInput({
             focusedInput={focusedInput}
             displayFormat={displayFormat}
             onDateChange={onDateChange}
-            styles={{
-              daySize: styles.daySize,
-              selectDateGridTemplateColumns: styles.selectDateGridTemplateColumns,
-            }}
           />
         )}
       </Box>

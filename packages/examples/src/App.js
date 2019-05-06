@@ -50,6 +50,8 @@ function App() {
               inputCalendarWrapperWidth: '20px',
               inputCalendarWrapperTop: '10px',
               inputCalendarWrapperLeft: '10px',
+              datepickerBorderRadius: '10px',
+              datepickerBackground: 'red',
               daySize: [30, 50],
               // selectDatePadding: '30px 0 0',
               // fontFamily: 'arial',
