@@ -3,8 +3,6 @@ import {
   BackgroundProperty,
   BorderProperty,
   BorderRadiusProperty,
-  MinHeightProperty,
-  TopProperty,
   PaddingProperty,
   ColorProperty,
   GlobalsNumber,
@@ -22,12 +20,9 @@ export interface DateRangeInputStyles {
   inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   inputGridBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
   inputGridBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
-  inputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   inputStartDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   inputEndDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-  inputMinHeight?: ResponsiveValue<MinHeightProperty<TLengthStyledSystem>>
-  inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   inputArrowIconColor?: ResponsiveValue<ColorProperty>
   inputArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
   daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>

@@ -11,7 +11,12 @@ import {
   WidthProperty,
   BackgroundProperty,
   BorderProperty,
-  JustifyContentProperty,
+  MinHeightProperty,
+  PositionProperty,
+  TopProperty,
+  LeftProperty,
+  DisplayProperty,
+  BorderRadiusProperty,
 } from 'csstype'
 
 interface CommonTheme {
@@ -86,4 +91,32 @@ export interface DayTheme extends CommonTheme {
 export interface MonthTheme extends CommonTheme {
   monthLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
   monthDayLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
+}
+
+export interface InputTheme extends CommonTheme {
+  inputLabelDisplay?: ResponsiveValue<DisplayProperty>
+  inputLabelPosition?: ResponsiveValue<PositionProperty>
+  inputLabelBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  inputLabelBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
+  inputLabelBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  inputLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
+
+  inputFontWeight?: ResponsiveValue<FontWeightProperty>
+  inputPlaceholderFontWeight?: ResponsiveValue<FontWeightProperty>
+  inputFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
+  inputColor?: ResponsiveValue<ColorProperty>
+  inputPlaceholderColor?: ResponsiveValue<ColorProperty>
+  inputBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  inputMinHeight?: ResponsiveValue<MinHeightProperty<TLengthStyledSystem>>
+  inputWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
+  inputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  inputCalendarWrapperPosition?: ResponsiveValue<PositionProperty>
+  inputCalendarWrapperHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  inputCalendarWrapperWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
+  inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+  inputCalendarWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  inputCalendarIconWidth?: string
+  inputCalendarIconHeight?: string
+  inputCalendarIconColor?: string
 }

@@ -4,8 +4,6 @@ import {
   BackgroundProperty,
   BorderProperty,
   BorderRadiusProperty,
-  MinHeightProperty,
-  TopProperty,
   PaddingProperty,
   ColorProperty,
   GlobalsNumber,
@@ -65,12 +63,9 @@ export interface DateRangeInputStyles {
   inputGridBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
   inputGridBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
 
-  inputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   inputStartDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   inputEndDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-  inputMinHeight?: ResponsiveValue<MinHeightProperty<TLengthStyledSystem>>
-  inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   inputArrowIconColor?: ResponsiveValue<ColorProperty>
   inputArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
   daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
@@ -147,10 +142,6 @@ function DateRangeInput({
           value={getInputValue(startDate, displayFormat, '')}
           onClick={() => onFocusChange(START_DATE)}
           showCalendarIcon={showStartDateCalendarIcon}
-          inputBorder={styles.inputBorder}
-          inputMinHeight={styles.inputMinHeight}
-          inputPadding={styles.inputStartDatePadding || styles.inputPadding}
-          calendarWrapperTop={styles.inputCalendarWrapperTop}
         />
         <Flex alignItems="center" justifyContent="center">
           <InputArrowIcon
@@ -161,16 +152,12 @@ function DateRangeInput({
           />
         </Flex>
         <Input
-          id="startDate"
+          id="endDate"
           ariaLabel={phrases.endDateAriaLabel}
           placeholder={phrases.endDatePlaceholder}
           value={getInputValue(endDate, displayFormat, '')}
           onClick={() => onFocusChange(!startDate ? START_DATE : END_DATE)}
           showCalendarIcon={showEndDateCalendarIcon}
-          inputBorder={styles.inputBorder}
-          inputMinHeight={styles.inputMinHeight}
-          calendarWrapperTop={styles.inputCalendarWrapperTop}
-          inputPadding={styles.inputEndDatePadding || styles.inputPadding}
         />
       </InputGrid>
       <Box

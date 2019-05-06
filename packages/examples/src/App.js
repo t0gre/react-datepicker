@@ -45,13 +45,11 @@ function App() {
         <ThemeProvider
           theme={{
             reactDatepicker: {
-              dayFontWeight: 700,
-              dayFontSize: '20px',
-              dayBackground: 'red',
-              daySelectedBackground: 'green',
-              daySelectedFirstOrLastBackground: 'yellow',
-              daySelectedHoverBackground: 'yellow',
-              dayHoverBackground: 'yellow',
+              inputCalendarWrapperPosition: 'absolute',
+              inputCalendarWrapperHeight: '20px',
+              inputCalendarWrapperWidth: '20px',
+              inputCalendarWrapperTop: '10px',
+              inputCalendarWrapperLeft: '10px',
               daySize: [30, 50],
               // selectDatePadding: '30px 0 0',
               // fontFamily: 'arial',
@@ -91,7 +89,6 @@ function App() {
             //   selectDateGridTemplateColumns: '126px 50px 126px',
             //   datepickerBottom: '100px',
             // }}
-            showEndDateCalendarIcon={false}
           />
         </ThemeProvider>
       </div>
