@@ -1,15 +1,277 @@
 import {advanceTo, clear} from 'jest-date-mock'
+import {renderHook, act} from 'react-hooks-testing-library'
 import {isEqual, format} from 'date-fns'
 import {
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
   getInitialMonths,
   isDateSelected,
-  isStartOrEndDate,
+  isFirstOrLastSelectedDate,
   isDateBlocked,
   getInputValue,
   getNextActiveMonth,
+  useDatepicker,
+  START_DATE,
+  END_DATE,
 } from '.'
+
+describe('useDatepicker', () => {
+  test('should return initial values', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: null,
+        onDateChange: jest.fn(),
+      }),
+    )
+    expect(result.current.numberOfMonths).toBe(2)
+    expect(result.current.firstDayOfWeek).toBe(1)
+
+    // Check active months
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    // next 2 months
+    act(() => {
+      result.current.goToNextMonths()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(4)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(5)
+
+    // prev 2 months
+    act(() => {
+      result.current.goToPreviousMonths()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    clear()
+  })
+
+  test('should have one month', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: null,
+        onDateChange: jest.fn(),
+        numberOfMonths: 1,
+        firstDayOfWeek: 0,
+      }),
+    )
+    expect(result.current.numberOfMonths).toBe(1)
+    expect(result.current.firstDayOfWeek).toBe(0)
+
+    // Check active months
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+
+    // next month
+    act(() => {
+      result.current.goToNextMonths()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(3)
+
+    // prev month
+    act(() => {
+      result.current.goToPreviousMonths()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+
+    clear()
+  })
+
+  test('should reset date', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 2, 27, 0, 0, 0),
+        endDate: new Date(2019, 3, 27, 0, 0, 0),
+        focusedInput: null,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    act(() => {
+      result.current.onResetDates()
+    })
+    expect(onDateChange).toBeCalledWith({
+      startDate: null,
+      endDate: null,
+      focusedInput: START_DATE,
+    })
+    clear()
+  })
+
+  test('should select start date', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: START_DATE,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    act(() => {
+      result.current.onDaySelect(new Date(2019, 3, 1, 0, 0, 0))
+    })
+    expect(onDateChange).toBeCalledWith({
+      startDate: new Date(2019, 3, 1, 0, 0, 0),
+      endDate: null,
+      focusedInput: END_DATE,
+    })
+    clear()
+  })
+
+  test('should select end date', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: null,
+        focusedInput: END_DATE,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    act(() => {
+      result.current.onDaySelect(new Date(2019, 3, 2, 0, 0, 0))
+    })
+    expect(onDateChange).toBeCalledWith({
+      startDate: new Date(2019, 3, 1, 0, 0, 0),
+      endDate: new Date(2019, 3, 2, 0, 0, 0),
+      focusedInput: null,
+    })
+    clear()
+  })
+
+  test('should select start date (reset date, because end date was before start date)', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: new Date(2019, 3, 2, 0, 0, 0),
+        focusedInput: END_DATE,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    act(() => {
+      result.current.onDaySelect(new Date(2019, 2, 27, 0, 0, 0))
+    })
+    expect(onDateChange).toBeCalledWith({
+      startDate: new Date(2019, 2, 27, 0, 0, 0),
+      endDate: null,
+      focusedInput: END_DATE,
+    })
+    clear()
+  })
+
+  test('should select start date (reset date, because start date was after end date)', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: new Date(2019, 3, 2, 0, 0, 0),
+        focusedInput: START_DATE,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    act(() => {
+      result.current.onDaySelect(new Date(2019, 3, 27, 0, 0, 0))
+    })
+    expect(onDateChange).toBeCalledWith({
+      startDate: new Date(2019, 3, 27, 0, 0, 0),
+      endDate: null,
+      focusedInput: END_DATE,
+    })
+    clear()
+  })
+
+  test('should check if date is blocked', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: new Date(2019, 3, 2, 0, 0, 0),
+        minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+        maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+        focusedInput: START_DATE,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    expect(result.current.isDateBlocked(new Date(2019, 3, 1, 0, 0, 0))).toBe(false)
+    expect(result.current.isDateBlocked(new Date(2019, 3, 10, 0, 0, 0))).toBe(false)
+    expect(result.current.isDateBlocked(new Date(2019, 3, 11, 0, 0, 0))).toBe(true)
+    expect(result.current.isDateBlocked(new Date(2019, 2, 27, 0, 0, 0))).toBe(true)
+    clear()
+  })
+
+  test('should check if date is selected', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: new Date(2019, 3, 3, 0, 0, 0),
+        minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+        maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+        focusedInput: START_DATE,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    expect(result.current.isDateSelected(new Date(2019, 3, 1, 0, 0, 0))).toBe(true)
+    expect(result.current.isDateSelected(new Date(2019, 3, 2, 0, 0, 0))).toBe(true)
+    expect(result.current.isDateSelected(new Date(2019, 3, 3, 0, 0, 0))).toBe(true)
+    expect(result.current.isDateSelected(new Date(2019, 3, 11, 0, 0, 0))).toBe(false)
+    expect(result.current.isDateSelected(new Date(2019, 2, 27, 0, 0, 0))).toBe(false)
+    clear()
+  })
+
+  test('should check if date is first or last selected date', () => {
+    const onDateChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: new Date(2019, 3, 3, 0, 0, 0),
+        minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+        maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+        focusedInput: START_DATE,
+        onDateChange: onDateChange,
+      }),
+    )
+
+    expect(result.current.isFirstOrLastSelectedDate(new Date(2019, 3, 1, 0, 0, 0))).toBe(true)
+    expect(result.current.isFirstOrLastSelectedDate(new Date(2019, 3, 2, 0, 0, 0))).toBe(false)
+    expect(result.current.isFirstOrLastSelectedDate(new Date(2019, 3, 3, 0, 0, 0))).toBe(true)
+    expect(result.current.isFirstOrLastSelectedDate(new Date(2019, 3, 11, 0, 0, 0))).toBe(false)
+    expect(result.current.isFirstOrLastSelectedDate(new Date(2019, 2, 27, 0, 0, 0))).toBe(false)
+    clear()
+  })
+})
 
 describe('getCurrentYearMonthAndDate', () => {
   test('should return current year and month', () => {
@@ -104,14 +366,14 @@ describe('isDateSelected', () => {
   })
 })
 
-describe('isStartOrEndDate', () => {
+describe('isFirstOrLastSelectedDate', () => {
   test('should be start or end date', () => {
-    expect(isStartOrEndDate(new Date(2019, 2, 20), startDate, endDate)).toBe(true)
-    expect(isStartOrEndDate(new Date(2019, 2, 27), startDate, endDate)).toBe(true)
+    expect(isFirstOrLastSelectedDate(new Date(2019, 2, 20), startDate, endDate)).toBe(true)
+    expect(isFirstOrLastSelectedDate(new Date(2019, 2, 27), startDate, endDate)).toBe(true)
   })
 
   test('should not be start or end date', () => {
-    expect(isStartOrEndDate(new Date(2019, 2, 21), startDate, endDate)).toBe(false)
+    expect(isFirstOrLastSelectedDate(new Date(2019, 2, 21), startDate, endDate)).toBe(false)
   })
 })
 

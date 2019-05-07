@@ -17,7 +17,11 @@ export function isDateSelected(date: Date, startDate: Date | null, endDate: Date
   return false
 }
 
-export function isStartOrEndDate(date: Date, startDate: Date | null, endDate: Date | null) {
+export function isFirstOrLastSelectedDate(
+  date: Date,
+  startDate: Date | null,
+  endDate: Date | null,
+) {
   return !!((startDate && isSameDay(date, startDate)) || (endDate && isSameDay(date, endDate)))
 }
 

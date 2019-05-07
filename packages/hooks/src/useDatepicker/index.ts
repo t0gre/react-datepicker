@@ -9,7 +9,7 @@ import {
 } from './useDatepicker'
 import {
   isDateSelected,
-  isStartOrEndDate,
+  isFirstOrLastSelectedDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
@@ -23,7 +23,7 @@ import {
 export {
   useDatepicker,
   isDateSelected,
-  isStartOrEndDate,
+  isFirstOrLastSelectedDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,

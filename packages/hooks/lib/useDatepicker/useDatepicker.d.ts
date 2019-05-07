@@ -15,7 +15,6 @@ export interface UseDatepickerProps {
     startDate: Date | null;
     endDate: Date | null;
     focusedInput: FocusedInput;
-    orientation?: 'horizontal' | 'vertical';
     numberOfMonths?: number;
     firstDayOfWeek?: FirstDayOfWeek;
     initialVisibleMonth?(numberOfMonths: number): MonthType[];
@@ -24,7 +23,7 @@ export declare function useDatepicker({ startDate, endDate, focusedInput, minBoo
     firstDayOfWeek: FirstDayOfWeek;
     activeMonths: MonthType[];
     isDateSelected: (date: Date) => boolean;
-    isStartOrEndDate: (date: Date) => boolean;
+    isFirstOrLastSelectedDate: (date: Date) => boolean;
     isDateBlocked: (date: Date) => boolean;
     numberOfMonths: number;
     onResetDates: () => void;

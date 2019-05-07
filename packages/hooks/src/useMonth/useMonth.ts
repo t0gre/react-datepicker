@@ -24,8 +24,12 @@ export function useMonth({
     year,
     month,
     weekStartsOn,
+    dayFormat,
   ])
-  const weekDays = useMemo(() => getWeekDays({weekStartsOn, weekDayFormat}), [weekStartsOn])
+  const weekDays = useMemo(() => getWeekDays({weekStartsOn, weekDayFormat}), [
+    weekStartsOn,
+    weekDayFormat,
+  ])
 
   return {
     days,

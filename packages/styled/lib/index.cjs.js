@@ -762,11 +762,11 @@ var b = function(e, t) {
       })(I.restDateString, O)
     if (R) {
       var j,
-        B = R.getTime(),
-        P = 0
+        P = R.getTime(),
+        B = 0
       if (
         (C.time &&
-          (P = (function(e) {
+          (B = (function(e) {
             var t, n, r
             if ((t = M.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * u
             if ((t = T.exec(e)))
@@ -794,7 +794,7 @@ var b = function(e, t) {
               ? ((k = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -k : k)
               : 0) * o)
       else {
-        var W = B + P,
+        var W = P + B,
           E = new Date(W)
         j = n(E)
         var L = new Date(W)
@@ -802,7 +802,7 @@ var b = function(e, t) {
         var z = n(L) - n(E)
         z > 0 && (j += z)
       }
-      return new Date(B + P + j)
+      return new Date(P + B + j)
     }
     return new Date(e)
   },
@@ -835,29 +835,29 @@ var b = function(e, t) {
       o = (a < n ? 7 : 0) + a - n
     return r.setDate(r.getDate() - o), r.setHours(0, 0, 0, 0), r
   },
-  E = function(e) {
+  G = function(e) {
     return A(e, {weekStartsOn: 1})
   },
-  G = function(e) {
+  E = function(e) {
     var t = b(e),
       n = t.getFullYear(),
       r = new Date(0)
     r.setFullYear(n + 1, 0, 4), r.setHours(0, 0, 0, 0)
-    var a = E(r),
+    var a = G(r),
       o = new Date(0)
     o.setFullYear(n, 0, 4), o.setHours(0, 0, 0, 0)
-    var i = E(o)
+    var i = G(o)
     return t.getTime() >= a.getTime() ? n + 1 : t.getTime() >= i.getTime() ? n : n - 1
   },
   N = function(e) {
-    var t = G(e),
+    var t = E(e),
       n = new Date(0)
-    return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), E(n)
+    return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), G(n)
   },
   z = 6048e5,
   C = function(e) {
     var t = b(e),
-      n = E(t).getTime() - N(t).getTime()
+      n = G(t).getTime() - N(t).getTime()
     return Math.round(n / z) + 1
   },
   X = function(e) {
@@ -1014,7 +1014,7 @@ var b = function(e, t) {
       return e.getMonth() + 1
     },
     MM: function(e) {
-      return Q(e.getMonth() + 1, 2)
+      return P(e.getMonth() + 1, 2)
     },
     Q: function(e) {
       return Math.ceil((e.getMonth() + 1) / 3)
@@ -1023,13 +1023,13 @@ var b = function(e, t) {
       return e.getDate()
     },
     DD: function(e) {
-      return Q(e.getDate(), 2)
+      return P(e.getDate(), 2)
     },
     DDD: function(e) {
       return W(e)
     },
     DDDD: function(e) {
-      return Q(W(e), 3)
+      return P(W(e), 3)
     },
     d: function(e) {
       return e.getDay()
@@ -1041,59 +1041,59 @@ var b = function(e, t) {
       return C(e)
     },
     WW: function(e) {
-      return Q(C(e), 2)
+      return P(C(e), 2)
     },
     YY: function(e) {
-      return Q(e.getFullYear(), 4).substr(2)
+      return P(e.getFullYear(), 4).substr(2)
     },
     YYYY: function(e) {
-      return Q(e.getFullYear(), 4)
+      return P(e.getFullYear(), 4)
     },
     GG: function(e) {
-      return String(G(e)).substr(2)
+      return String(E(e)).substr(2)
     },
     GGGG: function(e) {
-      return G(e)
+      return E(e)
     },
     H: function(e) {
       return e.getHours()
     },
     HH: function(e) {
-      return Q(e.getHours(), 2)
+      return P(e.getHours(), 2)
     },
     h: function(e) {
       var t = e.getHours()
       return 0 === t ? 12 : t > 12 ? t % 12 : t
     },
     hh: function(e) {
-      return Q(B.h(e), 2)
+      return P(B.h(e), 2)
     },
     m: function(e) {
       return e.getMinutes()
     },
     mm: function(e) {
-      return Q(e.getMinutes(), 2)
+      return P(e.getMinutes(), 2)
     },
     s: function(e) {
       return e.getSeconds()
     },
     ss: function(e) {
-      return Q(e.getSeconds(), 2)
+      return P(e.getSeconds(), 2)
     },
     S: function(e) {
       return Math.floor(e.getMilliseconds() / 100)
     },
     SS: function(e) {
-      return Q(Math.floor(e.getMilliseconds() / 10), 2)
+      return P(Math.floor(e.getMilliseconds() / 10), 2)
     },
     SSS: function(e) {
-      return Q(e.getMilliseconds(), 3)
+      return P(e.getMilliseconds(), 3)
     },
     Z: function(e) {
-      return P(e.getTimezoneOffset(), ':')
+      return L(e.getTimezoneOffset(), ':')
     },
     ZZ: function(e) {
-      return P(e.getTimezoneOffset())
+      return L(e.getTimezoneOffset())
     },
     X: function(e) {
       return Math.floor(e.getTime() / 1e3)
@@ -1102,18 +1102,18 @@ var b = function(e, t) {
       return e.getTime()
     },
   }
-function P(e, t) {
+function L(e, t) {
   t = t || ''
   var n = e > 0 ? '-' : '+',
     r = Math.abs(e),
     a = r % 60
-  return n + Q(Math.floor(r / 60), 2) + t + Q(a, 2)
+  return n + P(Math.floor(r / 60), 2) + t + P(a, 2)
 }
-function Q(e, t) {
+function P(e, t) {
   for (var n = Math.abs(e).toString(); n.length < t; ) n = '0' + n
   return n
 }
-var L = function(e, t, n) {
+var Q = function(e, t, n) {
     var r = t ? String(t) : 'YYYY-MM-DDTHH:mm:ss.SSSZ',
       a = (n || {}).locale,
       o = R.format.formatters,
@@ -1186,7 +1186,7 @@ function te(e) {
     o =
       void 0 === a
         ? function(e) {
-            return L(e, 'dd')
+            return Q(e, 'dd')
           }
         : a,
     i = new Date()
@@ -1203,7 +1203,7 @@ function re(e) {
     i =
       void 0 === o
         ? function(e) {
-            return L(e, 'DD')
+            return Q(e, 'DD')
           }
         : o,
     l = new Date(t, n),
@@ -1225,21 +1225,21 @@ function ne(e) {
     i =
       void 0 === o
         ? function(e) {
-            return L(e, 'DD')
+            return Q(e, 'DD')
           }
         : o,
     l = e.weekDayFormat,
     c =
       void 0 === l
         ? function(e) {
-            return L(e, 'dd')
+            return Q(e, 'dd')
           }
         : l,
     s = e.monthLabelFormat,
     p =
       void 0 === s
         ? function(e) {
-            return L(e, 'MMMM YYYY')
+            return Q(e, 'MMMM YYYY')
           }
         : s
   return {
@@ -1247,13 +1247,13 @@ function ne(e) {
       function() {
         return re({year: t, month: n, weekStartsOn: a, dayFormat: i})
       },
-      [t, n, a],
+      [t, n, a, i],
     ),
     weekDays: React.useMemo(
       function() {
         return te({weekStartsOn: a, weekDayFormat: c})
       },
-      [a],
+      [a, c],
     ),
     monthLabel: p(new Date(t, n)),
   }
@@ -1342,7 +1342,7 @@ function Me(e, t, n) {
   }, [])
 }
 function Te(e, t, n) {
-  return e && 'string' == typeof t ? L(e, t) : e && 'function' == typeof t ? t(e) : n
+  return e && 'string' == typeof t ? Q(e, t) : e && 'function' == typeof t ? t(e) : n
 }
 var pe = 'startDate',
   Se = 'endDate'
@@ -1384,7 +1384,7 @@ function Ye(e) {
     firstDayOfWeek: p,
     activeMonths: d,
     isDateSelected: f,
-    isStartOrEndDate: g,
+    isFirstOrLastSelectedDate: g,
     isDateBlocked: y,
     numberOfMonths: c,
     onResetDates: function() {
@@ -2596,7 +2596,7 @@ function Datepicker(e) {
     }),
     y = g.activeMonths,
     h = g.isDateSelected,
-    _ = g.isStartOrEndDate,
+    _ = g.isFirstOrLastSelectedDate,
     b = g.isDateBlocked,
     v = g.firstDayOfWeek,
     k = g.onDaySelect,

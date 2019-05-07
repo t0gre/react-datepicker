@@ -324,10 +324,10 @@ var S = m(function(e) {
   W = function(e) {
     return '@media screen and (min-width: ' + E(e) + ')'
   },
-  O = function(e, t) {
+  L = function(e, t) {
     return F(t, e)
   },
-  L = function e(t, n) {
+  O = function e(t, n) {
     var r = {}
     for (var o in t) r[o] = t[o]
     for (var a in n) t[a] ? (r[a] = e(t[a], n[a])) : (r[a] = n[a])
@@ -335,7 +335,7 @@ var S = m(function(e) {
   },
   P = function() {
     for (var e = {}, t = 0; t < arguments.length; t++)
-      e = L(e, t < 0 || arguments.length <= t ? void 0 : arguments[t])
+      e = O(e, t < 0 || arguments.length <= t ? void 0 : arguments[t])
     return e
   },
   z = function(e) {
@@ -345,7 +345,7 @@ var S = m(function(e) {
       o = e.alias,
       a = e.key,
       i = e.transformValue,
-      l = void 0 === i ? O : i,
+      l = void 0 === i ? L : i,
       c = e.scale,
       u = void 0 === c ? {} : c,
       s = r || n,
@@ -516,8 +516,8 @@ var S = m(function(e) {
   Te = z({prop: 'borderRight', key: 'borders'}),
   Ee = z({prop: 'borderBottom', key: 'borders'}),
   We = z({prop: 'borderLeft', key: 'borders'}),
-  Oe = z({prop: 'borderRadius', key: 'radii', transformValue: te}),
-  Le = (H(Ce, Be, Te, Ee, We, we, Me, Fe, Oe), z({prop: 'boxShadow', key: 'shadows'})),
+  Le = z({prop: 'borderRadius', key: 'radii', transformValue: te}),
+  Oe = (H(Ce, Be, Te, Ee, We, we, Me, Fe, Le), z({prop: 'boxShadow', key: 'shadows'})),
   Pe = z({prop: 'opacity'}),
   ze = (z({prop: 'overflow'}), z({prop: 'background'})),
   He = (z({prop: 'backgroundImage'}),
@@ -1041,7 +1041,7 @@ var wt = function(e, t, n) {
     var t = pt(e)
     return t.setDate(1), t.setHours(0, 0, 0, 0), t
   }
-function Ot(e) {
+function Lt(e) {
   var t = e.year,
     n = e.month,
     o = e.weekStartsOn,
@@ -1093,7 +1093,7 @@ function Ot(e) {
           return p.concat(d)
         })({year: t, month: n, weekStartsOn: a, dayFormat: l})
       },
-      [t, n, a],
+      [t, n, a, l],
     ),
     weekDays: r(
       function() {
@@ -1114,12 +1114,12 @@ function Ot(e) {
           }, [])
         })({weekStartsOn: a, weekDayFormat: u})
       },
-      [a],
+      [a, u],
     ),
     monthLabel: p(new Date(t, n)),
   }
 }
-var Lt = function(e, t) {
+var Ot = function(e, t) {
     var n = pt(e),
       r = pt(t)
     return n.getTime() < r.getTime()
@@ -1229,7 +1229,7 @@ function Ut(e) {
         return (function(e, t, n, r) {
           var o = t ? new Date(t.getFullYear(), t.getMonth(), t.getDate(), 0, 0, 0) : t,
             a = n ? new Date(n.getFullYear(), n.getMonth(), n.getDate(), 0, 0, 0) : n
-          return !!((o && Lt(e, o)) || (a && Pt(e, a)) || (r && r(e)))
+          return !!((o && Ot(e, o)) || (a && Pt(e, a)) || (r && r(e)))
         })(e, i, l)
       },
       [i, l],
@@ -1238,18 +1238,18 @@ function Ut(e) {
     firstDayOfWeek: d,
     activeMonths: m,
     isDateSelected: g,
-    isStartOrEndDate: y,
+    isFirstOrLastSelectedDate: y,
     isDateBlocked: v,
     numberOfMonths: s,
     onResetDates: function() {
       c({startDate: null, endDate: null, focusedInput: Gt})
     },
     onDaySelect: function(e) {
-      ;(a === _t && r && Lt(e, r)) || (a === Gt && o && Pt(e, o))
+      ;(a === _t && r && Ot(e, r)) || (a === Gt && o && Pt(e, o))
         ? c({endDate: null, startDate: e, focusedInput: _t})
         : a === Gt
         ? c({endDate: o, startDate: e, focusedInput: _t})
-        : a === _t && r && !Lt(e, r) && c({startDate: r, endDate: e, focusedInput: null})
+        : a === _t && r && !Ot(e, r) && c({startDate: r, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
       h(Nt(m, s, -1))
@@ -1490,7 +1490,7 @@ var ln,
     Ce,
     ze,
     ie,
-    Oe,
+    Le,
     q,
   ),
   mn = l('div')(
@@ -1881,7 +1881,7 @@ var Cn = function(t) {
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  On = l('button')(
+  Ln = l('button')(
     Rn ||
       (Rn = p(
         [
@@ -1915,7 +1915,7 @@ var Cn = function(t) {
       )),
     Mn,
     Fn,
-    Le,
+    Oe,
     ze,
     Q,
     re,
@@ -1971,7 +1971,7 @@ var Cn = function(t) {
       )
     },
   )
-function Ln(e, t, n) {
+function On(e, t, n) {
   var r = n.selectedFirstOrLast,
     o = n.normal,
     a = n.selected
@@ -2011,7 +2011,7 @@ var Pn,
       }),
       s = r(
         function() {
-          return Ln(o, a, {
+          return On(o, a, {
             selectedFirstOrLast: u.dayBorderSelectedFirstOrLastColor,
             selected: u.dayBorderSelectedColor,
             normal: u.dayBorderColor,
@@ -2021,7 +2021,7 @@ var Pn,
       ),
       p = r(
         function() {
-          return Ln(o, a, {
+          return On(o, a, {
             selectedFirstOrLast: u.daySelectedFirstOrLastBackground,
             selected: u.daySelectedBackground,
             normal: u.dayBackground,
@@ -2031,7 +2031,7 @@ var Pn,
       ),
       d = r(
         function() {
-          return Ln(o, a, {
+          return On(o, a, {
             selectedFirstOrLast: u.daySelectedFirstOrLastColor,
             selected: u.daySelectedColor,
             normal: u.dayColor,
@@ -2040,7 +2040,7 @@ var Pn,
         [o, a, u],
       )
     return e.createElement(
-      On,
+      Ln,
       {
         role: 'button',
         onClick: function() {
@@ -2090,7 +2090,7 @@ var Pn,
       i = t.isDateSelected,
       l = t.isStartOrEndDate,
       c = t.onDaySelect,
-      u = Ot({year: n, month: r, weekStartsOn: o}),
+      u = Lt({year: n, month: r, weekStartsOn: o}),
       s = u.days,
       p = u.weekDays,
       d = u.monthLabel,
@@ -2397,9 +2397,9 @@ var or,
       )),
     ze,
     q,
-    Oe,
-    He,
     Le,
+    He,
+    Oe,
   ),
   lr = l('div')(
     ar ||
@@ -2439,7 +2439,7 @@ function cr(t) {
     }),
     y = g.activeMonths,
     v = g.isDateSelected,
-    b = g.isStartOrEndDate,
+    b = g.isFirstOrLastSelectedDate,
     D = g.isDateBlocked,
     k = g.firstDayOfWeek,
     x = g.onDaySelect,
@@ -2581,7 +2581,7 @@ var ur,
     sr || (sr = p(['\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n'])),
     ze,
     Ce,
-    Oe,
+    Le,
   )
 function fr(t) {
   var n = t.startDate,

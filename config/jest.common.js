@@ -18,6 +18,7 @@ module.exports = {
     '.stories.tsx',
     '.d.ts',
     './packages/styled/src/index.ts',
+    './packages/hooks/src/index.ts',
   ],
   // coveragePathIgnorePatterns: ['**/**/*.d.ts', '**/**/*.test.+(ts|tsx|js)', '++/**/*.stories.+(ts|tsx)'],
   snapshotSerializers: ['jest-serializer-html'],

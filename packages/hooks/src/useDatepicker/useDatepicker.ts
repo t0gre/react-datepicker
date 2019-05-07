@@ -7,7 +7,7 @@ import {
   getNextActiveMonth,
   isDateSelected as isDateSelectedFn,
   isDateBlocked as isDateBlockedFn,
-  isStartOrEndDate as isStartOrEndDateFn,
+  isFirstOrLastSelectedDate as isFirstOrLastSelectedDateFn,
 } from './useDatepicker.utils'
 
 export const START_DATE = 'startDate'
@@ -30,7 +30,6 @@ export interface UseDatepickerProps {
   startDate: Date | null
   endDate: Date | null
   focusedInput: FocusedInput
-  orientation?: 'horizontal' | 'vertical'
   numberOfMonths?: number
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
@@ -43,11 +42,9 @@ export function useDatepicker({
   minBookingDate,
   maxBookingDate,
   onDateChange,
-  // orientation = 'horizontal',
   numberOfMonths = 2,
   firstDayOfWeek = 1,
-}: // initialVisibleMonth = getInitialMonths,
-UseDatepickerProps) {
+}: UseDatepickerProps) {
   const [activeMonths, setActiveMonths] = useState(() =>
     getInitialMonths(numberOfMonths, startDate),
   )
@@ -55,8 +52,8 @@ UseDatepickerProps) {
     startDate,
     endDate,
   ])
-  const isStartOrEndDate = useCallback(
-    (date: Date) => isStartOrEndDateFn(date, startDate, endDate),
+  const isFirstOrLastSelectedDate = useCallback(
+    (date: Date) => isFirstOrLastSelectedDateFn(date, startDate, endDate),
     [startDate, endDate],
   )
   const isDateBlocked = useCallback(
@@ -109,7 +106,7 @@ UseDatepickerProps) {
     firstDayOfWeek,
     activeMonths,
     isDateSelected,
-    isStartOrEndDate,
+    isFirstOrLastSelectedDate,
     isDateBlocked,
     numberOfMonths,
     onResetDates,

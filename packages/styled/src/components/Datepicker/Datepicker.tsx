@@ -87,7 +87,7 @@ function Datepicker({
   const {
     activeMonths,
     isDateSelected,
-    isStartOrEndDate,
+    isFirstOrLastSelectedDate,
     isDateBlocked,
     firstDayOfWeek,
     onDaySelect,
@@ -209,7 +209,7 @@ function Datepicker({
               firstDayOfWeek={firstDayOfWeek}
               isDateBlocked={isDateBlocked}
               isDateSelected={isDateSelected}
-              isStartOrEndDate={isStartOrEndDate}
+              isStartOrEndDate={isFirstOrLastSelectedDate}
               onDaySelect={onDaySelect}
             />
           ))}

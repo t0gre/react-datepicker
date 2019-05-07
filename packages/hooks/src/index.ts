@@ -10,7 +10,7 @@ import {
 } from './useMonth'
 import {
   isDateSelected,
-  isStartOrEndDate,
+  isFirstOrLastSelectedDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
@@ -37,7 +37,7 @@ export {
   getDays,
   CalendarDay,
   isDateSelected,
-  isStartOrEndDate,
+  isFirstOrLastSelectedDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
