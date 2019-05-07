@@ -1,17 +1,4 @@
 import React, {useRef, useEffect} from 'react'
-import {
-  GridTemplateColumnsProperty,
-  BackgroundProperty,
-  BorderProperty,
-  BorderRadiusProperty,
-  PaddingProperty,
-  ColorProperty,
-  GlobalsNumber,
-  HeightProperty,
-  BottomProperty,
-  LeftProperty,
-} from 'csstype'
-import {ResponsiveValue, TLengthStyledSystem} from 'styled-system'
 import styled from 'styled-components'
 import {
   opacity,
@@ -40,6 +27,9 @@ import Box from '../Box'
 import Input from '../Input'
 import ArrowIcon from '../../icons/ArrowIcon'
 import Datepicker from '../Datepicker'
+// eslint-disable-next-line import/no-unresolved
+import {DateRangeInputTheme} from '../../@types/theme'
+import useThemeProps from '../../hooks/useThemeProps'
 
 interface InputArrowIconProps extends OpacityProps, ColorProps {}
 const InputArrowIcon = styled(ArrowIcon)<InputArrowIconProps>`
@@ -54,29 +44,10 @@ const InputGrid = styled(Grid)<StyledGridProps>`
   ${borderRadius}
 `
 
-export interface DateRangeInputStyles {
-  datepickerLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
-  datepickerBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
-
-  inputGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
-  inputGridBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-  inputGridBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-  inputGridBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
-
-  inputStartDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-  inputEndDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-  inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-  inputArrowIconColor?: ResponsiveValue<ColorProperty>
-  inputArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
-  daySize?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
-  selectDateGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
-}
-
 export interface DateRangeInputProps extends UseDatepickerProps {
   displayFormat?: string | FormatFunction
   phrases?: DateRangeInputPhrases
   onFocusChange(focusInput: FocusedInput): void
-  styles?: DateRangeInputStyles
   showStartDateCalendarIcon?: boolean
   showEndDateCalendarIcon?: boolean
   onClose?(): void
@@ -95,11 +66,26 @@ function DateRangeInput({
   onClose = () => {},
   showStartDateCalendarIcon = true,
   showEndDateCalendarIcon = true,
-  styles = {},
   displayFormat = 'MM/DD/YYYY',
   phrases = dateRangeInputPhrases,
 }: DateRangeInputProps) {
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
+  const theme: DateRangeInputTheme = useThemeProps({
+    dateRangeBackground: 'transparent',
+    dateRangeGridTemplateColumns: '194px 39px 194px',
+    dateRangeBorder: '0',
+    dateRangeBorderRadius: '0',
+    dateRangeArrowIconWidth: '15px',
+    dateRangeArrowIconHeight: '12px',
+    dateRangeArrowIconColor: '#ffffff',
+    dateRangeArrowIconOpacity: 0.4,
+    dateRangeDatepickerWrapperTop: 'unset',
+    dateRangeDatepickerWrapperRight: 'unset',
+    dateRangeDatepickerWrapperBottom: '65px',
+    dateRangeDatepickerWrapperLeft: '0',
+    dateRangeDatepickerWrapperPosition: 'absolute',
+  })
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('click', onClickOutsideHandler)
@@ -130,10 +116,10 @@ function DateRangeInput({
   return (
     <Box position="relative" ref={datepickerWrapperRef}>
       <InputGrid
-        background={styles.inputGridBackground || 'transparent'}
-        gridTemplateColumns={styles.inputGridTemplateColumns || '194px 39px 194px'}
-        border={styles.inputGridBorder || '0'}
-        borderRadius={styles.inputGridBorderRadius || '0'}
+        background={theme.dateRangeBackground}
+        gridTemplateColumns={theme.dateRangeGridTemplateColumns}
+        border={theme.dateRangeBorder}
+        borderRadius={theme.dateRangeBorderRadius}
       >
         <Input
           id="startDate"
@@ -145,10 +131,12 @@ function DateRangeInput({
         />
         <Flex alignItems="center" justifyContent="center">
           <InputArrowIcon
-            width="15px"
-            height="12px"
-            color={styles.inputArrowIconColor || '#ffffff'}
-            opacity={styles.inputArrowIconOpacity || 0.4}
+            // @ts-ignore
+            width={theme.dateRangeArrowIconWidth}
+            // @ts-ignore
+            height={theme.dateRangeArrowIconHeight}
+            color={theme.dateRangeArrowIconColor}
+            opacity={theme.dateRangeArrowIconOpacity}
           />
         </Flex>
         <Input
@@ -161,9 +149,11 @@ function DateRangeInput({
         />
       </InputGrid>
       <Box
-        position="absolute"
-        bottom={styles.datepickerBottom || '65px'}
-        left={styles.datepickerLeft || '0'}
+        position={theme.dateRangeDatepickerWrapperPosition}
+        bottom={theme.dateRangeDatepickerWrapperBottom}
+        left={theme.dateRangeDatepickerWrapperLeft}
+        top={theme.dateRangeDatepickerWrapperTop}
+        right={theme.dateRangeDatepickerWrapperRight}
       >
         {focusedInput !== null && (
           <Datepicker

@@ -22,6 +22,8 @@ import {
   BottomProperty,
   GridTemplateColumnsProperty,
   GridGapProperty,
+  BoxShadowProperty,
+  GlobalsNumber,
 } from 'csstype'
 
 interface CommonTheme {
@@ -127,6 +129,7 @@ export interface InputTheme extends CommonTheme {
 
 export interface DatepickerTheme extends CommonTheme {
   datepickerBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  datepickerBoxShadow?: ResponsiveValue<BoxShadowProperty>
   datepickerPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   datepickerBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
   datepickerPosition?: ResponsiveValue<PositionProperty>
@@ -155,4 +158,20 @@ export interface DatepickerTheme extends CommonTheme {
   datepickerNextMonthButtonTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   datepickerNextMonthButtonLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
   datepickerNextMonthButtonBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+}
+
+export interface DateRangeInputTheme extends CommonTheme {
+  dateRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  dateRangeGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
+  dateRangeBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  dateRangeBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
+  dateRangeArrowIconWidth?: string
+  dateRangeArrowIconHeight?: string
+  dateRangeArrowIconColor?: ResponsiveValue<ColorProperty>
+  dateRangeArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
+  dateRangeDatepickerWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+  dateRangeDatepickerWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
+  dateRangeDatepickerWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  dateRangeDatepickerWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+  dateRangeDatepickerWrapperPosition?: ResponsiveValue<PositionProperty>
 }

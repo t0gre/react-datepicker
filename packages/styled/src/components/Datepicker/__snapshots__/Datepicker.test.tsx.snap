@@ -333,6 +333,7 @@ exports[`should have empty end date and focused end date 1`] = `
   padding: 32px;
   border-radius: 2px;
   position: relative;
+  box-shadow: none;
 }
 
 .c5 {
@@ -2142,6 +2143,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
   padding: 32px;
   border-radius: 2px;
   position: relative;
+  box-shadow: none;
 }
 
 .c5 {

@@ -13,7 +13,12 @@ module.exports = {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js'],
-  coveragePathIgnorePatterns: [...defaults.coveragePathIgnorePatterns, '.stories.tsx', '.d.ts'],
+  coveragePathIgnorePatterns: [
+    ...defaults.coveragePathIgnorePatterns,
+    '.stories.tsx',
+    '.d.ts',
+    './packages/styled/src/index.ts',
+  ],
   // coveragePathIgnorePatterns: ['**/**/*.d.ts', '**/**/*.test.+(ts|tsx|js)', '++/**/*.stories.+(ts|tsx)'],
   snapshotSerializers: ['jest-serializer-html'],
   watchPlugins: [

@@ -209,6 +209,7 @@ function Input({placeholder, id, ariaLabel, onClick, value, showCalendarIcon}: I
         value={value}
         autoComplete="off"
         onFocus={onClick}
+        data-testid="DatepickerInput"
       />
     </InputLabel>
   )

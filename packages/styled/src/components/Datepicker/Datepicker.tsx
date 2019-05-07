@@ -9,6 +9,8 @@ import {
   BorderRadiusProps,
   position,
   PositionProps,
+  boxShadow,
+  BoxShadowProps,
 } from 'styled-system'
 import {
   useDatepicker,
@@ -34,12 +36,18 @@ import {DatepickerTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
 
-interface StyledDatepicker extends BackgroundProps, SpaceProps, BorderRadiusProps, PositionProps {}
+interface StyledDatepicker
+  extends BackgroundProps,
+    SpaceProps,
+    BorderRadiusProps,
+    PositionProps,
+    BoxShadowProps {}
 const StyledDatepicker = styled('div')<StyledDatepicker>`
   ${background}
   ${space}
   ${borderRadius}
   ${position}
+  ${boxShadow}
 `
 
 const DateWrapper = styled('div')`
@@ -125,6 +133,7 @@ function Datepicker({
     datepickerNextMonthButtonBottom: 'unset',
     datepickerMonthsGridGap: '0 32px',
     datepickerResetDatesWrapperMargin: '32px 0 0',
+    datepickerBoxShadow: 'none',
   })
 
   return (
@@ -133,6 +142,7 @@ function Datepicker({
       p={theme.datepickerPadding}
       borderRadius={theme.datepickerBorderRadius}
       position={theme.datepickerPosition}
+      boxShadow={theme.datepickerBoxShadow}
     >
       <Box
         position={theme.datepickerCloseWrapperPosition}
