@@ -19,9 +19,9 @@ import {
   gridTemplateAreas,
   GridTemplatesAreasProps,
   gridTemplateColumns,
-  GridTemplatesColumnsProps,
+  GridTemplateColumnsProps,
   gridTemplateRows,
-  GridTemplatesRowsProps,
+  GridTemplateRowsProps,
   space,
   SpaceProps,
   style,
@@ -37,9 +37,9 @@ interface GridProps
     GridGapProps,
     GridRowGapProps,
     GridTemplatesAreasProps,
-    GridTemplatesColumnsProps,
+    GridTemplateColumnsProps,
     SpaceProps,
-    GridTemplatesRowsProps {
+    GridTemplateRowsProps {
   daySizeGridTemplateColumns?: number | (number | null)[] | undefined
   numberOfMonthsGridTemplateColumns?: number | (number | null)[] | undefined
 }

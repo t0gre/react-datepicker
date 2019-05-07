@@ -3,6 +3,6 @@
   "include": ["src"],
   "exclude": ["node_modules", "lib", "rollup.config.js"],
   "compilerOptions": {
-    "types" : ["jest", "./src/@types"]
+    "types" : ["jest","./src/@types"]
   }
 }

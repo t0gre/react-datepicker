@@ -353,6 +353,17 @@ var factoryWithThrowingShims = function() {
   getValue = function(e, t) {
     return get(t, e)
   },
+  merge = function e(t, n) {
+    var r = {}
+    for (var a in t) r[a] = t[a]
+    for (var o in n) t[o] ? (r[o] = e(t[o], n[o])) : (r[o] = n[o])
+    return r
+  },
+  mergeAll = function() {
+    for (var e = {}, t = 0; t < arguments.length; t++)
+      e = merge(e, t < 0 || arguments.length <= t ? void 0 : arguments[t])
+    return e
+  },
   style = function(e) {
     var t,
       n = e.prop,
@@ -396,7 +407,7 @@ var factoryWithThrowingShims = function() {
           }
           p.sort()
         }
-        return p
+        return mergeAll.apply(void 0, p)
       }
     return (
       ((p.propTypes = (((t = {})[n] = cloneFunction(propType)), t))[n].meta = {
@@ -412,11 +423,12 @@ var factoryWithThrowingShims = function() {
   compose = function() {
     for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n]
     var r = function(e) {
-      return t
+      var n = t
         .map(function(t) {
           return t(e)
         })
         .filter(Boolean)
+      return mergeAll.apply(void 0, n)
     }
     return (
       (r.propTypes = {}),
@@ -2526,7 +2538,7 @@ function Close(e) {
   var t = e.onClick
   return React__default.createElement(
     Wrapper,
-    {onClick: t},
+    {onClick: t, 'data-testid': 'DatepickerClose'},
     React__default.createElement(CloseIcon, {width: '15px', height: '16px', color: '#ADADAD'}),
     React__default.createElement(Text$1, null, 'Close'),
   )

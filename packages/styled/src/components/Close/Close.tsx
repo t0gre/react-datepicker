@@ -42,7 +42,7 @@ interface CloseProps {
 
 function Close({onClick}: CloseProps) {
   return (
-    <Wrapper onClick={onClick}>
+    <Wrapper onClick={onClick} data-testid="DatepickerClose">
       <CloseIcon width="15px" height="16px" color="#ADADAD" />
       <Text>Close</Text>
     </Wrapper>

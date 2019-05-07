@@ -1,9 +1,7 @@
 import React from 'react'
-import {renderHook, cleanup} from 'react-hooks-testing-library'
+import {renderHook} from 'react-hooks-testing-library'
 import {ThemeProvider} from 'styled-components'
 import useThemeProps from '.'
-
-afterEach(cleanup)
 
 test('should return empty object - no provider', () => {
   const {result} = renderHook(() => useThemeProps())

@@ -59,7 +59,7 @@ const DateWrapper = styled('div')`
 
 export interface DatepickerProps extends UseDatepickerProps {
   phrases?: DatepickerPhrases
-  displayFormat: string | FormatFunction
+  displayFormat?: string | FormatFunction
   onClose?(): void
 }
 

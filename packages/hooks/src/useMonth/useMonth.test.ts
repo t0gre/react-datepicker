@@ -1,8 +1,6 @@
-import {renderHook, cleanup} from 'react-hooks-testing-library'
+import {renderHook} from 'react-hooks-testing-library'
 import {format} from 'date-fns'
 import {useMonth, getDays, getWeekDays} from '.'
-
-afterEach(cleanup)
 
 describe('getWeekDays', () => {
   test('should return week days start with monday', () => {

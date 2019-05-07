@@ -8,8 +8,8 @@ import {
   GridGapProps,
   GridRowGapProps,
   GridTemplatesAreasProps,
-  GridTemplatesColumnsProps,
-  GridTemplatesRowsProps,
+  GridTemplateColumnsProps,
+  GridTemplateRowsProps,
   SpaceProps,
 } from 'styled-system'
 interface GridProps
@@ -22,9 +22,9 @@ interface GridProps
     GridGapProps,
     GridRowGapProps,
     GridTemplatesAreasProps,
-    GridTemplatesColumnsProps,
+    GridTemplateColumnsProps,
     SpaceProps,
-    GridTemplatesRowsProps {
+    GridTemplateRowsProps {
   daySizeGridTemplateColumns?: number | (number | null)[] | undefined
   numberOfMonthsGridTemplateColumns?: number | (number | null)[] | undefined
 }

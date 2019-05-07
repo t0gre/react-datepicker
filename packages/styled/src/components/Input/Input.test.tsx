@@ -40,7 +40,7 @@ test('should render without icon', () => {
 
 test('should render with value', () => {
   const onClick = jest.fn()
-  const {container, getByValue} = render(
+  const {container, getByDisplayValue} = render(
     <Input
       showCalendarIcon={false}
       ariaLabel="startDate"
@@ -52,5 +52,5 @@ test('should render with value', () => {
   )
 
   expect(container).toMatchSnapshot()
-  getByValue('14/11/1992')
+  getByDisplayValue('14/11/1992')
 })

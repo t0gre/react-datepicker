@@ -2,7 +2,7 @@ import {UseDatepickerProps, FormatFunction} from '@datepicker-react/hooks'
 import {DatepickerPhrases} from '../../phrases'
 export interface DatepickerProps extends UseDatepickerProps {
   phrases?: DatepickerPhrases
-  displayFormat: string | FormatFunction
+  displayFormat?: string | FormatFunction
   onClose?(): void
 }
 declare function Datepicker({
