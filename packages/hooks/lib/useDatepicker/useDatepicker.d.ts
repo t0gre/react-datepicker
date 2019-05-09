@@ -16,10 +16,11 @@ export interface UseDatepickerProps {
     endDate: Date | null;
     focusedInput: FocusedInput;
     numberOfMonths?: number;
+    minBookingDays?: number;
     firstDayOfWeek?: FirstDayOfWeek;
     initialVisibleMonth?(numberOfMonths: number): MonthType[];
 }
-export declare function useDatepicker({ startDate, endDate, focusedInput, minBookingDate, maxBookingDate, onDateChange, numberOfMonths, firstDayOfWeek, }: UseDatepickerProps): {
+export declare function useDatepicker({ startDate, endDate, focusedInput, minBookingDate, maxBookingDate, onDateChange, minBookingDays, numberOfMonths, firstDayOfWeek, }: UseDatepickerProps): {
     firstDayOfWeek: FirstDayOfWeek;
     activeMonths: MonthType[];
     isDateSelected: (date: Date) => boolean;

@@ -63,6 +63,7 @@ function DateRangeInput({
   numberOfMonths,
   focusedInput,
   onDateChange,
+  minBookingDays = 1,
   onClose = () => {},
   showStartDateCalendarIcon = true,
   showEndDateCalendarIcon = true,
@@ -167,6 +168,7 @@ function DateRangeInput({
             focusedInput={focusedInput}
             displayFormat={displayFormat}
             onDateChange={onDateChange}
+            minBookingDays={minBookingDays}
           />
         )}
       </Box>

@@ -31,6 +31,7 @@ export interface UseDatepickerProps {
   endDate: Date | null
   focusedInput: FocusedInput
   numberOfMonths?: number
+  minBookingDays?: number
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
 }
@@ -42,6 +43,7 @@ export function useDatepicker({
   minBookingDate,
   maxBookingDate,
   onDateChange,
+  minBookingDays = 1,
   numberOfMonths = 2,
   firstDayOfWeek = 1,
 }: UseDatepickerProps) {
@@ -57,8 +59,9 @@ export function useDatepicker({
     [startDate, endDate],
   )
   const isDateBlocked = useCallback(
-    (date: Date) => isDateBlockedFn(date, minBookingDate, maxBookingDate),
-    [minBookingDate, maxBookingDate],
+    (date: Date) =>
+      isDateBlockedFn({date, minBookingDate, maxBookingDate, startDate, endDate, minBookingDays}),
+    [minBookingDate, maxBookingDate, startDate, endDate, minBookingDays],
   )
 
   function onResetDates() {

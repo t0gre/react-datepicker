@@ -78,6 +78,7 @@ function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  minBookingDays = 1,
   onClose = () => {},
   numberOfMonths: numberOfMonthsProp,
   firstDayOfWeek: firstDayOfWeekProp,
@@ -102,6 +103,7 @@ function Datepicker({
     onDateChange,
     minBookingDate,
     maxBookingDate,
+    minBookingDays,
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })

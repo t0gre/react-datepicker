@@ -387,10 +387,53 @@ describe('isDateBlocked', () => {
       return isEqual(date, equalDate)
     }
 
-    expect(isDateBlocked(new Date(2019, 2, 9, 0, 0, 0), minBookingDate, maxBookingDate)).toBe(true)
-    expect(isDateBlocked(new Date(2019, 2, 28, 0, 0, 0), minBookingDate, maxBookingDate)).toBe(true)
     expect(
-      isDateBlocked(new Date(2019, 2, 25, 0, 0, 0), minBookingDate, maxBookingDate, isDayBlockedFn),
+      isDateBlocked({
+        startDate: null,
+        endDate: null,
+        date: new Date(2019, 2, 9, 0, 0, 0),
+        minBookingDate,
+        maxBookingDate,
+      }),
+    ).toBe(true)
+    expect(
+      isDateBlocked({
+        startDate: null,
+        endDate: null,
+        date: new Date(2019, 2, 28, 0, 0, 0),
+        minBookingDate,
+        maxBookingDate,
+      }),
+    ).toBe(true)
+    expect(
+      isDateBlocked({
+        startDate: null,
+        endDate: null,
+        date: new Date(2019, 2, 25, 0, 0, 0),
+        minBookingDate,
+        maxBookingDate,
+        isDayBlockedFn,
+      }),
+    ).toBe(true)
+    expect(
+      isDateBlocked({
+        startDate: new Date(2019, 2, 20, 0, 0, 0),
+        endDate: null,
+        minBookingDays: 3,
+        maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
+        date: new Date(2019, 2, 21, 0, 0, 0),
+        minBookingDate,
+      }),
+    ).toBe(true)
+    expect(
+      isDateBlocked({
+        startDate: new Date(2019, 2, 20, 0, 0, 0),
+        endDate: null,
+        minBookingDays: 2,
+        maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
+        date: new Date(2019, 2, 20, 0, 0, 0),
+        minBookingDate,
+      }),
     ).toBe(true)
   })
 
@@ -399,15 +442,76 @@ describe('isDateBlocked', () => {
       return isEqual(date, equalDate)
     }
 
-    expect(isDateBlocked(new Date(2019, 2, 10, 0, 0, 0), minBookingDate, maxBookingDate)).toBe(
-      false,
-    )
-    expect(isDateBlocked(new Date(2019, 2, 10, 0, 0, 0))).toBe(false)
-    expect(isDateBlocked(new Date(2019, 2, 27, 0, 0, 0), minBookingDate, maxBookingDate)).toBe(
-      false,
-    )
     expect(
-      isDateBlocked(new Date(2019, 2, 26, 0, 0, 0), minBookingDate, maxBookingDate, isDayBlockedFn),
+      isDateBlocked({
+        startDate: null,
+        endDate: null,
+        date: new Date(2019, 2, 10, 0, 0, 0),
+        minBookingDate,
+        maxBookingDate,
+      }),
+    ).toBe(false)
+    expect(
+      isDateBlocked({startDate: null, endDate: null, date: new Date(2019, 2, 10, 0, 0, 0)}),
+    ).toBe(false)
+    expect(
+      isDateBlocked({
+        startDate: null,
+        endDate: null,
+        date: new Date(2019, 2, 27, 0, 0, 0),
+        minBookingDate,
+        maxBookingDate,
+      }),
+    ).toBe(false)
+    expect(
+      isDateBlocked({
+        startDate: null,
+        endDate: null,
+        date: new Date(2019, 2, 26, 0, 0, 0),
+        minBookingDate,
+        maxBookingDate,
+        isDayBlockedFn,
+      }),
+    ).toBe(false)
+    expect(
+      isDateBlocked({
+        startDate: null,
+        endDate: null,
+        minBookingDays: 2,
+        maxBookingDate: new Date(2019, 2, 27, 0, 0, 0),
+        date: new Date(2019, 2, 25, 0, 0, 0),
+        minBookingDate,
+      }),
+    ).toBe(false)
+    expect(
+      isDateBlocked({
+        startDate: new Date(2019, 2, 20, 0, 0, 0),
+        endDate: null,
+        minBookingDays: 3,
+        maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
+        date: new Date(2019, 2, 22, 0, 0, 0),
+        minBookingDate,
+      }),
+    ).toBe(false)
+    expect(
+      isDateBlocked({
+        startDate: new Date(2019, 2, 25, 0, 0, 0),
+        endDate: null,
+        minBookingDays: 2,
+        maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
+        date: new Date(2019, 2, 26, 0, 0, 0),
+        minBookingDate,
+      }),
+    ).toBe(false)
+    expect(
+      isDateBlocked({
+        startDate: new Date(2019, 2, 20, 0, 0, 0),
+        endDate: null,
+        minBookingDays: 3,
+        maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
+        date: new Date(2019, 2, 22, 0, 0, 0),
+        minBookingDate,
+      }),
     ).toBe(false)
   })
 })

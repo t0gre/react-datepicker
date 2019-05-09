@@ -132,8 +132,9 @@ const StyledDay = styled('button')<StyledDayProps>`
   padding: 0;
   outline: 0;
   
-  ${({disabled}) =>
+  ${({disabled, isStartOrEnd}) =>
     disabled &&
+    !isStartOrEnd &&
     css`
       cursor: initial;
       opacity: 0.4;

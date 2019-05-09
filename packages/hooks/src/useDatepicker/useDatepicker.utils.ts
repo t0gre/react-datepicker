@@ -8,6 +8,7 @@ import startOfToday from 'date-fns/start_of_today'
 import startOfMonth from 'date-fns/start_of_month'
 import addMonths from 'date-fns/add_months'
 import format from 'date-fns/format'
+import addDays from 'date-fns/add_days'
 
 export function isDateSelected(date: Date, startDate: Date | null, endDate: Date | null) {
   if (startDate && endDate) {
@@ -25,12 +26,24 @@ export function isFirstOrLastSelectedDate(
   return !!((startDate && isSameDay(date, startDate)) || (endDate && isSameDay(date, endDate)))
 }
 
-export function isDateBlocked(
-  date: Date,
-  minBookingDate?: Date,
-  maxBookingDate?: Date,
-  isDayBlockedFn?: (date?: Date) => boolean,
-) {
+interface IsDateBlockedProps {
+  date: Date
+  startDate: Date | null
+  endDate: Date | null
+  minBookingDays?: number
+  minBookingDate?: Date
+  maxBookingDate?: Date
+  isDayBlockedFn?: (date?: Date) => boolean
+}
+export function isDateBlocked({
+  date,
+  minBookingDate,
+  maxBookingDate,
+  isDayBlockedFn,
+  startDate,
+  endDate,
+  minBookingDays = 1,
+}: IsDateBlockedProps) {
   const compareMinDate = minBookingDate
     ? new Date(
         minBookingDate.getFullYear(),
@@ -55,6 +68,10 @@ export function isDateBlocked(
   return !!(
     (compareMinDate && isBefore(date, compareMinDate)) ||
     (compareMaxDate && isAfter(date, compareMaxDate)) ||
+    (startDate &&
+      !endDate &&
+      minBookingDays > 1 &&
+      isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))) ||
     (isDayBlockedFn && isDayBlockedFn(date))
   )
 }

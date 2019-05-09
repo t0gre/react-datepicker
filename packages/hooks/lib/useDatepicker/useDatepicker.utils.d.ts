@@ -1,6 +1,15 @@
 export declare function isDateSelected(date: Date, startDate: Date | null, endDate: Date | null): boolean;
 export declare function isFirstOrLastSelectedDate(date: Date, startDate: Date | null, endDate: Date | null): boolean;
-export declare function isDateBlocked(date: Date, minBookingDate?: Date, maxBookingDate?: Date, isDayBlockedFn?: (date?: Date) => boolean): boolean;
+interface IsDateBlockedProps {
+    date: Date;
+    startDate: Date | null;
+    endDate: Date | null;
+    minBookingDays?: number;
+    minBookingDate?: Date;
+    maxBookingDate?: Date;
+    isDayBlockedFn?: (date?: Date) => boolean;
+}
+export declare function isDateBlocked({ date, minBookingDate, maxBookingDate, isDayBlockedFn, startDate, endDate, minBookingDays, }: IsDateBlockedProps): boolean;
 export interface MonthType {
     year: number;
     month: number;
@@ -12,3 +21,4 @@ export declare function getInitialMonths(numberOfMonths: number, startDate: Date
 export declare function getNextActiveMonth(activeMonth: MonthType[], numberOfMonths: number, counter: number): MonthType[];
 export declare type FormatFunction = (date: Date) => string;
 export declare function getInputValue(date: Date | null, displayFormat: string | FormatFunction, defaultValue: string): string;
+export {};
