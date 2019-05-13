@@ -6,7 +6,7 @@
     "@datepicker-react/styled": "^1.2.2-alpha.0",
     "react": "link:../../node_modules/react",
     "react-dom": "link:../../node_modules/react-dom",
-    "react-scripts": "^3.0.0",
+    "react-scripts": "^3.0.1",
     "styled-components": "^4.2.0"
   },
   "scripts": {

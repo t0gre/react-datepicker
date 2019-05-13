@@ -18,6 +18,7 @@ import {
   getNextActiveMonth,
   FormatFunction,
   MonthType,
+  canSelectRange,
 } from './useDatepicker.utils'
 
 export {
@@ -38,4 +39,5 @@ export {
   FocusedInput,
   FirstDayOfWeek,
   OnDateChange,
+  canSelectRange,
 }

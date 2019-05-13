@@ -1,5 +1,6 @@
 import React, {useReducer, useState} from 'react'
 import {ThemeProvider} from 'styled-components'
+import {isSameDay} from 'date-fns'
 import {DateRangeInput} from '@datepicker-react/styled'
 
 const initialState = {
@@ -53,6 +54,13 @@ function App() {
             numberOfMonths={numberOfMonths}
             focusedInput={state.focusedInput}
             onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
+            isDayBlocked={date => {
+              if (isSameDay(date, new Date(2019, 4, 22, 0, 0, 0, 0))) {
+                return true
+              }
+
+              return false
+            }}
           />
         </ThemeProvider>
       </div>

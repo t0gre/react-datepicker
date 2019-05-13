@@ -78,6 +78,7 @@ function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  isDayBlocked = () => false,
   minBookingDays = 1,
   onClose = () => {},
   numberOfMonths: numberOfMonthsProp,
@@ -104,6 +105,7 @@ function Datepicker({
     minBookingDate,
     maxBookingDate,
     minBookingDays,
+    isDayBlocked,
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })

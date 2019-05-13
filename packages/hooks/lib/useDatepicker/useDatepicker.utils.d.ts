@@ -21,4 +21,11 @@ export declare function getInitialMonths(numberOfMonths: number, startDate: Date
 export declare function getNextActiveMonth(activeMonth: MonthType[], numberOfMonths: number, counter: number): MonthType[];
 export declare type FormatFunction = (date: Date) => string;
 export declare function getInputValue(date: Date | null, displayFormat: string | FormatFunction, defaultValue: string): string;
+export interface CanSelectRangeProps {
+    startDate: Date;
+    endDate: Date | null;
+    isDateBlocked(date: Date): boolean;
+    minBookingDays: number;
+}
+export declare function canSelectRange({ startDate, endDate, isDateBlocked, minBookingDays, }: CanSelectRangeProps): boolean;
 export {};

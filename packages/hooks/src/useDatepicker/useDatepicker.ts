@@ -8,6 +8,7 @@ import {
   isDateSelected as isDateSelectedFn,
   isDateBlocked as isDateBlockedFn,
   isFirstOrLastSelectedDate as isFirstOrLastSelectedDateFn,
+  canSelectRange,
 } from './useDatepicker.utils'
 
 export const START_DATE = 'startDate'
@@ -34,6 +35,7 @@ export interface UseDatepickerProps {
   minBookingDays?: number
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
+  isDayBlocked?(date: Date): boolean
 }
 
 export function useDatepicker({
@@ -46,6 +48,7 @@ export function useDatepicker({
   minBookingDays = 1,
   numberOfMonths = 2,
   firstDayOfWeek = 1,
+  isDayBlocked: isDayBlockedProps = () => false,
 }: UseDatepickerProps) {
   const [activeMonths, setActiveMonths] = useState(() =>
     getInitialMonths(numberOfMonths, startDate),
@@ -60,8 +63,16 @@ export function useDatepicker({
   )
   const isDateBlocked = useCallback(
     (date: Date) =>
-      isDateBlockedFn({date, minBookingDate, maxBookingDate, startDate, endDate, minBookingDays}),
-    [minBookingDate, maxBookingDate, startDate, endDate, minBookingDays],
+      isDateBlockedFn({
+        date,
+        minBookingDate,
+        maxBookingDate,
+        startDate,
+        endDate,
+        minBookingDays,
+        isDayBlockedFn: isDayBlockedProps,
+      }),
+    [minBookingDate, maxBookingDate, startDate, endDate, minBookingDays, isDayBlockedProps],
   )
 
   function onResetDates() {
@@ -74,21 +85,49 @@ export function useDatepicker({
 
   function onDaySelect(date: Date) {
     if (
-      (focusedInput === END_DATE && startDate && isBefore(date, startDate)) ||
-      (focusedInput === START_DATE && endDate && isAfter(date, endDate))
+      ((focusedInput === END_DATE && startDate && isBefore(date, startDate)) ||
+        (focusedInput === START_DATE && endDate && isAfter(date, endDate))) &&
+      canSelectRange({
+        minBookingDays,
+        isDateBlocked: isDayBlockedProps,
+        startDate: date,
+        endDate: null,
+      })
     ) {
       onDateChange({
         endDate: null,
         startDate: date,
         focusedInput: END_DATE,
       })
-    } else if (focusedInput === START_DATE) {
+    } else if (
+      focusedInput === START_DATE &&
+      canSelectRange({minBookingDays, isDateBlocked: isDayBlockedProps, endDate, startDate: date})
+    ) {
       onDateChange({
         endDate,
         startDate: date,
         focusedInput: END_DATE,
       })
-    } else if (focusedInput === END_DATE && startDate && !isBefore(date, startDate)) {
+    } else if (
+      focusedInput === START_DATE &&
+      canSelectRange({
+        minBookingDays,
+        isDateBlocked: isDayBlockedProps,
+        endDate: null,
+        startDate: date,
+      })
+    ) {
+      onDateChange({
+        endDate: null,
+        startDate: date,
+        focusedInput: END_DATE,
+      })
+    } else if (
+      focusedInput === END_DATE &&
+      startDate &&
+      !isBefore(date, startDate) &&
+      canSelectRange({minBookingDays, isDateBlocked: isDayBlockedProps, startDate, endDate: date})
+    ) {
       onDateChange({
         startDate,
         endDate: date,

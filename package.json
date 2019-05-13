@@ -50,21 +50,21 @@
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "@types/jest": "^24.0.12",
-    "@types/react": "^16.8.16",
+    "@types/react": "^16.8.17",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
-    "@typescript-eslint/eslint-plugin": "^1.7.0",
-    "@typescript-eslint/parser": "^1.7.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^8.0.6",
     "commitizen": "^3.1.1",
     "cz-lerna-changelog": "^2.0.2",
     "date-fns": "^1.30.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
-    "eslint-config-react-app": "^4.0.0",
-    "eslint-plugin-flowtype": "^3.7.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-flowtype": "^3.8.2",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
@@ -74,7 +74,7 @@
     "jest": "^24.8.0",
     "jest-config": "^24.8.0",
     "jest-date-mock": "^1.0.7",
-    "jest-dom": "^3.1.4",
+    "jest-dom": "^3.2.2",
     "jest-environment-jsdom": "^24.8.0",
     "jest-environment-node": "^24.8.0",
     "jest-runner-eslint": "^0.7.3",
@@ -96,7 +96,7 @@
     "rollup-plugin-analyzer": "^3.0.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
-    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-node-resolve": "^4.2.4",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-typescript2": "^0.21.0",
@@ -105,9 +105,9 @@
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.6.0",
+    "stylelint-processor-styled-components": "^1.7.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.3.4000"
+    "typescript": "^3.5.0-dev.20190512"
   },
   "config": {
     "commitizen": {
@@ -132,6 +132,6 @@
   },
   "dependencies": {},
   "resolutions": {
-    "@types/react": "^16.8.16"
+    "@types/react": "^16.8.17"
   }
 }

@@ -1,5 +1,6 @@
 import isWithinRange from 'date-fns/is_within_range'
 import isSameDay from 'date-fns/is_same_day'
+import eachDay from 'date-fns/each_day'
 import isBefore from 'date-fns/is_before'
 import isAfter from 'date-fns/is_after'
 import getYear from 'date-fns/get_year'
@@ -141,4 +142,44 @@ export function getInputValue(
   } else {
     return defaultValue
   }
+}
+
+export interface CanSelectRangeProps {
+  startDate: Date
+  endDate: Date | null
+  isDateBlocked(date: Date): boolean
+  minBookingDays: number
+}
+export function canSelectRange({
+  startDate,
+  endDate,
+  isDateBlocked,
+  minBookingDays,
+}: CanSelectRangeProps) {
+  if (startDate && minBookingDays === 1 && !endDate && !isDateBlocked(startDate)) {
+    return true
+  } else if (startDate && minBookingDays > 1 && !endDate) {
+    return eachDay(startDate, addDays(startDate, minBookingDays - 1)).reduce(
+      (returnValue, date) => {
+        if (!returnValue) return returnValue
+
+        return !isDateBlocked(date)
+      },
+      true,
+    )
+  } else if (startDate && endDate) {
+    const minBookingDaysDate = addDays(startDate, minBookingDays - 1)
+
+    if (isBefore(endDate, minBookingDaysDate)) {
+      return false
+    }
+
+    return eachDay(startDate, endDate).reduce((returnValue, date) => {
+      if (!returnValue) return returnValue
+
+      return !isDateBlocked(date)
+    }, true)
+  }
+
+  return false
 }

@@ -63,6 +63,7 @@ function DateRangeInput({
   numberOfMonths,
   focusedInput,
   onDateChange,
+  isDayBlocked = () => false,
   minBookingDays = 1,
   onClose = () => {},
   showStartDateCalendarIcon = true,
@@ -169,6 +170,7 @@ function DateRangeInput({
             displayFormat={displayFormat}
             onDateChange={onDateChange}
             minBookingDays={minBookingDays}
+            isDayBlocked={isDayBlocked}
           />
         )}
       </Box>

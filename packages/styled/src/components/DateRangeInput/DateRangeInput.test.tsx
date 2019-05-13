@@ -89,9 +89,12 @@ test('should execute onClose callback', () => {
   const onDateChange = jest.fn()
   const onClose = jest.fn()
   const onFocusChange = jest.fn()
+  const isDateBlocked = jest.fn()
   const {getByTestId, getByText, getAllByTestId} = render(
     <Datepicker
       firstDayOfWeek={0}
+      minBookingDays={1}
+      isDayBlocked={isDateBlocked}
       minBookingDate={new Date(2019, 1, 16, 0, 0, 0)}
       maxBookingDate={new Date(2020, 1, 16, 0, 0, 0)}
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
