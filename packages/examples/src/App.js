@@ -25,6 +25,10 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [numberOfMonths, setNumberOfMonths] = useState(2)
 
+  function isDateBlocked(date) {
+    return isSameDay(date, new Date(2019, 4, 22, 0, 0, 0, 0))
+  }
+
   function onClick() {
     setNumberOfMonths(1)
   }
@@ -54,13 +58,7 @@ function App() {
             numberOfMonths={numberOfMonths}
             focusedInput={state.focusedInput}
             onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-            isDayBlocked={date => {
-              if (isSameDay(date, new Date(2019, 4, 22, 0, 0, 0, 0))) {
-                return true
-              }
-
-              return false
-            }}
+            isDayBlocked={isDateBlocked}
           />
         </ThemeProvider>
       </div>

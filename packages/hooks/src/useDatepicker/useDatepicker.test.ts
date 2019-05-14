@@ -12,6 +12,7 @@ import {
   getNextActiveMonth,
   useDatepicker,
   canSelectRange,
+  isDateHovered,
   START_DATE,
   END_DATE,
 } from '.'
@@ -311,6 +312,122 @@ describe('useDatepicker', () => {
       result.current.onDaySelect(new Date(2019, 3, 4, 0, 0, 0))
     })
     expect(onDateChange).not.toBeCalled()
+    clear()
+  })
+
+  test.each([
+    {
+      startDate: null,
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 1, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 1, 0, 0, 0),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 3, 2, 0, 0, 0),
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 4, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 3, 0, 0, 0),
+      expected: true,
+    },
+    {
+      startDate: new Date(2019, 3, 2, 0, 0, 0),
+      endDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 4, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 3, 0, 0, 0),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 3, 2, 0, 0, 0),
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 3, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 3, 0, 0, 0),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 3, 2, 0, 0, 0),
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 6, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 6, 3, 0, 0, 0),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 3, 2, 0, 0, 0),
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 4, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 4, 0, 0, 0),
+      expected: true,
+    },
+    {
+      startDate: new Date(2019, 3, 2, 0, 0, 0),
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 4, 4, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 4, 0, 0, 0),
+      expected: false,
+    },
+  ])('should hover date', props => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      // @ts-ignore
+      useDatepicker({
+        ...props,
+        onDateChange: jest.fn(),
+      }),
+    )
+
+    act(() => {
+      result.current.onDayHover(props.callbackDate)
+    })
+    expect(result.current.isDateHovered(props.expectedHoveredDate)).toBe(props.expected)
     clear()
   })
 
@@ -657,6 +774,82 @@ describe('canSelectRange', () => {
     'returns true when we can select the range',
     ({startDate, endDate, minBookingDays, isDateBlocked, expected}) => {
       expect(canSelectRange({startDate, endDate, minBookingDays, isDateBlocked})).toBe(expected)
+    },
+  )
+})
+
+describe('isDateHovered', () => {
+  test.each([
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: null,
+      hoveredDate: null,
+      date: new Date(2019, 2, 10, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: new Date(2019, 2, 11, 0, 0, 0),
+      hoveredDate: null,
+      date: new Date(2019, 2, 10, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: new Date(2019, 2, 11, 0, 0, 0),
+      hoveredDate: null,
+      date: new Date(2019, 2, 11, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: new Date(2019, 2, 11, 0, 0, 0),
+      minBookingDays: 1,
+      hoveredDate: new Date(2019, 2, 11, 0, 0, 0),
+      date: new Date(2019, 2, 11, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 11, 0, 0, 0),
+      date: new Date(2019, 2, 11, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 12, 0, 0, 0),
+      date: new Date(2019, 2, 12, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 13, 0, 0, 0)),
+      expected: true,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: null,
+      hoveredDate: new Date(2019, 1, 12, 0, 0, 0),
+      date: new Date(2019, 1, 11, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 13, 0, 0, 0)),
+      expected: false,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: null,
+      minBookingDays: 1,
+      hoveredDate: new Date(2019, 2, 13, 0, 0, 0),
+      date: new Date(2019, 2, 11, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 12, 0, 0, 0)),
+      expected: false,
+    },
+  ])(
+    'returns true when we can select the range',
+    ({startDate, endDate, hoveredDate, isDateBlocked, date, expected}) => {
+      expect(isDateHovered({startDate, endDate, hoveredDate, date, isDateBlocked})).toBe(expected)
     },
   )
 })

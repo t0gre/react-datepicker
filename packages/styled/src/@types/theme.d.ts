@@ -81,18 +81,21 @@ export interface DayTheme extends CommonTheme {
   dayFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
   dayColor?: ResponsiveValue<ColorProperty>
   dayHoverColor?: ResponsiveValue<ColorProperty>
+  dayHoverRangeColor?: ResponsiveValue<ColorProperty>
   daySelectedColor?: ResponsiveValue<ColorProperty>
   daySelectedHoverColor?: ResponsiveValue<ColorProperty>
   daySelectedFirstOrLastColor?: ResponsiveValue<ColorProperty>
   dayBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   dayHoverBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
+  dayHoverRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   daySelectedBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   daySelectedHoverBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   daySelectedFirstOrLastBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   dayBorderColor?: ColorProperty
-  dayBorderSelectedColor?: ColorProperty
-  dayBorderSelectedFirstOrLastColor?: ColorProperty
-  dayBorderAccessibility?: ColorProperty
+  dayHoverRangeBorderColor?: ColorProperty
+  daySelectedBorderColor?: ColorProperty
+  daySelectedFirstOrLastBorderColor?: ColorProperty
+  dayAccessibilityBorderColor?: ColorProperty
 }
 
 export interface MonthTheme extends CommonTheme {

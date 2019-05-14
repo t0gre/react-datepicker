@@ -16,6 +16,8 @@ test('should match snapshot', () => {
       isDateSelected={() => false}
       // @ts-ignore
       isStartOrEndDate={() => false}
+      isDateHovered={() => false}
+      onDayHover={jest.fn()}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -44,6 +46,8 @@ test('Sunday should be first day of the week', () => {
       isDateSelected={() => false}
       // @ts-ignore
       isStartOrEndDate={() => false}
+      isDateHovered={() => false}
+      onDayHover={jest.fn()}
     />,
   )
   expect(container).toMatchSnapshot()

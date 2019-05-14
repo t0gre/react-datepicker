@@ -183,3 +183,35 @@ export function canSelectRange({
 
   return false
 }
+
+export interface IsDateHoveredProps {
+  startDate: Date | null
+  endDate: Date | null
+  date: Date
+  isDateBlocked(date: Date): boolean
+  hoveredDate: Date | null
+}
+export function isDateHovered({
+  date,
+  startDate,
+  endDate,
+  isDateBlocked,
+  hoveredDate,
+}: IsDateHoveredProps) {
+  if (
+    startDate &&
+    !endDate &&
+    hoveredDate &&
+    !isBefore(hoveredDate, startDate) &&
+    isWithinRange(date, startDate, hoveredDate)
+  ) {
+    // @ts-ignore
+    return eachDay(startDate, hoveredDate).reduce((returnValue, date) => {
+      if (!returnValue) return returnValue
+
+      return !isDateBlocked(date)
+    }, true)
+  }
+
+  return false
+}

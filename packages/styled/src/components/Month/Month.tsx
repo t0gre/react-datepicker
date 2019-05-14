@@ -17,7 +17,9 @@ interface MonthProps {
   isDateBlocked(date: Date): boolean
   isDateSelected(date: Date): boolean
   isStartOrEndDate(date: Date): boolean
+  isDateHovered(date: Date): boolean
   onDaySelect(date: Date): void
+  onDayHover(date: Date): void
 }
 
 const Month = ({
@@ -28,6 +30,8 @@ const Month = ({
   isDateSelected,
   isStartOrEndDate,
   onDaySelect,
+  onDayHover,
+  isDateHovered,
 }: MonthProps) => {
   const {days, weekDays, monthLabel} = useMonth({year, month, weekStartsOn: firstDayOfWeek})
   const theme: MonthTheme = useThemeProps({
@@ -60,6 +64,8 @@ const Month = ({
                 disabled={isDateBlocked(day.date)}
                 isStartOrEnd={isStartOrEndDate(day.date)}
                 onDaySelect={onDaySelect}
+                onDayHover={onDayHover}
+                isWithinHoverRange={isDateHovered(day.date)}
               />
             )
           }

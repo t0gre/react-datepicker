@@ -11,6 +11,8 @@ test('should render disabled day', () => {
       date={new Date()}
       day="1"
       onDaySelect={jest.fn()}
+      onDayHover={jest.fn()}
+      isWithinHoverRange={false}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -26,6 +28,8 @@ test('should render normal day', () => {
       date={new Date()}
       day="1"
       onDaySelect={onDaySelect}
+      onDayHover={jest.fn()}
+      isWithinHoverRange={false}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -43,6 +47,8 @@ test('should render active day', () => {
       date={new Date()}
       day="1"
       onDaySelect={jest.fn()}
+      onDayHover={jest.fn()}
+      isWithinHoverRange={false}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -57,7 +63,28 @@ test('should render first or last active day', () => {
       date={new Date()}
       day="1"
       onDaySelect={jest.fn()}
+      onDayHover={jest.fn()}
+      isWithinHoverRange={false}
     />,
   )
   expect(container).toMatchSnapshot()
+})
+
+test('should execute onDayHover callback', () => {
+  const onDayHover = jest.fn()
+  const {container} = render(
+    <Day
+      isWithinHoverRange
+      isStartOrEnd={false}
+      isActive={false}
+      disabled={false}
+      date={new Date()}
+      day="1"
+      onDaySelect={jest.fn()}
+      onDayHover={onDayHover}
+    />,
+  )
+  // @ts-ignore
+  fireEvent.mouseEnter(container.firstChild)
+  expect(onDayHover).toBeCalled()
 })

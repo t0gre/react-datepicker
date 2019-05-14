@@ -110,9 +110,10 @@ interface StyledDayProps
   isActive: boolean
   disabled: boolean
   isStartOrEnd: boolean
+  isWithinHoverRange: boolean
   dayHeight: number | (number | null)[] | undefined
   dayWidth: number | (number | null)[] | undefined
-  borderAccessibility: string
+  borderAccessibilityColor: string
   daySelectedHoverBackground: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   dayHoverBackground: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   dayHoverColor: ResponsiveValue<ColorProperty>
@@ -140,8 +141,8 @@ const StyledDay = styled('button')<StyledDayProps>`
       opacity: 0.4;
     `}
   
-  ${({disabled, isActive, isStartOrEnd}) => {
-    if (!disabled && !isActive && !isStartOrEnd) {
+  ${({disabled, isActive, isStartOrEnd, isWithinHoverRange}) => {
+    if (!disabled && !isActive && !isStartOrEnd && !isWithinHoverRange) {
       return css`
         &:hover {
           ${dayHoverBackground}
@@ -161,9 +162,9 @@ const StyledDay = styled('button')<StyledDayProps>`
   }}
   
   &:focus {
-    ${({borderAccessibility}) => css`
+    ${({borderAccessibilityColor}) => css`
       box-shadow: none;
-      border: 2px solid ${borderAccessibility};
+      border: 2px solid ${borderAccessibilityColor};
     `}
   }
 `
@@ -171,20 +172,25 @@ const StyledDay = styled('button')<StyledDayProps>`
 function getColor(
   isActive: boolean,
   isStartOrEnd: boolean,
+  isWithinHoverRange: boolean,
   {
     selectedFirstOrLast,
     normal,
     selected,
+    rangeHover,
   }: {
     selectedFirstOrLast: ResponsiveValue<ColorProperty>
     selected: ResponsiveValue<ColorProperty>
     normal: ResponsiveValue<ColorProperty>
+    rangeHover: ResponsiveValue<ColorProperty>
   },
 ) {
   if (isStartOrEnd) {
     return selectedFirstOrLast
   } else if (isActive) {
     return selected
+  } else if (isWithinHoverRange) {
+    return rangeHover
   } else {
     return normal
   }
@@ -196,9 +202,20 @@ interface DayProps {
   isActive: boolean
   disabled: boolean
   isStartOrEnd: boolean
+  isWithinHoverRange: boolean
   onDaySelect(date: Date): void
+  onDayHover(date: Date): void
 }
-function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date}: DayProps) {
+function Day({
+  day,
+  isActive,
+  isStartOrEnd,
+  disabled,
+  onDaySelect,
+  onDayHover,
+  date,
+  isWithinHoverRange,
+}: DayProps) {
   const theme: DayTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     daySize: globalStyles.daySize,
@@ -208,61 +225,72 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date}: DayProp
     dayHoverColor: '#58595b',
     daySelectedColor: '#ffffff',
     daySelectedHoverColor: '#ffffff',
+    dayHoverRangeColor: '#ffffff',
     daySelectedFirstOrLastColor: '#ffffff',
     dayBackground: '#ffffff',
     dayHoverBackground: '#e6e7e8',
     daySelectedBackground: '#71c9ed',
     daySelectedHoverBackground: '#39beef',
+    dayHoverRangeBackground: '#71c9ed',
     daySelectedFirstOrLastBackground: '#00aeef',
     dayBorderColor: '#e6e7e8',
-    dayBorderSelectedColor: '#71c9ed',
-    dayBorderSelectedFirstOrLastColor: '#00aeef',
-    dayBorderAccessibility: '#009fef',
+    daySelectedBorderColor: '#71c9ed',
+    dayHoverRangeBorderColor: '#71c9ed',
+    daySelectedFirstOrLastBorderColor: '#00aeef',
+    dayAccessibilityBorderColor: '#009fef',
   })
   const borderColor = useMemo(
     () =>
-      getColor(isActive, isStartOrEnd, {
+      getColor(isActive, isStartOrEnd, isWithinHoverRange, {
         // @ts-ignore
-        selectedFirstOrLast: theme.dayBorderSelectedFirstOrLastColor,
+        selectedFirstOrLast: theme.daySelectedFirstOrLastBorderColor,
         // @ts-ignore
-        selected: theme.dayBorderSelectedColor,
+        selected: theme.daySelectedBorderColor,
         // @ts-ignore
         normal: theme.dayBorderColor,
+        // @ts-ignore
+        rangeHover: theme.dayHoverRangeColor,
       }),
-    [isActive, isStartOrEnd, theme],
+    [isActive, isStartOrEnd, theme, isWithinHoverRange],
   )
   const background = useMemo(
     () =>
-      getColor(isActive, isStartOrEnd, {
+      getColor(isActive, isStartOrEnd, isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastBackground,
         // @ts-ignore
         selected: theme.daySelectedBackground,
         // @ts-ignore
         normal: theme.dayBackground,
+        // @ts-ignore
+        rangeHover: theme.dayHoverRangeBackground,
       }),
-    [isActive, isStartOrEnd, theme],
+    [isActive, isStartOrEnd, theme, isWithinHoverRange],
   )
   const color = useMemo(
     () =>
-      getColor(isActive, isStartOrEnd, {
+      getColor(isActive, isStartOrEnd, isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastColor,
         // @ts-ignore
         selected: theme.daySelectedColor,
         // @ts-ignore
         normal: theme.dayColor,
+        // @ts-ignore
+        rangeHover: theme.dayHoverRangeColor,
       }),
-    [isActive, isStartOrEnd, theme],
+    [isActive, isStartOrEnd, theme, isWithinHoverRange],
   )
 
   return (
     <StyledDay
       role="button"
       onClick={() => onDaySelect(date)}
-      disabled={disabled}
+      onMouseEnter={() => onDayHover(date)}
+      disabled={disabled && !isWithinHoverRange}
       isActive={isActive}
       isStartOrEnd={isStartOrEnd}
+      isWithinHoverRange={isWithinHoverRange}
       dayHeight={theme.daySize}
       dayWidth={theme.daySize}
       background={background}
@@ -279,7 +307,7 @@ function Day({day, isActive, isStartOrEnd, disabled, onDaySelect, date}: DayProp
       // @ts-ignore
       daySelectedHoverColor={theme.daySelectedHoverColor}
       // @ts-ignore
-      borderAccessibility={theme.dayBorderAccessibility}
+      borderAccessibilityColor={theme.dayAccessibilityBorderColor}
       boxShadow={`1px 0 0 0 ${borderColor},
         0 1px 0 0 ${borderColor},
         1px 1px 0 0 ${borderColor},

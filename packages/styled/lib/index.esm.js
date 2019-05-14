@@ -252,7 +252,7 @@ Function.call.bind(Object.prototype.hasOwnProperty)
 function b() {}
 function x() {}
 x.resetWarningCache = b
-var S = m(function(e) {
+var C = m(function(e) {
     e.exports = (function() {
       function e(e, t, n, r, o, a) {
         if (a !== k) {
@@ -291,10 +291,10 @@ var S = m(function(e) {
       return (n.PropTypes = n), n
     })()
   }),
-  C = [40, 52, 64].map(function(e) {
+  S = [40, 52, 64].map(function(e) {
     return e + 'em'
   }),
-  w = S.oneOfType([S.number, S.string, S.array, S.object]),
+  w = C.oneOfType([C.number, C.string, C.array, C.object]),
   M = function(e) {
     return function() {
       return e.apply(void 0, arguments)
@@ -318,34 +318,34 @@ var S = m(function(e) {
   T = function(e) {
     return 'number' == typeof e && !isNaN(e)
   },
-  E = function(e) {
+  W = function(e) {
     return T(e) && 0 !== e ? e + 'px' : e
   },
-  W = function(e) {
-    return '@media screen and (min-width: ' + E(e) + ')'
+  E = function(e) {
+    return '@media screen and (min-width: ' + W(e) + ')'
   },
-  L = function(e, t) {
+  H = function(e, t) {
     return B(t, e)
   },
-  O = function e(t, n) {
+  L = function e(t, n) {
     var r = {}
     for (var o in t) r[o] = t[o]
     for (var a in n) t[a] && 'object' == typeof t[a] ? (r[a] = e(t[a], n[a])) : (r[a] = n[a])
     return r
   },
-  P = function() {
+  O = function() {
     for (var e = {}, t = 0; t < arguments.length; t++)
-      e = O(e, t < 0 || arguments.length <= t ? void 0 : arguments[t])
+      e = L(e, t < 0 || arguments.length <= t ? void 0 : arguments[t])
     return e
   },
-  z = function(e) {
+  P = function(e) {
     var t,
       n = e.prop,
       r = e.cssProperty,
       o = e.alias,
       a = e.key,
       i = e.transformValue,
-      l = void 0 === i ? L : i,
+      l = void 0 === i ? H : i,
       c = e.scale,
       s = void 0 === c ? {} : c,
       u = r || n,
@@ -359,7 +359,7 @@ var S = m(function(e) {
             return F(e) ? (((t = {})[u] = l(e, i)), t) : null
           }
         if ('object' != typeof (r = t) || null === r) return c(t)
-        var d = B(e.theme, 'breakpoints', C),
+        var d = B(e.theme, 'breakpoints', S),
           p = []
         if (Array.isArray(t)) {
           p.push(c(t[0]))
@@ -367,7 +367,7 @@ var S = m(function(e) {
             var m = c(t[f])
             if (m) {
               var g,
-                h = W(d[f - 1])
+                h = E(d[f - 1])
               p.push((((g = {})[h] = m), g))
             }
           }
@@ -375,14 +375,14 @@ var S = m(function(e) {
           for (var y in t) {
             var v,
               D = d[y],
-              k = W(D),
+              k = E(D),
               b = c(t[y])
             if (D) p.push((((v = {})[k] = b), v))
             else p.unshift(b)
           }
           p.sort()
         }
-        return P.apply(void 0, p)
+        return O.apply(void 0, p)
       }
     return (
       ((d.propTypes = (((t = {})[n] = M(w)), t))[n].meta = {prop: n, themeKey: a}),
@@ -390,7 +390,7 @@ var S = m(function(e) {
       d
     )
   },
-  H = function() {
+  z = function() {
     for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n]
     var r = function(e) {
       var n = t
@@ -398,7 +398,7 @@ var S = m(function(e) {
           return t(e)
         })
         .filter(Boolean)
-      return P.apply(void 0, n)
+      return O.apply(void 0, n)
     }
     return (
       (r.propTypes = {}),
@@ -408,7 +408,7 @@ var S = m(function(e) {
       r
     )
   },
-  I = function(e) {
+  R = function(e) {
     return function(t) {
       var n = function(n) {
         return t(e(n))
@@ -417,7 +417,7 @@ var S = m(function(e) {
       return n
     }
   },
-  R = function(e) {
+  I = function(e) {
     var t,
       n = e.key,
       r = e.prop,
@@ -425,27 +425,27 @@ var S = m(function(e) {
       a = function(e) {
         return B(e.theme, [n, e[o]].join('.'), null)
       }
-    return (a.propTypes = (((t = {})[o] = S.oneOfType([S.number, S.string])), t)), a
+    return (a.propTypes = (((t = {})[o] = C.oneOfType([C.number, C.string])), t)), a
   },
   A = [0, 4, 8, 16, 32, 64, 128, 256, 512],
   Y = function(e, t) {
-    if (!T(e)) return E(B(t, e, e))
+    if (!T(e)) return W(B(t, e, e))
     var n = e < 0,
       r = Math.abs(e),
       o = B(t, r)
-    return T(o) ? E(o * (n ? -1 : 1)) : n ? '-' + o : o
+    return T(o) ? W(o * (n ? -1 : 1)) : n ? '-' + o : o
   },
-  V = z({prop: 'margin', alias: 'm', key: 'space', transformValue: Y, scale: A}),
-  j = z({prop: 'marginTop', alias: 'mt', key: 'space', transformValue: Y, scale: A}),
-  N = z({prop: 'marginBottom', alias: 'mb', key: 'space', transformValue: Y, scale: A}),
-  $ = z({prop: 'marginLeft', alias: 'ml', key: 'space', transformValue: Y, scale: A}),
-  G = z({prop: 'marginRight', alias: 'mr', key: 'space', transformValue: Y, scale: A}),
-  _ = z({prop: 'padding', alias: 'p', key: 'space', transformValue: Y, scale: A}),
-  U = z({prop: 'paddingTop', alias: 'pt', key: 'space', transformValue: Y, scale: A}),
-  Z = z({prop: 'paddingBottom', alias: 'pb', key: 'space', transformValue: Y, scale: A}),
-  X = z({prop: 'paddingLeft', alias: 'pl', key: 'space', transformValue: Y, scale: A}),
-  J = z({prop: 'paddingRight', alias: 'pr', key: 'space', transformValue: Y, scale: A}),
-  q = I(function(e) {
+  V = P({prop: 'margin', alias: 'm', key: 'space', transformValue: Y, scale: A}),
+  j = P({prop: 'marginTop', alias: 'mt', key: 'space', transformValue: Y, scale: A}),
+  N = P({prop: 'marginBottom', alias: 'mb', key: 'space', transformValue: Y, scale: A}),
+  $ = P({prop: 'marginLeft', alias: 'ml', key: 'space', transformValue: Y, scale: A}),
+  G = P({prop: 'marginRight', alias: 'mr', key: 'space', transformValue: Y, scale: A}),
+  _ = P({prop: 'padding', alias: 'p', key: 'space', transformValue: Y, scale: A}),
+  U = P({prop: 'paddingTop', alias: 'pt', key: 'space', transformValue: Y, scale: A}),
+  Z = P({prop: 'paddingBottom', alias: 'pb', key: 'space', transformValue: Y, scale: A}),
+  X = P({prop: 'paddingLeft', alias: 'pl', key: 'space', transformValue: Y, scale: A}),
+  J = P({prop: 'paddingRight', alias: 'pr', key: 'space', transformValue: Y, scale: A}),
+  q = R(function(e) {
     return p({}, e, {
       mt: F(e.my) ? e.my : e.mt,
       mb: F(e.my) ? e.my : e.mb,
@@ -456,83 +456,83 @@ var S = m(function(e) {
       pl: F(e.px) ? e.px : e.pl,
       pr: F(e.px) ? e.px : e.pr,
     })
-  })(H(V, j, N, $, G, _, U, Z, X, J)),
-  Q = H(
-    z({prop: 'color', key: 'colors'}),
-    z({prop: 'backgroundColor', alias: 'bg', key: 'colors'}),
+  })(z(V, j, N, $, G, _, U, Z, X, J)),
+  Q = z(
+    P({prop: 'color', key: 'colors'}),
+    P({prop: 'backgroundColor', alias: 'bg', key: 'colors'}),
   ),
   K = function(e, t) {
-    return !T(e) || e > 1 ? E(e) : 100 * e + '%'
+    return !T(e) || e > 1 ? W(e) : 100 * e + '%'
   },
-  ee = z({prop: 'width', key: 'widths', transformValue: K}),
+  ee = P({prop: 'width', key: 'widths', transformValue: K}),
   te = function(e, t) {
-    return E(B(t, e))
+    return W(B(t, e))
   },
-  ne = z({
+  ne = P({
     prop: 'fontSize',
     key: 'fontSizes',
     transformValue: te,
     scale: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   }),
-  re = z({prop: 'fontFamily', key: 'fonts'}),
-  oe = z({prop: 'fontWeight', key: 'fontWeights'}),
-  ae = z({prop: 'lineHeight', key: 'lineHeights'}),
-  ie = (z({prop: 'textAlign'}),
-  z({prop: 'fontStyle'}),
-  z({prop: 'letterSpacing', key: 'letterSpacings', transformValue: te}),
-  z({prop: 'display'})),
-  le = (z({prop: 'maxWidth', key: 'maxWidths', transformValue: te}),
-  z({prop: 'minWidth', key: 'minWidths', transformValue: te}),
-  z({prop: 'height', key: 'heights', transformValue: te})),
-  ce = (z({prop: 'maxHeight', key: 'maxHeights', transformValue: te}),
-  z({prop: 'minHeight', key: 'minHeights', transformValue: te})),
-  se = (I(function(e) {
+  re = P({prop: 'fontFamily', key: 'fonts'}),
+  oe = P({prop: 'fontWeight', key: 'fontWeights'}),
+  ae = P({prop: 'lineHeight', key: 'lineHeights'}),
+  ie = (P({prop: 'textAlign'}),
+  P({prop: 'fontStyle'}),
+  P({prop: 'letterSpacing', key: 'letterSpacings', transformValue: te}),
+  P({prop: 'display'})),
+  le = (P({prop: 'maxWidth', key: 'maxWidths', transformValue: te}),
+  P({prop: 'minWidth', key: 'minWidths', transformValue: te}),
+  P({prop: 'height', key: 'heights', transformValue: te})),
+  ce = (P({prop: 'maxHeight', key: 'maxHeights', transformValue: te}),
+  P({prop: 'minHeight', key: 'minHeights', transformValue: te})),
+  se = (R(function(e) {
     return p({}, e, {width: e.size, height: e.size})
-  })(H(ee, le)),
-  z({prop: 'verticalAlign'}),
-  z({prop: 'alignItems'})),
-  ue = (z({prop: 'alignContent'}), z({prop: 'justifyItems'}), z({prop: 'justifyContent'})),
-  de = z({prop: 'flexWrap'}),
-  pe = (z({prop: 'flexBasis', transformValue: K}), z({prop: 'flexDirection'})),
-  fe = z({prop: 'flex'}),
-  me = (z({prop: 'justifySelf'}),
-  z({prop: 'alignSelf'}),
-  z({prop: 'order'}),
-  z({prop: 'gridGap', key: 'space', transformValue: te, scale: A})),
-  ge = z({prop: 'gridColumnGap', key: 'space', transformValue: te, scale: A}),
-  he = z({prop: 'gridRowGap', key: 'space', transformValue: te, scale: A}),
-  ye = (z({prop: 'gridColumn'}), z({prop: 'gridRow'}), z({prop: 'gridAutoFlow'})),
-  ve = z({prop: 'gridAutoColumns'}),
-  De = z({prop: 'gridAutoRows'}),
-  ke = z({prop: 'gridTemplateColumns'}),
-  be = z({prop: 'gridTemplateRows'}),
-  xe = z({prop: 'gridTemplateAreas'}),
-  Se = z({prop: 'gridArea'}),
-  Ce = z({prop: 'border', key: 'borders'}),
-  we = z({prop: 'borderWidth', key: 'borderWidths', transformValue: te}),
-  Me = z({prop: 'borderStyle', key: 'borderStyles'}),
-  Be = z({prop: 'borderColor', key: 'colors'}),
-  Fe = z({prop: 'borderTop', key: 'borders'}),
-  Te = z({prop: 'borderRight', key: 'borders'}),
-  Ee = z({prop: 'borderBottom', key: 'borders'}),
-  We = z({prop: 'borderLeft', key: 'borders'}),
-  Le = z({prop: 'borderRadius', key: 'radii', transformValue: te}),
-  Oe = (H(Ce, Fe, Te, Ee, We, we, Me, Be, Le), z({prop: 'boxShadow', key: 'shadows'})),
-  Pe = z({prop: 'opacity'}),
-  ze = (z({prop: 'overflow'}), z({prop: 'background'})),
-  He = (z({prop: 'backgroundImage'}),
-  z({prop: 'backgroundSize'}),
-  z({prop: 'backgroundPosition'}),
-  z({prop: 'backgroundRepeat'}),
-  z({prop: 'position'})),
-  Ie = z({prop: 'zIndex', key: 'zIndices'}),
-  Re = z({prop: 'top', transformValue: te}),
-  Ae = z({prop: 'right', transformValue: te}),
-  Ye = z({prop: 'bottom', transformValue: te}),
-  Ve = z({prop: 'left', transformValue: te}),
-  je = (R({key: 'buttons'}),
-  R({key: 'textStyles', prop: 'textStyle'}),
-  R({key: 'colorStyles', prop: 'colors'}),
+  })(z(ee, le)),
+  P({prop: 'verticalAlign'}),
+  P({prop: 'alignItems'})),
+  ue = (P({prop: 'alignContent'}), P({prop: 'justifyItems'}), P({prop: 'justifyContent'})),
+  de = P({prop: 'flexWrap'}),
+  pe = (P({prop: 'flexBasis', transformValue: K}), P({prop: 'flexDirection'})),
+  fe = P({prop: 'flex'}),
+  me = (P({prop: 'justifySelf'}),
+  P({prop: 'alignSelf'}),
+  P({prop: 'order'}),
+  P({prop: 'gridGap', key: 'space', transformValue: te, scale: A})),
+  ge = P({prop: 'gridColumnGap', key: 'space', transformValue: te, scale: A}),
+  he = P({prop: 'gridRowGap', key: 'space', transformValue: te, scale: A}),
+  ye = (P({prop: 'gridColumn'}), P({prop: 'gridRow'}), P({prop: 'gridAutoFlow'})),
+  ve = P({prop: 'gridAutoColumns'}),
+  De = P({prop: 'gridAutoRows'}),
+  ke = P({prop: 'gridTemplateColumns'}),
+  be = P({prop: 'gridTemplateRows'}),
+  xe = P({prop: 'gridTemplateAreas'}),
+  Ce = P({prop: 'gridArea'}),
+  Se = P({prop: 'border', key: 'borders'}),
+  we = P({prop: 'borderWidth', key: 'borderWidths', transformValue: te}),
+  Me = P({prop: 'borderStyle', key: 'borderStyles'}),
+  Be = P({prop: 'borderColor', key: 'colors'}),
+  Fe = P({prop: 'borderTop', key: 'borders'}),
+  Te = P({prop: 'borderRight', key: 'borders'}),
+  We = P({prop: 'borderBottom', key: 'borders'}),
+  Ee = P({prop: 'borderLeft', key: 'borders'}),
+  He = P({prop: 'borderRadius', key: 'radii', transformValue: te}),
+  Le = (z(Se, Fe, Te, We, Ee, we, Me, Be, He), P({prop: 'boxShadow', key: 'shadows'})),
+  Oe = P({prop: 'opacity'}),
+  Pe = (P({prop: 'overflow'}), P({prop: 'background'})),
+  ze = (P({prop: 'backgroundImage'}),
+  P({prop: 'backgroundSize'}),
+  P({prop: 'backgroundPosition'}),
+  P({prop: 'backgroundRepeat'}),
+  P({prop: 'position'})),
+  Re = P({prop: 'zIndex', key: 'zIndices'}),
+  Ie = P({prop: 'top', transformValue: te}),
+  Ae = P({prop: 'right', transformValue: te}),
+  Ye = P({prop: 'bottom', transformValue: te}),
+  Ve = P({prop: 'left', transformValue: te}),
+  je = (I({key: 'buttons'}),
+  I({key: 'textStyles', prop: 'textStyle'}),
+  I({key: 'colorStyles', prop: 'colors'}),
   function(e) {
     var t = new Date(e.getTime()),
       n = t.getTimezoneOffset()
@@ -876,7 +876,7 @@ var ut,
       return e.getMonth() + 1
     },
     MM: function(e) {
-      return Ct(e.getMonth() + 1, 2)
+      return St(e.getMonth() + 1, 2)
     },
     Q: function(e) {
       return Math.ceil((e.getMonth() + 1) / 3)
@@ -885,13 +885,13 @@ var ut,
       return e.getDate()
     },
     DD: function(e) {
-      return Ct(e.getDate(), 2)
+      return St(e.getDate(), 2)
     },
     DDD: function(e) {
       return ft(e)
     },
     DDDD: function(e) {
-      return Ct(ft(e), 3)
+      return St(ft(e), 3)
     },
     d: function(e) {
       return e.getDay()
@@ -903,13 +903,13 @@ var ut,
       return yt(e)
     },
     WW: function(e) {
-      return Ct(yt(e), 2)
+      return St(yt(e), 2)
     },
     YY: function(e) {
-      return Ct(e.getFullYear(), 4).substr(2)
+      return St(e.getFullYear(), 4).substr(2)
     },
     YYYY: function(e) {
-      return Ct(e.getFullYear(), 4)
+      return St(e.getFullYear(), 4)
     },
     GG: function(e) {
       return String(ht(e)).substr(2)
@@ -921,41 +921,41 @@ var ut,
       return e.getHours()
     },
     HH: function(e) {
-      return Ct(e.getHours(), 2)
+      return St(e.getHours(), 2)
     },
     h: function(e) {
       var t = e.getHours()
       return 0 === t ? 12 : t > 12 ? t % 12 : t
     },
     hh: function(e) {
-      return Ct(xt.h(e), 2)
+      return St(xt.h(e), 2)
     },
     m: function(e) {
       return e.getMinutes()
     },
     mm: function(e) {
-      return Ct(e.getMinutes(), 2)
+      return St(e.getMinutes(), 2)
     },
     s: function(e) {
       return e.getSeconds()
     },
     ss: function(e) {
-      return Ct(e.getSeconds(), 2)
+      return St(e.getSeconds(), 2)
     },
     S: function(e) {
       return Math.floor(e.getMilliseconds() / 100)
     },
     SS: function(e) {
-      return Ct(Math.floor(e.getMilliseconds() / 10), 2)
+      return St(Math.floor(e.getMilliseconds() / 10), 2)
     },
     SSS: function(e) {
-      return Ct(e.getMilliseconds(), 3)
+      return St(e.getMilliseconds(), 3)
     },
     Z: function(e) {
-      return St(e.getTimezoneOffset(), ':')
+      return Ct(e.getTimezoneOffset(), ':')
     },
     ZZ: function(e) {
-      return St(e.getTimezoneOffset())
+      return Ct(e.getTimezoneOffset())
     },
     X: function(e) {
       return Math.floor(e.getTime() / 1e3)
@@ -964,14 +964,14 @@ var ut,
       return e.getTime()
     },
   }
-function St(e, t) {
+function Ct(e, t) {
   t = t || ''
   var n = e > 0 ? '-' : '+',
     r = Math.abs(e),
     o = r % 60
-  return n + Ct(Math.floor(r / 60), 2) + t + Ct(o, 2)
+  return n + St(Math.floor(r / 60), 2) + t + St(o, 2)
 }
-function Ct(e, t) {
+function St(e, t) {
   for (var n = Math.abs(e).toString(); n.length < t; ) n = '0' + n
   return n
 }
@@ -1033,14 +1033,14 @@ var wt = function(e, t, n) {
       a = 6 + (o < n ? -7 : 0) - (o - n)
     return r.setDate(r.getDate() + a), r.setHours(23, 59, 59, 999), r
   },
-  Et = function(e) {
+  Wt = function(e) {
     return dt(e).getDay()
   },
-  Wt = function(e) {
+  Et = function(e) {
     var t = dt(e)
     return t.setDate(1), t.setHours(0, 0, 0, 0), t
   }
-function Lt(e) {
+function Ht(e) {
   var t = e.year,
     n = e.month,
     o = e.weekStartsOn,
@@ -1082,8 +1082,8 @@ function Lt(e) {
                   }
                 : a,
             l = new Date(t, n),
-            c = Wt(l),
-            s = Et(c),
+            c = Et(l),
+            s = Wt(c),
             u = Ft(l),
             d = Array.from(Array(s >= o ? s - o : o).keys()).fill(0),
             p = Bt(c, u).map(function(e) {
@@ -1118,32 +1118,32 @@ function Lt(e) {
     monthLabel: d(new Date(t, n)),
   }
 }
-var Ot = function(e, t) {
+var Lt = function(e, t) {
     var n = dt(e),
       r = dt(t)
     return n.getTime() < r.getTime()
   },
-  Pt = function(e, t) {
+  Ot = function(e, t) {
     var n = dt(e),
       r = dt(t)
     return n.getTime() > r.getTime()
   },
-  zt = function(e, t, n) {
+  Pt = function(e, t, n) {
     var r = dt(e).getTime(),
       o = dt(t).getTime(),
       a = dt(n).getTime()
     if (o > a) throw new Error('The start of the range cannot be after the end of the range')
     return r >= o && r <= a
   },
-  Ht = function(e, t) {
+  zt = function(e, t) {
     var n = pt(e),
       r = pt(t)
     return n.getTime() === r.getTime()
   },
-  It = function(e) {
+  Rt = function(e) {
     return dt(e).getFullYear()
   },
-  Rt = function(e) {
+  It = function(e) {
     return dt(e).getMonth()
   },
   At = function() {
@@ -1165,8 +1165,8 @@ var Ot = function(e, t) {
     return n.setMonth(o, Math.min(i, n.getDate())), n
   }
 function Vt(e) {
-  var t = Wt(e)
-  return {year: It(t), month: Rt(t), date: t}
+  var t = Et(e)
+  return {year: Rt(t), month: It(t), date: t}
 }
 function jt(e, t) {
   var n = Vt(t || At()),
@@ -1202,7 +1202,7 @@ function Gt(e) {
   if (t && n) {
     var a = Mt(t, o - 1)
     return (
-      !Ot(n, a) &&
+      !Lt(n, a) &&
       Bt(t, n).reduce(function(e, t) {
         return e ? !r(t) : e
       }, !0)
@@ -1237,23 +1237,26 @@ function Zt(e) {
     }),
     v = y[0],
     D = y[1],
-    k = n(
+    k = t(null),
+    b = k[0],
+    x = k[1],
+    C = n(
       function(e) {
         return (function(e, t, n) {
-          return !(!t || !n) && zt(e, t, n)
+          return !(!t || !n) && Pt(e, t, n)
         })(e, r, o)
       },
       [r, o],
     ),
-    b = n(
+    S = n(
       function(e) {
         return (function(e, t, n) {
-          return !!((t && Ht(e, t)) || (n && Ht(e, n)))
+          return !!((t && zt(e, t)) || (n && zt(e, n)))
         })(e, r, o)
       },
       [r, o],
     ),
-    x = n(
+    w = n(
       function(e) {
         return (function(e) {
           var t = e.date,
@@ -1267,9 +1270,9 @@ function Zt(e) {
             s = n ? new Date(n.getFullYear(), n.getMonth(), n.getDate(), 0, 0, 0) : n,
             u = r ? new Date(r.getFullYear(), r.getMonth(), r.getDate(), 0, 0, 0) : r
           return !!(
-            (s && Ot(t, s)) ||
-            (u && Pt(t, u)) ||
-            (a && !i && c > 1 && zt(t, a, Mt(a, c - 2))) ||
+            (s && Lt(t, s)) ||
+            (u && Ot(t, u)) ||
+            (a && !i && c > 1 && Pt(t, a, Mt(a, c - 2))) ||
             (o && o(t))
           )
         })({
@@ -1283,19 +1286,40 @@ function Zt(e) {
         })
       },
       [i, l, r, o, u, h],
+    ),
+    M = n(
+      function(e) {
+        return (function(e) {
+          var t = e.date,
+            n = e.startDate,
+            r = e.isDateBlocked,
+            o = e.hoveredDate
+          return (
+            !(!n || e.endDate || !o || Lt(o, n) || !Pt(t, n, o)) &&
+            Bt(n, o).reduce(function(e, t) {
+              return e ? !r(t) : e
+            }, !0)
+          )
+        })({date: e, hoveredDate: b, startDate: r, endDate: o, isDateBlocked: h})
+      },
+      [b, r, o, h],
     )
   return {
     firstDayOfWeek: m,
     activeMonths: v,
-    isDateSelected: k,
-    isFirstOrLastSelectedDate: b,
-    isDateBlocked: x,
+    isDateSelected: C,
+    isDateHovered: M,
+    isFirstOrLastSelectedDate: S,
+    isDateBlocked: w,
     numberOfMonths: p,
     onResetDates: function() {
       c({startDate: null, endDate: null, focusedInput: _t})
     },
+    onDayHover: function(e) {
+      !r || o || (i && l && !Pt(e, i, l)) || (u > 1 && r && Pt(e, r, Mt(r, u - 2))) ? x(null) : x(e)
+    },
     onDaySelect: function(e) {
-      ;((a === Ut && r && Ot(e, r)) || (a === _t && o && Pt(e, o))) &&
+      ;((a === Ut && r && Lt(e, r)) || (a === _t && o && Ot(e, o))) &&
       Gt({minBookingDays: u, isDateBlocked: h, startDate: e, endDate: null})
         ? c({endDate: null, startDate: e, focusedInput: Ut})
         : a === _t && Gt({minBookingDays: u, isDateBlocked: h, endDate: o, startDate: e})
@@ -1304,7 +1328,7 @@ function Zt(e) {
         ? c({endDate: null, startDate: e, focusedInput: Ut})
         : a === Ut &&
           r &&
-          !Ot(e, r) &&
+          !Lt(e, r) &&
           Gt({minBookingDays: u, isDateBlocked: h, startDate: r, endDate: e}) &&
           c({startDate: r, endDate: e, focusedInput: null})
     },
@@ -1332,7 +1356,7 @@ var Xt,
     startDatePlaceholder: 'Start date',
     endDatePlaceholder: 'End date',
   }),
-  en = z({
+  en = P({
     prop: 'daySizeGridTemplateColumns',
     cssProperty: 'gridTemplateColumns',
     key: 'gridTemplateColumns',
@@ -1341,7 +1365,7 @@ var Xt,
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  tn = z({
+  tn = P({
     prop: 'numberOfMonthsGridTemplateColumns',
     cssProperty: 'gridTemplateColumns',
     key: 'gridTemplateColumns',
@@ -1437,7 +1461,7 @@ var Xt,
     pe,
     se,
     ue,
-    Se,
+    Ce,
     le,
     ee,
   ),
@@ -1471,16 +1495,16 @@ var Xt,
           '\n',
         ],
       )),
-    Se,
+    Ce,
     le,
     q,
     ee,
-    He,
-    Re,
+    ze,
+    Ie,
     Ve,
     Ae,
     Ye,
-    Ie,
+    Re,
   )
 function an(t) {
   var n = t.height,
@@ -1535,19 +1559,19 @@ var cn,
     },
     daySize: 36,
   },
-  pn = z({prop: 'placeholderColor', cssProperty: 'color'}),
-  fn = z({prop: 'placeholderFontWeight', cssProperty: 'fontWeight'}),
+  pn = P({prop: 'placeholderColor', cssProperty: 'color'}),
+  fn = P({prop: 'placeholderFontWeight', cssProperty: 'fontWeight'}),
   mn = l('label')(
     cn ||
       (cn = d(
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
-    He,
-    Ce,
     ze,
+    Se,
+    Pe,
     ie,
-    Le,
+    He,
     q,
   ),
   gn = l('div')(
@@ -1570,9 +1594,9 @@ var cn,
           '\n  cursor: pointer;\n  \n  svg {\n    display: block;\n  }\n',
         ],
       )),
-    He,
+    ze,
     Ve,
-    Re,
+    Ie,
     le,
     ee,
   ),
@@ -1618,14 +1642,14 @@ var cn,
           '\n  }\n',
         ],
       )),
-    ze,
+    Pe,
     q,
     re,
     ne,
     Q,
     oe,
     q,
-    Ce,
+    Se,
     ee,
     ce,
     fn,
@@ -1774,7 +1798,7 @@ var Dn,
     ae,
     q,
   ),
-  Sn = l(xn)(
+  Cn = l(xn)(
     bn ||
       (bn = d(
         [
@@ -1799,7 +1823,7 @@ var Dn,
       )
     },
   )
-function Cn(t) {
+function Sn(t) {
   var n = t.title,
     r = t.isActive,
     o = t.date,
@@ -1828,7 +1852,7 @@ function Cn(t) {
       n,
     ),
     e.createElement(
-      Sn,
+      Cn,
       {
         as: 'span',
         color: a.selectDateDateColor,
@@ -1884,7 +1908,7 @@ var wn = function(t) {
       n,
     )
   },
-  Bn = z({
+  Bn = P({
     prop: 'dayHeight',
     cssProperty: 'height',
     key: 'dayHeight',
@@ -1893,7 +1917,7 @@ var wn = function(t) {
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  Fn = z({
+  Fn = P({
     prop: 'dayWidth',
     cssProperty: 'width',
     key: 'dayWidth',
@@ -1902,7 +1926,7 @@ var wn = function(t) {
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  Tn = z({
+  Tn = P({
     prop: 'dayHoverColor',
     cssProperty: 'color',
     key: 'dayHoverColor',
@@ -1911,7 +1935,7 @@ var wn = function(t) {
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  En = z({
+  Wn = P({
     prop: 'daySelectedHoverColor',
     cssProperty: 'color',
     key: 'daySelectedHoverColor',
@@ -1920,7 +1944,7 @@ var wn = function(t) {
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  Wn = z({
+  En = P({
     prop: 'dayHoverBackground',
     cssProperty: 'background',
     key: 'dayHoverBackground',
@@ -1929,7 +1953,7 @@ var wn = function(t) {
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  Ln = z({
+  Hn = P({
     prop: 'daySelectedHoverBackground',
     cssProperty: 'background',
     key: 'daySelectedHoverBackground',
@@ -1938,7 +1962,7 @@ var wn = function(t) {
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  On = l('button')(
+  Ln = l('button')(
     An ||
       (An = d(
         [
@@ -1972,8 +1996,8 @@ var wn = function(t) {
       )),
     Bn,
     Fn,
-    Oe,
-    ze,
+    Le,
+    Pe,
     Q,
     re,
     oe,
@@ -1985,8 +2009,8 @@ var wn = function(t) {
         t &&
         !n &&
         s(
-          zn ||
-            (zn = d(
+          Pn ||
+            (Pn = d(
               ['\n      cursor: initial;\n      opacity: 0.4;\n    '],
               ['\n      cursor: initial;\n      opacity: 0.4;\n    '],
             )),
@@ -1996,34 +2020,35 @@ var wn = function(t) {
     function(e) {
       var t = e.disabled,
         n = e.isActive,
-        r = e.isStartOrEnd
-      return t || n || r
+        r = e.isStartOrEnd,
+        o = e.isWithinHoverRange
+      return t || n || r || o
         ? n && !r
           ? s(
-              In ||
-                (In = d(
+              Rn ||
+                (Rn = d(
                   ['\n        &:hover {\n          ', '\n          ', '\n        }\n      '],
                   ['\n        &:hover {\n          ', '\n          ', '\n        }\n      '],
                 )),
-              Ln,
-              En,
+              Hn,
+              Wn,
             )
           : ''
         : s(
-            Hn ||
-              (Hn = d(
+            zn ||
+              (zn = d(
                 ['\n        &:hover {\n          ', '\n          ', '\n        }\n      '],
                 ['\n        &:hover {\n          ', '\n          ', '\n        }\n      '],
               )),
-            Wn,
+            En,
             Tn,
           )
     },
     function(e) {
-      var t = e.borderAccessibility
+      var t = e.borderAccessibilityColor
       return s(
-        Rn ||
-          (Rn = d(
+        In ||
+          (In = d(
             ['\n      box-shadow: none;\n      border: 2px solid ', ';\n    '],
             ['\n      box-shadow: none;\n      border: 2px solid ', ';\n    '],
           )),
@@ -2031,16 +2056,17 @@ var wn = function(t) {
       )
     },
   )
-function Pn(e, t, n) {
-  var r = n.selectedFirstOrLast,
-    o = n.normal,
-    a = n.selected
-  return t ? r : e ? a : o
+function On(e, t, n, r) {
+  var o = r.selectedFirstOrLast,
+    a = r.normal,
+    i = r.selected,
+    l = r.rangeHover
+  return t ? o : e ? i : n ? l : a
 }
-var zn,
-  Hn,
-  In,
+var Pn,
+  zn,
   Rn,
+  In,
   An,
   Yn = e.memo(function(t) {
     var n = t.day,
@@ -2048,8 +2074,10 @@ var zn,
       a = t.isStartOrEnd,
       i = t.disabled,
       l = t.onDaySelect,
-      c = t.date,
-      s = ln({
+      c = t.onDayHover,
+      s = t.date,
+      u = t.isWithinHoverRange,
+      d = ln({
         fontFamily: dn.fontFamily,
         daySize: dn.daySize,
         dayFontWeight: 500,
@@ -2058,80 +2086,90 @@ var zn,
         dayHoverColor: '#58595b',
         daySelectedColor: '#ffffff',
         daySelectedHoverColor: '#ffffff',
+        dayHoverRangeColor: '#ffffff',
         daySelectedFirstOrLastColor: '#ffffff',
         dayBackground: '#ffffff',
         dayHoverBackground: '#e6e7e8',
         daySelectedBackground: '#71c9ed',
         daySelectedHoverBackground: '#39beef',
+        dayHoverRangeBackground: '#71c9ed',
         daySelectedFirstOrLastBackground: '#00aeef',
         dayBorderColor: '#e6e7e8',
-        dayBorderSelectedColor: '#71c9ed',
-        dayBorderSelectedFirstOrLastColor: '#00aeef',
-        dayBorderAccessibility: '#009fef',
+        daySelectedBorderColor: '#71c9ed',
+        dayHoverRangeBorderColor: '#71c9ed',
+        daySelectedFirstOrLastBorderColor: '#00aeef',
+        dayAccessibilityBorderColor: '#009fef',
       }),
-      u = r(
-        function() {
-          return Pn(o, a, {
-            selectedFirstOrLast: s.dayBorderSelectedFirstOrLastColor,
-            selected: s.dayBorderSelectedColor,
-            normal: s.dayBorderColor,
-          })
-        },
-        [o, a, s],
-      ),
-      d = r(
-        function() {
-          return Pn(o, a, {
-            selectedFirstOrLast: s.daySelectedFirstOrLastBackground,
-            selected: s.daySelectedBackground,
-            normal: s.dayBackground,
-          })
-        },
-        [o, a, s],
-      ),
       p = r(
         function() {
-          return Pn(o, a, {
-            selectedFirstOrLast: s.daySelectedFirstOrLastColor,
-            selected: s.daySelectedColor,
-            normal: s.dayColor,
+          return On(o, a, u, {
+            selectedFirstOrLast: d.daySelectedFirstOrLastBorderColor,
+            selected: d.daySelectedBorderColor,
+            normal: d.dayBorderColor,
+            rangeHover: d.dayHoverRangeColor,
           })
         },
-        [o, a, s],
+        [o, a, d, u],
+      ),
+      f = r(
+        function() {
+          return On(o, a, u, {
+            selectedFirstOrLast: d.daySelectedFirstOrLastBackground,
+            selected: d.daySelectedBackground,
+            normal: d.dayBackground,
+            rangeHover: d.dayHoverRangeBackground,
+          })
+        },
+        [o, a, d, u],
+      ),
+      m = r(
+        function() {
+          return On(o, a, u, {
+            selectedFirstOrLast: d.daySelectedFirstOrLastColor,
+            selected: d.daySelectedColor,
+            normal: d.dayColor,
+            rangeHover: d.dayHoverRangeColor,
+          })
+        },
+        [o, a, d, u],
       )
     return e.createElement(
-      On,
+      Ln,
       {
         role: 'button',
         onClick: function() {
-          return l(c)
+          return l(s)
         },
-        disabled: i,
+        onMouseEnter: function() {
+          return c(s)
+        },
+        disabled: i && !u,
         isActive: o,
         isStartOrEnd: a,
-        dayHeight: s.daySize,
-        dayWidth: s.daySize,
-        background: d,
-        color: p,
-        fontFamily: s.fontFamily,
-        fontWeight: s.dayFontWeight,
-        fontSize: s.dayFontSize,
-        daySelectedHoverBackground: s.daySelectedHoverBackground,
-        dayHoverBackground: s.dayHoverBackground,
-        dayHoverColor: s.dayHoverColor,
-        daySelectedHoverColor: s.daySelectedHoverColor,
-        borderAccessibility: s.dayBorderAccessibility,
+        isWithinHoverRange: u,
+        dayHeight: d.daySize,
+        dayWidth: d.daySize,
+        background: f,
+        color: m,
+        fontFamily: d.fontFamily,
+        fontWeight: d.dayFontWeight,
+        fontSize: d.dayFontSize,
+        daySelectedHoverBackground: d.daySelectedHoverBackground,
+        dayHoverBackground: d.dayHoverBackground,
+        dayHoverColor: d.dayHoverColor,
+        daySelectedHoverColor: d.daySelectedHoverColor,
+        borderAccessibilityColor: d.dayAccessibilityBorderColor,
         boxShadow:
           '1px 0 0 0 ' +
-          u +
+          p +
           ',\n        0 1px 0 0 ' +
-          u +
+          p +
           ',\n        1px 1px 0 0 ' +
-          u +
+          p +
           ',\n        1px 0 0 0 ' +
-          u +
+          p +
           ' inset,\n        0 1px 0 0 ' +
-          u +
+          p +
           ' inset',
         'data-testid': 'Day',
       },
@@ -2150,34 +2188,36 @@ var zn,
       i = t.isDateSelected,
       l = t.isStartOrEndDate,
       c = t.onDaySelect,
-      s = Lt({year: n, month: r, weekStartsOn: o}),
-      u = s.days,
-      d = s.weekDays,
-      p = s.monthLabel,
-      f = ln({daySize: dn.daySize, monthLabelMargin: '0 0 28px', monthDayLabelMargin: '0 0 16px'})
+      s = t.onDayHover,
+      u = t.isDateHovered,
+      d = Ht({year: n, month: r, weekStartsOn: o}),
+      p = d.days,
+      f = d.weekDays,
+      m = d.monthLabel,
+      g = ln({daySize: dn.daySize, monthLabelMargin: '0 0 28px', monthDayLabelMargin: '0 0 16px'})
     return e.createElement(
       'div',
       null,
       e.createElement(
         rn,
-        {justifyContent: 'center', m: f.monthLabelMargin},
-        e.createElement(wn, {label: p}),
+        {justifyContent: 'center', m: g.monthLabelMargin},
+        e.createElement(wn, {label: m}),
       ),
       e.createElement(
         nn,
-        {daySizeGridTemplateColumns: f.daySize},
-        d.map(function(t) {
+        {daySizeGridTemplateColumns: g.daySize},
+        f.map(function(t) {
           return e.createElement(
             rn,
-            {key: t, justifyContent: 'center', m: f.monthDayLabelMargin},
+            {key: t, justifyContent: 'center', m: g.monthDayLabelMargin},
             e.createElement(Mn, {label: t}),
           )
         }),
       ),
       e.createElement(
         nn,
-        {daySizeGridTemplateColumns: f.daySize},
-        u.map(function(t, n) {
+        {daySizeGridTemplateColumns: g.daySize},
+        p.map(function(t, n) {
           return 'object' == typeof t
             ? e.createElement(Yn, {
                 isActive: i(t.date),
@@ -2187,6 +2227,8 @@ var zn,
                 disabled: a(t.date),
                 isStartOrEnd: l(t.date),
                 onDaySelect: c,
+                onDayHover: s,
+                isWithinHoverRange: u(t.date),
               })
             : e.createElement('div', {key: n})
         }),
@@ -2346,9 +2388,9 @@ var Jn,
       )),
     ee,
     le,
-    ze,
+    Pe,
     q,
-    Ce,
+    Se,
   )
 function Qn(t) {
   var n = t.type,
@@ -2455,11 +2497,11 @@ var ar,
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
-    ze,
+    Pe,
     q,
-    Le,
     He,
-    Oe,
+    ze,
+    Le,
   ),
   cr = l('div')(
     ir ||
@@ -2510,15 +2552,17 @@ function sr(t) {
     }),
     b = k.activeMonths,
     x = k.isDateSelected,
-    S = k.isFirstOrLastSelectedDate,
-    C = k.isDateBlocked,
-    w = k.firstDayOfWeek,
-    M = k.onDaySelect,
-    B = k.onResetDates,
-    F = k.goToPreviousMonths,
-    T = k.goToNextMonths,
+    C = k.isFirstOrLastSelectedDate,
+    S = k.isDateBlocked,
+    w = k.isDateHovered,
+    M = k.firstDayOfWeek,
+    B = k.onDaySelect,
+    F = k.onResetDates,
+    T = k.goToPreviousMonths,
+    W = k.goToNextMonths,
     E = k.numberOfMonths,
-    W = ln({
+    H = k.onDayHover,
+    L = ln({
       datepickerBackground: '#ffffff',
       datepickerPadding: '32px',
       datepickerBorderRadius: '2px',
@@ -2551,21 +2595,21 @@ function sr(t) {
   return e.createElement(
     lr,
     {
-      background: W.datepickerBackground,
-      p: W.datepickerPadding,
-      borderRadius: W.datepickerBorderRadius,
-      position: W.datepickerPosition,
-      boxShadow: W.datepickerBoxShadow,
+      background: L.datepickerBackground,
+      p: L.datepickerPadding,
+      borderRadius: L.datepickerBorderRadius,
+      position: L.datepickerPosition,
+      boxShadow: L.datepickerBoxShadow,
     },
     e.createElement(
       on,
       {
-        position: W.datepickerCloseWrapperPosition,
-        right: W.datepickerCloseWrapperRight,
-        top: W.datepickerCloseWrapperTop,
-        left: W.datepickerCloseWrapperLeft,
-        bottom: W.datepickerCloseWrapperBottom,
-        zIndex: W.datepickerCloseWrapperZIndex,
+        position: L.datepickerCloseWrapperPosition,
+        right: L.datepickerCloseWrapperRight,
+        top: L.datepickerCloseWrapperTop,
+        left: L.datepickerCloseWrapperLeft,
+        bottom: L.datepickerCloseWrapperBottom,
+        zIndex: L.datepickerCloseWrapperZIndex,
       },
       e.createElement(or, {onClick: f}),
     ),
@@ -2574,8 +2618,8 @@ function sr(t) {
       null,
       e.createElement(
         nn,
-        {gridTemplateColumns: W.datepickerSelectDateGridTemplateColumns},
-        e.createElement(Cn, {
+        {gridTemplateColumns: L.datepickerSelectDateGridTemplateColumns},
+        e.createElement(Sn, {
           title: D.datepickerStartDateLabel,
           date: $t(n, y, D.datepickerStartDatePlaceholder),
           isActive: i === _t,
@@ -2584,12 +2628,12 @@ function sr(t) {
           rn,
           {justifyContent: 'center', alignItems: 'center'},
           e.createElement(vn, {
-            height: W.datepickerSelectDateArrowIconHeight,
-            width: W.datepickerSelectDateArrowIconWidth,
-            iconColor: W.datepickerSelectDateArrowIconColor,
+            height: L.datepickerSelectDateArrowIconHeight,
+            width: L.datepickerSelectDateArrowIconWidth,
+            iconColor: L.datepickerSelectDateArrowIconColor,
           }),
         ),
-        e.createElement(Cn, {
+        e.createElement(Sn, {
           title: D.datepickerEndDateLabel,
           date: $t(r, y, D.datepickerEndDatePlaceholder),
           isActive: i === Ut,
@@ -2598,61 +2642,63 @@ function sr(t) {
     ),
     e.createElement(
       on,
-      {m: W.datepickerMonthsWrapperMargin, position: 'relative'},
+      {m: L.datepickerMonthsWrapperMargin, position: 'relative'},
       e.createElement(
         on,
         {
-          position: W.datepickerPreviousMonthButtonPosition,
-          top: W.datepickerPreviousMonthButtonTop,
-          left: W.datepickerPreviousMonthButtonLeft,
-          right: W.datepickerPreviousMonthButtonRight,
-          bottom: W.datepickerPreviousMonthButtonBottom,
+          position: L.datepickerPreviousMonthButtonPosition,
+          top: L.datepickerPreviousMonthButtonTop,
+          left: L.datepickerPreviousMonthButtonLeft,
+          right: L.datepickerPreviousMonthButtonRight,
+          bottom: L.datepickerPreviousMonthButtonBottom,
         },
-        e.createElement(Qn, {type: 'prev', onClick: F}),
+        e.createElement(Qn, {type: 'prev', onClick: T}),
       ),
       e.createElement(
         on,
         {
-          position: W.datepickerNextMonthButtonPosition,
-          top: W.datepickerNextMonthButtonTop,
-          left: W.datepickerNextMonthButtonLeft,
-          right: W.datepickerNextMonthButtonRight,
-          bottom: W.datepickerNextMonthButtonBottom,
+          position: L.datepickerNextMonthButtonPosition,
+          top: L.datepickerNextMonthButtonTop,
+          left: L.datepickerNextMonthButtonLeft,
+          right: L.datepickerNextMonthButtonRight,
+          bottom: L.datepickerNextMonthButtonBottom,
         },
-        e.createElement(Qn, {type: 'next', onClick: T}),
+        e.createElement(Qn, {type: 'next', onClick: W}),
       ),
       e.createElement(
         nn,
-        {numberOfMonthsGridTemplateColumns: E, gridGap: W.datepickerMonthsGridGap},
+        {numberOfMonthsGridTemplateColumns: E, gridGap: L.datepickerMonthsGridGap},
         b.map(function(t) {
           return e.createElement(Vn, {
             key: t.year + '-' + t.month,
             year: t.year,
             month: t.month,
-            firstDayOfWeek: w,
-            isDateBlocked: C,
+            firstDayOfWeek: M,
+            isDateBlocked: S,
             isDateSelected: x,
-            isStartOrEndDate: S,
-            onDaySelect: M,
+            isStartOrEndDate: C,
+            onDaySelect: B,
+            onDayHover: H,
+            isDateHovered: w,
           })
         }),
       ),
     ),
     e.createElement(
       on,
-      {m: W.datepickerResetDatesWrapperMargin},
-      e.createElement(Gn, {onResetDates: B, text: D.resetDates}),
+      {m: L.datepickerResetDatesWrapperMargin},
+      e.createElement(Gn, {onResetDates: F, text: D.resetDates}),
     ),
   )
 }
 var ur,
   dr,
-  pr = l(vn)(ur || (ur = d(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Pe, Q),
+  pr = l(vn)(ur || (ur = d(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Oe, Q),
   fr = l(nn)(
     dr || (dr = d(['\n  ', '\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n  ', '\n'])),
-    ze,
-    Ce,
-    Le,
+    Pe,
+    Se,
+    He,
   )
 function mr(t) {
   var n = t.startDate,
@@ -2679,8 +2725,8 @@ function mr(t) {
     k = void 0 === D || D,
     b = t.showEndDateCalendarIcon,
     x = void 0 === b || b,
-    S = t.displayFormat,
-    C = void 0 === S ? 'MM/DD/YYYY' : S,
+    C = t.displayFormat,
+    S = void 0 === C ? 'MM/DD/YYYY' : C,
     w = t.phrases,
     M = void 0 === w ? Kt : w,
     B = a(null),
@@ -2726,7 +2772,7 @@ function mr(t) {
           id: 'startDate',
           ariaLabel: M.startDateAriaLabel,
           placeholder: M.startDatePlaceholder,
-          value: $t(n, C, ''),
+          value: $t(n, S, ''),
           onClick: function() {
             return s(_t)
           },
@@ -2746,7 +2792,7 @@ function mr(t) {
           id: 'endDate',
           ariaLabel: M.endDateAriaLabel,
           placeholder: M.endDatePlaceholder,
-          value: $t(r, C, ''),
+          value: $t(r, S, ''),
           onClick: function() {
             return s(n ? Ut : _t)
           },
@@ -2774,7 +2820,7 @@ function mr(t) {
             firstDayOfWeek: c,
             numberOfMonths: u,
             focusedInput: d,
-            displayFormat: C,
+            displayFormat: S,
             onDateChange: p,
             minBookingDays: h,
             isDayBlocked: m,

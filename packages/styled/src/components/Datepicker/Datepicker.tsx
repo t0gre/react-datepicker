@@ -91,12 +91,14 @@ function Datepicker({
     isDateSelected,
     isFirstOrLastSelectedDate,
     isDateBlocked,
+    isDateHovered,
     firstDayOfWeek,
     onDaySelect,
     onResetDates,
     goToPreviousMonths,
     goToNextMonths,
     numberOfMonths,
+    onDayHover,
   } = useDatepicker({
     startDate,
     endDate,
@@ -215,6 +217,8 @@ function Datepicker({
               isDateSelected={isDateSelected}
               isStartOrEndDate={isFirstOrLastSelectedDate}
               onDaySelect={onDaySelect}
+              onDayHover={onDayHover}
+              isDateHovered={isDateHovered}
             />
           ))}
         </Grid>

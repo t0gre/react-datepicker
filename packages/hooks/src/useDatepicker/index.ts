@@ -19,6 +19,7 @@ import {
   FormatFunction,
   MonthType,
   canSelectRange,
+  isDateHovered,
 } from './useDatepicker.utils'
 
 export {
@@ -31,6 +32,8 @@ export {
   getInitialMonths,
   getInputValue,
   getNextActiveMonth,
+  canSelectRange,
+  isDateHovered,
   FormatFunction,
   MonthType,
   UseDatepickerProps,
@@ -39,5 +42,4 @@ export {
   FocusedInput,
   FirstDayOfWeek,
   OnDateChange,
-  canSelectRange,
 }

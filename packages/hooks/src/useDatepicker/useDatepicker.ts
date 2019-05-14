@@ -1,6 +1,8 @@
 import {useState, useCallback} from 'react'
 import isBefore from 'date-fns/is_before'
 import isAfter from 'date-fns/is_after'
+import addDays from 'date-fns/add_days'
+import isWithinRange from 'date-fns/is_within_range'
 import {
   getInitialMonths,
   MonthType,
@@ -9,6 +11,7 @@ import {
   isDateBlocked as isDateBlockedFn,
   isFirstOrLastSelectedDate as isFirstOrLastSelectedDateFn,
   canSelectRange,
+  isDateHovered as isDateHoveredFn,
 } from './useDatepicker.utils'
 
 export const START_DATE = 'startDate'
@@ -53,6 +56,7 @@ export function useDatepicker({
   const [activeMonths, setActiveMonths] = useState(() =>
     getInitialMonths(numberOfMonths, startDate),
   )
+  const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
   const isDateSelected = useCallback((date: Date) => isDateSelectedFn(date, startDate, endDate), [
     startDate,
     endDate,
@@ -73,6 +77,17 @@ export function useDatepicker({
         isDayBlockedFn: isDayBlockedProps,
       }),
     [minBookingDate, maxBookingDate, startDate, endDate, minBookingDays, isDayBlockedProps],
+  )
+  const isDateHovered = useCallback(
+    (date: Date) =>
+      isDateHoveredFn({
+        date,
+        hoveredDate,
+        startDate,
+        endDate,
+        isDateBlocked: isDayBlockedProps,
+      }),
+    [hoveredDate, startDate, endDate, isDayBlockedProps],
   )
 
   function onResetDates() {
@@ -136,6 +151,21 @@ export function useDatepicker({
     }
   }
 
+  function onDayHover(date: Date) {
+    if (
+      !startDate ||
+      endDate ||
+      (minBookingDate && maxBookingDate && !isWithinRange(date, minBookingDate, maxBookingDate)) ||
+      (minBookingDays > 1 &&
+        startDate &&
+        isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2)))
+    ) {
+      setHoveredDate(null)
+    } else {
+      setHoveredDate(date)
+    }
+  }
+
   function goToPreviousMonths() {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1))
   }
@@ -148,10 +178,12 @@ export function useDatepicker({
     firstDayOfWeek,
     activeMonths,
     isDateSelected,
+    isDateHovered,
     isFirstOrLastSelectedDate,
     isDateBlocked,
     numberOfMonths,
     onResetDates,
+    onDayHover,
     onDaySelect,
     goToPreviousMonths,
     goToNextMonths,

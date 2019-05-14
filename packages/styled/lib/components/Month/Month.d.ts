@@ -5,7 +5,9 @@ interface MonthProps {
   isDateBlocked(date: Date): boolean
   isDateSelected(date: Date): boolean
   isStartOrEndDate(date: Date): boolean
+  isDateHovered(date: Date): boolean
   onDaySelect(date: Date): void
+  onDayHover(date: Date): void
 }
 declare const Month: ({
   year,
@@ -15,5 +17,7 @@ declare const Month: ({
   isDateSelected,
   isStartOrEndDate,
   onDaySelect,
+  onDayHover,
+  isDateHovered,
 }: MonthProps) => JSX.Element
 export default Month
