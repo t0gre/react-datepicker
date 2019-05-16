@@ -1,9 +1,9 @@
 {
   "name": "examples",
-  "version": "0.3.2-alpha.0",
+  "version": "1.2.3-alpha.0",
   "private": true,
   "dependencies": {
-    "@datepicker-react/styled": "^1.2.2-alpha.0",
+    "@datepicker-react/styled": "^1.2.3-alpha.0",
     "react": "link:../../node_modules/react",
     "react-dom": "link:../../node_modules/react-dom",
     "react-scripts": "^3.0.1",
