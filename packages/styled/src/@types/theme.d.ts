@@ -24,6 +24,7 @@ import {
   GridGapProperty,
   BoxShadowProperty,
   GlobalsNumber,
+  JustifyContentProperty,
 } from 'csstype'
 
 interface CommonTheme {
@@ -120,6 +121,7 @@ export interface InputTheme extends CommonTheme {
   inputWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
   inputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
+  inputActiveBoxShadow?: ResponsiveValue<BoxShadowProperty>
   inputCalendarWrapperPosition?: ResponsiveValue<PositionProperty>
   inputCalendarWrapperHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
   inputCalendarWrapperWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
@@ -137,6 +139,9 @@ export interface DatepickerTheme extends CommonTheme {
   datepickerBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
   datepickerPosition?: ResponsiveValue<PositionProperty>
   datepickerCloseWrapperPosition?: ResponsiveValue<PositionProperty>
+  datepickerCloseWrapperDisplay?: ResponsiveValue<DisplayProperty>
+  datepickerCloseWrapperJustifyContent?: ResponsiveValue<JustifyContentProperty>
+  datepickerCloseWrapperMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
   datepickerCloseWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
   datepickerCloseWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   datepickerCloseWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
@@ -177,4 +182,6 @@ export interface DateRangeInputTheme extends CommonTheme {
   dateRangeDatepickerWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
   dateRangeDatepickerWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
   dateRangeDatepickerWrapperPosition?: ResponsiveValue<PositionProperty>
+  dateRangeStartDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  dateRangeEndDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }

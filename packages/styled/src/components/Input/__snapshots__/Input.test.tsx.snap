@@ -1,5 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render vertical variant 1`] = `
+.c0 {
+  position: relative;
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  display: block;
+  border-radius: 2px;
+  margin: 0;
+}
+
+.c1 {
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
+  color: #001217;
+  font-weight: 600;
+  border: 0;
+  width: 100%;
+  min-height: 46px;
+  box-shadow: 0px 4px 0 #00aeef;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.c1::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c1::-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c1:-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+<div>
+  <label
+    class="c0"
+    display="block"
+    for="startDate"
+  >
+    <input
+      aria-label="startDate"
+      autocomplete="off"
+      class="c1"
+      color="#001217"
+      data-testid="DatepickerInput"
+      font-family="Montserrat, sans-serif"
+      font-size="14px"
+      font-weight="600"
+      id="startDate"
+      placeholder="Placeholder"
+      readonly=""
+      value="14/11/1992"
+      width="100%"
+    />
+  </label>
+</div>
+`;
+
 exports[`should render with icon 1`] = `
 .c0 {
   position: relative;
@@ -25,17 +90,17 @@ exports[`should render with icon 1`] = `
 
 .c2 {
   background: #ffffff;
-  padding: 0 44px;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   color: #001217;
   font-weight: 600;
-  padding: 0 44px;
   border: 0;
   width: 100%;
   min-height: 46px;
+  box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
+  outline: 0;
 }
 
 .c2::-webkit-input-placeholder {
@@ -110,17 +175,17 @@ exports[`should render with value 1`] = `
 
 .c1 {
   background: #ffffff;
-  padding: 0 44px;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   color: #001217;
   font-weight: 600;
-  padding: 0 44px;
   border: 0;
   width: 100%;
   min-height: 46px;
+  box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
+  outline: 0;
 }
 
 .c1::-webkit-input-placeholder {
@@ -175,17 +240,17 @@ exports[`should render without icon 1`] = `
 
 .c1 {
   background: #ffffff;
-  padding: 0 44px;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   color: #001217;
   font-weight: 600;
-  padding: 0 44px;
   border: 0;
   width: 100%;
   min-height: 46px;
+  box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
+  outline: 0;
 }
 
 .c1::-webkit-input-placeholder {

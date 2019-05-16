@@ -11,6 +11,10 @@ import {
   PositionProps,
   boxShadow,
   BoxShadowProps,
+  display,
+  DisplayProps,
+  justifyContent,
+  JustifyContentProps,
 } from 'styled-system'
 import {
   useDatepicker,
@@ -65,10 +69,20 @@ const DateWrapper = styled('div')`
   }
 `
 
+interface CloseWrapperProps extends JustifyContentProps, DisplayProps {}
+const CloseWrapper = styled(Box)<CloseWrapperProps>`
+  ${display}
+  ${justifyContent}
+`
+
 export interface DatepickerProps extends UseDatepickerProps {
   phrases?: DatepickerPhrases
   displayFormat?: string | FormatFunction
   onClose?(): void
+  showResetDates?: boolean
+  showSelectedDates?: boolean
+  showClose?: boolean
+  vertical?: boolean
 }
 
 function Datepicker({
@@ -78,6 +92,10 @@ function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  vertical = false,
+  showResetDates = true,
+  showClose = true,
+  showSelectedDates = true,
   exactMinBookingDays = false,
   isDayBlocked = () => false,
   minBookingDays = 1,
@@ -115,16 +133,19 @@ function Datepicker({
   })
   const theme: DatepickerTheme = useThemeProps({
     datepickerBackground: '#ffffff',
-    datepickerPadding: '32px',
+    datepickerPadding: vertical ? '16px' : '32px',
     datepickerBorderRadius: '2px',
     datepickerPosition: 'relative',
-    datepickerCloseWrapperPosition: 'absolute',
-    datepickerCloseWrapperRight: '32px',
+    datepickerCloseWrapperPosition: vertical ? 'relative' : 'absolute',
+    datepickerCloseWrapperDisplay: vertical ? 'flex' : 'block',
+    datepickerCloseWrapperJustifyContent: vertical ? 'flex-end' : 'initial',
+    datepickerCloseWrapperMargin: vertical ? '0 0 16px' : '0',
+    datepickerCloseWrapperRight: vertical ? '0' : '32px',
     datepickerCloseWrapperTop: 'unset',
     datepickerCloseWrapperLeft: 'unset',
     datepickerCloseWrapperBottom: 'unset',
     datepickerCloseWrapperZIndex: 1,
-    datepickerSelectDateGridTemplateColumns: '126px 75px 126px',
+    datepickerSelectDateGridTemplateColumns: vertical ? '100px 50px 100px' : '126px 75px 126px',
     datepickerSelectDateArrowIconWidth: '15px',
     datepickerSelectDateArrowIconHeight: '12px',
     datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
@@ -152,40 +173,50 @@ function Datepicker({
       position={theme.datepickerPosition}
       boxShadow={theme.datepickerBoxShadow}
     >
-      <Box
-        position={theme.datepickerCloseWrapperPosition}
-        right={theme.datepickerCloseWrapperRight}
-        top={theme.datepickerCloseWrapperTop}
-        left={theme.datepickerCloseWrapperLeft}
-        bottom={theme.datepickerCloseWrapperBottom}
-        zIndex={theme.datepickerCloseWrapperZIndex}
-      >
-        <Close onClick={onClose} />
-      </Box>
-      <DateWrapper>
-        <Grid gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}>
-          <SelectedDate
-            title={phrases.datepickerStartDateLabel}
-            date={getInputValue(startDate, displayFormat, phrases.datepickerStartDatePlaceholder)}
-            isActive={focusedInput === START_DATE}
-          />
-          <Flex justifyContent="center" alignItems="center">
-            <ArrowIcon
-              // @ts-ignore
-              height={theme.datepickerSelectDateArrowIconHeight}
-              // @ts-ignore
-              width={theme.datepickerSelectDateArrowIconWidth}
-              // @ts-ignore
-              iconColor={theme.datepickerSelectDateArrowIconColor}
+      {showClose && (
+        <CloseWrapper
+          m={theme.datepickerCloseWrapperMargin}
+          display={theme.datepickerCloseWrapperDisplay}
+          justifyContent={theme.datepickerCloseWrapperJustifyContent}
+          position={theme.datepickerCloseWrapperPosition}
+          right={theme.datepickerCloseWrapperRight}
+          top={theme.datepickerCloseWrapperTop}
+          left={theme.datepickerCloseWrapperLeft}
+          bottom={theme.datepickerCloseWrapperBottom}
+          zIndex={theme.datepickerCloseWrapperZIndex}
+        >
+          <Close onClick={onClose} />
+        </CloseWrapper>
+      )}
+
+      {showSelectedDates && (
+        <DateWrapper>
+          <Grid gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}>
+            <SelectedDate
+              title={phrases.datepickerStartDateLabel}
+              date={getInputValue(startDate, displayFormat, phrases.datepickerStartDatePlaceholder)}
+              isActive={focusedInput === START_DATE}
+              vertical={vertical}
             />
-          </Flex>
-          <SelectedDate
-            title={phrases.datepickerEndDateLabel}
-            date={getInputValue(endDate, displayFormat, phrases.datepickerEndDatePlaceholder)}
-            isActive={focusedInput === END_DATE}
-          />
-        </Grid>
-      </DateWrapper>
+            <Flex justifyContent="center" alignItems="center">
+              <ArrowIcon
+                // @ts-ignore
+                height={theme.datepickerSelectDateArrowIconHeight}
+                // @ts-ignore
+                width={theme.datepickerSelectDateArrowIconWidth}
+                // @ts-ignore
+                iconColor={theme.datepickerSelectDateArrowIconColor}
+              />
+            </Flex>
+            <SelectedDate
+              title={phrases.datepickerEndDateLabel}
+              date={getInputValue(endDate, displayFormat, phrases.datepickerEndDatePlaceholder)}
+              isActive={focusedInput === END_DATE}
+              vertical={vertical}
+            />
+          </Grid>
+        </DateWrapper>
+      )}
       <Box m={theme.datepickerMonthsWrapperMargin} position="relative">
         <Box
           position={theme.datepickerPreviousMonthButtonPosition}
@@ -225,9 +256,11 @@ function Datepicker({
           ))}
         </Grid>
       </Box>
-      <Box m={theme.datepickerResetDatesWrapperMargin}>
-        <ResetDates onResetDates={onResetDates} text={phrases.resetDates} />
-      </Box>
+      {showResetDates && (
+        <Box m={theme.datepickerResetDatesWrapperMargin}>
+          <ResetDates onResetDates={onResetDates} text={phrases.resetDates} />
+        </Box>
+      )}
     </StyledDatepicker>
   )
 }

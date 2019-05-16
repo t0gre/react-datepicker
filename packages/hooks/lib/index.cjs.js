@@ -736,7 +736,11 @@ function canSelectRange(e) {
     s = e.minBookingDate,
     i = e.maxBookingDate
   if (t && 1 === n && !a && !r(t)) return !0
-  if ((t && n > 1 && !a && !o) || (t && n > 0 && o && s && i && !is_after(add_days(t, n - 1), i)))
+  if (
+    (t && n > 1 && !a && !o) ||
+    (t && n > 0 && o && s && i && !is_before(t, s) && !is_after(add_days(t, n - 1), i)) ||
+    (t && n > 0 && o && !s && !i)
+  )
     return each_day(t, add_days(t, n - 1)).reduce(function(e, t) {
       return e ? !r(t) : e
     }, !0)

@@ -119,3 +119,65 @@ exports[`should be unactive 1`] = `
   </div>
 </div>
 `;
+
+exports[`should render vertical variant 1`] = `
+.c1 {
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  color: #929598;
+  margin: 0 0 8px;
+}
+
+.c0 {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.c2 {
+  font-family: Montserrat,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #001217;
+  padding: 0 0 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.c2:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.c2:after {
+  background: #00aeef;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+      color="#929598"
+      font-family="Montserrat, sans-serif"
+      font-size="11px"
+    >
+      test
+    </div>
+    <span
+      class="c2"
+      color="#001217"
+      font-family="Montserrat, sans-serif"
+      font-size="16px"
+      font-weight="500"
+    >
+      15.10.2018
+    </span>
+  </div>
+</div>
+`;

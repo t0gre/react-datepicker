@@ -4,6 +4,10 @@ export interface DatepickerProps extends UseDatepickerProps {
   phrases?: DatepickerPhrases
   displayFormat?: string | FormatFunction
   onClose?(): void
+  showResetDates?: boolean
+  showSelectedDates?: boolean
+  showClose?: boolean
+  vertical?: boolean
 }
 declare function Datepicker({
   startDate,
@@ -12,6 +16,10 @@ declare function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  vertical,
+  showResetDates,
+  showClose,
+  showSelectedDates,
   exactMinBookingDays,
   isDayBlocked,
   minBookingDays,

@@ -51,6 +51,10 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showStartDateCalendarIcon?: boolean
   showEndDateCalendarIcon?: boolean
   onClose?(): void
+  vertical?: boolean
+  showResetDates?: boolean
+  showSelectedDates?: boolean
+  showClose?: boolean
 }
 
 function DateRangeInput({
@@ -64,6 +68,10 @@ function DateRangeInput({
   focusedInput,
   onDateChange,
   exactMinBookingDays,
+  showClose = true,
+  showSelectedDates = true,
+  showResetDates = true,
+  vertical = false,
   isDayBlocked = () => false,
   minBookingDays = 1,
   onClose = () => {},
@@ -75,13 +83,15 @@ function DateRangeInput({
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
   const theme: DateRangeInputTheme = useThemeProps({
     dateRangeBackground: 'transparent',
-    dateRangeGridTemplateColumns: '194px 39px 194px',
+    dateRangeGridTemplateColumns: vertical ? '1fr 24px 1fr' : '194px 39px 194px',
     dateRangeBorder: '0',
     dateRangeBorderRadius: '0',
     dateRangeArrowIconWidth: '15px',
     dateRangeArrowIconHeight: '12px',
     dateRangeArrowIconColor: '#ffffff',
     dateRangeArrowIconOpacity: 0.4,
+    dateRangeStartDateInputPadding: vertical ? '0 8px 0 32px' : '0 44px',
+    dateRangeEndDateInputPadding: vertical ? '0 8px 0 32px' : '0 44px',
     dateRangeDatepickerWrapperTop: 'unset',
     dateRangeDatepickerWrapperRight: 'unset',
     dateRangeDatepickerWrapperBottom: '65px',
@@ -131,6 +141,9 @@ function DateRangeInput({
           value={getInputValue(startDate, displayFormat, '')}
           onClick={() => onFocusChange(START_DATE)}
           showCalendarIcon={showStartDateCalendarIcon}
+          vertical={vertical}
+          isActive={focusedInput === START_DATE}
+          padding={theme.dateRangeStartDateInputPadding}
         />
         <Flex alignItems="center" justifyContent="center">
           <InputArrowIcon
@@ -149,6 +162,9 @@ function DateRangeInput({
           value={getInputValue(endDate, displayFormat, '')}
           onClick={() => onFocusChange(!startDate ? START_DATE : END_DATE)}
           showCalendarIcon={showEndDateCalendarIcon}
+          vertical={vertical}
+          isActive={focusedInput === END_DATE}
+          padding={theme.dateRangeEndDateInputPadding}
         />
       </InputGrid>
       <Box
@@ -173,6 +189,10 @@ function DateRangeInput({
             minBookingDays={minBookingDays}
             isDayBlocked={isDayBlocked}
             exactMinBookingDays={exactMinBookingDays}
+            showResetDates={showResetDates}
+            vertical={vertical}
+            showSelectedDates={showSelectedDates}
+            showClose={showClose}
           />
         )}
       </Box>

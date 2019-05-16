@@ -6,6 +6,8 @@ test('should render with icon', () => {
   const onClick = jest.fn()
   const {container, getByPlaceholderText} = render(
     <Input
+      vertical={false}
+      isActive={false}
       showCalendarIcon
       ariaLabel="startDate"
       id="startDate"
@@ -26,7 +28,9 @@ test('should render without icon', () => {
   const onClick = jest.fn()
   const {container} = render(
     <Input
+      vertical={false}
       showCalendarIcon={false}
+      isActive={false}
       ariaLabel="startDate"
       id="startDate"
       placeholder="Placeholder"
@@ -42,7 +46,9 @@ test('should render with value', () => {
   const onClick = jest.fn()
   const {container, getByDisplayValue} = render(
     <Input
+      vertical={false}
       showCalendarIcon={false}
+      isActive={false}
       ariaLabel="startDate"
       id="startDate"
       placeholder="Placeholder"
@@ -53,4 +59,22 @@ test('should render with value', () => {
 
   expect(container).toMatchSnapshot()
   getByDisplayValue('14/11/1992')
+})
+
+test('should render vertical variant', () => {
+  const onClick = jest.fn()
+  const {container} = render(
+    <Input
+      vertical
+      isActive
+      showCalendarIcon={false}
+      ariaLabel="startDate"
+      id="startDate"
+      placeholder="Placeholder"
+      onClick={onClick}
+      value="14/11/1992"
+    />,
+  )
+
+  expect(container).toMatchSnapshot()
 })

@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from 'react'
+import React, {useReducer} from 'react'
 import {ThemeProvider} from 'styled-components'
 import {isSameDay} from 'date-fns'
 import {DateRangeInput} from '@datepicker-react/styled'
@@ -22,43 +22,64 @@ function reducer(state, action) {
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const [numberOfMonths, setNumberOfMonths] = useState(2)
 
   function isDateBlocked(date) {
     return isSameDay(date, new Date(2019, 4, 22, 0, 0, 0, 0))
   }
 
-  function onClick() {
-    setNumberOfMonths(1)
-  }
-
   return (
     <div
       style={{
-        marginTop: '600px',
-        height: '80px',
+        height: '100vh',
         width: '100%',
-        background: '#001217',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'flex-end',
       }}
     >
-      <button onClick={onClick}>Number of months = 1</button>
-      <div style={{width: '279px'}}>
-        <ThemeProvider theme={{}}>
+      <div
+        style={{
+          height: '80px',
+          width: '100%',
+          background: '#001217',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '0 16px',
+        }}
+      >
+        <ThemeProvider
+          theme={{
+            reactDatepicker: {
+              dateRangeBackground: '#ffffff',
+              dateRangeBorderRadius: '2px',
+              dateRangeBorder: '1px solid #d0d0d0',
+
+              inputLabelBorder: '0',
+              inputMinHeight: '48px',
+              dateRangeEndDateInputPadding: '0',
+              dateRangeArrowIconColor: 'red',
+              dateRangeArrowIconOpacity: 1,
+              inputCalendarWrapperTop: '18px',
+            },
+          }}
+        >
           <DateRangeInput
-            exactMinBookingDays
+            vertical
+            exactMinBookingDays={false}
             minBookingDate={new Date()}
             minBookingDays={14}
             maxBookingDate={new Date(2019, 6, 27)}
             startDate={state.startDate}
             endDate={state.endDate}
             onDateChange={data => dispatch({type: 'dateChange', payload: data})}
-            numberOfMonths={numberOfMonths}
+            numberOfMonths={1}
             focusedInput={state.focusedInput}
             onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
             isDayBlocked={isDateBlocked}
+            showResetDates={false}
+            showSelectedDates={false}
+            showClose={false}
+            showEndDateCalendarIcon={false}
           />
         </ThemeProvider>
       </div>

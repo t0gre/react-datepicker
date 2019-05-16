@@ -46,6 +46,20 @@ test('should have empty start and end date and focused start date', () => {
   })
 })
 
+test('should render vertical datepicker', () => {
+  const onDateChange = jest.fn()
+  const {container} = render(
+    <Datepicker
+      vertical
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDateChange={onDateChange}
+    />,
+  )
+  expect(container).toMatchSnapshot()
+})
+
 test('should have empty end date and focused end date', () => {
   const onDateChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId} = render(

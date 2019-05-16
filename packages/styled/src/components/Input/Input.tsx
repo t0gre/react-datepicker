@@ -31,13 +31,18 @@ import {
   DisplayProps,
   minHeight,
   MinHeightProps,
+  boxShadow,
+  BoxShadowProps,
   style,
+  ResponsiveValue,
+  TLengthStyledSystem,
 } from 'styled-system'
 import CalendarIcon from '../../icons/CalendarIcon'
 // eslint-disable-next-line import/no-unresolved
 import {InputTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
+import {PaddingProperty} from 'csstype'
 
 const placeholderColor = style({
   prop: 'placeholderColor',
@@ -93,6 +98,7 @@ interface StyledInputProps
     BorderProps,
     WidthProps,
     MinHeightProps,
+    BoxShadowProps,
     FontSizeProps {}
 const StyledInput = styled('input')<StyledInputProps>`
   ${background}
@@ -105,8 +111,10 @@ const StyledInput = styled('input')<StyledInputProps>`
   ${border}
   ${width}
   ${minHeight}
+  ${boxShadow}
   cursor: pointer;
   box-sizing: border-box;
+  outline: 0;
   
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     ${placeholderFontWeight}
@@ -129,9 +137,22 @@ interface InputProps {
   ariaLabel: string
   onClick(): void
   showCalendarIcon: boolean
+  vertical: boolean
+  isActive: boolean
+  padding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }
 
-function Input({placeholder, id, ariaLabel, onClick, value, showCalendarIcon}: InputProps) {
+function Input({
+  placeholder,
+  id,
+  vertical,
+  isActive,
+  ariaLabel,
+  onClick,
+  value,
+  showCalendarIcon,
+  padding,
+}: InputProps) {
   const theme: InputTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     inputFontWeight: 600,
@@ -140,7 +161,7 @@ function Input({placeholder, id, ariaLabel, onClick, value, showCalendarIcon}: I
     inputBackground: '#ffffff',
     inputMinHeight: '46px',
     inputWidth: '100%',
-    inputPadding: '0 44px',
+    inputPadding: padding,
     inputBorder: '0',
     inputPlaceholderFontWeight: 500,
     inputPlaceholderColor: globalStyles.colors.silverCloud,
@@ -148,7 +169,7 @@ function Input({placeholder, id, ariaLabel, onClick, value, showCalendarIcon}: I
     inputCalendarWrapperHeight: '12px',
     inputCalendarWrapperWidth: '12px',
     inputCalendarWrapperTop: '16px',
-    inputCalendarWrapperLeft: '16px',
+    inputCalendarWrapperLeft: vertical ? '8px' : '16px',
     inputCalendarIconWidth: '12px',
     inputCalendarIconHeight: '12px',
     inputCalendarIconColor: '#BCBEC0',
@@ -158,6 +179,7 @@ function Input({placeholder, id, ariaLabel, onClick, value, showCalendarIcon}: I
     inputLabelBorderRadius: '2px',
     inputLabelBackground: '#ffffff',
     inputLabelMargin: '0',
+    inputActiveBoxShadow: '0px 4px 0 #00aeef',
   })
 
   return (
@@ -203,6 +225,7 @@ function Input({placeholder, id, ariaLabel, onClick, value, showCalendarIcon}: I
         fontWeight={theme.inputFontWeight}
         placeholderColor={theme.inputPlaceholderColor}
         placeholderFontWeight={theme.inputPlaceholderFontWeight}
+        boxShadow={isActive ? theme.inputActiveBoxShadow : 'none'}
         id={id}
         placeholder={placeholder}
         aria-label={ariaLabel}

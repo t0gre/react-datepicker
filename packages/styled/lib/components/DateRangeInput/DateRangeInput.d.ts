@@ -7,6 +7,10 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showStartDateCalendarIcon?: boolean
   showEndDateCalendarIcon?: boolean
   onClose?(): void
+  vertical?: boolean
+  showResetDates?: boolean
+  showSelectedDates?: boolean
+  showClose?: boolean
 }
 declare function DateRangeInput({
   startDate,
@@ -19,6 +23,10 @@ declare function DateRangeInput({
   focusedInput,
   onDateChange,
   exactMinBookingDays,
+  showClose,
+  showSelectedDates,
+  showResetDates,
+  vertical,
   isDayBlocked,
   minBookingDays,
   onClose,

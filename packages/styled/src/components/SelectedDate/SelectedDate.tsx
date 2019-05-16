@@ -37,16 +37,17 @@ export interface SelectDateProps {
   title: string
   date: string
   isActive: boolean
+  vertical: boolean
 }
 
-function SelectDate({title, isActive, date}: SelectDateProps) {
+function SelectDate({title, isActive, date, vertical}: SelectDateProps) {
   const theme: SelectDateTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     selectDateLabelFontSize: '11px',
     selectDateLabelColor: globalStyles.colors.silverCloud,
     selectDateLabelMargin: '0 0 8px',
     selectDateDateColor: globalStyles.colors.charcoal,
-    selectDateDateFontSize: '24px',
+    selectDateDateFontSize: vertical ? '16px' : '24px',
     selectDateDateFontWeight: 500,
     selectDateDatePadding: '0 0 15px',
     selectDatePadding: '0',
