@@ -736,7 +736,7 @@ function canSelectRange(e) {
     s = e.minBookingDate,
     i = e.maxBookingDate
   if (t && 1 === n && !a && !r(t)) return !0
-  if ((t && n > 1 && !a && !o) || (t && n > 0 && o && s && i && is_before(add_days(t, n - 1), i)))
+  if ((t && n > 1 && !a && !o) || (t && n > 0 && o && s && i && !is_after(add_days(t, n - 1), i)))
     return each_day(t, add_days(t, n - 1)).reduce(function(e, t) {
       return e ? !r(t) : e
     }, !0)
@@ -882,17 +882,21 @@ function useDatepicker(e) {
       })
         ? s({startDate: e, endDate: add_days(e, c - 1), focusedInput: null})
         : ((r === END_DATE && t && is_before(e, t)) || (r === START_DATE && a && is_after(e, a))) &&
+          !u &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: e, endDate: null})
         ? s({endDate: null, startDate: e, focusedInput: END_DATE})
         : r === START_DATE &&
+          !u &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, endDate: a, startDate: e})
         ? s({endDate: a, startDate: e, focusedInput: END_DATE})
         : r === START_DATE &&
+          !u &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, endDate: null, startDate: e})
         ? s({endDate: null, startDate: e, focusedInput: END_DATE})
         : r === END_DATE &&
           t &&
           !is_before(e, t) &&
+          !u &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: t, endDate: e}) &&
           s({startDate: t, endDate: e, focusedInput: null})
     },

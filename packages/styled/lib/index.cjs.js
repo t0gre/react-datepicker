@@ -1366,7 +1366,7 @@ function Te(e) {
     i = e.minBookingDate,
     l = e.maxBookingDate
   if (t && 1 === a && !n && !r(t)) return !0
-  if ((t && a > 1 && !n && !o) || (t && a > 0 && o && i && l && ae(j(t, a - 1), l)))
+  if ((t && a > 1 && !n && !o) || (t && a > 0 && o && i && l && !oe(j(t, a - 1), l)))
     return q(t, j(t, a - 1)).reduce(function(e, t) {
       return e ? !r(t) : e
     }, !0)
@@ -1505,15 +1505,17 @@ function Ye(e) {
       })
         ? i({startDate: e, endDate: j(e, d - 1), focusedInput: null})
         : ((r === Se && t && ae(e, t)) || (r === pe && n && oe(e, n))) &&
+          !c &&
           Te({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
         ? i({endDate: null, startDate: e, focusedInput: Se})
-        : r === pe && Te({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
+        : r === pe && !c && Te({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
         ? i({endDate: n, startDate: e, focusedInput: Se})
-        : r === pe && Te({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
+        : r === pe && !c && Te({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
         ? i({endDate: null, startDate: e, focusedInput: Se})
         : r === Se &&
           t &&
           !ae(e, t) &&
+          !c &&
           Te({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
           i({startDate: t, endDate: e, focusedInput: null})
     },

@@ -1198,7 +1198,7 @@ function Gt(e) {
     i = e.minBookingDate,
     c = e.maxBookingDate
   if (t && 1 === o && !n && !r(t)) return !0
-  if ((t && o > 1 && !n && !a) || (t && o > 0 && a && i && c && Lt(Mt(t, o - 1), c)))
+  if ((t && o > 1 && !n && !a) || (t && o > 0 && a && i && c && !Ot(Mt(t, o - 1), c)))
     return Bt(t, Mt(t, o - 1)).reduce(function(e, t) {
       return e ? !r(t) : e
     }, !0)
@@ -1361,15 +1361,17 @@ function Zt(e) {
       })
         ? l({startDate: e, endDate: Mt(e, p - 1), focusedInput: null})
         : ((a === Ut && r && Lt(e, r)) || (a === _t && o && Ot(e, o))) &&
+          !u &&
           Gt({minBookingDays: p, isDateBlocked: v, startDate: e, endDate: null})
         ? l({endDate: null, startDate: e, focusedInput: Ut})
-        : a === _t && Gt({minBookingDays: p, isDateBlocked: v, endDate: o, startDate: e})
+        : a === _t && !u && Gt({minBookingDays: p, isDateBlocked: v, endDate: o, startDate: e})
         ? l({endDate: o, startDate: e, focusedInput: Ut})
-        : a === _t && Gt({minBookingDays: p, isDateBlocked: v, endDate: null, startDate: e})
+        : a === _t && !u && Gt({minBookingDays: p, isDateBlocked: v, endDate: null, startDate: e})
         ? l({endDate: null, startDate: e, focusedInput: Ut})
         : a === Ut &&
           r &&
           !Lt(e, r) &&
+          !u &&
           Gt({minBookingDays: p, isDateBlocked: v, startDate: r, endDate: e}) &&
           l({startDate: r, endDate: e, focusedInput: null})
     },

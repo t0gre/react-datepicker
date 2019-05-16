@@ -129,6 +129,7 @@ export function useDatepicker({
     } else if (
       ((focusedInput === END_DATE && startDate && isBefore(date, startDate)) ||
         (focusedInput === START_DATE && endDate && isAfter(date, endDate))) &&
+      !exactMinBookingDays &&
       canSelectRange({
         minBookingDays,
         isDateBlocked: isDayBlockedProps,
@@ -143,6 +144,7 @@ export function useDatepicker({
       })
     } else if (
       focusedInput === START_DATE &&
+      !exactMinBookingDays &&
       canSelectRange({minBookingDays, isDateBlocked: isDayBlockedProps, endDate, startDate: date})
     ) {
       onDateChange({
@@ -152,6 +154,7 @@ export function useDatepicker({
       })
     } else if (
       focusedInput === START_DATE &&
+      !exactMinBookingDays &&
       canSelectRange({
         minBookingDays,
         isDateBlocked: isDayBlockedProps,
@@ -168,6 +171,7 @@ export function useDatepicker({
       focusedInput === END_DATE &&
       startDate &&
       !isBefore(date, startDate) &&
+      !exactMinBookingDays &&
       canSelectRange({minBookingDays, isDateBlocked: isDayBlockedProps, startDate, endDate: date})
     ) {
       onDateChange({
