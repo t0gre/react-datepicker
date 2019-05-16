@@ -32,7 +32,8 @@
     "build:watch": "lerna run build:watch",
     "bootstrap": "lerna bootstrap",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lerna:publish": "lerna publish"
   },
   "author": "Miha Sedej",
   "license": "MIT",
