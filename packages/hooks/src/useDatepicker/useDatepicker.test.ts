@@ -328,6 +328,7 @@ describe('useDatepicker', () => {
       },
       callbackDate: new Date(2019, 3, 1, 0, 0, 0),
       expectedHoveredDate: new Date(2019, 3, 1, 0, 0, 0),
+      exactMinBookingDays: false,
       expected: false,
     },
     {
@@ -342,6 +343,7 @@ describe('useDatepicker', () => {
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
       expectedHoveredDate: new Date(2019, 3, 3, 0, 0, 0),
+      exactMinBookingDays: false,
       expected: true,
     },
     {
@@ -356,6 +358,7 @@ describe('useDatepicker', () => {
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
       expectedHoveredDate: new Date(2019, 3, 3, 0, 0, 0),
+      exactMinBookingDays: false,
       expected: false,
     },
     {
@@ -370,6 +373,7 @@ describe('useDatepicker', () => {
       },
       callbackDate: new Date(2019, 3, 3, 0, 0, 0),
       expectedHoveredDate: new Date(2019, 3, 3, 0, 0, 0),
+      exactMinBookingDays: false,
       expected: false,
     },
     {
@@ -384,6 +388,7 @@ describe('useDatepicker', () => {
       },
       callbackDate: new Date(2019, 3, 6, 0, 0, 0),
       expectedHoveredDate: new Date(2019, 6, 3, 0, 0, 0),
+      exactMinBookingDays: false,
       expected: false,
     },
     {
@@ -398,6 +403,7 @@ describe('useDatepicker', () => {
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
       expectedHoveredDate: new Date(2019, 3, 4, 0, 0, 0),
+      exactMinBookingDays: false,
       expected: true,
     },
     {
@@ -412,7 +418,38 @@ describe('useDatepicker', () => {
       },
       callbackDate: new Date(2019, 4, 4, 0, 0, 0),
       expectedHoveredDate: new Date(2019, 3, 4, 0, 0, 0),
+      exactMinBookingDays: false,
       expected: false,
+    },
+    {
+      startDate: null,
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 4, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 4, 0, 0, 0),
+      exactMinBookingDays: true,
+      expected: false,
+    },
+    {
+      startDate: null,
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 7, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 4, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 4, 0, 0, 0),
+      exactMinBookingDays: true,
+      expected: true,
     },
   ])('should hover date', props => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
@@ -456,6 +493,36 @@ describe('useDatepicker', () => {
     })
     clear()
   })
+
+  // test.each([{
+  //   blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+  // }])('should select exact range (minBookingDays)', ({blockedDate}) => {
+  //   const onDateChange = jest.fn()
+  //   advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+  //   const {result} = renderHook(() =>
+  //     useDatepicker({
+  //       startDate: null,
+  //       endDate: null,
+  //       minBookingDays: 3,
+  //       exactMinBookingDays: true,
+  //       focusedInput: START_DATE,
+  //       onDateChange: onDateChange,
+  //       isDayBlocked(date: Date): boolean {
+  //         return isSameDay(date, blockedDate)
+  //       },
+  //     }),
+  //   )
+  //
+  //   act(() => {
+  //     result.current.onDaySelect(new Date(2019, 3, 1, 0, 0, 0))
+  //   })
+  //   expect(onDateChange).toBeCalledWith({
+  //     startDate: new Date(2019, 3, 1, 0, 0, 0),
+  //     endDate: null,
+  //     focusedInput: null,
+  //   })
+  //   clear()
+  // })
 })
 
 describe('getCurrentYearMonthAndDate', () => {
@@ -898,6 +965,56 @@ describe('isDateHovered', () => {
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
       minBookingDays: 3,
       exactMinBookingDays: false,
+      expected: false,
+    },
+    {
+      startDate: null,
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 10, 0, 0, 0),
+      date: new Date(2019, 2, 10, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
+      minBookingDays: 3,
+      exactMinBookingDays: true,
+      expected: false,
+    },
+    {
+      startDate: null,
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 10, 0, 0, 0),
+      date: new Date(2019, 2, 10, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 14, 0, 0, 0)),
+      minBookingDays: 3,
+      exactMinBookingDays: true,
+      expected: true,
+    },
+    {
+      startDate: null,
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 10, 0, 0, 0),
+      date: new Date(2019, 2, 11, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 14, 0, 0, 0)),
+      minBookingDays: 3,
+      exactMinBookingDays: true,
+      expected: true,
+    },
+    {
+      startDate: null,
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 10, 0, 0, 0),
+      date: new Date(2019, 2, 12, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 14, 0, 0, 0)),
+      minBookingDays: 3,
+      exactMinBookingDays: true,
+      expected: true,
+    },
+    {
+      startDate: null,
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 10, 0, 0, 0),
+      date: new Date(2019, 2, 13, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 14, 0, 0, 0)),
+      minBookingDays: 3,
+      exactMinBookingDays: true,
       expected: false,
     },
   ])(

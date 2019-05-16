@@ -50,7 +50,7 @@ var x = function(e, t) {
       }
       return n
     })(e),
-    b = (function(e, t) {
+    B = (function(e, t) {
       var n,
         r = D[t],
         a = l[t]
@@ -64,8 +64,8 @@ var x = function(e, t) {
       }
       return {year: null}
     })(x.date, n),
-    H = b.year,
-    B = (function(e, t) {
+    b = B.year,
+    H = (function(e, t) {
       if (null === t) return null
       var n, r, a, o
       if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
@@ -88,10 +88,10 @@ var x = function(e, t) {
         return F(t, o, s)
       }
       return null
-    })(b.restDateString, H)
-  if (B) {
+    })(B.restDateString, b)
+  if (H) {
     var I,
-      O = B.getTime(),
+      O = H.getTime(),
       $ = 0
     if (
       (x.time &&
@@ -136,27 +136,27 @@ var x = function(e, t) {
   var N, z, C
   return new Date(e)
 }
-var b = function(e) {
+var B = function(e) {
   var t = x(e),
     n = new Date(0)
   return n.setFullYear(t.getFullYear(), 0, 1), n.setHours(0, 0, 0, 0), n
 }
-var H = function(e) {
+var b = function(e) {
     var t = x(e)
     return t.setHours(0, 0, 0, 0), t
   },
-  B = 6e4,
+  H = 6e4,
   I = 864e5
 var O = function(e, t) {
-  var n = H(e),
-    r = H(t),
-    a = n.getTime() - n.getTimezoneOffset() * B,
-    o = r.getTime() - r.getTimezoneOffset() * B
+  var n = b(e),
+    r = b(t),
+    a = n.getTime() - n.getTimezoneOffset() * H,
+    o = r.getTime() - r.getTimezoneOffset() * H
   return Math.round((a - o) / I)
 }
 var $ = function(e) {
   var t = x(e)
-  return O(t, b(t)) + 1
+  return O(t, B(t)) + 1
 }
 var W = function(e, t) {
   var n = (t && Number(t.weekStartsOn)) || 0,
@@ -605,8 +605,8 @@ var ue = function(e, t, n) {
   return r >= a && r <= o
 }
 var ie = function(e, t) {
-  var n = H(e),
-    r = H(t)
+  var n = b(e),
+    r = b(t)
   return n.getTime() === r.getTime()
 }
 var se = function(e) {
@@ -616,7 +616,7 @@ var ce = function(e) {
   return x(e).getMonth()
 }
 var fe = function() {
-  return H(new Date())
+  return b(new Date())
 }
 var De = function(e) {
   var t = x(e),
@@ -765,7 +765,7 @@ function Ye(e) {
       },
       [u, i, r, a, d, y],
     ),
-    b = n(
+    B = n(
       function(e) {
         return (function(e) {
           var t = e.date,
@@ -773,15 +773,20 @@ function Ye(e) {
             r = e.endDate,
             a = e.isDateBlocked,
             o = e.hoveredDate,
-            u = e.minBookingDays
-          return n && !r && o && ue(t, n, j(n, u - 1)) && ie(n, o) && u > 1
+            u = e.minBookingDays,
+            i = e.exactMinBookingDays
+          return o && u > 1 && i && ue(t, o, j(o, u - 1))
+            ? q(o, j(o, u - 1)).reduce(function(e, t) {
+                return e ? !a(t) : e
+              }, !0)
+            : n && !r && o && ue(t, n, j(n, u - 1)) && ie(n, o) && u > 1
             ? q(n, j(n, u - 1)).reduce(function(e, t) {
                 return e ? !a(t) : e
               }, !0)
             : !(!n || r || !o || ae(o, n) || !ue(t, n, o)) &&
-                q(n, o).reduce(function(e, t) {
-                  return e ? !a(t) : e
-                }, !0)
+              q(n, o).reduce(function(e, t) {
+                return e ? !a(t) : e
+              }, !0)
         })({
           date: e,
           hoveredDate: S,
@@ -798,7 +803,7 @@ function Ye(e) {
     firstDayOfWeek: m,
     activeMonths: T,
     isDateSelected: w,
-    isDateHovered: b,
+    isDateHovered: B,
     isFirstOrLastSelectedDate: F,
     isDateBlocked: x,
     numberOfMonths: g,
@@ -806,13 +811,20 @@ function Ye(e) {
       s({startDate: null, endDate: null, focusedInput: ke})
     },
     onDayHover: function(e) {
-      !r || a || (u && i && !ue(e, u, i)) || (!ie(e, r) && d > 1 && r && ue(e, r, j(r, d - 2)))
+      ;(f && (d <= 1 || (u && i && (!ue(e, u, i) || !ue(j(e, d - 1), u, i))))) ||
+      (!f &&
+        (!r || a || (u && i && !ue(e, u, i)) || (!ie(e, r) && d > 1 && r && ue(e, r, j(r, d - 2)))))
         ? Y(null)
         : Y(e)
     },
     onDaySelect: function(e) {
-      ;((o === Se && r && ae(e, r)) || (o === ke && a && oe(e, a))) &&
+      ;(o === Se || o === ke) &&
+      d > 0 &&
+      f &&
       pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+        ? s({startDate: e, endDate: j(e, d - 1), focusedInput: null})
+        : ((o === Se && r && ae(e, r)) || (o === ke && a && oe(e, a))) &&
+          pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
         ? s({endDate: null, startDate: e, focusedInput: Se})
         : o === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: a, startDate: e})
         ? s({endDate: a, startDate: e, focusedInput: Se})

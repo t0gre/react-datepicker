@@ -806,27 +806,27 @@ var x = function(e, t) {
     }
     return new Date(e)
   },
-  b = function(e) {
+  B = function(e) {
     var t = x(e),
       n = new Date(0)
     return n.setFullYear(t.getFullYear(), 0, 1), n.setHours(0, 0, 0, 0), n
   },
-  H = function(e) {
+  b = function(e) {
     var t = x(e)
     return t.setHours(0, 0, 0, 0), t
   },
-  B = 6e4,
+  H = 6e4,
   I = 864e5,
   O = function(e, t) {
-    var n = H(e),
-      r = H(t),
-      a = n.getTime() - n.getTimezoneOffset() * B,
-      o = r.getTime() - r.getTimezoneOffset() * B
+    var n = b(e),
+      r = b(t),
+      a = n.getTime() - n.getTimezoneOffset() * H,
+      o = r.getTime() - r.getTimezoneOffset() * H
     return Math.round((a - o) / I)
   },
   $ = function(e) {
     var t = x(e)
-    return O(t, b(t)) + 1
+    return O(t, B(t)) + 1
   },
   W = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
@@ -1276,8 +1276,8 @@ var ae = function(e, t) {
     return r >= a && r <= o
   },
   ie = function(e, t) {
-    var n = H(e),
-      r = H(t)
+    var n = b(e),
+      r = b(t)
     return n.getTime() === r.getTime()
   },
   se = function(e) {
@@ -1287,7 +1287,7 @@ var ae = function(e, t) {
     return x(e).getMonth()
   },
   fe = function() {
-    return H(new Date())
+    return b(new Date())
   },
   De = function(e) {
     var t = x(e),
@@ -1445,14 +1445,18 @@ function Ye(e) {
             a = e.isDateBlocked,
             o = e.hoveredDate,
             i = e.minBookingDays
-          return n && !r && o && ue(t, n, j(n, i - 1)) && ie(n, o) && i > 1
+          return o && i > 1 && e.exactMinBookingDays && ue(t, o, j(o, i - 1))
+            ? q(o, j(o, i - 1)).reduce(function(e, t) {
+                return e ? !a(t) : e
+              }, !0)
+            : n && !r && o && ue(t, n, j(n, i - 1)) && ie(n, o) && i > 1
             ? q(n, j(n, i - 1)).reduce(function(e, t) {
                 return e ? !a(t) : e
               }, !0)
             : !(!n || r || !o || ae(o, n) || !ue(t, n, o)) &&
-                q(n, o).reduce(function(e, t) {
-                  return e ? !a(t) : e
-                }, !0)
+              q(n, o).reduce(function(e, t) {
+                return e ? !a(t) : e
+              }, !0)
         })({
           date: e,
           hoveredDate: D,
@@ -1477,13 +1481,20 @@ function Ye(e) {
       i({startDate: null, endDate: null, focusedInput: ke})
     },
     onDayHover: function(e) {
-      !t || n || (a && o && !ue(e, a, o)) || (!ie(e, t) && d > 1 && t && ue(e, t, j(t, d - 2)))
+      ;(c && (d <= 1 || (a && o && (!ue(e, a, o) || !ue(j(e, d - 1), a, o))))) ||
+      (!c &&
+        (!t || n || (a && o && !ue(e, a, o)) || (!ie(e, t) && d > 1 && t && ue(e, t, j(t, d - 2)))))
         ? k(null)
         : k(e)
     },
     onDaySelect: function(e) {
-      ;((r === Se && t && ae(e, t)) || (r === ke && n && oe(e, n))) &&
+      ;(r === Se || r === ke) &&
+      d > 0 &&
+      c &&
       pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+        ? i({startDate: e, endDate: j(e, d - 1), focusedInput: null})
+        : ((r === Se && t && ae(e, t)) || (r === ke && n && oe(e, n))) &&
+          pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
         ? i({endDate: null, startDate: e, focusedInput: Se})
         : r === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
         ? i({endDate: n, startDate: e, focusedInput: Se})

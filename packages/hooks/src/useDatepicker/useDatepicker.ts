@@ -108,6 +108,22 @@ export function useDatepicker({
 
   function onDaySelect(date: Date) {
     if (
+      (focusedInput === END_DATE || focusedInput === START_DATE) &&
+      minBookingDays > 0 &&
+      exactMinBookingDays &&
+      canSelectRange({
+        minBookingDays,
+        isDateBlocked: isDayBlockedProps,
+        startDate: date,
+        endDate: null,
+      })
+    ) {
+      onDateChange({
+        startDate: date,
+        endDate: addDays(date, minBookingDays - 1),
+        focusedInput: null,
+      })
+    } else if (
       ((focusedInput === END_DATE && startDate && isBefore(date, startDate)) ||
         (focusedInput === START_DATE && endDate && isAfter(date, endDate))) &&
       canSelectRange({
@@ -161,13 +177,28 @@ export function useDatepicker({
 
   function onDayHover(date: Date) {
     if (
-      !startDate ||
-      endDate ||
-      (minBookingDate && maxBookingDate && !isWithinRange(date, minBookingDate, maxBookingDate)) ||
-      (!isSameDay(date, startDate) &&
-        (minBookingDays > 1 &&
-          startDate &&
-          isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))))
+      // exact range
+      (exactMinBookingDays &&
+        (minBookingDays <= 1 ||
+          (minBookingDate &&
+            maxBookingDate &&
+            (!isWithinRange(date, minBookingDate, maxBookingDate) ||
+              !isWithinRange(
+                addDays(date, minBookingDays - 1),
+                minBookingDate,
+                maxBookingDate,
+              ))))) ||
+      // normal range
+      (!exactMinBookingDays &&
+        (!startDate ||
+          endDate ||
+          (minBookingDate &&
+            maxBookingDate &&
+            !isWithinRange(date, minBookingDate, maxBookingDate)) ||
+          (!isSameDay(date, startDate) &&
+            (minBookingDays > 1 &&
+              startDate &&
+              isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))))))
     ) {
       setHoveredDate(null)
     } else {

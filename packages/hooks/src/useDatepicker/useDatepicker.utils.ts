@@ -200,8 +200,23 @@ export function isDateHovered({
   isDateBlocked,
   hoveredDate,
   minBookingDays,
+  exactMinBookingDays,
 }: IsDateHoveredProps) {
   if (
+    hoveredDate &&
+    minBookingDays > 1 &&
+    exactMinBookingDays &&
+    isWithinRange(date, hoveredDate, addDays(hoveredDate, minBookingDays - 1))
+  ) {
+    return eachDay(hoveredDate, addDays(hoveredDate, minBookingDays - 1)).reduce(
+      (returnValue, date) => {
+        if (!returnValue) return returnValue
+
+        return !isDateBlocked(date)
+      },
+      true,
+    )
+  } else if (
     startDate &&
     !endDate &&
     hoveredDate &&

@@ -76,5 +76,6 @@ export declare function isDateHovered({
   isDateBlocked,
   hoveredDate,
   minBookingDays,
+  exactMinBookingDays,
 }: IsDateHoveredProps): boolean
 export {}

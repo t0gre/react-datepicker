@@ -50,7 +50,7 @@ function App() {
           <DateRangeInput
             exactMinBookingDays
             minBookingDate={new Date()}
-            minBookingDays={3}
+            minBookingDays={14}
             maxBookingDate={new Date(2019, 6, 27)}
             startDate={state.startDate}
             endDate={state.endDate}

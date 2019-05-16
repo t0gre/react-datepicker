@@ -1298,14 +1298,18 @@ function Zt(e) {
             o = e.isDateBlocked,
             a = e.hoveredDate,
             i = e.minBookingDays
-          return n && !r && a && Pt(t, n, Mt(n, i - 1)) && zt(n, a) && i > 1
+          return a && i > 1 && e.exactMinBookingDays && Pt(t, a, Mt(a, i - 1))
+            ? Bt(a, Mt(a, i - 1)).reduce(function(e, t) {
+                return e ? !o(t) : e
+              }, !0)
+            : n && !r && a && Pt(t, n, Mt(n, i - 1)) && zt(n, a) && i > 1
             ? Bt(n, Mt(n, i - 1)).reduce(function(e, t) {
                 return e ? !o(t) : e
               }, !0)
             : !(!n || r || !a || Lt(a, n) || !Pt(t, n, a)) &&
-                Bt(n, a).reduce(function(e, t) {
-                  return e ? !o(t) : e
-                }, !0)
+              Bt(n, a).reduce(function(e, t) {
+                return e ? !o(t) : e
+              }, !0)
         })({
           date: e,
           hoveredDate: C,
@@ -1330,13 +1334,23 @@ function Zt(e) {
       c({startDate: null, endDate: null, focusedInput: _t})
     },
     onDayHover: function(e) {
-      !r || o || (i && l && !Pt(e, i, l)) || (!zt(e, r) && p > 1 && r && Pt(e, r, Mt(r, p - 2)))
+      ;(u && (p <= 1 || (i && l && (!Pt(e, i, l) || !Pt(Mt(e, p - 1), i, l))))) ||
+      (!u &&
+        (!r ||
+          o ||
+          (i && l && !Pt(e, i, l)) ||
+          (!zt(e, r) && p > 1 && r && Pt(e, r, Mt(r, p - 2)))))
         ? S(null)
         : S(e)
     },
     onDaySelect: function(e) {
-      ;((a === Ut && r && Lt(e, r)) || (a === _t && o && Ot(e, o))) &&
+      ;(a === Ut || a === _t) &&
+      p > 0 &&
+      u &&
       Gt({minBookingDays: p, isDateBlocked: v, startDate: e, endDate: null})
+        ? c({startDate: e, endDate: Mt(e, p - 1), focusedInput: null})
+        : ((a === Ut && r && Lt(e, r)) || (a === _t && o && Ot(e, o))) &&
+          Gt({minBookingDays: p, isDateBlocked: v, startDate: e, endDate: null})
         ? c({endDate: null, startDate: e, focusedInput: Ut})
         : a === _t && Gt({minBookingDays: p, isDateBlocked: v, endDate: o, startDate: e})
         ? c({endDate: o, startDate: e, focusedInput: Ut})

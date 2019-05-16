@@ -754,15 +754,20 @@ function isDateHovered(e) {
     a = e.endDate,
     n = e.isDateBlocked,
     o = e.hoveredDate,
-    s = e.minBookingDays
-  return r && !a && o && is_within_range(t, r, add_days(r, s - 1)) && is_same_day(r, o) && s > 1
+    s = e.minBookingDays,
+    i = e.exactMinBookingDays
+  return o && s > 1 && i && is_within_range(t, o, add_days(o, s - 1))
+    ? each_day(o, add_days(o, s - 1)).reduce(function(e, t) {
+        return e ? !n(t) : e
+      }, !0)
+    : r && !a && o && is_within_range(t, r, add_days(r, s - 1)) && is_same_day(r, o) && s > 1
     ? each_day(r, add_days(r, s - 1)).reduce(function(e, t) {
         return e ? !n(t) : e
       }, !0)
     : !(!r || a || !o || is_before(o, r) || !is_within_range(t, r, o)) &&
-        each_day(r, o).reduce(function(e, t) {
-          return e ? !n(t) : e
-        }, !0)
+      each_day(r, o).reduce(function(e, t) {
+        return e ? !n(t) : e
+      }, !0)
 }
 var START_DATE = 'startDate',
   END_DATE = 'endDate'
@@ -788,11 +793,11 @@ function useDatepicker(e) {
             return !1
           }
         : l,
-    T = react.useState(function() {
+    y = react.useState(function() {
       return getInitialMonths(D, t)
     }),
-    h = T[0],
-    y = T[1],
+    T = y[0],
+    h = y[1],
     M = react.useState(null),
     p = M[0],
     v = M[1],
@@ -838,7 +843,7 @@ function useDatepicker(e) {
     )
   return {
     firstDayOfWeek: g,
-    activeMonths: h,
+    activeMonths: T,
     isDateSelected: k,
     isDateHovered: Y,
     isFirstOrLastSelectedDate: S,
@@ -848,16 +853,25 @@ function useDatepicker(e) {
       s({startDate: null, endDate: null, focusedInput: START_DATE})
     },
     onDayHover: function(e) {
-      !t ||
-      r ||
-      (n && o && !is_within_range(e, n, o)) ||
-      (!is_same_day(e, t) && c > 1 && t && is_within_range(e, t, add_days(t, c - 2)))
+      ;(u &&
+        (c <= 1 ||
+          (n && o && (!is_within_range(e, n, o) || !is_within_range(add_days(e, c - 1), n, o))))) ||
+      (!u &&
+        (!t ||
+          r ||
+          (n && o && !is_within_range(e, n, o)) ||
+          (!is_same_day(e, t) && c > 1 && t && is_within_range(e, t, add_days(t, c - 2)))))
         ? v(null)
         : v(e)
     },
     onDaySelect: function(e) {
-      ;((a === END_DATE && t && is_before(e, t)) || (a === START_DATE && r && is_after(e, r))) &&
+      ;(a === END_DATE || a === START_DATE) &&
+      c > 0 &&
+      u &&
       canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: e, endDate: null})
+        ? s({startDate: e, endDate: add_days(e, c - 1), focusedInput: null})
+        : ((a === END_DATE && t && is_before(e, t)) || (a === START_DATE && r && is_after(e, r))) &&
+          canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: e, endDate: null})
         ? s({endDate: null, startDate: e, focusedInput: END_DATE})
         : a === START_DATE &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, endDate: r, startDate: e})
@@ -872,10 +886,10 @@ function useDatepicker(e) {
           s({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      y(getNextActiveMonth(h, D, -1))
+      h(getNextActiveMonth(T, D, -1))
     },
     goToNextMonths: function() {
-      y(getNextActiveMonth(h, D, 1))
+      h(getNextActiveMonth(T, D, 1))
     },
   }
 }
