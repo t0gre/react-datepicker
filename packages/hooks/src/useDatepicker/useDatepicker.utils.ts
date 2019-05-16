@@ -171,7 +171,9 @@ export function canSelectRange({
       exactMinBookingDays &&
       minBookingDate &&
       maxBookingDate &&
-      !isAfter(addDays(startDate, minBookingDays - 1), maxBookingDate))
+      !isBefore(startDate, minBookingDate) &&
+      !isAfter(addDays(startDate, minBookingDays - 1), maxBookingDate)) ||
+    (startDate && minBookingDays > 0 && exactMinBookingDays && !minBookingDate && !maxBookingDate)
   ) {
     return eachDay(startDate, addDays(startDate, minBookingDays - 1)).reduce(
       (returnValue, date) => {

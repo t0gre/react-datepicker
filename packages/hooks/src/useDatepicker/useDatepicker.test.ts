@@ -494,35 +494,126 @@ describe('useDatepicker', () => {
     clear()
   })
 
-  // test.each([{
-  //   blockedDate: new Date(2019, 3, 4, 0, 0, 0),
-  // }])('should select exact range (minBookingDays)', ({blockedDate}) => {
-  //   const onDateChange = jest.fn()
-  //   advanceTo(new Date(2019, 2, 27, 0, 0, 0))
-  //   const {result} = renderHook(() =>
-  //     useDatepicker({
-  //       startDate: null,
-  //       endDate: null,
-  //       minBookingDays: 3,
-  //       exactMinBookingDays: true,
-  //       focusedInput: START_DATE,
-  //       onDateChange: onDateChange,
-  //       isDayBlocked(date: Date): boolean {
-  //         return isSameDay(date, blockedDate)
-  //       },
-  //     }),
-  //   )
-  //
-  //   act(() => {
-  //     result.current.onDaySelect(new Date(2019, 3, 1, 0, 0, 0))
-  //   })
-  //   expect(onDateChange).toBeCalledWith({
-  //     startDate: new Date(2019, 3, 1, 0, 0, 0),
-  //     endDate: null,
-  //     focusedInput: null,
-  //   })
-  //   clear()
-  // })
+  test.each([
+    {
+      blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 30, 0, 0, 0),
+      selectedDate: new Date(2019, 3, 1, 0, 0, 0),
+      expectedStartDate: new Date(2019, 3, 1, 0, 0, 0),
+      expectedEndDate: new Date(2019, 3, 3, 0, 0, 0),
+    },
+    {
+      blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
+      selectedDate: new Date(2019, 3, 1, 0, 0, 0),
+      expectedStartDate: new Date(2019, 3, 1, 0, 0, 0),
+      expectedEndDate: new Date(2019, 3, 3, 0, 0, 0),
+    },
+    {
+      blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 30, 0, 0, 0),
+      selectedDate: new Date(2019, 3, 8, 0, 0, 0),
+      expectedStartDate: new Date(2019, 3, 8, 0, 0, 0),
+      expectedEndDate: new Date(2019, 3, 10, 0, 0, 0),
+    },
+    {
+      blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
+      selectedDate: new Date(2019, 3, 8, 0, 0, 0),
+      expectedStartDate: new Date(2019, 3, 8, 0, 0, 0),
+      expectedEndDate: new Date(2019, 3, 10, 0, 0, 0),
+    },
+  ])(
+    'should execute onDaySelect callback with exact range selected (minBookingDays)',
+    ({
+      blockedDate,
+      minBookingDate,
+      maxBookingDate,
+      selectedDate,
+      expectedStartDate,
+      expectedEndDate,
+    }) => {
+      const onDateChange = jest.fn()
+      advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+      const {result} = renderHook(() =>
+        useDatepicker({
+          minBookingDate,
+          maxBookingDate,
+          startDate: null,
+          endDate: null,
+          minBookingDays: 3,
+          exactMinBookingDays: true,
+          focusedInput: START_DATE,
+          onDateChange: onDateChange,
+          isDayBlocked(date: Date): boolean {
+            return isSameDay(date, blockedDate)
+          },
+        }),
+      )
+
+      act(() => {
+        result.current.onDaySelect(selectedDate)
+      })
+      expect(onDateChange).toBeCalledWith({
+        startDate: expectedStartDate,
+        endDate: expectedEndDate,
+        focusedInput: null,
+      })
+      clear()
+    },
+  )
+
+  test.each([
+    {
+      blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+      selectedDate: new Date(2019, 3, 2, 0, 0, 0),
+    },
+    {
+      blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+      selectedDate: new Date(2019, 3, 9, 0, 0, 0),
+    },
+    {
+      blockedDate: new Date(2019, 3, 4, 0, 0, 0),
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+      selectedDate: new Date(2019, 2, 9, 0, 0, 0),
+    },
+  ])(
+    'should not select exact range (minBookingDays)',
+    ({blockedDate, minBookingDate, maxBookingDate, selectedDate}) => {
+      const onDateChange = jest.fn()
+      advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+      const {result} = renderHook(() =>
+        useDatepicker({
+          minBookingDate,
+          maxBookingDate,
+          startDate: null,
+          endDate: null,
+          minBookingDays: 3,
+          exactMinBookingDays: true,
+          focusedInput: START_DATE,
+          onDateChange: onDateChange,
+          isDayBlocked(date: Date): boolean {
+            return isSameDay(date, blockedDate)
+          },
+        }),
+      )
+
+      act(() => {
+        result.current.onDaySelect(selectedDate)
+      })
+      expect(onDateChange).not.toBeCalled()
+      clear()
+    },
+  )
 })
 
 describe('getCurrentYearMonthAndDate', () => {
