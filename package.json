@@ -131,8 +131,8 @@
       "git add"
     ]
   },
-  "dependencies": {},
   "resolutions": {
     "@types/react": "^16.8.17"
-  }
+  },
+  "name": "react-datepicker"
 }
