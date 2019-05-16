@@ -113,6 +113,9 @@ export function useDatepicker({
       exactMinBookingDays &&
       canSelectRange({
         minBookingDays,
+        exactMinBookingDays,
+        minBookingDate,
+        maxBookingDate,
         isDateBlocked: isDayBlockedProps,
         startDate: date,
         endDate: null,

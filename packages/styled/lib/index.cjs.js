@@ -687,43 +687,43 @@ var factoryWithThrowingShims = function() {
   d = /^(\d{4})/,
   l = [/^([+-]\d{4})/, /^([+-]\d{5})/, /^([+-]\d{6})/],
   g = /^-(\d{2})$/,
-  v = /^-?(\d{3})$/,
-  m = /^-?(\d{2})-?(\d{2})$/,
+  m = /^-?(\d{3})$/,
+  v = /^-?(\d{2})-?(\d{2})$/,
   h = /^-?W(\d{2})$/,
   y = /^-?W(\d{2})-?(\d{1})$/,
   M = /^(\d{2}([.,]\d*)?)$/,
-  T = /^(\d{2}):?(\d{2}([.,]\d*)?)$/,
-  p = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
-  k = /([Z+-].*)$/,
+  k = /^(\d{2}):?(\d{2}([.,]\d*)?)$/,
+  T = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
+  p = /([Z+-].*)$/,
   S = /^(Z)$/,
   Y = /^([+-])(\d{2})$/,
   w = /^([+-])(\d{2}):?(\d{2})$/
-function F(e, t, n) {
+function x(e, t, n) {
   ;(t = t || 0), (n = n || 0)
   var r = new Date(0)
   r.setUTCFullYear(e, 0, 4)
   var a = 7 * t + n + 1 - (r.getUTCDay() || 7)
   return r.setUTCDate(r.getUTCDate() + a), r
 }
-var x = function(e, t) {
+var F = function(e, t) {
     if (a(e)) return new Date(e.getTime())
     if ('string' != typeof e) return new Date(e)
     var n = (t || {}).additionalDigits
     n = null == n ? i : Number(n)
     var _,
       b,
-      x,
-      C = (function(e) {
+      C,
+      I = (function(e) {
         var t,
           n = {},
           r = e.split(s)
         if ((c.test(r[0]) ? ((n.date = null), (t = r[0])) : ((n.date = r[0]), (t = r[1])), t)) {
-          var a = k.exec(t)
+          var a = p.exec(t)
           a ? ((n.time = t.replace(a[1], '')), (n.timezone = a[1])) : (n.time = t)
         }
         return n
       })(e),
-      I = (function(e, t) {
+      R = (function(e, t) {
         var n,
           r = D[t],
           a = l[t]
@@ -736,83 +736,83 @@ var x = function(e, t) {
           return {year: 100 * parseInt(i, 10), restDateString: e.slice(i.length)}
         }
         return {year: null}
-      })(C.date, n),
-      R = I.year,
-      O = (function(e, t) {
+      })(I.date, n),
+      O = R.year,
+      B = (function(e, t) {
         if (null === t) return null
         var n, r, a
         if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
         if ((n = g.exec(e)))
           return (r = new Date(0)), (a = parseInt(n[1], 10) - 1), r.setUTCFullYear(t, a), r
-        if ((n = v.exec(e))) {
+        if ((n = m.exec(e))) {
           r = new Date(0)
           var o = parseInt(n[1], 10)
           return r.setUTCFullYear(t, 0, o), r
         }
-        if ((n = m.exec(e))) {
+        if ((n = v.exec(e))) {
           ;(r = new Date(0)), (a = parseInt(n[1], 10) - 1)
           var i = parseInt(n[2], 10)
           return r.setUTCFullYear(t, a, i), r
         }
         return (n = h.exec(e))
-          ? F(t, parseInt(n[1], 10) - 1)
+          ? x(t, parseInt(n[1], 10) - 1)
           : (n = y.exec(e))
-          ? F(t, parseInt(n[1], 10) - 1, parseInt(n[2], 10) - 1)
+          ? x(t, parseInt(n[1], 10) - 1, parseInt(n[2], 10) - 1)
           : null
-      })(I.restDateString, R)
-    if (O) {
-      var B,
-        j = O.getTime(),
+      })(R.restDateString, O)
+    if (B) {
+      var F,
+        j = B.getTime(),
         P = 0
       if (
-        (C.time &&
+        (I.time &&
           (P = (function(e) {
             var t, n, r
             if ((t = M.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * o
-            if ((t = T.exec(e)))
+            if ((t = k.exec(e)))
               return (
                 (n = parseInt(t[1], 10)),
                 (r = parseFloat(t[2].replace(',', '.'))),
                 (n % 24) * o + r * u
               )
-            if ((t = p.exec(e))) {
+            if ((t = T.exec(e))) {
               ;(n = parseInt(t[1], 10)), (r = parseInt(t[2], 10))
               var a = parseFloat(t[3].replace(',', '.'))
               return (n % 24) * o + r * u + 1e3 * a
             }
             return null
-          })(C.time)),
-        C.timezone)
+          })(I.time)),
+        I.timezone)
       )
-        (_ = C.timezone),
-          (B =
+        (_ = I.timezone),
+          (F =
             ((b = S.exec(_))
               ? 0
               : (b = Y.exec(_))
-              ? ((x = 60 * parseInt(b[2], 10)), '+' === b[1] ? -x : x)
+              ? ((C = 60 * parseInt(b[2], 10)), '+' === b[1] ? -C : C)
               : (b = w.exec(_))
-              ? ((x = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -x : x)
+              ? ((C = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -C : C)
               : 0) * u)
       else {
         var W = j + P,
           H = new Date(W)
-        B = r(H)
+        F = r(H)
         var E = new Date(W)
         E.setDate(H.getDate() + 1)
         var L = r(E) - r(H)
-        L > 0 && (B += L)
+        L > 0 && (F += L)
       }
-      return new Date(j + P + B)
+      return new Date(j + P + F)
     }
     return new Date(e)
   },
   B = function(e) {
-    var t = x(e),
+    var t = F(e),
       n = new Date(0)
     return n.setFullYear(t.getFullYear(), 0, 1), n.setHours(0, 0, 0, 0), n
   },
   b = function(e) {
-    var t = x(e)
+    var t = F(e)
     return t.setHours(0, 0, 0, 0), t
   },
   H = 6e4,
@@ -825,12 +825,12 @@ var x = function(e, t) {
     return Math.round((a - o) / I)
   },
   $ = function(e) {
-    var t = x(e)
+    var t = F(e)
     return O(t, B(t)) + 1
   },
   W = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
-      r = x(e),
+      r = F(e),
       a = r.getDay(),
       o = (a < n ? 7 : 0) + a - n
     return r.setDate(r.getDate() - o), r.setHours(0, 0, 0, 0), r
@@ -839,7 +839,7 @@ var x = function(e, t) {
     return W(e, {weekStartsOn: 1})
   },
   G = function(e) {
-    var t = x(e),
+    var t = F(e),
       n = t.getFullYear(),
       r = new Date(0)
     r.setFullYear(n + 1, 0, 4), r.setHours(0, 0, 0, 0)
@@ -856,7 +856,7 @@ var x = function(e, t) {
   },
   N = 6048e5,
   z = function(e) {
-    var t = x(e),
+    var t = F(e),
       n = A(t).getTime() - E(t).getTime()
     return Math.round(n / N) + 1
   },
@@ -1123,7 +1123,7 @@ var Q = function(e, t, n) {
       a.format.formatters &&
       ((o = a.format.formatters),
       a.format.formattingTokensRegExp && (i = a.format.formattingTokensRegExp))
-    var l = x(e)
+    var l = F(e)
     return C(l)
       ? (function(e, t, n) {
           var r,
@@ -1145,37 +1145,37 @@ var Q = function(e, t, n) {
       : 'Invalid Date'
   },
   j = function(e, t) {
-    var n = x(e),
+    var n = F(e),
       r = Number(t)
     return n.setDate(n.getDate() + r), n
   },
   q = function(e, t, n) {
-    var r = x(e),
+    var r = F(e),
       a = void 0 !== n ? n : 1,
-      o = x(t).getTime()
+      o = F(t).getTime()
     if (r.getTime() > o) throw new Error('The first date cannot be after the second date')
     var i = [],
       l = r
-    for (l.setHours(0, 0, 0, 0); l.getTime() <= o; ) i.push(x(l)), l.setDate(l.getDate() + a)
+    for (l.setHours(0, 0, 0, 0); l.getTime() <= o; ) i.push(F(l)), l.setDate(l.getDate() + a)
     return i
   },
   K = function(e) {
-    var t = x(e),
+    var t = F(e),
       n = t.getMonth()
     return t.setFullYear(t.getFullYear(), n + 1, 0), t.setHours(23, 59, 59, 999), t
   },
   V = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
-      r = x(e),
+      r = F(e),
       a = r.getDay(),
       o = 6 + (a < n ? -7 : 0) - (a - n)
     return r.setDate(r.getDate() + o), r.setHours(23, 59, 59, 999), r
   },
   _ = function(e) {
-    return x(e).getDay()
+    return F(e).getDay()
   },
   ee = function(e) {
-    var t = x(e)
+    var t = F(e)
     return t.setDate(1), t.setHours(0, 0, 0, 0), t
   }
 function te(e) {
@@ -1259,19 +1259,19 @@ function re(e) {
   }
 }
 var ae = function(e, t) {
-    var n = x(e),
-      r = x(t)
+    var n = F(e),
+      r = F(t)
     return n.getTime() < r.getTime()
   },
   oe = function(e, t) {
-    var n = x(e),
-      r = x(t)
+    var n = F(e),
+      r = F(t)
     return n.getTime() > r.getTime()
   },
   ue = function(e, t, n) {
-    var r = x(e).getTime(),
-      a = x(t).getTime(),
-      o = x(n).getTime()
+    var r = F(e).getTime(),
+      a = F(t).getTime(),
+      o = F(n).getTime()
     if (a > o) throw new Error('The start of the range cannot be after the end of the range')
     return r >= a && r <= o
   },
@@ -1281,23 +1281,23 @@ var ae = function(e, t) {
     return n.getTime() === r.getTime()
   },
   se = function(e) {
-    return x(e).getFullYear()
+    return F(e).getFullYear()
   },
   ce = function(e) {
-    return x(e).getMonth()
+    return F(e).getMonth()
   },
   fe = function() {
     return b(new Date())
   },
   De = function(e) {
-    var t = x(e),
+    var t = F(e),
       n = t.getFullYear(),
       r = t.getMonth(),
       a = new Date(0)
     return a.setFullYear(n, r + 1, 0), a.setHours(0, 0, 0, 0), a.getDate()
   },
   de = function(e, t) {
-    var n = x(e),
+    var n = F(e),
       r = Number(t),
       a = n.getMonth() + r,
       o = new Date(0)
@@ -1311,7 +1311,7 @@ function le(e, t, n) {
 function ge(e, t, n) {
   return !!((t && ie(e, t)) || (n && ie(e, n)))
 }
-function ve(e) {
+function me(e) {
   var t = e.date,
     n = e.minBookingDate,
     r = e.maxBookingDate,
@@ -1329,21 +1329,21 @@ function ve(e) {
     (a && a(t))
   )
 }
-function me(e) {
+function ve(e) {
   var t = ee(e)
   return {year: se(t), month: ce(t), date: t}
 }
 function he() {
-  return me(fe())
+  return ve(fe())
 }
 function ye(e, t) {
-  var n = t ? me(t) : he(),
+  var n = t ? ve(t) : he(),
     r = n.date,
     a = [n]
   return (
     e > 1 &&
       (a = Array.from(Array(e - 1).keys()).reduce(function(e) {
-        return (r = de(e[e.length - 1].date, 1)), e.concat([me(r)])
+        return (r = de(e[e.length - 1].date, 1)), e.concat([ve(r)])
       }, a)),
     a
   )
@@ -1351,26 +1351,29 @@ function ye(e, t) {
 function Me(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = de(r, n)), n > 0 ? e.concat([me(r)]) : [me(r)].concat(e)
+    return (r = de(r, n)), n > 0 ? e.concat([ve(r)]) : [ve(r)].concat(e)
   }, [])
 }
-function Te(e, t, n) {
+function ke(e, t, n) {
   return e && 'string' == typeof t ? Q(e, t) : e && 'function' == typeof t ? t(e) : n
 }
-function pe(e) {
+function Te(e) {
   var t = e.startDate,
     n = e.endDate,
     r = e.isDateBlocked,
-    a = e.minBookingDays
+    a = e.minBookingDays,
+    o = e.exactMinBookingDays,
+    i = e.minBookingDate,
+    l = e.maxBookingDate
   if (t && 1 === a && !n && !r(t)) return !0
-  if (t && a > 1 && !n)
+  if ((t && a > 1 && !n && !o) || (t && a > 0 && o && i && l && ae(j(t, a - 1), l)))
     return q(t, j(t, a - 1)).reduce(function(e, t) {
       return e ? !r(t) : e
     }, !0)
-  if (t && n) {
-    var o = j(t, a - 1)
+  if (t && n && !o) {
+    var c = j(t, a - 1)
     return (
-      !ae(n, o) &&
+      !ae(n, c) &&
       q(t, n).reduce(function(e, t) {
         return e ? !r(t) : e
       }, !0)
@@ -1378,7 +1381,7 @@ function pe(e) {
   }
   return !1
 }
-var ke = 'startDate',
+var pe = 'startDate',
   Se = 'endDate'
 function Ye(e) {
   var t = e.startDate,
@@ -1424,7 +1427,7 @@ function Ye(e) {
     ),
     C = React.useCallback(
       function(e) {
-        return ve({
+        return me({
           date: e,
           minBookingDate: a,
           maxBookingDate: o,
@@ -1478,7 +1481,7 @@ function Ye(e) {
     isDateBlocked: C,
     numberOfMonths: p,
     onResetDates: function() {
-      i({startDate: null, endDate: null, focusedInput: ke})
+      i({startDate: null, endDate: null, focusedInput: pe})
     },
     onDayHover: function(e) {
       ;(c && (d <= 1 || (a && o && (!ue(e, a, o) || !ue(j(e, d - 1), a, o))))) ||
@@ -1488,22 +1491,30 @@ function Ye(e) {
         : k(e)
     },
     onDaySelect: function(e) {
-      ;(r === Se || r === ke) &&
+      ;(r === Se || r === pe) &&
       d > 0 &&
       c &&
-      pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+      Te({
+        minBookingDays: d,
+        exactMinBookingDays: c,
+        minBookingDate: a,
+        maxBookingDate: o,
+        isDateBlocked: y,
+        startDate: e,
+        endDate: null,
+      })
         ? i({startDate: e, endDate: j(e, d - 1), focusedInput: null})
-        : ((r === Se && t && ae(e, t)) || (r === ke && n && oe(e, n))) &&
-          pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+        : ((r === Se && t && ae(e, t)) || (r === pe && n && oe(e, n))) &&
+          Te({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
         ? i({endDate: null, startDate: e, focusedInput: Se})
-        : r === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
+        : r === pe && Te({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
         ? i({endDate: n, startDate: e, focusedInput: Se})
-        : r === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
+        : r === pe && Te({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
         ? i({endDate: null, startDate: e, focusedInput: Se})
         : r === Se &&
           t &&
           !ae(e, t) &&
-          pe({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
+          Te({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
           i({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
@@ -2749,8 +2760,8 @@ function Datepicker(e) {
     T = D.goToPreviousMonths,
     M = D.goToNextMonths,
     B = D.numberOfMonths,
-    j = D.onDayHover,
-    F = useThemeProps({
+    F = D.onDayHover,
+    j = useThemeProps({
       datepickerBackground: '#ffffff',
       datepickerPadding: '32px',
       datepickerBorderRadius: '2px',
@@ -2783,21 +2794,21 @@ function Datepicker(e) {
   return React__default.createElement(
     StyledDatepicker,
     {
-      background: F.datepickerBackground,
-      p: F.datepickerPadding,
-      borderRadius: F.datepickerBorderRadius,
-      position: F.datepickerPosition,
-      boxShadow: F.datepickerBoxShadow,
+      background: j.datepickerBackground,
+      p: j.datepickerPadding,
+      borderRadius: j.datepickerBorderRadius,
+      position: j.datepickerPosition,
+      boxShadow: j.datepickerBoxShadow,
     },
     React__default.createElement(
       Box,
       {
-        position: F.datepickerCloseWrapperPosition,
-        right: F.datepickerCloseWrapperRight,
-        top: F.datepickerCloseWrapperTop,
-        left: F.datepickerCloseWrapperLeft,
-        bottom: F.datepickerCloseWrapperBottom,
-        zIndex: F.datepickerCloseWrapperZIndex,
+        position: j.datepickerCloseWrapperPosition,
+        right: j.datepickerCloseWrapperRight,
+        top: j.datepickerCloseWrapperTop,
+        left: j.datepickerCloseWrapperLeft,
+        bottom: j.datepickerCloseWrapperBottom,
+        zIndex: j.datepickerCloseWrapperZIndex,
       },
       React__default.createElement(Close, {onClick: f}),
     ),
@@ -2806,56 +2817,56 @@ function Datepicker(e) {
       null,
       React__default.createElement(
         Grid,
-        {gridTemplateColumns: F.datepickerSelectDateGridTemplateColumns},
+        {gridTemplateColumns: j.datepickerSelectDateGridTemplateColumns},
         React__default.createElement(SelectDate, {
           title: v.datepickerStartDateLabel,
-          date: Te(t, _, v.datepickerStartDatePlaceholder),
-          isActive: o === ke,
+          date: ke(t, _, v.datepickerStartDatePlaceholder),
+          isActive: o === pe,
         }),
         React__default.createElement(
           Flex,
           {justifyContent: 'center', alignItems: 'center'},
           React__default.createElement(ArrowIcon, {
-            height: F.datepickerSelectDateArrowIconHeight,
-            width: F.datepickerSelectDateArrowIconWidth,
-            iconColor: F.datepickerSelectDateArrowIconColor,
+            height: j.datepickerSelectDateArrowIconHeight,
+            width: j.datepickerSelectDateArrowIconWidth,
+            iconColor: j.datepickerSelectDateArrowIconColor,
           }),
         ),
         React__default.createElement(SelectDate, {
           title: v.datepickerEndDateLabel,
-          date: Te(n, _, v.datepickerEndDatePlaceholder),
+          date: ke(n, _, v.datepickerEndDatePlaceholder),
           isActive: o === Se,
         }),
       ),
     ),
     React__default.createElement(
       Box,
-      {m: F.datepickerMonthsWrapperMargin, position: 'relative'},
+      {m: j.datepickerMonthsWrapperMargin, position: 'relative'},
       React__default.createElement(
         Box,
         {
-          position: F.datepickerPreviousMonthButtonPosition,
-          top: F.datepickerPreviousMonthButtonTop,
-          left: F.datepickerPreviousMonthButtonLeft,
-          right: F.datepickerPreviousMonthButtonRight,
-          bottom: F.datepickerPreviousMonthButtonBottom,
+          position: j.datepickerPreviousMonthButtonPosition,
+          top: j.datepickerPreviousMonthButtonTop,
+          left: j.datepickerPreviousMonthButtonLeft,
+          right: j.datepickerPreviousMonthButtonRight,
+          bottom: j.datepickerPreviousMonthButtonBottom,
         },
         React__default.createElement(NavButton, {type: 'prev', onClick: T}),
       ),
       React__default.createElement(
         Box,
         {
-          position: F.datepickerNextMonthButtonPosition,
-          top: F.datepickerNextMonthButtonTop,
-          left: F.datepickerNextMonthButtonLeft,
-          right: F.datepickerNextMonthButtonRight,
-          bottom: F.datepickerNextMonthButtonBottom,
+          position: j.datepickerNextMonthButtonPosition,
+          top: j.datepickerNextMonthButtonTop,
+          left: j.datepickerNextMonthButtonLeft,
+          right: j.datepickerNextMonthButtonRight,
+          bottom: j.datepickerNextMonthButtonBottom,
         },
         React__default.createElement(NavButton, {type: 'next', onClick: M}),
       ),
       React__default.createElement(
         Grid,
-        {numberOfMonthsGridTemplateColumns: B, gridGap: F.datepickerMonthsGridGap},
+        {numberOfMonthsGridTemplateColumns: B, gridGap: j.datepickerMonthsGridGap},
         k.map(function(e) {
           return React__default.createElement(Month, {
             key: e.year + '-' + e.month,
@@ -2866,7 +2877,7 @@ function Datepicker(e) {
             isDateSelected: x,
             isStartOrEndDate: S,
             onDaySelect: w,
-            onDayHover: j,
+            onDayHover: F,
             isDateHovered: I,
           })
         }),
@@ -2874,7 +2885,7 @@ function Datepicker(e) {
     ),
     React__default.createElement(
       Box,
-      {m: F.datepickerResetDatesWrapperMargin},
+      {m: j.datepickerResetDatesWrapperMargin},
       React__default.createElement(ResetDates, {onResetDates: O, text: v.resetDates}),
     ),
   )
@@ -2970,9 +2981,9 @@ function DateRangeInput(e) {
           id: 'startDate',
           ariaLabel: S.startDateAriaLabel,
           placeholder: S.startDatePlaceholder,
-          value: Te(t, k, ''),
+          value: ke(t, k, ''),
           onClick: function() {
-            return i(ke)
+            return i(pe)
           },
           showCalendarIcon: _,
         }),
@@ -2990,9 +3001,9 @@ function DateRangeInput(e) {
           id: 'endDate',
           ariaLabel: S.endDateAriaLabel,
           placeholder: S.endDatePlaceholder,
-          value: Te(n, k, ''),
+          value: ke(n, k, ''),
           onClick: function() {
-            return i(t ? Se : ke)
+            return i(t ? Se : pe)
           },
           showCalendarIcon: v,
         }),

@@ -53,12 +53,18 @@ export interface CanSelectRangeProps {
   endDate: Date | null
   isDateBlocked(date: Date): boolean
   minBookingDays: number
+  exactMinBookingDays?: boolean
+  minBookingDate?: Date
+  maxBookingDate?: Date
 }
 export declare function canSelectRange({
   startDate,
   endDate,
   isDateBlocked,
   minBookingDays,
+  exactMinBookingDays,
+  minBookingDate,
+  maxBookingDate,
 }: CanSelectRangeProps): boolean
 export interface IsDateHoveredProps {
   startDate: Date | null

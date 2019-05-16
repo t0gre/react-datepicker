@@ -4,10 +4,10 @@ var react = require('react'),
   MILLISECONDS_IN_MINUTE = 6e4,
   getTimezoneOffsetInMilliseconds = function(e) {
     var t = new Date(e.getTime()),
-      r = t.getTimezoneOffset()
+      a = t.getTimezoneOffset()
     t.setSeconds(0, 0)
-    var a = t.getTime() % MILLISECONDS_IN_MINUTE
-    return r * MILLISECONDS_IN_MINUTE + a
+    var r = t.getTime() % MILLISECONDS_IN_MINUTE
+    return a * MILLISECONDS_IN_MINUTE + r
   }
 function isDate(e) {
   return e instanceof Date
@@ -37,18 +37,18 @@ var is_date = isDate,
 function parse(e, t) {
   if (is_date(e)) return new Date(e.getTime())
   if ('string' != typeof e) return new Date(e)
-  var r = (t || {}).additionalDigits
-  r = null == r ? DEFAULT_ADDITIONAL_DIGITS : Number(r)
-  var a = splitDateString(e),
-    n = parseYear(a.date, r),
+  var a = (t || {}).additionalDigits
+  a = null == a ? DEFAULT_ADDITIONAL_DIGITS : Number(a)
+  var r = splitDateString(e),
+    n = parseYear(r.date, a),
     o = n.year,
     s = parseDate(n.restDateString, o)
   if (s) {
     var i,
       u = s.getTime(),
       d = 0
-    if ((a.time && (d = parseTime(a.time)), a.timezone))
-      i = parseTimezone(a.timezone) * MILLISECONDS_IN_MINUTE$1
+    if ((r.time && (d = parseTime(r.time)), r.timezone))
+      i = parseTimezone(r.timezone) * MILLISECONDS_IN_MINUTE$1
     else {
       var c = u + d,
         f = new Date(c)
@@ -64,92 +64,92 @@ function parse(e, t) {
 }
 function splitDateString(e) {
   var t,
-    r = {},
-    a = e.split(parseTokenDateTimeDelimeter)
+    a = {},
+    r = e.split(parseTokenDateTimeDelimeter)
   if (
-    (parseTokenPlainTime.test(a[0]) ? ((r.date = null), (t = a[0])) : ((r.date = a[0]), (t = a[1])),
+    (parseTokenPlainTime.test(r[0]) ? ((a.date = null), (t = r[0])) : ((a.date = r[0]), (t = r[1])),
     t)
   ) {
     var n = parseTokenTimezone.exec(t)
-    n ? ((r.time = t.replace(n[1], '')), (r.timezone = n[1])) : (r.time = t)
+    n ? ((a.time = t.replace(n[1], '')), (a.timezone = n[1])) : (a.time = t)
   }
-  return r
+  return a
 }
 function parseYear(e, t) {
-  var r,
-    a = parseTokensYYY[t],
+  var a,
+    r = parseTokensYYY[t],
     n = parseTokensYYYYY[t]
-  if ((r = parseTokenYYYY.exec(e) || n.exec(e))) {
-    var o = r[1]
+  if ((a = parseTokenYYYY.exec(e) || n.exec(e))) {
+    var o = a[1]
     return {year: parseInt(o, 10), restDateString: e.slice(o.length)}
   }
-  if ((r = parseTokenYY.exec(e) || a.exec(e))) {
-    var s = r[1]
+  if ((a = parseTokenYY.exec(e) || r.exec(e))) {
+    var s = a[1]
     return {year: 100 * parseInt(s, 10), restDateString: e.slice(s.length)}
   }
   return {year: null}
 }
 function parseDate(e, t) {
   if (null === t) return null
-  var r, a, n
-  if (0 === e.length) return (a = new Date(0)).setUTCFullYear(t), a
-  if ((r = parseTokenMM.exec(e)))
-    return (a = new Date(0)), (n = parseInt(r[1], 10) - 1), a.setUTCFullYear(t, n), a
-  if ((r = parseTokenDDD.exec(e))) {
-    a = new Date(0)
-    var o = parseInt(r[1], 10)
-    return a.setUTCFullYear(t, 0, o), a
+  var a, r, n
+  if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
+  if ((a = parseTokenMM.exec(e)))
+    return (r = new Date(0)), (n = parseInt(a[1], 10) - 1), r.setUTCFullYear(t, n), r
+  if ((a = parseTokenDDD.exec(e))) {
+    r = new Date(0)
+    var o = parseInt(a[1], 10)
+    return r.setUTCFullYear(t, 0, o), r
   }
-  if ((r = parseTokenMMDD.exec(e))) {
-    ;(a = new Date(0)), (n = parseInt(r[1], 10) - 1)
-    var s = parseInt(r[2], 10)
-    return a.setUTCFullYear(t, n, s), a
+  if ((a = parseTokenMMDD.exec(e))) {
+    ;(r = new Date(0)), (n = parseInt(a[1], 10) - 1)
+    var s = parseInt(a[2], 10)
+    return r.setUTCFullYear(t, n, s), r
   }
-  return (r = parseTokenWww.exec(e))
-    ? dayOfISOYear(t, parseInt(r[1], 10) - 1)
-    : (r = parseTokenWwwD.exec(e))
-    ? dayOfISOYear(t, parseInt(r[1], 10) - 1, parseInt(r[2], 10) - 1)
+  return (a = parseTokenWww.exec(e))
+    ? dayOfISOYear(t, parseInt(a[1], 10) - 1)
+    : (a = parseTokenWwwD.exec(e))
+    ? dayOfISOYear(t, parseInt(a[1], 10) - 1, parseInt(a[2], 10) - 1)
     : null
 }
 function parseTime(e) {
-  var t, r, a
+  var t, a, r
   if ((t = parseTokenHH.exec(e)))
-    return ((r = parseFloat(t[1].replace(',', '.'))) % 24) * MILLISECONDS_IN_HOUR
+    return ((a = parseFloat(t[1].replace(',', '.'))) % 24) * MILLISECONDS_IN_HOUR
   if ((t = parseTokenHHMM.exec(e)))
     return (
-      (r = parseInt(t[1], 10)),
-      (a = parseFloat(t[2].replace(',', '.'))),
-      (r % 24) * MILLISECONDS_IN_HOUR + a * MILLISECONDS_IN_MINUTE$1
+      (a = parseInt(t[1], 10)),
+      (r = parseFloat(t[2].replace(',', '.'))),
+      (a % 24) * MILLISECONDS_IN_HOUR + r * MILLISECONDS_IN_MINUTE$1
     )
   if ((t = parseTokenHHMMSS.exec(e))) {
-    ;(r = parseInt(t[1], 10)), (a = parseInt(t[2], 10))
+    ;(a = parseInt(t[1], 10)), (r = parseInt(t[2], 10))
     var n = parseFloat(t[3].replace(',', '.'))
-    return (r % 24) * MILLISECONDS_IN_HOUR + a * MILLISECONDS_IN_MINUTE$1 + 1e3 * n
+    return (a % 24) * MILLISECONDS_IN_HOUR + r * MILLISECONDS_IN_MINUTE$1 + 1e3 * n
   }
   return null
 }
 function parseTimezone(e) {
-  var t, r
+  var t, a
   return (t = parseTokenTimezoneZ.exec(e))
     ? 0
     : (t = parseTokenTimezoneHH.exec(e))
-    ? ((r = 60 * parseInt(t[2], 10)), '+' === t[1] ? -r : r)
+    ? ((a = 60 * parseInt(t[2], 10)), '+' === t[1] ? -a : a)
     : (t = parseTokenTimezoneHHMM.exec(e))
-    ? ((r = 60 * parseInt(t[2], 10) + parseInt(t[3], 10)), '+' === t[1] ? -r : r)
+    ? ((a = 60 * parseInt(t[2], 10) + parseInt(t[3], 10)), '+' === t[1] ? -a : a)
     : 0
 }
-function dayOfISOYear(e, t, r) {
-  ;(t = t || 0), (r = r || 0)
-  var a = new Date(0)
-  a.setUTCFullYear(e, 0, 4)
-  var n = 7 * t + r + 1 - (a.getUTCDay() || 7)
-  return a.setUTCDate(a.getUTCDate() + n), a
+function dayOfISOYear(e, t, a) {
+  ;(t = t || 0), (a = a || 0)
+  var r = new Date(0)
+  r.setUTCFullYear(e, 0, 4)
+  var n = 7 * t + a + 1 - (r.getUTCDay() || 7)
+  return r.setUTCDate(r.getUTCDate() + n), r
 }
 var parse_1 = parse
 function startOfYear(e) {
   var t = parse_1(e),
-    r = new Date(0)
-  return r.setFullYear(t.getFullYear(), 0, 1), r.setHours(0, 0, 0, 0), r
+    a = new Date(0)
+  return a.setFullYear(t.getFullYear(), 0, 1), a.setHours(0, 0, 0, 0), a
 }
 var start_of_year = startOfYear
 function startOfDay(e) {
@@ -160,10 +160,10 @@ var start_of_day = startOfDay,
   MILLISECONDS_IN_MINUTE$2 = 6e4,
   MILLISECONDS_IN_DAY = 864e5
 function differenceInCalendarDays(e, t) {
-  var r = start_of_day(e),
-    a = start_of_day(t),
-    n = r.getTime() - r.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2,
-    o = a.getTime() - a.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2
+  var a = start_of_day(e),
+    r = start_of_day(t),
+    n = a.getTime() - a.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2,
+    o = r.getTime() - r.getTimezoneOffset() * MILLISECONDS_IN_MINUTE$2
   return Math.round((n - o) / MILLISECONDS_IN_DAY)
 }
 var difference_in_calendar_days = differenceInCalendarDays
@@ -173,11 +173,11 @@ function getDayOfYear(e) {
 }
 var get_day_of_year = getDayOfYear
 function startOfWeek(e, t) {
-  var r = (t && Number(t.weekStartsOn)) || 0,
-    a = parse_1(e),
-    n = a.getDay(),
-    o = (n < r ? 7 : 0) + n - r
-  return a.setDate(a.getDate() - o), a.setHours(0, 0, 0, 0), a
+  var a = (t && Number(t.weekStartsOn)) || 0,
+    r = parse_1(e),
+    n = r.getDay(),
+    o = (n < a ? 7 : 0) + n - a
+  return r.setDate(r.getDate() - o), r.setHours(0, 0, 0, 0), r
 }
 var start_of_week = startOfWeek
 function startOfISOWeek(e) {
@@ -186,27 +186,27 @@ function startOfISOWeek(e) {
 var start_of_iso_week = startOfISOWeek
 function getISOYear(e) {
   var t = parse_1(e),
-    r = t.getFullYear(),
-    a = new Date(0)
-  a.setFullYear(r + 1, 0, 4), a.setHours(0, 0, 0, 0)
-  var n = start_of_iso_week(a),
+    a = t.getFullYear(),
+    r = new Date(0)
+  r.setFullYear(a + 1, 0, 4), r.setHours(0, 0, 0, 0)
+  var n = start_of_iso_week(r),
     o = new Date(0)
-  o.setFullYear(r, 0, 4), o.setHours(0, 0, 0, 0)
+  o.setFullYear(a, 0, 4), o.setHours(0, 0, 0, 0)
   var s = start_of_iso_week(o)
-  return t.getTime() >= n.getTime() ? r + 1 : t.getTime() >= s.getTime() ? r : r - 1
+  return t.getTime() >= n.getTime() ? a + 1 : t.getTime() >= s.getTime() ? a : a - 1
 }
 var get_iso_year = getISOYear
 function startOfISOYear(e) {
   var t = get_iso_year(e),
-    r = new Date(0)
-  return r.setFullYear(t, 0, 4), r.setHours(0, 0, 0, 0), start_of_iso_week(r)
+    a = new Date(0)
+  return a.setFullYear(t, 0, 4), a.setHours(0, 0, 0, 0), start_of_iso_week(a)
 }
 var start_of_iso_year = startOfISOYear,
   MILLISECONDS_IN_WEEK = 6048e5
 function getISOWeek(e) {
   var t = parse_1(e),
-    r = start_of_iso_week(t).getTime() - start_of_iso_year(t).getTime()
-  return Math.round(r / MILLISECONDS_IN_WEEK) + 1
+    a = start_of_iso_week(t).getTime() - start_of_iso_year(t).getTime()
+  return Math.round(a / MILLISECONDS_IN_WEEK) + 1
 }
 var get_iso_week = getISOWeek
 function isValid(e) {
@@ -232,13 +232,13 @@ function buildDistanceInWordsLocale() {
     almostXYears: {one: 'almost 1 year', other: 'almost {{count}} years'},
   }
   return {
-    localize: function(t, r, a) {
+    localize: function(t, a, r) {
       var n
       return (
-        (a = a || {}),
+        (r = r || {}),
         (n =
-          'string' == typeof e[t] ? e[t] : 1 === r ? e[t].one : e[t].other.replace('{{count}}', r)),
-        a.addSuffix ? (a.comparison > 0 ? 'in ' + n : n + ' ago') : n
+          'string' == typeof e[t] ? e[t] : 1 === a ? e[t].one : e[t].other.replace('{{count}}', a)),
+        r.addSuffix ? (r.comparison > 0 ? 'in ' + n : n + ' ago') : n
       )
     },
   }
@@ -278,12 +278,12 @@ var build_distance_in_words_locale = buildDistanceInWordsLocale,
   ]
 function buildFormattingTokensRegExp(e) {
   var t = []
-  for (var r in e) e.hasOwnProperty(r) && t.push(r)
-  var a = commonFormatterKeys
+  for (var a in e) e.hasOwnProperty(a) && t.push(a)
+  var r = commonFormatterKeys
     .concat(t)
     .sort()
     .reverse()
-  return new RegExp('(\\[[^\\[]*\\])|(\\\\)?(' + a.join('|') + '|.)', 'g')
+  return new RegExp('(\\[[^\\[]*\\])|(\\\\)?(' + r.join('|') + '|.)', 'g')
 }
 var build_formatting_tokens_reg_exp = buildFormattingTokensRegExp
 function buildFormatLocale() {
@@ -302,8 +302,8 @@ function buildFormatLocale() {
       'November',
       'December',
     ],
-    r = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-    a = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    a = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    r = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     n = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     o = ['AM', 'PM'],
     s = ['am', 'pm'],
@@ -316,10 +316,10 @@ function buildFormatLocale() {
         return t[e.getMonth()]
       },
       dd: function(e) {
-        return r[e.getDay()]
+        return a[e.getDay()]
       },
       ddd: function(e) {
-        return a[e.getDay()]
+        return r[e.getDay()]
       },
       dddd: function(e) {
         return n[e.getDay()]
@@ -336,8 +336,8 @@ function buildFormatLocale() {
     }
   return (
     ['M', 'D', 'DDD', 'd', 'Q', 'W'].forEach(function(e) {
-      u[e + 'o'] = function(t, r) {
-        return ordinal(r[e](t))
+      u[e + 'o'] = function(t, a) {
+        return ordinal(a[e](t))
       }
     }),
     {formatters: u, formattingTokensRegExp: build_formatting_tokens_reg_exp(u)}
@@ -358,9 +358,9 @@ function ordinal(e) {
 }
 var build_format_locale = buildFormatLocale,
   en = {distanceInWords: build_distance_in_words_locale(), format: build_format_locale()}
-function format(e, t, r) {
-  var a = t ? String(t) : 'YYYY-MM-DDTHH:mm:ss.SSSZ',
-    n = (r || {}).locale,
+function format(e, t, a) {
+  var r = t ? String(t) : 'YYYY-MM-DDTHH:mm:ss.SSSZ',
+    n = (a || {}).locale,
     o = en.format.formatters,
     s = en.format.formattingTokensRegExp
   n &&
@@ -369,7 +369,7 @@ function format(e, t, r) {
     ((o = n.format.formatters),
     n.format.formattingTokensRegExp && (s = n.format.formattingTokensRegExp))
   var i = parse_1(e)
-  return is_valid(i) ? buildFormatFn(a, o, s)(i) : 'Invalid Date'
+  return is_valid(i) ? buildFormatFn(r, o, s)(i) : 'Invalid Date'
 }
 var formatters = {
   M: function(e) {
@@ -464,16 +464,16 @@ var formatters = {
     return e.getTime()
   },
 }
-function buildFormatFn(e, t, r) {
-  var a,
+function buildFormatFn(e, t, a) {
+  var r,
     n,
-    o = e.match(r),
+    o = e.match(a),
     s = o.length
-  for (a = 0; a < s; a++)
-    (n = t[o[a]] || formatters[o[a]]), (o[a] = n || removeFormattingTokens(o[a]))
+  for (r = 0; r < s; r++)
+    (n = t[o[r]] || formatters[o[r]]), (o[r] = n || removeFormattingTokens(o[r]))
   return function(e) {
-    for (var t = '', r = 0; r < s; r++)
-      o[r] instanceof Function ? (t += o[r](e, formatters)) : (t += o[r])
+    for (var t = '', a = 0; a < s; a++)
+      o[a] instanceof Function ? (t += o[a](e, formatters)) : (t += o[a])
     return t
   }
 }
@@ -482,45 +482,45 @@ function removeFormattingTokens(e) {
 }
 function formatTimezone(e, t) {
   t = t || ''
-  var r = e > 0 ? '-' : '+',
-    a = Math.abs(e),
-    n = a % 60
-  return r + addLeadingZeros(Math.floor(a / 60), 2) + t + addLeadingZeros(n, 2)
+  var a = e > 0 ? '-' : '+',
+    r = Math.abs(e),
+    n = r % 60
+  return a + addLeadingZeros(Math.floor(r / 60), 2) + t + addLeadingZeros(n, 2)
 }
 function addLeadingZeros(e, t) {
-  for (var r = Math.abs(e).toString(); r.length < t; ) r = '0' + r
-  return r
+  for (var a = Math.abs(e).toString(); a.length < t; ) a = '0' + a
+  return a
 }
 var format_1 = format
 function addDays(e, t) {
-  var r = parse_1(e),
-    a = Number(t)
-  return r.setDate(r.getDate() + a), r
+  var a = parse_1(e),
+    r = Number(t)
+  return a.setDate(a.getDate() + r), a
 }
 var add_days = addDays
-function eachDay(e, t, r) {
-  var a = parse_1(e),
-    n = void 0 !== r ? r : 1,
+function eachDay(e, t, a) {
+  var r = parse_1(e),
+    n = void 0 !== a ? a : 1,
     o = parse_1(t).getTime()
-  if (a.getTime() > o) throw new Error('The first date cannot be after the second date')
+  if (r.getTime() > o) throw new Error('The first date cannot be after the second date')
   var s = [],
-    i = a
+    i = r
   for (i.setHours(0, 0, 0, 0); i.getTime() <= o; ) s.push(parse_1(i)), i.setDate(i.getDate() + n)
   return s
 }
 var each_day = eachDay
 function endOfMonth(e) {
   var t = parse_1(e),
-    r = t.getMonth()
-  return t.setFullYear(t.getFullYear(), r + 1, 0), t.setHours(23, 59, 59, 999), t
+    a = t.getMonth()
+  return t.setFullYear(t.getFullYear(), a + 1, 0), t.setHours(23, 59, 59, 999), t
 }
 var end_of_month = endOfMonth
 function endOfWeek(e, t) {
-  var r = (t && Number(t.weekStartsOn)) || 0,
-    a = parse_1(e),
-    n = a.getDay(),
-    o = 6 + (n < r ? -7 : 0) - (n - r)
-  return a.setDate(a.getDate() + o), a.setHours(23, 59, 59, 999), a
+  var a = (t && Number(t.weekStartsOn)) || 0,
+    r = parse_1(e),
+    n = r.getDay(),
+    o = 6 + (n < a ? -7 : 0) - (n - a)
+  return r.setDate(r.getDate() + o), r.setHours(23, 59, 59, 999), r
 }
 var end_of_week = endOfWeek
 function getDay(e) {
@@ -534,8 +534,8 @@ function startOfMonth(e) {
 var start_of_month = startOfMonth
 function getWeekDays(e) {
   var t = void 0 === e ? {} : e,
-    r = t.weekStartsOn,
-    a = void 0 === r ? 1 : r,
+    a = t.weekStartsOn,
+    r = void 0 === a ? 1 : a,
     n = t.weekDayFormat,
     o =
       void 0 === n
@@ -544,7 +544,7 @@ function getWeekDays(e) {
           }
         : n,
     s = new Date()
-  return each_day(add_days(start_of_week(s), a), add_days(end_of_week(s), a)).reduce(function(
+  return each_day(add_days(start_of_week(s), r), add_days(end_of_week(s), r)).reduce(function(
     e,
     t,
   ) {
@@ -554,9 +554,9 @@ function getWeekDays(e) {
 }
 function getDays(e) {
   var t = e.year,
-    r = e.month,
-    a = e.weekStartsOn,
-    n = void 0 === a ? 1 : a,
+    a = e.month,
+    r = e.weekStartsOn,
+    n = void 0 === r ? 1 : r,
     o = e.dayFormat,
     s =
       void 0 === o
@@ -564,7 +564,7 @@ function getDays(e) {
             return format_1(e, 'DD')
           }
         : o,
-    i = new Date(t, r),
+    i = new Date(t, a),
     u = start_of_month(i),
     d = get_day(u),
     c = end_of_month(i),
@@ -576,9 +576,9 @@ function getDays(e) {
 }
 function useMonth(e) {
   var t = e.year,
-    r = e.month,
-    a = e.weekStartsOn,
-    n = void 0 === a ? 1 : a,
+    a = e.month,
+    r = e.weekStartsOn,
+    n = void 0 === r ? 1 : r,
     o = e.dayFormat,
     s =
       void 0 === o
@@ -603,9 +603,9 @@ function useMonth(e) {
   return {
     days: react.useMemo(
       function() {
-        return getDays({year: t, month: r, weekStartsOn: n, dayFormat: s})
+        return getDays({year: t, month: a, weekStartsOn: n, dayFormat: s})
       },
-      [t, r, n, s],
+      [t, a, n, s],
     ),
     weekDays: react.useMemo(
       function() {
@@ -613,33 +613,33 @@ function useMonth(e) {
       },
       [n, u],
     ),
-    monthLabel: c(new Date(t, r)),
+    monthLabel: c(new Date(t, a)),
   }
 }
 function isBefore(e, t) {
-  var r = parse_1(e),
-    a = parse_1(t)
-  return r.getTime() < a.getTime()
+  var a = parse_1(e),
+    r = parse_1(t)
+  return a.getTime() < r.getTime()
 }
 var is_before = isBefore
 function isAfter(e, t) {
-  var r = parse_1(e),
-    a = parse_1(t)
-  return r.getTime() > a.getTime()
+  var a = parse_1(e),
+    r = parse_1(t)
+  return a.getTime() > r.getTime()
 }
 var is_after = isAfter
-function isWithinRange(e, t, r) {
-  var a = parse_1(e).getTime(),
+function isWithinRange(e, t, a) {
+  var r = parse_1(e).getTime(),
     n = parse_1(t).getTime(),
-    o = parse_1(r).getTime()
+    o = parse_1(a).getTime()
   if (n > o) throw new Error('The start of the range cannot be after the end of the range')
-  return a >= n && a <= o
+  return r >= n && r <= o
 }
 var is_within_range = isWithinRange
 function isSameDay(e, t) {
-  var r = start_of_day(e),
-    a = start_of_day(t)
-  return r.getTime() === a.getTime()
+  var a = start_of_day(e),
+    r = start_of_day(t)
+  return a.getTime() === r.getTime()
 }
 var is_same_day = isSameDay
 function getYear(e) {
@@ -656,39 +656,39 @@ function startOfToday() {
 var start_of_today = startOfToday
 function getDaysInMonth(e) {
   var t = parse_1(e),
-    r = t.getFullYear(),
-    a = t.getMonth(),
+    a = t.getFullYear(),
+    r = t.getMonth(),
     n = new Date(0)
-  return n.setFullYear(r, a + 1, 0), n.setHours(0, 0, 0, 0), n.getDate()
+  return n.setFullYear(a, r + 1, 0), n.setHours(0, 0, 0, 0), n.getDate()
 }
 var get_days_in_month = getDaysInMonth
 function addMonths(e, t) {
-  var r = parse_1(e),
-    a = Number(t),
-    n = r.getMonth() + a,
+  var a = parse_1(e),
+    r = Number(t),
+    n = a.getMonth() + r,
     o = new Date(0)
-  o.setFullYear(r.getFullYear(), n, 1), o.setHours(0, 0, 0, 0)
+  o.setFullYear(a.getFullYear(), n, 1), o.setHours(0, 0, 0, 0)
   var s = get_days_in_month(o)
-  return r.setMonth(n, Math.min(s, r.getDate())), r
+  return a.setMonth(n, Math.min(s, a.getDate())), a
 }
 var add_months = addMonths
-function isDateSelected(e, t, r) {
-  return !(!t || !r) && is_within_range(e, t, r)
+function isDateSelected(e, t, a) {
+  return !(!t || !a) && is_within_range(e, t, a)
 }
-function isFirstOrLastSelectedDate(e, t, r) {
-  return !!((t && is_same_day(e, t)) || (r && is_same_day(e, r)))
+function isFirstOrLastSelectedDate(e, t, a) {
+  return !!((t && is_same_day(e, t)) || (a && is_same_day(e, a)))
 }
 function isDateBlocked(e) {
   var t = e.date,
-    r = e.minBookingDate,
-    a = e.maxBookingDate,
+    a = e.minBookingDate,
+    r = e.maxBookingDate,
     n = e.isDayBlockedFn,
     o = e.startDate,
     s = e.endDate,
     i = e.minBookingDays,
     u = void 0 === i ? 1 : i,
-    d = r ? new Date(r.getFullYear(), r.getMonth(), r.getDate(), 0, 0, 0) : r,
-    c = a ? new Date(a.getFullYear(), a.getMonth(), a.getDate(), 0, 0, 0) : a
+    d = a ? new Date(a.getFullYear(), a.getMonth(), a.getDate(), 0, 0, 0) : a,
+    c = r ? new Date(r.getFullYear(), r.getMonth(), r.getDate(), 0, 0, 0) : r
   return !!(
     (d && is_before(t, d)) ||
     (c && is_after(t, c)) ||
@@ -704,45 +704,48 @@ function getCurrentYearMonthAndDate() {
   return getDateMonthAndYear(start_of_today())
 }
 function getInitialMonths(e, t) {
-  var r = t ? getDateMonthAndYear(t) : getCurrentYearMonthAndDate(),
-    a = r.date,
-    n = [r]
+  var a = t ? getDateMonthAndYear(t) : getCurrentYearMonthAndDate(),
+    r = a.date,
+    n = [a]
   return (
     e > 1 &&
       (n = Array.from(Array(e - 1).keys()).reduce(function(e) {
-        return (a = add_months(e[e.length - 1].date, 1)), e.concat([getDateMonthAndYear(a)])
+        return (r = add_months(e[e.length - 1].date, 1)), e.concat([getDateMonthAndYear(r)])
       }, n)),
     n
   )
 }
-function getNextActiveMonth(e, t, r) {
-  var a = e[r > 0 ? e.length - 1 : 0].date
+function getNextActiveMonth(e, t, a) {
+  var r = e[a > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
     return (
-      (a = add_months(a, r)),
-      r > 0 ? e.concat([getDateMonthAndYear(a)]) : [getDateMonthAndYear(a)].concat(e)
+      (r = add_months(r, a)),
+      a > 0 ? e.concat([getDateMonthAndYear(r)]) : [getDateMonthAndYear(r)].concat(e)
     )
   }, [])
 }
-function getInputValue(e, t, r) {
-  return e && 'string' == typeof t ? format_1(e, t) : e && 'function' == typeof t ? t(e) : r
+function getInputValue(e, t, a) {
+  return e && 'string' == typeof t ? format_1(e, t) : e && 'function' == typeof t ? t(e) : a
 }
 function canSelectRange(e) {
   var t = e.startDate,
-    r = e.endDate,
-    a = e.isDateBlocked,
-    n = e.minBookingDays
-  if (t && 1 === n && !r && !a(t)) return !0
-  if (t && n > 1 && !r)
+    a = e.endDate,
+    r = e.isDateBlocked,
+    n = e.minBookingDays,
+    o = e.exactMinBookingDays,
+    s = e.minBookingDate,
+    i = e.maxBookingDate
+  if (t && 1 === n && !a && !r(t)) return !0
+  if ((t && n > 1 && !a && !o) || (t && n > 0 && o && s && i && is_before(add_days(t, n - 1), i)))
     return each_day(t, add_days(t, n - 1)).reduce(function(e, t) {
-      return e ? !a(t) : e
+      return e ? !r(t) : e
     }, !0)
-  if (t && r) {
-    var o = add_days(t, n - 1)
+  if (t && a && !o) {
+    var u = add_days(t, n - 1)
     return (
-      !is_before(r, o) &&
-      each_day(t, r).reduce(function(e, t) {
-        return e ? !a(t) : e
+      !is_before(a, u) &&
+      each_day(t, a).reduce(function(e, t) {
+        return e ? !r(t) : e
       }, !0)
     )
   }
@@ -750,8 +753,8 @@ function canSelectRange(e) {
 }
 function isDateHovered(e) {
   var t = e.date,
-    r = e.startDate,
-    a = e.endDate,
+    a = e.startDate,
+    r = e.endDate,
     n = e.isDateBlocked,
     o = e.hoveredDate,
     s = e.minBookingDays,
@@ -760,12 +763,12 @@ function isDateHovered(e) {
     ? each_day(o, add_days(o, s - 1)).reduce(function(e, t) {
         return e ? !n(t) : e
       }, !0)
-    : r && !a && o && is_within_range(t, r, add_days(r, s - 1)) && is_same_day(r, o) && s > 1
-    ? each_day(r, add_days(r, s - 1)).reduce(function(e, t) {
+    : a && !r && o && is_within_range(t, a, add_days(a, s - 1)) && is_same_day(a, o) && s > 1
+    ? each_day(a, add_days(a, s - 1)).reduce(function(e, t) {
         return e ? !n(t) : e
       }, !0)
-    : !(!r || a || !o || is_before(o, r) || !is_within_range(t, r, o)) &&
-      each_day(r, o).reduce(function(e, t) {
+    : !(!a || r || !o || is_before(o, a) || !is_within_range(t, a, o)) &&
+      each_day(a, o).reduce(function(e, t) {
         return e ? !n(t) : e
       }, !0)
 }
@@ -773,8 +776,8 @@ var START_DATE = 'startDate',
   END_DATE = 'endDate'
 function useDatepicker(e) {
   var t = e.startDate,
-    r = e.endDate,
-    a = e.focusedInput,
+    a = e.endDate,
+    r = e.focusedInput,
     n = e.minBookingDate,
     o = e.maxBookingDate,
     s = e.onDateChange,
@@ -803,15 +806,15 @@ function useDatepicker(e) {
     v = M[1],
     k = react.useCallback(
       function(e) {
-        return isDateSelected(e, t, r)
+        return isDateSelected(e, t, a)
       },
-      [t, r],
+      [t, a],
     ),
     S = react.useCallback(
       function(e) {
-        return isFirstOrLastSelectedDate(e, t, r)
+        return isFirstOrLastSelectedDate(e, t, a)
       },
-      [t, r],
+      [t, a],
     ),
     I = react.useCallback(
       function(e) {
@@ -820,12 +823,12 @@ function useDatepicker(e) {
           minBookingDate: n,
           maxBookingDate: o,
           startDate: t,
-          endDate: r,
+          endDate: a,
           minBookingDays: c,
           isDayBlockedFn: m,
         })
       },
-      [n, o, t, r, c, m],
+      [n, o, t, a, c, m],
     ),
     Y = react.useCallback(
       function(e) {
@@ -833,13 +836,13 @@ function useDatepicker(e) {
           date: e,
           hoveredDate: p,
           startDate: t,
-          endDate: r,
+          endDate: a,
           minBookingDays: c,
           exactMinBookingDays: u,
           isDateBlocked: m,
         })
       },
-      [p, t, r, c, u, m],
+      [p, t, a, c, u, m],
     )
   return {
     firstDayOfWeek: g,
@@ -858,28 +861,36 @@ function useDatepicker(e) {
           (n && o && (!is_within_range(e, n, o) || !is_within_range(add_days(e, c - 1), n, o))))) ||
       (!u &&
         (!t ||
-          r ||
+          a ||
           (n && o && !is_within_range(e, n, o)) ||
           (!is_same_day(e, t) && c > 1 && t && is_within_range(e, t, add_days(t, c - 2)))))
         ? v(null)
         : v(e)
     },
     onDaySelect: function(e) {
-      ;(a === END_DATE || a === START_DATE) &&
+      ;(r === END_DATE || r === START_DATE) &&
       c > 0 &&
       u &&
-      canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: e, endDate: null})
+      canSelectRange({
+        minBookingDays: c,
+        exactMinBookingDays: u,
+        minBookingDate: n,
+        maxBookingDate: o,
+        isDateBlocked: m,
+        startDate: e,
+        endDate: null,
+      })
         ? s({startDate: e, endDate: add_days(e, c - 1), focusedInput: null})
-        : ((a === END_DATE && t && is_before(e, t)) || (a === START_DATE && r && is_after(e, r))) &&
+        : ((r === END_DATE && t && is_before(e, t)) || (r === START_DATE && a && is_after(e, a))) &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: e, endDate: null})
         ? s({endDate: null, startDate: e, focusedInput: END_DATE})
-        : a === START_DATE &&
-          canSelectRange({minBookingDays: c, isDateBlocked: m, endDate: r, startDate: e})
-        ? s({endDate: r, startDate: e, focusedInput: END_DATE})
-        : a === START_DATE &&
+        : r === START_DATE &&
+          canSelectRange({minBookingDays: c, isDateBlocked: m, endDate: a, startDate: e})
+        ? s({endDate: a, startDate: e, focusedInput: END_DATE})
+        : r === START_DATE &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, endDate: null, startDate: e})
         ? s({endDate: null, startDate: e, focusedInput: END_DATE})
-        : a === END_DATE &&
+        : r === END_DATE &&
           t &&
           !is_before(e, t) &&
           canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: t, endDate: e}) &&

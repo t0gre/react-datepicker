@@ -149,16 +149,30 @@ export interface CanSelectRangeProps {
   endDate: Date | null
   isDateBlocked(date: Date): boolean
   minBookingDays: number
+  exactMinBookingDays?: boolean
+  minBookingDate?: Date
+  maxBookingDate?: Date
 }
 export function canSelectRange({
   startDate,
   endDate,
   isDateBlocked,
   minBookingDays,
+  exactMinBookingDays,
+  minBookingDate,
+  maxBookingDate,
 }: CanSelectRangeProps) {
   if (startDate && minBookingDays === 1 && !endDate && !isDateBlocked(startDate)) {
     return true
-  } else if (startDate && minBookingDays > 1 && !endDate) {
+  } else if (
+    (startDate && minBookingDays > 1 && !endDate && !exactMinBookingDays) ||
+    (startDate &&
+      minBookingDays > 0 &&
+      exactMinBookingDays &&
+      minBookingDate &&
+      maxBookingDate &&
+      isBefore(addDays(startDate, minBookingDays - 1), maxBookingDate))
+  ) {
     return eachDay(startDate, addDays(startDate, minBookingDays - 1)).reduce(
       (returnValue, date) => {
         if (!returnValue) return returnValue
@@ -167,7 +181,7 @@ export function canSelectRange({
       },
       true,
     )
-  } else if (startDate && endDate) {
+  } else if (startDate && endDate && !exactMinBookingDays) {
     const minBookingDaysDate = addDays(startDate, minBookingDays - 1)
 
     if (isBefore(endDate, minBookingDaysDate)) {
