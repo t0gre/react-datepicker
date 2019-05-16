@@ -63,6 +63,7 @@ function DateRangeInput({
   numberOfMonths,
   focusedInput,
   onDateChange,
+  exactMinBookingDays,
   isDayBlocked = () => false,
   minBookingDays = 1,
   onClose = () => {},
@@ -171,6 +172,7 @@ function DateRangeInput({
             onDateChange={onDateChange}
             minBookingDays={minBookingDays}
             isDayBlocked={isDayBlocked}
+            exactMinBookingDays={exactMinBookingDays}
           />
         )}
       </Box>

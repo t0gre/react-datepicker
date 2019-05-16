@@ -10,7 +10,6 @@ const initialState = {
 }
 
 function reducer(state, action) {
-  console.log(state, action)
   switch (action.type) {
     case 'focusChange':
       return {...state, focusedInput: action.payload}
@@ -49,9 +48,10 @@ function App() {
       <div style={{width: '279px'}}>
         <ThemeProvider theme={{}}>
           <DateRangeInput
+            exactMinBookingDays
             minBookingDate={new Date()}
             minBookingDays={3}
-            maxBookingDate={new Date(2019, 4, 27)}
+            maxBookingDate={new Date(2019, 6, 27)}
             startDate={state.startDate}
             endDate={state.endDate}
             onDateChange={data => dispatch({type: 'dateChange', payload: data})}

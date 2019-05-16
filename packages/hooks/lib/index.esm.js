@@ -24,8 +24,8 @@ var a = function(e) {
   M = /^(\d{2}([.,]\d*)?)$/,
   T = /^(\d{2}):?(\d{2}([.,]\d*)?)$/,
   p = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
-  S = /([Z+-].*)$/,
-  k = /^(Z)$/,
+  k = /([Z+-].*)$/,
+  S = /^(Z)$/,
   Y = /^([+-])(\d{2})$/,
   w = /^([+-])(\d{2}):?(\d{2})$/
 function F(e, t, n) {
@@ -45,7 +45,7 @@ var x = function(e, t) {
         n = {},
         r = e.split(s)
       if ((c.test(r[0]) ? ((n.date = null), (t = r[0])) : ((n.date = r[0]), (t = r[1])), t)) {
-        var a = S.exec(t)
+        var a = k.exec(t)
         a ? ((n.time = t.replace(a[1], '')), (n.timezone = a[1])) : (n.time = t)
       }
       return n
@@ -115,7 +115,7 @@ var x = function(e, t) {
     )
       (N = x.timezone),
         (I =
-          ((z = k.exec(N))
+          ((z = S.exec(N))
             ? 0
             : (z = Y.exec(N))
             ? ((C = 60 * parseInt(z[2], 10)), '+' === z[1] ? -C : C)
@@ -707,8 +707,8 @@ function pe(e) {
   }
   return !1
 }
-var Se = 'startDate',
-  ke = 'endDate'
+var ke = 'startDate',
+  Se = 'endDate'
 function Ye(e) {
   var r = e.startDate,
     a = e.endDate,
@@ -716,40 +716,42 @@ function Ye(e) {
     u = e.minBookingDate,
     i = e.maxBookingDate,
     s = e.onDateChange,
-    c = e.minBookingDays,
-    f = void 0 === c ? 1 : c,
-    D = e.numberOfMonths,
-    d = void 0 === D ? 2 : D,
-    l = e.firstDayOfWeek,
-    g = void 0 === l ? 1 : l,
-    v = e.isDayBlocked,
-    m =
-      void 0 === v
+    c = e.exactMinBookingDays,
+    f = void 0 !== c && c,
+    D = e.minBookingDays,
+    d = void 0 === D ? 1 : D,
+    l = e.numberOfMonths,
+    g = void 0 === l ? 2 : l,
+    v = e.firstDayOfWeek,
+    m = void 0 === v ? 1 : v,
+    h = e.isDayBlocked,
+    y =
+      void 0 === h
         ? function() {
             return !1
           }
-        : v,
-    h = t(function() {
-      return ye(d, r)
+        : h,
+    M = t(function() {
+      return ye(g, r)
     }),
-    y = h[0],
-    M = h[1],
-    T = t(null),
-    p = T[0],
-    S = T[1],
-    k = n(
+    T = M[0],
+    p = M[1],
+    k = t(null),
+    S = k[0],
+    Y = k[1],
+    w = n(
       function(e) {
         return le(e, r, a)
       },
       [r, a],
     ),
-    Y = n(
+    F = n(
       function(e) {
         return ge(e, r, a)
       },
       [r, a],
     ),
-    w = n(
+    x = n(
       function(e) {
         return ve({
           date: e,
@@ -757,69 +759,82 @@ function Ye(e) {
           maxBookingDate: i,
           startDate: r,
           endDate: a,
-          minBookingDays: f,
-          isDayBlockedFn: m,
+          minBookingDays: d,
+          isDayBlockedFn: y,
         })
       },
-      [u, i, r, a, f, m],
+      [u, i, r, a, d, y],
     ),
-    F = n(
+    b = n(
       function(e) {
         return (function(e) {
           var t = e.date,
             n = e.startDate,
             r = e.endDate,
             a = e.isDateBlocked,
-            o = e.hoveredDate
-          return (
-            !(!n || r || !o || ae(o, n) || !ue(t, n, o)) &&
-            q(n, o).reduce(function(e, t) {
-              return e ? !a(t) : e
-            }, !0)
-          )
-        })({date: e, hoveredDate: p, startDate: r, endDate: a, isDateBlocked: m})
+            o = e.hoveredDate,
+            u = e.minBookingDays
+          return n && !r && o && ue(t, n, j(n, u - 1)) && ie(n, o) && u > 1
+            ? q(n, j(n, u - 1)).reduce(function(e, t) {
+                return e ? !a(t) : e
+              }, !0)
+            : !(!n || r || !o || ae(o, n) || !ue(t, n, o)) &&
+                q(n, o).reduce(function(e, t) {
+                  return e ? !a(t) : e
+                }, !0)
+        })({
+          date: e,
+          hoveredDate: S,
+          startDate: r,
+          endDate: a,
+          minBookingDays: d,
+          exactMinBookingDays: f,
+          isDateBlocked: y,
+        })
       },
-      [p, r, a, m],
+      [S, r, a, d, f, y],
     )
   return {
-    firstDayOfWeek: g,
-    activeMonths: y,
-    isDateSelected: k,
-    isDateHovered: F,
-    isFirstOrLastSelectedDate: Y,
-    isDateBlocked: w,
-    numberOfMonths: d,
+    firstDayOfWeek: m,
+    activeMonths: T,
+    isDateSelected: w,
+    isDateHovered: b,
+    isFirstOrLastSelectedDate: F,
+    isDateBlocked: x,
+    numberOfMonths: g,
     onResetDates: function() {
-      s({startDate: null, endDate: null, focusedInput: Se})
+      s({startDate: null, endDate: null, focusedInput: ke})
     },
     onDayHover: function(e) {
-      !r || a || (u && i && !ue(e, u, i)) || (f > 1 && r && ue(e, r, j(r, f - 2))) ? S(null) : S(e)
+      !r || a || (u && i && !ue(e, u, i)) || (!ie(e, r) && d > 1 && r && ue(e, r, j(r, d - 2)))
+        ? Y(null)
+        : Y(e)
     },
     onDaySelect: function(e) {
-      ;((o === ke && r && ae(e, r)) || (o === Se && a && oe(e, a))) &&
-      pe({minBookingDays: f, isDateBlocked: m, startDate: e, endDate: null})
-        ? s({endDate: null, startDate: e, focusedInput: ke})
-        : o === Se && pe({minBookingDays: f, isDateBlocked: m, endDate: a, startDate: e})
-        ? s({endDate: a, startDate: e, focusedInput: ke})
-        : o === Se && pe({minBookingDays: f, isDateBlocked: m, endDate: null, startDate: e})
-        ? s({endDate: null, startDate: e, focusedInput: ke})
-        : o === ke &&
+      ;((o === Se && r && ae(e, r)) || (o === ke && a && oe(e, a))) &&
+      pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+        ? s({endDate: null, startDate: e, focusedInput: Se})
+        : o === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: a, startDate: e})
+        ? s({endDate: a, startDate: e, focusedInput: Se})
+        : o === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
+        ? s({endDate: null, startDate: e, focusedInput: Se})
+        : o === Se &&
           r &&
           !ae(e, r) &&
-          pe({minBookingDays: f, isDateBlocked: m, startDate: r, endDate: e}) &&
+          pe({minBookingDays: d, isDateBlocked: y, startDate: r, endDate: e}) &&
           s({startDate: r, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      M(Me(y, d, -1))
+      p(Me(T, g, -1))
     },
     goToNextMonths: function() {
-      M(Me(y, d, 1))
+      p(Me(T, g, 1))
     },
   }
 }
 export {
-  ke as END_DATE,
-  Se as START_DATE,
+  Se as END_DATE,
+  ke as START_DATE,
   he as getCurrentYearMonthAndDate,
   me as getDateMonthAndYear,
   ne as getDays,

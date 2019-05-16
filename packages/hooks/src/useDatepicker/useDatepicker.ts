@@ -3,6 +3,7 @@ import isBefore from 'date-fns/is_before'
 import isAfter from 'date-fns/is_after'
 import addDays from 'date-fns/add_days'
 import isWithinRange from 'date-fns/is_within_range'
+import isSameDay from 'date-fns/is_same_day'
 import {
   getInitialMonths,
   MonthType,
@@ -36,6 +37,7 @@ export interface UseDatepickerProps {
   focusedInput: FocusedInput
   numberOfMonths?: number
   minBookingDays?: number
+  exactMinBookingDays?: boolean
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
   isDayBlocked?(date: Date): boolean
@@ -48,6 +50,7 @@ export function useDatepicker({
   minBookingDate,
   maxBookingDate,
   onDateChange,
+  exactMinBookingDays = false,
   minBookingDays = 1,
   numberOfMonths = 2,
   firstDayOfWeek = 1,
@@ -61,10 +64,12 @@ export function useDatepicker({
     startDate,
     endDate,
   ])
+
   const isFirstOrLastSelectedDate = useCallback(
     (date: Date) => isFirstOrLastSelectedDateFn(date, startDate, endDate),
     [startDate, endDate],
   )
+
   const isDateBlocked = useCallback(
     (date: Date) =>
       isDateBlockedFn({
@@ -78,6 +83,7 @@ export function useDatepicker({
       }),
     [minBookingDate, maxBookingDate, startDate, endDate, minBookingDays, isDayBlockedProps],
   )
+
   const isDateHovered = useCallback(
     (date: Date) =>
       isDateHoveredFn({
@@ -85,9 +91,11 @@ export function useDatepicker({
         hoveredDate,
         startDate,
         endDate,
+        minBookingDays,
+        exactMinBookingDays,
         isDateBlocked: isDayBlockedProps,
       }),
-    [hoveredDate, startDate, endDate, isDayBlockedProps],
+    [hoveredDate, startDate, endDate, minBookingDays, exactMinBookingDays, isDayBlockedProps],
   )
 
   function onResetDates() {
@@ -156,9 +164,10 @@ export function useDatepicker({
       !startDate ||
       endDate ||
       (minBookingDate && maxBookingDate && !isWithinRange(date, minBookingDate, maxBookingDate)) ||
-      (minBookingDays > 1 &&
-        startDate &&
-        isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2)))
+      (!isSameDay(date, startDate) &&
+        (minBookingDays > 1 &&
+          startDate &&
+          isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))))
     ) {
       setHoveredDate(null)
     } else {

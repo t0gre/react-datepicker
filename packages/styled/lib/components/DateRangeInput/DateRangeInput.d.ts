@@ -18,6 +18,7 @@ declare function DateRangeInput({
   numberOfMonths,
   focusedInput,
   onDateChange,
+  exactMinBookingDays,
   isDayBlocked,
   minBookingDays,
   onClose,

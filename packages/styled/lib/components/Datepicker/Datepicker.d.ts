@@ -12,6 +12,7 @@ declare function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  exactMinBookingDays,
   isDayBlocked,
   minBookingDays,
   onClose,

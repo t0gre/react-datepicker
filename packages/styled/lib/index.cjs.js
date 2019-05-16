@@ -694,8 +694,8 @@ var factoryWithThrowingShims = function() {
   M = /^(\d{2}([.,]\d*)?)$/,
   T = /^(\d{2}):?(\d{2}([.,]\d*)?)$/,
   p = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
-  S = /([Z+-].*)$/,
-  k = /^(Z)$/,
+  k = /([Z+-].*)$/,
+  S = /^(Z)$/,
   Y = /^([+-])(\d{2})$/,
   w = /^([+-])(\d{2}):?(\d{2})$/
 function F(e, t, n) {
@@ -718,7 +718,7 @@ var x = function(e, t) {
           n = {},
           r = e.split(s)
         if ((c.test(r[0]) ? ((n.date = null), (t = r[0])) : ((n.date = r[0]), (t = r[1])), t)) {
-          var a = S.exec(t)
+          var a = k.exec(t)
           a ? ((n.time = t.replace(a[1], '')), (n.timezone = a[1])) : (n.time = t)
         }
         return n
@@ -786,7 +786,7 @@ var x = function(e, t) {
       )
         (_ = C.timezone),
           (B =
-            ((b = k.exec(_))
+            ((b = S.exec(_))
               ? 0
               : (b = Y.exec(_))
               ? ((x = 60 * parseInt(b[2], 10)), '+' === b[1] ? -x : x)
@@ -1378,8 +1378,8 @@ function pe(e) {
   }
   return !1
 }
-var Se = 'startDate',
-  ke = 'endDate'
+var ke = 'startDate',
+  Se = 'endDate'
 function Ye(e) {
   var t = e.startDate,
     n = e.endDate,
@@ -1387,40 +1387,42 @@ function Ye(e) {
     a = e.minBookingDate,
     o = e.maxBookingDate,
     i = e.onDateChange,
-    l = e.minBookingDays,
-    c = void 0 === l ? 1 : l,
-    s = e.numberOfMonths,
-    d = void 0 === s ? 2 : s,
-    u = e.firstDayOfWeek,
-    p = void 0 === u ? 1 : u,
-    m = e.isDayBlocked,
-    f =
-      void 0 === m
+    l = e.exactMinBookingDays,
+    c = void 0 !== l && l,
+    s = e.minBookingDays,
+    d = void 0 === s ? 1 : s,
+    u = e.numberOfMonths,
+    p = void 0 === u ? 2 : u,
+    m = e.firstDayOfWeek,
+    f = void 0 === m ? 1 : m,
+    g = e.isDayBlocked,
+    y =
+      void 0 === g
         ? function() {
             return !1
           }
-        : m,
-    g = React.useState(function() {
-      return ye(d, t)
+        : g,
+    h = React.useState(function() {
+      return ye(p, t)
     }),
-    y = g[0],
-    h = g[1],
-    _ = React.useState(null),
-    b = _[0],
-    v = _[1],
-    D = React.useCallback(
+    _ = h[0],
+    b = h[1],
+    v = React.useState(null),
+    D = v[0],
+    k = v[1],
+    x = React.useCallback(
       function(e) {
         return le(e, t, n)
       },
       [t, n],
     ),
-    k = React.useCallback(
+    S = React.useCallback(
       function(e) {
         return ge(e, t, n)
       },
       [t, n],
     ),
-    x = React.useCallback(
+    C = React.useCallback(
       function(e) {
         return ve({
           date: e,
@@ -1428,62 +1430,76 @@ function Ye(e) {
           maxBookingDate: o,
           startDate: t,
           endDate: n,
-          minBookingDays: c,
-          isDayBlockedFn: f,
+          minBookingDays: d,
+          isDayBlockedFn: y,
         })
       },
-      [a, o, t, n, c, f],
+      [a, o, t, n, d, y],
     ),
-    S = React.useCallback(
+    I = React.useCallback(
       function(e) {
         return (function(e) {
           var t = e.date,
             n = e.startDate,
-            r = e.isDateBlocked,
-            a = e.hoveredDate
-          return (
-            !(!n || e.endDate || !a || ae(a, n) || !ue(t, n, a)) &&
-            q(n, a).reduce(function(e, t) {
-              return e ? !r(t) : e
-            }, !0)
-          )
-        })({date: e, hoveredDate: b, startDate: t, endDate: n, isDateBlocked: f})
+            r = e.endDate,
+            a = e.isDateBlocked,
+            o = e.hoveredDate,
+            i = e.minBookingDays
+          return n && !r && o && ue(t, n, j(n, i - 1)) && ie(n, o) && i > 1
+            ? q(n, j(n, i - 1)).reduce(function(e, t) {
+                return e ? !a(t) : e
+              }, !0)
+            : !(!n || r || !o || ae(o, n) || !ue(t, n, o)) &&
+                q(n, o).reduce(function(e, t) {
+                  return e ? !a(t) : e
+                }, !0)
+        })({
+          date: e,
+          hoveredDate: D,
+          startDate: t,
+          endDate: n,
+          minBookingDays: d,
+          exactMinBookingDays: c,
+          isDateBlocked: y,
+        })
       },
-      [b, t, n, f],
+      [D, t, n, d, c, y],
     )
   return {
-    firstDayOfWeek: p,
-    activeMonths: y,
-    isDateSelected: D,
-    isDateHovered: S,
-    isFirstOrLastSelectedDate: k,
-    isDateBlocked: x,
-    numberOfMonths: d,
+    firstDayOfWeek: f,
+    activeMonths: _,
+    isDateSelected: x,
+    isDateHovered: I,
+    isFirstOrLastSelectedDate: S,
+    isDateBlocked: C,
+    numberOfMonths: p,
     onResetDates: function() {
-      i({startDate: null, endDate: null, focusedInput: Se})
+      i({startDate: null, endDate: null, focusedInput: ke})
     },
     onDayHover: function(e) {
-      !t || n || (a && o && !ue(e, a, o)) || (c > 1 && t && ue(e, t, j(t, c - 2))) ? v(null) : v(e)
+      !t || n || (a && o && !ue(e, a, o)) || (!ie(e, t) && d > 1 && t && ue(e, t, j(t, d - 2)))
+        ? k(null)
+        : k(e)
     },
     onDaySelect: function(e) {
-      ;((r === ke && t && ae(e, t)) || (r === Se && n && oe(e, n))) &&
-      pe({minBookingDays: c, isDateBlocked: f, startDate: e, endDate: null})
-        ? i({endDate: null, startDate: e, focusedInput: ke})
-        : r === Se && pe({minBookingDays: c, isDateBlocked: f, endDate: n, startDate: e})
-        ? i({endDate: n, startDate: e, focusedInput: ke})
-        : r === Se && pe({minBookingDays: c, isDateBlocked: f, endDate: null, startDate: e})
-        ? i({endDate: null, startDate: e, focusedInput: ke})
-        : r === ke &&
+      ;((r === Se && t && ae(e, t)) || (r === ke && n && oe(e, n))) &&
+      pe({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+        ? i({endDate: null, startDate: e, focusedInput: Se})
+        : r === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
+        ? i({endDate: n, startDate: e, focusedInput: Se})
+        : r === ke && pe({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
+        ? i({endDate: null, startDate: e, focusedInput: Se})
+        : r === Se &&
           t &&
           !ae(e, t) &&
-          pe({minBookingDays: c, isDateBlocked: f, startDate: t, endDate: e}) &&
+          pe({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
           i({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      h(Me(y, d, -1))
+      b(Me(_, p, -1))
     },
     goToNextMonths: function() {
-      h(Me(y, d, 1))
+      b(Me(_, p, 1))
     },
   }
 }
@@ -2679,48 +2695,51 @@ function Datepicker(e) {
     a = e.maxBookingDate,
     o = e.focusedInput,
     i = e.onDateChange,
-    l = e.isDayBlocked,
-    c =
-      void 0 === l
+    l = e.exactMinBookingDays,
+    c = void 0 !== l && l,
+    s = e.isDayBlocked,
+    d =
+      void 0 === s
         ? function() {
             return !1
           }
-        : l,
-    s = e.minBookingDays,
-    d = void 0 === s ? 1 : s,
-    u = e.onClose,
-    p = void 0 === u ? function() {} : u,
-    m = e.numberOfMonths,
-    f = e.firstDayOfWeek,
-    g = e.displayFormat,
-    y = void 0 === g ? 'MM/DD/YYYY' : g,
-    h = e.phrases,
-    _ = void 0 === h ? datepickerPhrases : h,
-    b = Ye({
+        : s,
+    u = e.minBookingDays,
+    p = void 0 === u ? 1 : u,
+    m = e.onClose,
+    f = void 0 === m ? function() {} : m,
+    g = e.numberOfMonths,
+    y = e.firstDayOfWeek,
+    h = e.displayFormat,
+    _ = void 0 === h ? 'MM/DD/YYYY' : h,
+    b = e.phrases,
+    v = void 0 === b ? datepickerPhrases : b,
+    D = Ye({
       startDate: t,
       endDate: n,
       focusedInput: o,
       onDateChange: i,
       minBookingDate: r,
       maxBookingDate: a,
-      minBookingDays: d,
-      isDayBlocked: c,
-      numberOfMonths: m,
-      firstDayOfWeek: f,
+      minBookingDays: p,
+      isDayBlocked: d,
+      exactMinBookingDays: c,
+      numberOfMonths: g,
+      firstDayOfWeek: y,
     }),
-    v = b.activeMonths,
-    D = b.isDateSelected,
-    k = b.isFirstOrLastSelectedDate,
-    x = b.isDateBlocked,
-    S = b.isDateHovered,
-    C = b.firstDayOfWeek,
-    I = b.onDaySelect,
-    R = b.onResetDates,
-    w = b.goToPreviousMonths,
-    O = b.goToNextMonths,
-    T = b.numberOfMonths,
-    M = b.onDayHover,
-    B = useThemeProps({
+    k = D.activeMonths,
+    x = D.isDateSelected,
+    S = D.isFirstOrLastSelectedDate,
+    C = D.isDateBlocked,
+    I = D.isDateHovered,
+    R = D.firstDayOfWeek,
+    w = D.onDaySelect,
+    O = D.onResetDates,
+    T = D.goToPreviousMonths,
+    M = D.goToNextMonths,
+    B = D.numberOfMonths,
+    j = D.onDayHover,
+    F = useThemeProps({
       datepickerBackground: '#ffffff',
       datepickerPadding: '32px',
       datepickerBorderRadius: '2px',
@@ -2753,99 +2772,99 @@ function Datepicker(e) {
   return React__default.createElement(
     StyledDatepicker,
     {
-      background: B.datepickerBackground,
-      p: B.datepickerPadding,
-      borderRadius: B.datepickerBorderRadius,
-      position: B.datepickerPosition,
-      boxShadow: B.datepickerBoxShadow,
+      background: F.datepickerBackground,
+      p: F.datepickerPadding,
+      borderRadius: F.datepickerBorderRadius,
+      position: F.datepickerPosition,
+      boxShadow: F.datepickerBoxShadow,
     },
     React__default.createElement(
       Box,
       {
-        position: B.datepickerCloseWrapperPosition,
-        right: B.datepickerCloseWrapperRight,
-        top: B.datepickerCloseWrapperTop,
-        left: B.datepickerCloseWrapperLeft,
-        bottom: B.datepickerCloseWrapperBottom,
-        zIndex: B.datepickerCloseWrapperZIndex,
+        position: F.datepickerCloseWrapperPosition,
+        right: F.datepickerCloseWrapperRight,
+        top: F.datepickerCloseWrapperTop,
+        left: F.datepickerCloseWrapperLeft,
+        bottom: F.datepickerCloseWrapperBottom,
+        zIndex: F.datepickerCloseWrapperZIndex,
       },
-      React__default.createElement(Close, {onClick: p}),
+      React__default.createElement(Close, {onClick: f}),
     ),
     React__default.createElement(
       DateWrapper,
       null,
       React__default.createElement(
         Grid,
-        {gridTemplateColumns: B.datepickerSelectDateGridTemplateColumns},
+        {gridTemplateColumns: F.datepickerSelectDateGridTemplateColumns},
         React__default.createElement(SelectDate, {
-          title: _.datepickerStartDateLabel,
-          date: Te(t, y, _.datepickerStartDatePlaceholder),
-          isActive: o === Se,
+          title: v.datepickerStartDateLabel,
+          date: Te(t, _, v.datepickerStartDatePlaceholder),
+          isActive: o === ke,
         }),
         React__default.createElement(
           Flex,
           {justifyContent: 'center', alignItems: 'center'},
           React__default.createElement(ArrowIcon, {
-            height: B.datepickerSelectDateArrowIconHeight,
-            width: B.datepickerSelectDateArrowIconWidth,
-            iconColor: B.datepickerSelectDateArrowIconColor,
+            height: F.datepickerSelectDateArrowIconHeight,
+            width: F.datepickerSelectDateArrowIconWidth,
+            iconColor: F.datepickerSelectDateArrowIconColor,
           }),
         ),
         React__default.createElement(SelectDate, {
-          title: _.datepickerEndDateLabel,
-          date: Te(n, y, _.datepickerEndDatePlaceholder),
-          isActive: o === ke,
+          title: v.datepickerEndDateLabel,
+          date: Te(n, _, v.datepickerEndDatePlaceholder),
+          isActive: o === Se,
         }),
       ),
     ),
     React__default.createElement(
       Box,
-      {m: B.datepickerMonthsWrapperMargin, position: 'relative'},
+      {m: F.datepickerMonthsWrapperMargin, position: 'relative'},
       React__default.createElement(
         Box,
         {
-          position: B.datepickerPreviousMonthButtonPosition,
-          top: B.datepickerPreviousMonthButtonTop,
-          left: B.datepickerPreviousMonthButtonLeft,
-          right: B.datepickerPreviousMonthButtonRight,
-          bottom: B.datepickerPreviousMonthButtonBottom,
+          position: F.datepickerPreviousMonthButtonPosition,
+          top: F.datepickerPreviousMonthButtonTop,
+          left: F.datepickerPreviousMonthButtonLeft,
+          right: F.datepickerPreviousMonthButtonRight,
+          bottom: F.datepickerPreviousMonthButtonBottom,
         },
-        React__default.createElement(NavButton, {type: 'prev', onClick: w}),
+        React__default.createElement(NavButton, {type: 'prev', onClick: T}),
       ),
       React__default.createElement(
         Box,
         {
-          position: B.datepickerNextMonthButtonPosition,
-          top: B.datepickerNextMonthButtonTop,
-          left: B.datepickerNextMonthButtonLeft,
-          right: B.datepickerNextMonthButtonRight,
-          bottom: B.datepickerNextMonthButtonBottom,
+          position: F.datepickerNextMonthButtonPosition,
+          top: F.datepickerNextMonthButtonTop,
+          left: F.datepickerNextMonthButtonLeft,
+          right: F.datepickerNextMonthButtonRight,
+          bottom: F.datepickerNextMonthButtonBottom,
         },
-        React__default.createElement(NavButton, {type: 'next', onClick: O}),
+        React__default.createElement(NavButton, {type: 'next', onClick: M}),
       ),
       React__default.createElement(
         Grid,
-        {numberOfMonthsGridTemplateColumns: T, gridGap: B.datepickerMonthsGridGap},
-        v.map(function(e) {
+        {numberOfMonthsGridTemplateColumns: B, gridGap: F.datepickerMonthsGridGap},
+        k.map(function(e) {
           return React__default.createElement(Month, {
             key: e.year + '-' + e.month,
             year: e.year,
             month: e.month,
-            firstDayOfWeek: C,
-            isDateBlocked: x,
-            isDateSelected: D,
-            isStartOrEndDate: k,
-            onDaySelect: I,
-            onDayHover: M,
-            isDateHovered: S,
+            firstDayOfWeek: R,
+            isDateBlocked: C,
+            isDateSelected: x,
+            isStartOrEndDate: S,
+            onDaySelect: w,
+            onDayHover: j,
+            isDateHovered: I,
           })
         }),
       ),
     ),
     React__default.createElement(
       Box,
-      {m: B.datepickerResetDatesWrapperMargin},
-      React__default.createElement(ResetDates, {onResetDates: R, text: _.resetDates}),
+      {m: F.datepickerResetDatesWrapperMargin},
+      React__default.createElement(ResetDates, {onResetDates: O, text: v.resetDates}),
     ),
   )
 }
@@ -2877,27 +2896,28 @@ function DateRangeInput(e) {
     l = e.numberOfMonths,
     c = e.focusedInput,
     s = e.onDateChange,
-    d = e.isDayBlocked,
-    u =
-      void 0 === d
+    d = e.exactMinBookingDays,
+    u = e.isDayBlocked,
+    p =
+      void 0 === u
         ? function() {
             return !1
           }
-        : d,
-    p = e.minBookingDays,
-    m = void 0 === p ? 1 : p,
-    f = e.onClose,
-    g = void 0 === f ? function() {} : f,
-    y = e.showStartDateCalendarIcon,
-    h = void 0 === y || y,
-    _ = e.showEndDateCalendarIcon,
-    b = void 0 === _ || _,
-    v = e.displayFormat,
-    D = void 0 === v ? 'MM/DD/YYYY' : v,
-    k = e.phrases,
-    x = void 0 === k ? dateRangeInputPhrases : k,
-    S = React.useRef(null),
-    C = useThemeProps({
+        : u,
+    m = e.minBookingDays,
+    f = void 0 === m ? 1 : m,
+    g = e.onClose,
+    y = void 0 === g ? function() {} : g,
+    h = e.showStartDateCalendarIcon,
+    _ = void 0 === h || h,
+    b = e.showEndDateCalendarIcon,
+    v = void 0 === b || b,
+    D = e.displayFormat,
+    k = void 0 === D ? 'MM/DD/YYYY' : D,
+    x = e.phrases,
+    S = void 0 === x ? dateRangeInputPhrases : x,
+    C = React.useRef(null),
+    I = useThemeProps({
       dateRangeBackground: 'transparent',
       dateRangeGridTemplateColumns: '194px 39px 194px',
       dateRangeBorder: '0',
@@ -2912,73 +2932,73 @@ function DateRangeInput(e) {
       dateRangeDatepickerWrapperLeft: '0',
       dateRangeDatepickerWrapperPosition: 'absolute',
     })
-  function I(e) {
-    null !== c && S && S.current && !S.current.contains(e.target) && i(null)
+  function R(e) {
+    null !== c && C && C.current && !C.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', I),
+        'undefined' != typeof window && window.addEventListener('click', R),
         function() {
-          window.removeEventListener('click', I)
+          window.removeEventListener('click', R)
         }
       )
     }),
     React__default.createElement(
       Box,
-      {position: 'relative', ref: S},
+      {position: 'relative', ref: C},
       React__default.createElement(
         InputGrid,
         {
-          background: C.dateRangeBackground,
-          gridTemplateColumns: C.dateRangeGridTemplateColumns,
-          border: C.dateRangeBorder,
-          borderRadius: C.dateRangeBorderRadius,
+          background: I.dateRangeBackground,
+          gridTemplateColumns: I.dateRangeGridTemplateColumns,
+          border: I.dateRangeBorder,
+          borderRadius: I.dateRangeBorderRadius,
         },
         React__default.createElement(Input, {
           id: 'startDate',
-          ariaLabel: x.startDateAriaLabel,
-          placeholder: x.startDatePlaceholder,
-          value: Te(t, D, ''),
+          ariaLabel: S.startDateAriaLabel,
+          placeholder: S.startDatePlaceholder,
+          value: Te(t, k, ''),
           onClick: function() {
-            return i(Se)
+            return i(ke)
           },
-          showCalendarIcon: h,
+          showCalendarIcon: _,
         }),
         React__default.createElement(
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
           React__default.createElement(InputArrowIcon, {
-            width: C.dateRangeArrowIconWidth,
-            height: C.dateRangeArrowIconHeight,
-            color: C.dateRangeArrowIconColor,
-            opacity: C.dateRangeArrowIconOpacity,
+            width: I.dateRangeArrowIconWidth,
+            height: I.dateRangeArrowIconHeight,
+            color: I.dateRangeArrowIconColor,
+            opacity: I.dateRangeArrowIconOpacity,
           }),
         ),
         React__default.createElement(Input, {
           id: 'endDate',
-          ariaLabel: x.endDateAriaLabel,
-          placeholder: x.endDatePlaceholder,
-          value: Te(n, D, ''),
+          ariaLabel: S.endDateAriaLabel,
+          placeholder: S.endDatePlaceholder,
+          value: Te(n, k, ''),
           onClick: function() {
-            return i(t ? ke : Se)
+            return i(t ? Se : ke)
           },
-          showCalendarIcon: b,
+          showCalendarIcon: v,
         }),
       ),
       React__default.createElement(
         Box,
         {
-          position: C.dateRangeDatepickerWrapperPosition,
-          bottom: C.dateRangeDatepickerWrapperBottom,
-          left: C.dateRangeDatepickerWrapperLeft,
-          top: C.dateRangeDatepickerWrapperTop,
-          right: C.dateRangeDatepickerWrapperRight,
+          position: I.dateRangeDatepickerWrapperPosition,
+          bottom: I.dateRangeDatepickerWrapperBottom,
+          left: I.dateRangeDatepickerWrapperLeft,
+          top: I.dateRangeDatepickerWrapperTop,
+          right: I.dateRangeDatepickerWrapperRight,
         },
         null !== c &&
           React__default.createElement(Datepicker, {
             onClose: function() {
-              g(), i(null)
+              y(), i(null)
             },
             startDate: t,
             endDate: n,
@@ -2987,10 +3007,11 @@ function DateRangeInput(e) {
             firstDayOfWeek: o,
             numberOfMonths: l,
             focusedInput: c,
-            displayFormat: D,
+            displayFormat: k,
             onDateChange: s,
-            minBookingDays: m,
-            isDayBlocked: u,
+            minBookingDays: f,
+            isDayBlocked: p,
+            exactMinBookingDays: d,
           }),
       ),
     )

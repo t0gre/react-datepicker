@@ -66,6 +66,8 @@ export interface IsDateHoveredProps {
   date: Date
   isDateBlocked(date: Date): boolean
   hoveredDate: Date | null
+  minBookingDays: number
+  exactMinBookingDays: boolean
 }
 export declare function isDateHovered({
   date,
@@ -73,5 +75,6 @@ export declare function isDateHovered({
   endDate,
   isDateBlocked,
   hoveredDate,
+  minBookingDays,
 }: IsDateHoveredProps): boolean
 export {}

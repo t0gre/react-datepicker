@@ -190,6 +190,8 @@ export interface IsDateHoveredProps {
   date: Date
   isDateBlocked(date: Date): boolean
   hoveredDate: Date | null
+  minBookingDays: number
+  exactMinBookingDays: boolean
 }
 export function isDateHovered({
   date,
@@ -197,8 +199,25 @@ export function isDateHovered({
   endDate,
   isDateBlocked,
   hoveredDate,
+  minBookingDays,
 }: IsDateHoveredProps) {
   if (
+    startDate &&
+    !endDate &&
+    hoveredDate &&
+    isWithinRange(date, startDate, addDays(startDate, minBookingDays - 1)) &&
+    isSameDay(startDate, hoveredDate) &&
+    minBookingDays > 1
+  ) {
+    return eachDay(startDate, addDays(startDate, minBookingDays - 1)).reduce(
+      (returnValue, date) => {
+        if (!returnValue) return returnValue
+
+        return !isDateBlocked(date)
+      },
+      true,
+    )
+  } else if (
     startDate &&
     !endDate &&
     hoveredDate &&

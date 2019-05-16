@@ -17,6 +17,7 @@ export interface UseDatepickerProps {
   focusedInput: FocusedInput
   numberOfMonths?: number
   minBookingDays?: number
+  exactMinBookingDays?: boolean
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
   isDayBlocked?(date: Date): boolean
@@ -28,6 +29,7 @@ export declare function useDatepicker({
   minBookingDate,
   maxBookingDate,
   onDateChange,
+  exactMinBookingDays,
   minBookingDays,
   numberOfMonths,
   firstDayOfWeek,
