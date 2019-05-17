@@ -1889,7 +1889,7 @@ function Input(e) {
       inputLabelBorderRadius: '2px',
       inputLabelBackground: '#ffffff',
       inputLabelMargin: '0',
-      inputActiveBoxShadow: '0px 4px 0 #00aeef',
+      inputActiveBoxShadow: 'inset 0px -3px 0 #00aeef',
     })
   return React__default.createElement(
     InputLabel,
