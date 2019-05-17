@@ -85,6 +85,45 @@ test('should have empty end date and focused end date', () => {
   })
 })
 
+test('should render vertical variant', () => {
+  const onDateChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container} = render(
+    <Datepicker
+      onFocusChange={onFocusChange}
+      minBookingDate={new Date(2019, 1, 16, 0, 0, 0)}
+      maxBookingDate={new Date(2020, 1, 16, 0, 0, 0)}
+      startDate={new Date(2019, 2, 16, 0, 0, 0)}
+      endDate={null}
+      focusedInput={END_DATE}
+      onDateChange={onDateChange}
+      vertical={true}
+    />,
+  )
+  expect(container).toMatchSnapshot()
+})
+
+test('should render without reset dates, close and selected dates component', () => {
+  const onDateChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container} = render(
+    <Datepicker
+      onFocusChange={onFocusChange}
+      minBookingDate={new Date(2019, 1, 16, 0, 0, 0)}
+      maxBookingDate={new Date(2020, 1, 16, 0, 0, 0)}
+      startDate={new Date(2019, 2, 16, 0, 0, 0)}
+      endDate={null}
+      focusedInput={END_DATE}
+      onDateChange={onDateChange}
+      vertical={true}
+      showClose={false}
+      showResetDates={false}
+      showSelectedDates={false}
+    />,
+  )
+  expect(container).toMatchSnapshot()
+})
+
 test('should execute onClose callback', () => {
   const onDateChange = jest.fn()
   const onClose = jest.fn()
