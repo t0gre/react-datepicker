@@ -761,8 +761,8 @@ var F = function(e, t) {
           : null
       })(R.restDateString, O)
     if (B) {
-      var j,
-        F = B.getTime(),
+      var F,
+        j = B.getTime(),
         P = 0
       if (
         (I.time &&
@@ -785,7 +785,7 @@ var F = function(e, t) {
         I.timezone)
       )
         (_ = I.timezone),
-          (j =
+          (F =
             ((b = S.exec(_))
               ? 0
               : (b = Y.exec(_))
@@ -794,15 +794,15 @@ var F = function(e, t) {
               ? ((C = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -C : C)
               : 0) * u)
       else {
-        var W = F + P,
+        var W = j + P,
           H = new Date(W)
-        j = r(H)
+        F = r(H)
         var E = new Date(W)
         E.setDate(H.getDate() + 1)
         var L = r(E) - r(H)
-        L > 0 && (j += L)
+        L > 0 && (F += L)
       }
-      return new Date(F + P + j)
+      return new Date(j + P + F)
     }
     return new Date(e)
   },
@@ -2791,8 +2791,8 @@ function Datepicker(e) {
     T = O.activeMonths,
     M = O.isDateSelected,
     B = O.isFirstOrLastSelectedDate,
-    j = O.isDateBlocked,
-    F = O.isDateHovered,
+    F = O.isDateBlocked,
+    j = O.isDateHovered,
     P = O.firstDayOfWeek,
     W = O.onDaySelect,
     H = O.onResetDates,
@@ -2802,7 +2802,7 @@ function Datepicker(e) {
     z = O.onDayHover,
     A = useThemeProps({
       datepickerBackground: '#ffffff',
-      datepickerPadding: c ? '16px' : '32px',
+      datepickerPadding: c ? '16px 16px 0' : '32px',
       datepickerBorderRadius: '2px',
       datepickerPosition: 'relative',
       datepickerCloseWrapperPosition: c ? 'relative' : 'absolute',
@@ -2819,20 +2819,20 @@ function Datepicker(e) {
       datepickerSelectDateArrowIconHeight: '12px',
       datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
       datepickerMonthsWrapperMargin: '28px 0 0',
-      datepickerPreviousMonthButtonPosition: 'absolute',
-      datepickerPreviousMonthButtonTop: '-5px',
-      datepickerPreviousMonthButtonLeft: '0',
+      datepickerPreviousMonthButtonPosition: c ? 'relative' : 'absolute',
+      datepickerPreviousMonthButtonTop: c ? 'unset' : '-5px',
+      datepickerPreviousMonthButtonLeft: c ? 'unset' : '0',
       datepickerPreviousMonthButtonRight: 'unset',
       datepickerPreviousMonthButtonBottom: 'unset',
-      datepickerNextMonthButtonPosition: 'absolute',
-      datepickerNextMonthButtonTop: '-5px',
+      datepickerNextMonthButtonPosition: c ? 'relative' : 'absolute',
+      datepickerNextMonthButtonTop: c ? 'unset' : '-5px',
       datepickerNextMonthButtonLeft: 'unset',
-      datepickerNextMonthButtonRight: '0',
+      datepickerNextMonthButtonRight: c ? 'unset' : '0',
       datepickerNextMonthButtonBottom: 'unset',
       datepickerMonthsGridGap: c ? '32px' : '0 32px',
       datepickerMonthsGridOverflow: 'auto',
       datepickerMonthsGridHeight: c ? '50vh' : '100%',
-      datepickerResetDatesWrapperMargin: '32px 0 0',
+      datepickerResetDatesWrapperMargin: c ? 'unset' : '32px 0 0',
       datepickerBoxShadow: 'none',
     })
   return React__default.createElement(
@@ -2892,59 +2892,71 @@ function Datepicker(e) {
       ),
     React__default.createElement(
       Box,
-      {m: A.datepickerMonthsWrapperMargin, position: 'relative'},
+      {position: 'relative'},
       React__default.createElement(
         Box,
-        {
-          position: A.datepickerPreviousMonthButtonPosition,
-          top: A.datepickerPreviousMonthButtonTop,
-          left: A.datepickerPreviousMonthButtonLeft,
-          right: A.datepickerPreviousMonthButtonRight,
-          bottom: A.datepickerPreviousMonthButtonBottom,
-        },
-        React__default.createElement(NavButton, {type: 'prev', onClick: E, vertical: c}),
+        {m: A.datepickerMonthsWrapperMargin},
+        React__default.createElement(
+          MonthGrid,
+          {
+            overflow: A.datepickerMonthsGridOverflow,
+            height: A.datepickerMonthsGridHeight,
+            gridTemplateColumns: c ? '1fr' : 'repeat(' + $ + ', 1fr)',
+            gridGap: A.datepickerMonthsGridGap,
+          },
+          T.map(function(e) {
+            return React__default.createElement(Month, {
+              key: e.year + '-' + e.month,
+              year: e.year,
+              month: e.month,
+              firstDayOfWeek: P,
+              isDateBlocked: F,
+              isDateSelected: M,
+              isStartOrEndDate: B,
+              onDaySelect: W,
+              onDayHover: z,
+              isDateHovered: j,
+            })
+          }),
+        ),
       ),
       React__default.createElement(
-        Box,
-        {
-          position: A.datepickerNextMonthButtonPosition,
-          top: A.datepickerNextMonthButtonTop,
-          left: A.datepickerNextMonthButtonLeft,
-          right: A.datepickerNextMonthButtonRight,
-          bottom: A.datepickerNextMonthButtonBottom,
-        },
-        React__default.createElement(NavButton, {type: 'next', onClick: L, vertical: c}),
-      ),
-      React__default.createElement(
-        MonthGrid,
-        {
-          overflow: A.datepickerMonthsGridOverflow,
-          height: A.datepickerMonthsGridHeight,
-          gridTemplateColumns: c ? '1fr' : 'repeat(' + $ + ', 1fr)',
-          gridGap: A.datepickerMonthsGridGap,
-        },
-        T.map(function(e) {
-          return React__default.createElement(Month, {
-            key: e.year + '-' + e.month,
-            year: e.year,
-            month: e.month,
-            firstDayOfWeek: P,
-            isDateBlocked: j,
-            isDateSelected: M,
-            isStartOrEndDate: B,
-            onDaySelect: W,
-            onDayHover: z,
-            isDateHovered: F,
-          })
-        }),
+        Flex,
+        {alignItems: 'center'},
+        React__default.createElement(
+          React__default.Fragment,
+          null,
+          d &&
+            React__default.createElement(
+              Flex,
+              {flex: '1', m: A.datepickerResetDatesWrapperMargin},
+              React__default.createElement(ResetDates, {onResetDates: H, text: R.resetDates}),
+            ),
+          React__default.createElement(
+            Box,
+            {
+              position: A.datepickerPreviousMonthButtonPosition,
+              top: A.datepickerPreviousMonthButtonTop,
+              left: A.datepickerPreviousMonthButtonLeft,
+              right: A.datepickerPreviousMonthButtonRight,
+              bottom: A.datepickerPreviousMonthButtonBottom,
+            },
+            React__default.createElement(NavButton, {type: 'prev', onClick: E, vertical: c}),
+          ),
+          React__default.createElement(
+            Box,
+            {
+              position: A.datepickerNextMonthButtonPosition,
+              top: A.datepickerNextMonthButtonTop,
+              left: A.datepickerNextMonthButtonLeft,
+              right: A.datepickerNextMonthButtonRight,
+              bottom: A.datepickerNextMonthButtonBottom,
+            },
+            React__default.createElement(NavButton, {type: 'next', onClick: L, vertical: c}),
+          ),
+        ),
       ),
     ),
-    d &&
-      React__default.createElement(
-        Box,
-        {m: A.datepickerResetDatesWrapperMargin},
-        React__default.createElement(ResetDates, {onResetDates: H, text: R.resetDates}),
-      ),
   )
 }
 var templateObject_1$c,
@@ -3003,8 +3015,8 @@ function DateRangeInput(e) {
     T = void 0 === O ? 'MM/DD/YYYY' : O,
     M = e.phrases,
     B = void 0 === M ? dateRangeInputPhrases : M,
-    j = React.useRef(null),
-    F = useThemeProps({
+    F = React.useRef(null),
+    j = useThemeProps({
       dateRangeBackground: 'transparent',
       dateRangeGridTemplateColumns: _ ? '1fr 24px 1fr' : '194px 39px 194px',
       dateRangeBorder: '0',
@@ -3022,7 +3034,7 @@ function DateRangeInput(e) {
       dateRangeDatepickerWrapperPosition: 'absolute',
     })
   function P(e) {
-    null !== c && j && j.current && !j.current.contains(e.target) && i(null)
+    null !== c && F && F.current && !F.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
@@ -3035,14 +3047,14 @@ function DateRangeInput(e) {
     }),
     React__default.createElement(
       Box,
-      {position: 'relative', ref: j},
+      {position: 'relative', ref: F},
       React__default.createElement(
         InputGrid,
         {
-          background: F.dateRangeBackground,
-          gridTemplateColumns: F.dateRangeGridTemplateColumns,
-          border: F.dateRangeBorder,
-          borderRadius: F.dateRangeBorderRadius,
+          background: j.dateRangeBackground,
+          gridTemplateColumns: j.dateRangeGridTemplateColumns,
+          border: j.dateRangeBorder,
+          borderRadius: j.dateRangeBorderRadius,
         },
         React__default.createElement(Input, {
           id: 'startDate',
@@ -3055,16 +3067,16 @@ function DateRangeInput(e) {
           showCalendarIcon: I,
           vertical: _,
           isActive: c === pe,
-          padding: F.dateRangeStartDateInputPadding,
+          padding: j.dateRangeStartDateInputPadding,
         }),
         React__default.createElement(
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
           React__default.createElement(InputArrowIcon, {
-            width: F.dateRangeArrowIconWidth,
-            height: F.dateRangeArrowIconHeight,
-            color: F.dateRangeArrowIconColor,
-            opacity: F.dateRangeArrowIconOpacity,
+            width: j.dateRangeArrowIconWidth,
+            height: j.dateRangeArrowIconHeight,
+            color: j.dateRangeArrowIconColor,
+            opacity: j.dateRangeArrowIconOpacity,
           }),
         ),
         React__default.createElement(Input, {
@@ -3078,17 +3090,17 @@ function DateRangeInput(e) {
           showCalendarIcon: R,
           vertical: _,
           isActive: c === Se,
-          padding: F.dateRangeEndDateInputPadding,
+          padding: j.dateRangeEndDateInputPadding,
         }),
       ),
       React__default.createElement(
         Box,
         {
-          position: F.dateRangeDatepickerWrapperPosition,
-          bottom: F.dateRangeDatepickerWrapperBottom,
-          left: F.dateRangeDatepickerWrapperLeft,
-          top: F.dateRangeDatepickerWrapperTop,
-          right: F.dateRangeDatepickerWrapperRight,
+          position: j.dateRangeDatepickerWrapperPosition,
+          bottom: j.dateRangeDatepickerWrapperBottom,
+          left: j.dateRangeDatepickerWrapperLeft,
+          top: j.dateRangeDatepickerWrapperTop,
+          right: j.dateRangeDatepickerWrapperRight,
         },
         null !== c &&
           React__default.createElement(Datepicker, {

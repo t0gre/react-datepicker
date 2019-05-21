@@ -2,6 +2,7 @@ import {
   alignItems,
   AlignItemsProps,
   flex,
+  FlexProps,
   flexDirection,
   FlexDirectionProps,
   flexWrap,
@@ -19,7 +20,7 @@ import {
 } from 'styled-system'
 import styled from 'styled-components'
 
-interface FlexProps
+interface FlexComponentProps
   extends SpaceProps,
     FlexWrapProps,
     FlexDirectionProps,
@@ -27,8 +28,9 @@ interface FlexProps
     GridAreaProps,
     HeightProps,
     WidthProps,
+    FlexProps,
     JustifyContentProps {}
-const Flex = styled('div')<FlexProps>`
+const Flex = styled('div')<FlexComponentProps>`
   display: flex;
 
   ${space}
