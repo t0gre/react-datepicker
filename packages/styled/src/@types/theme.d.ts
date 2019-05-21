@@ -25,6 +25,7 @@ import {
   BoxShadowProperty,
   GlobalsNumber,
   JustifyContentProperty,
+  OverflowProperty,
 } from 'csstype'
 
 interface CommonTheme {
@@ -166,6 +167,8 @@ export interface DatepickerTheme extends CommonTheme {
   datepickerNextMonthButtonTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   datepickerNextMonthButtonLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
   datepickerNextMonthButtonBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+  datepickerMonthsGridHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
+  datepickerMonthsGridOverflow?: ResponsiveValue<OverflowProperty>
 }
 
 export interface DateRangeInputTheme extends CommonTheme {

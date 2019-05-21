@@ -38,13 +38,14 @@ const StyledNavButton = styled('button')<StyledNavButtonProps>`
 interface NavButtonProps {
   type: 'next' | 'prev'
   onClick(): void
+  vertical: boolean
 }
 
-function NavButton({type, onClick}: NavButtonProps) {
+function NavButton({type, onClick, vertical}: NavButtonProps) {
   const ref = useRef<HTMLButtonElement>(null)
   const theme: NavButtonTheme = useThemeProps({
-    navButtonWidth: '30px',
-    navButtonHeight: '30px',
+    navButtonWidth: vertical ? '48px' : '30px',
+    navButtonHeight: vertical ? '48px' : '30px',
     navButtonBackground: '#ffffff',
     navButtonBorder: '1px solid #929598',
     navButtonPadding: '0',
@@ -57,6 +58,18 @@ function NavButton({type, onClick}: NavButtonProps) {
     if (ref && ref.current) {
       ref.current.blur()
     }
+  }
+
+  function getDirection() {
+    if (type === 'next' && !vertical) {
+      return 'right'
+    } else if (type === 'next' && vertical) {
+      return 'down'
+    } else if (type === 'prev' && !vertical) {
+      return 'left'
+    }
+
+    return 'up'
   }
 
   return (
@@ -78,7 +91,7 @@ function NavButton({type, onClick}: NavButtonProps) {
         height={theme.navButtonIconHeight}
         // @ts-ignore
         color={theme.navButtonIconColor}
-        direction={type === 'next' ? 'right' : 'left'}
+        direction={getDirection()}
       />
     </StyledNavButton>
   )

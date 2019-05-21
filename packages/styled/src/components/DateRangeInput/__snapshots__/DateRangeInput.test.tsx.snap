@@ -217,12 +217,6 @@ exports[`should have empty end date and focused end date 1`] = `
   grid-template-columns: 126px 75px 126px;
 }
 
-.c26 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c29 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -668,6 +662,14 @@ exports[`should have empty end date and focused end date 1`] = `
   justify-content: initial;
 }
 
+.c26 {
+  display: grid;
+  grid-gap: 0 32px;
+  grid-template-columns: repeat(2,1fr);
+  overflow: auto;
+  height: 100%;
+}
+
 .c6 {
   opacity: 0.4;
   color: #ffffff;
@@ -946,6 +948,8 @@ exports[`should have empty end date and focused end date 1`] = `
           </div>
           <div
             class="c26"
+            height="100%"
+            overflow="auto"
           >
             <div>
               <div
@@ -2278,12 +2282,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
   grid-template-columns: 126px 75px 126px;
 }
 
-.c26 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c29 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -2709,6 +2707,14 @@ exports[`should have empty start and end date and focused start date 1`] = `
   justify-content: initial;
 }
 
+.c26 {
+  display: grid;
+  grid-gap: 0 32px;
+  grid-template-columns: repeat(2,1fr);
+  overflow: auto;
+  height: 100%;
+}
+
 .c6 {
   opacity: 0.4;
   color: #ffffff;
@@ -2987,6 +2993,8 @@ exports[`should have empty start and end date and focused start date 1`] = `
           </div>
           <div
             class="c26"
+            height="100%"
+            overflow="auto"
           >
             <div>
               <div
@@ -4317,12 +4325,6 @@ exports[`should not render calendar icons 1`] = `
   grid-template-columns: 126px 75px 126px;
 }
 
-.c25 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c28 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -4755,6 +4757,14 @@ exports[`should not render calendar icons 1`] = `
   justify-content: initial;
 }
 
+.c25 {
+  display: grid;
+  grid-gap: 0 32px;
+  grid-template-columns: repeat(2,1fr);
+  overflow: auto;
+  height: 100%;
+}
+
 .c5 {
   opacity: 0.4;
   color: #ffffff;
@@ -4993,6 +5003,8 @@ exports[`should not render calendar icons 1`] = `
           </div>
           <div
             class="c25"
+            height="100%"
+            overflow="auto"
           >
             <div>
               <div
@@ -6320,12 +6332,6 @@ exports[`should not render calendar icons 1`] = `
 `;
 
 exports[`should render vertical variant 1`] = `
-.c26 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c29 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -6333,7 +6339,7 @@ exports[`should render vertical variant 1`] = `
 
 .c15 {
   display: grid;
-  grid-template-columns: 100px 50px 100px;
+  grid-template-columns: 87px 50px 87px;
 }
 
 .c5 {
@@ -6666,20 +6672,20 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c23 {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c25 {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c22 {
-  width: 30px;
-  height: 30px;
+  width: 48px;
+  height: 48px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -6777,6 +6783,14 @@ exports[`should render vertical variant 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+}
+
+.c26 {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: 1fr;
+  overflow: auto;
+  height: 50vh;
 }
 
 .c6 {
@@ -7010,9 +7024,9 @@ exports[`should render vertical variant 1`] = `
           >
             <button
               class="c22"
-              height="30px"
+              height="48px"
               type="button"
-              width="30px"
+              width="48px"
             >
               <svg
                 class="c23"
@@ -7035,9 +7049,9 @@ exports[`should render vertical variant 1`] = `
           >
             <button
               class="c22"
-              height="30px"
+              height="48px"
               type="button"
-              width="30px"
+              width="48px"
             >
               <svg
                 class="c25"
@@ -7057,6 +7071,8 @@ exports[`should render vertical variant 1`] = `
           </div>
           <div
             class="c26"
+            height="50vh"
+            overflow="auto"
           >
             <div>
               <div
@@ -8382,12 +8398,6 @@ exports[`should render vertical variant 1`] = `
 `;
 
 exports[`should render without reset dates, close and selected dates component 1`] = `
-.c16 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c19 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -8634,20 +8644,20 @@ exports[`should render without reset dates, close and selected dates component 1
 }
 
 .c13 {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c15 {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c12 {
-  width: 30px;
-  height: 30px;
+  width: 48px;
+  height: 48px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -8671,6 +8681,14 @@ exports[`should render without reset dates, close and selected dates component 1
   border-radius: 2px;
   position: relative;
   box-shadow: none;
+}
+
+.c16 {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: 1fr;
+  overflow: auto;
+  height: 50vh;
 }
 
 .c6 {
@@ -8807,9 +8825,9 @@ exports[`should render without reset dates, close and selected dates component 1
           >
             <button
               class="c12"
-              height="30px"
+              height="48px"
               type="button"
-              width="30px"
+              width="48px"
             >
               <svg
                 class="c13"
@@ -8832,9 +8850,9 @@ exports[`should render without reset dates, close and selected dates component 1
           >
             <button
               class="c12"
-              height="30px"
+              height="48px"
               type="button"
-              width="30px"
+              width="48px"
             >
               <svg
                 class="c15"
@@ -8854,6 +8872,8 @@ exports[`should render without reset dates, close and selected dates component 1
           </div>
           <div
             class="c16"
+            height="50vh"
+            overflow="auto"
           >
             <div>
               <div

@@ -15,6 +15,10 @@ import {
   DisplayProps,
   justifyContent,
   JustifyContentProps,
+  OverflowProps,
+  overflow,
+  height,
+  HeightProps,
 } from 'styled-system'
 import {
   useDatepicker,
@@ -73,6 +77,12 @@ interface CloseWrapperProps extends JustifyContentProps, DisplayProps {}
 const CloseWrapper = styled(Box)<CloseWrapperProps>`
   ${display}
   ${justifyContent}
+`
+
+interface MonthGridProps extends HeightProps, OverflowProps {}
+const MonthGrid = styled(Grid)<MonthGridProps>`
+  ${overflow}
+  ${height}
 `
 
 export interface DatepickerProps extends UseDatepickerProps {
@@ -145,7 +155,7 @@ function Datepicker({
     datepickerCloseWrapperLeft: 'unset',
     datepickerCloseWrapperBottom: 'unset',
     datepickerCloseWrapperZIndex: 1,
-    datepickerSelectDateGridTemplateColumns: vertical ? '100px 50px 100px' : '126px 75px 126px',
+    datepickerSelectDateGridTemplateColumns: vertical ? '87px 50px 87px' : '126px 75px 126px',
     datepickerSelectDateArrowIconWidth: '15px',
     datepickerSelectDateArrowIconHeight: '12px',
     datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
@@ -160,7 +170,9 @@ function Datepicker({
     datepickerNextMonthButtonLeft: 'unset',
     datepickerNextMonthButtonRight: '0',
     datepickerNextMonthButtonBottom: 'unset',
-    datepickerMonthsGridGap: '0 32px',
+    datepickerMonthsGridGap: vertical ? '32px' : '0 32px',
+    datepickerMonthsGridOverflow: 'auto',
+    datepickerMonthsGridHeight: vertical ? '50vh' : '100%',
     datepickerResetDatesWrapperMargin: '32px 0 0',
     datepickerBoxShadow: 'none',
   })
@@ -225,7 +237,7 @@ function Datepicker({
           right={theme.datepickerPreviousMonthButtonRight}
           bottom={theme.datepickerPreviousMonthButtonBottom}
         >
-          <NavButton type="prev" onClick={goToPreviousMonths} />
+          <NavButton type="prev" onClick={goToPreviousMonths} vertical={vertical} />
         </Box>
         <Box
           position={theme.datepickerNextMonthButtonPosition}
@@ -234,10 +246,12 @@ function Datepicker({
           right={theme.datepickerNextMonthButtonRight}
           bottom={theme.datepickerNextMonthButtonBottom}
         >
-          <NavButton type="next" onClick={goToNextMonths} />
+          <NavButton type="next" onClick={goToNextMonths} vertical={vertical} />
         </Box>
-        <Grid
-          numberOfMonthsGridTemplateColumns={numberOfMonths}
+        <MonthGrid
+          overflow={theme.datepickerMonthsGridOverflow}
+          height={theme.datepickerMonthsGridHeight}
+          gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
           gridGap={theme.datepickerMonthsGridGap}
         >
           {activeMonths.map((month: MonthType) => (
@@ -254,7 +268,7 @@ function Datepicker({
               isDateHovered={isDateHovered}
             />
           ))}
-        </Grid>
+        </MonthGrid>
       </Box>
       {showResetDates && (
         <Box m={theme.datepickerResetDatesWrapperMargin}>

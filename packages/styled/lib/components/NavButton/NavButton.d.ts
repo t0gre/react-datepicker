@@ -1,6 +1,7 @@
 interface NavButtonProps {
-    type: 'next' | 'prev';
-    onClick(): void;
+  type: 'next' | 'prev'
+  onClick(): void
+  vertical: boolean
 }
-declare function NavButton({ type, onClick }: NavButtonProps): JSX.Element;
-export default NavButton;
+declare function NavButton({type, onClick, vertical}: NavButtonProps): JSX.Element
+export default NavButton

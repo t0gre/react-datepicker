@@ -114,12 +114,6 @@ exports[`should have empty end date and focused end date 1`] = `
   grid-template-columns: 126px 75px 126px;
 }
 
-.c18 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c21 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -357,6 +351,14 @@ exports[`should have empty end date and focused end date 1`] = `
   justify-content: initial;
 }
 
+.c18 {
+  display: grid;
+  grid-gap: 0 32px;
+  grid-template-columns: repeat(2,1fr);
+  overflow: auto;
+  height: 100%;
+}
+
 <div>
   <div
     class="c0"
@@ -513,6 +515,8 @@ exports[`should have empty end date and focused end date 1`] = `
       </div>
       <div
         class="c18"
+        height="100%"
+        overflow="auto"
       >
         <div>
           <div
@@ -1951,12 +1955,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
   grid-template-columns: 126px 75px 126px;
 }
 
-.c18 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c21 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -2174,6 +2172,14 @@ exports[`should have empty start and end date and focused start date 1`] = `
   justify-content: initial;
 }
 
+.c18 {
+  display: grid;
+  grid-gap: 0 32px;
+  grid-template-columns: repeat(2,1fr);
+  overflow: auto;
+  height: 100%;
+}
+
 <div>
   <div
     class="c0"
@@ -2330,6 +2336,8 @@ exports[`should have empty start and end date and focused start date 1`] = `
       </div>
       <div
         class="c18"
+        height="100%"
+        overflow="auto"
       >
         <div>
           <div
@@ -3761,12 +3769,6 @@ exports[`should render vertical datepicker 1`] = `
   z-index: 1;
 }
 
-.c18 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c21 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -3774,7 +3776,7 @@ exports[`should render vertical datepicker 1`] = `
 
 .c6 {
   display: grid;
-  grid-template-columns: 100px 50px 100px;
+  grid-template-columns: 87px 50px 87px;
 }
 
 .c10 {
@@ -3879,20 +3881,20 @@ exports[`should render vertical datepicker 1`] = `
 }
 
 .c15 {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .c17 {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .c14 {
-  width: 30px;
-  height: 30px;
+  width: 48px;
+  height: 48px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -3990,6 +3992,14 @@ exports[`should render vertical datepicker 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+}
+
+.c18 {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: 1fr;
+  overflow: auto;
+  height: 50vh;
 }
 
 <div>
@@ -4101,9 +4111,9 @@ exports[`should render vertical datepicker 1`] = `
       >
         <button
           class="c14"
-          height="30px"
+          height="48px"
           type="button"
-          width="30px"
+          width="48px"
         >
           <svg
             class="c15"
@@ -4126,9 +4136,9 @@ exports[`should render vertical datepicker 1`] = `
       >
         <button
           class="c14"
-          height="30px"
+          height="48px"
           type="button"
-          width="30px"
+          width="48px"
         >
           <svg
             class="c17"
@@ -4148,6 +4158,8 @@ exports[`should render vertical datepicker 1`] = `
       </div>
       <div
         class="c18"
+        height="50vh"
+        overflow="auto"
       >
         <div>
           <div
@@ -5584,12 +5596,6 @@ exports[`should select exact range 1`] = `
   grid-template-columns: 126px 75px 126px;
 }
 
-.c18 {
-  display: grid;
-  grid-gap: 0 32px;
-  grid-template-columns: repeat(2,1fr);
-}
-
 .c21 {
   display: grid;
   grid-template-columns: repeat(7,36px);
@@ -5807,6 +5813,14 @@ exports[`should select exact range 1`] = `
   justify-content: initial;
 }
 
+.c18 {
+  display: grid;
+  grid-gap: 0 32px;
+  grid-template-columns: repeat(2,1fr);
+  overflow: auto;
+  height: 100%;
+}
+
 <div>
   <div
     class="c0"
@@ -5963,6 +5977,8 @@ exports[`should select exact range 1`] = `
       </div>
       <div
         class="c18"
+        height="100%"
+        overflow="auto"
       >
         <div>
           <div
