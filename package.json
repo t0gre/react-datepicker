@@ -51,7 +51,7 @@
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "@types/jest": "^24.0.13",
-    "@types/react": "^16.8.17",
+    "@types/react": "^16.8.18",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
@@ -91,16 +91,16 @@
     "react-dom": "^16.8.6",
     "react-hooks-testing-library": "^0.5.0",
     "react-test-renderer": "^16.8.6",
-    "react-testing-library": "^7.0.0",
+    "react-testing-library": "^7.0.1",
     "rimraf": "^2.6.3",
-    "rollup": "^1.12.1",
+    "rollup": "^1.12.3",
     "rollup-plugin-analyzer": "^3.0.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-terser": "^4.0.4",
-    "rollup-plugin-typescript2": "^0.21.0",
+    "rollup-plugin-typescript2": "^0.21.1",
     "rollup-plugin-visualizer": "^1.1.1",
     "styled-components": "^4.2.0",
     "stylelint": "^10.0.1",
@@ -108,7 +108,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.7.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.5.0-dev.20190512"
+    "typescript": "^3.5.0-rc"
   },
   "config": {
     "commitizen": {
@@ -127,12 +127,11 @@
     "*.+(js|jsx|ts|tsx)": [
       "prettier --write",
       "eslint",
-      "stylelint",
       "git add"
     ]
   },
   "resolutions": {
-    "@types/react": "^16.8.17"
+    "@types/react": "^16.8.18"
   },
   "name": "react-datepicker"
 }

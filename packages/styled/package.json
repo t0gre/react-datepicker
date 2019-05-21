@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^4.1.15",
-    "@types/styled-system": "^4.2.0",
+    "@types/styled-system": "^4.2.1",
     "csstype": "^2.6.4",
     "styled-components": "^4.2.0"
   },
