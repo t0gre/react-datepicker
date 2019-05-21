@@ -365,7 +365,7 @@ exports[`should have empty end date and focused end date 1`] = `
   border: 0;
   width: 100%;
   min-height: 46px;
-  box-shadow: 0px 4px 0 #00aeef;
+  box-shadow: inset 0px -3px 0 #00aeef;
   cursor: pointer;
   box-sizing: border-box;
   outline: 0;
@@ -2426,7 +2426,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
   border: 0;
   width: 100%;
   min-height: 46px;
-  box-shadow: 0px 4px 0 #00aeef;
+  box-shadow: inset 0px -3px 0 #00aeef;
   cursor: pointer;
   box-sizing: border-box;
   outline: 0;
@@ -4452,7 +4452,7 @@ exports[`should not render calendar icons 1`] = `
   border: 0;
   width: 100%;
   min-height: 46px;
-  box-shadow: 0px 4px 0 #00aeef;
+  box-shadow: inset 0px -3px 0 #00aeef;
   cursor: pointer;
   box-sizing: border-box;
   outline: 0;
@@ -6505,7 +6505,7 @@ exports[`should render vertical variant 1`] = `
   border: 0;
   width: 100%;
   min-height: 46px;
-  box-shadow: 0px 4px 0 #00aeef;
+  box-shadow: inset 0px -3px 0 #00aeef;
   cursor: pointer;
   box-sizing: border-box;
   outline: 0;
@@ -8552,7 +8552,7 @@ exports[`should render without reset dates, close and selected dates component 1
   border: 0;
   width: 100%;
   min-height: 46px;
-  box-shadow: 0px 4px 0 #00aeef;
+  box-shadow: inset 0px -3px 0 #00aeef;
   cursor: pointer;
   box-sizing: border-box;
   outline: 0;

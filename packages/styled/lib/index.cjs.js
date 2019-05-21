@@ -400,10 +400,10 @@ var factoryWithThrowingShims = function() {
           for (var y in t) {
             var h,
               _ = c[y],
-              v = createMediaQuery(_),
-              b = i(t[y])
-            if (_) p.push((((h = {})[v] = b), h))
-            else p.unshift(b)
+              b = createMediaQuery(_),
+              v = i(t[y])
+            if (_) p.push((((h = {})[b] = v), h))
+            else p.unshift(v)
           }
           p.sort()
         }
@@ -687,8 +687,8 @@ var factoryWithThrowingShims = function() {
   d = /^(\d{4})/,
   l = [/^([+-]\d{4})/, /^([+-]\d{5})/, /^([+-]\d{6})/],
   g = /^-(\d{2})$/,
-  m = /^-?(\d{3})$/,
-  v = /^-?(\d{2})-?(\d{2})$/,
+  v = /^-?(\d{3})$/,
+  m = /^-?(\d{2})-?(\d{2})$/,
   h = /^-?W(\d{2})$/,
   y = /^-?W(\d{2})-?(\d{1})$/,
   M = /^(\d{2}([.,]\d*)?)$/,
@@ -744,12 +744,12 @@ var F = function(e, t) {
         if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
         if ((n = g.exec(e)))
           return (r = new Date(0)), (a = parseInt(n[1], 10) - 1), r.setUTCFullYear(t, a), r
-        if ((n = m.exec(e))) {
+        if ((n = v.exec(e))) {
           r = new Date(0)
           var o = parseInt(n[1], 10)
           return r.setUTCFullYear(t, 0, o), r
         }
-        if ((n = v.exec(e))) {
+        if ((n = m.exec(e))) {
           ;(r = new Date(0)), (a = parseInt(n[1], 10) - 1)
           var i = parseInt(n[2], 10)
           return r.setUTCFullYear(t, a, i), r
@@ -1311,7 +1311,7 @@ function le(e, t, n) {
 function ge(e, t, n) {
   return !!((t && ie(e, t)) || (n && ie(e, n)))
 }
-function me(e) {
+function ve(e) {
   var t = e.date,
     n = e.minBookingDate,
     r = e.maxBookingDate,
@@ -1329,21 +1329,21 @@ function me(e) {
     (a && a(t))
   )
 }
-function ve(e) {
+function me(e) {
   var t = ee(e)
   return {year: se(t), month: ce(t), date: t}
 }
 function he() {
-  return ve(fe())
+  return me(fe())
 }
 function ye(e, t) {
-  var n = t ? ve(t) : he(),
+  var n = t ? me(t) : he(),
     r = n.date,
     a = [n]
   return (
     e > 1 &&
       (a = Array.from(Array(e - 1).keys()).reduce(function(e) {
-        return (r = de(e[e.length - 1].date, 1)), e.concat([ve(r)])
+        return (r = de(e[e.length - 1].date, 1)), e.concat([me(r)])
       }, a)),
     a
   )
@@ -1351,7 +1351,7 @@ function ye(e, t) {
 function Me(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = de(r, n)), n > 0 ? e.concat([ve(r)]) : [ve(r)].concat(e)
+    return (r = de(r, n)), n > 0 ? e.concat([me(r)]) : [me(r)].concat(e)
   }, [])
 }
 function ke(e, t, n) {
@@ -1413,10 +1413,10 @@ function Ye(e) {
       return ye(u, t)
     }),
     _ = h[0],
-    v = h[1],
-    b = React.useState(null),
-    D = b[0],
-    k = b[1],
+    b = h[1],
+    v = React.useState(null),
+    D = v[0],
+    k = v[1],
     x = React.useCallback(
       function(e) {
         return le(e, t, n)
@@ -1431,7 +1431,7 @@ function Ye(e) {
     ),
     C = React.useCallback(
       function(e) {
-        return me({
+        return ve({
           date: e,
           minBookingDate: a,
           maxBookingDate: o,
@@ -1488,11 +1488,17 @@ function Ye(e) {
       i({startDate: null, endDate: null, focusedInput: pe})
     },
     onDayHover: function(e) {
-      ;(c && (d <= 1 || (a && o && (!ue(e, a, o) || !ue(j(e, d - 1), a, o))))) ||
-      (!c &&
-        (!t || n || (a && o && !ue(e, a, o)) || (!ie(e, t) && d > 1 && t && ue(e, t, j(t, d - 2)))))
-        ? k(null)
-        : k(e)
+      var r = !C(e) || (t && ie(e, t)),
+        i = !a || !ae(e, a),
+        l = !o || !oe(e, o),
+        s = j(e, d - 1),
+        p = !a || !ae(s, a),
+        u = !o || !oe(s, o),
+        m = c && d > 1 && i && l && p && u,
+        f = t && !n && !c && i && l,
+        g = !(d > 1 && t) || ue(e, t, j(t, d - 2)),
+        y = t && ie(e, t) && g && g
+      r && (m || f || y) ? k(e) : null !== D && k(null)
     },
     onDaySelect: function(e) {
       ;(r === Se || r === pe) &&
@@ -1524,10 +1530,10 @@ function Ye(e) {
           i({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      v(Me(_, u, -1))
+      b(Me(_, u, -1))
     },
     goToNextMonths: function() {
-      v(Me(_, u, 1))
+      b(Me(_, u, 1))
     },
   }
 }
@@ -2756,8 +2762,8 @@ function Datepicker(e) {
             return !1
           }
         : h,
-    v = e.minBookingDays,
-    b = void 0 === v ? 1 : v,
+    b = e.minBookingDays,
+    v = void 0 === b ? 1 : b,
     D = e.onClose,
     k = void 0 === D ? function() {} : D,
     x = e.numberOfMonths,
@@ -2773,7 +2779,7 @@ function Datepicker(e) {
       onDateChange: i,
       minBookingDate: r,
       maxBookingDate: a,
-      minBookingDays: b,
+      minBookingDays: v,
       isDayBlocked: _,
       exactMinBookingDays: y,
       numberOfMonths: x,
@@ -2968,13 +2974,13 @@ function DateRangeInput(e) {
     y = void 0 === g || g,
     h = e.vertical,
     _ = void 0 !== h && h,
-    v = e.isDayBlocked,
-    b =
-      void 0 === v
+    b = e.isDayBlocked,
+    v =
+      void 0 === b
         ? function() {
             return !1
           }
-        : v,
+        : b,
     D = e.minBookingDays,
     k = void 0 === D ? 1 : D,
     x = e.onClose,
@@ -3089,7 +3095,7 @@ function DateRangeInput(e) {
             displayFormat: T,
             onDateChange: s,
             minBookingDays: k,
-            isDayBlocked: b,
+            isDayBlocked: v,
             exactMinBookingDays: d,
             showResetDates: y,
             vertical: _,

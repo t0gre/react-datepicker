@@ -48,38 +48,40 @@ function App() {
         }}
       >
         <ThemeProvider
-          theme={{
-            reactDatepicker: {
-              dateRangeBackground: '#ffffff',
-              dateRangeBorderRadius: '2px',
-              dateRangeBorder: '1px solid #d0d0d0',
-
-              inputLabelBorder: '0',
-              inputMinHeight: '48px',
-              dateRangeEndDateInputPadding: '0',
-              dateRangeArrowIconColor: 'red',
-              dateRangeArrowIconOpacity: 1,
-              inputCalendarWrapperTop: '18px',
-            },
-          }}
+          theme={
+            {
+              // reactDatepicker: {
+              //   dateRangeBackground: '#ffffff',
+              //   dateRangeBorderRadius: '2px',
+              //   dateRangeBorder: '1px solid #d0d0d0',
+              //
+              //   inputLabelBorder: '0',
+              //   inputMinHeight: '48px',
+              //   dateRangeEndDateInputPadding: '0',
+              //   dateRangeArrowIconColor: 'red',
+              //   dateRangeArrowIconOpacity: 1,
+              //   inputCalendarWrapperTop: '18px',
+              // },
+            }
+          }
         >
           <DateRangeInput
-            vertical
+            // vertical
             exactMinBookingDays={false}
             minBookingDate={new Date()}
-            minBookingDays={14}
+            minBookingDays={7}
             maxBookingDate={new Date(2019, 6, 27)}
             startDate={state.startDate}
             endDate={state.endDate}
             onDateChange={data => dispatch({type: 'dateChange', payload: data})}
-            numberOfMonths={1}
+            numberOfMonths={2}
             focusedInput={state.focusedInput}
             onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
             isDayBlocked={isDateBlocked}
-            showResetDates={false}
-            showSelectedDates={false}
-            showClose={false}
-            showEndDateCalendarIcon={false}
+            // showResetDates={false}
+            // showSelectedDates={false}
+            // showClose={false}
+            // showEndDateCalendarIcon={false}
           />
         </ThemeProvider>
       </div>

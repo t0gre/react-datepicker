@@ -219,6 +219,7 @@ export function isDateHovered({
   exactMinBookingDays,
 }: IsDateHoveredProps) {
   if (
+    // exact min booking days
     hoveredDate &&
     minBookingDays > 1 &&
     exactMinBookingDays &&
@@ -233,6 +234,7 @@ export function isDateHovered({
       true,
     )
   } else if (
+    // min booking days
     startDate &&
     !endDate &&
     hoveredDate &&
@@ -249,6 +251,7 @@ export function isDateHovered({
       true,
     )
   } else if (
+    // normal
     startDate &&
     !endDate &&
     hoveredDate &&

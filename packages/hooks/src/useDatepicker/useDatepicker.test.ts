@@ -1079,6 +1079,16 @@ describe('isDateHovered', () => {
       expected: true,
     },
     {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: null,
+      hoveredDate: new Date(2019, 2, 10, 0, 0, 0),
+      date: new Date(2019, 2, 10, 0, 0, 0),
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 14, 0, 0, 0)),
+      minBookingDays: 3,
+      exactMinBookingDays: true,
+      expected: true,
+    },
+    {
       startDate: null,
       endDate: null,
       hoveredDate: new Date(2019, 2, 10, 0, 0, 0),
@@ -1109,7 +1119,7 @@ describe('isDateHovered', () => {
       expected: false,
     },
   ])(
-    'returns true when we can select the range',
+    'should return true if day can be hovered, otherwise we return false',
     ({
       startDate,
       endDate,
