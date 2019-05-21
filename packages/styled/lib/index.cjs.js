@@ -761,8 +761,8 @@ var F = function(e, t) {
           : null
       })(R.restDateString, O)
     if (B) {
-      var F,
-        j = B.getTime(),
+      var j,
+        F = B.getTime(),
         P = 0
       if (
         (I.time &&
@@ -785,7 +785,7 @@ var F = function(e, t) {
         I.timezone)
       )
         (_ = I.timezone),
-          (F =
+          (j =
             ((b = S.exec(_))
               ? 0
               : (b = Y.exec(_))
@@ -794,15 +794,15 @@ var F = function(e, t) {
               ? ((C = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -C : C)
               : 0) * u)
       else {
-        var W = j + P,
+        var W = F + P,
           H = new Date(W)
-        F = r(H)
+        j = r(H)
         var E = new Date(W)
         E.setDate(H.getDate() + 1)
         var L = r(E) - r(H)
-        L > 0 && (F += L)
+        L > 0 && (j += L)
       }
-      return new Date(j + P + F)
+      return new Date(F + P + j)
     }
     return new Date(e)
   },
@@ -2375,7 +2375,15 @@ var templateObject_1$6,
   templateObject_3$1,
   templateObject_4,
   templateObject_5,
+  templateObject_1$7,
   Day$1 = React__default.memo(Day),
+  MonthWrapper = styled__default('div')(
+    templateObject_1$7 ||
+      (templateObject_1$7 = __makeTemplateObject(
+        ['\n  &:last-child {\n    padding: 0 1px 1px 0;\n  }\n'],
+        ['\n  &:last-child {\n    padding: 0 1px 1px 0;\n  }\n'],
+      )),
+  ),
   Month = function(e) {
     var t = e.year,
       n = e.month,
@@ -2396,7 +2404,7 @@ var templateObject_1$6,
         monthDayLabelMargin: '0 0 16px',
       })
     return React__default.createElement(
-      'div',
+      MonthWrapper,
       null,
       React__default.createElement(
         Flex,
@@ -2459,10 +2467,10 @@ function CaretIcon(e) {
     }),
   )
 }
-var templateObject_1$7,
+var templateObject_1$8,
   StyledReactDates = styled__default('button')(
-    templateObject_1$7 ||
-      (templateObject_1$7 = __makeTemplateObject(
+    templateObject_1$8 ||
+      (templateObject_1$8 = __makeTemplateObject(
         [
           '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  border: 0;\n  background: transparent;\n  padding: 0;\n\n  &:hover {\n    text-decoration: underline;\n  }\n',
         ],
@@ -2512,7 +2520,7 @@ function ResetDates(e) {
     ),
   )
 }
-var templateObject_1$8,
+var templateObject_1$9,
   templateObject_2$3,
   Svg = styled__default('svg')(
     templateObject_2$3 ||
@@ -2520,8 +2528,8 @@ var templateObject_1$8,
     function(e) {
       var t = e.angle
       return styled.css(
-        templateObject_1$8 ||
-          (templateObject_1$8 = __makeTemplateObject(
+        templateObject_1$9 ||
+          (templateObject_1$9 = __makeTemplateObject(
             ['\n      transform: rotate(', 'deg);\n    '],
             ['\n      transform: rotate(', 'deg);\n    '],
           )),
@@ -2570,10 +2578,10 @@ function CaretIcon$1(e) {
     }),
   )
 }
-var templateObject_1$9,
+var templateObject_1$a,
   StyledNavButton = styled__default('button')(
-    templateObject_1$9 ||
-      (templateObject_1$9 = __makeTemplateObject(
+    templateObject_1$a ||
+      (templateObject_1$a = __makeTemplateObject(
         [
           '\n  ',
           '\n  ',
@@ -2595,7 +2603,7 @@ var templateObject_1$9,
     height,
     background,
     space,
-    border,
+    borders,
   )
 function NavButton(e) {
   var t = e.type,
@@ -2608,10 +2616,19 @@ function NavButton(e) {
       navButtonBackground: '#ffffff',
       navButtonBorder: '1px solid #929598',
       navButtonPadding: '0',
-      navButtonIconHeight: '11px',
-      navButtonIconWidth: '18px',
+      navButtonIconHeight: r ? '18px' : '11px',
+      navButtonIconWidth: r ? '28px' : '18px',
       navButtonIconColor: globalStyles.colors.greey,
     })
+  function i() {
+    return 'next' !== t || r
+      ? 'next' === t && r
+        ? 'down'
+        : 'prev' !== t || r
+        ? 'up'
+        : 'left'
+      : 'right'
+  }
   return React__default.createElement(
     StyledNavButton,
     {
@@ -2619,6 +2636,7 @@ function NavButton(e) {
       height: o.navButtonHeight,
       background: o.navButtonBackground,
       border: o.navButtonBorder,
+      borderRight: 'up' === i() ? 'unset' : o.navButtonBorder,
       p: o.navButtonPadding,
       type: 'button',
       onClick: n,
@@ -2631,14 +2649,7 @@ function NavButton(e) {
       width: o.navButtonIconWidth,
       height: o.navButtonIconHeight,
       color: o.navButtonIconColor,
-      direction:
-        'next' !== t || r
-          ? 'next' === t && r
-            ? 'down'
-            : 'prev' !== t || r
-            ? 'up'
-            : 'left'
-          : 'right',
+      direction: i(),
     }),
   )
 }
@@ -2666,11 +2677,11 @@ function CloseIcon(e) {
     }),
   )
 }
-var templateObject_1$a,
+var templateObject_1$b,
   templateObject_2$4,
   Text$1 = styled__default('div')(
-    templateObject_1$a ||
-      (templateObject_1$a = __makeTemplateObject(
+    templateObject_1$b ||
+      (templateObject_1$b = __makeTemplateObject(
         [
           '\n  margin-left: 16px;\n  margin-top: 1px;\n  float: left;\n  font-family: Montserrat, sans-serif;\n  font-size: 12px;\n  font-weight: 600;\n  color: #929598;\n  transition: color 0.15s;\n',
         ],
@@ -2702,13 +2713,13 @@ function Close(e) {
     React__default.createElement(Text$1, null, 'Close'),
   )
 }
-var templateObject_1$b,
+var templateObject_1$c,
   templateObject_2$5,
   templateObject_3$2,
   templateObject_4$1,
   StyledDatepicker = styled__default('div')(
-    templateObject_1$b ||
-      (templateObject_1$b = __makeTemplateObject(
+    templateObject_1$c ||
+      (templateObject_1$c = __makeTemplateObject(
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
@@ -2788,11 +2799,11 @@ function Datepicker(e) {
       numberOfMonths: x,
       firstDayOfWeek: S,
     }),
-    T = O.activeMonths,
-    M = O.isDateSelected,
+    M = O.activeMonths,
+    T = O.isDateSelected,
     B = O.isFirstOrLastSelectedDate,
-    F = O.isDateBlocked,
-    j = O.isDateHovered,
+    j = O.isDateBlocked,
+    F = O.isDateHovered,
     P = O.firstDayOfWeek,
     W = O.onDaySelect,
     H = O.onResetDates,
@@ -2904,18 +2915,18 @@ function Datepicker(e) {
             gridTemplateColumns: c ? '1fr' : 'repeat(' + $ + ', 1fr)',
             gridGap: A.datepickerMonthsGridGap,
           },
-          T.map(function(e) {
+          M.map(function(e) {
             return React__default.createElement(Month, {
               key: e.year + '-' + e.month,
               year: e.year,
               month: e.month,
               firstDayOfWeek: P,
-              isDateBlocked: F,
-              isDateSelected: M,
+              isDateBlocked: j,
+              isDateSelected: T,
               isStartOrEndDate: B,
               onDaySelect: W,
               onDayHover: z,
-              isDateHovered: j,
+              isDateHovered: F,
             })
           }),
         ),
@@ -2959,11 +2970,11 @@ function Datepicker(e) {
     ),
   )
 }
-var templateObject_1$c,
+var templateObject_1$d,
   templateObject_2$6,
   InputArrowIcon = styled__default(ArrowIcon)(
-    templateObject_1$c ||
-      (templateObject_1$c = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_1$d ||
+      (templateObject_1$d = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     opacity,
     color,
   ),
@@ -3012,11 +3023,11 @@ function DateRangeInput(e) {
     w = e.showEndDateCalendarIcon,
     R = void 0 === w || w,
     O = e.displayFormat,
-    T = void 0 === O ? 'MM/DD/YYYY' : O,
-    M = e.phrases,
-    B = void 0 === M ? dateRangeInputPhrases : M,
-    F = React.useRef(null),
-    j = useThemeProps({
+    M = void 0 === O ? 'MM/DD/YYYY' : O,
+    T = e.phrases,
+    B = void 0 === T ? dateRangeInputPhrases : T,
+    j = React.useRef(null),
+    F = useThemeProps({
       dateRangeBackground: 'transparent',
       dateRangeGridTemplateColumns: _ ? '1fr 24px 1fr' : '194px 39px 194px',
       dateRangeBorder: '0',
@@ -3034,7 +3045,7 @@ function DateRangeInput(e) {
       dateRangeDatepickerWrapperPosition: 'absolute',
     })
   function P(e) {
-    null !== c && F && F.current && !F.current.contains(e.target) && i(null)
+    null !== c && j && j.current && !j.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
@@ -3047,60 +3058,60 @@ function DateRangeInput(e) {
     }),
     React__default.createElement(
       Box,
-      {position: 'relative', ref: F},
+      {position: 'relative', ref: j},
       React__default.createElement(
         InputGrid,
         {
-          background: j.dateRangeBackground,
-          gridTemplateColumns: j.dateRangeGridTemplateColumns,
-          border: j.dateRangeBorder,
-          borderRadius: j.dateRangeBorderRadius,
+          background: F.dateRangeBackground,
+          gridTemplateColumns: F.dateRangeGridTemplateColumns,
+          border: F.dateRangeBorder,
+          borderRadius: F.dateRangeBorderRadius,
         },
         React__default.createElement(Input, {
           id: 'startDate',
           ariaLabel: B.startDateAriaLabel,
           placeholder: B.startDatePlaceholder,
-          value: ke(t, T, ''),
+          value: ke(t, M, ''),
           onClick: function() {
             return i(pe)
           },
           showCalendarIcon: I,
           vertical: _,
           isActive: c === pe,
-          padding: j.dateRangeStartDateInputPadding,
+          padding: F.dateRangeStartDateInputPadding,
         }),
         React__default.createElement(
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
           React__default.createElement(InputArrowIcon, {
-            width: j.dateRangeArrowIconWidth,
-            height: j.dateRangeArrowIconHeight,
-            color: j.dateRangeArrowIconColor,
-            opacity: j.dateRangeArrowIconOpacity,
+            width: F.dateRangeArrowIconWidth,
+            height: F.dateRangeArrowIconHeight,
+            color: F.dateRangeArrowIconColor,
+            opacity: F.dateRangeArrowIconOpacity,
           }),
         ),
         React__default.createElement(Input, {
           id: 'endDate',
           ariaLabel: B.endDateAriaLabel,
           placeholder: B.endDatePlaceholder,
-          value: ke(n, T, ''),
+          value: ke(n, M, ''),
           onClick: function() {
             return i(t ? Se : pe)
           },
           showCalendarIcon: R,
           vertical: _,
           isActive: c === Se,
-          padding: j.dateRangeEndDateInputPadding,
+          padding: F.dateRangeEndDateInputPadding,
         }),
       ),
       React__default.createElement(
         Box,
         {
-          position: j.dateRangeDatepickerWrapperPosition,
-          bottom: j.dateRangeDatepickerWrapperBottom,
-          left: j.dateRangeDatepickerWrapperLeft,
-          top: j.dateRangeDatepickerWrapperTop,
-          right: j.dateRangeDatepickerWrapperRight,
+          position: F.dateRangeDatepickerWrapperPosition,
+          bottom: F.dateRangeDatepickerWrapperBottom,
+          left: F.dateRangeDatepickerWrapperLeft,
+          top: F.dateRangeDatepickerWrapperTop,
+          right: F.dateRangeDatepickerWrapperRight,
         },
         null !== c &&
           React__default.createElement(Datepicker, {
@@ -3114,7 +3125,7 @@ function DateRangeInput(e) {
             firstDayOfWeek: o,
             numberOfMonths: l,
             focusedInput: c,
-            displayFormat: T,
+            displayFormat: M,
             onDateChange: s,
             minBookingDays: k,
             isDayBlocked: b,

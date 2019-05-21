@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sunday should be first day of the week 1`] = `
-.c1 {
+.c2 {
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -9,14 +9,14 @@ exports[`Sunday should be first day of the week 1`] = `
   line-height: 1.57;
 }
 
-.c4 {
+.c5 {
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   font-weight: 500;
   color: #929598;
 }
 
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`Sunday should be first day of the week 1`] = `
   justify-content: center;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -40,7 +40,7 @@ exports[`Sunday should be first day of the week 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57,12 +57,12 @@ exports[`Sunday should be first day of the week 1`] = `
   width: 100%;
 }
 
-.c2 {
+.c3 {
   display: grid;
   grid-template-columns: repeat(7,36px);
 }
 
-.c5 {
+.c6 {
   height: 36px;
   width: 36px;
   box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
@@ -77,23 +77,29 @@ exports[`Sunday should be first day of the week 1`] = `
   outline: 0;
 }
 
-.c5:hover {
+.c6:hover {
   background: #e6e7e8;
   color: #58595b;
 }
 
-.c5:focus {
+.c6:focus {
   box-shadow: none;
   border: 2px solid #009fef;
 }
 
+.c0:last-child {
+  padding: 0 1px 1px 0;
+}
+
 <div>
-  <div>
+  <div
+    class="c0"
+  >
     <div
-      class="c0"
+      class="c1"
     >
       <div
-        class="c1"
+        class="c2"
         color="#343132"
         data-testid="MonthLabel"
         font-family="Montserrat, sans-serif"
@@ -104,13 +110,13 @@ exports[`Sunday should be first day of the week 1`] = `
       </div>
     </div>
     <div
-      class="c2"
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -121,10 +127,10 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -135,10 +141,10 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -149,10 +155,10 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -163,10 +169,10 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -177,10 +183,10 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -191,10 +197,10 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -206,7 +212,7 @@ exports[`Sunday should be first day of the week 1`] = `
       </div>
     </div>
     <div
-      class="c2"
+      class="c3"
     >
       <div />
       <div />
@@ -214,7 +220,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <div />
       <div />
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -223,7 +229,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -231,7 +237,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -240,7 +246,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -248,7 +254,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -257,7 +263,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -265,7 +271,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -274,7 +280,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -282,7 +288,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -291,7 +297,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -299,7 +305,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -308,7 +314,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -316,7 +322,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -325,7 +331,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -333,7 +339,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -342,7 +348,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -350,7 +356,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -359,7 +365,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -367,7 +373,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -376,7 +382,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -384,7 +390,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -393,7 +399,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -401,7 +407,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -410,7 +416,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -418,7 +424,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -427,7 +433,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -435,7 +441,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -444,7 +450,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -452,7 +458,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -461,7 +467,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -469,7 +475,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -478,7 +484,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -486,7 +492,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -495,7 +501,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -503,7 +509,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -512,7 +518,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -520,7 +526,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -529,7 +535,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -537,7 +543,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -546,7 +552,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -554,7 +560,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -563,7 +569,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -571,7 +577,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -580,7 +586,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -588,7 +594,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -597,7 +603,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -605,7 +611,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -614,7 +620,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -622,7 +628,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -631,7 +637,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -639,7 +645,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -648,7 +654,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -656,7 +662,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -665,7 +671,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -673,7 +679,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -682,7 +688,7 @@ exports[`Sunday should be first day of the week 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -695,7 +701,7 @@ exports[`Sunday should be first day of the week 1`] = `
 `;
 
 exports[`should match snapshot 1`] = `
-.c1 {
+.c2 {
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -703,14 +709,14 @@ exports[`should match snapshot 1`] = `
   line-height: 1.57;
 }
 
-.c4 {
+.c5 {
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   font-weight: 500;
   color: #929598;
 }
 
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -722,7 +728,7 @@ exports[`should match snapshot 1`] = `
   justify-content: center;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -734,7 +740,7 @@ exports[`should match snapshot 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -751,12 +757,12 @@ exports[`should match snapshot 1`] = `
   width: 100%;
 }
 
-.c2 {
+.c3 {
   display: grid;
   grid-template-columns: repeat(7,36px);
 }
 
-.c5 {
+.c6 {
   height: 36px;
   width: 36px;
   box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
@@ -771,23 +777,29 @@ exports[`should match snapshot 1`] = `
   outline: 0;
 }
 
-.c5:hover {
+.c6:hover {
   background: #e6e7e8;
   color: #58595b;
 }
 
-.c5:focus {
+.c6:focus {
   box-shadow: none;
   border: 2px solid #009fef;
 }
 
+.c0:last-child {
+  padding: 0 1px 1px 0;
+}
+
 <div>
-  <div>
+  <div
+    class="c0"
+  >
     <div
-      class="c0"
+      class="c1"
     >
       <div
-        class="c1"
+        class="c2"
         color="#343132"
         data-testid="MonthLabel"
         font-family="Montserrat, sans-serif"
@@ -798,13 +810,13 @@ exports[`should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c2"
+      class="c3"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -815,10 +827,10 @@ exports[`should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -829,10 +841,10 @@ exports[`should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -843,10 +855,10 @@ exports[`should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -857,10 +869,10 @@ exports[`should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -871,10 +883,10 @@ exports[`should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -885,10 +897,10 @@ exports[`should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <div
-          class="c4"
+          class="c5"
           color="#929598"
           data-testid="DayLabel"
           font-family="Montserrat, sans-serif"
@@ -900,14 +912,14 @@ exports[`should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="c2"
+      class="c3"
     >
       <div />
       <div />
       <div />
       <div />
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -916,7 +928,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -924,7 +936,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -933,7 +945,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -941,7 +953,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -950,7 +962,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -958,7 +970,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -967,7 +979,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -975,7 +987,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -984,7 +996,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -992,7 +1004,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1001,7 +1013,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1009,7 +1021,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1018,7 +1030,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1026,7 +1038,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1035,7 +1047,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1043,7 +1055,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1052,7 +1064,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1060,7 +1072,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1069,7 +1081,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1077,7 +1089,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1086,7 +1098,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1094,7 +1106,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1103,7 +1115,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1111,7 +1123,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1120,7 +1132,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1128,7 +1140,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1137,7 +1149,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1145,7 +1157,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1154,7 +1166,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1162,7 +1174,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1171,7 +1183,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1179,7 +1191,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1188,7 +1200,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1196,7 +1208,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1205,7 +1217,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1213,7 +1225,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1222,7 +1234,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1230,7 +1242,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1239,7 +1251,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1247,7 +1259,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1256,7 +1268,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1264,7 +1276,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1273,7 +1285,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1281,7 +1293,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1290,7 +1302,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1298,7 +1310,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1307,7 +1319,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1315,7 +1327,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1324,7 +1336,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1332,7 +1344,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1341,7 +1353,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1349,7 +1361,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1358,7 +1370,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >
@@ -1366,7 +1378,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
-        class="c5"
+        class="c6"
         color="#58595b"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
@@ -1375,7 +1387,7 @@ exports[`should match snapshot 1`] = `
         role="button"
       >
         <div
-          class="c6"
+          class="c7"
           height="100%"
           width="100%"
         >

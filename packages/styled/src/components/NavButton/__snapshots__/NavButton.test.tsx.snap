@@ -13,6 +13,7 @@ exports[`should execute onClick callback 1`] = `
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
+  border-right: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -65,6 +66,7 @@ exports[`should match snapshot - next month 1`] = `
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
+  border-right: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -117,6 +119,7 @@ exports[`should match snapshot - next month vertical 1`] = `
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
+  border-right: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -141,9 +144,9 @@ exports[`should match snapshot - next month vertical 1`] = `
     <svg
       class="c1"
       color="#808285"
-      height="11px"
+      height="18px"
       viewBox="0 0 9 6"
-      width="18px"
+      width="28px"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -169,6 +172,7 @@ exports[`should match snapshot - prev month 1`] = `
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
+  border-right: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -221,6 +225,7 @@ exports[`should match snapshot - prev month vertical 1`] = `
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
+  border-right: unset;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -245,9 +250,9 @@ exports[`should match snapshot - prev month vertical 1`] = `
     <svg
       class="c1"
       color="#808285"
-      height="11px"
+      height="18px"
       viewBox="0 0 9 6"
-      width="18px"
+      width="28px"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

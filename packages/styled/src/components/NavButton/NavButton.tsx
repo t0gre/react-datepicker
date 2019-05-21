@@ -9,8 +9,8 @@ import {
   BackgroundProps,
   space,
   SpaceProps,
-  border,
-  BorderProps,
+  borders,
+  BordersProps,
 } from 'styled-system'
 import CaretIcon from '../../icons/CaretIcon'
 // eslint-disable-next-line import/no-unresolved
@@ -23,13 +23,13 @@ interface StyledNavButtonProps
     WidthProps,
     BackgroundProps,
     SpaceProps,
-    BorderProps {}
+    BordersProps {}
 const StyledNavButton = styled('button')<StyledNavButtonProps>`
   ${width}
   ${height}
   ${background}
   ${space}
-  ${border}
+  ${borders}
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,8 +49,8 @@ function NavButton({type, onClick, vertical}: NavButtonProps) {
     navButtonBackground: '#ffffff',
     navButtonBorder: '1px solid #929598',
     navButtonPadding: '0',
-    navButtonIconHeight: '11px',
-    navButtonIconWidth: '18px',
+    navButtonIconHeight: vertical ? '18px' : '11px',
+    navButtonIconWidth: vertical ? '28px' : '18px',
     navButtonIconColor: globalStyles.colors.greey,
   })
 
@@ -78,6 +78,7 @@ function NavButton({type, onClick, vertical}: NavButtonProps) {
       height={theme.navButtonHeight}
       background={theme.navButtonBackground}
       border={theme.navButtonBorder}
+      borderRight={getDirection() === 'up' ? 'unset' : theme.navButtonBorder}
       p={theme.navButtonPadding}
       type="button"
       onClick={onClick}

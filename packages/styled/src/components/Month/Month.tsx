@@ -1,5 +1,6 @@
 import React from 'react'
 import {useMonth, CalendarDay} from '@datepicker-react/hooks'
+import styled from 'styled-components'
 import MonthLabel from '../MonthLabel'
 import DayLabel from '../DayLabel'
 import Flex from '../Flex'
@@ -9,6 +10,12 @@ import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
 // eslint-disable-next-line import/no-unresolved
 import {MonthTheme} from '../../@types/theme'
+
+const MonthWrapper = styled('div')`
+  &:last-child {
+    padding: 0 1px 1px 0;
+  }
+`
 
 interface MonthProps {
   year: number
@@ -41,7 +48,7 @@ const Month = ({
   })
 
   return (
-    <div>
+    <MonthWrapper>
       <Flex justifyContent="center" m={theme.monthLabelMargin}>
         <MonthLabel label={monthLabel} />
       </Flex>
@@ -72,7 +79,7 @@ const Month = ({
           return <div key={index} />
         })}
       </Grid>
-    </div>
+    </MonthWrapper>
   )
 }
 
