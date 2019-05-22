@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {advanceTo, clear} from 'jest-date-mock'
-import {render, fireEvent} from 'react-testing-library'
+import {render, fireEvent, act} from 'react-testing-library'
 import {END_DATE, START_DATE} from '@datepicker-react/hooks'
 import Datepicker from '.'
 
@@ -93,6 +93,32 @@ test('should render vertical datepicker', () => {
       onDateChange={onDateChange}
     />,
   )
+  expect(container).toMatchSnapshot()
+})
+
+test('should go to next and previous month - vertical variant', () => {
+  const onDateChange = jest.fn()
+  const {container, getAllByTestId} = render(
+    <Datepicker
+      vertical
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDateChange={onDateChange}
+    />,
+  )
+  expect(container).toMatchSnapshot()
+
+  // Go to next month
+  act(() => {
+    fireEvent.click(getAllByTestId('DatepickerNavButton')[1])
+  })
+  expect(container).toMatchSnapshot()
+
+  // Go to prev month
+  act(() => {
+    fireEvent.click(getAllByTestId('DatepickerNavButton')[0])
+  })
   expect(container).toMatchSnapshot()
 })
 

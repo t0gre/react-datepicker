@@ -67,7 +67,7 @@ function App() {
         >
           <DateRangeInput
             vertical
-            exactMinBookingDays={false}
+            exactMinBookingDays
             minBookingDate={new Date()}
             minBookingDays={7}
             maxBookingDate={new Date(2019, 6, 27)}

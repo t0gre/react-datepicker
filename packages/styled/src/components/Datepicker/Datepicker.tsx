@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import {
   background,
@@ -141,6 +141,7 @@ function Datepicker({
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })
+  const monthGridRef = useRef<HTMLDivElement>(null)
   const theme: DatepickerTheme = useThemeProps({
     datepickerBackground: '#ffffff',
     datepickerPadding: vertical ? '16px 16px 0' : '32px',
@@ -176,6 +177,22 @@ function Datepicker({
     datepickerResetDatesWrapperMargin: vertical ? 'unset' : '32px 0 0',
     datepickerBoxShadow: 'none',
   })
+
+  function scrollTopToMonthGrid() {
+    if (monthGridRef && monthGridRef.current && vertical) {
+      monthGridRef.current.scrollTop = 0
+    }
+  }
+
+  function handleGoToNextMonth() {
+    goToNextMonths()
+    scrollTopToMonthGrid()
+  }
+
+  function handleGoToPreviousMonth() {
+    goToPreviousMonths()
+    scrollTopToMonthGrid()
+  }
 
   return (
     <StyledDatepicker
@@ -236,6 +253,7 @@ function Datepicker({
             height={theme.datepickerMonthsGridHeight}
             gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
             gridGap={theme.datepickerMonthsGridGap}
+            ref={monthGridRef}
           >
             {activeMonths.map((month: MonthType) => (
               <Month
@@ -267,7 +285,7 @@ function Datepicker({
               right={theme.datepickerPreviousMonthButtonRight}
               bottom={theme.datepickerPreviousMonthButtonBottom}
             >
-              <NavButton type="prev" onClick={goToPreviousMonths} vertical={vertical} />
+              <NavButton type="prev" onClick={handleGoToPreviousMonth} vertical={vertical} />
             </Box>
             <Box
               position={theme.datepickerNextMonthButtonPosition}
@@ -276,7 +294,7 @@ function Datepicker({
               right={theme.datepickerNextMonthButtonRight}
               bottom={theme.datepickerNextMonthButtonBottom}
             >
-              <NavButton type="next" onClick={goToNextMonths} vertical={vertical} />
+              <NavButton type="next" onClick={handleGoToNextMonth} vertical={vertical} />
             </Box>
           </>
         </Flex>

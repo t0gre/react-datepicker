@@ -422,6 +422,21 @@ describe('useDatepicker', () => {
       expected: false,
     },
     {
+      startDate: new Date(2019, 3, 2, 0, 0, 0),
+      endDate: null,
+      minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+      maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 6, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 2, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 2, 0, 0, 0),
+      exactMinBookingDays: false,
+      expected: true,
+    },
+    {
       startDate: null,
       endDate: null,
       minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
@@ -451,6 +466,21 @@ describe('useDatepicker', () => {
       exactMinBookingDays: true,
       expected: true,
     },
+    {
+      startDate: null,
+      endDate: null,
+      minBookingDate: null,
+      maxBookingDate: null,
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDayBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 7, 0, 0, 0))
+      },
+      callbackDate: new Date(2019, 3, 4, 0, 0, 0),
+      expectedHoveredDate: new Date(2019, 3, 4, 0, 0, 0),
+      exactMinBookingDays: true,
+      expected: true,
+    },
   ])('should hover date', props => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
@@ -465,6 +495,34 @@ describe('useDatepicker', () => {
       result.current.onDayHover(props.callbackDate)
     })
     expect(result.current.isDateHovered(props.expectedHoveredDate)).toBe(props.expected)
+    clear()
+  })
+
+  test('should reset hovered state', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      // @ts-ignore
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: null,
+        focusedInput: START_DATE,
+        minBookingDays: 2,
+        minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+        maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
+        onDateChange: jest.fn(),
+      }),
+    )
+
+    act(() => {
+      result.current.onDayHover(new Date(2019, 3, 4, 0, 0, 0))
+    })
+    expect(result.current.isDateHovered(new Date(2019, 3, 4, 0, 0, 0))).toBe(true)
+
+    act(() => {
+      result.current.onDayHover(new Date(2019, 2, 4, 0, 0, 0))
+    })
+    expect(result.current.isDateHovered(new Date(2019, 2, 4, 0, 0, 0))).toBe(false)
+
     clear()
   })
 

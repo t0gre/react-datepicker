@@ -84,6 +84,7 @@ function NavButton({type, onClick, vertical}: NavButtonProps) {
       onClick={onClick}
       onMouseUp={handleMouseUp}
       ref={ref}
+      data-testid="DatepickerNavButton"
     >
       <CaretIcon
         // @ts-ignore

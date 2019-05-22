@@ -2256,6 +2256,7 @@ exports[`should have empty end date and focused end date 1`] = `
             >
               <button
                 class="c36"
+                data-testid="DatepickerNavButton"
                 height="30px"
                 type="button"
                 width="30px"
@@ -2281,6 +2282,7 @@ exports[`should have empty end date and focused end date 1`] = `
             >
               <button
                 class="c36"
+                data-testid="DatepickerNavButton"
                 height="30px"
                 type="button"
                 width="30px"
@@ -4332,6 +4334,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
             >
               <button
                 class="c35"
+                data-testid="DatepickerNavButton"
                 height="30px"
                 type="button"
                 width="30px"
@@ -4357,6 +4360,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
             >
               <button
                 class="c35"
+                data-testid="DatepickerNavButton"
                 height="30px"
                 type="button"
                 width="30px"
@@ -6377,6 +6381,7 @@ exports[`should not render calendar icons 1`] = `
             >
               <button
                 class="c35"
+                data-testid="DatepickerNavButton"
                 height="30px"
                 type="button"
                 width="30px"
@@ -6402,6 +6407,7 @@ exports[`should not render calendar icons 1`] = `
             >
               <button
                 class="c35"
+                data-testid="DatepickerNavButton"
                 height="30px"
                 type="button"
                 width="30px"
@@ -8488,6 +8494,7 @@ exports[`should render vertical variant 1`] = `
             >
               <button
                 class="c36"
+                data-testid="DatepickerNavButton"
                 height="48px"
                 type="button"
                 width="48px"
@@ -8513,6 +8520,7 @@ exports[`should render vertical variant 1`] = `
             >
               <button
                 class="c38"
+                data-testid="DatepickerNavButton"
                 height="48px"
                 type="button"
                 width="48px"
@@ -10298,6 +10306,7 @@ exports[`should render without reset dates, close and selected dates component 1
             >
               <button
                 class="c23"
+                data-testid="DatepickerNavButton"
                 height="48px"
                 type="button"
                 width="48px"
@@ -10323,6 +10332,7 @@ exports[`should render without reset dates, close and selected dates component 1
             >
               <button
                 class="c25"
+                data-testid="DatepickerNavButton"
                 height="48px"
                 type="button"
                 width="48px"
