@@ -103,6 +103,44 @@ test('should render vertical variant', () => {
   expect(container).toMatchSnapshot()
 })
 
+test('should render vertical, rtl variant', () => {
+  const onDateChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container} = render(
+    <Datepicker
+      onFocusChange={onFocusChange}
+      minBookingDate={new Date(2019, 1, 16, 0, 0, 0)}
+      maxBookingDate={new Date(2020, 1, 16, 0, 0, 0)}
+      startDate={new Date(2019, 2, 16, 0, 0, 0)}
+      endDate={null}
+      focusedInput={END_DATE}
+      onDateChange={onDateChange}
+      vertical={true}
+      rtl={true}
+    />,
+  )
+  expect(container).toMatchSnapshot()
+})
+
+test('should render rtl variant', () => {
+  const onDateChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container} = render(
+    <Datepicker
+      onFocusChange={onFocusChange}
+      minBookingDate={new Date(2019, 1, 16, 0, 0, 0)}
+      maxBookingDate={new Date(2020, 1, 16, 0, 0, 0)}
+      startDate={new Date(2019, 2, 16, 0, 0, 0)}
+      endDate={null}
+      focusedInput={END_DATE}
+      onDateChange={onDateChange}
+      vertical={false}
+      rtl={true}
+    />,
+  )
+  expect(container).toMatchSnapshot()
+})
+
 test('should render without reset dates, close and selected dates component', () => {
   const onDateChange = jest.fn()
   const onFocusChange = jest.fn()

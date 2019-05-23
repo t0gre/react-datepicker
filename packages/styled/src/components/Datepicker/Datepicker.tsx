@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {
   background,
   BackgroundProps,
@@ -49,13 +49,20 @@ interface StyledDatepicker
     SpaceProps,
     BorderRadiusProps,
     PositionProps,
-    BoxShadowProps {}
+    BoxShadowProps {
+  rtl: boolean
+}
 const StyledDatepicker = styled('div')<StyledDatepicker>`
   ${background}
   ${space}
   ${borderRadius}
   ${position}
   ${boxShadow}
+  ${({rtl}) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
 `
 
 const DateWrapper = styled('div')`
@@ -93,6 +100,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   showSelectedDates?: boolean
   showClose?: boolean
   vertical?: boolean
+  rtl?: boolean
 }
 
 function Datepicker({
@@ -103,6 +111,7 @@ function Datepicker({
   focusedInput,
   onDateChange,
   vertical = false,
+  rtl = false,
   showResetDates = true,
   showClose = true,
   showSelectedDates = true,
@@ -151,9 +160,9 @@ function Datepicker({
     datepickerCloseWrapperDisplay: vertical ? 'flex' : 'block',
     datepickerCloseWrapperJustifyContent: vertical ? 'flex-end' : 'initial',
     datepickerCloseWrapperMargin: vertical ? '0 0 16px' : '0',
-    datepickerCloseWrapperRight: vertical ? '0' : '32px',
+    datepickerCloseWrapperRight: rtl ? 'unset' : vertical ? '0' : '32px',
     datepickerCloseWrapperTop: 'unset',
-    datepickerCloseWrapperLeft: 'unset',
+    datepickerCloseWrapperLeft: rtl ? '32px' : 'unset',
     datepickerCloseWrapperBottom: 'unset',
     datepickerCloseWrapperZIndex: 1,
     datepickerSelectDateGridTemplateColumns: vertical ? '87px 50px 87px' : '126px 75px 126px',
@@ -201,6 +210,7 @@ function Datepicker({
       borderRadius={theme.datepickerBorderRadius}
       position={theme.datepickerPosition}
       boxShadow={theme.datepickerBoxShadow}
+      rtl={rtl}
     >
       {showClose && (
         <CloseWrapper
@@ -214,7 +224,7 @@ function Datepicker({
           bottom={theme.datepickerCloseWrapperBottom}
           zIndex={theme.datepickerCloseWrapperZIndex}
         >
-          <Close onClick={onClose} />
+          <Close onClick={onClose} rtl={rtl} />
         </CloseWrapper>
       )}
 
@@ -253,6 +263,7 @@ function Datepicker({
             height={theme.datepickerMonthsGridHeight}
             gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
             gridGap={theme.datepickerMonthsGridGap}
+            pr={rtl ? '1px' : '0'}
             ref={monthGridRef}
           >
             {activeMonths.map((month: MonthType) => (
@@ -275,7 +286,7 @@ function Datepicker({
           <>
             {showResetDates && (
               <Flex flex="1" m={theme.datepickerResetDatesWrapperMargin}>
-                <ResetDates onResetDates={onResetDates} text={phrases.resetDates} />
+                <ResetDates rtl={rtl} onResetDates={onResetDates} text={phrases.resetDates} />
               </Flex>
             )}
             <Box
@@ -285,7 +296,12 @@ function Datepicker({
               right={theme.datepickerPreviousMonthButtonRight}
               bottom={theme.datepickerPreviousMonthButtonBottom}
             >
-              <NavButton type="prev" onClick={handleGoToPreviousMonth} vertical={vertical} />
+              <NavButton
+                type="prev"
+                onClick={rtl && !vertical ? handleGoToNextMonth : handleGoToPreviousMonth}
+                vertical={vertical}
+                rtl={rtl}
+              />
             </Box>
             <Box
               position={theme.datepickerNextMonthButtonPosition}
@@ -294,7 +310,12 @@ function Datepicker({
               right={theme.datepickerNextMonthButtonRight}
               bottom={theme.datepickerNextMonthButtonBottom}
             >
-              <NavButton type="next" onClick={handleGoToNextMonth} vertical={vertical} />
+              <NavButton
+                type="next"
+                onClick={rtl && !vertical ? handleGoToPreviousMonth : handleGoToNextMonth}
+                vertical={vertical}
+                rtl={rtl}
+              />
             </Box>
           </>
         </Flex>

@@ -400,10 +400,10 @@ var factoryWithThrowingShims = function() {
           for (var y in t) {
             var h,
               _ = c[y],
-              v = createMediaQuery(_),
-              b = i(t[y])
-            if (_) p.push((((h = {})[v] = b), h))
-            else p.unshift(b)
+              b = createMediaQuery(_),
+              v = i(t[y])
+            if (_) p.push((((h = {})[b] = v), h))
+            else p.unshift(v)
           }
           p.sort()
         }
@@ -713,7 +713,7 @@ var F = function(e, t) {
     var _,
       b,
       C,
-      I = (function(e) {
+      O = (function(e) {
         var t,
           n = {},
           r = e.split(s)
@@ -723,7 +723,7 @@ var F = function(e, t) {
         }
         return n
       })(e),
-      R = (function(e, t) {
+      I = (function(e, t) {
         var n,
           r = D[t],
           a = l[t]
@@ -736,9 +736,9 @@ var F = function(e, t) {
           return {year: 100 * parseInt(i, 10), restDateString: e.slice(i.length)}
         }
         return {year: null}
-      })(I.date, n),
-      O = R.year,
-      B = (function(e, t) {
+      })(O.date, n),
+      R = I.year,
+      j = (function(e, t) {
         if (null === t) return null
         var n, r, a
         if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
@@ -759,14 +759,14 @@ var F = function(e, t) {
           : (n = y.exec(e))
           ? x(t, parseInt(n[1], 10) - 1, parseInt(n[2], 10) - 1)
           : null
-      })(R.restDateString, O)
-    if (B) {
-      var j,
-        F = B.getTime(),
-        P = 0
+      })(I.restDateString, R)
+    if (j) {
+      var B,
+        F = j.getTime(),
+        W = 0
       if (
-        (I.time &&
-          (P = (function(e) {
+        (O.time &&
+          (W = (function(e) {
             var t, n, r
             if ((t = M.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * o
             if ((t = k.exec(e)))
@@ -781,11 +781,11 @@ var F = function(e, t) {
               return (n % 24) * o + r * u + 1e3 * a
             }
             return null
-          })(I.time)),
-        I.timezone)
+          })(O.time)),
+        O.timezone)
       )
-        (_ = I.timezone),
-          (j =
+        (_ = O.timezone),
+          (B =
             ((b = S.exec(_))
               ? 0
               : (b = Y.exec(_))
@@ -794,15 +794,15 @@ var F = function(e, t) {
               ? ((C = 60 * parseInt(b[2], 10) + parseInt(b[3], 10)), '+' === b[1] ? -C : C)
               : 0) * u)
       else {
-        var W = F + P,
-          H = new Date(W)
-        j = r(H)
-        var E = new Date(W)
-        E.setDate(H.getDate() + 1)
-        var L = r(E) - r(H)
-        L > 0 && (j += L)
+        var P = F + W,
+          $ = new Date(P)
+        B = r($)
+        var H = new Date(P)
+        H.setDate($.getDate() + 1)
+        var E = r(H) - r($)
+        E > 0 && (B += E)
       }
-      return new Date(F + P + j)
+      return new Date(F + W + B)
     }
     return new Date(e)
   },
@@ -1413,10 +1413,10 @@ function Ye(e) {
       return ye(u, t)
     }),
     _ = h[0],
-    v = h[1],
-    b = React.useState(null),
-    D = b[0],
-    k = b[1],
+    b = h[1],
+    v = React.useState(null),
+    D = v[0],
+    k = v[1],
     x = React.useCallback(
       function(e) {
         return le(e, t, n)
@@ -1443,7 +1443,7 @@ function Ye(e) {
       },
       [a, o, t, n, d, y],
     ),
-    I = React.useCallback(
+    O = React.useCallback(
       function(e) {
         return (function(e) {
           var t = e.date,
@@ -1480,7 +1480,7 @@ function Ye(e) {
     firstDayOfWeek: f,
     activeMonths: _,
     isDateSelected: x,
-    isDateHovered: I,
+    isDateHovered: O,
     isFirstOrLastSelectedDate: S,
     isDateBlocked: C,
     numberOfMonths: u,
@@ -1530,10 +1530,10 @@ function Ye(e) {
           i({startDate: t, endDate: e, focusedInput: null})
     },
     goToPreviousMonths: function() {
-      v(Me(_, u, -1))
+      b(Me(_, u, -1))
     },
     goToNextMonths: function() {
-      v(Me(_, u, 1))
+      b(Me(_, u, 1))
     },
   }
 }
@@ -1768,9 +1768,11 @@ var templateObject_1$3,
           '\n  ',
           '\n  ',
           '\n  ',
+          '\n  ',
           '\n  cursor: pointer;\n  \n  svg {\n    display: block;\n  }\n',
         ],
         [
+          '\n  ',
           '\n  ',
           '\n  ',
           '\n  ',
@@ -1781,6 +1783,7 @@ var templateObject_1$3,
       )),
     position,
     left,
+    right,
     top,
     height,
     width,
@@ -1857,7 +1860,8 @@ function Input(e) {
     l = e.value,
     c = e.showCalendarIcon,
     s = e.padding,
-    d = useThemeProps({
+    d = e.rtl,
+    p = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       inputFontWeight: 600,
       inputFontSize: '14px',
@@ -1873,7 +1877,8 @@ function Input(e) {
       inputCalendarWrapperHeight: '12px',
       inputCalendarWrapperWidth: '12px',
       inputCalendarWrapperTop: '16px',
-      inputCalendarWrapperLeft: r ? '8px' : '16px',
+      inputCalendarWrapperLeft: d ? 'unset' : r ? '8px' : '16px',
+      inputCalendarWrapperRight: d ? (r ? '8px' : '16px') : 'unset',
       inputCalendarIconWidth: '12px',
       inputCalendarIconHeight: '12px',
       inputCalendarIconColor: '#BCBEC0',
@@ -1889,43 +1894,44 @@ function Input(e) {
     InputLabel,
     {
       htmlFor: n,
-      display: d.inputLabelDisplay,
-      position: d.inputLabelPosition,
-      border: d.inputLabelBorder,
-      background: d.inputLabelBackground,
-      borderRadius: d.inputLabelBorderRadius,
-      m: d.inputLabelMargin,
+      display: p.inputLabelDisplay,
+      position: p.inputLabelPosition,
+      border: p.inputLabelBorder,
+      background: p.inputLabelBackground,
+      borderRadius: p.inputLabelBorderRadius,
+      m: p.inputLabelMargin,
     },
     c &&
       React__default.createElement(
         CalendarWrapper,
         {
-          position: d.inputCalendarWrapperPosition,
-          height: d.inputCalendarWrapperHeight,
-          width: d.inputCalendarWrapperWidth,
-          top: d.inputCalendarWrapperTop,
-          left: d.inputCalendarWrapperLeft,
+          position: p.inputCalendarWrapperPosition,
+          height: p.inputCalendarWrapperHeight,
+          width: p.inputCalendarWrapperWidth,
+          top: p.inputCalendarWrapperTop,
+          left: p.inputCalendarWrapperLeft,
+          right: p.inputCalendarWrapperRight,
         },
         React__default.createElement(CalendarIcon, {
-          width: d.inputCalendarIconWidth,
-          height: d.inputCalendarIconHeight,
-          color: d.inputCalendarIconColor,
+          width: p.inputCalendarIconWidth,
+          height: p.inputCalendarIconHeight,
+          color: p.inputCalendarIconColor,
         }),
       ),
     React__default.createElement(StyledInput, {
       readOnly: !0,
-      border: d.inputBorder,
-      p: d.inputPadding,
-      width: d.inputWidth,
-      minHeight: d.inputMinHeight,
-      background: d.inputBackground,
-      fontFamily: d.fontFamily,
-      color: d.inputColor,
-      fontSize: d.inputFontSize,
-      fontWeight: d.inputFontWeight,
-      placeholderColor: d.inputPlaceholderColor,
-      placeholderFontWeight: d.inputPlaceholderFontWeight,
-      boxShadow: a ? d.inputActiveBoxShadow : 'none',
+      border: p.inputBorder,
+      p: p.inputPadding,
+      width: p.inputWidth,
+      minHeight: p.inputMinHeight,
+      background: p.inputBackground,
+      fontFamily: p.fontFamily,
+      color: p.inputColor,
+      fontSize: p.inputFontSize,
+      fontWeight: p.inputFontWeight,
+      placeholderColor: p.inputPlaceholderColor,
+      placeholderFontWeight: p.inputPlaceholderFontWeight,
+      boxShadow: a ? p.inputActiveBoxShadow : 'none',
       id: n,
       placeholder: t,
       'aria-label': o,
@@ -2468,6 +2474,8 @@ function CaretIcon(e) {
   )
 }
 var templateObject_1$8,
+  templateObject_2$3,
+  templateObject_3$2,
   StyledReactDates = styled__default('button')(
     templateObject_1$8 ||
       (templateObject_1$8 = __makeTemplateObject(
@@ -2478,18 +2486,35 @@ var templateObject_1$8,
           '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  border: 0;\n  background: transparent;\n  padding: 0;\n\n  &:hover {\n    text-decoration: underline;\n  }\n',
         ],
       )),
+  ),
+  RedoIconStyle = styled__default(CaretIcon)(
+    templateObject_3$2 ||
+      (templateObject_3$2 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+    function(e) {
+      return (
+        e.rtl &&
+        styled.css(
+          templateObject_2$3 ||
+            (templateObject_2$3 = __makeTemplateObject(
+              ['\n      transform: rotate(-180deg);\n    '],
+              ['\n      transform: rotate(-180deg);\n    '],
+            )),
+        )
+      )
+    },
   )
 function ResetDates(e) {
   var t = e.onResetDates,
     n = e.text,
-    r = React.useRef(null),
-    a = useThemeProps({
+    r = e.rtl,
+    a = React.useRef(null),
+    o = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       resetDatesIconColor: globalStyles.colors.mud,
       resetDatesIconHeight: '14px',
       resetDatesIconWidth: '14px',
       resetDatesTextColor: globalStyles.colors.darcula,
-      resetDatesTextMargin: '1px 0 0 8px',
+      resetDatesTextMargin: r ? '1px 8px 0 0' : '1px 0 0 8px',
       resetDatesTextLineHeight: 1.18,
       resetDatesTextFontSize: '11px',
     })
@@ -2498,33 +2523,34 @@ function ResetDates(e) {
     {
       onClick: t,
       onMouseUp: function() {
-        r && r.current && r.current.blur()
+        a && a.current && a.current.blur()
       },
-      ref: r,
+      ref: a,
     },
-    React__default.createElement(CaretIcon, {
-      height: a.resetDatesIconHeight,
-      width: a.resetDatesIconWidth,
-      color: a.resetDatesIconColor,
+    React__default.createElement(RedoIconStyle, {
+      height: o.resetDatesIconHeight,
+      width: o.resetDatesIconWidth,
+      color: o.resetDatesIconColor,
+      rtl: r,
     }),
     React__default.createElement(
       Text,
       {
-        m: a.resetDatesTextMargin,
-        lineHeight: a.resetDatesTextLineHeight,
-        fontFamily: a.fontFamily,
-        fontSize: a.resetDatesTextFontSize,
-        color: a.resetDatesTextColor,
+        m: o.resetDatesTextMargin,
+        lineHeight: o.resetDatesTextLineHeight,
+        fontFamily: o.fontFamily,
+        fontSize: o.resetDatesTextFontSize,
+        color: o.resetDatesTextColor,
       },
       n,
     ),
   )
 }
 var templateObject_1$9,
-  templateObject_2$3,
+  templateObject_2$4,
   Svg = styled__default('svg')(
-    templateObject_2$3 ||
-      (templateObject_2$3 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+    templateObject_2$4 ||
+      (templateObject_2$4 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
     function(e) {
       var t = e.angle
       return styled.css(
@@ -2609,8 +2635,9 @@ function NavButton(e) {
   var t = e.type,
     n = e.onClick,
     r = e.vertical,
-    a = React.useRef(null),
-    o = useThemeProps({
+    a = e.rtl,
+    o = React.useRef(null),
+    i = useThemeProps({
       navButtonWidth: r ? '48px' : '30px',
       navButtonHeight: r ? '48px' : '30px',
       navButtonBackground: '#ffffff',
@@ -2620,7 +2647,7 @@ function NavButton(e) {
       navButtonIconWidth: r ? '28px' : '18px',
       navButtonIconColor: globalStyles.colors.greey,
     })
-  function i() {
+  function l() {
     return 'next' !== t || r
       ? 'next' === t && r
         ? 'down'
@@ -2632,25 +2659,26 @@ function NavButton(e) {
   return React__default.createElement(
     StyledNavButton,
     {
-      width: o.navButtonWidth,
-      height: o.navButtonHeight,
-      background: o.navButtonBackground,
-      border: o.navButtonBorder,
-      borderRight: 'up' === i() ? 'unset' : o.navButtonBorder,
-      p: o.navButtonPadding,
+      width: i.navButtonWidth,
+      height: i.navButtonHeight,
+      background: i.navButtonBackground,
+      border: i.navButtonBorder,
+      borderRight: 'up' !== l() || a ? i.navButtonBorder : 'unset',
+      borderLeft: 'up' === l() && a ? 'unset' : i.navButtonBorder,
+      p: i.navButtonPadding,
       type: 'button',
       onClick: n,
       onMouseUp: function() {
-        a && a.current && a.current.blur()
+        o && o.current && o.current.blur()
       },
-      ref: a,
+      ref: o,
       'data-testid': 'DatepickerNavButton',
     },
     React__default.createElement(CaretIcon$1, {
-      width: o.navButtonIconWidth,
-      height: o.navButtonIconHeight,
-      color: o.navButtonIconColor,
-      direction: i(),
+      width: i.navButtonIconWidth,
+      height: i.navButtonIconHeight,
+      color: i.navButtonIconColor,
+      direction: l(),
     }),
   )
 }
@@ -2679,60 +2707,99 @@ function CloseIcon(e) {
   )
 }
 var templateObject_1$b,
-  templateObject_2$4,
+  templateObject_2$5,
   Text$1 = styled__default('div')(
     templateObject_1$b ||
       (templateObject_1$b = __makeTemplateObject(
-        [
-          '\n  margin-left: 16px;\n  margin-top: 1px;\n  float: left;\n  font-family: Montserrat, sans-serif;\n  font-size: 12px;\n  font-weight: 600;\n  color: #929598;\n  transition: color 0.15s;\n',
-        ],
-        [
-          '\n  margin-left: 16px;\n  margin-top: 1px;\n  float: left;\n  font-family: Montserrat, sans-serif;\n  font-size: 12px;\n  font-weight: 600;\n  color: #929598;\n  transition: color 0.15s;\n',
-        ],
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  float: left;\n  transition: color 0.15s;\n'],
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  float: left;\n  transition: color 0.15s;\n'],
       )),
+    space,
+    color,
+    fontSize,
+    fontFamily,
+    fontWeight,
   ),
   Wrapper = styled__default('button')(
-    templateObject_2$4 ||
-      (templateObject_2$4 = __makeTemplateObject(
+    templateObject_2$5 ||
+      (templateObject_2$5 = __makeTemplateObject(
         [
           '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  background: transparent;\n  padding: 0;\n  border: 0;\n\n  svg {\n    transition: color 0.15s;\n  }\n\n  &:hover {\n    ',
-          ' {\n      color: #343132;\n    }\n\n    svg {\n      color: #343132;\n    }\n  }\n',
+          ' {\n      ',
+          '\n    }\n\n    svg {\n      ',
+          '\n    }\n  }\n',
         ],
         [
           '\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n  background: transparent;\n  padding: 0;\n  border: 0;\n\n  svg {\n    transition: color 0.15s;\n  }\n\n  &:hover {\n    ',
-          ' {\n      color: #343132;\n    }\n\n    svg {\n      color: #343132;\n    }\n  }\n',
+          ' {\n      ',
+          '\n    }\n\n    svg {\n      ',
+          '\n    }\n  }\n',
         ],
       )),
     Text$1,
+    color,
+    color,
   )
 function Close(e) {
-  var t = e.onClick
+  var t = e.onClick,
+    n = e.rtl,
+    r = useThemeProps({
+      fontFamily: globalStyles.fontFamily,
+      closeMargin: n ? '1px 16px 0 0' : '1px 0 0 16px',
+      closeColor: '#929598',
+      closeHoverColor: '#343132',
+      closeFontSize: '12px',
+      closeFontWeight: 600,
+    })
   return React__default.createElement(
     Wrapper,
-    {onClick: t, 'data-testid': 'DatepickerClose'},
+    {onClick: t, color: r.closeHoverColor, 'data-testid': 'DatepickerClose'},
     React__default.createElement(CloseIcon, {width: '15px', height: '16px', color: '#ADADAD'}),
-    React__default.createElement(Text$1, null, 'Close'),
+    React__default.createElement(
+      Text$1,
+      {
+        m: r.closeMargin,
+        color: r.closeColor,
+        fontSize: r.closeFontSize,
+        fontFamily: r.fontFamily,
+        fontWeight: r.closeFontWeight,
+      },
+      'Close',
+    ),
   )
 }
 var templateObject_1$c,
-  templateObject_2$5,
-  templateObject_3$2,
+  templateObject_2$6,
+  templateObject_3$3,
   templateObject_4$1,
+  templateObject_5$1,
   StyledDatepicker = styled__default('div')(
-    templateObject_1$c ||
-      (templateObject_1$c = __makeTemplateObject(
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+    templateObject_2$6 ||
+      (templateObject_2$6 = __makeTemplateObject(
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
     background,
     space,
     borderRadius,
     position,
     boxShadow,
+    function(e) {
+      return (
+        e.rtl &&
+        styled.css(
+          templateObject_1$c ||
+            (templateObject_1$c = __makeTemplateObject(
+              ['\n      direction: rtl;\n    '],
+              ['\n      direction: rtl;\n    '],
+            )),
+        )
+      )
+    },
   ),
   DateWrapper = styled__default('div')(
-    templateObject_2$5 ||
-      (templateObject_2$5 = __makeTemplateObject(
+    templateObject_3$3 ||
+      (templateObject_3$3 = __makeTemplateObject(
         [
           "\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n",
         ],
@@ -2742,14 +2809,14 @@ var templateObject_1$c,
       )),
   ),
   CloseWrapper = styled__default(Box)(
-    templateObject_3$2 ||
-      (templateObject_3$2 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_4$1 ||
+      (templateObject_4$1 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     display,
     justifyContent,
   ),
   MonthGrid = styled__default(Grid)(
-    templateObject_4$1 ||
-      (templateObject_4$1 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_5$1 ||
+      (templateObject_5$1 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     overflow,
     height,
   )
@@ -2762,58 +2829,60 @@ function Datepicker(e) {
     i = e.onDateChange,
     l = e.vertical,
     c = void 0 !== l && l,
-    s = e.showResetDates,
-    d = void 0 === s || s,
-    p = e.showClose,
+    s = e.rtl,
+    d = void 0 !== s && s,
+    p = e.showResetDates,
     u = void 0 === p || p,
-    m = e.showSelectedDates,
+    m = e.showClose,
     f = void 0 === m || m,
-    g = e.exactMinBookingDays,
-    y = void 0 !== g && g,
-    h = e.isDayBlocked,
-    _ =
-      void 0 === h
+    g = e.showSelectedDates,
+    y = void 0 === g || g,
+    h = e.exactMinBookingDays,
+    _ = void 0 !== h && h,
+    b = e.isDayBlocked,
+    v =
+      void 0 === b
         ? function() {
             return !1
           }
-        : h,
-    v = e.minBookingDays,
-    b = void 0 === v ? 1 : v,
-    D = e.onClose,
-    k = void 0 === D ? function() {} : D,
-    x = e.numberOfMonths,
-    S = e.firstDayOfWeek,
-    C = e.displayFormat,
-    I = void 0 === C ? 'MM/DD/YYYY' : C,
+        : b,
+    D = e.minBookingDays,
+    k = void 0 === D ? 1 : D,
+    x = e.onClose,
+    S = void 0 === x ? function() {} : x,
+    C = e.numberOfMonths,
+    O = e.firstDayOfWeek,
+    I = e.displayFormat,
+    R = void 0 === I ? 'MM/DD/YYYY' : I,
     w = e.phrases,
-    R = void 0 === w ? datepickerPhrases : w,
-    O = Ye({
+    T = void 0 === w ? datepickerPhrases : w,
+    j = Ye({
       startDate: t,
       endDate: n,
       focusedInput: o,
       onDateChange: i,
       minBookingDate: r,
       maxBookingDate: a,
-      minBookingDays: b,
-      isDayBlocked: _,
-      exactMinBookingDays: y,
-      numberOfMonths: x,
-      firstDayOfWeek: S,
+      minBookingDays: k,
+      isDayBlocked: v,
+      exactMinBookingDays: _,
+      numberOfMonths: C,
+      firstDayOfWeek: O,
     }),
-    T = O.activeMonths,
-    M = O.isDateSelected,
-    B = O.isFirstOrLastSelectedDate,
-    j = O.isDateBlocked,
-    F = O.isDateHovered,
-    P = O.firstDayOfWeek,
-    W = O.onDaySelect,
-    H = O.onResetDates,
-    E = O.goToPreviousMonths,
-    L = O.goToNextMonths,
-    $ = O.numberOfMonths,
-    z = O.onDayHover,
-    A = React.useRef(null),
-    Y = useThemeProps({
+    M = j.activeMonths,
+    B = j.isDateSelected,
+    F = j.isFirstOrLastSelectedDate,
+    W = j.isDateBlocked,
+    P = j.isDateHovered,
+    $ = j.firstDayOfWeek,
+    H = j.onDaySelect,
+    E = j.onResetDates,
+    L = j.goToPreviousMonths,
+    z = j.goToNextMonths,
+    A = j.numberOfMonths,
+    Y = j.onDayHover,
+    G = React.useRef(null),
+    V = useThemeProps({
       datepickerBackground: '#ffffff',
       datepickerPadding: c ? '16px 16px 0' : '32px',
       datepickerBorderRadius: '2px',
@@ -2822,9 +2891,9 @@ function Datepicker(e) {
       datepickerCloseWrapperDisplay: c ? 'flex' : 'block',
       datepickerCloseWrapperJustifyContent: c ? 'flex-end' : 'initial',
       datepickerCloseWrapperMargin: c ? '0 0 16px' : '0',
-      datepickerCloseWrapperRight: c ? '0' : '32px',
+      datepickerCloseWrapperRight: d ? 'unset' : c ? '0' : '32px',
       datepickerCloseWrapperTop: 'unset',
-      datepickerCloseWrapperLeft: 'unset',
+      datepickerCloseWrapperLeft: d ? '32px' : 'unset',
       datepickerCloseWrapperBottom: 'unset',
       datepickerCloseWrapperZIndex: 1,
       datepickerSelectDateGridTemplateColumns: c ? '87px 50px 87px' : '126px 75px 126px',
@@ -2848,44 +2917,51 @@ function Datepicker(e) {
       datepickerResetDatesWrapperMargin: c ? 'unset' : '32px 0 0',
       datepickerBoxShadow: 'none',
     })
-  function G() {
-    A && A.current && c && (A.current.scrollTop = 0)
+  function N() {
+    G && G.current && c && (G.current.scrollTop = 0)
+  }
+  function U() {
+    z(), N()
+  }
+  function q() {
+    L(), N()
   }
   return React__default.createElement(
     StyledDatepicker,
     {
-      background: Y.datepickerBackground,
-      p: Y.datepickerPadding,
-      borderRadius: Y.datepickerBorderRadius,
-      position: Y.datepickerPosition,
-      boxShadow: Y.datepickerBoxShadow,
+      background: V.datepickerBackground,
+      p: V.datepickerPadding,
+      borderRadius: V.datepickerBorderRadius,
+      position: V.datepickerPosition,
+      boxShadow: V.datepickerBoxShadow,
+      rtl: d,
     },
-    u &&
+    f &&
       React__default.createElement(
         CloseWrapper,
         {
-          m: Y.datepickerCloseWrapperMargin,
-          display: Y.datepickerCloseWrapperDisplay,
-          justifyContent: Y.datepickerCloseWrapperJustifyContent,
-          position: Y.datepickerCloseWrapperPosition,
-          right: Y.datepickerCloseWrapperRight,
-          top: Y.datepickerCloseWrapperTop,
-          left: Y.datepickerCloseWrapperLeft,
-          bottom: Y.datepickerCloseWrapperBottom,
-          zIndex: Y.datepickerCloseWrapperZIndex,
+          m: V.datepickerCloseWrapperMargin,
+          display: V.datepickerCloseWrapperDisplay,
+          justifyContent: V.datepickerCloseWrapperJustifyContent,
+          position: V.datepickerCloseWrapperPosition,
+          right: V.datepickerCloseWrapperRight,
+          top: V.datepickerCloseWrapperTop,
+          left: V.datepickerCloseWrapperLeft,
+          bottom: V.datepickerCloseWrapperBottom,
+          zIndex: V.datepickerCloseWrapperZIndex,
         },
-        React__default.createElement(Close, {onClick: k}),
+        React__default.createElement(Close, {onClick: S, rtl: d}),
       ),
-    f &&
+    y &&
       React__default.createElement(
         DateWrapper,
         null,
         React__default.createElement(
           Grid,
-          {gridTemplateColumns: Y.datepickerSelectDateGridTemplateColumns},
+          {gridTemplateColumns: V.datepickerSelectDateGridTemplateColumns},
           React__default.createElement(SelectDate, {
-            title: R.datepickerStartDateLabel,
-            date: ke(t, I, R.datepickerStartDatePlaceholder),
+            title: T.datepickerStartDateLabel,
+            date: ke(t, R, T.datepickerStartDatePlaceholder),
             isActive: o === pe,
             vertical: c,
           }),
@@ -2893,14 +2969,14 @@ function Datepicker(e) {
             Flex,
             {justifyContent: 'center', alignItems: 'center'},
             React__default.createElement(ArrowIcon, {
-              height: Y.datepickerSelectDateArrowIconHeight,
-              width: Y.datepickerSelectDateArrowIconWidth,
-              iconColor: Y.datepickerSelectDateArrowIconColor,
+              height: V.datepickerSelectDateArrowIconHeight,
+              width: V.datepickerSelectDateArrowIconWidth,
+              iconColor: V.datepickerSelectDateArrowIconColor,
             }),
           ),
           React__default.createElement(SelectDate, {
-            title: R.datepickerEndDateLabel,
-            date: ke(n, I, R.datepickerEndDatePlaceholder),
+            title: T.datepickerEndDateLabel,
+            date: ke(n, R, T.datepickerEndDatePlaceholder),
             isActive: o === Se,
             vertical: c,
           }),
@@ -2911,28 +2987,29 @@ function Datepicker(e) {
       {position: 'relative'},
       React__default.createElement(
         Box,
-        {m: Y.datepickerMonthsWrapperMargin},
+        {m: V.datepickerMonthsWrapperMargin},
         React__default.createElement(
           MonthGrid,
           {
-            overflow: Y.datepickerMonthsGridOverflow,
-            height: Y.datepickerMonthsGridHeight,
-            gridTemplateColumns: c ? '1fr' : 'repeat(' + $ + ', 1fr)',
-            gridGap: Y.datepickerMonthsGridGap,
-            ref: A,
+            overflow: V.datepickerMonthsGridOverflow,
+            height: V.datepickerMonthsGridHeight,
+            gridTemplateColumns: c ? '1fr' : 'repeat(' + A + ', 1fr)',
+            gridGap: V.datepickerMonthsGridGap,
+            pr: d ? '1px' : '0',
+            ref: G,
           },
-          T.map(function(e) {
+          M.map(function(e) {
             return React__default.createElement(Month, {
               key: e.year + '-' + e.month,
               year: e.year,
               month: e.month,
-              firstDayOfWeek: P,
-              isDateBlocked: j,
-              isDateSelected: M,
-              isStartOrEndDate: B,
-              onDaySelect: W,
-              onDayHover: z,
-              isDateHovered: F,
+              firstDayOfWeek: $,
+              isDateBlocked: W,
+              isDateSelected: B,
+              isStartOrEndDate: F,
+              onDaySelect: H,
+              onDayHover: Y,
+              isDateHovered: P,
             })
           }),
         ),
@@ -2943,44 +3020,46 @@ function Datepicker(e) {
         React__default.createElement(
           React__default.Fragment,
           null,
-          d &&
+          u &&
             React__default.createElement(
               Flex,
-              {flex: '1', m: Y.datepickerResetDatesWrapperMargin},
-              React__default.createElement(ResetDates, {onResetDates: H, text: R.resetDates}),
+              {flex: '1', m: V.datepickerResetDatesWrapperMargin},
+              React__default.createElement(ResetDates, {
+                rtl: d,
+                onResetDates: E,
+                text: T.resetDates,
+              }),
             ),
           React__default.createElement(
             Box,
             {
-              position: Y.datepickerPreviousMonthButtonPosition,
-              top: Y.datepickerPreviousMonthButtonTop,
-              left: Y.datepickerPreviousMonthButtonLeft,
-              right: Y.datepickerPreviousMonthButtonRight,
-              bottom: Y.datepickerPreviousMonthButtonBottom,
+              position: V.datepickerPreviousMonthButtonPosition,
+              top: V.datepickerPreviousMonthButtonTop,
+              left: V.datepickerPreviousMonthButtonLeft,
+              right: V.datepickerPreviousMonthButtonRight,
+              bottom: V.datepickerPreviousMonthButtonBottom,
             },
             React__default.createElement(NavButton, {
               type: 'prev',
-              onClick: function() {
-                E(), G()
-              },
+              onClick: d && !c ? U : q,
               vertical: c,
+              rtl: d,
             }),
           ),
           React__default.createElement(
             Box,
             {
-              position: Y.datepickerNextMonthButtonPosition,
-              top: Y.datepickerNextMonthButtonTop,
-              left: Y.datepickerNextMonthButtonLeft,
-              right: Y.datepickerNextMonthButtonRight,
-              bottom: Y.datepickerNextMonthButtonBottom,
+              position: V.datepickerNextMonthButtonPosition,
+              top: V.datepickerNextMonthButtonTop,
+              left: V.datepickerNextMonthButtonLeft,
+              right: V.datepickerNextMonthButtonRight,
+              bottom: V.datepickerNextMonthButtonBottom,
             },
             React__default.createElement(NavButton, {
               type: 'next',
-              onClick: function() {
-                L(), G()
-              },
+              onClick: d && !c ? q : U,
               vertical: c,
+              rtl: d,
             }),
           ),
         ),
@@ -2989,16 +3068,50 @@ function Datepicker(e) {
   )
 }
 var templateObject_1$d,
-  templateObject_2$6,
+  templateObject_2$7,
+  templateObject_3$4,
+  templateObject_4$2,
+  templateObject_5$2,
+  Wrapper$1 = styled__default(Box)(
+    templateObject_2$7 ||
+      (templateObject_2$7 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+    function(e) {
+      return (
+        e.rtl &&
+        styled.css(
+          templateObject_1$d ||
+            (templateObject_1$d = __makeTemplateObject(
+              ['\n      direction: rtl;\n    '],
+              ['\n      direction: rtl;\n    '],
+            )),
+        )
+      )
+    },
+  ),
   InputArrowIcon = styled__default(ArrowIcon)(
-    templateObject_1$d ||
-      (templateObject_1$d = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_4$2 ||
+      (templateObject_4$2 = __makeTemplateObject(
+        ['\n  ', '\n  ', '\n  ', '\n'],
+        ['\n  ', '\n  ', '\n  ', '\n'],
+      )),
     opacity,
     color,
+    function(e) {
+      return (
+        e.rtl &&
+        styled.css(
+          templateObject_3$4 ||
+            (templateObject_3$4 = __makeTemplateObject(
+              ['\n      transform: rotate(-90deg);\n    '],
+              ['\n      transform: rotate(-90deg);\n    '],
+            )),
+        )
+      )
+    },
   ),
   InputGrid = styled__default(Grid)(
-    templateObject_2$6 ||
-      (templateObject_2$6 = __makeTemplateObject(
+    templateObject_5$2 ||
+      (templateObject_5$2 = __makeTemplateObject(
         ['\n  ', '\n  ', '\n  ', '\n'],
         ['\n  ', '\n  ', '\n  ', '\n'],
       )),
@@ -3025,27 +3138,29 @@ function DateRangeInput(e) {
     y = void 0 === g || g,
     h = e.vertical,
     _ = void 0 !== h && h,
-    v = e.isDayBlocked,
-    b =
-      void 0 === v
+    b = e.rtl,
+    v = void 0 !== b && b,
+    D = e.isDayBlocked,
+    k =
+      void 0 === D
         ? function() {
             return !1
           }
-        : v,
-    D = e.minBookingDays,
-    k = void 0 === D ? 1 : D,
-    x = e.onClose,
-    S = void 0 === x ? function() {} : x,
-    C = e.showStartDateCalendarIcon,
-    I = void 0 === C || C,
+        : D,
+    x = e.minBookingDays,
+    S = void 0 === x ? 1 : x,
+    C = e.onClose,
+    O = void 0 === C ? function() {} : C,
+    I = e.showStartDateCalendarIcon,
+    R = void 0 === I || I,
     w = e.showEndDateCalendarIcon,
-    R = void 0 === w || w,
-    O = e.displayFormat,
-    T = void 0 === O ? 'MM/DD/YYYY' : O,
-    M = e.phrases,
-    B = void 0 === M ? dateRangeInputPhrases : M,
-    j = React.useRef(null),
-    F = useThemeProps({
+    T = void 0 === w || w,
+    j = e.displayFormat,
+    M = void 0 === j ? 'MM/DD/YYYY' : j,
+    B = e.phrases,
+    F = void 0 === B ? dateRangeInputPhrases : B,
+    W = React.useRef(null),
+    P = useThemeProps({
       dateRangeBackground: 'transparent',
       dateRangeGridTemplateColumns: _ ? '1fr 24px 1fr' : '194px 39px 194px',
       dateRangeBorder: '0',
@@ -3054,87 +3169,90 @@ function DateRangeInput(e) {
       dateRangeArrowIconHeight: '12px',
       dateRangeArrowIconColor: '#ffffff',
       dateRangeArrowIconOpacity: 0.4,
-      dateRangeStartDateInputPadding: _ ? '0 8px 0 32px' : '0 44px',
-      dateRangeEndDateInputPadding: _ ? '0 8px 0 32px' : '0 44px',
+      dateRangeStartDateInputPadding: _ ? (v ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+      dateRangeEndDateInputPadding: _ ? (v ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
       dateRangeDatepickerWrapperTop: 'unset',
       dateRangeDatepickerWrapperRight: 'unset',
       dateRangeDatepickerWrapperBottom: '65px',
       dateRangeDatepickerWrapperLeft: '0',
       dateRangeDatepickerWrapperPosition: 'absolute',
     })
-  function P(e) {
-    null !== c && j && j.current && !j.current.contains(e.target) && i(null)
+  function $(e) {
+    null !== c && W && W.current && !W.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', P),
+        'undefined' != typeof window && window.addEventListener('click', $),
         function() {
-          window.removeEventListener('click', P)
+          window.removeEventListener('click', $)
         }
       )
     }),
     React__default.createElement(
-      Box,
-      {position: 'relative', ref: j},
+      Wrapper$1,
+      {rtl: v, position: 'relative', ref: W},
       React__default.createElement(
         InputGrid,
         {
-          background: F.dateRangeBackground,
-          gridTemplateColumns: F.dateRangeGridTemplateColumns,
-          border: F.dateRangeBorder,
-          borderRadius: F.dateRangeBorderRadius,
+          background: P.dateRangeBackground,
+          gridTemplateColumns: P.dateRangeGridTemplateColumns,
+          border: P.dateRangeBorder,
+          borderRadius: P.dateRangeBorderRadius,
         },
         React__default.createElement(Input, {
           id: 'startDate',
-          ariaLabel: B.startDateAriaLabel,
-          placeholder: B.startDatePlaceholder,
-          value: ke(t, T, ''),
+          ariaLabel: F.startDateAriaLabel,
+          placeholder: F.startDatePlaceholder,
+          value: ke(t, M, ''),
           onClick: function() {
             return i(pe)
           },
-          showCalendarIcon: I,
+          showCalendarIcon: R,
           vertical: _,
           isActive: c === pe,
-          padding: F.dateRangeStartDateInputPadding,
+          padding: P.dateRangeStartDateInputPadding,
+          rtl: v,
         }),
         React__default.createElement(
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
           React__default.createElement(InputArrowIcon, {
-            width: F.dateRangeArrowIconWidth,
-            height: F.dateRangeArrowIconHeight,
-            color: F.dateRangeArrowIconColor,
-            opacity: F.dateRangeArrowIconOpacity,
+            width: P.dateRangeArrowIconWidth,
+            height: P.dateRangeArrowIconHeight,
+            color: P.dateRangeArrowIconColor,
+            opacity: P.dateRangeArrowIconOpacity,
+            rtl: v,
           }),
         ),
         React__default.createElement(Input, {
           id: 'endDate',
-          ariaLabel: B.endDateAriaLabel,
-          placeholder: B.endDatePlaceholder,
-          value: ke(n, T, ''),
+          ariaLabel: F.endDateAriaLabel,
+          placeholder: F.endDatePlaceholder,
+          value: ke(n, M, ''),
           onClick: function() {
             return i(t ? Se : pe)
           },
-          showCalendarIcon: R,
+          showCalendarIcon: T,
           vertical: _,
           isActive: c === Se,
-          padding: F.dateRangeEndDateInputPadding,
+          padding: P.dateRangeEndDateInputPadding,
+          rtl: v,
         }),
       ),
       React__default.createElement(
         Box,
         {
-          position: F.dateRangeDatepickerWrapperPosition,
-          bottom: F.dateRangeDatepickerWrapperBottom,
-          left: F.dateRangeDatepickerWrapperLeft,
-          top: F.dateRangeDatepickerWrapperTop,
-          right: F.dateRangeDatepickerWrapperRight,
+          position: P.dateRangeDatepickerWrapperPosition,
+          bottom: P.dateRangeDatepickerWrapperBottom,
+          left: P.dateRangeDatepickerWrapperLeft,
+          top: P.dateRangeDatepickerWrapperTop,
+          right: P.dateRangeDatepickerWrapperRight,
         },
         null !== c &&
           React__default.createElement(Datepicker, {
             onClose: function() {
-              S(), i(null)
+              O(), i(null)
             },
             startDate: t,
             endDate: n,
@@ -3143,15 +3261,16 @@ function DateRangeInput(e) {
             firstDayOfWeek: o,
             numberOfMonths: l,
             focusedInput: c,
-            displayFormat: T,
+            displayFormat: M,
             onDateChange: s,
-            minBookingDays: k,
-            isDayBlocked: b,
+            minBookingDays: S,
+            isDayBlocked: k,
             exactMinBookingDays: d,
             showResetDates: y,
             vertical: _,
             showSelectedDates: f,
             showClose: u,
+            rtl: v,
           }),
       ),
     )

@@ -255,6 +255,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   padding: 0;
   border: 1px solid #929598;
   border-right: unset;
+  border-left: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -276,6 +277,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
+  border-left: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -291,13 +293,12 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 }
 
 .c4 {
-  margin-left: 16px;
-  margin-top: 1px;
-  float: left;
-  font-family: Montserrat,sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  margin: 1px 0 0 16px;
   color: #929598;
+  font-size: 12px;
+  font-family: Montserrat,sans-serif;
+  font-weight: 600;
+  float: left;
   -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
@@ -376,6 +377,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   display: grid;
   grid-gap: 32px;
   grid-template-columns: 1fr;
+  padding-right: 0;
   overflow: auto;
   height: 50vh;
 }
@@ -390,6 +392,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
     >
       <button
         class="c2"
+        color="#343132"
         data-testid="DatepickerClose"
       >
         <svg
@@ -408,6 +411,10 @@ exports[`should go to next and previous month - vertical variant 1`] = `
         </svg>
         <div
           class="c3 c4"
+          color="#929598"
+          font-family="Montserrat, sans-serif"
+          font-size="12px"
+          font-weight="600"
         >
           Close
         </div>
@@ -1877,14 +1884,15 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 exports[`should go to next and previous month - vertical variant 2`] = `
 <div>
   <div
-    class="sc-gqjmRU kUMsHL"
+    class="sc-VigVT ivCmur"
   >
     <div
-      class="sc-bwzfXH sc-jTzLTM eAzsEy"
+      class="sc-bwzfXH sc-fjdhpX dJcnHX"
       display="flex"
     >
       <button
-        class="sc-gZMcBi cFahhl"
+        class="sc-gqjmRU LZUty"
+        color="#343132"
         data-testid="DatepickerClose"
       >
         <svg
@@ -1902,14 +1910,18 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           />
         </svg>
         <div
-          class="sc-iwsKbI cElpZB"
+          class="sc-gZMcBi CwFTY"
+          color="#929598"
+          font-family="Montserrat, sans-serif"
+          font-size="12px"
+          font-weight="600"
         >
           Close
         </div>
       </button>
     </div>
     <div
-      class="sc-VigVT gSqqhF"
+      class="sc-jTzLTM bVXLkg"
     >
       <div
         class="sc-bxivhb cWSMRp"
@@ -1983,7 +1995,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
         class="sc-bwzfXH cOIPJR"
       >
         <div
-          class="sc-bxivhb sc-fjdhpX jurLIi"
+          class="sc-bxivhb sc-jzJRlG MsQHR"
           height="50vh"
           overflow="auto"
         >
@@ -3471,7 +3483,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
             class="sc-gzVnrw dAiLbu"
           >
             <svg
-              class=""
+              class="sc-htoDjs gJSIof"
               color="#58595B"
               height="14px"
               viewBox="0 0 14 14"
@@ -3498,14 +3510,14 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           class="sc-bwzfXH dmXum"
         >
           <button
-            class="sc-dnqmqq eeRxPQ"
+            class="sc-iwsKbI fkqPHA"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
             width="48px"
           >
             <svg
-              class="sc-htoDjs gjfvKK"
+              class="sc-dnqmqq hqoLYL"
               color="#808285"
               height="18px"
               viewBox="0 0 9 6"
@@ -3524,14 +3536,14 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           class="sc-bwzfXH dmXum"
         >
           <button
-            class="sc-dnqmqq jcRNzd"
+            class="sc-iwsKbI kFghZi"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
             width="48px"
           >
             <svg
-              class="sc-htoDjs idezBx"
+              class="sc-dnqmqq cCTcjC"
               color="#808285"
               height="18px"
               viewBox="0 0 9 6"
@@ -3555,14 +3567,15 @@ exports[`should go to next and previous month - vertical variant 2`] = `
 exports[`should go to next and previous month - vertical variant 3`] = `
 <div>
   <div
-    class="sc-gqjmRU kUMsHL"
+    class="sc-VigVT ivCmur"
   >
     <div
-      class="sc-bwzfXH sc-jTzLTM eAzsEy"
+      class="sc-bwzfXH sc-fjdhpX dJcnHX"
       display="flex"
     >
       <button
-        class="sc-gZMcBi cFahhl"
+        class="sc-gqjmRU LZUty"
+        color="#343132"
         data-testid="DatepickerClose"
       >
         <svg
@@ -3580,14 +3593,18 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           />
         </svg>
         <div
-          class="sc-iwsKbI cElpZB"
+          class="sc-gZMcBi CwFTY"
+          color="#929598"
+          font-family="Montserrat, sans-serif"
+          font-size="12px"
+          font-weight="600"
         >
           Close
         </div>
       </button>
     </div>
     <div
-      class="sc-VigVT gSqqhF"
+      class="sc-jTzLTM bVXLkg"
     >
       <div
         class="sc-bxivhb cWSMRp"
@@ -3661,7 +3678,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
         class="sc-bwzfXH cOIPJR"
       >
         <div
-          class="sc-bxivhb sc-fjdhpX jurLIi"
+          class="sc-bxivhb sc-jzJRlG MsQHR"
           height="50vh"
           overflow="auto"
         >
@@ -5146,7 +5163,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
             class="sc-gzVnrw dAiLbu"
           >
             <svg
-              class=""
+              class="sc-htoDjs gJSIof"
               color="#58595B"
               height="14px"
               viewBox="0 0 14 14"
@@ -5173,14 +5190,14 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           class="sc-bwzfXH dmXum"
         >
           <button
-            class="sc-dnqmqq eeRxPQ"
+            class="sc-iwsKbI fkqPHA"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
             width="48px"
           >
             <svg
-              class="sc-htoDjs gjfvKK"
+              class="sc-dnqmqq hqoLYL"
               color="#808285"
               height="18px"
               viewBox="0 0 9 6"
@@ -5199,14 +5216,14 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           class="sc-bwzfXH dmXum"
         >
           <button
-            class="sc-dnqmqq jcRNzd"
+            class="sc-iwsKbI kFghZi"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
             width="48px"
           >
             <svg
-              class="sc-htoDjs idezBx"
+              class="sc-dnqmqq cCTcjC"
               color="#808285"
               height="18px"
               viewBox="0 0 9 6"
@@ -5511,6 +5528,7 @@ exports[`should have empty end date and focused end date 1`] = `
   padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
+  border-left: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5526,13 +5544,12 @@ exports[`should have empty end date and focused end date 1`] = `
 }
 
 .c4 {
-  margin-left: 16px;
-  margin-top: 1px;
-  float: left;
-  font-family: Montserrat,sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  margin: 1px 0 0 16px;
   color: #929598;
+  font-size: 12px;
+  font-family: Montserrat,sans-serif;
+  font-weight: 600;
+  float: left;
   -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
@@ -5608,6 +5625,7 @@ exports[`should have empty end date and focused end date 1`] = `
   display: grid;
   grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  padding-right: 0;
   overflow: auto;
   height: 100%;
 }
@@ -5622,6 +5640,7 @@ exports[`should have empty end date and focused end date 1`] = `
     >
       <button
         class="c2"
+        color="#343132"
         data-testid="DatepickerClose"
       >
         <svg
@@ -5640,6 +5659,10 @@ exports[`should have empty end date and focused end date 1`] = `
         </svg>
         <div
           class="c3 c4"
+          color="#929598"
+          font-family="Montserrat, sans-serif"
+          font-size="12px"
+          font-weight="600"
         >
           Close
         </div>
@@ -7372,6 +7395,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
   padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
+  border-left: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7387,13 +7411,12 @@ exports[`should have empty start and end date and focused start date 1`] = `
 }
 
 .c4 {
-  margin-left: 16px;
-  margin-top: 1px;
-  float: left;
-  font-family: Montserrat,sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  margin: 1px 0 0 16px;
   color: #929598;
+  font-size: 12px;
+  font-family: Montserrat,sans-serif;
+  font-weight: 600;
+  float: left;
   -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
@@ -7469,6 +7492,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
   display: grid;
   grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  padding-right: 0;
   overflow: auto;
   height: 100%;
 }
@@ -7483,6 +7507,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
     >
       <button
         class="c2"
+        color="#343132"
         data-testid="DatepickerClose"
       >
         <svg
@@ -7501,6 +7526,10 @@ exports[`should have empty start and end date and focused start date 1`] = `
         </svg>
         <div
           class="c3 c4"
+          color="#929598"
+          font-family="Montserrat, sans-serif"
+          font-size="12px"
+          font-weight="600"
         >
           Close
         </div>
@@ -9222,6 +9251,7 @@ exports[`should render vertical datepicker 1`] = `
   padding: 0;
   border: 1px solid #929598;
   border-right: unset;
+  border-left: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9243,6 +9273,7 @@ exports[`should render vertical datepicker 1`] = `
   padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
+  border-left: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9258,13 +9289,12 @@ exports[`should render vertical datepicker 1`] = `
 }
 
 .c4 {
-  margin-left: 16px;
-  margin-top: 1px;
-  float: left;
-  font-family: Montserrat,sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  margin: 1px 0 0 16px;
   color: #929598;
+  font-size: 12px;
+  font-family: Montserrat,sans-serif;
+  font-weight: 600;
+  float: left;
   -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
@@ -9343,6 +9373,7 @@ exports[`should render vertical datepicker 1`] = `
   display: grid;
   grid-gap: 32px;
   grid-template-columns: 1fr;
+  padding-right: 0;
   overflow: auto;
   height: 50vh;
 }
@@ -9357,6 +9388,7 @@ exports[`should render vertical datepicker 1`] = `
     >
       <button
         class="c2"
+        color="#343132"
         data-testid="DatepickerClose"
       >
         <svg
@@ -9375,6 +9407,10 @@ exports[`should render vertical datepicker 1`] = `
         </svg>
         <div
           class="c3 c4"
+          color="#929598"
+          font-family="Montserrat, sans-serif"
+          font-size="12px"
+          font-weight="600"
         >
           Close
         </div>
@@ -11105,6 +11141,7 @@ exports[`should select exact range 1`] = `
   padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
+  border-left: 1px solid #929598;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11120,13 +11157,12 @@ exports[`should select exact range 1`] = `
 }
 
 .c4 {
-  margin-left: 16px;
-  margin-top: 1px;
-  float: left;
-  font-family: Montserrat,sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  margin: 1px 0 0 16px;
   color: #929598;
+  font-size: 12px;
+  font-family: Montserrat,sans-serif;
+  font-weight: 600;
+  float: left;
   -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
@@ -11202,6 +11238,7 @@ exports[`should select exact range 1`] = `
   display: grid;
   grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  padding-right: 0;
   overflow: auto;
   height: 100%;
 }
@@ -11216,6 +11253,7 @@ exports[`should select exact range 1`] = `
     >
       <button
         class="c2"
+        color="#343132"
         data-testid="DatepickerClose"
       >
         <svg
@@ -11234,6 +11272,10 @@ exports[`should select exact range 1`] = `
         </svg>
         <div
           class="c3 c4"
+          color="#929598"
+          font-family="Montserrat, sans-serif"
+          font-size="12px"
+          font-weight="600"
         >
           Close
         </div>

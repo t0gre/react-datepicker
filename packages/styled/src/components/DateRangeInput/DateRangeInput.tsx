@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {
   opacity,
   OpacityProps,
@@ -31,10 +31,26 @@ import Datepicker from '../Datepicker'
 import {DateRangeInputTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 
-interface InputArrowIconProps extends OpacityProps, ColorProps {}
+interface RtlProps {
+  rtl: boolean
+}
+const Wrapper = styled(Box)<RtlProps>`
+  ${({rtl}) =>
+    rtl &&
+    css`
+      direction: rtl;
+    `}
+`
+
+interface InputArrowIconProps extends OpacityProps, ColorProps, RtlProps {}
 const InputArrowIcon = styled(ArrowIcon)<InputArrowIconProps>`
   ${opacity}
   ${color}
+  ${({rtl}) =>
+    rtl &&
+    css`
+      transform: rotate(-90deg);
+    `}
 `
 
 interface StyledGridProps extends BackgroundProps, BorderProps, BorderRadiusProps {}
@@ -55,6 +71,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showResetDates?: boolean
   showSelectedDates?: boolean
   showClose?: boolean
+  rtl?: boolean
 }
 
 function DateRangeInput({
@@ -72,6 +89,7 @@ function DateRangeInput({
   showSelectedDates = true,
   showResetDates = true,
   vertical = false,
+  rtl = false,
   isDayBlocked = () => false,
   minBookingDays = 1,
   onClose = () => {},
@@ -90,8 +108,8 @@ function DateRangeInput({
     dateRangeArrowIconHeight: '12px',
     dateRangeArrowIconColor: '#ffffff',
     dateRangeArrowIconOpacity: 0.4,
-    dateRangeStartDateInputPadding: vertical ? '0 8px 0 32px' : '0 44px',
-    dateRangeEndDateInputPadding: vertical ? '0 8px 0 32px' : '0 44px',
+    dateRangeStartDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+    dateRangeEndDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
     dateRangeDatepickerWrapperTop: 'unset',
     dateRangeDatepickerWrapperRight: 'unset',
     dateRangeDatepickerWrapperBottom: '65px',
@@ -127,7 +145,7 @@ function DateRangeInput({
   }
 
   return (
-    <Box position="relative" ref={datepickerWrapperRef}>
+    <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
       <InputGrid
         background={theme.dateRangeBackground}
         gridTemplateColumns={theme.dateRangeGridTemplateColumns}
@@ -144,6 +162,7 @@ function DateRangeInput({
           vertical={vertical}
           isActive={focusedInput === START_DATE}
           padding={theme.dateRangeStartDateInputPadding}
+          rtl={rtl}
         />
         <Flex alignItems="center" justifyContent="center">
           <InputArrowIcon
@@ -153,6 +172,7 @@ function DateRangeInput({
             height={theme.dateRangeArrowIconHeight}
             color={theme.dateRangeArrowIconColor}
             opacity={theme.dateRangeArrowIconOpacity}
+            rtl={rtl}
           />
         </Flex>
         <Input
@@ -165,6 +185,7 @@ function DateRangeInput({
           vertical={vertical}
           isActive={focusedInput === END_DATE}
           padding={theme.dateRangeEndDateInputPadding}
+          rtl={rtl}
         />
       </InputGrid>
       <Box
@@ -193,10 +214,11 @@ function DateRangeInput({
             vertical={vertical}
             showSelectedDates={showSelectedDates}
             showClose={showClose}
+            rtl={rtl}
           />
         )}
       </Box>
-    </Box>
+    </Wrapper>
   )
 }
 

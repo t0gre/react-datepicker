@@ -1,19 +1,40 @@
 import React from 'react'
 import styled from 'styled-components'
-import CloseIcon from '../..//icons/CloseIcon'
+import {
+  color,
+  ColorProps,
+  space,
+  SpaceProps,
+  fontSize,
+  FontSizeProps,
+  fontFamily,
+  FontFamilyProps,
+  fontWeight,
+  FontWeightProps,
+} from 'styled-system'
+import CloseIcon from '../../icons/CloseIcon'
+// eslint-disable-next-line import/no-unresolved
+import {CloseTheme} from '../../@types/theme'
+import useThemeProps from '../../hooks/useThemeProps'
+import globalStyles from '../../globalStyles'
 
-export const Text = styled('div')`
-  margin-left: 16px;
-  margin-top: 1px;
+interface TextProps
+  extends ColorProps,
+    SpaceProps,
+    FontSizeProps,
+    FontFamilyProps,
+    FontWeightProps {}
+const Text = styled('div')<TextProps>`
+  ${space}
+  ${color}
+  ${fontSize}
+  ${fontFamily}
+  ${fontWeight}
   float: left;
-  font-family: Montserrat, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: #929598;
   transition: color 0.15s;
 `
 
-export const Wrapper = styled('button')`
+const Wrapper = styled('button')<ColorProps>`
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -27,24 +48,48 @@ export const Wrapper = styled('button')`
 
   &:hover {
     ${Text} {
-      color: #343132;
+      ${color}
     }
 
     svg {
-      color: #343132;
+      ${color}
     }
   }
 `
 
 interface CloseProps {
   onClick(): void
+  rtl: boolean
 }
 
-function Close({onClick}: CloseProps) {
+function Close({onClick, rtl}: CloseProps) {
+  const theme: CloseTheme = useThemeProps({
+    fontFamily: globalStyles.fontFamily,
+    closeMargin: rtl ? '1px 16px 0 0' : '1px 0 0 16px',
+    closeColor: '#929598',
+    closeHoverColor: '#343132',
+    closeFontSize: '12px',
+    closeFontWeight: 600,
+  })
+
   return (
-    <Wrapper onClick={onClick} data-testid="DatepickerClose">
+    <Wrapper
+      onClick={onClick}
+      // @ts-ignore
+      color={theme.closeHoverColor}
+      data-testid="DatepickerClose"
+    >
       <CloseIcon width="15px" height="16px" color="#ADADAD" />
-      <Text>Close</Text>
+      <Text
+        m={theme.closeMargin}
+        // @ts-ignore
+        color={theme.closeColor}
+        fontSize={theme.closeFontSize}
+        fontFamily={theme.fontFamily}
+        fontWeight={theme.closeFontWeight}
+      >
+        Close
+      </Text>
     </Wrapper>
   )
 }

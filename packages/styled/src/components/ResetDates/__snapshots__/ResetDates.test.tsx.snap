@@ -58,3 +58,68 @@ exports[`should match snapshot 1`] = `
   </button>
 </div>
 `;
+
+exports[`should render rtl variant 1`] = `
+.c2 {
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  color: #343132;
+  line-height: 1.18;
+  margin: 1px 8px 0 0;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.c0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1 {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    <svg
+      class="c1"
+      color="#58595B"
+      height="14px"
+      viewBox="0 0 14 14"
+      width="14px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.015 11.15c-.027-.18-.04-.39-.067-.585a3.958 3.958 0 0 1-4.48-.056C2.663 9.241 2.142 6.663 3.292 4.74c1.217-2.02 3.797-2.592 5.696-1.282.589.404 1.03.934 1.35 1.533l-1.216.808L13 7.917l-.174-4.556-1.056.696a5.812 5.812 0 0 0-1.846-2.062C7.25.155 3.64.935 1.901 3.765c-1.672 2.717-.95 6.382 1.605 8.194a5.535 5.535 0 0 0 5.616.501c0-.083 0-.167-.013-.264a9.193 9.193 0 0 0-.094-1.046z"
+        fill="currentColor"
+        fill-rule="nonzero"
+      />
+    </svg>
+    <div
+      class="c2"
+      color="#343132"
+      font-family="Montserrat, sans-serif"
+      font-size="11px"
+    >
+      Reset dates
+    </div>
+  </button>
+</div>
+`;

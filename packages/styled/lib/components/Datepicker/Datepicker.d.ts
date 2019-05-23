@@ -8,6 +8,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   showSelectedDates?: boolean
   showClose?: boolean
   vertical?: boolean
+  rtl?: boolean
 }
 declare function Datepicker({
   startDate,
@@ -17,6 +18,7 @@ declare function Datepicker({
   focusedInput,
   onDateChange,
   vertical,
+  rtl,
   showResetDates,
   showClose,
   showSelectedDates,

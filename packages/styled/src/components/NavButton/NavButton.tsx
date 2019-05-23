@@ -39,9 +39,10 @@ interface NavButtonProps {
   type: 'next' | 'prev'
   onClick(): void
   vertical: boolean
+  rtl: boolean
 }
 
-function NavButton({type, onClick, vertical}: NavButtonProps) {
+function NavButton({type, onClick, vertical, rtl}: NavButtonProps) {
   const ref = useRef<HTMLButtonElement>(null)
   const theme: NavButtonTheme = useThemeProps({
     navButtonWidth: vertical ? '48px' : '30px',
@@ -78,7 +79,8 @@ function NavButton({type, onClick, vertical}: NavButtonProps) {
       height={theme.navButtonHeight}
       background={theme.navButtonBackground}
       border={theme.navButtonBorder}
-      borderRight={getDirection() === 'up' ? 'unset' : theme.navButtonBorder}
+      borderRight={getDirection() === 'up' && !rtl ? 'unset' : theme.navButtonBorder}
+      borderLeft={getDirection() === 'up' && rtl ? 'unset' : theme.navButtonBorder}
       p={theme.navButtonPadding}
       type="button"
       onClick={onClick}

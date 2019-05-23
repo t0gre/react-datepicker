@@ -66,7 +66,8 @@ function App() {
           }
         >
           <DateRangeInput
-            vertical
+            // vertical
+            rtl
             exactMinBookingDays
             minBookingDate={new Date()}
             minBookingDays={7}

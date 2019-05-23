@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import RedoIcon from '../../icons/RedoIcon'
 import Text from '../Text'
 // eslint-disable-next-line import/no-unresolved
@@ -20,12 +20,24 @@ const StyledReactDates = styled('button')`
   }
 `
 
+interface RedoIconProps {
+  rtl: boolean
+}
+const RedoIconStyle = styled(RedoIcon)<RedoIconProps>`
+  ${({rtl}) =>
+    rtl &&
+    css`
+      transform: rotate(-180deg);
+    `}
+`
+
 interface ResetDatesProps {
   onResetDates(): void
   text: string
+  rtl: boolean
 }
 
-function ResetDates({onResetDates, text}: ResetDatesProps) {
+function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
   const ref = useRef<HTMLButtonElement>(null)
   const theme: ResetDatesTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
@@ -33,7 +45,7 @@ function ResetDates({onResetDates, text}: ResetDatesProps) {
     resetDatesIconHeight: '14px',
     resetDatesIconWidth: '14px',
     resetDatesTextColor: globalStyles.colors.darcula,
-    resetDatesTextMargin: '1px 0 0 8px',
+    resetDatesTextMargin: rtl ? '1px 8px 0 0' : '1px 0 0 8px',
     resetDatesTextLineHeight: 1.18,
     resetDatesTextFontSize: '11px',
   })
@@ -46,13 +58,14 @@ function ResetDates({onResetDates, text}: ResetDatesProps) {
 
   return (
     <StyledReactDates onClick={onResetDates} onMouseUp={handleMouseUp} ref={ref}>
-      <RedoIcon
+      <RedoIconStyle
         // @ts-ignore
         height={theme.resetDatesIconHeight}
         // @ts-ignore
         width={theme.resetDatesIconWidth}
         // @ts-ignore
         color={theme.resetDatesIconColor}
+        rtl={rtl}
       />
       <Text
         m={theme.resetDatesTextMargin}

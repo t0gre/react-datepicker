@@ -33,6 +33,14 @@ interface CommonTheme {
   daySize?: number | (number | null)[] | undefined
 }
 
+export interface CloseTheme extends CommonTheme {
+  closeColor?: ResponsiveValue<ColorProperty>
+  closeHoverColor?: ResponsiveValue<ColorProperty>
+  closeMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
+  closeFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
+  closeFontWeight?: ResponsiveValue<FontWeightProperty>
+}
+
 export interface SelectDateTheme extends CommonTheme {
   selectDateLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
   selectDateLabelColor?: ResponsiveValue<ColorProperty>
@@ -128,6 +136,7 @@ export interface InputTheme extends CommonTheme {
   inputCalendarWrapperWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
   inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   inputCalendarWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  inputCalendarWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
   inputCalendarIconWidth?: string
   inputCalendarIconHeight?: string
   inputCalendarIconColor?: string

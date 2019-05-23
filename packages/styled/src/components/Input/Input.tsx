@@ -33,6 +33,8 @@ import {
   MinHeightProps,
   boxShadow,
   BoxShadowProps,
+  right,
+  RightProps,
   style,
   ResponsiveValue,
   TLengthStyledSystem,
@@ -73,12 +75,14 @@ const InputLabel = styled('label')<InputLabelProps>`
 interface CalendarWrapperProps
   extends PositionProps,
     LeftProps,
+    RightProps,
     TopProps,
     HeightProps,
     WidthProps {}
 const CalendarWrapper = styled('div')<CalendarWrapperProps>`
   ${position}
   ${left}
+  ${right}
   ${top}
   ${height}
   ${width}
@@ -139,6 +143,7 @@ interface InputProps {
   showCalendarIcon: boolean
   vertical: boolean
   isActive: boolean
+  rtl: boolean
   padding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }
 
@@ -152,6 +157,7 @@ function Input({
   value,
   showCalendarIcon,
   padding,
+  rtl,
 }: InputProps) {
   const theme: InputTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
@@ -169,7 +175,8 @@ function Input({
     inputCalendarWrapperHeight: '12px',
     inputCalendarWrapperWidth: '12px',
     inputCalendarWrapperTop: '16px',
-    inputCalendarWrapperLeft: vertical ? '8px' : '16px',
+    inputCalendarWrapperLeft: rtl ? 'unset' : vertical ? '8px' : '16px',
+    inputCalendarWrapperRight: rtl ? (vertical ? '8px' : '16px') : 'unset',
     inputCalendarIconWidth: '12px',
     inputCalendarIconHeight: '12px',
     inputCalendarIconColor: '#BCBEC0',
@@ -199,6 +206,7 @@ function Input({
           width={theme.inputCalendarWrapperWidth}
           top={theme.inputCalendarWrapperTop}
           left={theme.inputCalendarWrapperLeft}
+          right={theme.inputCalendarWrapperRight}
         >
           <CalendarIcon
             // @ts-ignore

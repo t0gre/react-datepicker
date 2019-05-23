@@ -6,6 +6,30 @@ test('should render with icon', () => {
   const onClick = jest.fn()
   const {container, getByPlaceholderText} = render(
     <Input
+      rtl={false}
+      vertical={false}
+      isActive={false}
+      showCalendarIcon
+      ariaLabel="startDate"
+      id="startDate"
+      placeholder="Placeholder"
+      onClick={onClick}
+      value=""
+    />,
+  )
+
+  expect(container).toMatchSnapshot()
+  getByPlaceholderText('Placeholder')
+  // @ts-ignore
+  fireEvent.focus(getByPlaceholderText('Placeholder'))
+  expect(onClick).toHaveBeenCalled()
+})
+
+test('should render rtl variant', () => {
+  const onClick = jest.fn()
+  const {container, getByPlaceholderText} = render(
+    <Input
+      rtl
       vertical={false}
       isActive={false}
       showCalendarIcon
@@ -28,6 +52,7 @@ test('should render without icon', () => {
   const onClick = jest.fn()
   const {container} = render(
     <Input
+      rtl={false}
       vertical={false}
       showCalendarIcon={false}
       isActive={false}
@@ -46,6 +71,7 @@ test('should render with value', () => {
   const onClick = jest.fn()
   const {container, getByDisplayValue} = render(
     <Input
+      rtl={false}
       vertical={false}
       showCalendarIcon={false}
       isActive={false}
@@ -67,6 +93,7 @@ test('should render vertical variant', () => {
     <Input
       vertical
       isActive
+      rtl={false}
       showCalendarIcon={false}
       ariaLabel="startDate"
       id="startDate"

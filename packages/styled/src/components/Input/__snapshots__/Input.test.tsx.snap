@@ -1,5 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render rtl variant 1`] = `
+.c0 {
+  position: relative;
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  display: block;
+  border-radius: 2px;
+  margin: 0;
+}
+
+.c1 {
+  position: absolute;
+  left: unset;
+  right: 16px;
+  top: 16px;
+  height: 12px;
+  width: 12px;
+  cursor: pointer;
+}
+
+.c1 svg {
+  display: block;
+}
+
+.c2 {
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
+  color: #001217;
+  font-weight: 600;
+  border: 0;
+  width: 100%;
+  min-height: 46px;
+  box-shadow: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.c2::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c2::-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c2:-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+<div>
+  <label
+    class="c0"
+    display="block"
+    for="startDate"
+  >
+    <div
+      class="c1"
+      height="12px"
+      width="12px"
+    >
+      <svg
+        class=""
+        color="#BCBEC0"
+        height="12px"
+        viewBox="0 0 12 12"
+        width="12px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 1H7v1h1V1zM6.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM6 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 6 3zm3.5 5.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0-2h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM9 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 9 3zm-.5 2.5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-3 0h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-2 3h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM11 1h-1v1h1v9H1V2h1V1H1a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM3.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM5 1H4v1h1V1zm1.5 7.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm-4-3h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zM3 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 3 3z"
+          fill="currentColor"
+          fill-rule="nonzero"
+        />
+      </svg>
+    </div>
+    <input
+      aria-label="startDate"
+      autocomplete="off"
+      class="c2"
+      color="#001217"
+      data-testid="DatepickerInput"
+      font-family="Montserrat, sans-serif"
+      font-size="14px"
+      font-weight="600"
+      id="startDate"
+      placeholder="Placeholder"
+      readonly=""
+      value=""
+      width="100%"
+    />
+  </label>
+</div>
+`;
+
 exports[`should render vertical variant 1`] = `
 .c0 {
   position: relative;
@@ -78,6 +177,7 @@ exports[`should render with icon 1`] = `
 .c1 {
   position: absolute;
   left: 16px;
+  right: unset;
   top: 16px;
   height: 12px;
   width: 12px;

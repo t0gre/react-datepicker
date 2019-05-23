@@ -11,6 +11,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showResetDates?: boolean
   showSelectedDates?: boolean
   showClose?: boolean
+  rtl?: boolean
 }
 declare function DateRangeInput({
   startDate,
@@ -27,6 +28,7 @@ declare function DateRangeInput({
   showSelectedDates,
   showResetDates,
   vertical,
+  rtl,
   isDayBlocked,
   minBookingDays,
   onClose,
