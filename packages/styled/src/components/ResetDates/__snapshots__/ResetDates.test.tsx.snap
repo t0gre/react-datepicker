@@ -31,7 +31,9 @@ exports[`should match snapshot 1`] = `
 
 <div>
   <button
+    aria-label="Reset dates"
     class="c0"
+    tabindex="-1"
   >
     <svg
       class=""
@@ -96,7 +98,9 @@ exports[`should render rtl variant 1`] = `
 
 <div>
   <button
+    aria-label="Reset dates"
     class="c0"
+    tabindex="-1"
   >
     <svg
       class="c1"

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {render} from 'react-testing-library'
+import {render} from '../../testUtil'
 import DayLabel from '.'
 
 test('should match snapshot', () => {

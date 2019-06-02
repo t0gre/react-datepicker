@@ -31,6 +31,7 @@ exports[`should execute onClick callback 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="30px"
@@ -86,6 +87,7 @@ exports[`should match snapshot - next month 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="30px"
@@ -141,6 +143,7 @@ exports[`should match snapshot - next month rtl 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="30px"
@@ -196,6 +199,7 @@ exports[`should match snapshot - next month vertical 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="48px"
@@ -251,6 +255,7 @@ exports[`should match snapshot - next month vertical, rtl 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="48px"
@@ -306,6 +311,7 @@ exports[`should match snapshot - prev month 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="30px"
@@ -361,6 +367,7 @@ exports[`should match snapshot - prev month rtl 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="30px"
@@ -416,6 +423,7 @@ exports[`should match snapshot - prev month vertical 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="48px"
@@ -471,6 +479,7 @@ exports[`should match snapshot - prev month vertical, rtl 1`] = `
 
 <div>
   <button
+    aria-label="test"
     class="c0"
     data-testid="DatepickerNavButton"
     height="48px"

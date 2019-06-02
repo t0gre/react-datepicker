@@ -58,6 +58,31 @@ describe('useDatepicker', () => {
     clear()
   })
 
+  test('should set focus state', () => {
+    const date = new Date(2019, 2, 27, 0, 0, 0)
+    advanceTo(date)
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: null,
+        onDateChange: jest.fn(),
+      }),
+    )
+    expect(result.current.isDateFocused(date)).toBe(false)
+    act(() => {
+      result.current.onDayFocus(date)
+    })
+    expect(result.current.isDateFocused(date)).toBe(true)
+
+    act(() => {
+      result.current.onDayFocus(new Date(2019, 5, 27, 0, 0, 0))
+    })
+    expect(result.current.isDateFocused(new Date(2019, 5, 27, 0, 0, 0))).toBe(true)
+
+    clear()
+  })
+
   test('should have one month', () => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
@@ -526,7 +551,7 @@ describe('useDatepicker', () => {
     clear()
   })
 
-  test('should selects tart date and reset end date (blocked day)', () => {
+  test('should select start date and reset end date (blocked day)', () => {
     const onDateChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
@@ -934,6 +959,9 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 10, 0, 0, 0),
       endDate: null,
       minBookingDays: 3,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
       expected: false,
     },
@@ -941,6 +969,9 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 10, 0, 0, 0),
       endDate: null,
       minBookingDays: 1,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
       expected: true,
     },
@@ -948,6 +979,9 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 11, 0, 0, 0),
       endDate: null,
       minBookingDays: 1,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 11, 0, 0, 0)),
       expected: false,
     },
@@ -955,6 +989,9 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 10, 0, 0, 0),
       endDate: new Date(2019, 2, 12, 0, 0, 0),
       minBookingDays: 3,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 13, 0, 0, 0)),
       expected: true,
     },
@@ -962,6 +999,9 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 10, 0, 0, 0),
       endDate: new Date(2019, 2, 12, 0, 0, 0),
       minBookingDays: 3,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 12, 0, 0, 0)),
       expected: false,
     },
@@ -969,6 +1009,9 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 10, 0, 0, 0),
       endDate: new Date(2019, 2, 11, 0, 0, 0),
       minBookingDays: 3,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 12, 0, 0, 0)),
       expected: false,
     },
@@ -976,6 +1019,9 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 10, 0, 0, 0),
       endDate: new Date(2019, 2, 12, 0, 0, 0),
       minBookingDays: 1,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 13, 0, 0, 0)),
       expected: true,
     },
@@ -983,13 +1029,45 @@ describe('canSelectRange', () => {
       startDate: new Date(2019, 2, 10, 0, 0, 0),
       endDate: null,
       minBookingDays: 3,
+      exactMinBookingDays: false,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
       isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 13, 0, 0, 0)),
+      expected: true,
+    },
+    {
+      startDate: new Date(2019, 2, 10, 0, 0, 0),
+      endDate: null,
+      minBookingDays: 3,
+      exactMinBookingDays: true,
+      minBookingDate: undefined,
+      maxBookingDate: undefined,
+      isDateBlocked: (date: Date) => isSameDay(date, new Date(2019, 2, 18, 0, 0, 0)),
       expected: true,
     },
   ])(
     'returns true when we can select the range',
-    ({startDate, endDate, minBookingDays, isDateBlocked, expected}) => {
-      expect(canSelectRange({startDate, endDate, minBookingDays, isDateBlocked})).toBe(expected)
+    ({
+      startDate,
+      endDate,
+      minBookingDays,
+      isDateBlocked,
+      exactMinBookingDays,
+      minBookingDate,
+      maxBookingDate,
+      expected,
+    }) => {
+      expect(
+        canSelectRange({
+          startDate,
+          endDate,
+          minBookingDays,
+          exactMinBookingDays,
+          minBookingDate,
+          maxBookingDate,
+          isDateBlocked,
+        }),
+      ).toBe(expected)
     },
   )
 })

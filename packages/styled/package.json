@@ -41,12 +41,12 @@
   "devDependencies": {
     "@types/styled-components": "^4.1.15",
     "@types/styled-system": "^4.2.1",
-    "csstype": "^2.6.4",
-    "styled-components": "^4.2.0"
+    "csstype": "^2.6.5",
+    "styled-components": "^4.2.1"
   },
   "dependencies": {
     "@datepicker-react/hooks": "^1.2.3-alpha.0",
-    "styled-system": "^4.2.2"
+    "styled-system": "^4.2.4"
   },
   "publishConfig": {
     "access": "public"

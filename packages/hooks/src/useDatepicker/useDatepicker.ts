@@ -1,9 +1,10 @@
-import {useState, useCallback} from 'react'
+import {useState, useCallback, useEffect} from 'react'
 import isBefore from 'date-fns/is_before'
 import isAfter from 'date-fns/is_after'
 import addDays from 'date-fns/add_days'
 import isWithinRange from 'date-fns/is_within_range'
 import isSameDay from 'date-fns/is_same_day'
+import isSameMonth from 'date-fns/is_same_month'
 import {
   getInitialMonths,
   MonthType,
@@ -60,6 +61,18 @@ export function useDatepicker({
     getInitialMonths(numberOfMonths, startDate),
   )
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
+  const [focusedDate, setFocusedDate] = useState<Date | null>(startDate)
+  const onDayFocus = useCallback(
+    (date: Date) => {
+      setFocusedDate(date)
+
+      if (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate))) {
+        setActiveMonths(getInitialMonths(numberOfMonths, date))
+      }
+    },
+    [setFocusedDate, setActiveMonths, numberOfMonths, focusedDate],
+  )
+
   const isDateSelected = useCallback((date: Date) => isDateSelectedFn(date, startDate, endDate), [
     startDate,
     endDate,
@@ -84,6 +97,10 @@ export function useDatepicker({
     [minBookingDate, maxBookingDate, startDate, endDate, minBookingDays, isDayBlockedProps],
   )
 
+  const isDateFocused = useCallback(date => (focusedDate ? isSameDay(date, focusedDate) : false), [
+    focusedDate,
+  ])
+
   const isDateHovered = useCallback(
     (date: Date) =>
       isDateHoveredFn({
@@ -97,6 +114,29 @@ export function useDatepicker({
       }),
     [hoveredDate, startDate, endDate, minBookingDays, exactMinBookingDays, isDayBlockedProps],
   )
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', handleKeyDown)
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  })
+
+  function handleKeyDown(e: KeyboardEvent) {
+    if (
+      (e.key === 'ArrowRight' ||
+        e.key === 'ArrowLeft' ||
+        e.key === 'ArrowDown' ||
+        e.key === 'ArrowUp') &&
+      !focusedDate
+    ) {
+      onDayFocus(new Date())
+      setActiveMonths(getInitialMonths(numberOfMonths, new Date()))
+    }
+  }
 
   function onResetDates() {
     onDateChange({
@@ -180,11 +220,17 @@ export function useDatepicker({
         focusedInput: null,
       })
     }
+
+    if (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate))) {
+      setActiveMonths(getInitialMonths(numberOfMonths, date))
+    }
   }
 
   function onDayHover(date: Date) {
     const isNotBlocked = !isDateBlocked(date) || (startDate && isSameDay(date, startDate))
-    const isHoveredDateAfterOrEqualMinDate = minBookingDate ? !isBefore(date, minBookingDate) : true
+    const isHoveredDateAfterOrEqualMinDate = minBookingDate
+      ? !isBefore(date, addDays(minBookingDate, -1))
+      : true
     const isHoveredDateBeforeOrEqualMaxDate = maxBookingDate ? !isAfter(date, maxBookingDate) : true
 
     // Exact minimal booking days
@@ -217,7 +263,7 @@ export function useDatepicker({
         ? isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))
         : true
     const isStartDateHoveredAndInRange =
-      startDate && isSameDay(date, startDate) && isMinBookingDaysInRange && isMinBookingDaysInRange
+      startDate && isSameDay(date, startDate) && isMinBookingDaysInRange
 
     if (isNotBlocked && (isExactAndInRange || isInRange || isStartDateHoveredAndInRange)) {
       setHoveredDate(date)
@@ -228,10 +274,12 @@ export function useDatepicker({
 
   function goToPreviousMonths() {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1))
+    setFocusedDate(null)
   }
 
   function goToNextMonths() {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1))
+    setFocusedDate(null)
   }
 
   return {
@@ -242,9 +290,12 @@ export function useDatepicker({
     isFirstOrLastSelectedDate,
     isDateBlocked,
     numberOfMonths,
+    isDateFocused,
+    focusedDate,
     onResetDates,
     onDayHover,
     onDaySelect,
+    onDayFocus,
     goToPreviousMonths,
     goToNextMonths,
   }

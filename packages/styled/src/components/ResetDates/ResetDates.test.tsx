@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {render, fireEvent} from 'react-testing-library'
+import {render, fireEvent} from '../../testUtil'
 import ResetDates from '.'
 
 test('should match snapshot', () => {

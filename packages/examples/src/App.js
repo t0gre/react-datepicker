@@ -24,7 +24,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   function isDateBlocked(date) {
-    return isSameDay(date, new Date(2019, 4, 22, 0, 0, 0, 0))
+    return isSameDay(date, new Date(2019, 5, 22, 0, 0, 0, 0))
   }
 
   return (
@@ -67,8 +67,8 @@ function App() {
         >
           <DateRangeInput
             // vertical
-            rtl
-            exactMinBookingDays
+            // rtl
+            // exactMinBookingDays
             minBookingDate={new Date()}
             minBookingDays={7}
             maxBookingDate={new Date(2019, 6, 27)}

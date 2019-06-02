@@ -45,6 +45,7 @@ exports[`should render active day 1`] = `
 
 <div>
   <button
+    aria-label="Day-Wed Mar 27 2019"
     class="c0"
     color="#ffffff"
     data-testid="Day"
@@ -52,6 +53,7 @@ exports[`should render active day 1`] = `
     font-size="14px"
     font-weight="500"
     role="button"
+    tabindex="0"
   >
     <div
       class="c1"
@@ -106,14 +108,15 @@ exports[`should render disabled day 1`] = `
 
 <div>
   <button
+    aria-label="Day-Wed Mar 27 2019"
     class="c0"
     color="#58595b"
     data-testid="Day"
-    disabled=""
     font-family="Montserrat, sans-serif"
     font-size="14px"
     font-weight="500"
     role="button"
+    tabindex="0"
   >
     <div
       class="c1"
@@ -166,6 +169,7 @@ exports[`should render first or last active day 1`] = `
 
 <div>
   <button
+    aria-label="Day-Wed Mar 27 2019"
     class="c0"
     color="#ffffff"
     data-testid="Day"
@@ -173,6 +177,7 @@ exports[`should render first or last active day 1`] = `
     font-size="14px"
     font-weight="500"
     role="button"
+    tabindex="0"
   >
     <div
       class="c1"
@@ -230,6 +235,7 @@ exports[`should render normal day 1`] = `
 
 <div>
   <button
+    aria-label="Day-Wed Mar 27 2019"
     class="c0"
     color="#58595b"
     data-testid="Day"
@@ -237,6 +243,7 @@ exports[`should render normal day 1`] = `
     font-size="14px"
     font-weight="500"
     role="button"
+    tabindex="0"
   >
     <div
       class="c1"

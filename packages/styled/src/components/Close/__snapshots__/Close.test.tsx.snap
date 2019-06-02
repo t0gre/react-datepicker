@@ -42,9 +42,11 @@ exports[`should match snapshot 1`] = `
 
 <div>
   <button
+    aria-label="Close"
     class="c0"
     color="#343132"
     data-testid="DatepickerClose"
+    tabindex="-1"
   >
     <svg
       class=""
@@ -115,9 +117,11 @@ exports[`should render rtl variant 1`] = `
 
 <div>
   <button
+    aria-label="Close"
     class="c0"
     color="#343132"
     data-testid="DatepickerClose"
+    tabindex="-1"
   >
     <svg
       class=""

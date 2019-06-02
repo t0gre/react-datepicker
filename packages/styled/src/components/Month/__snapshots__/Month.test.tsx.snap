@@ -220,6 +220,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <div />
       <div />
       <button
+        aria-label="Day-Fri Feb 01 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -227,6 +228,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -237,6 +239,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 02 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -244,6 +247,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -254,6 +258,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 03 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -261,6 +266,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -271,6 +277,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 04 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -278,6 +285,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -288,6 +296,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 05 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -295,6 +304,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -305,6 +315,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 06 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -312,6 +323,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -322,6 +334,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 07 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -329,6 +342,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -339,6 +353,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Fri Feb 08 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -346,6 +361,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -356,6 +372,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 09 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -363,6 +380,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -373,6 +391,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 10 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -380,6 +399,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -390,6 +410,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 11 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -397,6 +418,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -407,6 +429,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 12 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -414,6 +437,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -424,6 +448,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 13 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -431,6 +456,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -441,6 +467,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 14 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -448,6 +475,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -458,6 +486,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Fri Feb 15 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -465,6 +494,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -475,6 +505,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 16 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -482,6 +513,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -492,6 +524,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 17 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -499,6 +532,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -509,6 +543,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 18 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -516,6 +551,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -526,6 +562,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 19 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -533,6 +570,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -543,6 +581,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 20 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -550,6 +589,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -560,6 +600,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 21 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -567,6 +608,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -577,6 +619,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Fri Feb 22 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -584,6 +627,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -594,6 +638,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 23 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -601,6 +646,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -611,6 +657,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 24 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -618,6 +665,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -628,6 +676,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 25 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -635,6 +684,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -645,6 +695,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 26 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -652,6 +703,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -662,6 +714,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 27 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -669,6 +722,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -679,6 +733,7 @@ exports[`Sunday should be first day of the week 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 28 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -686,6 +741,7 @@ exports[`Sunday should be first day of the week 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -919,6 +975,7 @@ exports[`should match snapshot 1`] = `
       <div />
       <div />
       <button
+        aria-label="Day-Fri Feb 01 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -926,6 +983,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -936,6 +994,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 02 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -943,6 +1002,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -953,6 +1013,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 03 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -960,6 +1021,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -970,6 +1032,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 04 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -977,6 +1040,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -987,6 +1051,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 05 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -994,6 +1059,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1004,6 +1070,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 06 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1011,6 +1078,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1021,6 +1089,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 07 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1028,6 +1097,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1038,6 +1108,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Fri Feb 08 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1045,6 +1116,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1055,6 +1127,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 09 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1062,6 +1135,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1072,6 +1146,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 10 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1079,6 +1154,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1089,6 +1165,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 11 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1096,6 +1173,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1106,6 +1184,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 12 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1113,6 +1192,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1123,6 +1203,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 13 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1130,6 +1211,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1140,6 +1222,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 14 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1147,6 +1230,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1157,6 +1241,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Fri Feb 15 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1164,6 +1249,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1174,6 +1260,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 16 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1181,6 +1268,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1191,6 +1279,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 17 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1198,6 +1287,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1208,6 +1298,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 18 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1215,6 +1306,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1225,6 +1317,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 19 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1232,6 +1325,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1242,6 +1336,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 20 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1249,6 +1344,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1259,6 +1355,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 21 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1266,6 +1363,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1276,6 +1374,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Fri Feb 22 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1283,6 +1382,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1293,6 +1393,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sat Feb 23 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1300,6 +1401,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1310,6 +1412,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Sun Feb 24 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1317,6 +1420,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1327,6 +1431,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Mon Feb 25 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1334,6 +1439,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1344,6 +1450,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Tue Feb 26 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1351,6 +1458,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1361,6 +1469,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Wed Feb 27 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1368,6 +1477,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"
@@ -1378,6 +1488,7 @@ exports[`should match snapshot 1`] = `
         </div>
       </button>
       <button
+        aria-label="Day-Thu Feb 28 2019"
         class="c6"
         color="#58595b"
         data-testid="Day"
@@ -1385,6 +1496,7 @@ exports[`should match snapshot 1`] = `
         font-size="14px"
         font-weight="500"
         role="button"
+        tabindex="0"
       >
         <div
           class="c7"

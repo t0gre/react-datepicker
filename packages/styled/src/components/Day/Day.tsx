@@ -1,6 +1,7 @@
-import React, {useMemo} from 'react'
+import React, {useMemo, useContext, useRef} from 'react'
 import styled, {css} from 'styled-components'
 import {ResponsiveValue, style, TLengthStyledSystem} from 'styled-system'
+import {useDay} from '@datepicker-react/hooks'
 import {
   boxShadow,
   BoxShadowProps,
@@ -16,6 +17,7 @@ import {
   FontSizeProps,
 } from 'styled-system'
 import Flex from '../Flex'
+import datepickerContext from '../../context/datepickerContext'
 // eslint-disable-next-line import/no-unresolved
 import {DayTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
@@ -108,7 +110,7 @@ interface StyledDayProps
     FontFamilyProps,
     FontWeightProps {
   isActive: boolean
-  disabled: boolean
+  disabledDate: boolean
   isStartOrEnd: boolean
   isWithinHoverRange: boolean
   dayHeight: number | (number | null)[] | undefined
@@ -133,16 +135,16 @@ const StyledDay = styled('button')<StyledDayProps>`
   padding: 0;
   outline: 0;
   
-  ${({disabled, isStartOrEnd}) =>
-    disabled &&
+  ${({disabledDate, isStartOrEnd}) =>
+    disabledDate &&
     !isStartOrEnd &&
     css`
       cursor: initial;
       opacity: 0.4;
     `}
   
-  ${({disabled, isActive, isStartOrEnd, isWithinHoverRange}) => {
-    if (!disabled && !isActive && !isStartOrEnd && !isWithinHoverRange) {
+  ${({disabledDate, isActive, isStartOrEnd, isWithinHoverRange}) => {
+    if (!disabledDate && !isActive && !isStartOrEnd && !isWithinHoverRange) {
       return css`
         &:hover {
           ${dayHoverBackground}
@@ -199,23 +201,33 @@ function getColor(
 interface DayProps {
   day: string
   date: Date
-  isActive: boolean
-  disabled: boolean
-  isStartOrEnd: boolean
-  isWithinHoverRange: boolean
-  onDaySelect(date: Date): void
-  onDayHover(date: Date): void
 }
-function Day({
-  day,
-  isActive,
-  isStartOrEnd,
-  disabled,
-  onDaySelect,
-  onDayHover,
-  date,
-  isWithinHoverRange,
-}: DayProps) {
+function Day({day, date}: DayProps) {
+  const dayRef = useRef<HTMLButtonElement>(null)
+  const {
+    focusedDate,
+    isDateFocused,
+    isDateSelected,
+    isDateHovered,
+    isDateBlocked,
+    isFirstOrLastSelectedDate,
+    onDaySelect,
+    onDayFocus,
+    onDayHover,
+  } = useContext(datepickerContext)
+  const dayProps = useDay({
+    date,
+    focusedDate,
+    isDateFocused,
+    isDateSelected,
+    isDateHovered,
+    isDateBlocked,
+    isFirstOrLastSelectedDate,
+    onDayFocus,
+    onDaySelect,
+    onDayHover,
+    dayRef,
+  })
   const theme: DayTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     daySize: globalStyles.daySize,
@@ -241,7 +253,7 @@ function Day({
   })
   const borderColor = useMemo(
     () =>
-      getColor(isActive, isStartOrEnd, isWithinHoverRange, {
+      getColor(dayProps.isActive, dayProps.isStartOrEnd, dayProps.isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastBorderColor,
         // @ts-ignore
@@ -251,11 +263,11 @@ function Day({
         // @ts-ignore
         rangeHover: theme.dayHoverRangeColor,
       }),
-    [isActive, isStartOrEnd, theme, isWithinHoverRange],
+    [dayProps.isActive, dayProps.isStartOrEnd, theme, dayProps.isWithinHoverRange],
   )
   const background = useMemo(
     () =>
-      getColor(isActive, isStartOrEnd, isWithinHoverRange, {
+      getColor(dayProps.isActive, dayProps.isStartOrEnd, dayProps.isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastBackground,
         // @ts-ignore
@@ -265,11 +277,11 @@ function Day({
         // @ts-ignore
         rangeHover: theme.dayHoverRangeBackground,
       }),
-    [isActive, isStartOrEnd, theme, isWithinHoverRange],
+    [dayProps.isActive, dayProps.isStartOrEnd, theme, dayProps.isWithinHoverRange],
   )
   const color = useMemo(
     () =>
-      getColor(isActive, isStartOrEnd, isWithinHoverRange, {
+      getColor(dayProps.isActive, dayProps.isStartOrEnd, dayProps.isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastColor,
         // @ts-ignore
@@ -279,18 +291,13 @@ function Day({
         // @ts-ignore
         rangeHover: theme.dayHoverRangeColor,
       }),
-    [isActive, isStartOrEnd, theme, isWithinHoverRange],
+    [dayProps.isActive, dayProps.isStartOrEnd, theme, dayProps.isWithinHoverRange],
   )
 
   return (
     <StyledDay
-      role="button"
-      onClick={() => onDaySelect(date)}
-      onMouseEnter={() => onDayHover(date)}
-      disabled={disabled && !isWithinHoverRange}
-      isActive={isActive}
-      isStartOrEnd={isStartOrEnd}
-      isWithinHoverRange={isWithinHoverRange}
+      {...dayProps}
+      ref={dayRef}
       dayHeight={theme.daySize}
       dayWidth={theme.daySize}
       background={background}
@@ -314,6 +321,7 @@ function Day({
         1px 0 0 0 ${borderColor} inset,
         0 1px 0 0 ${borderColor} inset`}
       data-testid="Day"
+      aria-label={`Day-${date.toDateString()}`}
     >
       <Flex justifyContent="center" alignItems="center" height="100%" width="100%">
         {day}
@@ -322,4 +330,4 @@ function Day({
   )
 }
 
-export default React.memo(Day)
+export default Day

@@ -57,7 +57,13 @@ function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
   }
 
   return (
-    <StyledReactDates onClick={onResetDates} onMouseUp={handleMouseUp} ref={ref}>
+    <StyledReactDates
+      aria-label="Reset dates"
+      tabIndex={-1}
+      onClick={onResetDates}
+      onMouseUp={handleMouseUp}
+      ref={ref}
+    >
       <RedoIconStyle
         // @ts-ignore
         height={theme.resetDatesIconHeight}

@@ -21,25 +21,9 @@ interface MonthProps {
   year: number
   month: number
   firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6
-  isDateBlocked(date: Date): boolean
-  isDateSelected(date: Date): boolean
-  isStartOrEndDate(date: Date): boolean
-  isDateHovered(date: Date): boolean
-  onDaySelect(date: Date): void
-  onDayHover(date: Date): void
 }
 
-const Month = ({
-  year,
-  month,
-  firstDayOfWeek,
-  isDateBlocked,
-  isDateSelected,
-  isStartOrEndDate,
-  onDaySelect,
-  onDayHover,
-  isDateHovered,
-}: MonthProps) => {
+const Month = ({year, month, firstDayOfWeek}: MonthProps) => {
   const {days, weekDays, monthLabel} = useMonth({year, month, weekStartsOn: firstDayOfWeek})
   const theme: MonthTheme = useThemeProps({
     daySize: globalStyles.daySize,
@@ -62,19 +46,7 @@ const Month = ({
       <Grid daySizeGridTemplateColumns={theme.daySize}>
         {days.map((day: CalendarDay, index: number) => {
           if (typeof day === 'object') {
-            return (
-              <Day
-                isActive={isDateSelected(day.date)}
-                date={day.date}
-                key={day.day}
-                day={day.day}
-                disabled={isDateBlocked(day.date)}
-                isStartOrEnd={isStartOrEndDate(day.date)}
-                onDaySelect={onDaySelect}
-                onDayHover={onDayHover}
-                isWithinHoverRange={isDateHovered(day.date)}
-              />
-            )
+            return <Day date={day.date} key={day.day} day={day.day} />
           }
           return <div key={index} />
         })}

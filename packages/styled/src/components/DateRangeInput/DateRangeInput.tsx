@@ -186,6 +186,7 @@ function DateRangeInput({
           isActive={focusedInput === END_DATE}
           padding={theme.dateRangeEndDateInputPadding}
           rtl={rtl}
+          disableAccessibility={focusedInput === START_DATE}
         />
       </InputGrid>
       <Box

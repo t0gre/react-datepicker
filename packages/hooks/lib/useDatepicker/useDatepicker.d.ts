@@ -30,9 +30,12 @@ export declare function useDatepicker({ startDate, endDate, focusedInput, minBoo
     isFirstOrLastSelectedDate: (date: Date) => boolean;
     isDateBlocked: (date: Date) => boolean;
     numberOfMonths: number;
+    isDateFocused: (date: any) => boolean;
+    focusedDate: Date | null;
     onResetDates: () => void;
     onDayHover: (date: Date) => void;
     onDaySelect: (date: Date) => void;
+    onDayFocus: (date: Date) => void;
     goToPreviousMonths: () => void;
     goToNextMonths: () => void;
 };

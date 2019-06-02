@@ -78,6 +78,8 @@ function Close({onClick, rtl}: CloseProps) {
       // @ts-ignore
       color={theme.closeHoverColor}
       data-testid="DatepickerClose"
+      tabIndex={-1}
+      aria-label="Close"
     >
       <CloseIcon width="15px" height="16px" color="#ADADAD" />
       <Text

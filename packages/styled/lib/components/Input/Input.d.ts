@@ -10,6 +10,7 @@ interface InputProps {
   vertical: boolean
   isActive: boolean
   rtl: boolean
+  disableAccessibility?: boolean
   padding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }
 declare function Input({
@@ -23,5 +24,6 @@ declare function Input({
   showCalendarIcon,
   padding,
   rtl,
+  disableAccessibility,
 }: InputProps): JSX.Element
 export default Input

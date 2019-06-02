@@ -1,6 +1,6 @@
-import * as React from 'react'
 import {advanceTo, clear} from 'jest-date-mock'
-import {render, fireEvent, act} from 'react-testing-library'
+import * as React from 'react'
+import {render, fireEvent, act} from '@testing-library/react'
 import {END_DATE, START_DATE} from '@datepicker-react/hooks'
 import Datepicker from '.'
 
@@ -188,4 +188,117 @@ test('should execute onClose callback', () => {
 
   fireEvent.click(getByTestId('DatepickerClose'))
   expect(onClose).toHaveBeenCalled()
+})
+
+test('should select today date with right arrow key', () => {
+  advanceTo(new Date(2019, 2, 1, 0, 0, 0))
+
+  const onDateChange = jest.fn()
+  const onClose = jest.fn()
+  const {container, getAllByTestId} = render(
+    <Datepicker
+      firstDayOfWeek={0}
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDateChange={onDateChange}
+      onClose={onClose}
+      displayFormat="DD.MM.YYYY"
+    />,
+  )
+
+  fireEvent.keyDown(container, {key: 'ArrowRight'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[0]).toHaveFocus()
+  clear()
+})
+
+test('should select today date with left arrow key', () => {
+  advanceTo(new Date(2019, 2, 1, 0, 0, 0))
+
+  const onDateChange = jest.fn()
+  const onClose = jest.fn()
+  const {container, getAllByTestId} = render(
+    <Datepicker
+      firstDayOfWeek={0}
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDateChange={onDateChange}
+      onClose={onClose}
+      displayFormat="DD.MM.YYYY"
+    />,
+  )
+
+  fireEvent.keyDown(container, {key: 'ArrowLeft'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[0]).toHaveFocus()
+  clear()
+})
+
+test('should select today date with up arrow key', () => {
+  advanceTo(new Date(2019, 2, 1, 0, 0, 0))
+
+  const onDateChange = jest.fn()
+  const onClose = jest.fn()
+  const {container, getAllByTestId} = render(
+    <Datepicker
+      firstDayOfWeek={0}
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDateChange={onDateChange}
+      onClose={onClose}
+      displayFormat="DD.MM.YYYY"
+    />,
+  )
+
+  fireEvent.keyDown(container, {key: 'ArrowUp'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[0]).toHaveFocus()
+  clear()
+})
+
+test('should select today date with down arrow key', () => {
+  advanceTo(new Date(2019, 2, 1, 0, 0, 0))
+
+  const onDateChange = jest.fn()
+  const onClose = jest.fn()
+  const {container, getAllByTestId} = render(
+    <Datepicker
+      firstDayOfWeek={0}
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDateChange={onDateChange}
+      onClose={onClose}
+      displayFormat="DD.MM.YYYY"
+    />,
+  )
+
+  fireEvent.keyDown(container, {key: 'ArrowDown'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[0]).toHaveFocus()
+
+  // Next week
+  fireEvent.keyDown(getAllByTestId('Day')[0], {key: 'ArrowDown'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[7]).toHaveFocus()
+
+  // Previous week
+  fireEvent.keyDown(getAllByTestId('Day')[7], {key: 'ArrowUp'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[0]).toHaveFocus()
+
+  // Next day
+  fireEvent.keyDown(getAllByTestId('Day')[0], {key: 'ArrowRight'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[1]).toHaveFocus()
+
+  // Previous day
+  fireEvent.keyDown(getAllByTestId('Day')[1], {key: 'ArrowLeft'})
+  // @ts-ignore
+  expect(getAllByTestId('Day')[0]).toHaveFocus()
+
+  clear()
 })

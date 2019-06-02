@@ -1,24 +1,10 @@
 import * as React from 'react'
-import {render} from 'react-testing-library'
+import {render} from '../../testUtil'
 import Month from '.'
 
 test('should match snapshot', () => {
   const {container, getByText, getAllByTestId} = render(
-    <Month
-      month={1}
-      year={2019}
-      firstDayOfWeek={1}
-      // @ts-ignore
-      onDaySelect={() => {}}
-      // @ts-ignore
-      isDateBlocked={() => false}
-      // @ts-ignore
-      isDateSelected={() => false}
-      // @ts-ignore
-      isStartOrEndDate={() => false}
-      isDateHovered={() => false}
-      onDayHover={jest.fn()}
-    />,
+    <Month month={1} year={2019} firstDayOfWeek={1} />,
   )
   expect(container).toMatchSnapshot()
   getByText('February 2019')
@@ -34,21 +20,7 @@ test('should match snapshot', () => {
 
 test('Sunday should be first day of the week', () => {
   const {container, getByText, getAllByTestId} = render(
-    <Month
-      month={1}
-      year={2019}
-      firstDayOfWeek={0}
-      // @ts-ignore
-      onDaySelect={() => {}}
-      // @ts-ignore
-      isDateBlocked={() => false}
-      // @ts-ignore
-      isDateSelected={() => false}
-      // @ts-ignore
-      isStartOrEndDate={() => false}
-      isDateHovered={() => false}
-      onDayHover={jest.fn()}
-    />,
+    <Month month={1} year={2019} firstDayOfWeek={0} />,
   )
   expect(container).toMatchSnapshot()
   getByText('February 2019')

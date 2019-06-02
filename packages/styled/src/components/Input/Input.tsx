@@ -144,6 +144,7 @@ interface InputProps {
   vertical: boolean
   isActive: boolean
   rtl: boolean
+  disableAccessibility?: boolean
   padding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }
 
@@ -158,6 +159,7 @@ function Input({
   showCalendarIcon,
   padding,
   rtl,
+  disableAccessibility,
 }: InputProps) {
   const theme: InputTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
@@ -220,6 +222,7 @@ function Input({
       )}
       <StyledInput
         readOnly
+        tabIndex={disableAccessibility ? -1 : 0}
         border={theme.inputBorder}
         p={theme.inputPadding}
         // @ts-ignore

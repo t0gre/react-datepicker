@@ -27,7 +27,10 @@ import {
   OnDateChange,
 } from './useDatepicker'
 
+import useDay from './useDay'
+
 export {
+  useDay,
   useMonth,
   UseMonthProps,
   UseMonthResult,

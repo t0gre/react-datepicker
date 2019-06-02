@@ -1,5 +1,5 @@
 import React from 'react'
-import {render} from 'react-testing-library'
+import {render} from '../../testUtil'
 import Box from '.'
 
 test('should match snapshot', () => {

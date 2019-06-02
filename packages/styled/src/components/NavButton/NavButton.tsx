@@ -40,9 +40,10 @@ interface NavButtonProps {
   onClick(): void
   vertical: boolean
   rtl: boolean
+  ariaLabel: string
 }
 
-function NavButton({type, onClick, vertical, rtl}: NavButtonProps) {
+function NavButton({type, onClick, vertical, rtl, ariaLabel}: NavButtonProps) {
   const ref = useRef<HTMLButtonElement>(null)
   const theme: NavButtonTheme = useThemeProps({
     navButtonWidth: vertical ? '48px' : '30px',
@@ -83,6 +84,7 @@ function NavButton({type, onClick, vertical, rtl}: NavButtonProps) {
       borderLeft={getDirection() === 'up' && rtl ? 'unset' : theme.navButtonBorder}
       p={theme.navButtonPadding}
       type="button"
+      aria-label={ariaLabel}
       onClick={onClick}
       onMouseUp={handleMouseUp}
       ref={ref}
