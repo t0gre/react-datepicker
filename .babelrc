@@ -5,7 +5,7 @@
       {
         "modules": false,
         "targets": {
-          "browsers": "> 0.25%, not ie11, not op_mini all, not dead",
+          "browsers": "> 0.25%, not IE 11, not op_mini all, not dead",
           "node": 10
         }
       }

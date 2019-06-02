@@ -60,6 +60,24 @@ const InputGrid = styled(Grid)<StyledGridProps>`
   ${borderRadius}
 `
 
+function getPlacement(placement: 'bottom' | 'top') {
+  if (placement === 'top') {
+    return {
+      dateRangeDatepickerWrapperTop: 'unset',
+      dateRangeDatepickerWrapperRight: 'unset',
+      dateRangeDatepickerWrapperBottom: '65px',
+      dateRangeDatepickerWrapperLeft: '0',
+    }
+  }
+
+  return {
+    dateRangeDatepickerWrapperTop: 'unset',
+    dateRangeDatepickerWrapperRight: '65px',
+    dateRangeDatepickerWrapperBottom: 'unset',
+    dateRangeDatepickerWrapperLeft: '0',
+  }
+}
+
 export interface DateRangeInputProps extends UseDatepickerProps {
   displayFormat?: string | FormatFunction
   phrases?: DateRangeInputPhrases
@@ -72,6 +90,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showSelectedDates?: boolean
   showClose?: boolean
   rtl?: boolean
+  placement?: 'top' | 'bottom'
 }
 
 function DateRangeInput({
@@ -97,6 +116,7 @@ function DateRangeInput({
   showEndDateCalendarIcon = true,
   displayFormat = 'MM/DD/YYYY',
   phrases = dateRangeInputPhrases,
+  placement = 'bottom',
 }: DateRangeInputProps) {
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
   const theme: DateRangeInputTheme = useThemeProps({
@@ -106,15 +126,12 @@ function DateRangeInput({
     dateRangeBorderRadius: '0',
     dateRangeArrowIconWidth: '15px',
     dateRangeArrowIconHeight: '12px',
-    dateRangeArrowIconColor: '#ffffff',
-    dateRangeArrowIconOpacity: 0.4,
+    dateRangeArrowIconColor: '#BCBEC0',
+    dateRangeArrowIconOpacity: 1,
     dateRangeStartDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
     dateRangeEndDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
-    dateRangeDatepickerWrapperTop: 'unset',
-    dateRangeDatepickerWrapperRight: 'unset',
-    dateRangeDatepickerWrapperBottom: '65px',
-    dateRangeDatepickerWrapperLeft: '0',
     dateRangeDatepickerWrapperPosition: 'absolute',
+    ...getPlacement(placement),
   })
 
   useEffect(() => {

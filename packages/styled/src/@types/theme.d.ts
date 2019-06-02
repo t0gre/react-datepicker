@@ -148,6 +148,7 @@ export interface DatepickerTheme extends CommonTheme {
   datepickerPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   datepickerBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
   datepickerPosition?: ResponsiveValue<PositionProperty>
+  datepickerWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
   datepickerCloseWrapperPosition?: ResponsiveValue<PositionProperty>
   datepickerCloseWrapperDisplay?: ResponsiveValue<DisplayProperty>
   datepickerCloseWrapperJustifyContent?: ResponsiveValue<JustifyContentProperty>

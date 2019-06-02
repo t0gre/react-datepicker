@@ -24,7 +24,7 @@ import {
   FormatFunction,
   FocusedInput,
   FirstDayOfWeek,
-  OnDateChange,
+  OnDateChangeProps,
 } from './useDatepicker'
 
 import useDay from './useDay'
@@ -54,5 +54,5 @@ export {
   FormatFunction,
   FocusedInput,
   FirstDayOfWeek,
-  OnDateChange,
+  OnDateChangeProps,
 }

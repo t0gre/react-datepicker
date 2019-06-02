@@ -48,6 +48,43 @@ test('should have empty start and end date and focused start date', () => {
   })
 })
 
+test('should have empty start and end date and focused start date - placement = top', () => {
+  const onDateChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
+    <Datepicker
+      onFocusChange={onFocusChange}
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDateChange={onDateChange}
+      placement="top"
+    />,
+  )
+  expect(container).toMatchSnapshot()
+  expect(getAllByText('Select').length).toBe(2)
+  expect(getByText('March 2019'))
+  expect(getByText('April 2019'))
+
+  // Click on close (fire default function
+  fireEvent.click(getByTestId('DatepickerClose'))
+
+  // Test if first day is monday
+  // @ts-ignore
+  expect(getAllByTestId('DayLabel')[0]).toHaveTextContent('Mo')
+
+  // Click on March 16
+  const selectedDay = getAllByTestId('Day')[15]
+  // @ts-ignore
+  expect(selectedDay).toHaveTextContent('16')
+  fireEvent.click(selectedDay)
+  expect(onDateChange).toHaveBeenCalledWith({
+    startDate: new Date(2019, 2, 16, 0, 0, 0),
+    endDate: null,
+    focusedInput: END_DATE,
+  })
+})
+
 test('should have empty end date and focused end date', () => {
   const onDateChange = jest.fn()
   const onFocusChange = jest.fn()

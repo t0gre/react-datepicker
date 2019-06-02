@@ -19,6 +19,8 @@ import {
   overflow,
   height,
   HeightProps,
+  WidthProps,
+  width,
 } from 'styled-system'
 import {
   useDatepicker,
@@ -50,6 +52,7 @@ interface StyledDatepicker
     SpaceProps,
     BorderRadiusProps,
     PositionProps,
+    WidthProps,
     BoxShadowProps {
   rtl: boolean
 }
@@ -59,6 +62,7 @@ const StyledDatepicker = styled('div')<StyledDatepicker>`
   ${borderRadius}
   ${position}
   ${boxShadow}
+  ${width}
   ${({rtl}) =>
     rtl &&
     css`
@@ -160,6 +164,7 @@ function Datepicker({
     datepickerPadding: vertical ? '16px 16px 0' : '32px',
     datepickerBorderRadius: '2px',
     datepickerPosition: 'relative',
+    datepickerWidth: 'fit-content',
     datepickerCloseWrapperPosition: vertical ? 'relative' : 'absolute',
     datepickerCloseWrapperDisplay: vertical ? 'flex' : 'block',
     datepickerCloseWrapperJustifyContent: vertical ? 'flex-end' : 'initial',
@@ -173,7 +178,8 @@ function Datepicker({
     datepickerSelectDateArrowIconWidth: '15px',
     datepickerSelectDateArrowIconHeight: '12px',
     datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
-    datepickerMonthsWrapperMargin: '28px 0 0',
+    datepickerMonthsWrapperMargin:
+      !showClose && !showSelectedDates ? 'unset' : !showSelectedDates ? '48px 0 0' : '28px 0 0',
     datepickerPreviousMonthButtonPosition: vertical ? 'relative' : 'absolute',
     datepickerPreviousMonthButtonTop: vertical ? 'unset' : '-5px',
     datepickerPreviousMonthButtonLeft: vertical ? 'unset' : '0',
@@ -228,6 +234,7 @@ function Datepicker({
         borderRadius={theme.datepickerBorderRadius}
         position={theme.datepickerPosition}
         boxShadow={theme.datepickerBoxShadow}
+        width={theme.datepickerWidth}
         rtl={rtl}
       >
         {showClose && (

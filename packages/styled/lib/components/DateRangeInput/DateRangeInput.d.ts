@@ -12,6 +12,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showSelectedDates?: boolean
   showClose?: boolean
   rtl?: boolean
+  placement?: 'top' | 'bottom'
 }
 declare function DateRangeInput({
   startDate,
@@ -36,5 +37,6 @@ declare function DateRangeInput({
   showEndDateCalendarIcon,
   displayFormat,
   phrases,
+  placement,
 }: DateRangeInputProps): JSX.Element
 export default DateRangeInput

@@ -337,6 +337,9 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   border-radius: 2px;
   position: relative;
   box-shadow: rgba(0,0,0,0.05) 0px 2px 6px,rgba(0,0,0,0.07) 0px 0px 0px 1px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .c5 {
@@ -385,6 +388,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 <div>
   <div
     class="c0"
+    width="fit-content"
   >
     <div
       class="c1"
@@ -2012,7 +2016,8 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 exports[`should go to next and previous month - vertical variant 2`] = `
 <div>
   <div
-    class="sc-VigVT ioWUzX"
+    class="sc-VigVT houTEA"
+    width="fit-content"
   >
     <div
       class="sc-bwzfXH sc-fjdhpX dJcnHX"
@@ -3823,7 +3828,8 @@ exports[`should go to next and previous month - vertical variant 2`] = `
 exports[`should go to next and previous month - vertical variant 3`] = `
 <div>
   <div
-    class="sc-VigVT ioWUzX"
+    class="sc-VigVT houTEA"
+    width="fit-content"
   >
     <div
       class="sc-bwzfXH sc-fjdhpX dJcnHX"
@@ -5972,6 +5978,9 @@ exports[`should have empty end date and focused end date 1`] = `
   border-radius: 2px;
   position: relative;
   box-shadow: rgba(0,0,0,0.05) 0px 2px 6px,rgba(0,0,0,0.07) 0px 0px 0px 1px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .c5 {
@@ -6017,6 +6026,7 @@ exports[`should have empty end date and focused end date 1`] = `
 <div>
   <div
     class="c0"
+    width="fit-content"
   >
     <div
       class="c1"
@@ -7967,6 +7977,9 @@ exports[`should have empty start and end date and focused start date 1`] = `
   border-radius: 2px;
   position: relative;
   box-shadow: rgba(0,0,0,0.05) 0px 2px 6px,rgba(0,0,0,0.07) 0px 0px 0px 1px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .c5 {
@@ -8012,6 +8025,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
 <div>
   <div
     class="c0"
+    width="fit-content"
   >
     <div
       class="c1"
@@ -9973,6 +9987,9 @@ exports[`should render vertical datepicker 1`] = `
   border-radius: 2px;
   position: relative;
   box-shadow: rgba(0,0,0,0.05) 0px 2px 6px,rgba(0,0,0,0.07) 0px 0px 0px 1px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .c5 {
@@ -10021,6 +10038,7 @@ exports[`should render vertical datepicker 1`] = `
 <div>
   <div
     class="c0"
+    width="fit-content"
   >
     <div
       class="c1"
@@ -11969,6 +11987,9 @@ exports[`should select exact range 1`] = `
   border-radius: 2px;
   position: relative;
   box-shadow: rgba(0,0,0,0.05) 0px 2px 6px,rgba(0,0,0,0.07) 0px 0px 0px 1px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .c5 {
@@ -12014,6 +12035,7 @@ exports[`should select exact range 1`] = `
 <div>
   <div
     class="c0"
+    width="fit-content"
   >
     <div
       class="c1"

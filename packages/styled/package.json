@@ -36,12 +36,13 @@
   },
   "peerDependencies": {
     "react": "^16.8.5",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.0.0"
   },
   "devDependencies": {
     "@types/styled-components": "^4.1.15",
     "@types/styled-system": "^4.2.1",
     "csstype": "^2.6.5",
+    "date-fns": "^1.30.1",
     "styled-components": "^4.2.1"
   },
   "dependencies": {

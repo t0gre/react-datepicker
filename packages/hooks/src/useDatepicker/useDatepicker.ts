@@ -21,7 +21,7 @@ export const END_DATE = 'endDate'
 
 export type FocusedInput = 'startDate' | 'endDate' | null
 
-export interface OnDateChange {
+export interface OnDateChangeProps {
   focusedInput: FocusedInput
   startDate: Date | null
   endDate: Date | null
@@ -30,7 +30,7 @@ export interface OnDateChange {
 export type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
 
 export interface UseDatepickerProps {
-  onDateChange(data: OnDateChange): void
+  onDateChange(data: OnDateChangeProps): void
   minBookingDate?: Date
   maxBookingDate?: Date
   startDate: Date | null

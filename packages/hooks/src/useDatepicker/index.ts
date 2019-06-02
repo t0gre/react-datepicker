@@ -5,7 +5,7 @@ import {
   START_DATE,
   FocusedInput,
   FirstDayOfWeek,
-  OnDateChange,
+  OnDateChangeProps,
 } from './useDatepicker'
 import {
   isDateSelected,
@@ -41,5 +41,5 @@ export {
   START_DATE,
   FocusedInput,
   FirstDayOfWeek,
-  OnDateChange,
+  OnDateChangeProps,
 }

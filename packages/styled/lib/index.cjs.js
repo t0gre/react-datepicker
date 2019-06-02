@@ -7,671 +7,6 @@ var React = require('react'),
   React__default = _interopDefault(React),
   styled = require('styled-components'),
   styled__default = _interopDefault(styled),
-  __assign = function() {
-    return (__assign =
-      Object.assign ||
-      function(e) {
-        for (var t, n = 1, r = arguments.length; n < r; n++)
-          for (var a in (t = arguments[n]))
-            Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a])
-        return e
-      }).apply(this, arguments)
-  }
-function __makeTemplateObject(e, t) {
-  return Object.defineProperty ? Object.defineProperty(e, 'raw', {value: t}) : (e.raw = t), e
-}
-function _extends() {
-  return (_extends =
-    Object.assign ||
-    function(e) {
-      for (var t = 1; t < arguments.length; t++) {
-        var n = arguments[t]
-        for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
-      }
-      return e
-    }).apply(this, arguments)
-}
-function unwrapExports(e) {
-  return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, 'default') ? e.default : e
-}
-function createCommonjsModule(e, t) {
-  return e((t = {exports: {}}), t.exports), t.exports
-}
-var reactIs_production_min = createCommonjsModule(function(e, t) {
-  Object.defineProperty(t, '__esModule', {value: !0})
-  var n = 'function' == typeof Symbol && Symbol.for,
-    r = n ? Symbol.for('react.element') : 60103,
-    a = n ? Symbol.for('react.portal') : 60106,
-    o = n ? Symbol.for('react.fragment') : 60107,
-    i = n ? Symbol.for('react.strict_mode') : 60108,
-    l = n ? Symbol.for('react.profiler') : 60114,
-    c = n ? Symbol.for('react.provider') : 60109,
-    s = n ? Symbol.for('react.context') : 60110,
-    d = n ? Symbol.for('react.async_mode') : 60111,
-    u = n ? Symbol.for('react.concurrent_mode') : 60111,
-    p = n ? Symbol.for('react.forward_ref') : 60112,
-    f = n ? Symbol.for('react.suspense') : 60113,
-    m = n ? Symbol.for('react.memo') : 60115,
-    g = n ? Symbol.for('react.lazy') : 60116
-  function y(e) {
-    if ('object' == typeof e && null !== e) {
-      var t = e.$$typeof
-      switch (t) {
-        case r:
-          switch ((e = e.type)) {
-            case d:
-            case u:
-            case o:
-            case l:
-            case i:
-            case f:
-              return e
-            default:
-              switch ((e = e && e.$$typeof)) {
-                case s:
-                case p:
-                case c:
-                  return e
-                default:
-                  return t
-              }
-          }
-        case g:
-        case m:
-        case a:
-          return t
-      }
-    }
-  }
-  function h(e) {
-    return y(e) === u
-  }
-  ;(t.typeOf = y),
-    (t.AsyncMode = d),
-    (t.ConcurrentMode = u),
-    (t.ContextConsumer = s),
-    (t.ContextProvider = c),
-    (t.Element = r),
-    (t.ForwardRef = p),
-    (t.Fragment = o),
-    (t.Lazy = g),
-    (t.Memo = m),
-    (t.Portal = a),
-    (t.Profiler = l),
-    (t.StrictMode = i),
-    (t.Suspense = f),
-    (t.isValidElementType = function(e) {
-      return (
-        'string' == typeof e ||
-        'function' == typeof e ||
-        e === o ||
-        e === u ||
-        e === l ||
-        e === i ||
-        e === f ||
-        ('object' == typeof e &&
-          null !== e &&
-          (e.$$typeof === g ||
-            e.$$typeof === m ||
-            e.$$typeof === c ||
-            e.$$typeof === s ||
-            e.$$typeof === p))
-      )
-    }),
-    (t.isAsyncMode = function(e) {
-      return h(e) || y(e) === d
-    }),
-    (t.isConcurrentMode = h),
-    (t.isContextConsumer = function(e) {
-      return y(e) === s
-    }),
-    (t.isContextProvider = function(e) {
-      return y(e) === c
-    }),
-    (t.isElement = function(e) {
-      return 'object' == typeof e && null !== e && e.$$typeof === r
-    }),
-    (t.isForwardRef = function(e) {
-      return y(e) === p
-    }),
-    (t.isFragment = function(e) {
-      return y(e) === o
-    }),
-    (t.isLazy = function(e) {
-      return y(e) === g
-    }),
-    (t.isMemo = function(e) {
-      return y(e) === m
-    }),
-    (t.isPortal = function(e) {
-      return y(e) === a
-    }),
-    (t.isProfiler = function(e) {
-      return y(e) === l
-    }),
-    (t.isStrictMode = function(e) {
-      return y(e) === i
-    }),
-    (t.isSuspense = function(e) {
-      return y(e) === f
-    })
-})
-unwrapExports(reactIs_production_min)
-var reactIs_production_min_1 = reactIs_production_min.typeOf,
-  reactIs_production_min_2 = reactIs_production_min.AsyncMode,
-  reactIs_production_min_3 = reactIs_production_min.ConcurrentMode,
-  reactIs_production_min_4 = reactIs_production_min.ContextConsumer,
-  reactIs_production_min_5 = reactIs_production_min.ContextProvider,
-  reactIs_production_min_6 = reactIs_production_min.Element,
-  reactIs_production_min_7 = reactIs_production_min.ForwardRef,
-  reactIs_production_min_8 = reactIs_production_min.Fragment,
-  reactIs_production_min_9 = reactIs_production_min.Lazy,
-  reactIs_production_min_10 = reactIs_production_min.Memo,
-  reactIs_production_min_11 = reactIs_production_min.Portal,
-  reactIs_production_min_12 = reactIs_production_min.Profiler,
-  reactIs_production_min_13 = reactIs_production_min.StrictMode,
-  reactIs_production_min_14 = reactIs_production_min.Suspense,
-  reactIs_production_min_15 = reactIs_production_min.isValidElementType,
-  reactIs_production_min_16 = reactIs_production_min.isAsyncMode,
-  reactIs_production_min_17 = reactIs_production_min.isConcurrentMode,
-  reactIs_production_min_18 = reactIs_production_min.isContextConsumer,
-  reactIs_production_min_19 = reactIs_production_min.isContextProvider,
-  reactIs_production_min_20 = reactIs_production_min.isElement,
-  reactIs_production_min_21 = reactIs_production_min.isForwardRef,
-  reactIs_production_min_22 = reactIs_production_min.isFragment,
-  reactIs_production_min_23 = reactIs_production_min.isLazy,
-  reactIs_production_min_24 = reactIs_production_min.isMemo,
-  reactIs_production_min_25 = reactIs_production_min.isPortal,
-  reactIs_production_min_26 = reactIs_production_min.isProfiler,
-  reactIs_production_min_27 = reactIs_production_min.isStrictMode,
-  reactIs_production_min_28 = reactIs_production_min.isSuspense,
-  reactIs_development = createCommonjsModule(function(e, t) {})
-unwrapExports(reactIs_development)
-var reactIs_development_1 = reactIs_development.typeOf,
-  reactIs_development_2 = reactIs_development.AsyncMode,
-  reactIs_development_3 = reactIs_development.ConcurrentMode,
-  reactIs_development_4 = reactIs_development.ContextConsumer,
-  reactIs_development_5 = reactIs_development.ContextProvider,
-  reactIs_development_6 = reactIs_development.Element,
-  reactIs_development_7 = reactIs_development.ForwardRef,
-  reactIs_development_8 = reactIs_development.Fragment,
-  reactIs_development_9 = reactIs_development.Lazy,
-  reactIs_development_10 = reactIs_development.Memo,
-  reactIs_development_11 = reactIs_development.Portal,
-  reactIs_development_12 = reactIs_development.Profiler,
-  reactIs_development_13 = reactIs_development.StrictMode,
-  reactIs_development_14 = reactIs_development.Suspense,
-  reactIs_development_15 = reactIs_development.isValidElementType,
-  reactIs_development_16 = reactIs_development.isAsyncMode,
-  reactIs_development_17 = reactIs_development.isConcurrentMode,
-  reactIs_development_18 = reactIs_development.isContextConsumer,
-  reactIs_development_19 = reactIs_development.isContextProvider,
-  reactIs_development_20 = reactIs_development.isElement,
-  reactIs_development_21 = reactIs_development.isForwardRef,
-  reactIs_development_22 = reactIs_development.isFragment,
-  reactIs_development_23 = reactIs_development.isLazy,
-  reactIs_development_24 = reactIs_development.isMemo,
-  reactIs_development_25 = reactIs_development.isPortal,
-  reactIs_development_26 = reactIs_development.isProfiler,
-  reactIs_development_27 = reactIs_development.isStrictMode,
-  reactIs_development_28 = reactIs_development.isSuspense,
-  reactIs = createCommonjsModule(function(e) {
-    e.exports = reactIs_production_min
-  }),
-  getOwnPropertySymbols = Object.getOwnPropertySymbols,
-  hasOwnProperty = Object.prototype.hasOwnProperty,
-  propIsEnumerable = Object.prototype.propertyIsEnumerable
-function toObject(e) {
-  if (null == e) throw new TypeError('Object.assign cannot be called with null or undefined')
-  return Object(e)
-}
-function shouldUseNative() {
-  try {
-    if (!Object.assign) return !1
-    var e = new String('abc')
-    if (((e[5] = 'de'), '5' === Object.getOwnPropertyNames(e)[0])) return !1
-    for (var t = {}, n = 0; n < 10; n++) t['_' + String.fromCharCode(n)] = n
-    if (
-      '0123456789' !==
-      Object.getOwnPropertyNames(t)
-        .map(function(e) {
-          return t[e]
-        })
-        .join('')
-    )
-      return !1
-    var r = {}
-    return (
-      'abcdefghijklmnopqrst'.split('').forEach(function(e) {
-        r[e] = e
-      }),
-      'abcdefghijklmnopqrst' === Object.keys(Object.assign({}, r)).join('')
-    )
-  } catch (e) {
-    return !1
-  }
-}
-var objectAssign = shouldUseNative()
-    ? Object.assign
-    : function(e, t) {
-        for (var n, r, a = toObject(e), o = 1; o < arguments.length; o++) {
-          for (var i in (n = Object(arguments[o]))) hasOwnProperty.call(n, i) && (a[i] = n[i])
-          if (getOwnPropertySymbols) {
-            r = getOwnPropertySymbols(n)
-            for (var l = 0; l < r.length; l++) propIsEnumerable.call(n, r[l]) && (a[r[l]] = n[r[l]])
-          }
-        }
-        return a
-      },
-  ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED',
-  ReactPropTypesSecret_1 = ReactPropTypesSecret,
-  has = Function.call.bind(Object.prototype.hasOwnProperty)
-function emptyFunction() {}
-function emptyFunctionWithReset() {}
-emptyFunctionWithReset.resetWarningCache = emptyFunction
-var factoryWithThrowingShims = function() {
-    function e(e, t, n, r, a, o) {
-      if (o !== ReactPropTypesSecret_1) {
-        var i = new Error(
-          'Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types',
-        )
-        throw ((i.name = 'Invariant Violation'), i)
-      }
-    }
-    function t() {
-      return e
-    }
-    e.isRequired = e
-    var n = {
-      array: e,
-      bool: e,
-      func: e,
-      number: e,
-      object: e,
-      string: e,
-      symbol: e,
-      any: e,
-      arrayOf: t,
-      element: e,
-      elementType: e,
-      instanceOf: t,
-      node: e,
-      objectOf: t,
-      oneOf: t,
-      oneOfType: t,
-      shape: t,
-      exact: t,
-      checkPropTypes: emptyFunctionWithReset,
-      resetWarningCache: emptyFunction,
-    }
-    return (n.PropTypes = n), n
-  },
-  propTypes = createCommonjsModule(function(e) {
-    e.exports = factoryWithThrowingShims()
-  }),
-  compare = function(e, t) {
-    return e < t ? -1 : e > t ? 1 : 0
-  },
-  defaultBreakpoints = [40, 52, 64].map(function(e) {
-    return e + 'em'
-  }),
-  propType = propTypes.oneOfType([
-    propTypes.number,
-    propTypes.string,
-    propTypes.array,
-    propTypes.object,
-  ]),
-  cloneFunction = function(e) {
-    return function() {
-      return e.apply(void 0, arguments)
-    }
-  },
-  get = function(e) {
-    for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)
-      n[r - 1] = arguments[r]
-    var a = n.reduce(function(t, n) {
-      return is(t)
-        ? t
-        : ('string' == typeof n ? n.split('.') : [n]).reduce(function(e, t) {
-            return e && is(e[t]) ? e[t] : null
-          }, e)
-    }, null)
-    return is(a) ? a : n[n.length - 1]
-  },
-  is = function(e) {
-    return null != e
-  },
-  isObject = function(e) {
-    return 'object' == typeof e && null !== e
-  },
-  num = function(e) {
-    return 'number' == typeof e && !isNaN(e)
-  },
-  px = function(e) {
-    return num(e) && 0 !== e ? e + 'px' : e
-  },
-  createMediaQuery = function(e) {
-    return '@media screen and (min-width: ' + px(e) + ')'
-  },
-  getValue = function(e, t) {
-    return get(t, e)
-  },
-  merge = function e(t, n) {
-    var r = {}
-    for (var a in t) r[a] = t[a]
-    for (var o in n) t[o] && 'object' == typeof t[o] ? (r[o] = e(t[o], n[o])) : (r[o] = n[o])
-    return r
-  },
-  mergeAll = function() {
-    for (var e = {}, t = 0; t < arguments.length; t++)
-      e = merge(e, t < 0 || arguments.length <= t ? void 0 : arguments[t])
-    return e
-  },
-  style = function(e) {
-    var t,
-      n = e.prop,
-      r = e.cssProperty,
-      a = e.alias,
-      o = e.key,
-      i = e.transformValue,
-      l = void 0 === i ? getValue : i,
-      c = e.scale,
-      s = void 0 === c ? {} : c,
-      d = r || n,
-      u = function(e) {
-        var t = get(e, n, a, null)
-        if (!is(t)) return null
-        var r = get(e.theme, o, s),
-          i = function(e) {
-            var t
-            return is(e) ? (((t = {})[d] = l(e, r)), t) : null
-          }
-        if (!isObject(t)) return i(t)
-        var c = get(e.theme, 'breakpoints', defaultBreakpoints),
-          u = []
-        if (Array.isArray(t)) {
-          u.push(i(t[0]))
-          for (var p = 1; p < t.slice(0, c.length + 1).length; p++) {
-            var f = i(t[p])
-            if (f) {
-              var m,
-                g = createMediaQuery(c[p - 1])
-              u.push((((m = {})[g] = f), m))
-            }
-          }
-        } else {
-          for (var y in t) {
-            var h,
-              _ = c[y],
-              b = createMediaQuery(_),
-              v = i(t[y])
-            if (_) u.push((((h = {})[b] = v), h))
-            else u.unshift(v)
-          }
-          u.sort(compare)
-        }
-        return mergeAll.apply(void 0, u)
-      }
-    return (
-      ((u.propTypes = (((t = {})[n] = cloneFunction(propType)), t))[n].meta = {
-        prop: n,
-        themeKey: o,
-      }),
-      a &&
-        ((u.propTypes[a] = cloneFunction(propType)),
-        (u.propTypes[a].meta = {prop: a, themeKey: o})),
-      u
-    )
-  },
-  compose = function() {
-    for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n]
-    var r = function(e) {
-      var n = t
-        .map(function(t) {
-          return t(e)
-        })
-        .filter(Boolean)
-      return mergeAll.apply(void 0, n)
-    }
-    return (
-      (r.propTypes = {}),
-      t.forEach(function(e) {
-        r.propTypes = _extends({}, r.propTypes, e.propTypes)
-      }),
-      r
-    )
-  },
-  mapProps = function(e) {
-    return function(t) {
-      var n = function(n) {
-        return t(e(n))
-      }
-      for (var r in t) n[r] = t[r]
-      return n
-    }
-  },
-  variant = function(e) {
-    var t,
-      n = e.key,
-      r = e.prop,
-      a = void 0 === r ? 'variant' : r,
-      o = function(e) {
-        return get(e.theme, [n, e[a]].join('.'), null)
-      }
-    return (
-      (o.propTypes = (((t = {})[a] = propTypes.oneOfType([propTypes.number, propTypes.string])),
-      t)),
-      o
-    )
-  },
-  spaceScale = [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  getSpace = function(e, t) {
-    if (!num(e)) return px(get(t, e, e))
-    var n = e < 0,
-      r = Math.abs(e),
-      a = get(t, r)
-    return num(a) ? px(a * (n ? -1 : 1)) : n ? '-' + a : a
-  },
-  margin = style({
-    prop: 'margin',
-    alias: 'm',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  marginTop = style({
-    prop: 'marginTop',
-    alias: 'mt',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  marginBottom = style({
-    prop: 'marginBottom',
-    alias: 'mb',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  marginLeft = style({
-    prop: 'marginLeft',
-    alias: 'ml',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  marginRight = style({
-    prop: 'marginRight',
-    alias: 'mr',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  padding = style({
-    prop: 'padding',
-    alias: 'p',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  paddingTop = style({
-    prop: 'paddingTop',
-    alias: 'pt',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  paddingBottom = style({
-    prop: 'paddingBottom',
-    alias: 'pb',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  paddingLeft = style({
-    prop: 'paddingLeft',
-    alias: 'pl',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  paddingRight = style({
-    prop: 'paddingRight',
-    alias: 'pr',
-    key: 'space',
-    transformValue: getSpace,
-    scale: spaceScale,
-  }),
-  space = mapProps(function(e) {
-    return _extends({}, e, {
-      mt: is(e.my) ? e.my : e.mt,
-      mb: is(e.my) ? e.my : e.mb,
-      ml: is(e.mx) ? e.mx : e.ml,
-      mr: is(e.mx) ? e.mx : e.mr,
-      pt: is(e.py) ? e.py : e.pt,
-      pb: is(e.py) ? e.py : e.pb,
-      pl: is(e.px) ? e.px : e.pl,
-      pr: is(e.px) ? e.px : e.pr,
-    })
-  })(
-    compose(
-      margin,
-      marginTop,
-      marginBottom,
-      marginLeft,
-      marginRight,
-      padding,
-      paddingTop,
-      paddingBottom,
-      paddingLeft,
-      paddingRight,
-    ),
-  ),
-  textColor = style({prop: 'color', key: 'colors'}),
-  backgroundColor = style({prop: 'backgroundColor', alias: 'bg', key: 'colors'}),
-  color = compose(
-    textColor,
-    backgroundColor,
-  ),
-  getWidth = function(e, t) {
-    return !num(e) || e > 1 ? px(e) : 100 * e + '%'
-  },
-  width = style({prop: 'width', key: 'widths', transformValue: getWidth}),
-  getPx = function(e, t) {
-    return px(get(t, e))
-  },
-  fontSize = style({
-    prop: 'fontSize',
-    key: 'fontSizes',
-    transformValue: getPx,
-    scale: [12, 14, 16, 20, 24, 32, 48, 64, 72],
-  }),
-  fontFamily = style({prop: 'fontFamily', key: 'fonts'}),
-  fontWeight = style({prop: 'fontWeight', key: 'fontWeights'}),
-  lineHeight = style({prop: 'lineHeight', key: 'lineHeights'}),
-  textAlign = style({prop: 'textAlign'}),
-  fontStyle = style({prop: 'fontStyle'}),
-  letterSpacing = style({prop: 'letterSpacing', key: 'letterSpacings', transformValue: getPx}),
-  display = style({prop: 'display'}),
-  maxWidth = style({prop: 'maxWidth', key: 'maxWidths', transformValue: getPx}),
-  minWidth = style({prop: 'minWidth', key: 'minWidths', transformValue: getPx}),
-  height = style({prop: 'height', key: 'heights', transformValue: getPx}),
-  maxHeight = style({prop: 'maxHeight', key: 'maxHeights', transformValue: getPx}),
-  minHeight = style({prop: 'minHeight', key: 'minHeights', transformValue: getPx}),
-  size = mapProps(function(e) {
-    return _extends({}, e, {width: e.size, height: e.size})
-  })(
-    compose(
-      width,
-      height,
-    ),
-  ),
-  verticalAlign = style({prop: 'verticalAlign'}),
-  alignItems = style({prop: 'alignItems'}),
-  alignContent = style({prop: 'alignContent'}),
-  justifyItems = style({prop: 'justifyItems'}),
-  justifyContent = style({prop: 'justifyContent'}),
-  flexWrap = style({prop: 'flexWrap'}),
-  flexBasis = style({prop: 'flexBasis', transformValue: getWidth}),
-  flexDirection = style({prop: 'flexDirection'}),
-  flex = style({prop: 'flex'}),
-  justifySelf = style({prop: 'justifySelf'}),
-  alignSelf = style({prop: 'alignSelf'}),
-  order = style({prop: 'order'}),
-  gridGap = style({prop: 'gridGap', key: 'space', transformValue: getPx, scale: spaceScale}),
-  gridColumnGap = style({
-    prop: 'gridColumnGap',
-    key: 'space',
-    transformValue: getPx,
-    scale: spaceScale,
-  }),
-  gridRowGap = style({prop: 'gridRowGap', key: 'space', transformValue: getPx, scale: spaceScale}),
-  gridColumn = style({prop: 'gridColumn'}),
-  gridRow = style({prop: 'gridRow'}),
-  gridAutoFlow = style({prop: 'gridAutoFlow'}),
-  gridAutoColumns = style({prop: 'gridAutoColumns'}),
-  gridAutoRows = style({prop: 'gridAutoRows'}),
-  gridTemplateColumns = style({prop: 'gridTemplateColumns'}),
-  gridTemplateRows = style({prop: 'gridTemplateRows'}),
-  gridTemplateAreas = style({prop: 'gridTemplateAreas'}),
-  gridArea = style({prop: 'gridArea'}),
-  border = style({prop: 'border', key: 'borders'}),
-  borderWidth = style({prop: 'borderWidth', key: 'borderWidths', transformValue: getPx}),
-  borderStyle = style({prop: 'borderStyle', key: 'borderStyles'}),
-  borderColor = style({prop: 'borderColor', key: 'colors'}),
-  borderTop = style({prop: 'borderTop', key: 'borders'}),
-  borderRight = style({prop: 'borderRight', key: 'borders'}),
-  borderBottom = style({prop: 'borderBottom', key: 'borders'}),
-  borderLeft = style({prop: 'borderLeft', key: 'borders'}),
-  borderRadius = style({prop: 'borderRadius', key: 'radii', transformValue: getPx}),
-  borders = compose(
-    border,
-    borderTop,
-    borderRight,
-    borderBottom,
-    borderLeft,
-    borderWidth,
-    borderStyle,
-    borderColor,
-    borderRadius,
-  ),
-  boxShadow = style({prop: 'boxShadow', key: 'shadows'}),
-  opacity = style({prop: 'opacity'}),
-  overflow = style({prop: 'overflow'}),
-  background = style({prop: 'background'}),
-  backgroundImage = style({prop: 'backgroundImage'}),
-  backgroundSize = style({prop: 'backgroundSize'}),
-  backgroundPosition = style({prop: 'backgroundPosition'}),
-  backgroundRepeat = style({prop: 'backgroundRepeat'}),
-  position = style({prop: 'position'}),
-  zIndex = style({prop: 'zIndex', key: 'zIndices'}),
-  top = style({prop: 'top', transformValue: getPx}),
-  right = style({prop: 'right', transformValue: getPx}),
-  bottom = style({prop: 'bottom', transformValue: getPx}),
-  left = style({prop: 'left', transformValue: getPx}),
-  buttonStyle = variant({key: 'buttons'}),
-  textStyle = variant({key: 'textStyles', prop: 'textStyle'}),
-  colorStyle = variant({key: 'colorStyles', prop: 'colors'}),
   a = function(e) {
     var t = new Date(e.getTime()),
       n = t.getTimezoneOffset()
@@ -726,7 +61,7 @@ var B = function(e, t) {
         }
         return n
       })(e),
-      O = (function(e, t) {
+      R = (function(e, t) {
         var n,
           r = d[t],
           a = g[t]
@@ -740,7 +75,7 @@ var B = function(e, t) {
         }
         return {year: null}
       })(C.date, n),
-      R = O.year,
+      O = R.year,
       I = (function(e, t) {
         if (null === t) return null
         var n, r, a
@@ -762,7 +97,7 @@ var B = function(e, t) {
           : (n = M.exec(e))
           ? x(t, parseInt(n[1], 10) - 1, parseInt(n[2], 10) - 1)
           : null
-      })(O.restDateString, R)
+      })(R.restDateString, O)
     if (I) {
       var B,
         j = I.getTime(),
@@ -1214,11 +549,11 @@ function re(e) {
     c = te(l),
     s = ee(c),
     d = V(l),
-    u = Array.from(Array(s >= a ? s - a : a).keys()).fill(0),
-    p = q(c, d).map(function(e) {
+    p = Array.from(Array(s >= a ? s - a : a).keys()).fill(0),
+    u = q(c, d).map(function(e) {
       return {date: e, day: i(e)}
     })
-  return u.concat(p)
+  return p.concat(u)
 }
 function ae(e) {
   var t = e.year,
@@ -1405,10 +740,10 @@ function Ye(e) {
     c = void 0 !== l && l,
     s = e.minBookingDays,
     d = void 0 === s ? 1 : s,
-    u = e.numberOfMonths,
-    p = void 0 === u ? 2 : u,
-    f = e.firstDayOfWeek,
-    m = void 0 === f ? 1 : f,
+    p = e.numberOfMonths,
+    u = void 0 === p ? 2 : p,
+    m = e.firstDayOfWeek,
+    f = void 0 === m ? 1 : m,
     g = e.isDayBlocked,
     y =
       void 0 === g
@@ -1417,7 +752,7 @@ function Ye(e) {
           }
         : g,
     h = React.useState(function() {
-      return ke(p, t)
+      return ke(u, t)
     }),
     _ = h[0],
     b = h[1],
@@ -1427,19 +762,19 @@ function Ye(e) {
     x = React.useState(t),
     S = x[0],
     C = x[1],
-    w = React.useCallback(
+    R = React.useCallback(
       function(e) {
-        C(e), (!S || (S && !ce(e, S))) && b(ke(p, e))
+        C(e), (!S || (S && !ce(e, S))) && b(ke(u, e))
       },
-      [C, b, p, S],
+      [C, b, u, S],
     ),
-    O = React.useCallback(
+    w = React.useCallback(
       function(e) {
         return ve(e, t, n)
       },
       [t, n],
     ),
-    R = React.useCallback(
+    O = React.useCallback(
       function(e) {
         return me(e, t, n)
       },
@@ -1504,7 +839,7 @@ function Ye(e) {
       'ArrowDown' !== e.key &&
       'ArrowUp' !== e.key) ||
       S ||
-      (w(new Date()), b(ke(p, new Date())))
+      (R(new Date()), b(ke(u, new Date())))
   }
   return (
     React.useEffect(function() {
@@ -1516,13 +851,13 @@ function Ye(e) {
       )
     }),
     {
-      firstDayOfWeek: m,
+      firstDayOfWeek: f,
       activeMonths: _,
-      isDateSelected: O,
+      isDateSelected: w,
       isDateHovered: T,
-      isFirstOrLastSelectedDate: R,
+      isFirstOrLastSelectedDate: O,
       isDateBlocked: I,
-      numberOfMonths: p,
+      numberOfMonths: u,
       isDateFocused: B,
       focusedDate: S,
       onResetDates: function() {
@@ -1533,13 +868,13 @@ function Ye(e) {
           i = !a || !oe(e, K(a, -1)),
           l = !o || !ue(e, o),
           s = K(e, d - 1),
-          u = !a || !oe(s, a),
-          p = !o || !ue(s, o),
-          f = c && d > 1 && i && l && u && p,
-          m = t && !n && !c && i && l,
+          p = !a || !oe(s, a),
+          u = !o || !ue(s, o),
+          m = c && d > 1 && i && l && p && u,
+          f = t && !n && !c && i && l,
           g = !(d > 1 && t) || ie(e, t, K(t, d - 2)),
           y = t && se(e, t) && g
-        r && (f || m || y) ? k(e) : null !== D && k(null)
+        r && (m || f || y) ? k(e) : null !== D && k(null)
       },
       onDaySelect: function(e) {
         ;(r === Fe || r === Se) &&
@@ -1569,14 +904,14 @@ function Ye(e) {
             !c &&
             Te({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
             i({startDate: t, endDate: e, focusedInput: null}),
-          (!S || (S && !ce(e, S))) && b(ke(p, e))
+          (!S || (S && !ce(e, S))) && b(ke(u, e))
       },
-      onDayFocus: w,
+      onDayFocus: R,
       goToPreviousMonths: function() {
-        b(we(_, p, -1)), C(null)
+        b(we(_, u, -1)), C(null)
       },
       goToNextMonths: function() {
-        b(we(_, p, 1)), C(null)
+        b(we(_, u, 1)), C(null)
       },
     }
   )
@@ -1592,14 +927,14 @@ function xe(e) {
     c = e.onDaySelect,
     s = e.onDayFocus,
     d = e.onDayHover,
-    u = e.dayRef,
-    p = React.useCallback(
+    p = e.dayRef,
+    u = React.useCallback(
       function() {
         return c(t)
       },
       [t, c],
     ),
-    f = React.useCallback(
+    m = React.useCallback(
       function() {
         return d(t)
       },
@@ -1607,18 +942,18 @@ function xe(e) {
     )
   React.useEffect(
     function() {
-      u && u.current && a(t) && u.current.focus()
+      p && p.current && a(t) && p.current.focus()
     },
-    [u, t, a],
+    [p, t, a],
   )
-  var m = l(t) && !i(t)
+  var f = l(t) && !i(t)
   return {
     role: 'button',
     tabIndex: null === n || a(t) ? 0 : -1,
     isActive: r(t),
     isStartOrEnd: o(t),
     isWithinHoverRange: i(t),
-    disabledDate: m,
+    disabledDate: f,
     onKeyDown: function(e) {
       'ArrowRight' === e.key
         ? s(K(t, 1))
@@ -1628,13 +963,678 @@ function xe(e) {
         ? s(K(t, -7))
         : 'ArrowDown' === e.key && s(K(t, 7))
     },
-    onClick: m ? function() {} : p,
-    onMouseEnter: f,
+    onClick: f ? function() {} : u,
+    onMouseEnter: m,
   }
 }
+var __assign = function() {
+  return (__assign =
+    Object.assign ||
+    function(e) {
+      for (var t, n = 1, r = arguments.length; n < r; n++)
+        for (var a in (t = arguments[n]))
+          Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a])
+      return e
+    }).apply(this, arguments)
+}
+function __makeTemplateObject(e, t) {
+  return Object.defineProperty ? Object.defineProperty(e, 'raw', {value: t}) : (e.raw = t), e
+}
+function _extends() {
+  return (_extends =
+    Object.assign ||
+    function(e) {
+      for (var t = 1; t < arguments.length; t++) {
+        var n = arguments[t]
+        for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
+      }
+      return e
+    }).apply(this, arguments)
+}
+function unwrapExports(e) {
+  return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, 'default') ? e.default : e
+}
+function createCommonjsModule(e, t) {
+  return e((t = {exports: {}}), t.exports), t.exports
+}
+var reactIs_production_min = createCommonjsModule(function(e, t) {
+  Object.defineProperty(t, '__esModule', {value: !0})
+  var n = 'function' == typeof Symbol && Symbol.for,
+    r = n ? Symbol.for('react.element') : 60103,
+    a = n ? Symbol.for('react.portal') : 60106,
+    o = n ? Symbol.for('react.fragment') : 60107,
+    i = n ? Symbol.for('react.strict_mode') : 60108,
+    l = n ? Symbol.for('react.profiler') : 60114,
+    c = n ? Symbol.for('react.provider') : 60109,
+    s = n ? Symbol.for('react.context') : 60110,
+    d = n ? Symbol.for('react.async_mode') : 60111,
+    p = n ? Symbol.for('react.concurrent_mode') : 60111,
+    u = n ? Symbol.for('react.forward_ref') : 60112,
+    m = n ? Symbol.for('react.suspense') : 60113,
+    f = n ? Symbol.for('react.memo') : 60115,
+    g = n ? Symbol.for('react.lazy') : 60116
+  function y(e) {
+    if ('object' == typeof e && null !== e) {
+      var t = e.$$typeof
+      switch (t) {
+        case r:
+          switch ((e = e.type)) {
+            case d:
+            case p:
+            case o:
+            case l:
+            case i:
+            case m:
+              return e
+            default:
+              switch ((e = e && e.$$typeof)) {
+                case s:
+                case u:
+                case c:
+                  return e
+                default:
+                  return t
+              }
+          }
+        case g:
+        case f:
+        case a:
+          return t
+      }
+    }
+  }
+  function h(e) {
+    return y(e) === p
+  }
+  ;(t.typeOf = y),
+    (t.AsyncMode = d),
+    (t.ConcurrentMode = p),
+    (t.ContextConsumer = s),
+    (t.ContextProvider = c),
+    (t.Element = r),
+    (t.ForwardRef = u),
+    (t.Fragment = o),
+    (t.Lazy = g),
+    (t.Memo = f),
+    (t.Portal = a),
+    (t.Profiler = l),
+    (t.StrictMode = i),
+    (t.Suspense = m),
+    (t.isValidElementType = function(e) {
+      return (
+        'string' == typeof e ||
+        'function' == typeof e ||
+        e === o ||
+        e === p ||
+        e === l ||
+        e === i ||
+        e === m ||
+        ('object' == typeof e &&
+          null !== e &&
+          (e.$$typeof === g ||
+            e.$$typeof === f ||
+            e.$$typeof === c ||
+            e.$$typeof === s ||
+            e.$$typeof === u))
+      )
+    }),
+    (t.isAsyncMode = function(e) {
+      return h(e) || y(e) === d
+    }),
+    (t.isConcurrentMode = h),
+    (t.isContextConsumer = function(e) {
+      return y(e) === s
+    }),
+    (t.isContextProvider = function(e) {
+      return y(e) === c
+    }),
+    (t.isElement = function(e) {
+      return 'object' == typeof e && null !== e && e.$$typeof === r
+    }),
+    (t.isForwardRef = function(e) {
+      return y(e) === u
+    }),
+    (t.isFragment = function(e) {
+      return y(e) === o
+    }),
+    (t.isLazy = function(e) {
+      return y(e) === g
+    }),
+    (t.isMemo = function(e) {
+      return y(e) === f
+    }),
+    (t.isPortal = function(e) {
+      return y(e) === a
+    }),
+    (t.isProfiler = function(e) {
+      return y(e) === l
+    }),
+    (t.isStrictMode = function(e) {
+      return y(e) === i
+    }),
+    (t.isSuspense = function(e) {
+      return y(e) === m
+    })
+})
+unwrapExports(reactIs_production_min)
+var reactIs_production_min_1 = reactIs_production_min.typeOf,
+  reactIs_production_min_2 = reactIs_production_min.AsyncMode,
+  reactIs_production_min_3 = reactIs_production_min.ConcurrentMode,
+  reactIs_production_min_4 = reactIs_production_min.ContextConsumer,
+  reactIs_production_min_5 = reactIs_production_min.ContextProvider,
+  reactIs_production_min_6 = reactIs_production_min.Element,
+  reactIs_production_min_7 = reactIs_production_min.ForwardRef,
+  reactIs_production_min_8 = reactIs_production_min.Fragment,
+  reactIs_production_min_9 = reactIs_production_min.Lazy,
+  reactIs_production_min_10 = reactIs_production_min.Memo,
+  reactIs_production_min_11 = reactIs_production_min.Portal,
+  reactIs_production_min_12 = reactIs_production_min.Profiler,
+  reactIs_production_min_13 = reactIs_production_min.StrictMode,
+  reactIs_production_min_14 = reactIs_production_min.Suspense,
+  reactIs_production_min_15 = reactIs_production_min.isValidElementType,
+  reactIs_production_min_16 = reactIs_production_min.isAsyncMode,
+  reactIs_production_min_17 = reactIs_production_min.isConcurrentMode,
+  reactIs_production_min_18 = reactIs_production_min.isContextConsumer,
+  reactIs_production_min_19 = reactIs_production_min.isContextProvider,
+  reactIs_production_min_20 = reactIs_production_min.isElement,
+  reactIs_production_min_21 = reactIs_production_min.isForwardRef,
+  reactIs_production_min_22 = reactIs_production_min.isFragment,
+  reactIs_production_min_23 = reactIs_production_min.isLazy,
+  reactIs_production_min_24 = reactIs_production_min.isMemo,
+  reactIs_production_min_25 = reactIs_production_min.isPortal,
+  reactIs_production_min_26 = reactIs_production_min.isProfiler,
+  reactIs_production_min_27 = reactIs_production_min.isStrictMode,
+  reactIs_production_min_28 = reactIs_production_min.isSuspense,
+  reactIs_development = createCommonjsModule(function(e, t) {})
+unwrapExports(reactIs_development)
+var reactIs_development_1 = reactIs_development.typeOf,
+  reactIs_development_2 = reactIs_development.AsyncMode,
+  reactIs_development_3 = reactIs_development.ConcurrentMode,
+  reactIs_development_4 = reactIs_development.ContextConsumer,
+  reactIs_development_5 = reactIs_development.ContextProvider,
+  reactIs_development_6 = reactIs_development.Element,
+  reactIs_development_7 = reactIs_development.ForwardRef,
+  reactIs_development_8 = reactIs_development.Fragment,
+  reactIs_development_9 = reactIs_development.Lazy,
+  reactIs_development_10 = reactIs_development.Memo,
+  reactIs_development_11 = reactIs_development.Portal,
+  reactIs_development_12 = reactIs_development.Profiler,
+  reactIs_development_13 = reactIs_development.StrictMode,
+  reactIs_development_14 = reactIs_development.Suspense,
+  reactIs_development_15 = reactIs_development.isValidElementType,
+  reactIs_development_16 = reactIs_development.isAsyncMode,
+  reactIs_development_17 = reactIs_development.isConcurrentMode,
+  reactIs_development_18 = reactIs_development.isContextConsumer,
+  reactIs_development_19 = reactIs_development.isContextProvider,
+  reactIs_development_20 = reactIs_development.isElement,
+  reactIs_development_21 = reactIs_development.isForwardRef,
+  reactIs_development_22 = reactIs_development.isFragment,
+  reactIs_development_23 = reactIs_development.isLazy,
+  reactIs_development_24 = reactIs_development.isMemo,
+  reactIs_development_25 = reactIs_development.isPortal,
+  reactIs_development_26 = reactIs_development.isProfiler,
+  reactIs_development_27 = reactIs_development.isStrictMode,
+  reactIs_development_28 = reactIs_development.isSuspense,
+  reactIs = createCommonjsModule(function(e) {
+    e.exports = reactIs_production_min
+  }),
+  getOwnPropertySymbols = Object.getOwnPropertySymbols,
+  hasOwnProperty = Object.prototype.hasOwnProperty,
+  propIsEnumerable = Object.prototype.propertyIsEnumerable
+function toObject(e) {
+  if (null == e) throw new TypeError('Object.assign cannot be called with null or undefined')
+  return Object(e)
+}
+function shouldUseNative() {
+  try {
+    if (!Object.assign) return !1
+    var e = new String('abc')
+    if (((e[5] = 'de'), '5' === Object.getOwnPropertyNames(e)[0])) return !1
+    for (var t = {}, n = 0; n < 10; n++) t['_' + String.fromCharCode(n)] = n
+    if (
+      '0123456789' !==
+      Object.getOwnPropertyNames(t)
+        .map(function(e) {
+          return t[e]
+        })
+        .join('')
+    )
+      return !1
+    var r = {}
+    return (
+      'abcdefghijklmnopqrst'.split('').forEach(function(e) {
+        r[e] = e
+      }),
+      'abcdefghijklmnopqrst' === Object.keys(Object.assign({}, r)).join('')
+    )
+  } catch (e) {
+    return !1
+  }
+}
+var objectAssign = shouldUseNative()
+    ? Object.assign
+    : function(e, t) {
+        for (var n, r, a = toObject(e), o = 1; o < arguments.length; o++) {
+          for (var i in (n = Object(arguments[o]))) hasOwnProperty.call(n, i) && (a[i] = n[i])
+          if (getOwnPropertySymbols) {
+            r = getOwnPropertySymbols(n)
+            for (var l = 0; l < r.length; l++) propIsEnumerable.call(n, r[l]) && (a[r[l]] = n[r[l]])
+          }
+        }
+        return a
+      },
+  ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED',
+  ReactPropTypesSecret_1 = ReactPropTypesSecret,
+  has = Function.call.bind(Object.prototype.hasOwnProperty)
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction
 var templateObject_1,
   templateObject_1$1,
   templateObject_1$2,
+  factoryWithThrowingShims = function() {
+    function e(e, t, n, r, a, o) {
+      if (o !== ReactPropTypesSecret_1) {
+        var i = new Error(
+          'Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types',
+        )
+        throw ((i.name = 'Invariant Violation'), i)
+      }
+    }
+    function t() {
+      return e
+    }
+    e.isRequired = e
+    var n = {
+      array: e,
+      bool: e,
+      func: e,
+      number: e,
+      object: e,
+      string: e,
+      symbol: e,
+      any: e,
+      arrayOf: t,
+      element: e,
+      elementType: e,
+      instanceOf: t,
+      node: e,
+      objectOf: t,
+      oneOf: t,
+      oneOfType: t,
+      shape: t,
+      exact: t,
+      checkPropTypes: emptyFunctionWithReset,
+      resetWarningCache: emptyFunction,
+    }
+    return (n.PropTypes = n), n
+  },
+  propTypes = createCommonjsModule(function(e) {
+    e.exports = factoryWithThrowingShims()
+  }),
+  compare = function(e, t) {
+    return e < t ? -1 : e > t ? 1 : 0
+  },
+  defaultBreakpoints = [40, 52, 64].map(function(e) {
+    return e + 'em'
+  }),
+  propType = propTypes.oneOfType([
+    propTypes.number,
+    propTypes.string,
+    propTypes.array,
+    propTypes.object,
+  ]),
+  cloneFunction = function(e) {
+    return function() {
+      return e.apply(void 0, arguments)
+    }
+  },
+  get = function(e) {
+    for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)
+      n[r - 1] = arguments[r]
+    var a = n.reduce(function(t, n) {
+      return is(t)
+        ? t
+        : ('string' == typeof n ? n.split('.') : [n]).reduce(function(e, t) {
+            return e && is(e[t]) ? e[t] : null
+          }, e)
+    }, null)
+    return is(a) ? a : n[n.length - 1]
+  },
+  is = function(e) {
+    return null != e
+  },
+  isObject = function(e) {
+    return 'object' == typeof e && null !== e
+  },
+  num = function(e) {
+    return 'number' == typeof e && !isNaN(e)
+  },
+  px = function(e) {
+    return num(e) && 0 !== e ? e + 'px' : e
+  },
+  createMediaQuery = function(e) {
+    return '@media screen and (min-width: ' + px(e) + ')'
+  },
+  getValue = function(e, t) {
+    return get(t, e)
+  },
+  merge = function e(t, n) {
+    var r = {}
+    for (var a in t) r[a] = t[a]
+    for (var o in n) t[o] && 'object' == typeof t[o] ? (r[o] = e(t[o], n[o])) : (r[o] = n[o])
+    return r
+  },
+  mergeAll = function() {
+    for (var e = {}, t = 0; t < arguments.length; t++)
+      e = merge(e, t < 0 || arguments.length <= t ? void 0 : arguments[t])
+    return e
+  },
+  style = function(e) {
+    var t,
+      n = e.prop,
+      r = e.cssProperty,
+      a = e.alias,
+      o = e.key,
+      i = e.transformValue,
+      l = void 0 === i ? getValue : i,
+      c = e.scale,
+      s = void 0 === c ? {} : c,
+      d = r || n,
+      p = function(e) {
+        var t = get(e, n, a, null)
+        if (!is(t)) return null
+        var r = get(e.theme, o, s),
+          i = function(e) {
+            var t
+            return is(e) ? (((t = {})[d] = l(e, r)), t) : null
+          }
+        if (!isObject(t)) return i(t)
+        var c = get(e.theme, 'breakpoints', defaultBreakpoints),
+          p = []
+        if (Array.isArray(t)) {
+          p.push(i(t[0]))
+          for (var u = 1; u < t.slice(0, c.length + 1).length; u++) {
+            var m = i(t[u])
+            if (m) {
+              var f,
+                g = createMediaQuery(c[u - 1])
+              p.push((((f = {})[g] = m), f))
+            }
+          }
+        } else {
+          for (var y in t) {
+            var h,
+              _ = c[y],
+              b = createMediaQuery(_),
+              v = i(t[y])
+            if (_) p.push((((h = {})[b] = v), h))
+            else p.unshift(v)
+          }
+          p.sort(compare)
+        }
+        return mergeAll.apply(void 0, p)
+      }
+    return (
+      ((p.propTypes = (((t = {})[n] = cloneFunction(propType)), t))[n].meta = {
+        prop: n,
+        themeKey: o,
+      }),
+      a &&
+        ((p.propTypes[a] = cloneFunction(propType)),
+        (p.propTypes[a].meta = {prop: a, themeKey: o})),
+      p
+    )
+  },
+  compose = function() {
+    for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n]
+    var r = function(e) {
+      var n = t
+        .map(function(t) {
+          return t(e)
+        })
+        .filter(Boolean)
+      return mergeAll.apply(void 0, n)
+    }
+    return (
+      (r.propTypes = {}),
+      t.forEach(function(e) {
+        r.propTypes = _extends({}, r.propTypes, e.propTypes)
+      }),
+      r
+    )
+  },
+  mapProps = function(e) {
+    return function(t) {
+      var n = function(n) {
+        return t(e(n))
+      }
+      for (var r in t) n[r] = t[r]
+      return n
+    }
+  },
+  variant = function(e) {
+    var t,
+      n = e.key,
+      r = e.prop,
+      a = void 0 === r ? 'variant' : r,
+      o = function(e) {
+        return get(e.theme, [n, e[a]].join('.'), null)
+      }
+    return (
+      (o.propTypes = (((t = {})[a] = propTypes.oneOfType([propTypes.number, propTypes.string])),
+      t)),
+      o
+    )
+  },
+  spaceScale = [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  getSpace = function(e, t) {
+    if (!num(e)) return px(get(t, e, e))
+    var n = e < 0,
+      r = Math.abs(e),
+      a = get(t, r)
+    return num(a) ? px(a * (n ? -1 : 1)) : n ? '-' + a : a
+  },
+  margin = style({
+    prop: 'margin',
+    alias: 'm',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  marginTop = style({
+    prop: 'marginTop',
+    alias: 'mt',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  marginBottom = style({
+    prop: 'marginBottom',
+    alias: 'mb',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  marginLeft = style({
+    prop: 'marginLeft',
+    alias: 'ml',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  marginRight = style({
+    prop: 'marginRight',
+    alias: 'mr',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  padding = style({
+    prop: 'padding',
+    alias: 'p',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  paddingTop = style({
+    prop: 'paddingTop',
+    alias: 'pt',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  paddingBottom = style({
+    prop: 'paddingBottom',
+    alias: 'pb',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  paddingLeft = style({
+    prop: 'paddingLeft',
+    alias: 'pl',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  paddingRight = style({
+    prop: 'paddingRight',
+    alias: 'pr',
+    key: 'space',
+    transformValue: getSpace,
+    scale: spaceScale,
+  }),
+  space = mapProps(function(e) {
+    return _extends({}, e, {
+      mt: is(e.my) ? e.my : e.mt,
+      mb: is(e.my) ? e.my : e.mb,
+      ml: is(e.mx) ? e.mx : e.ml,
+      mr: is(e.mx) ? e.mx : e.mr,
+      pt: is(e.py) ? e.py : e.pt,
+      pb: is(e.py) ? e.py : e.pb,
+      pl: is(e.px) ? e.px : e.pl,
+      pr: is(e.px) ? e.px : e.pr,
+    })
+  })(
+    compose(
+      margin,
+      marginTop,
+      marginBottom,
+      marginLeft,
+      marginRight,
+      padding,
+      paddingTop,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+    ),
+  ),
+  textColor = style({prop: 'color', key: 'colors'}),
+  backgroundColor = style({prop: 'backgroundColor', alias: 'bg', key: 'colors'}),
+  color = compose(
+    textColor,
+    backgroundColor,
+  ),
+  getWidth = function(e, t) {
+    return !num(e) || e > 1 ? px(e) : 100 * e + '%'
+  },
+  width = style({prop: 'width', key: 'widths', transformValue: getWidth}),
+  getPx = function(e, t) {
+    return px(get(t, e))
+  },
+  fontSize = style({
+    prop: 'fontSize',
+    key: 'fontSizes',
+    transformValue: getPx,
+    scale: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+  }),
+  fontFamily = style({prop: 'fontFamily', key: 'fonts'}),
+  fontWeight = style({prop: 'fontWeight', key: 'fontWeights'}),
+  lineHeight = style({prop: 'lineHeight', key: 'lineHeights'}),
+  textAlign = style({prop: 'textAlign'}),
+  fontStyle = style({prop: 'fontStyle'}),
+  letterSpacing = style({prop: 'letterSpacing', key: 'letterSpacings', transformValue: getPx}),
+  display = style({prop: 'display'}),
+  maxWidth = style({prop: 'maxWidth', key: 'maxWidths', transformValue: getPx}),
+  minWidth = style({prop: 'minWidth', key: 'minWidths', transformValue: getPx}),
+  height = style({prop: 'height', key: 'heights', transformValue: getPx}),
+  maxHeight = style({prop: 'maxHeight', key: 'maxHeights', transformValue: getPx}),
+  minHeight = style({prop: 'minHeight', key: 'minHeights', transformValue: getPx}),
+  size = mapProps(function(e) {
+    return _extends({}, e, {width: e.size, height: e.size})
+  })(
+    compose(
+      width,
+      height,
+    ),
+  ),
+  verticalAlign = style({prop: 'verticalAlign'}),
+  alignItems = style({prop: 'alignItems'}),
+  alignContent = style({prop: 'alignContent'}),
+  justifyItems = style({prop: 'justifyItems'}),
+  justifyContent = style({prop: 'justifyContent'}),
+  flexWrap = style({prop: 'flexWrap'}),
+  flexBasis = style({prop: 'flexBasis', transformValue: getWidth}),
+  flexDirection = style({prop: 'flexDirection'}),
+  flex = style({prop: 'flex'}),
+  justifySelf = style({prop: 'justifySelf'}),
+  alignSelf = style({prop: 'alignSelf'}),
+  order = style({prop: 'order'}),
+  gridGap = style({prop: 'gridGap', key: 'space', transformValue: getPx, scale: spaceScale}),
+  gridColumnGap = style({
+    prop: 'gridColumnGap',
+    key: 'space',
+    transformValue: getPx,
+    scale: spaceScale,
+  }),
+  gridRowGap = style({prop: 'gridRowGap', key: 'space', transformValue: getPx, scale: spaceScale}),
+  gridColumn = style({prop: 'gridColumn'}),
+  gridRow = style({prop: 'gridRow'}),
+  gridAutoFlow = style({prop: 'gridAutoFlow'}),
+  gridAutoColumns = style({prop: 'gridAutoColumns'}),
+  gridAutoRows = style({prop: 'gridAutoRows'}),
+  gridTemplateColumns = style({prop: 'gridTemplateColumns'}),
+  gridTemplateRows = style({prop: 'gridTemplateRows'}),
+  gridTemplateAreas = style({prop: 'gridTemplateAreas'}),
+  gridArea = style({prop: 'gridArea'}),
+  border = style({prop: 'border', key: 'borders'}),
+  borderWidth = style({prop: 'borderWidth', key: 'borderWidths', transformValue: getPx}),
+  borderStyle = style({prop: 'borderStyle', key: 'borderStyles'}),
+  borderColor = style({prop: 'borderColor', key: 'colors'}),
+  borderTop = style({prop: 'borderTop', key: 'borders'}),
+  borderRight = style({prop: 'borderRight', key: 'borders'}),
+  borderBottom = style({prop: 'borderBottom', key: 'borders'}),
+  borderLeft = style({prop: 'borderLeft', key: 'borders'}),
+  borderRadius = style({prop: 'borderRadius', key: 'radii', transformValue: getPx}),
+  borders = compose(
+    border,
+    borderTop,
+    borderRight,
+    borderBottom,
+    borderLeft,
+    borderWidth,
+    borderStyle,
+    borderColor,
+    borderRadius,
+  ),
+  boxShadow = style({prop: 'boxShadow', key: 'shadows'}),
+  opacity = style({prop: 'opacity'}),
+  overflow = style({prop: 'overflow'}),
+  background = style({prop: 'background'}),
+  backgroundImage = style({prop: 'backgroundImage'}),
+  backgroundSize = style({prop: 'backgroundSize'}),
+  backgroundPosition = style({prop: 'backgroundPosition'}),
+  backgroundRepeat = style({prop: 'backgroundRepeat'}),
+  position = style({prop: 'position'}),
+  zIndex = style({prop: 'zIndex', key: 'zIndices'}),
+  top = style({prop: 'top', transformValue: getPx}),
+  right = style({prop: 'right', transformValue: getPx}),
+  bottom = style({prop: 'bottom', transformValue: getPx}),
+  left = style({prop: 'left', transformValue: getPx}),
+  buttonStyle = variant({key: 'buttons'}),
+  textStyle = variant({key: 'textStyles', prop: 'textStyle'}),
+  colorStyle = variant({key: 'colorStyles', prop: 'colors'}),
   datepickerPhrases = {
     datepickerStartDatePlaceholder: 'Select',
     datepickerStartDateLabel: 'Start date:',
@@ -1647,6 +1647,10 @@ var templateObject_1,
     endDateAriaLabel: 'End date',
     startDatePlaceholder: 'Start date',
     endDatePlaceholder: 'End date',
+  }),
+  phrases = Object.freeze({
+    datepickerPhrases: datepickerPhrases,
+    dateRangeInputPhrases: dateRangeInputPhrases,
   }),
   daySizeGridTemplateColumns = style({
     prop: 'daySizeGridTemplateColumns',
@@ -1956,8 +1960,8 @@ function Input(e) {
     c = e.showCalendarIcon,
     s = e.padding,
     d = e.rtl,
-    u = e.disableAccessibility,
-    p = useThemeProps({
+    p = e.disableAccessibility,
+    u = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       inputFontWeight: 600,
       inputFontSize: '14px',
@@ -1990,45 +1994,45 @@ function Input(e) {
     InputLabel,
     {
       htmlFor: n,
-      display: p.inputLabelDisplay,
-      position: p.inputLabelPosition,
-      border: p.inputLabelBorder,
-      background: p.inputLabelBackground,
-      borderRadius: p.inputLabelBorderRadius,
-      m: p.inputLabelMargin,
+      display: u.inputLabelDisplay,
+      position: u.inputLabelPosition,
+      border: u.inputLabelBorder,
+      background: u.inputLabelBackground,
+      borderRadius: u.inputLabelBorderRadius,
+      m: u.inputLabelMargin,
     },
     c &&
       React__default.createElement(
         CalendarWrapper,
         {
-          position: p.inputCalendarWrapperPosition,
-          height: p.inputCalendarWrapperHeight,
-          width: p.inputCalendarWrapperWidth,
-          top: p.inputCalendarWrapperTop,
-          left: p.inputCalendarWrapperLeft,
-          right: p.inputCalendarWrapperRight,
+          position: u.inputCalendarWrapperPosition,
+          height: u.inputCalendarWrapperHeight,
+          width: u.inputCalendarWrapperWidth,
+          top: u.inputCalendarWrapperTop,
+          left: u.inputCalendarWrapperLeft,
+          right: u.inputCalendarWrapperRight,
         },
         React__default.createElement(CalendarIcon, {
-          width: p.inputCalendarIconWidth,
-          height: p.inputCalendarIconHeight,
-          color: p.inputCalendarIconColor,
+          width: u.inputCalendarIconWidth,
+          height: u.inputCalendarIconHeight,
+          color: u.inputCalendarIconColor,
         }),
       ),
     React__default.createElement(StyledInput, {
       readOnly: !0,
-      tabIndex: u ? -1 : 0,
-      border: p.inputBorder,
-      p: p.inputPadding,
-      width: p.inputWidth,
-      minHeight: p.inputMinHeight,
-      background: p.inputBackground,
-      fontFamily: p.fontFamily,
-      color: p.inputColor,
-      fontSize: p.inputFontSize,
-      fontWeight: p.inputFontWeight,
-      placeholderColor: p.inputPlaceholderColor,
-      placeholderFontWeight: p.inputPlaceholderFontWeight,
-      boxShadow: a ? p.inputActiveBoxShadow : 'none',
+      tabIndex: p ? -1 : 0,
+      border: u.inputBorder,
+      p: u.inputPadding,
+      width: u.inputWidth,
+      minHeight: u.inputMinHeight,
+      background: u.inputBackground,
+      fontFamily: u.fontFamily,
+      color: u.inputColor,
+      fontSize: u.inputFontSize,
+      fontWeight: u.inputFontWeight,
+      placeholderColor: u.inputPlaceholderColor,
+      placeholderFontWeight: u.inputPlaceholderFontWeight,
+      boxShadow: a ? u.inputActiveBoxShadow : 'none',
       id: n,
       placeholder: t,
       'aria-label': o,
@@ -2400,8 +2404,8 @@ function Day(e) {
     c = a.isDateHovered,
     s = a.isDateBlocked,
     d = a.isFirstOrLastSelectedDate,
-    u = a.onDaySelect,
-    p = xe({
+    p = a.onDaySelect,
+    u = xe({
       date: n,
       focusedDate: o,
       isDateFocused: i,
@@ -2410,11 +2414,11 @@ function Day(e) {
       isDateBlocked: s,
       isFirstOrLastSelectedDate: d,
       onDayFocus: a.onDayFocus,
-      onDaySelect: u,
+      onDaySelect: p,
       onDayHover: a.onDayHover,
       dayRef: r,
     }),
-    f = useThemeProps({
+    m = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       daySize: globalStyles.daySize,
       dayFontWeight: 500,
@@ -2437,66 +2441,66 @@ function Day(e) {
       daySelectedFirstOrLastBorderColor: '#00aeef',
       dayAccessibilityBorderColor: '#009fef',
     }),
-    m = React.useMemo(
+    f = React.useMemo(
       function() {
-        return getColor(p.isActive, p.isStartOrEnd, p.isWithinHoverRange, {
-          selectedFirstOrLast: f.daySelectedFirstOrLastBorderColor,
-          selected: f.daySelectedBorderColor,
-          normal: f.dayBorderColor,
-          rangeHover: f.dayHoverRangeColor,
+        return getColor(u.isActive, u.isStartOrEnd, u.isWithinHoverRange, {
+          selectedFirstOrLast: m.daySelectedFirstOrLastBorderColor,
+          selected: m.daySelectedBorderColor,
+          normal: m.dayBorderColor,
+          rangeHover: m.dayHoverRangeColor,
         })
       },
-      [p.isActive, p.isStartOrEnd, f, p.isWithinHoverRange],
+      [u.isActive, u.isStartOrEnd, m, u.isWithinHoverRange],
     ),
     g = React.useMemo(
       function() {
-        return getColor(p.isActive, p.isStartOrEnd, p.isWithinHoverRange, {
-          selectedFirstOrLast: f.daySelectedFirstOrLastBackground,
-          selected: f.daySelectedBackground,
-          normal: f.dayBackground,
-          rangeHover: f.dayHoverRangeBackground,
+        return getColor(u.isActive, u.isStartOrEnd, u.isWithinHoverRange, {
+          selectedFirstOrLast: m.daySelectedFirstOrLastBackground,
+          selected: m.daySelectedBackground,
+          normal: m.dayBackground,
+          rangeHover: m.dayHoverRangeBackground,
         })
       },
-      [p.isActive, p.isStartOrEnd, f, p.isWithinHoverRange],
+      [u.isActive, u.isStartOrEnd, m, u.isWithinHoverRange],
     ),
     y = React.useMemo(
       function() {
-        return getColor(p.isActive, p.isStartOrEnd, p.isWithinHoverRange, {
-          selectedFirstOrLast: f.daySelectedFirstOrLastColor,
-          selected: f.daySelectedColor,
-          normal: f.dayColor,
-          rangeHover: f.dayHoverRangeColor,
+        return getColor(u.isActive, u.isStartOrEnd, u.isWithinHoverRange, {
+          selectedFirstOrLast: m.daySelectedFirstOrLastColor,
+          selected: m.daySelectedColor,
+          normal: m.dayColor,
+          rangeHover: m.dayHoverRangeColor,
         })
       },
-      [p.isActive, p.isStartOrEnd, f, p.isWithinHoverRange],
+      [u.isActive, u.isStartOrEnd, m, u.isWithinHoverRange],
     )
   return React__default.createElement(
     StyledDay,
-    __assign({}, p, {
+    __assign({}, u, {
       ref: r,
-      dayHeight: f.daySize,
-      dayWidth: f.daySize,
+      dayHeight: m.daySize,
+      dayWidth: m.daySize,
       background: g,
       color: y,
-      fontFamily: f.fontFamily,
-      fontWeight: f.dayFontWeight,
-      fontSize: f.dayFontSize,
-      daySelectedHoverBackground: f.daySelectedHoverBackground,
-      dayHoverBackground: f.dayHoverBackground,
-      dayHoverColor: f.dayHoverColor,
-      daySelectedHoverColor: f.daySelectedHoverColor,
-      borderAccessibilityColor: f.dayAccessibilityBorderColor,
+      fontFamily: m.fontFamily,
+      fontWeight: m.dayFontWeight,
+      fontSize: m.dayFontSize,
+      daySelectedHoverBackground: m.daySelectedHoverBackground,
+      dayHoverBackground: m.dayHoverBackground,
+      dayHoverColor: m.dayHoverColor,
+      daySelectedHoverColor: m.daySelectedHoverColor,
+      borderAccessibilityColor: m.dayAccessibilityBorderColor,
       boxShadow:
         '1px 0 0 0 ' +
-        m +
+        f +
         ',\n        0 1px 0 0 ' +
-        m +
+        f +
         ',\n        1px 1px 0 0 ' +
-        m +
+        f +
         ',\n        1px 0 0 0 ' +
-        m +
+        f +
         ' inset,\n        0 1px 0 0 ' +
-        m +
+        f +
         ' inset',
       'data-testid': 'Day',
       'aria-label': 'Day-' + n.toDateString(),
@@ -2893,14 +2897,15 @@ var templateObject_1$c,
   StyledDatepicker = styled__default('div')(
     templateObject_2$6 ||
       (templateObject_2$6 = __makeTemplateObject(
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
       )),
     background,
     space,
     borderRadius,
     position,
     boxShadow,
+    width,
     function(e) {
       return (
         e.rtl &&
@@ -2948,10 +2953,10 @@ function Datepicker(e) {
     c = void 0 !== l && l,
     s = e.rtl,
     d = void 0 !== s && s,
-    u = e.showResetDates,
-    p = void 0 === u || u,
-    f = e.showClose,
-    m = void 0 === f || f,
+    p = e.showResetDates,
+    u = void 0 === p || p,
+    m = e.showClose,
+    f = void 0 === m || m,
     g = e.showSelectedDates,
     y = void 0 === g || g,
     h = e.exactMinBookingDays,
@@ -2968,9 +2973,9 @@ function Datepicker(e) {
     x = e.onClose,
     S = void 0 === x ? function() {} : x,
     C = e.numberOfMonths,
-    w = e.firstDayOfWeek,
-    O = e.displayFormat,
-    R = void 0 === O ? 'MM/DD/YYYY' : O,
+    R = e.firstDayOfWeek,
+    w = e.displayFormat,
+    O = void 0 === w ? 'MM/DD/YYYY' : w,
     I = e.phrases,
     B = void 0 === I ? datepickerPhrases : I,
     T = Ye({
@@ -2984,7 +2989,7 @@ function Datepicker(e) {
       isDayBlocked: v,
       exactMinBookingDays: _,
       numberOfMonths: C,
-      firstDayOfWeek: w,
+      firstDayOfWeek: R,
     }),
     M = T.activeMonths,
     j = T.isDateSelected,
@@ -3007,6 +3012,7 @@ function Datepicker(e) {
       datepickerPadding: c ? '16px 16px 0' : '32px',
       datepickerBorderRadius: '2px',
       datepickerPosition: 'relative',
+      datepickerWidth: 'fit-content',
       datepickerCloseWrapperPosition: c ? 'relative' : 'absolute',
       datepickerCloseWrapperDisplay: c ? 'flex' : 'block',
       datepickerCloseWrapperJustifyContent: c ? 'flex-end' : 'initial',
@@ -3020,7 +3026,7 @@ function Datepicker(e) {
       datepickerSelectDateArrowIconWidth: '15px',
       datepickerSelectDateArrowIconHeight: '12px',
       datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
-      datepickerMonthsWrapperMargin: '28px 0 0',
+      datepickerMonthsWrapperMargin: f || y ? (y ? '28px 0 0' : '48px 0 0') : 'unset',
       datepickerPreviousMonthButtonPosition: c ? 'relative' : 'absolute',
       datepickerPreviousMonthButtonTop: c ? 'unset' : '-5px',
       datepickerPreviousMonthButtonLeft: c ? 'unset' : '0',
@@ -3070,9 +3076,10 @@ function Datepicker(e) {
         borderRadius: Q.datepickerBorderRadius,
         position: Q.datepickerPosition,
         boxShadow: Q.datepickerBoxShadow,
+        width: Q.datepickerWidth,
         rtl: d,
       },
-      m &&
+      f &&
         React__default.createElement(
           CloseWrapper,
           {
@@ -3097,7 +3104,7 @@ function Datepicker(e) {
             {gridTemplateColumns: Q.datepickerSelectDateGridTemplateColumns},
             React__default.createElement(SelectDate, {
               title: B.datepickerStartDateLabel,
-              date: pe(t, R, B.datepickerStartDatePlaceholder),
+              date: pe(t, O, B.datepickerStartDatePlaceholder),
               isActive: o === Se,
               vertical: c,
             }),
@@ -3112,7 +3119,7 @@ function Datepicker(e) {
             ),
             React__default.createElement(SelectDate, {
               title: B.datepickerEndDateLabel,
-              date: pe(n, R, B.datepickerEndDatePlaceholder),
+              date: pe(n, O, B.datepickerEndDatePlaceholder),
               isActive: o === Fe,
               vertical: c,
             }),
@@ -3150,7 +3157,7 @@ function Datepicker(e) {
           React__default.createElement(
             React__default.Fragment,
             null,
-            p &&
+            u &&
               React__default.createElement(
                 Flex,
                 {flex: '1', m: Q.datepickerResetDatesWrapperMargin},
@@ -3252,6 +3259,21 @@ var templateObject_1$d,
     border,
     borderRadius,
   )
+function getPlacement(e) {
+  return 'top' === e
+    ? {
+        dateRangeDatepickerWrapperTop: 'unset',
+        dateRangeDatepickerWrapperRight: 'unset',
+        dateRangeDatepickerWrapperBottom: '65px',
+        dateRangeDatepickerWrapperLeft: '0',
+      }
+    : {
+        dateRangeDatepickerWrapperTop: 'unset',
+        dateRangeDatepickerWrapperRight: '65px',
+        dateRangeDatepickerWrapperBottom: 'unset',
+        dateRangeDatepickerWrapperLeft: '0',
+      }
+}
 function DateRangeInput(e) {
   var t = e.startDate,
     n = e.endDate,
@@ -3263,10 +3285,10 @@ function DateRangeInput(e) {
     c = e.focusedInput,
     s = e.onDateChange,
     d = e.exactMinBookingDays,
-    u = e.showClose,
-    p = void 0 === u || u,
-    f = e.showSelectedDates,
-    m = void 0 === f || f,
+    p = e.showClose,
+    u = void 0 === p || p,
+    m = e.showSelectedDates,
+    f = void 0 === m || m,
     g = e.showResetDates,
     y = void 0 === g || g,
     h = e.vertical,
@@ -3283,55 +3305,58 @@ function DateRangeInput(e) {
     x = e.minBookingDays,
     S = void 0 === x ? 1 : x,
     C = e.onClose,
-    w = void 0 === C ? function() {} : C,
-    O = e.showStartDateCalendarIcon,
-    R = void 0 === O || O,
+    R = void 0 === C ? function() {} : C,
+    w = e.showStartDateCalendarIcon,
+    O = void 0 === w || w,
     I = e.showEndDateCalendarIcon,
     B = void 0 === I || I,
     T = e.displayFormat,
     M = void 0 === T ? 'MM/DD/YYYY' : T,
     j = e.phrases,
     F = void 0 === j ? dateRangeInputPhrases : j,
-    W = React.useRef(null),
-    P = useThemeProps({
-      dateRangeBackground: 'transparent',
-      dateRangeGridTemplateColumns: _ ? '1fr 24px 1fr' : '194px 39px 194px',
-      dateRangeBorder: '0',
-      dateRangeBorderRadius: '0',
-      dateRangeArrowIconWidth: '15px',
-      dateRangeArrowIconHeight: '12px',
-      dateRangeArrowIconColor: '#ffffff',
-      dateRangeArrowIconOpacity: 0.4,
-      dateRangeStartDateInputPadding: _ ? (v ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
-      dateRangeEndDateInputPadding: _ ? (v ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
-      dateRangeDatepickerWrapperTop: 'unset',
-      dateRangeDatepickerWrapperRight: 'unset',
-      dateRangeDatepickerWrapperBottom: '65px',
-      dateRangeDatepickerWrapperLeft: '0',
-      dateRangeDatepickerWrapperPosition: 'absolute',
-    })
-  function H(e) {
-    null !== c && W && W.current && !W.current.contains(e.target) && i(null)
+    W = e.placement,
+    P = void 0 === W ? 'bottom' : W,
+    H = React.useRef(null),
+    E = useThemeProps(
+      __assign(
+        {
+          dateRangeBackground: 'transparent',
+          dateRangeGridTemplateColumns: _ ? '1fr 24px 1fr' : '194px 39px 194px',
+          dateRangeBorder: '0',
+          dateRangeBorderRadius: '0',
+          dateRangeArrowIconWidth: '15px',
+          dateRangeArrowIconHeight: '12px',
+          dateRangeArrowIconColor: '#BCBEC0',
+          dateRangeArrowIconOpacity: 1,
+          dateRangeStartDateInputPadding: _ ? (v ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+          dateRangeEndDateInputPadding: _ ? (v ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+          dateRangeDatepickerWrapperPosition: 'absolute',
+        },
+        getPlacement(P),
+      ),
+    )
+  function $(e) {
+    null !== c && H && H.current && !H.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', H),
+        'undefined' != typeof window && window.addEventListener('click', $),
         function() {
-          window.removeEventListener('click', H)
+          window.removeEventListener('click', $)
         }
       )
     }),
     React__default.createElement(
       Wrapper$1,
-      {rtl: v, position: 'relative', ref: W},
+      {rtl: v, position: 'relative', ref: H},
       React__default.createElement(
         InputGrid,
         {
-          background: P.dateRangeBackground,
-          gridTemplateColumns: P.dateRangeGridTemplateColumns,
-          border: P.dateRangeBorder,
-          borderRadius: P.dateRangeBorderRadius,
+          background: E.dateRangeBackground,
+          gridTemplateColumns: E.dateRangeGridTemplateColumns,
+          border: E.dateRangeBorder,
+          borderRadius: E.dateRangeBorderRadius,
         },
         React__default.createElement(Input, {
           id: 'startDate',
@@ -3341,20 +3366,20 @@ function DateRangeInput(e) {
           onClick: function() {
             return i(Se)
           },
-          showCalendarIcon: R,
+          showCalendarIcon: O,
           vertical: _,
           isActive: c === Se,
-          padding: P.dateRangeStartDateInputPadding,
+          padding: E.dateRangeStartDateInputPadding,
           rtl: v,
         }),
         React__default.createElement(
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
           React__default.createElement(InputArrowIcon, {
-            width: P.dateRangeArrowIconWidth,
-            height: P.dateRangeArrowIconHeight,
-            color: P.dateRangeArrowIconColor,
-            opacity: P.dateRangeArrowIconOpacity,
+            width: E.dateRangeArrowIconWidth,
+            height: E.dateRangeArrowIconHeight,
+            color: E.dateRangeArrowIconColor,
+            opacity: E.dateRangeArrowIconOpacity,
             rtl: v,
           }),
         ),
@@ -3369,7 +3394,7 @@ function DateRangeInput(e) {
           showCalendarIcon: B,
           vertical: _,
           isActive: c === Fe,
-          padding: P.dateRangeEndDateInputPadding,
+          padding: E.dateRangeEndDateInputPadding,
           rtl: v,
           disableAccessibility: c === Se,
         }),
@@ -3377,16 +3402,16 @@ function DateRangeInput(e) {
       React__default.createElement(
         Box,
         {
-          position: P.dateRangeDatepickerWrapperPosition,
-          bottom: P.dateRangeDatepickerWrapperBottom,
-          left: P.dateRangeDatepickerWrapperLeft,
-          top: P.dateRangeDatepickerWrapperTop,
-          right: P.dateRangeDatepickerWrapperRight,
+          position: E.dateRangeDatepickerWrapperPosition,
+          bottom: E.dateRangeDatepickerWrapperBottom,
+          left: E.dateRangeDatepickerWrapperLeft,
+          top: E.dateRangeDatepickerWrapperTop,
+          right: E.dateRangeDatepickerWrapperRight,
         },
         null !== c &&
           React__default.createElement(Datepicker, {
             onClose: function() {
-              w(), i(null)
+              R(), i(null)
             },
             startDate: t,
             endDate: n,
@@ -3402,12 +3427,16 @@ function DateRangeInput(e) {
             exactMinBookingDays: d,
             showResetDates: y,
             vertical: _,
-            showSelectedDates: m,
-            showClose: p,
+            showSelectedDates: f,
+            showClose: u,
             rtl: v,
           }),
       ),
     )
   )
 }
-;(exports.DateRangeInput = DateRangeInput), (exports.Datepicker = Datepicker)
+;(exports.DateRangeInput = DateRangeInput),
+  (exports.Datepicker = Datepicker),
+  (exports.END_DATE = Fe),
+  (exports.START_DATE = Se),
+  (exports.phrases = phrases)
