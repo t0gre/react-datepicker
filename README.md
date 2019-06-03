@@ -29,20 +29,20 @@ To run that demo on your own computer:
 
 ### Include component
 ```js
-import { DateRangeInput, Datepicker } from '@datepicker-react/styled';
+import {DateRangeInput, Datepicker} from '@datepicker-react/styled'
 ```
 
-#### DateRangeInput
+### DateRangeInput
 The `DateRangeInput` is a fully controlled component that allows users to select a date range. You can control the selected
 dates using the `startDate`, `endDate`, and `onDateChange` props as shown below. The `DateRangeInput` also manages internal
 state for partial dates entered by typing (although `onDateChange` will not trigger until a date has been entered
 completely in that case). Similarly, you can control which input is focused as well as calendar visibility (the calendar is
 only visible if `focusedInput` is defined) with the `focusedInput` and `onFocusChange` props as shown below.
 
-Here is the minimum *REQUIRED* setup you need to get the `DateRangePicker` working:
+Here is the minimum *REQUIRED* setup you need to get the `DateRangeInput` working:
 ```jsx
 import React, {useReducer} from React
-import { DateRangeInput } from '@datepicker-react/styled';
+import {DateRangeInput} from '@datepicker-react/styled'
 
 const initialState = {
   startDate: null,
@@ -70,7 +70,7 @@ function App() {
       onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
       startDate={state.startDate} // Date or null
       endDate={state.endDate} // Date or null
-      focusedInput={state.focusedInput} START_DATE, END_DATE or null
+      focusedInput={state.focusedInput} // START_DATE, END_DATE or null
     />
   )
 }
@@ -79,23 +79,82 @@ function App() {
 The following is a list of other *OPTIONAL* props you may provide to the `DateRangeInput` to customize appearance and behavior to your heart's desire.
 
 ```ts
-  displayFormat?: string | FormatFunction
-  phrases?: DateRangeInputPhrases
-  showStartDateCalendarIcon?: boolean
-  showEndDateCalendarIcon?: boolean
-  onClose?(): void
-  vertical?: boolean
-  showResetDates?: boolean
-  showSelectedDates?: boolean
-  showClose?: boolean
-  rtl?: boolean
-  placement?: 'top' | 'bottom'
-  minBookingDate?: Date
-  maxBookingDate?: Date
-  numberOfMonths?: number
-  minBookingDays?: number
-  exactMinBookingDays?: boolean
-  firstDayOfWeek?: FirstDayOfWeek
-  initialVisibleMonth?(numberOfMonths: number): MonthType[]
-  isDayBlocked?(date: Date): boolean
+displayFormat?: string | FormatFunction
+phrases?: DateRangeInputPhrases
+showStartDateCalendarIcon?: boolean
+showEndDateCalendarIcon?: boolean
+onClose?(): void
+vertical?: boolean
+showResetDates?: boolean
+showSelectedDates?: boolean
+showClose?: boolean
+rtl?: boolean
+placement?: 'top' | 'bottom'
+minBookingDate?: Date
+maxBookingDate?: Date
+numberOfMonths?: number
+minBookingDays?: number
+exactMinBookingDays?: boolean
+firstDayOfWeek?: FirstDayOfWeek
+initialVisibleMonth?(numberOfMonths: number): MonthType[]
+isDayBlocked?(date: Date): boolean
+```
+
+### Datepicker
+The `Datepicker` is a fully controlled component that allows users to select a date range. You can control the selected
+dates using the `startDate`, `endDate`, and `onDateChange` props as shown below. The `Datepicker` also manages internal
+state for partial dates entered by typing (although `onDateChange` will not trigger until a date has been entered
+completely in that case). Similarly, you can control which input is focused with the `focusedInput` prop.
+
+Here is the minimum *REQUIRED* setup you need to get the `Datepicker` working:
+
+```jsx
+import React, {useState} from 'react'
+import {Datepicker, START_DATE} from '@datepicker-react/styled'
+
+function App() {
+  const [state, setState] = useState({
+    startDate: null,
+    endDate: null,
+    focusedInput: START_DATE,
+  })
+  
+  function handleDataChange(data: OnDateChangeProps) {
+    if (!data.focusedInput) {
+      setState({...data, focusedInput: START_DATE})
+    } else {
+      setState(data)
+    }
+  }
+  
+  return (
+    <Datepicker
+      onDateChange={handleDataChange}
+      startDate={state.startDate} // Date or null
+      endDate={state.endDate} // Date or null
+      focusedInput={state.focusedInput} // START_DATE, END_DATE or null
+    />
+  )
+}
+```
+
+The following is a list of other *OPTIONAL* props you may provide to the `Datepicker` to customize appearance and behavior to your heart's desire.
+
+```ts
+phrases?: DatepickerPhrases
+displayFormat?: string | FormatFunction
+onClose?(): void
+showResetDates?: boolean
+showSelectedDates?: boolean
+showClose?: boolean
+vertical?: boolean
+rtl?: boolean
+minBookingDate?: Date
+maxBookingDate?: Date
+numberOfMonths?: number
+minBookingDays?: number
+exactMinBookingDays?: boolean
+firstDayOfWeek?: FirstDayOfWeek
+initialVisibleMonth?(numberOfMonths: number): MonthType[]
+isDayBlocked?(date: Date): boolean
 ```
