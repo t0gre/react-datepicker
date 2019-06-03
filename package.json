@@ -34,7 +34,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
     "lerna:publish": "lerna publish",
-    "coveralls": "yarn run test:coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "coveralls": "yarn run test:coverage && cat ./coverage/lcov.info | coveralls"
   },
   "author": "Miha Sedej",
   "license": "MIT",
