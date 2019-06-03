@@ -8,7 +8,7 @@
     "datepicker"
   ],
   "author": "Miha Sedej <sedej.miha@gmail.com>",
-  "homepage": "https://github.com/tresko/react-datepicker/tree/master/packages/react-datepicker-hooks#readme",
+  "homepage": "https://github.com/tresko/react-datepicker/tree/master/packages/hooks",
   "license": "MIT",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",

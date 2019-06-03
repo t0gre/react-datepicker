@@ -8,7 +8,7 @@
     "styled-components"
   ],
   "author": "Miha Sedej <miha.sedej@lifeonscreen.com>",
-  "homepage": "https://github.com/tresko/react-datepicker/tree/master/packages/react-datepicker-styled#readme",
+  "homepage": "https://github.com/tresko/react-datepicker#readme",
   "license": "MIT",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",

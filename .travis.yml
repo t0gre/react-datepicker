@@ -14,3 +14,4 @@ install:
   - yarn bootstrap
 script:
   - yarn coveralls
+  - yarn build
