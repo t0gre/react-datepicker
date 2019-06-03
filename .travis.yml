@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+  - '12'
+branches:
+  only:
+    - master
+cache:
+  yarn: true
+  directories:
+    - node_modules
+install:
+  - yarn install
+  - yarn bootstrap
+script:
+  - yarn coveralls

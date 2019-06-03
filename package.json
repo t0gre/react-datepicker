@@ -33,7 +33,8 @@
     "bootstrap": "lerna bootstrap",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
-    "lerna:publish": "lerna publish"
+    "lerna:publish": "lerna publish",
+    "coveralls": "yarn run test:coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "author": "Miha Sedej",
   "license": "MIT",
@@ -62,6 +63,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
     "commitizen": "^3.1.1",
+    "coveralls": "^3.0.3",
     "cz-lerna-changelog": "^2.0.2",
     "date-fns": "^1.30.1",
     "eslint": "^5.16.0",
