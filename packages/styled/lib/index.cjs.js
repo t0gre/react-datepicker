@@ -133,12 +133,12 @@ var B = function(e, t) {
               : 0) * i)
       else {
         var P = j + W,
-          H = new Date(P)
-        B = a(H)
-        var E = new Date(P)
-        E.setDate(H.getDate() + 1)
-        var L = a(E) - a(H)
-        L > 0 && (B += L)
+          L = new Date(P)
+        B = a(L)
+        var H = new Date(P)
+        H.setDate(L.getDate() + 1)
+        var E = a(H) - a(L)
+        E > 0 && (B += E)
       }
       return new Date(j + W + B)
     }
@@ -176,7 +176,7 @@ var B = function(e, t) {
   E = function(e) {
     return W(e, {weekStartsOn: 1})
   },
-  G = function(e) {
+  L = function(e) {
     var t = B(e),
       n = t.getFullYear(),
       r = new Date(0)
@@ -187,22 +187,22 @@ var B = function(e, t) {
     var i = E(o)
     return t.getTime() >= a.getTime() ? n + 1 : t.getTime() >= i.getTime() ? n : n - 1
   },
-  C = function(e) {
-    var t = G(e),
+  G = function(e) {
+    var t = L(e),
       n = new Date(0)
     return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), E(n)
   },
-  N = 6048e5,
-  R = function(e) {
+  C = 6048e5,
+  N = function(e) {
     var t = B(e),
-      n = E(t).getTime() - C(t).getTime()
-    return Math.round(n / N) + 1
+      n = E(t).getTime() - G(t).getTime()
+    return Math.round(n / C) + 1
   },
-  U = function(e) {
+  R = function(e) {
     if (o(e)) return !isNaN(e)
     throw new TypeError(toString.call(e) + ' is not an instance of Date')
   },
-  z = [
+  U = [
     'M',
     'MM',
     'Q',
@@ -234,11 +234,10 @@ var B = function(e, t) {
     'X',
     'x',
   ],
-  L = function(e) {
+  z = function(e) {
     var t = []
     for (var n in e) e.hasOwnProperty(n) && t.push(n)
-    var r = z
-      .concat(t)
+    var r = U.concat(t)
       .sort()
       .reverse()
     return new RegExp('(\\[[^\\[]*\\])|(\\\\)?(' + r.join('|') + '|.)', 'g')
@@ -309,7 +308,7 @@ var B = function(e, t) {
           })(n[e](t))
         }
       }),
-      {formatters: c, formattingTokensRegExp: L(c)}
+      {formatters: c, formattingTokensRegExp: z(c)}
     )
   },
   Z = {
@@ -377,10 +376,10 @@ var B = function(e, t) {
       return e.getDay() || 7
     },
     W: function(e) {
-      return R(e)
+      return N(e)
     },
     WW: function(e) {
-      return Q(R(e), 2)
+      return Q(N(e), 2)
     },
     YY: function(e) {
       return Q(e.getFullYear(), 4).substr(2)
@@ -389,10 +388,10 @@ var B = function(e, t) {
       return Q(e.getFullYear(), 4)
     },
     GG: function(e) {
-      return String(G(e)).substr(2)
+      return String(L(e)).substr(2)
     },
     GGGG: function(e) {
-      return G(e)
+      return L(e)
     },
     H: function(e) {
       return e.getHours()
@@ -463,7 +462,7 @@ var j = function(e, t, n) {
       ((o = a.format.formatters),
       a.format.formattingTokensRegExp && (i = a.format.formattingTokensRegExp))
     var l = B(e)
-    return U(l)
+    return R(l)
       ? (function(e, t, n) {
           var r,
             a,
@@ -521,7 +520,7 @@ function ne(e) {
   var t = void 0 === e ? {} : e,
     n = t.weekStartsOn,
     r = void 0 === n ? 1 : n,
-    a = t.weekDayFormat,
+    a = t.weekdayLabelFormat,
     o =
       void 0 === a
         ? function(e) {
@@ -571,7 +570,7 @@ function ie(e) {
     a = void 0 === r ? 1 : r,
     o = e.dayFormat,
     i = void 0 === o ? ae : o,
-    l = e.weekDayFormat,
+    l = e.weekdayLabelFormat,
     c = void 0 === l ? oe : l,
     s = e.monthLabelFormat,
     d = void 0 === s ? ue : s
@@ -584,7 +583,7 @@ function ie(e) {
     ),
     weekDays: React.useMemo(
       function() {
-        return ne({weekStartsOn: a, weekDayFormat: c})
+        return ne({weekStartsOn: a, weekdayLabelFormat: c})
       },
       [a, c],
     ),
@@ -756,13 +755,13 @@ function be(e) {
     x = React.useState(t),
     S = x[0],
     C = x[1],
-    R = React.useCallback(
+    w = React.useCallback(
       function(e) {
         C(e), (!S || (S && !de(e, S))) && b(Te(u, e))
       },
       [C, b, u, S],
     ),
-    w = React.useCallback(
+    R = React.useCallback(
       function(e) {
         return ye(e, t, n)
       },
@@ -833,7 +832,7 @@ function be(e) {
       'ArrowDown' !== e.key &&
       'ArrowUp' !== e.key) ||
       S ||
-      (R(new Date()), b(Te(u, new Date())))
+      (w(new Date()), b(Te(u, new Date())))
   }
   return (
     React.useEffect(function() {
@@ -847,7 +846,7 @@ function be(e) {
     {
       firstDayOfWeek: f,
       activeMonths: _,
-      isDateSelected: w,
+      isDateSelected: R,
       isDateHovered: T,
       isFirstOrLastSelectedDate: O,
       isDateBlocked: I,
@@ -900,7 +899,7 @@ function be(e) {
             i({startDate: t, endDate: e, focusedInput: null}),
           (!S || (S && !de(e, S))) && b(Te(u, e))
       },
-      onDayFocus: R,
+      onDayFocus: w,
       goToPreviousMonths: function() {
         b(Se(_, u, -1)), C(null)
       },
@@ -2527,7 +2526,7 @@ var templateObject_1$7,
       a = ie({
         dayFormat: e.dayFormat,
         monthLabelFormat: e.monthLabelFormat,
-        weekDayFormat: e.weekDayFormat,
+        weekdayLabelFormat: e.weekdayLabelFormat,
         year: t,
         month: n,
         weekStartsOn: r,
@@ -2960,7 +2959,7 @@ function Datepicker(e) {
     o = e.focusedInput,
     i = e.onDatesChange,
     l = e.dayFormat,
-    c = e.weekDayFormat,
+    c = e.weekdayLabelFormat,
     s = e.monthLabelFormat,
     d = e.onDayRender,
     p = e.vertical,
@@ -2983,9 +2982,9 @@ function Datepicker(e) {
           }
         : x,
     C = e.minBookingDays,
-    R = void 0 === C ? 1 : C,
-    w = e.onClose,
-    O = void 0 === w ? function() {} : w,
+    w = void 0 === C ? 1 : C,
+    R = e.onClose,
+    O = void 0 === R ? function() {} : R,
     I = e.numberOfMonths,
     B = e.firstDayOfWeek,
     T = e.displayFormat,
@@ -2999,22 +2998,22 @@ function Datepicker(e) {
       onDatesChange: i,
       minBookingDate: r,
       maxBookingDate: a,
-      minBookingDays: R,
+      minBookingDays: w,
       isDateBlocked: S,
       exactMinBookingDays: k,
       numberOfMonths: I,
       firstDayOfWeek: B,
     }),
     P = W.activeMonths,
-    H = W.isDateSelected,
-    E = W.isFirstOrLastSelectedDate,
-    L = W.isDateHovered,
+    L = W.isDateSelected,
+    H = W.isFirstOrLastSelectedDate,
+    E = W.isDateHovered,
     $ = W.firstDayOfWeek,
     A = W.onDaySelect,
     z = W.onResetDates,
     Y = W.goToPreviousMonths,
-    G = W.goToNextMonths,
-    V = W.numberOfMonths,
+    V = W.goToNextMonths,
+    G = W.numberOfMonths,
     N = W.onDayHover,
     K = W.isDateFocused,
     Q = W.focusedDate,
@@ -3061,7 +3060,7 @@ function Datepicker(e) {
     q && q.current && u && (q.current.scrollTop = 0)
   }
   function ee() {
-    G(), X()
+    V(), X()
   }
   function te() {
     Y(), X()
@@ -3072,9 +3071,9 @@ function Datepicker(e) {
       value: {
         rtl: f,
         isDateFocused: K,
-        isDateSelected: H,
-        isDateHovered: L,
-        isFirstOrLastSelectedDate: E,
+        isDateSelected: L,
+        isDateHovered: E,
+        isFirstOrLastSelectedDate: H,
         onDayFocus: U,
         focusedDate: Q,
         onDaySelect: A,
@@ -3151,7 +3150,7 @@ function Datepicker(e) {
             {
               overflow: J.datepickerMonthsGridOverflow,
               height: J.datepickerMonthsGridHeight,
-              gridTemplateColumns: u ? '1fr' : 'repeat(' + V + ', 1fr)',
+              gridTemplateColumns: u ? '1fr' : 'repeat(' + G + ', 1fr)',
               gridGap: J.datepickerMonthsGridGap,
               pr: f ? '1px' : '0',
               ref: q,
@@ -3163,7 +3162,7 @@ function Datepicker(e) {
                 month: e.month,
                 firstDayOfWeek: $,
                 dayFormat: l || ae,
-                weekDayFormat: c || oe,
+                weekdayLabelFormat: c || oe,
                 monthLabelFormat: s || ue,
               })
             }),
@@ -3304,7 +3303,7 @@ function DateRangeInput(e) {
     s = e.onDatesChange,
     d = e.exactMinBookingDays,
     p = e.dayFormat,
-    u = e.weekDayFormat,
+    u = e.weekdayLabelFormat,
     m = e.monthLabelFormat,
     f = e.onDayRender,
     g = e.showClose,
@@ -3318,14 +3317,14 @@ function DateRangeInput(e) {
     x = e.rtl,
     S = void 0 !== x && x,
     C = e.isDateBlocked,
-    R =
+    w =
       void 0 === C
         ? function() {
             return !1
           }
         : C,
-    w = e.minBookingDays,
-    O = void 0 === w ? 1 : w,
+    R = e.minBookingDays,
+    O = void 0 === R ? 1 : R,
     I = e.onClose,
     B = void 0 === I ? function() {} : I,
     T = e.showStartDateCalendarIcon,
@@ -3334,10 +3333,10 @@ function DateRangeInput(e) {
     j = void 0 === M || M,
     W = e.displayFormat,
     P = void 0 === W ? 'MM/DD/YYYY' : W,
-    H = e.phrases,
-    E = void 0 === H ? dateRangeInputPhrases : H,
-    L = e.placement,
-    $ = void 0 === L ? 'bottom' : L,
+    L = e.phrases,
+    H = void 0 === L ? dateRangeInputPhrases : L,
+    E = e.placement,
+    $ = void 0 === E ? 'bottom' : E,
     A = React.useRef(null),
     z = useThemeProps(
       __assign(
@@ -3382,8 +3381,8 @@ function DateRangeInput(e) {
         },
         React__default.createElement(Input, {
           id: 'startDate',
-          ariaLabel: E.startDateAriaLabel,
-          placeholder: E.startDatePlaceholder,
+          ariaLabel: H.startDateAriaLabel,
+          placeholder: H.startDatePlaceholder,
           value: Fe(t, P, ''),
           onClick: function() {
             return i(xe)
@@ -3407,8 +3406,8 @@ function DateRangeInput(e) {
         ),
         React__default.createElement(Input, {
           id: 'endDate',
-          ariaLabel: E.endDateAriaLabel,
-          placeholder: E.endDatePlaceholder,
+          ariaLabel: H.endDateAriaLabel,
+          placeholder: H.endDatePlaceholder,
           value: Fe(n, P, ''),
           onClick: function() {
             return i(t ? Be : xe)
@@ -3445,7 +3444,7 @@ function DateRangeInput(e) {
             displayFormat: P,
             onDatesChange: s,
             minBookingDays: O,
-            isDateBlocked: R,
+            isDateBlocked: w,
             exactMinBookingDays: d,
             showResetDates: v,
             vertical: k,
@@ -3453,7 +3452,7 @@ function DateRangeInput(e) {
             showClose: y,
             rtl: S,
             dayFormat: p,
-            weekDayFormat: u,
+            weekdayLabelFormat: u,
             monthLabelFormat: m,
             onDayRender: f,
           }),

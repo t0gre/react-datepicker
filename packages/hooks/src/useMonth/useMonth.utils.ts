@@ -10,12 +10,12 @@ import startOfWeek from 'date-fns/start_of_week'
 type WeekStartsOn = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export interface GetWeekDaysProps {
   weekStartsOn?: WeekStartsOn
-  weekDayFormat?(date: Date): string
+  weekdayLabelFormat?(date: Date): string
 }
 
 export function getWeekDays({
   weekStartsOn = 1,
-  weekDayFormat = (date: Date) => format(date, 'dd'),
+  weekdayLabelFormat = (date: Date) => format(date, 'dd'),
 }: GetWeekDaysProps = {}) {
   const now = new Date()
   const arr = eachDay(
@@ -24,7 +24,7 @@ export function getWeekDays({
   )
   return arr.reduce((array, date) => {
     // @ts-ignore
-    array.push(weekDayFormat(date))
+    array.push(weekdayLabelFormat(date))
     return array
   }, [])
 }

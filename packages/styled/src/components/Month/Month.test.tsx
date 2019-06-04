@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {dayFormat, weekDayFormat, monthLabelFormat} from '@datepicker-react/hooks'
+import {dayFormat, weekdayLabelFormat, monthLabelFormat} from '@datepicker-react/hooks'
 import {render} from '../../testUtil'
 import Month from '.'
 
@@ -10,7 +10,7 @@ test('should match snapshot', () => {
       year={2019}
       firstDayOfWeek={1}
       dayFormat={dayFormat}
-      weekDayFormat={weekDayFormat}
+      weekdayLabelFormat={weekdayLabelFormat}
       monthLabelFormat={monthLabelFormat}
     />,
   )
@@ -33,7 +33,7 @@ test('Sunday should be first day of the week', () => {
       year={2019}
       firstDayOfWeek={0}
       dayFormat={dayFormat}
-      weekDayFormat={weekDayFormat}
+      weekdayLabelFormat={weekdayLabelFormat}
       monthLabelFormat={monthLabelFormat}
     />,
   )

@@ -179,7 +179,7 @@ describe('useMonth', () => {
         month: 2,
         weekStartsOn: 6,
         dayFormat: (date: Date) => format(date, 'DD'),
-        weekDayFormat: (date: Date) => format(date, 'dd'),
+        weekdayLabelFormat: (date: Date) => format(date, 'dd'),
         monthLabelFormat: (date: Date) => format(date, 'MMMM YYYY'),
       }),
     )

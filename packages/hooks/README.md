@@ -221,7 +221,7 @@ With which day the week begins
 
 Format day label.
 
-#### `weekDayFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`
+#### `weekDayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`
 
 Format weekday label.
 

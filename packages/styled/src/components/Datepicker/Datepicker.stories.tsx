@@ -3,7 +3,7 @@ import {ThemeProvider} from 'styled-components'
 import {format, addDays, isSameDay} from 'date-fns'
 import {
   dayFormat as dayFormatFn,
-  weekDayFormat as weekDayFormatFn,
+  weekdayLabelFormat as weekdayLabelFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
 import {storiesOf} from '@storybook/react'
@@ -29,7 +29,7 @@ interface AppProps {
   minBookingDate?: Date
   maxBookingDate?: Date
   dayFormat?(date: Date): string
-  weekDayFormat?(date: Date): string
+  weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
 }
@@ -50,7 +50,7 @@ function App({
   minBookingDate,
   maxBookingDate,
   dayFormat = dayFormatFn,
-  weekDayFormat = weekDayFormatFn,
+  weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
   onDayRender = undefined,
 }: AppProps) {
@@ -91,7 +91,7 @@ function App({
       phrases={phrasesProp}
       isDateBlocked={isDateBlocked}
       dayFormat={dayFormat}
-      weekDayFormat={weekDayFormat}
+      weekdayLabelFormat={weekdayLabelFormat}
       monthLabelFormat={monthLabelFormat}
       onDayRender={onDayRender}
     />
@@ -183,7 +183,7 @@ storiesOf('Datepicker', module)
         resetDates: 'Razveljavi',
       }}
       dayFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
-      weekDayFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}
+      weekdayLabelFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}
       monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: slLocale})}
     />
   ))

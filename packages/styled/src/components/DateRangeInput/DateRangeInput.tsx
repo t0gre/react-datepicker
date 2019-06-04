@@ -92,7 +92,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   rtl?: boolean
   placement?: 'top' | 'bottom'
   dayFormat?(date: Date): string
-  weekDayFormat?(date: Date): string
+  weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
 }
@@ -109,7 +109,7 @@ function DateRangeInput({
   onDatesChange,
   exactMinBookingDays,
   dayFormat,
-  weekDayFormat,
+  weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,
   showClose = true,
@@ -242,7 +242,7 @@ function DateRangeInput({
             showClose={showClose}
             rtl={rtl}
             dayFormat={dayFormat}
-            weekDayFormat={weekDayFormat}
+            weekdayLabelFormat={weekdayLabelFormat}
             monthLabelFormat={monthLabelFormat}
             onDayRender={onDayRender}
           />

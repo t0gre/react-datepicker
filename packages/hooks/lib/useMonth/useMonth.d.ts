@@ -1,6 +1,6 @@
 import {GetDaysProps, GetWeekDaysProps} from './useMonth.utils'
 export declare const dayFormatFn: (date: Date) => string
-export declare const weekDayFormatFn: (date: Date) => string
+export declare const weekdayLabelFormatFn: (date: Date) => string
 export declare const monthLabelFormatFn: (date: Date) => string
 export interface UseMonthResult {
   weekDays: string[]
@@ -20,6 +20,6 @@ export declare function useMonth({
   month,
   weekStartsOn,
   dayFormat,
-  weekDayFormat,
+  weekdayLabelFormat,
   monthLabelFormat,
 }: UseMonthProps): UseMonthResult

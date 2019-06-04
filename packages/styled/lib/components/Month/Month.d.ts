@@ -4,7 +4,7 @@ interface MonthProps {
   month: number
   firstDayOfWeek: FirstDayOfWeek
   dayFormat(date: Date): string
-  weekDayFormat(date: Date): string
+  weekdayLabelFormat(date: Date): string
   monthLabelFormat(date: Date): string
 }
 declare const Month: ({
@@ -13,6 +13,6 @@ declare const Month: ({
   firstDayOfWeek,
   dayFormat,
   monthLabelFormat,
-  weekDayFormat,
+  weekdayLabelFormat,
 }: MonthProps) => JSX.Element
 export default Month

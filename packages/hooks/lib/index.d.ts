@@ -8,7 +8,7 @@ import {
   getDays,
   CalendarDay,
   dayFormat,
-  weekDayFormat,
+  weekdayLabelFormat,
   monthLabelFormat,
 } from './useMonth'
 import {
@@ -57,6 +57,6 @@ export {
   FirstDayOfWeek,
   OnDatesChangeProps,
   dayFormat,
-  weekDayFormat,
+  weekdayLabelFormat,
   monthLabelFormat,
 }

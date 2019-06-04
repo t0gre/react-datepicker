@@ -31,7 +31,7 @@ import {
   END_DATE,
   FormatFunction,
   dayFormat as dayFormatFn,
-  weekDayFormat as weekDayFormatFn,
+  weekdayLabelFormat as weekdayLabelFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
 import {datepickerPhrases, DatepickerPhrases} from '../../phrases'
@@ -110,7 +110,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   vertical?: boolean
   rtl?: boolean
   dayFormat?(date: Date): string
-  weekDayFormat?(date: Date): string
+  weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
 }
@@ -123,7 +123,7 @@ function Datepicker({
   focusedInput,
   onDatesChange,
   dayFormat,
-  weekDayFormat,
+  weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,
   vertical = false,
@@ -314,7 +314,7 @@ function Datepicker({
                   month={month.month}
                   firstDayOfWeek={firstDayOfWeek}
                   dayFormat={dayFormat || dayFormatFn}
-                  weekDayFormat={weekDayFormat || weekDayFormatFn}
+                  weekdayLabelFormat={weekdayLabelFormat || weekdayLabelFormatFn}
                   monthLabelFormat={monthLabelFormat || monthLabelFormatFn}
                 />
               ))}

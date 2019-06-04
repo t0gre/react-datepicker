@@ -11,7 +11,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   vertical?: boolean
   rtl?: boolean
   dayFormat?(date: Date): string
-  weekDayFormat?(date: Date): string
+  weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
 }
@@ -23,7 +23,7 @@ declare function Datepicker({
   focusedInput,
   onDatesChange,
   dayFormat,
-  weekDayFormat,
+  weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,
   vertical,

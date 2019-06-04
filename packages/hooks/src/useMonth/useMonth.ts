@@ -3,7 +3,7 @@ import format from 'date-fns/format'
 import {getDays, GetDaysProps, getWeekDays, GetWeekDaysProps} from './useMonth.utils'
 
 export const dayFormatFn = (date: Date) => format(date, 'DD')
-export const weekDayFormatFn = (date: Date) => format(date, 'dd')
+export const weekdayLabelFormatFn = (date: Date) => format(date, 'dd')
 export const monthLabelFormatFn = (date: Date) => format(date, 'MMMM YYYY')
 
 export interface UseMonthResult {
@@ -21,7 +21,7 @@ export function useMonth({
   month,
   weekStartsOn = 1,
   dayFormat = dayFormatFn,
-  weekDayFormat = weekDayFormatFn,
+  weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
 }: UseMonthProps): UseMonthResult {
   const days = useMemo(() => getDays({year, month, weekStartsOn, dayFormat}), [
@@ -30,9 +30,9 @@ export function useMonth({
     weekStartsOn,
     dayFormat,
   ])
-  const weekDays = useMemo(() => getWeekDays({weekStartsOn, weekDayFormat}), [
+  const weekDays = useMemo(() => getWeekDays({weekStartsOn, weekdayLabelFormat}), [
     weekStartsOn,
-    weekDayFormat,
+    weekdayLabelFormat,
   ])
 
   return {

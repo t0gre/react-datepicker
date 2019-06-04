@@ -113,14 +113,14 @@ var B = function(e, t) {
         })(r.time)),
       r.timezone)
     )
-      (C = r.timezone),
+      (G = r.timezone),
         (I =
-          ((N = S.exec(C))
+          ((C = S.exec(G))
             ? 0
-            : (N = F.exec(C))
-            ? ((R = 60 * parseInt(N[2], 10)), '+' === N[1] ? -R : R)
-            : (N = Y.exec(C))
-            ? ((R = 60 * parseInt(N[2], 10) + parseInt(N[3], 10)), '+' === N[1] ? -R : R)
+            : (C = F.exec(G))
+            ? ((N = 60 * parseInt(C[2], 10)), '+' === C[1] ? -N : N)
+            : (C = Y.exec(G))
+            ? ((N = 60 * parseInt(C[2], 10) + parseInt(C[3], 10)), '+' === C[1] ? -N : N)
             : 0) * i)
     else {
       var $ = O + A,
@@ -128,12 +128,12 @@ var B = function(e, t) {
       I = a(W)
       var E = new Date($)
       E.setDate(W.getDate() + 1)
-      var G = a(E) - a(W)
-      G > 0 && (I += G)
+      var L = a(E) - a(W)
+      L > 0 && (I += L)
     }
     return new Date(O + A + I)
   }
-  var C, N, R
+  var G, C, N
   return new Date(e)
 }
 var b = function(e) {
@@ -168,7 +168,7 @@ var W = function(e, t) {
 var E = function(e) {
   return W(e, {weekStartsOn: 1})
 }
-var G = function(e) {
+var L = function(e) {
   var t = B(e),
     n = t.getFullYear(),
     r = new Date(0)
@@ -179,22 +179,22 @@ var G = function(e) {
   var u = E(o)
   return t.getTime() >= a.getTime() ? n + 1 : t.getTime() >= u.getTime() ? n : n - 1
 }
-var C = function(e) {
-    var t = G(e),
+var G = function(e) {
+    var t = L(e),
       n = new Date(0)
     return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), E(n)
   },
-  N = 6048e5
-var R = function(e) {
+  C = 6048e5
+var N = function(e) {
   var t = B(e),
-    n = E(t).getTime() - C(t).getTime()
-  return Math.round(n / N) + 1
+    n = E(t).getTime() - G(t).getTime()
+  return Math.round(n / C) + 1
 }
-var U = function(e) {
+var R = function(e) {
   if (o(e)) return !isNaN(e)
   throw new TypeError(toString.call(e) + ' is not an instance of Date')
 }
-var z = [
+var U = [
   'M',
   'MM',
   'Q',
@@ -226,11 +226,10 @@ var z = [
   'X',
   'x',
 ]
-var L = function(e) {
+var z = function(e) {
   var t = []
   for (var n in e) e.hasOwnProperty(n) && t.push(n)
-  var r = z
-    .concat(t)
+  var r = U.concat(t)
     .sort()
     .reverse()
   return new RegExp('(\\[[^\\[]*\\])|(\\\\)?(' + r.join('|') + '|.)', 'g')
@@ -301,7 +300,7 @@ var X = function() {
           })(n[e](t))
         }
       }),
-      {formatters: s, formattingTokensRegExp: L(s)}
+      {formatters: s, formattingTokensRegExp: z(s)}
     )
   },
   Z = {
@@ -369,10 +368,10 @@ var J = {
     return e.getDay() || 7
   },
   W: function(e) {
-    return R(e)
+    return N(e)
   },
   WW: function(e) {
-    return Q(R(e), 2)
+    return Q(N(e), 2)
   },
   YY: function(e) {
     return Q(e.getFullYear(), 4).substr(2)
@@ -381,10 +380,10 @@ var J = {
     return Q(e.getFullYear(), 4)
   },
   GG: function(e) {
-    return String(G(e)).substr(2)
+    return String(L(e)).substr(2)
   },
   GGGG: function(e) {
-    return G(e)
+    return L(e)
   },
   H: function(e) {
     return e.getHours()
@@ -455,7 +454,7 @@ var j = function(e, t, n) {
     ((o = a.format.formatters),
     a.format.formattingTokensRegExp && (u = a.format.formattingTokensRegExp))
   var i = B(e)
-  return U(i)
+  return R(i)
     ? (function(e, t, n) {
         var r,
           a,
@@ -512,7 +511,7 @@ function ne(e) {
   var t = void 0 === e ? {} : e,
     n = t.weekStartsOn,
     r = void 0 === n ? 1 : n,
-    a = t.weekDayFormat,
+    a = t.weekdayLabelFormat,
     o =
       void 0 === a
         ? function(e) {
@@ -562,7 +561,7 @@ function ie(t) {
     o = void 0 === a ? 1 : a,
     u = t.dayFormat,
     i = void 0 === u ? ae : u,
-    s = t.weekDayFormat,
+    s = t.weekdayLabelFormat,
     c = void 0 === s ? oe : s,
     f = t.monthLabelFormat,
     D = void 0 === f ? ue : f
@@ -575,7 +574,7 @@ function ie(t) {
     ),
     weekDays: e(
       function() {
-        return ne({weekStartsOn: o, weekDayFormat: c})
+        return ne({weekStartsOn: o, weekdayLabelFormat: c})
       },
       [o, c],
     ),
@@ -970,5 +969,5 @@ export {
   be as useDatepicker,
   He as useDay,
   ie as useMonth,
-  oe as weekDayFormat,
+  oe as weekdayLabelFormat,
 }
