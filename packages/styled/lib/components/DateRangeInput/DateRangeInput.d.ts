@@ -1,3 +1,4 @@
+import React from 'react'
 import {UseDatepickerProps, FormatFunction, FocusedInput} from '@datepicker-react/hooks'
 import {DateRangeInputPhrases} from '../../phrases'
 export interface DateRangeInputProps extends UseDatepickerProps {
@@ -16,6 +17,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   dayFormat?(date: Date): string
   weekDayFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
+  onDayRender?(date: Date): React.ReactNode
 }
 declare function DateRangeInput({
   startDate,
@@ -31,6 +33,7 @@ declare function DateRangeInput({
   dayFormat,
   weekDayFormat,
   monthLabelFormat,
+  onDayRender,
   showClose,
   showSelectedDates,
   showResetDates,

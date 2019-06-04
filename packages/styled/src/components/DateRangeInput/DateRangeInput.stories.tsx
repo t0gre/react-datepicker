@@ -9,8 +9,9 @@ import {
   weekDayFormat as weekDayFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
-import {DateRangeInput, OnDateChangeProps, FirstDayOfWeek, phrases} from '../../index'
 import hrLocale from 'date-fns/locale/hr'
+import Flex from '../Flex'
+import {DateRangeInput, OnDateChangeProps, FirstDayOfWeek, phrases} from '../../index'
 
 const initialState: OnDateChangeProps = {
   startDate: null,
@@ -47,6 +48,7 @@ interface AppProps {
   dayFormat?(date: Date): string
   weekDayFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
+  onDayRender?(date: Date): React.ReactNode
 }
 
 function App({
@@ -67,6 +69,7 @@ function App({
   dayFormat = dayFormatFn,
   weekDayFormat = weekDayFormatFn,
   monthLabelFormat = monthLabelFormatFn,
+  onDayRender = undefined,
 }: AppProps) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
@@ -98,6 +101,7 @@ function App({
       dayFormat={dayFormat}
       weekDayFormat={weekDayFormat}
       monthLabelFormat={monthLabelFormat}
+      onDayRender={onDayRender}
     />
   )
 }
@@ -233,7 +237,7 @@ storiesOf('DateRangeInput', module)
       />
     </ThemeProvider>
   ))
-  .add('minBookingDate and maxBookingDate', () => (
+  .add('MinBookingDate and maxBookingDate', () => (
     <ThemeProvider
       theme={{
         reactDatepicker: {
@@ -253,6 +257,31 @@ storiesOf('DateRangeInput', module)
         displayFormat={text('displayFormat', 'MM/DD/YYYY')}
         firstDayOfWeek={0}
         isDayBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
+      />
+    </ThemeProvider>
+  ))
+  .add('Custom day render', () => (
+    <ThemeProvider
+      theme={{
+        reactDatepicker: {
+          daySize: 50,
+        },
+      }}
+    >
+      <App
+        rtl={boolean('rtl', false)}
+        vertical={boolean('vertical', false)}
+        exactMinBookingDays={boolean('exactMinBookingDays', false)}
+        showResetDates={boolean('showResetDates', true)}
+        showClose={boolean('showClose', true)}
+        showSelectedDates={boolean('showSelectedDates', true)}
+        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        onDayRender={(date: Date) => (
+          <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
+            {dayFormatFn(date)}
+            😜
+          </Flex>
+        )}
       />
     </ThemeProvider>
   ))

@@ -1,3 +1,4 @@
+import React from 'react'
 import {UseDatepickerProps, FormatFunction} from '@datepicker-react/hooks'
 import {DatepickerPhrases} from '../../phrases'
 export interface DatepickerProps extends UseDatepickerProps {
@@ -12,6 +13,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   dayFormat?(date: Date): string
   weekDayFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
+  onDayRender?(date: Date): React.ReactNode
 }
 declare function Datepicker({
   startDate,
@@ -23,6 +25,7 @@ declare function Datepicker({
   dayFormat,
   weekDayFormat,
   monthLabelFormat,
+  onDayRender,
   vertical,
   rtl,
   showResetDates,

@@ -214,6 +214,7 @@ function Day({day, date}: DayProps) {
     onDaySelect,
     onDayFocus,
     onDayHover,
+    onDayRender,
   } = useContext(datepickerContext)
   const dayProps = useDay({
     date,
@@ -323,9 +324,13 @@ function Day({day, date}: DayProps) {
       data-testid="Day"
       aria-label={`Day-${date.toDateString()}`}
     >
-      <Flex justifyContent="center" alignItems="center" height="100%" width="100%">
-        {day}
-      </Flex>
+      {typeof onDayRender === 'function' ? (
+        onDayRender(date)
+      ) : (
+        <Flex justifyContent="center" alignItems="center" height="100%" width="100%">
+          {day}
+        </Flex>
+      )}
     </StyledDay>
   )
 }

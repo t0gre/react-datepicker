@@ -94,6 +94,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   dayFormat?(date: Date): string
   weekDayFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
+  onDayRender?(date: Date): React.ReactNode
 }
 
 function DateRangeInput({
@@ -110,6 +111,7 @@ function DateRangeInput({
   dayFormat,
   weekDayFormat,
   monthLabelFormat,
+  onDayRender,
   showClose = true,
   showSelectedDates = true,
   showResetDates = true,
@@ -242,6 +244,7 @@ function DateRangeInput({
             dayFormat={dayFormat}
             weekDayFormat={weekDayFormat}
             monthLabelFormat={monthLabelFormat}
+            onDayRender={onDayRender}
           />
         )}
       </Box>

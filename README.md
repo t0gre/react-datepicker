@@ -101,6 +101,7 @@ isDayBlocked?(date: Date): boolean
 dayFormat?(date: Date): string
 weekDayFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
+onDayRender?(date: Date): React.ReactNode
 ```
 
 ### Datepicker
@@ -163,6 +164,7 @@ isDayBlocked?(date: Date): boolean
 dayFormat?(date: Date): string
 weekDayFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
+onDayRender?(date: Date): React.ReactNode
 ```
 
 ### Theming
