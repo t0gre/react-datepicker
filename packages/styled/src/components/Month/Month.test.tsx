@@ -1,10 +1,18 @@
 import * as React from 'react'
+import {dayFormat, weekDayFormat, monthLabelFormat} from '@datepicker-react/hooks'
 import {render} from '../../testUtil'
 import Month from '.'
 
 test('should match snapshot', () => {
   const {container, getByText, getAllByTestId} = render(
-    <Month month={1} year={2019} firstDayOfWeek={1} />,
+    <Month
+      month={1}
+      year={2019}
+      firstDayOfWeek={1}
+      dayFormat={dayFormat}
+      weekDayFormat={weekDayFormat}
+      monthLabelFormat={monthLabelFormat}
+    />,
   )
   expect(container).toMatchSnapshot()
   getByText('February 2019')
@@ -20,7 +28,14 @@ test('should match snapshot', () => {
 
 test('Sunday should be first day of the week', () => {
   const {container, getByText, getAllByTestId} = render(
-    <Month month={1} year={2019} firstDayOfWeek={0} />,
+    <Month
+      month={1}
+      year={2019}
+      firstDayOfWeek={0}
+      dayFormat={dayFormat}
+      weekDayFormat={weekDayFormat}
+      monthLabelFormat={monthLabelFormat}
+    />,
   )
   expect(container).toMatchSnapshot()
   getByText('February 2019')

@@ -4,6 +4,8 @@ import {
   START_DATE,
   END_DATE,
   OnDateChangeProps,
+  FormatFunction,
+  MonthType,
 } from '@datepicker-react/hooks'
 import DateRangeInput from './components/DateRangeInput'
 import Datepicker from './components/Datepicker'
@@ -17,4 +19,6 @@ export {
   START_DATE,
   END_DATE,
   OnDateChangeProps,
+  FormatFunction,
+  MonthType,
 }

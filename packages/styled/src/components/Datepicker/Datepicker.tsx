@@ -30,6 +30,9 @@ import {
   START_DATE,
   END_DATE,
   FormatFunction,
+  dayFormat as dayFormatFn,
+  weekDayFormat as weekDayFormatFn,
+  monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
 import {datepickerPhrases, DatepickerPhrases} from '../../phrases'
 import SelectedDate from '../SelectedDate'
@@ -106,6 +109,9 @@ export interface DatepickerProps extends UseDatepickerProps {
   showClose?: boolean
   vertical?: boolean
   rtl?: boolean
+  dayFormat?(date: Date): string
+  weekDayFormat?(date: Date): string
+  monthLabelFormat?(date: Date): string
 }
 
 function Datepicker({
@@ -115,6 +121,9 @@ function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  dayFormat,
+  weekDayFormat,
+  monthLabelFormat,
   vertical = false,
   rtl = false,
   showResetDates = true,
@@ -301,6 +310,9 @@ function Datepicker({
                   year={month.year}
                   month={month.month}
                   firstDayOfWeek={firstDayOfWeek}
+                  dayFormat={dayFormat || dayFormatFn}
+                  weekDayFormat={weekDayFormat || weekDayFormatFn}
+                  monthLabelFormat={monthLabelFormat || monthLabelFormatFn}
                 />
               ))}
             </MonthGrid>

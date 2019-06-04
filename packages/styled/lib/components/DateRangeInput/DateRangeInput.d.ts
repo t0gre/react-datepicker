@@ -13,6 +13,9 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showClose?: boolean
   rtl?: boolean
   placement?: 'top' | 'bottom'
+  dayFormat?(date: Date): string
+  weekDayFormat?(date: Date): string
+  monthLabelFormat?(date: Date): string
 }
 declare function DateRangeInput({
   startDate,
@@ -25,6 +28,9 @@ declare function DateRangeInput({
   focusedInput,
   onDateChange,
   exactMinBookingDays,
+  dayFormat,
+  weekDayFormat,
+  monthLabelFormat,
   showClose,
   showSelectedDates,
   showResetDates,

@@ -91,6 +91,9 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   showClose?: boolean
   rtl?: boolean
   placement?: 'top' | 'bottom'
+  dayFormat?(date: Date): string
+  weekDayFormat?(date: Date): string
+  monthLabelFormat?(date: Date): string
 }
 
 function DateRangeInput({
@@ -104,6 +107,9 @@ function DateRangeInput({
   focusedInput,
   onDateChange,
   exactMinBookingDays,
+  dayFormat,
+  weekDayFormat,
+  monthLabelFormat,
   showClose = true,
   showSelectedDates = true,
   showResetDates = true,
@@ -233,6 +239,9 @@ function DateRangeInput({
             showSelectedDates={showSelectedDates}
             showClose={showClose}
             rtl={rtl}
+            dayFormat={dayFormat}
+            weekDayFormat={weekDayFormat}
+            monthLabelFormat={monthLabelFormat}
           />
         )}
       </Box>

@@ -98,6 +98,9 @@ exactMinBookingDays?: boolean
 firstDayOfWeek?: FirstDayOfWeek
 initialVisibleMonth?(numberOfMonths: number): MonthType[]
 isDayBlocked?(date: Date): boolean
+dayFormat?(date: Date): string
+weekDayFormat?(date: Date): string
+monthLabelFormat?(date: Date): string
 ```
 
 ### Datepicker
@@ -157,6 +160,9 @@ exactMinBookingDays?: boolean
 firstDayOfWeek?: FirstDayOfWeek
 initialVisibleMonth?(numberOfMonths: number): MonthType[]
 isDayBlocked?(date: Date): boolean
+dayFormat?(date: Date): string
+weekDayFormat?(date: Date): string
+monthLabelFormat?(date: Date): string
 ```
 
 ### Theming

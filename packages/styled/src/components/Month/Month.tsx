@@ -1,5 +1,5 @@
 import React from 'react'
-import {useMonth, CalendarDay} from '@datepicker-react/hooks'
+import {useMonth, CalendarDay, FirstDayOfWeek} from '@datepicker-react/hooks'
 import styled from 'styled-components'
 import MonthLabel from '../MonthLabel'
 import DayLabel from '../DayLabel'
@@ -20,11 +20,28 @@ const MonthWrapper = styled('div')`
 interface MonthProps {
   year: number
   month: number
-  firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  firstDayOfWeek: FirstDayOfWeek
+  dayFormat(date: Date): string
+  weekDayFormat(date: Date): string
+  monthLabelFormat(date: Date): string
 }
 
-const Month = ({year, month, firstDayOfWeek}: MonthProps) => {
-  const {days, weekDays, monthLabel} = useMonth({year, month, weekStartsOn: firstDayOfWeek})
+const Month = ({
+  year,
+  month,
+  firstDayOfWeek,
+  dayFormat,
+  monthLabelFormat,
+  weekDayFormat,
+}: MonthProps) => {
+  const {days, weekDays, monthLabel} = useMonth({
+    dayFormat,
+    monthLabelFormat,
+    weekDayFormat,
+    year,
+    month,
+    weekStartsOn: firstDayOfWeek,
+  })
   const theme: MonthTheme = useThemeProps({
     daySize: globalStyles.daySize,
     monthLabelMargin: '0 0 28px',

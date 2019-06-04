@@ -9,6 +9,9 @@ export interface DatepickerProps extends UseDatepickerProps {
   showClose?: boolean
   vertical?: boolean
   rtl?: boolean
+  dayFormat?(date: Date): string
+  weekDayFormat?(date: Date): string
+  monthLabelFormat?(date: Date): string
 }
 declare function Datepicker({
   startDate,
@@ -17,6 +20,9 @@ declare function Datepicker({
   maxBookingDate,
   focusedInput,
   onDateChange,
+  dayFormat,
+  weekDayFormat,
+  monthLabelFormat,
   vertical,
   rtl,
   showResetDates,
