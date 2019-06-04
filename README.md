@@ -1,11 +1,10 @@
-# @react-datepicker/styled
-A React datepicker library.
+# @datepicker-react/styled
 
 [![Gzip size](https://img.shields.io/bundlephobia/minzip/@datepicker-react/styled.svg)](https://img.shields.io/bundlephobia/minzip/@datepicker-react/styled.svg) [![Coverage Status](https://coveralls.io/repos/github/tresko/react-datepicker/badge.svg?branch=master)](https://coveralls.io/github/tresko/react-datepicker?branch=master) [![Build Status](https://travis-ci.org/tresko/react-datepicker.svg?branch=master)](https://travis-ci.org/tresko/react-datepicker) [![Netlify Status](https://api.netlify.com/api/v1/badges/0c2c3960-87ee-4f5e-a4dc-1e2aac57d2b4/deploy-status)](https://app.netlify.com/sites/react-datepicker/deploys)
 
 [![NPM](https://nodei.co/npm/@datepicker-react/styled.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/@datepicker-react/styled?downloads=true&downloadRank=true&stars=true)
 
-> An easily internationalizable, accessible, mobile-friendly datepicker library for the web.
+> An easily internationalizable, accessible, mobile-friendly datepicker library for the web, build with styled-components.
 
 ## Live Playground
 
@@ -358,3 +357,17 @@ export interface DateRangeInputTheme extends CommonTheme {
   dateRangeEndDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }
 ```
+
+## How to build your own datepicker?
+
+Simple. Use [React hooks (@datepicker-react/hooks)](https://github.com/tresko/react-datepicker/tree/master/packages/hooks).
+
+## Who's using
+
+[LifeOnScreen](https://lifeonscreen.com)
+
+## License
+
+Licensed under the MIT License, Copyright © 2019-present Miha Sedej.
+
+See [LICENSE](./LICENSE) for more information.
