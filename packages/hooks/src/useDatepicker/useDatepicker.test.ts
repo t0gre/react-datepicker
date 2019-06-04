@@ -25,7 +25,7 @@ describe('useDatepicker', () => {
         startDate: null,
         endDate: null,
         focusedInput: null,
-        onDateChange: jest.fn(),
+        onDatesChange: jest.fn(),
       }),
     )
     expect(result.current.numberOfMonths).toBe(2)
@@ -66,7 +66,7 @@ describe('useDatepicker', () => {
         startDate: null,
         endDate: null,
         focusedInput: null,
-        onDateChange: jest.fn(),
+        onDatesChange: jest.fn(),
       }),
     )
     expect(result.current.isDateFocused(date)).toBe(false)
@@ -90,7 +90,7 @@ describe('useDatepicker', () => {
         startDate: null,
         endDate: null,
         focusedInput: null,
-        onDateChange: jest.fn(),
+        onDatesChange: jest.fn(),
         numberOfMonths: 1,
         firstDayOfWeek: 0,
       }),
@@ -120,21 +120,21 @@ describe('useDatepicker', () => {
   })
 
   test('should reset date', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
         startDate: new Date(2019, 2, 27, 0, 0, 0),
         endDate: new Date(2019, 3, 27, 0, 0, 0),
         focusedInput: null,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
     act(() => {
       result.current.onResetDates()
     })
-    expect(onDateChange).toBeCalledWith({
+    expect(onDatesChange).toBeCalledWith({
       startDate: null,
       endDate: null,
       focusedInput: START_DATE,
@@ -143,21 +143,21 @@ describe('useDatepicker', () => {
   })
 
   test('should select start date', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
         startDate: null,
         endDate: null,
         focusedInput: START_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
     act(() => {
       result.current.onDaySelect(new Date(2019, 3, 1, 0, 0, 0))
     })
-    expect(onDateChange).toBeCalledWith({
+    expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 1, 0, 0, 0),
       endDate: null,
       focusedInput: END_DATE,
@@ -166,21 +166,21 @@ describe('useDatepicker', () => {
   })
 
   test('should select end date', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
         startDate: new Date(2019, 3, 1, 0, 0, 0),
         endDate: null,
         focusedInput: END_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
     act(() => {
       result.current.onDaySelect(new Date(2019, 3, 2, 0, 0, 0))
     })
-    expect(onDateChange).toBeCalledWith({
+    expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 1, 0, 0, 0),
       endDate: new Date(2019, 3, 2, 0, 0, 0),
       focusedInput: null,
@@ -189,21 +189,21 @@ describe('useDatepicker', () => {
   })
 
   test('should select start date (reset date, because end date was before start date)', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
         startDate: new Date(2019, 3, 1, 0, 0, 0),
         endDate: new Date(2019, 3, 2, 0, 0, 0),
         focusedInput: END_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
     act(() => {
       result.current.onDaySelect(new Date(2019, 2, 27, 0, 0, 0))
     })
-    expect(onDateChange).toBeCalledWith({
+    expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 2, 27, 0, 0, 0),
       endDate: null,
       focusedInput: END_DATE,
@@ -212,21 +212,21 @@ describe('useDatepicker', () => {
   })
 
   test('should select start date (reset date, because start date was after end date)', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
         startDate: new Date(2019, 3, 1, 0, 0, 0),
         endDate: new Date(2019, 3, 2, 0, 0, 0),
         focusedInput: START_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
     act(() => {
       result.current.onDaySelect(new Date(2019, 3, 27, 0, 0, 0))
     })
-    expect(onDateChange).toBeCalledWith({
+    expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 27, 0, 0, 0),
       endDate: null,
       focusedInput: END_DATE,
@@ -235,7 +235,7 @@ describe('useDatepicker', () => {
   })
 
   test('should check if date is blocked', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
@@ -244,7 +244,7 @@ describe('useDatepicker', () => {
         minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
         maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
         focusedInput: START_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
@@ -256,7 +256,7 @@ describe('useDatepicker', () => {
   })
 
   test('should check if date is selected', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
@@ -265,7 +265,7 @@ describe('useDatepicker', () => {
         minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
         maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
         focusedInput: START_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
@@ -278,7 +278,7 @@ describe('useDatepicker', () => {
   })
 
   test('should check if date is first or last selected date', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
@@ -287,7 +287,7 @@ describe('useDatepicker', () => {
         minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
         maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
         focusedInput: START_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
@@ -323,20 +323,20 @@ describe('useDatepicker', () => {
       },
     },
   ])('should not select the start date, because includes block date', props => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       // @ts-ignore
       useDatepicker({
         ...props,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
       }),
     )
 
     act(() => {
       result.current.onDaySelect(new Date(2019, 3, 4, 0, 0, 0))
     })
-    expect(onDateChange).not.toBeCalled()
+    expect(onDatesChange).not.toBeCalled()
     clear()
   })
 
@@ -512,7 +512,7 @@ describe('useDatepicker', () => {
       // @ts-ignore
       useDatepicker({
         ...props,
-        onDateChange: jest.fn(),
+        onDatesChange: jest.fn(),
       }),
     )
 
@@ -534,7 +534,7 @@ describe('useDatepicker', () => {
         minBookingDays: 2,
         minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
         maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
-        onDateChange: jest.fn(),
+        onDatesChange: jest.fn(),
       }),
     )
 
@@ -552,14 +552,14 @@ describe('useDatepicker', () => {
   })
 
   test('should select start date and reset end date (blocked day)', () => {
-    const onDateChange = jest.fn()
+    const onDatesChange = jest.fn()
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
       useDatepicker({
         startDate: new Date(2019, 3, 5, 0, 0, 0),
         endDate: new Date(2019, 3, 8, 0, 0, 0),
         focusedInput: START_DATE,
-        onDateChange: onDateChange,
+        onDatesChange: onDatesChange,
         isDayBlocked(date: Date): boolean {
           return isSameDay(date, new Date(2019, 3, 4, 0, 0, 0))
         },
@@ -569,7 +569,7 @@ describe('useDatepicker', () => {
     act(() => {
       result.current.onDaySelect(new Date(2019, 3, 1, 0, 0, 0))
     })
-    expect(onDateChange).toBeCalledWith({
+    expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 1, 0, 0, 0),
       endDate: null,
       focusedInput: END_DATE,
@@ -620,7 +620,7 @@ describe('useDatepicker', () => {
       expectedStartDate,
       expectedEndDate,
     }) => {
-      const onDateChange = jest.fn()
+      const onDatesChange = jest.fn()
       advanceTo(new Date(2019, 2, 27, 0, 0, 0))
       const {result} = renderHook(() =>
         useDatepicker({
@@ -631,7 +631,7 @@ describe('useDatepicker', () => {
           minBookingDays: 3,
           exactMinBookingDays: true,
           focusedInput: START_DATE,
-          onDateChange: onDateChange,
+          onDatesChange: onDatesChange,
           isDayBlocked(date: Date): boolean {
             return isSameDay(date, blockedDate)
           },
@@ -641,7 +641,7 @@ describe('useDatepicker', () => {
       act(() => {
         result.current.onDaySelect(selectedDate)
       })
-      expect(onDateChange).toBeCalledWith({
+      expect(onDatesChange).toBeCalledWith({
         startDate: expectedStartDate,
         endDate: expectedEndDate,
         focusedInput: null,
@@ -672,7 +672,7 @@ describe('useDatepicker', () => {
   ])(
     'should not select exact range (minBookingDays)',
     ({blockedDate, minBookingDate, maxBookingDate, selectedDate}) => {
-      const onDateChange = jest.fn()
+      const onDatesChange = jest.fn()
       advanceTo(new Date(2019, 2, 27, 0, 0, 0))
       const {result} = renderHook(() =>
         useDatepicker({
@@ -683,7 +683,7 @@ describe('useDatepicker', () => {
           minBookingDays: 3,
           exactMinBookingDays: true,
           focusedInput: START_DATE,
-          onDateChange: onDateChange,
+          onDatesChange: onDatesChange,
           isDayBlocked(date: Date): boolean {
             return isSameDay(date, blockedDate)
           },
@@ -693,7 +693,7 @@ describe('useDatepicker', () => {
       act(() => {
         result.current.onDaySelect(selectedDate)
       })
-      expect(onDateChange).not.toBeCalled()
+      expect(onDatesChange).not.toBeCalled()
       clear()
     },
   )

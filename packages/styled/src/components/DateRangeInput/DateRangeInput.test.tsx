@@ -13,7 +13,7 @@ afterEach(() => {
 })
 
 test('should have empty start and end date and focused start date', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
     <Datepicker
@@ -21,7 +21,7 @@ test('should have empty start and end date and focused start date', () => {
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -41,7 +41,7 @@ test('should have empty start and end date and focused start date', () => {
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('16')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: null,
     focusedInput: END_DATE,
@@ -49,7 +49,7 @@ test('should have empty start and end date and focused start date', () => {
 })
 
 test('should custom render day', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
     <Datepicker
@@ -57,7 +57,7 @@ test('should custom render day', () => {
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onDayRender={(date: Date) => <div>{date.toDateString()}</div>}
     />,
   )
@@ -78,7 +78,7 @@ test('should custom render day', () => {
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('16')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: null,
     focusedInput: END_DATE,
@@ -86,7 +86,7 @@ test('should custom render day', () => {
 })
 
 test('should have empty start and end date and focused start date - placement = top', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
     <Datepicker
@@ -94,7 +94,7 @@ test('should have empty start and end date and focused start date - placement = 
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       placement="top"
     />,
   )
@@ -115,7 +115,7 @@ test('should have empty start and end date and focused start date - placement = 
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('16')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: null,
     focusedInput: END_DATE,
@@ -123,7 +123,7 @@ test('should have empty start and end date and focused start date - placement = 
 })
 
 test('should have empty end date and focused end date', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId} = render(
     <Datepicker
@@ -134,7 +134,7 @@ test('should have empty end date and focused end date', () => {
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -152,7 +152,7 @@ test('should have empty end date and focused end date', () => {
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('19')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: new Date(2019, 2, 19, 0, 0, 0),
     focusedInput: null,
@@ -160,7 +160,7 @@ test('should have empty end date and focused end date', () => {
 })
 
 test('should render vertical variant', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container} = render(
     <Datepicker
@@ -170,7 +170,7 @@ test('should render vertical variant', () => {
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       vertical={true}
     />,
   )
@@ -178,7 +178,7 @@ test('should render vertical variant', () => {
 })
 
 test('should render vertical, rtl variant', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container} = render(
     <Datepicker
@@ -188,7 +188,7 @@ test('should render vertical, rtl variant', () => {
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       vertical={true}
       rtl={true}
     />,
@@ -197,7 +197,7 @@ test('should render vertical, rtl variant', () => {
 })
 
 test('should render rtl variant', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container} = render(
     <Datepicker
@@ -207,7 +207,7 @@ test('should render rtl variant', () => {
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       vertical={false}
       rtl={true}
     />,
@@ -216,7 +216,7 @@ test('should render rtl variant', () => {
 })
 
 test('should render without reset dates, close and selected dates component', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container} = render(
     <Datepicker
@@ -226,7 +226,7 @@ test('should render without reset dates, close and selected dates component', ()
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       vertical={true}
       showClose={false}
       showResetDates={false}
@@ -237,7 +237,7 @@ test('should render without reset dates, close and selected dates component', ()
 })
 
 test('should execute onClose callback', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onClose = jest.fn()
   const onFocusChange = jest.fn()
   const isDateBlocked = jest.fn()
@@ -251,7 +251,7 @@ test('should execute onClose callback', () => {
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onClose={onClose}
       onFocusChange={onFocusChange}
       displayFormat="DD.MM.YYYY"
@@ -283,7 +283,7 @@ test('should execute onClose callback', () => {
 })
 
 test('should not render calendar icons', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onClose = jest.fn()
   const onFocusChange = jest.fn()
   const {container} = render(
@@ -296,7 +296,7 @@ test('should not render calendar icons', () => {
       showEndDateCalendarIcon={false}
       showStartDateCalendarIcon={false}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onClose={onClose}
       onFocusChange={onFocusChange}
       displayFormat="DD.MM.YYYY"
@@ -317,13 +317,13 @@ test('should not render calendar icons', () => {
 })
 
 test('should click on select end date', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container, getAllByTestId} = render(
     <Datepicker
       startDate={null}
       endDate={null}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onFocusChange={onFocusChange}
       focusedInput={null}
     />,
@@ -334,12 +334,12 @@ test('should click on select end date', () => {
 })
 
 // @ts-ignore
-const App = ({onDateChange, onFocusChange}) => (
+const App = ({onDatesChange, onFocusChange}) => (
   <>
     <Datepicker
       startDate={null}
       endDate={null}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onFocusChange={onFocusChange}
       focusedInput={START_DATE}
     />
@@ -348,9 +348,9 @@ const App = ({onDateChange, onFocusChange}) => (
 )
 
 test('should handle click outside (close datepicker)', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
-  const {getByTestId} = render(<App onDateChange={onDateChange} onFocusChange={onFocusChange} />)
+  const {getByTestId} = render(<App onDatesChange={onDatesChange} onFocusChange={onFocusChange} />)
   fireEvent.click(getByTestId('outside'))
   expect(onFocusChange).toHaveBeenCalledWith(null)
 })

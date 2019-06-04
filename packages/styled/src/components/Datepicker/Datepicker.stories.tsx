@@ -10,7 +10,7 @@ import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import {text, boolean} from '@storybook/addon-knobs'
 import slLocale from 'date-fns/locale/sl'
-import {Datepicker, START_DATE, OnDateChangeProps, FirstDayOfWeek, phrases} from '../../index'
+import {Datepicker, START_DATE, OnDatesChangeProps, FirstDayOfWeek, phrases} from '../../index'
 import Flex from '../Flex'
 
 interface AppProps {
@@ -54,14 +54,14 @@ function App({
   monthLabelFormat = monthLabelFormatFn,
   onDayRender = undefined,
 }: AppProps) {
-  const [state, setState] = useState<OnDateChangeProps>({
+  const [state, setState] = useState<OnDatesChangeProps>({
     startDate: null,
     endDate: null,
     focusedInput: START_DATE,
   })
 
-  function handleDataChange(data: OnDateChangeProps) {
-    action('onDateChange')(data)
+  function handleDataChange(data: OnDatesChangeProps) {
+    action('onDatesChange')(data)
     if (!data.focusedInput) {
       setState({...data, focusedInput: START_DATE})
     } else {
@@ -73,7 +73,7 @@ function App({
     <Datepicker
       minBookingDate={minBookingDate}
       maxBookingDate={maxBookingDate}
-      onDateChange={handleDataChange}
+      onDatesChange={handleDataChange}
       startDate={state.startDate}
       endDate={state.endDate}
       focusedInput={state.focusedInput}

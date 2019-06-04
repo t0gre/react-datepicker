@@ -25,7 +25,7 @@ import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
 
 - [`useDatepicker`](#-usedatepicker-)
   * [`useDatepickerProps`](#-usedatepickerprops-)
-    + [`onDateChange: (data: OnDateChangeProps) => void`](#-ondatechange---data--ondatechangeprops-----void-)
+    + [`onDatesChange: (data: OnDatesChangeProps) => void`](#-ondatechange---data--ondatechangeprops-----void-)
     + [`minBookingDate: Date | undefined`](#-minbookingdate--date---undefined-)
     + [`maxBookingDate: Date | undefined`](#-maxbookingdate--date---undefined-)
     + [`startDate: Date | null`](#-startdate--date---null-)
@@ -93,7 +93,7 @@ allows us to control the datepicker.
 
 ### `useDatepickerProps`
 
-#### `onDateChange: (data: OnDateChangeProps) => void`
+#### `onDatesChange: (data: OnDatesChangeProps) => void`
 
 A callback is triggered when the date is selected (`onDaySelect`).
 

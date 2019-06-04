@@ -2,14 +2,14 @@ import {MonthType} from './useDatepicker.utils'
 export declare const START_DATE = 'startDate'
 export declare const END_DATE = 'endDate'
 export declare type FocusedInput = 'startDate' | 'endDate' | null
-export interface OnDateChangeProps {
+export interface OnDatesChangeProps {
   focusedInput: FocusedInput
   startDate: Date | null
   endDate: Date | null
 }
 export declare type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export interface UseDatepickerProps {
-  onDateChange(data: OnDateChangeProps): void
+  onDatesChange(data: OnDatesChangeProps): void
   minBookingDate?: Date
   maxBookingDate?: Date
   startDate: Date | null
@@ -28,7 +28,7 @@ export declare function useDatepicker({
   focusedInput,
   minBookingDate,
   maxBookingDate,
-  onDateChange,
+  onDatesChange,
   exactMinBookingDays,
   minBookingDays,
   numberOfMonths,

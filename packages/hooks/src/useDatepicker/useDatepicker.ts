@@ -21,7 +21,7 @@ export const END_DATE = 'endDate'
 
 export type FocusedInput = 'startDate' | 'endDate' | null
 
-export interface OnDateChangeProps {
+export interface OnDatesChangeProps {
   focusedInput: FocusedInput
   startDate: Date | null
   endDate: Date | null
@@ -30,7 +30,7 @@ export interface OnDateChangeProps {
 export type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
 
 export interface UseDatepickerProps {
-  onDateChange(data: OnDateChangeProps): void
+  onDatesChange(data: OnDatesChangeProps): void
   minBookingDate?: Date
   maxBookingDate?: Date
   startDate: Date | null
@@ -50,7 +50,7 @@ export function useDatepicker({
   focusedInput,
   minBookingDate,
   maxBookingDate,
-  onDateChange,
+  onDatesChange,
   exactMinBookingDays = false,
   minBookingDays = 1,
   numberOfMonths = 2,
@@ -139,7 +139,7 @@ export function useDatepicker({
   }
 
   function onResetDates() {
-    onDateChange({
+    onDatesChange({
       startDate: null,
       endDate: null,
       focusedInput: START_DATE,
@@ -161,7 +161,7 @@ export function useDatepicker({
         endDate: null,
       })
     ) {
-      onDateChange({
+      onDatesChange({
         startDate: date,
         endDate: addDays(date, minBookingDays - 1),
         focusedInput: null,
@@ -177,7 +177,7 @@ export function useDatepicker({
         endDate: null,
       })
     ) {
-      onDateChange({
+      onDatesChange({
         endDate: null,
         startDate: date,
         focusedInput: END_DATE,
@@ -187,7 +187,7 @@ export function useDatepicker({
       !exactMinBookingDays &&
       canSelectRange({minBookingDays, isDateBlocked: isDayBlockedProps, endDate, startDate: date})
     ) {
-      onDateChange({
+      onDatesChange({
         endDate,
         startDate: date,
         focusedInput: END_DATE,
@@ -202,7 +202,7 @@ export function useDatepicker({
         startDate: date,
       })
     ) {
-      onDateChange({
+      onDatesChange({
         endDate: null,
         startDate: date,
         focusedInput: END_DATE,
@@ -214,7 +214,7 @@ export function useDatepicker({
       !exactMinBookingDays &&
       canSelectRange({minBookingDays, isDateBlocked: isDayBlockedProps, startDate, endDate: date})
     ) {
-      onDateChange({
+      onDatesChange({
         startDate,
         endDate: date,
         focusedInput: null,

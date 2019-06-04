@@ -13,13 +13,13 @@ afterEach(() => {
 })
 
 test('should have empty start and end date and focused start date', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
     <Datepicker
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -39,7 +39,7 @@ test('should have empty start and end date and focused start date', () => {
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('16')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: null,
     focusedInput: END_DATE,
@@ -47,13 +47,13 @@ test('should have empty start and end date and focused start date', () => {
 })
 
 test('should custom render day', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
     <Datepicker
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onDayRender={(date: Date) => <div>{date.toDateString()}</div>}
     />,
   )
@@ -74,7 +74,7 @@ test('should custom render day', () => {
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('16')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: null,
     focusedInput: END_DATE,
@@ -82,7 +82,7 @@ test('should custom render day', () => {
 })
 
 test('should select exact range', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
     <Datepicker
       exactMinBookingDays
@@ -90,7 +90,7 @@ test('should select exact range', () => {
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -110,7 +110,7 @@ test('should select exact range', () => {
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('16')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: new Date(2019, 2, 22, 0, 0, 0),
     focusedInput: null,
@@ -118,28 +118,28 @@ test('should select exact range', () => {
 })
 
 test('should render vertical datepicker', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const {container} = render(
     <Datepicker
       vertical
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
     />,
   )
   expect(container).toMatchSnapshot()
 })
 
 test('should go to next and previous month - vertical variant', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const {container, getAllByTestId} = render(
     <Datepicker
       vertical
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -158,7 +158,7 @@ test('should go to next and previous month - vertical variant', () => {
 })
 
 test('should have empty end date and focused end date', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId} = render(
     <Datepicker
       firstDayOfWeek={0}
@@ -167,7 +167,7 @@ test('should have empty end date and focused end date', () => {
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
     />,
   )
   expect(container).toMatchSnapshot()
@@ -185,7 +185,7 @@ test('should have empty end date and focused end date', () => {
   // @ts-ignore
   expect(selectedDay).toHaveTextContent('19')
   fireEvent.click(selectedDay)
-  expect(onDateChange).toHaveBeenCalledWith({
+  expect(onDatesChange).toHaveBeenCalledWith({
     startDate: new Date(2019, 2, 16, 0, 0, 0),
     endDate: new Date(2019, 2, 19, 0, 0, 0),
     focusedInput: null,
@@ -193,7 +193,7 @@ test('should have empty end date and focused end date', () => {
 })
 
 test('should execute onClose callback', () => {
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onClose = jest.fn()
   const {getByTestId, getByText, getAllByText} = render(
     <Datepicker
@@ -203,7 +203,7 @@ test('should execute onClose callback', () => {
       startDate={new Date(2019, 2, 16, 0, 0, 0)}
       endDate={null}
       focusedInput={END_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onClose={onClose}
       displayFormat="DD.MM.YYYY"
       phrases={{
@@ -228,7 +228,7 @@ test('should execute onClose callback', () => {
 test('should select today date with right arrow key', () => {
   advanceTo(new Date(2019, 2, 1, 0, 0, 0))
 
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onClose = jest.fn()
   const {container, getAllByTestId} = render(
     <Datepicker
@@ -236,7 +236,7 @@ test('should select today date with right arrow key', () => {
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onClose={onClose}
       displayFormat="DD.MM.YYYY"
     />,
@@ -251,7 +251,7 @@ test('should select today date with right arrow key', () => {
 test('should select today date with left arrow key', () => {
   advanceTo(new Date(2019, 2, 1, 0, 0, 0))
 
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onClose = jest.fn()
   const {container, getAllByTestId} = render(
     <Datepicker
@@ -259,7 +259,7 @@ test('should select today date with left arrow key', () => {
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onClose={onClose}
       displayFormat="DD.MM.YYYY"
     />,
@@ -274,7 +274,7 @@ test('should select today date with left arrow key', () => {
 test('should select today date with up arrow key', () => {
   advanceTo(new Date(2019, 2, 1, 0, 0, 0))
 
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onClose = jest.fn()
   const {container, getAllByTestId} = render(
     <Datepicker
@@ -282,7 +282,7 @@ test('should select today date with up arrow key', () => {
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onClose={onClose}
       displayFormat="DD.MM.YYYY"
     />,
@@ -297,7 +297,7 @@ test('should select today date with up arrow key', () => {
 test('should select today date with down arrow key', () => {
   advanceTo(new Date(2019, 2, 1, 0, 0, 0))
 
-  const onDateChange = jest.fn()
+  const onDatesChange = jest.fn()
   const onClose = jest.fn()
   const {container, getAllByTestId} = render(
     <Datepicker
@@ -305,7 +305,7 @@ test('should select today date with down arrow key', () => {
       startDate={null}
       endDate={null}
       focusedInput={START_DATE}
-      onDateChange={onDateChange}
+      onDatesChange={onDatesChange}
       onClose={onClose}
       displayFormat="DD.MM.YYYY"
     />,

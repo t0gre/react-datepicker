@@ -28,7 +28,7 @@ declare function DateRangeInput({
   onFocusChange,
   numberOfMonths,
   focusedInput,
-  onDateChange,
+  onDatesChange,
   exactMinBookingDays,
   dayFormat,
   weekDayFormat,

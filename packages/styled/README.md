@@ -33,8 +33,8 @@ import {DateRangeInput, Datepicker} from '@datepicker-react/styled'
 
 ### DateRangeInput
 The `DateRangeInput` is a fully controlled component that allows users to select a date range. You can control the selected
-dates using the `startDate`, `endDate`, and `onDateChange` props as shown below. The `DateRangeInput` also manages internal
-state for partial dates entered by typing (although `onDateChange` will not trigger until a date has been entered
+dates using the `startDate`, `endDate`, and `onDatesChange` props as shown below. The `DateRangeInput` also manages internal
+state for partial dates entered by typing (although `onDatesChange` will not trigger until a date has been entered
 completely in that case). Similarly, you can control which input is focused as well as calendar visibility (the calendar is
 only visible if `focusedInput` is defined) with the `focusedInput` and `onFocusChange` props as shown below.
 
@@ -65,7 +65,7 @@ function App() {
   
   return (
     <DateRangeInput
-      onDateChange={data => dispatch({type: 'dateChange', payload: data})}
+      onDatesChange={data => dispatch({type: 'dateChange', payload: data})}
       onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
       startDate={state.startDate} // Date or null
       endDate={state.endDate} // Date or null
@@ -105,8 +105,8 @@ onDayRender?(date: Date): React.ReactNode
 
 ### Datepicker
 The `Datepicker` is a fully controlled component that allows users to select a date range. You can control the selected
-dates using the `startDate`, `endDate`, and `onDateChange` props as shown below. The `Datepicker` also manages internal
-state for partial dates entered by typing (although `onDateChange` will not trigger until a date has been entered
+dates using the `startDate`, `endDate`, and `onDatesChange` props as shown below. The `Datepicker` also manages internal
+state for partial dates entered by typing (although `onDatesChange` will not trigger until a date has been entered
 completely in that case). Similarly, you can control which input is focused with the `focusedInput` prop.
 
 Here is the minimum *REQUIRED* setup you need to get the `Datepicker` working:
@@ -122,7 +122,7 @@ function App() {
     focusedInput: START_DATE,
   })
   
-  function handleDataChange(data: OnDateChangeProps) {
+  function handleDataChange(data: OnDatesChangeProps) {
     if (!data.focusedInput) {
       setState({...data, focusedInput: START_DATE})
     } else {
@@ -132,7 +132,7 @@ function App() {
   
   return (
     <Datepicker
-      onDateChange={handleDataChange}
+      onDatesChange={handleDataChange}
       startDate={state.startDate} // Date or null
       endDate={state.endDate} // Date or null
       focusedInput={state.focusedInput} // START_DATE, END_DATE or null

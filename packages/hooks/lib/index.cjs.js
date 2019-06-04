@@ -782,7 +782,7 @@ function useDatepicker(e) {
     n = e.focusedInput,
     r = e.minBookingDate,
     o = e.maxBookingDate,
-    s = e.onDateChange,
+    s = e.onDatesChange,
     i = e.exactMinBookingDays,
     u = void 0 !== i && i,
     d = e.minBookingDays,

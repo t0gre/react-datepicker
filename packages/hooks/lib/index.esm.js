@@ -720,7 +720,7 @@ function be(e) {
     u = e.focusedInput,
     i = e.minBookingDate,
     s = e.maxBookingDate,
-    c = e.onDateChange,
+    c = e.onDatesChange,
     f = e.exactMinBookingDays,
     D = void 0 !== f && f,
     d = e.minBookingDays,

@@ -21,7 +21,7 @@ declare function Datepicker({
   minBookingDate,
   maxBookingDate,
   focusedInput,
-  onDateChange,
+  onDatesChange,
   dayFormat,
   weekDayFormat,
   monthLabelFormat,

@@ -3,7 +3,7 @@ import {
   FocusedInput,
   START_DATE,
   END_DATE,
-  OnDateChangeProps,
+  OnDatesChangeProps,
   FormatFunction,
   MonthType,
 } from '@datepicker-react/hooks'
@@ -19,7 +19,7 @@ export {
   FocusedInput,
   START_DATE,
   END_DATE,
-  OnDateChangeProps,
+  OnDatesChangeProps,
   FormatFunction,
   MonthType,
 }

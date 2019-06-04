@@ -106,7 +106,7 @@ function DateRangeInput({
   onFocusChange,
   numberOfMonths,
   focusedInput,
-  onDateChange,
+  onDatesChange,
   exactMinBookingDays,
   dayFormat,
   weekDayFormat,
@@ -232,7 +232,7 @@ function DateRangeInput({
             numberOfMonths={numberOfMonths}
             focusedInput={focusedInput}
             displayFormat={displayFormat}
-            onDateChange={onDateChange}
+            onDatesChange={onDatesChange}
             minBookingDays={minBookingDays}
             isDayBlocked={isDayBlocked}
             exactMinBookingDays={exactMinBookingDays}

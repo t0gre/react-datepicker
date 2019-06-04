@@ -11,15 +11,15 @@ import {
 } from '@datepicker-react/hooks'
 import slLocale from 'date-fns/locale/sl'
 import Flex from '../Flex'
-import {DateRangeInput, OnDateChangeProps, FirstDayOfWeek, phrases} from '../../index'
+import {DateRangeInput, OnDatesChangeProps, FirstDayOfWeek, phrases} from '../../index'
 
-const initialState: OnDateChangeProps = {
+const initialState: OnDatesChangeProps = {
   startDate: null,
   endDate: null,
   focusedInput: null,
 }
 
-function reducer(state: OnDateChangeProps, action: Record<string, unknown>) {
+function reducer(state: OnDatesChangeProps, action: Record<string, unknown>) {
   switch (action.type) {
     case 'focusChange':
       return {...state, focusedInput: action.payload}
@@ -77,7 +77,7 @@ function App({
     <DateRangeInput
       minBookingDate={minBookingDate}
       maxBookingDate={maxBookingDate}
-      onDateChange={data => dispatch({type: 'dateChange', payload: data})}
+      onDatesChange={data => dispatch({type: 'dateChange', payload: data})}
       onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
       // @ts-ignore
       startDate={state.startDate}
