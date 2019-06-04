@@ -33,7 +33,7 @@ export interface GetDaysProps {
   year: number
   month: number
   weekStartsOn?: WeekStartsOn
-  dayFormat?(date: Date): string
+  dayLabelFormat?(date: Date): string
 }
 
 export type CalendarDay = number | {day: string; date: Date}
@@ -41,7 +41,7 @@ export function getDays({
   year,
   month,
   weekStartsOn = 1,
-  dayFormat = (date: Date) => format(date, 'DD'),
+  dayLabelFormat = (date: Date) => format(date, 'DD'),
 }: GetDaysProps): CalendarDay[] {
   const date = new Date(year, month)
 
@@ -54,7 +54,7 @@ export function getDays({
   ).fill(0)
   const days = eachDay(monthStart, monthEnd).map(date => ({
     date,
-    day: dayFormat(date),
+    day: dayLabelFormat(date),
   }))
 
   return [...prevMonthDays, ...days]

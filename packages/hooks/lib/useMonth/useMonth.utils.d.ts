@@ -8,7 +8,7 @@ export interface GetDaysProps {
   year: number
   month: number
   weekStartsOn?: WeekStartsOn
-  dayFormat?(date: Date): string
+  dayLabelFormat?(date: Date): string
 }
 export declare type CalendarDay =
   | number
@@ -16,5 +16,10 @@ export declare type CalendarDay =
       day: string
       date: Date
     }
-export declare function getDays({year, month, weekStartsOn, dayFormat}: GetDaysProps): CalendarDay[]
+export declare function getDays({
+  year,
+  month,
+  weekStartsOn,
+  dayLabelFormat,
+}: GetDaysProps): CalendarDay[]
 export {}

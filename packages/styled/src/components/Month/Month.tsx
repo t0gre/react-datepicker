@@ -21,7 +21,7 @@ interface MonthProps {
   year: number
   month: number
   firstDayOfWeek: FirstDayOfWeek
-  dayFormat(date: Date): string
+  dayLabelFormat(date: Date): string
   weekdayLabelFormat(date: Date): string
   monthLabelFormat(date: Date): string
 }
@@ -30,12 +30,12 @@ const Month = ({
   year,
   month,
   firstDayOfWeek,
-  dayFormat,
+  dayLabelFormat,
   monthLabelFormat,
   weekdayLabelFormat,
 }: MonthProps) => {
   const {days, weekDays, monthLabel} = useMonth({
-    dayFormat,
+    dayLabelFormat,
     monthLabelFormat,
     weekdayLabelFormat,
     year,

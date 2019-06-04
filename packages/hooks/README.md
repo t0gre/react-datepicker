@@ -57,8 +57,8 @@ import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
     + [`Year`](#-year-)
     + [`Month`](#-month-)
     + [`weekStartsOn: number | undefined (Default: 1)`](#-weekstartson--number---undefined--default--1--)
-    + [`dayFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'MMMM YYYY'))`](#-dayformat---date--date-----string---undefined--default---date--date-----format-date---mmmm-yyyy----)
-    + [`weekDayFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`](#-weekdayformat---date--date-----string---undefined--default---date--date-----format-date---dd----)
+    + [`dayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'MMMM YYYY'))`](#-dayformat---date--date-----string---undefined--default---date--date-----format-date---mmmm-yyyy----)
+    + [`weekdayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`](#-weekdayformat---date--date-----string---undefined--default---date--date-----format-date---dd----)
     + [`monthLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`](#-monthlabelformat---date--date-----string---undefined--default---date--date-----format-date---dd----)
   * [`useMonthResult`](#-usemonthresult-)
     + [`days: ({date: Date, day: string})[]`](#-days----date--date--day--string-----)
@@ -217,11 +217,11 @@ Month
 
 With which day the week begins
 
-#### `dayFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'MMMM YYYY'))`
+#### `dayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'MMMM YYYY'))`
 
 Format day label.
 
-#### `weekDayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`
+#### `weekdayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`
 
 Format weekday label.
 

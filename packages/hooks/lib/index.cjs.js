@@ -557,7 +557,7 @@ function getDays(e) {
     a = e.month,
     n = e.weekStartsOn,
     r = void 0 === n ? 1 : n,
-    o = e.dayFormat,
+    o = e.dayLabelFormat,
     s =
       void 0 === o
         ? function(e) {
@@ -574,7 +574,7 @@ function getDays(e) {
     })
   return f.concat(D)
 }
-var dayFormatFn = function(e) {
+var dayLabelFormatFn = function(e) {
     return format_1(e, 'DD')
   },
   weekdayLabelFormatFn = function(e) {
@@ -588,8 +588,8 @@ function useMonth(e) {
     a = e.month,
     n = e.weekStartsOn,
     r = void 0 === n ? 1 : n,
-    o = e.dayFormat,
-    s = void 0 === o ? dayFormatFn : o,
+    o = e.dayLabelFormat,
+    s = void 0 === o ? dayLabelFormatFn : o,
     i = e.weekdayLabelFormat,
     u = void 0 === i ? weekdayLabelFormatFn : i,
     d = e.monthLabelFormat,
@@ -597,7 +597,7 @@ function useMonth(e) {
   return {
     days: react.useMemo(
       function() {
-        return getDays({year: t, month: a, weekStartsOn: r, dayFormat: s})
+        return getDays({year: t, month: a, weekStartsOn: r, dayLabelFormat: s})
       },
       [t, a, r, s],
     ),
@@ -827,7 +827,7 @@ function useDatepicker(e) {
       },
       [t, a],
     ),
-    F = react.useCallback(
+    L = react.useCallback(
       function(e) {
         return isDateBlocked({
           date: e,
@@ -841,13 +841,13 @@ function useDatepicker(e) {
       },
       [r, o, t, a, c, m],
     ),
-    L = react.useCallback(
+    F = react.useCallback(
       function(e) {
         return !!S && is_same_day(e, S)
       },
       [S],
     ),
-    E = react.useCallback(
+    b = react.useCallback(
       function(e) {
         return isDateHovered({
           date: e,
@@ -861,7 +861,7 @@ function useDatepicker(e) {
       },
       [p, t, a, c, u, m],
     )
-  function b(e) {
+  function E(e) {
     ;('ArrowRight' !== e.key &&
       'ArrowLeft' !== e.key &&
       'ArrowDown' !== e.key &&
@@ -872,9 +872,9 @@ function useDatepicker(e) {
   return (
     react.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('keydown', b),
+        'undefined' != typeof window && window.addEventListener('keydown', E),
         function() {
-          window.removeEventListener('keydown', b)
+          window.removeEventListener('keydown', E)
         }
       )
     }),
@@ -882,17 +882,17 @@ function useDatepicker(e) {
       firstDayOfWeek: l,
       activeMonths: h,
       isDateSelected: w,
-      isDateHovered: E,
+      isDateHovered: b,
       isFirstOrLastSelectedDate: O,
-      isDateBlocked: F,
+      isDateBlocked: L,
       numberOfMonths: D,
-      isDateFocused: L,
+      isDateFocused: F,
       focusedDate: S,
       onResetDates: function() {
         s({startDate: null, endDate: null, focusedInput: START_DATE})
       },
       onDayHover: function(e) {
-        var n = !F(e) || (t && is_same_day(e, t)),
+        var n = !L(e) || (t && is_same_day(e, t)),
           s = !r || !is_before(e, add_days(r, -1)),
           i = !o || !is_after(e, o),
           d = add_days(e, c - 1),
@@ -1002,7 +1002,7 @@ function useDay(e) {
 }
 ;(exports.END_DATE = END_DATE),
   (exports.START_DATE = START_DATE),
-  (exports.dayFormat = dayFormatFn),
+  (exports.dayLabelFormat = dayLabelFormatFn),
   (exports.getCurrentYearMonthAndDate = getCurrentYearMonthAndDate),
   (exports.getDateMonthAndYear = getDateMonthAndYear),
   (exports.getDays = getDays),

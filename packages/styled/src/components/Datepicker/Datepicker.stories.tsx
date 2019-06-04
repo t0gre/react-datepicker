@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {ThemeProvider} from 'styled-components'
 import {format, addDays, isSameDay} from 'date-fns'
 import {
-  dayFormat as dayFormatFn,
+  dayLabelFormat as dayLabelFormatFn,
   weekdayLabelFormat as weekdayLabelFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
@@ -28,7 +28,7 @@ interface AppProps {
   isDateBlocked?(date: Date): boolean
   minBookingDate?: Date
   maxBookingDate?: Date
-  dayFormat?(date: Date): string
+  dayLabelFormat?(date: Date): string
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
@@ -49,7 +49,7 @@ function App({
   isDateBlocked = () => false,
   minBookingDate,
   maxBookingDate,
-  dayFormat = dayFormatFn,
+  dayLabelFormat = dayLabelFormatFn,
   weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
   onDayRender = undefined,
@@ -90,7 +90,7 @@ function App({
       firstDayOfWeek={firstDayOfWeek}
       phrases={phrasesProp}
       isDateBlocked={isDateBlocked}
-      dayFormat={dayFormat}
+      dayLabelFormat={dayLabelFormat}
       weekdayLabelFormat={weekdayLabelFormat}
       monthLabelFormat={monthLabelFormat}
       onDayRender={onDayRender}
@@ -182,7 +182,7 @@ storiesOf('Datepicker', module)
         datepickerEndDateLabel: 'Končni datum:',
         resetDates: 'Razveljavi',
       }}
-      dayFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
+      dayLabelFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
       weekdayLabelFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}
       monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: slLocale})}
     />
@@ -262,7 +262,7 @@ storiesOf('Datepicker', module)
         displayFormat={text('displayFormat', 'MM/DD/YYYY')}
         onDayRender={(date: Date) => (
           <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
-            {dayFormatFn(date)}
+            {dayLabelFormatFn(date)}
             😜
           </Flex>
         )}

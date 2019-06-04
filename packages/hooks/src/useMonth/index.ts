@@ -2,14 +2,14 @@ import {
   useMonth,
   UseMonthProps,
   UseMonthResult,
-  dayFormatFn as dayFormat,
+  dayLabelFormatFn as dayLabelFormat,
   monthLabelFormatFn as monthLabelFormat,
   weekdayLabelFormatFn as weekdayLabelFormat,
 } from './useMonth'
 import {getDays, getWeekDays, GetWeekDaysProps, GetDaysProps, CalendarDay} from './useMonth.utils'
 
 export {
-  dayFormat,
+  dayLabelFormat,
   monthLabelFormat,
   weekdayLabelFormat,
   useMonth,

@@ -2,7 +2,7 @@ import {useMemo} from 'react'
 import format from 'date-fns/format'
 import {getDays, GetDaysProps, getWeekDays, GetWeekDaysProps} from './useMonth.utils'
 
-export const dayFormatFn = (date: Date) => format(date, 'DD')
+export const dayLabelFormatFn = (date: Date) => format(date, 'DD')
 export const weekdayLabelFormatFn = (date: Date) => format(date, 'dd')
 export const monthLabelFormatFn = (date: Date) => format(date, 'MMMM YYYY')
 
@@ -20,15 +20,15 @@ export function useMonth({
   year,
   month,
   weekStartsOn = 1,
-  dayFormat = dayFormatFn,
+  dayLabelFormat = dayLabelFormatFn,
   weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
 }: UseMonthProps): UseMonthResult {
-  const days = useMemo(() => getDays({year, month, weekStartsOn, dayFormat}), [
+  const days = useMemo(() => getDays({year, month, weekStartsOn, dayLabelFormat}), [
     year,
     month,
     weekStartsOn,
-    dayFormat,
+    dayLabelFormat,
   ])
   const weekDays = useMemo(() => getWeekDays({weekStartsOn, weekdayLabelFormat}), [
     weekStartsOn,

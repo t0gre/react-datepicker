@@ -7,7 +7,7 @@ import {
   getWeekDays,
   getDays,
   CalendarDay,
-  dayFormat,
+  dayLabelFormat,
   weekdayLabelFormat,
   monthLabelFormat,
 } from './useMonth'
@@ -58,7 +58,7 @@ export {
   FocusedInput,
   FirstDayOfWeek,
   OnDatesChangeProps,
-  dayFormat,
+  dayLabelFormat,
   weekdayLabelFormat,
   monthLabelFormat,
 }

@@ -32,8 +32,8 @@ var u = function(e) {
   B = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
   F = /([Z+-].*)$/,
   M = /^(Z)$/,
-  W = /^([+-])(\d{2})$/,
-  L = /^([+-])(\d{2}):?(\d{2})$/
+  L = /^([+-])(\d{2})$/,
+  W = /^([+-])(\d{2}):?(\d{2})$/
 function E(e, t, n) {
   ;(t = t || 0), (n = n || 0)
   var r = new Date(0)
@@ -126,9 +126,9 @@ var T,
             6e4 *
             ((o = M.exec(r))
               ? 0
-              : (o = W.exec(r))
-              ? ((a = 60 * parseInt(o[2], 10)), '+' === o[1] ? -a : a)
               : (o = L.exec(r))
+              ? ((a = 60 * parseInt(o[2], 10)), '+' === o[1] ? -a : a)
+              : (o = W.exec(r))
               ? ((a = 60 * parseInt(o[2], 10) + parseInt(o[3], 10)), '+' === o[1] ? -a : a)
               : 0))
       else {
@@ -529,7 +529,7 @@ function re(e) {
     n = e.month,
     r = e.weekStartsOn,
     a = void 0 === r ? 1 : r,
-    i = e.dayFormat,
+    i = e.dayLabelFormat,
     l = void 0 === i ? ee : i,
     s = e.weekdayLabelFormat,
     c = void 0 === s ? te : s,
@@ -543,7 +543,7 @@ function re(e) {
             n = e.month,
             r = e.weekStartsOn,
             o = void 0 === r ? 1 : r,
-            a = e.dayFormat,
+            a = e.dayLabelFormat,
             i =
               void 0 === a
                 ? function(e) {
@@ -559,7 +559,7 @@ function re(e) {
               return {date: e, day: i(e)}
             })
           return d.concat(p)
-        })({year: t, month: n, weekStartsOn: a, dayFormat: l})
+        })({year: t, month: n, weekStartsOn: a, dayLabelFormat: l})
       },
       [t, n, a, l],
     ),
@@ -724,13 +724,13 @@ function ke(e) {
     B = n(o),
     F = B[0],
     M = B[1],
-    W = r(
+    L = r(
       function(e) {
         M(e), (!F || (F && !se(e, F))) && x(me(g, e))
       },
       [M, x, g, F],
     ),
-    L = r(
+    W = r(
       function(e) {
         return (function(e, t, n) {
           return !(!t || !n) && ie(e, t, n)
@@ -822,7 +822,7 @@ function ke(e) {
       'ArrowDown' !== e.key &&
       'ArrowUp' !== e.key) ||
       F ||
-      (W(new Date()), x(me(g, new Date())))
+      (L(new Date()), x(me(g, new Date())))
   }
   return (
     t(function() {
@@ -836,7 +836,7 @@ function ke(e) {
     {
       firstDayOfWeek: y,
       activeMonths: b,
-      isDateSelected: L,
+      isDateSelected: W,
       isDateHovered: R,
       isFirstOrLastSelectedDate: E,
       isDateBlocked: T,
@@ -889,7 +889,7 @@ function ke(e) {
             c({startDate: o, endDate: e, focusedInput: null}),
           (!F || (F && !se(e, F))) && x(me(g, e))
       },
-      onDayFocus: W,
+      onDayFocus: L,
       goToPreviousMonths: function() {
         x(ge(b, g, -1)), M(null)
       },
@@ -1111,8 +1111,8 @@ Fe.typeOf,
     e.exports = Be
   })
 var Me = Object.getOwnPropertySymbols,
-  We = Object.prototype.hasOwnProperty,
-  Le = Object.prototype.propertyIsEnumerable
+  Le = Object.prototype.hasOwnProperty,
+  We = Object.prototype.propertyIsEnumerable
 ;(function() {
   try {
     if (!Object.assign) return !1
@@ -1393,11 +1393,11 @@ var Re,
   Bt = Je({prop: 'flexWrap'}),
   Ft = (Je({prop: 'flexBasis', transformValue: mt}), Je({prop: 'flexDirection'})),
   Mt = Je({prop: 'flex'}),
-  Wt = (Je({prop: 'justifySelf'}),
+  Lt = (Je({prop: 'justifySelf'}),
   Je({prop: 'alignSelf'}),
   Je({prop: 'order'}),
   Je({prop: 'gridGap', key: 'space', transformValue: ht, scale: et})),
-  Lt = Je({prop: 'gridColumnGap', key: 'space', transformValue: ht, scale: et}),
+  Wt = Je({prop: 'gridColumnGap', key: 'space', transformValue: ht, scale: et}),
   Et = Je({prop: 'gridRowGap', key: 'space', transformValue: ht, scale: et}),
   Tt = (Je({prop: 'gridColumn'}), Je({prop: 'gridRow'}), Je({prop: 'gridAutoFlow'})),
   Ht = Je({prop: 'gridAutoColumns'}),
@@ -1495,8 +1495,8 @@ var Re,
     Ht,
     Tt,
     Rt,
-    Lt,
     Wt,
+    Lt,
     Et,
     zt,
     Ot,
@@ -1880,7 +1880,7 @@ function Sn(t) {
 var Bn,
   Fn,
   Mn,
-  Wn = l('div')(
+  Ln = l('div')(
     Bn ||
       (Bn = xe(
         ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
@@ -1893,7 +1893,7 @@ var Bn,
     kt,
     pt,
   ),
-  Ln = l(Wn)(
+  Wn = l(Ln)(
     Mn ||
       (Mn = xe(
         [
@@ -1938,7 +1938,7 @@ function En(t) {
     pn,
     {p: i.selectDatePadding},
     e.createElement(
-      Wn,
+      Ln,
       {
         fontFamily: i.fontFamily,
         fontSize: i.selectDateLabelFontSize,
@@ -1948,7 +1948,7 @@ function En(t) {
       n,
     ),
     e.createElement(
-      Ln,
+      Wn,
       {
         as: 'span',
         color: i.selectDateDateColor,
@@ -1977,7 +1977,7 @@ var Tn,
         monthLabelFontSize: '14px',
       })
     return e.createElement(
-      Wn,
+      Ln,
       {
         fontFamily: r.fontFamily,
         fontSize: r.monthLabelFontSize,
@@ -1998,7 +1998,7 @@ var Tn,
         dayLabelFontSize: '11px',
       })
     return e.createElement(
-      Wn,
+      Ln,
       {
         fontFamily: r.fontFamily,
         fontSize: r.dayLabelFontSize,
@@ -2375,7 +2375,7 @@ var Jn,
       r = t.month,
       o = t.firstDayOfWeek,
       a = re({
-        dayFormat: t.dayFormat,
+        dayLabelFormat: t.dayLabelFormat,
         monthLabelFormat: t.monthLabelFormat,
         weekdayLabelFormat: t.weekdayLabelFormat,
         year: n,
@@ -2498,7 +2498,7 @@ function or(t) {
       rtl: o,
     }),
     e.createElement(
-      Wn,
+      Ln,
       {
         m: l.resetDatesTextMargin,
         lineHeight: l.resetDatesTextLineHeight,
@@ -2779,7 +2779,7 @@ function Fr(t) {
     a = t.maxBookingDate,
     l = t.focusedInput,
     s = t.onDatesChange,
-    c = t.dayFormat,
+    c = t.dayLabelFormat,
     u = t.weekdayLabelFormat,
     d = t.monthLabelFormat,
     p = t.onDayRender,
@@ -2804,8 +2804,8 @@ function Fr(t) {
         : S,
     F = t.minBookingDays,
     M = void 0 === F ? 1 : F,
-    W = t.onClose,
-    L = void 0 === W ? function() {} : W,
+    L = t.onClose,
+    W = void 0 === L ? function() {} : L,
     E = t.numberOfMonths,
     T = t.firstDayOfWeek,
     H = t.displayFormat,
@@ -2928,7 +2928,7 @@ function Fr(t) {
             bottom: re.datepickerCloseWrapperBottom,
             zIndex: re.datepickerCloseWrapperZIndex,
           },
-          e.createElement(yr, {onClick: L, rtl: h}),
+          e.createElement(yr, {onClick: W, rtl: h}),
         ),
       x &&
         e.createElement(
@@ -2982,7 +2982,7 @@ function Fr(t) {
                 year: t.year,
                 month: t.month,
                 firstDayOfWeek: V,
-                dayFormat: c || ee,
+                dayLabelFormat: c || ee,
                 weekdayLabelFormat: u || te,
                 monthLabelFormat: d || ne,
               })
@@ -3042,11 +3042,11 @@ function Fr(t) {
   )
 }
 var Mr,
-  Wr,
   Lr,
+  Wr,
   Er,
   Tr,
-  Hr = l(pn)(Wr || (Wr = xe(['\n  ', '\n'], ['\n  ', '\n'])), function(e) {
+  Hr = l(pn)(Lr || (Lr = xe(['\n  ', '\n'], ['\n  ', '\n'])), function(e) {
     return (
       e.rtl &&
       c(Mr || (Mr = xe(['\n      direction: rtl;\n    '], ['\n      direction: rtl;\n    '])))
@@ -3060,8 +3060,8 @@ var Mr,
       return (
         e.rtl &&
         c(
-          Lr ||
-            (Lr = xe(
+          Wr ||
+            (Wr = xe(
               ['\n      transform: rotate(-90deg);\n    '],
               ['\n      transform: rotate(-90deg);\n    '],
             )),
@@ -3086,7 +3086,7 @@ function Pr(n) {
     d = n.focusedInput,
     p = n.onDatesChange,
     f = n.exactMinBookingDays,
-    m = n.dayFormat,
+    m = n.dayLabelFormat,
     g = n.weekdayLabelFormat,
     h = n.monthLabelFormat,
     y = n.onDayRender,
@@ -3101,14 +3101,14 @@ function Pr(n) {
     B = n.rtl,
     F = void 0 !== B && B,
     M = n.isDateBlocked,
-    W =
+    L =
       void 0 === M
         ? function() {
             return !1
           }
         : M,
-    L = n.minBookingDays,
-    E = void 0 === L ? 1 : L,
+    W = n.minBookingDays,
+    E = void 0 === W ? 1 : W,
     T = n.onClose,
     H = void 0 === T ? function() {} : T,
     R = n.showStartDateCalendarIcon,
@@ -3242,14 +3242,14 @@ function Pr(n) {
             displayFormat: A,
             onDatesChange: p,
             minBookingDays: E,
-            isDateBlocked: W,
+            isDateBlocked: L,
             exactMinBookingDays: f,
             showResetDates: w,
             vertical: S,
             showSelectedDates: b,
             showClose: D,
             rtl: F,
-            dayFormat: m,
+            dayLabelFormat: m,
             weekdayLabelFormat: g,
             monthLabelFormat: h,
             onDayRender: y,

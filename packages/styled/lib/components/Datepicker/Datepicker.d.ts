@@ -10,7 +10,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   showClose?: boolean
   vertical?: boolean
   rtl?: boolean
-  dayFormat?(date: Date): string
+  dayLabelFormat?(date: Date): string
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
@@ -22,7 +22,7 @@ declare function Datepicker({
   maxBookingDate,
   focusedInput,
   onDatesChange,
-  dayFormat,
+  dayLabelFormat,
   weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,

@@ -43,7 +43,7 @@ function x(e, t, n) {
   var a = 7 * t + n + 1 - (r.getUTCDay() || 7)
   return r.setUTCDate(r.getUTCDate() + a), r
 }
-var B = function(e, t) {
+var b = function(e, t) {
     if (o(e)) return new Date(e.getTime())
     if ('string' != typeof e) return new Date(e)
     var n = (t || {}).additionalDigits
@@ -144,13 +144,13 @@ var B = function(e, t) {
     }
     return new Date(e)
   },
-  b = function(e) {
-    var t = B(e),
+  B = function(e) {
+    var t = b(e),
       n = new Date(0)
     return n.setFullYear(t.getFullYear(), 0, 1), n.setHours(0, 0, 0, 0), n
   },
   H = function(e) {
-    var t = B(e)
+    var t = b(e)
     return t.setHours(0, 0, 0, 0), t
   },
   I = 6e4,
@@ -162,40 +162,40 @@ var B = function(e, t) {
       o = r.getTime() - r.getTimezoneOffset() * I
     return Math.round((a - o) / O)
   },
-  $ = function(e) {
-    var t = B(e)
-    return A(t, b(t)) + 1
+  L = function(e) {
+    var t = b(e)
+    return A(t, B(t)) + 1
   },
-  W = function(e, t) {
+  $ = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
-      r = B(e),
+      r = b(e),
       a = r.getDay(),
       o = (a < n ? 7 : 0) + a - n
     return r.setDate(r.getDate() - o), r.setHours(0, 0, 0, 0), r
   },
-  E = function(e) {
-    return W(e, {weekStartsOn: 1})
+  W = function(e) {
+    return $(e, {weekStartsOn: 1})
   },
-  L = function(e) {
-    var t = B(e),
+  E = function(e) {
+    var t = b(e),
       n = t.getFullYear(),
       r = new Date(0)
     r.setFullYear(n + 1, 0, 4), r.setHours(0, 0, 0, 0)
-    var a = E(r),
+    var a = W(r),
       o = new Date(0)
     o.setFullYear(n, 0, 4), o.setHours(0, 0, 0, 0)
-    var i = E(o)
+    var i = W(o)
     return t.getTime() >= a.getTime() ? n + 1 : t.getTime() >= i.getTime() ? n : n - 1
   },
   G = function(e) {
-    var t = L(e),
+    var t = E(e),
       n = new Date(0)
-    return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), E(n)
+    return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), W(n)
   },
   C = 6048e5,
   N = function(e) {
-    var t = B(e),
-      n = E(t).getTime() - G(t).getTime()
+    var t = b(e),
+      n = W(t).getTime() - G(t).getTime()
     return Math.round(n / C) + 1
   },
   R = function(e) {
@@ -364,10 +364,10 @@ var B = function(e, t) {
       return Q(e.getDate(), 2)
     },
     DDD: function(e) {
-      return $(e)
+      return L(e)
     },
     DDDD: function(e) {
-      return Q($(e), 3)
+      return Q(L(e), 3)
     },
     d: function(e) {
       return e.getDay()
@@ -388,10 +388,10 @@ var B = function(e, t) {
       return Q(e.getFullYear(), 4)
     },
     GG: function(e) {
-      return String(L(e)).substr(2)
+      return String(E(e)).substr(2)
     },
     GGGG: function(e) {
-      return L(e)
+      return E(e)
     },
     H: function(e) {
       return e.getHours()
@@ -461,7 +461,7 @@ var j = function(e, t, n) {
       a.format.formatters &&
       ((o = a.format.formatters),
       a.format.formattingTokensRegExp && (i = a.format.formattingTokensRegExp))
-    var l = B(e)
+    var l = b(e)
     return R(l)
       ? (function(e, t, n) {
           var r,
@@ -483,37 +483,37 @@ var j = function(e, t, n) {
       : 'Invalid Date'
   },
   K = function(e, t) {
-    var n = B(e),
+    var n = b(e),
       r = Number(t)
     return n.setDate(n.getDate() + r), n
   },
   q = function(e, t, n) {
-    var r = B(e),
+    var r = b(e),
       a = void 0 !== n ? n : 1,
-      o = B(t).getTime()
+      o = b(t).getTime()
     if (r.getTime() > o) throw new Error('The first date cannot be after the second date')
     var i = [],
       l = r
-    for (l.setHours(0, 0, 0, 0); l.getTime() <= o; ) i.push(B(l)), l.setDate(l.getDate() + a)
+    for (l.setHours(0, 0, 0, 0); l.getTime() <= o; ) i.push(b(l)), l.setDate(l.getDate() + a)
     return i
   },
   V = function(e) {
-    var t = B(e),
+    var t = b(e),
       n = t.getMonth()
     return t.setFullYear(t.getFullYear(), n + 1, 0), t.setHours(23, 59, 59, 999), t
   },
   _ = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
-      r = B(e),
+      r = b(e),
       a = r.getDay(),
       o = 6 + (a < n ? -7 : 0) - (a - n)
     return r.setDate(r.getDate() + o), r.setHours(23, 59, 59, 999), r
   },
   ee = function(e) {
-    return B(e).getDay()
+    return b(e).getDay()
   },
   te = function(e) {
-    var t = B(e)
+    var t = b(e)
     return t.setDate(1), t.setHours(0, 0, 0, 0), t
   }
 function ne(e) {
@@ -528,7 +528,7 @@ function ne(e) {
           }
         : a,
     i = new Date()
-  return q(K(W(i), r), K(_(i), r)).reduce(function(e, t) {
+  return q(K($(i), r), K(_(i), r)).reduce(function(e, t) {
     return e.push(o(t)), e
   }, [])
 }
@@ -537,7 +537,7 @@ function re(e) {
     n = e.month,
     r = e.weekStartsOn,
     a = void 0 === r ? 1 : r,
-    o = e.dayFormat,
+    o = e.dayLabelFormat,
     i =
       void 0 === o
         ? function(e) {
@@ -568,7 +568,7 @@ function ie(e) {
     n = e.month,
     r = e.weekStartsOn,
     a = void 0 === r ? 1 : r,
-    o = e.dayFormat,
+    o = e.dayLabelFormat,
     i = void 0 === o ? ae : o,
     l = e.weekdayLabelFormat,
     c = void 0 === l ? oe : l,
@@ -577,7 +577,7 @@ function ie(e) {
   return {
     days: React.useMemo(
       function() {
-        return re({year: t, month: n, weekStartsOn: a, dayFormat: i})
+        return re({year: t, month: n, weekStartsOn: a, dayLabelFormat: i})
       },
       [t, n, a, i],
     ),
@@ -591,19 +591,19 @@ function ie(e) {
   }
 }
 var se = function(e, t) {
-    var n = B(e),
-      r = B(t)
+    var n = b(e),
+      r = b(t)
     return n.getTime() < r.getTime()
   },
   ce = function(e, t) {
-    var n = B(e),
-      r = B(t)
+    var n = b(e),
+      r = b(t)
     return n.getTime() > r.getTime()
   },
   fe = function(e, t, n) {
-    var r = B(e).getTime(),
-      a = B(t).getTime(),
-      o = B(n).getTime()
+    var r = b(e).getTime(),
+      a = b(t).getTime(),
+      o = b(n).getTime()
     if (a > o) throw new Error('The start of the range cannot be after the end of the range')
     return r >= a && r <= o
   },
@@ -613,28 +613,28 @@ var se = function(e, t) {
     return n.getTime() === r.getTime()
   },
   de = function(e, t) {
-    var n = B(e),
-      r = B(t)
+    var n = b(e),
+      r = b(t)
     return n.getFullYear() === r.getFullYear() && n.getMonth() === r.getMonth()
   },
   le = function(e) {
-    return B(e).getFullYear()
+    return b(e).getFullYear()
   },
   ge = function(e) {
-    return B(e).getMonth()
+    return b(e).getMonth()
   },
   ve = function() {
     return H(new Date())
   },
   me = function(e) {
-    var t = B(e),
+    var t = b(e),
       n = t.getFullYear(),
       r = t.getMonth(),
       a = new Date(0)
     return a.setFullYear(n, r + 1, 0), a.setHours(0, 0, 0, 0), a.getDate()
   },
   he = function(e, t) {
-    var n = B(e),
+    var n = b(e),
       r = Number(t),
       a = n.getMonth() + r,
       o = new Date(0)
@@ -721,8 +721,8 @@ function Ye(e) {
   return !1
 }
 var xe = 'startDate',
-  Be = 'endDate'
-function be(e) {
+  be = 'endDate'
+function Be(e) {
   var t = e.startDate,
     n = e.endDate,
     r = e.focusedInput,
@@ -787,13 +787,13 @@ function be(e) {
       },
       [a, o, t, n, d, y],
     ),
-    B = React.useCallback(
+    T = React.useCallback(
       function(e) {
         return !!S && De(e, S)
       },
       [S],
     ),
-    T = React.useCallback(
+    B = React.useCallback(
       function(e) {
         return (function(e) {
           var t = e.date,
@@ -847,11 +847,11 @@ function be(e) {
       firstDayOfWeek: f,
       activeMonths: _,
       isDateSelected: R,
-      isDateHovered: T,
+      isDateHovered: B,
       isFirstOrLastSelectedDate: O,
       isDateBlocked: I,
       numberOfMonths: u,
-      isDateFocused: B,
+      isDateFocused: T,
       focusedDate: S,
       onResetDates: function() {
         i({startDate: null, endDate: null, focusedInput: xe})
@@ -870,7 +870,7 @@ function be(e) {
         r && (m || f || y) ? k(e) : null !== D && k(null)
       },
       onDaySelect: function(e) {
-        ;(r === Be || r === xe) &&
+        ;(r === be || r === xe) &&
         d > 0 &&
         c &&
         Ye({
@@ -883,15 +883,15 @@ function be(e) {
           endDate: null,
         })
           ? i({startDate: e, endDate: K(e, d - 1), focusedInput: null})
-          : ((r === Be && t && se(e, t)) || (r === xe && n && ce(e, n))) &&
+          : ((r === be && t && se(e, t)) || (r === xe && n && ce(e, n))) &&
             !c &&
             Ye({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
-          ? i({endDate: null, startDate: e, focusedInput: Be})
+          ? i({endDate: null, startDate: e, focusedInput: be})
           : r === xe && !c && Ye({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
-          ? i({endDate: n, startDate: e, focusedInput: Be})
+          ? i({endDate: n, startDate: e, focusedInput: be})
           : r === xe && !c && Ye({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
-          ? i({endDate: null, startDate: e, focusedInput: Be})
-          : r === Be &&
+          ? i({endDate: null, startDate: e, focusedInput: be})
+          : r === be &&
             t &&
             !se(e, t) &&
             !c &&
@@ -2524,7 +2524,7 @@ var templateObject_1$7,
       n = e.month,
       r = e.firstDayOfWeek,
       a = ie({
-        dayFormat: e.dayFormat,
+        dayLabelFormat: e.dayLabelFormat,
         monthLabelFormat: e.monthLabelFormat,
         weekdayLabelFormat: e.weekdayLabelFormat,
         year: t,
@@ -2958,7 +2958,7 @@ function Datepicker(e) {
     a = e.maxBookingDate,
     o = e.focusedInput,
     i = e.onDatesChange,
-    l = e.dayFormat,
+    l = e.dayLabelFormat,
     c = e.weekdayLabelFormat,
     s = e.monthLabelFormat,
     d = e.onDayRender,
@@ -2986,12 +2986,12 @@ function Datepicker(e) {
     R = e.onClose,
     O = void 0 === R ? function() {} : R,
     I = e.numberOfMonths,
-    B = e.firstDayOfWeek,
-    T = e.displayFormat,
-    F = void 0 === T ? 'MM/DD/YYYY' : T,
+    T = e.firstDayOfWeek,
+    B = e.displayFormat,
+    F = void 0 === B ? 'MM/DD/YYYY' : B,
     M = e.phrases,
     j = void 0 === M ? datepickerPhrases : M,
-    W = be({
+    W = Be({
       startDate: t,
       endDate: n,
       focusedInput: o,
@@ -3002,7 +3002,7 @@ function Datepicker(e) {
       isDateBlocked: S,
       exactMinBookingDays: k,
       numberOfMonths: I,
-      firstDayOfWeek: B,
+      firstDayOfWeek: T,
     }),
     P = W.activeMonths,
     L = W.isDateSelected,
@@ -3134,7 +3134,7 @@ function Datepicker(e) {
             React__default.createElement(SelectDate, {
               title: j.datepickerEndDateLabel,
               date: Fe(n, F, j.datepickerEndDatePlaceholder),
-              isActive: o === Be,
+              isActive: o === be,
               vertical: u,
             }),
           ),
@@ -3161,7 +3161,7 @@ function Datepicker(e) {
                 year: e.year,
                 month: e.month,
                 firstDayOfWeek: $,
-                dayFormat: l || ae,
+                dayLabelFormat: l || ae,
                 weekdayLabelFormat: c || oe,
                 monthLabelFormat: s || ue,
               })
@@ -3302,7 +3302,7 @@ function DateRangeInput(e) {
     c = e.focusedInput,
     s = e.onDatesChange,
     d = e.exactMinBookingDays,
-    p = e.dayFormat,
+    p = e.dayLabelFormat,
     u = e.weekdayLabelFormat,
     m = e.monthLabelFormat,
     f = e.onDayRender,
@@ -3326,9 +3326,9 @@ function DateRangeInput(e) {
     R = e.minBookingDays,
     O = void 0 === R ? 1 : R,
     I = e.onClose,
-    B = void 0 === I ? function() {} : I,
-    T = e.showStartDateCalendarIcon,
-    F = void 0 === T || T,
+    T = void 0 === I ? function() {} : I,
+    B = e.showStartDateCalendarIcon,
+    F = void 0 === B || B,
     M = e.showEndDateCalendarIcon,
     j = void 0 === M || M,
     W = e.displayFormat,
@@ -3410,11 +3410,11 @@ function DateRangeInput(e) {
           placeholder: H.endDatePlaceholder,
           value: Fe(n, P, ''),
           onClick: function() {
-            return i(t ? Be : xe)
+            return i(t ? be : xe)
           },
           showCalendarIcon: j,
           vertical: k,
-          isActive: c === Be,
+          isActive: c === be,
           padding: z.dateRangeEndDateInputPadding,
           rtl: S,
           disableAccessibility: c === xe,
@@ -3432,7 +3432,7 @@ function DateRangeInput(e) {
         null !== c &&
           React__default.createElement(Datepicker, {
             onClose: function() {
-              B(), i(null)
+              T(), i(null)
             },
             startDate: t,
             endDate: n,
@@ -3451,7 +3451,7 @@ function DateRangeInput(e) {
             showSelectedDates: _,
             showClose: y,
             rtl: S,
-            dayFormat: p,
+            dayLabelFormat: p,
             weekdayLabelFormat: u,
             monthLabelFormat: m,
             onDayRender: f,
@@ -3462,6 +3462,6 @@ function DateRangeInput(e) {
 }
 ;(exports.DateRangeInput = DateRangeInput),
   (exports.Datepicker = Datepicker),
-  (exports.END_DATE = Be),
+  (exports.END_DATE = be),
   (exports.START_DATE = xe),
   (exports.phrases = phrases)

@@ -30,7 +30,7 @@ import {
   START_DATE,
   END_DATE,
   FormatFunction,
-  dayFormat as dayFormatFn,
+  dayLabelFormat as dayLabelFormatFn,
   weekdayLabelFormat as weekdayLabelFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
@@ -109,7 +109,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   showClose?: boolean
   vertical?: boolean
   rtl?: boolean
-  dayFormat?(date: Date): string
+  dayLabelFormat?(date: Date): string
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
@@ -122,7 +122,7 @@ function Datepicker({
   maxBookingDate,
   focusedInput,
   onDatesChange,
-  dayFormat,
+  dayLabelFormat,
   weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,
@@ -313,7 +313,7 @@ function Datepicker({
                   year={month.year}
                   month={month.month}
                   firstDayOfWeek={firstDayOfWeek}
-                  dayFormat={dayFormat || dayFormatFn}
+                  dayLabelFormat={dayLabelFormat || dayLabelFormatFn}
                   weekdayLabelFormat={weekdayLabelFormat || weekdayLabelFormatFn}
                   monthLabelFormat={monthLabelFormat || monthLabelFormatFn}
                 />
