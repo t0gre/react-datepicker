@@ -9,7 +9,7 @@ import {
   weekDayFormat as weekDayFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
-import hrLocale from 'date-fns/locale/hr'
+import slLocale from 'date-fns/locale/sl'
 import Flex from '../Flex'
 import {DateRangeInput, OnDateChangeProps, FirstDayOfWeek, phrases} from '../../index'
 
@@ -198,9 +198,9 @@ storiesOf('DateRangeInput', module)
         startDatePlaceholder: 'Začetni datum',
         endDatePlaceholder: 'Končni datum',
       }}
-      dayFormat={(date: Date) => format(date, 'DD', {locale: hrLocale})}
-      weekDayFormat={(date: Date) => format(date, 'dd', {locale: hrLocale})}
-      monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: hrLocale})}
+      dayFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
+      weekDayFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}
+      monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: slLocale})}
     />
   ))
   .add('Block date', () => (

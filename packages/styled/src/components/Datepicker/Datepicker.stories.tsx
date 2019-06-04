@@ -9,7 +9,7 @@ import {
 import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import {text, boolean} from '@storybook/addon-knobs'
-import hrLocale from 'date-fns/locale/hr'
+import slLocale from 'date-fns/locale/sl'
 import {Datepicker, START_DATE, OnDateChangeProps, FirstDayOfWeek, phrases} from '../../index'
 import Flex from '../Flex'
 
@@ -182,9 +182,9 @@ storiesOf('Datepicker', module)
         datepickerEndDateLabel: 'Končni datum:',
         resetDates: 'Razveljavi',
       }}
-      dayFormat={(date: Date) => format(date, 'DD', {locale: hrLocale})}
-      weekDayFormat={(date: Date) => format(date, 'dd', {locale: hrLocale})}
-      monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: hrLocale})}
+      dayFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
+      weekDayFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}
+      monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: slLocale})}
     />
   ))
   .add('Block date', () => (
