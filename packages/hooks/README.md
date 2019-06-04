@@ -1,182 +1,92 @@
 # @datepicker-react/hooks
 
-[![Gzip size](https://img.shields.io/bundlephobia/minzip/@datepicker-react/hooks.svg)](https://img.shields.io/bundlephobia/minzip/@datepicker-react/hooks.svg) [![Coverage Status](https://coveralls.io/repos/github/tresko/react-datepicker/badge.svg?branch=master)](https://coveralls.io/github/tresko/react-datepicker?branch=master) [![Build Status](https://travis-ci.org/tresko/react-datepicker.svg?branch=master)](https://travis-ci.org/tresko/react-datepicker) [![Netlify Status](https://api.netlify.com/api/v1/badges/0c2c3960-87ee-4f5e-a4dc-1e2aac57d2b4/deploy-status)](https://app.netlify.com/sites/react-datepicker/deploys)
+[![Gzip size](https://img.shields.io/bundlephobia/minzip/@datepicker-react/hooks.svg)](https://img.shields.io/bundlephobia/minzip/@datepicker-react/hooks.svg)
+[![Coverage Status](https://coveralls.io/repos/github/tresko/react-datepicker/badge.svg?branch=master)](https://coveralls.io/github/tresko/react-datepicker?branch=master)
+[![Build Status](https://travis-ci.org/tresko/react-datepicker.svg?branch=master)](https://travis-ci.org/tresko/react-datepicker)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0c2c3960-87ee-4f5e-a4dc-1e2aac57d2b4/deploy-status)](https://app.netlify.com/sites/react-datepicker/deploys)
 
 [![NPM](https://nodei.co/npm/@datepicker-react/hooks.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/@datepicker-react/hooks?downloads=true&downloadRank=true&stars=true)
 
 ## Getting Started
+
 ### Install
 
-  ```sh
-  yarn add @datepicker-react/hooks
-  ```
+```sh
+yarn add @datepicker-react/hooks
+```
 
 ### Include hooks
+
 ```js
 import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
 ```
 
-### useDatepicker
-Controls datepicker
+## Table of Contents
 
-#### Props
-```ts
-export const START_DATE = 'startDate'
-export const END_DATE = 'endDate'
+- [useDatepicker](#useDatepicker)
+  - [useDatepicker props](#useDatepickerProps)
+    -
 
-export type FocusedInput = 'startDate' | 'endDate' | null
+## `useDatepicker`
 
-export interface OnDateChangeProps {
-  focusedInput: FocusedInput
-  startDate: Date | null
-  endDate: Date | null
-}
+The `useDatepicker` hook returns functions like `goToPreviousMonths`, `goToNextMonths`, etc., which
+allows us to control the datepicker.
 
-export type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
+### `useDatepickerResult`
 
-export interface UseDatepickerProps {
-  onDateChange(data: OnDateChangeProps): void
-  minBookingDate?: Date
-  maxBookingDate?: Date
-  startDate: Date | null
-  endDate: Date | null
-  focusedInput: FocusedInput
-  numberOfMonths?: number // Default: 2
-  minBookingDays?: number // Default: 1
-  exactMinBookingDays?: boolean // Default: false
-  firstDayOfWeek?: FirstDayOfWeek // Default: 1
-  initialVisibleMonth?(numberOfMonths: number): MonthType[]
-  isDayBlocked?(date: Date): boolean // Default: () => false
-}
-```
+#### `firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6`
+First day of the week.
 
-#### Datepicker component example
-```jsx
-import React, {useState} from React
-import {useDatepicker, START_DATE} from '@datepicker-react/hooks'
+#### `activeMonths: ({year: number, month: number})[]`
+`Array` of visible months. Each month is a object and contains `year` and `month`.
 
-function Datepicker() {
-  const [state, setState] = useState({
-    startDate: null,
-    endDate: null,
-    focusedInput: START_DATE,
-  })
-  const {
-    firstDayOfWeek,
-    activeMonths,
-    isDateSelected,
-    isDateHovered,
-    isFirstOrLastSelectedDate,
-    isDateBlocked,
-    numberOfMonths,
-    isDateFocused,
-    focusedDate,
-    onResetDates,
-    onDayHover,
-    onDaySelect,
-    onDayFocus,
-    goToPreviousMonths,
-    goToNextMonths,
-  } = useDatepicker({
-    startDate: state.startDate,
-    endDate: state.endDate,
-    focusedInput: state.focusedInput,
-    onDateChange: handleDataChange
-  })
-  
-  function handleDataChange(data: OnDateChangeProps) {
-    if (!data.focusedInput) {
-      setState({...data, focusedInput: START_DATE})
-    } else {
-      setState(data)
-    }
-  }
-  
-  return (
-    <DateRangeInput
-      onDateChange={data => dispatch({type: 'dateChange', payload: data})}
-      onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-      startDate={state.startDate} // Date or null
-      endDate={state.endDate} // Date or null
-      focusedInput={state.focusedInput} // START_DATE, END_DATE or null
-    />
-  )
-}
-```
+#### `numberOfMonths: number`
+`Number` of visible months.
 
-The following is a list of other *OPTIONAL* props you may provide to the `DateRangeInput` to customize appearance and behavior to your heart's desire.
+#### `focusedDate: Date | null`
+Focused date. 
 
-```ts
-displayFormat?: string | FormatFunction
-phrases?: DateRangeInputPhrases
-showStartDateCalendarIcon?: boolean
-showEndDateCalendarIcon?: boolean
-onClose?(): void
-vertical?: boolean
-showResetDates?: boolean
-showSelectedDates?: boolean
-showClose?: boolean
-rtl?: boolean
-placement?: 'top' | 'bottom'
-minBookingDate?: Date
-maxBookingDate?: Date
-numberOfMonths?: number
-minBookingDays?: number
-exactMinBookingDays?: boolean
-firstDayOfWeek?: FirstDayOfWeek
-initialVisibleMonth?(numberOfMonths: number): MonthType[]
-isDayBlocked?(date: Date): boolean
-dayFormat?(date: Date): string
-weekDayFormat?(date: Date): string
-monthLabelFormat?(date: Date): string
-onDayRender?(date: Date): React.ReactNode
-```
+#### `isDateSelected: (date: Date) => boolean`
+Return `true` if a date is selected or within selected range, otherwise `false`.
 
-### Datepicker
-The `Datepicker` is a fully controlled component that allows users to select a date range. You can control the selected
-dates using the `startDate`, `endDate`, and `onDateChange` props as shown below. The `Datepicker` also manages internal
-state for partial dates entered by typing (although `onDateChange` will not trigger until a date has been entered
-completely in that case). Similarly, you can control which input is focused with the `focusedInput` prop.
+#### `isDateHovered: (date: Date) => boolean`
+Return `true` if a date is hovered, otherwise `false`.
 
-Here is the minimum *REQUIRED* setup you need to get the `Datepicker` working:
+#### `isDateBlocked: (date: Date) => boolean`
+Return `true` if a date is blocked, otherwise `false`.
 
-```jsx
-import React, {useState} from 'react'
-import {Datepicker, START_DATE} from '@datepicker-react/styled'
+#### `isDateFocused: (date: Date) => boolean`
+Return `true` if a date is focused, otherwise `false`.
 
-function App() {
-  const [state, setState] = useState({
-    startDate: null,
-    endDate: null,
-    focusedInput: START_DATE,
-  })
-  
-  function handleDataChange(data: OnDateChangeProps) {
-    if (!data.focusedInput) {
-      setState({...data, focusedInput: START_DATE})
-    } else {
-      setState(data)
-    }
-  }
-  
-  return (
-    <Datepicker
-      onDateChange={handleDataChange}
-      startDate={state.startDate} // Date or null
-      endDate={state.endDate} // Date or null
-      focusedInput={state.focusedInput} // START_DATE, END_DATE or null
-    />
-  )
-}
-```
+#### `isFirstOrLastSelectedDate: (date: Date) => boolean`
+Return `true` if a date is first or last in selected range, otherwise `false`.
+
+#### `onResetDates: () => void`
+Reset start and end date.
+
+#### `onDayHover: (date: Date) => void`
+Set internal `hovered` state.
+
+#### `onDaySelect: (date: Date) => void`
+Select a date. Which date is selected, depends of `focusedInput`.
+
+#### `onDayFocus: (date: Date) => void`
+Set `focusedDate`.
+
+#### `goToNextMonths: () => void`
+Updates `activeMonths` in accordance with the number of moths prop.
 
 ## Who's using
 
-[LifeOnScreen](https://lifeonscreen.com)
+[LifeOnScreen](https://lifeonscreen.com) <br/>
 [@datepicker-react/styled](https://github.com/tresko/react-datepicker/tree/master/packages/styled)
 
 ## License
 
 Licensed under the MIT License, Copyright © 2019-present Miha Sedej.
 
-See [LICENSE](./LICENSE) for more information.
+See [LICENSE](https://github.com/tresko/react-datepicker/blob/master/LICENSE) for more information.
+
+<br/>
+
+[![Buy me a coffee](https://camo.githubusercontent.com/031fc5a134cdca5ae3460822aba371e63f794233/68747470733a2f2f7777772e6275796d6561636f666665652e636f6d2f6173736574732f696d672f637573746f6d5f696d616765732f6f72616e67655f696d672e706e67)](https://www.buymeacoffee.com/T1Eu7XSoF)
