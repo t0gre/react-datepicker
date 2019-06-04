@@ -245,7 +245,7 @@ test('should execute onClose callback', () => {
     <Datepicker
       firstDayOfWeek={0}
       minBookingDays={1}
-      isDayBlocked={isDateBlocked}
+      isDateBlocked={isDateBlocked}
       minBookingDate={new Date(2019, 1, 16, 0, 0, 0)}
       maxBookingDate={new Date(2020, 1, 16, 0, 0, 0)}
       startDate={new Date(2019, 2, 16, 0, 0, 0)}

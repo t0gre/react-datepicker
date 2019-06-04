@@ -20,7 +20,7 @@ export interface UseDatepickerProps {
   exactMinBookingDays?: boolean
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
-  isDayBlocked?(date: Date): boolean
+  isDateBlocked?(date: Date): boolean
 }
 export declare function useDatepicker({
   startDate,
@@ -33,7 +33,7 @@ export declare function useDatepicker({
   minBookingDays,
   numberOfMonths,
   firstDayOfWeek,
-  isDayBlocked: isDayBlockedProps,
+  isDateBlocked: isDateBlockedProps,
 }: UseDatepickerProps): {
   firstDayOfWeek: FirstDayOfWeek
   activeMonths: MonthType[]

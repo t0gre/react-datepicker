@@ -682,7 +682,7 @@ function isDateBlocked(e) {
   var t = e.date,
     a = e.minBookingDate,
     n = e.maxBookingDate,
-    r = e.isDayBlockedFn,
+    r = e.isDateBlockedFn,
     o = e.startDate,
     s = e.endDate,
     i = e.minBookingDays,
@@ -791,7 +791,7 @@ function useDatepicker(e) {
     D = void 0 === f ? 2 : f,
     _ = e.firstDayOfWeek,
     l = void 0 === _ ? 1 : _,
-    g = e.isDayBlocked,
+    g = e.isDateBlocked,
     m =
       void 0 === g
         ? function() {
@@ -836,7 +836,7 @@ function useDatepicker(e) {
           startDate: t,
           endDate: a,
           minBookingDays: c,
-          isDayBlockedFn: m,
+          isDateBlockedFn: m,
         })
       },
       [r, o, t, a, c, m],

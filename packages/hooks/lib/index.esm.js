@@ -644,7 +644,7 @@ function ke(e) {
   var t = e.date,
     n = e.minBookingDate,
     r = e.maxBookingDate,
-    a = e.isDayBlockedFn,
+    a = e.isDateBlockedFn,
     o = e.startDate,
     u = e.endDate,
     i = e.minBookingDays,
@@ -729,7 +729,7 @@ function be(e) {
     v = void 0 === g ? 2 : g,
     m = e.firstDayOfWeek,
     h = void 0 === m ? 1 : m,
-    y = e.isDayBlocked,
+    y = e.isDateBlocked,
     M =
       void 0 === y
         ? function() {
@@ -774,7 +774,7 @@ function be(e) {
           startDate: a,
           endDate: o,
           minBookingDays: l,
-          isDayBlockedFn: M,
+          isDateBlockedFn: M,
         })
       },
       [i, s, a, o, l, M],

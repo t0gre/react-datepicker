@@ -706,7 +706,7 @@ function ke(e) {
     g = void 0 === m ? 2 : m,
     h = e.firstDayOfWeek,
     y = void 0 === h ? 1 : h,
-    v = e.isDayBlocked,
+    v = e.isDateBlocked,
     D =
       void 0 === v
         ? function() {
@@ -752,7 +752,7 @@ function ke(e) {
           var t = e.date,
             n = e.minBookingDate,
             r = e.maxBookingDate,
-            o = e.isDayBlockedFn,
+            o = e.isDateBlockedFn,
             a = e.startDate,
             i = e.endDate,
             l = e.minBookingDays,
@@ -772,7 +772,7 @@ function ke(e) {
           startDate: o,
           endDate: a,
           minBookingDays: f,
-          isDayBlockedFn: D,
+          isDateBlockedFn: D,
         })
       },
       [l, s, o, a, f, D],
@@ -2795,7 +2795,7 @@ function Fr(t) {
     x = void 0 === b || b,
     w = t.exactMinBookingDays,
     C = void 0 !== w && w,
-    S = t.isDayBlocked,
+    S = t.isDateBlocked,
     B =
       void 0 === S
         ? function() {
@@ -2820,7 +2820,7 @@ function Fr(t) {
       minBookingDate: o,
       maxBookingDate: a,
       minBookingDays: M,
-      isDayBlocked: B,
+      isDateBlocked: B,
       exactMinBookingDays: C,
       numberOfMonths: T,
       firstDayOfWeek: H,
@@ -2828,18 +2828,18 @@ function Fr(t) {
     I = z.activeMonths,
     A = z.isDateSelected,
     Y = z.isFirstOrLastSelectedDate,
-    j = z.isDateBlocked,
-    V = z.isDateHovered,
-    N = z.firstDayOfWeek,
-    $ = z.onDaySelect,
-    G = z.onResetDates,
-    _ = z.goToPreviousMonths,
-    U = z.goToNextMonths,
-    Z = z.numberOfMonths,
-    X = z.onDayHover,
-    J = z.isDateFocused,
-    q = z.focusedDate,
-    K = z.onDayFocus,
+    j = z.isDateHovered,
+    V = z.firstDayOfWeek,
+    N = z.onDaySelect,
+    $ = z.onResetDates,
+    G = z.goToPreviousMonths,
+    _ = z.goToNextMonths,
+    U = z.numberOfMonths,
+    Z = z.onDayHover,
+    X = z.isDateFocused,
+    J = z.focusedDate,
+    q = z.onDayFocus,
+    K = z.isDateBlocked,
     Q = i(null),
     re = mn({
       datepickerBackground: '#ffffff',
@@ -2881,26 +2881,26 @@ function Fr(t) {
     Q && Q.current && m && (Q.current.scrollTop = 0)
   }
   function ae() {
-    U(), oe()
+    _(), oe()
   }
   function ie() {
-    _(), oe()
+    G(), oe()
   }
   return e.createElement(
     Yn.Provider,
     {
       value: {
         rtl: h,
-        isDateFocused: J,
+        isDateFocused: X,
         isDateSelected: A,
-        isDateHovered: V,
-        isDateBlocked: j,
+        isDateHovered: j,
         isFirstOrLastSelectedDate: Y,
-        onDayFocus: K,
-        focusedDate: q,
-        onDaySelect: $,
-        onDayHover: X,
+        onDayFocus: q,
+        focusedDate: J,
+        onDaySelect: N,
+        onDayHover: Z,
         onDayRender: p,
+        isDateBlocked: K,
       },
     },
     e.createElement(
@@ -2971,7 +2971,7 @@ function Fr(t) {
             {
               overflow: re.datepickerMonthsGridOverflow,
               height: re.datepickerMonthsGridHeight,
-              gridTemplateColumns: m ? '1fr' : 'repeat(' + Z + ', 1fr)',
+              gridTemplateColumns: m ? '1fr' : 'repeat(' + U + ', 1fr)',
               gridGap: re.datepickerMonthsGridGap,
               pr: h ? '1px' : '0',
               ref: Q,
@@ -2981,7 +2981,7 @@ function Fr(t) {
                 key: t.year + '-' + t.month,
                 year: t.year,
                 month: t.month,
-                firstDayOfWeek: N,
+                firstDayOfWeek: V,
                 dayFormat: c || ee,
                 weekDayFormat: u || te,
                 monthLabelFormat: d || ne,
@@ -2999,7 +2999,7 @@ function Fr(t) {
               e.createElement(
                 dn,
                 {flex: '1', m: re.datepickerResetDatesWrapperMargin},
-                e.createElement(or, {rtl: h, onResetDates: G, text: P.resetDates}),
+                e.createElement(or, {rtl: h, onResetDates: $, text: P.resetDates}),
               ),
             e.createElement(
               pn,
@@ -3100,7 +3100,7 @@ function Pr(n) {
     S = void 0 !== C && C,
     B = n.rtl,
     F = void 0 !== B && B,
-    M = n.isDayBlocked,
+    M = n.isDateBlocked,
     W =
       void 0 === M
         ? function() {
@@ -3242,7 +3242,7 @@ function Pr(n) {
             displayFormat: A,
             onDatesChange: p,
             minBookingDays: T,
-            isDayBlocked: W,
+            isDateBlocked: W,
             exactMinBookingDays: f,
             showResetDates: w,
             vertical: S,

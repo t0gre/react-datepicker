@@ -35,7 +35,7 @@ import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
     + [`minBookingDays: number | undefined (Default: 1)`](#-minbookingdays--number---undefined--default--1--)
     + [`exactMinBookingDays: boolean | undefined (Default: false)`](#-exactminbookingdays--boolean---undefined--default--false--)
     + [`firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6 (Default: 1 - Monday)`](#-firstdayofweek--0---1---2---3---4---5---6--default--1---monday--)
-    + [`isDayBlocked: (date: Date) => boolean`](#-isdayblocked---date--date-----boolean-)
+    + [`isDateBlocked: (date: Date) => boolean`](#-isdayblocked---date--date-----boolean-)
   * [`useDatepickerResult`](#-usedatepickerresult-)
     + [`firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6`](#-firstdayofweek--0---1---2---3---4---5---6-)
     + [`activeMonths: ({year: number, month: number})[]`](#-activemonths----year--number--month--number-----)
@@ -133,9 +133,9 @@ If `exactMinBookingDays` is true, then the range of dates is always the same as 
 
 With which day the week begins
 
-#### `isDayBlocked: (date: Date) => boolean`
+#### `isDateBlocked: (date: Date) => boolean`
 
-If `isDayBlocked` returns `true`, then the date is blocked
+If `isDateBlocked` returns `true`, then the date is blocked
 
 ### `useDatepickerResult`
 

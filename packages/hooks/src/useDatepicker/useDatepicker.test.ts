@@ -307,7 +307,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
     },
@@ -318,7 +318,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 1,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 4, 0, 0, 0))
       },
     },
@@ -348,7 +348,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 1, 0, 0, 0),
@@ -363,7 +363,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
@@ -378,7 +378,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
@@ -393,7 +393,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 3, 0, 0, 0),
@@ -408,7 +408,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 6, 0, 0, 0),
@@ -423,7 +423,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
@@ -438,7 +438,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 4, 4, 0, 0, 0),
@@ -453,7 +453,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 6, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 2, 0, 0, 0),
@@ -468,7 +468,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 5, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
@@ -483,7 +483,7 @@ describe('useDatepicker', () => {
       maxBookingDate: new Date(2019, 3, 28, 0, 0, 0),
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 7, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
@@ -498,7 +498,7 @@ describe('useDatepicker', () => {
       maxBookingDate: null,
       focusedInput: START_DATE,
       minBookingDays: 3,
-      isDayBlocked(date: Date): boolean {
+      isDateBlocked(date: Date): boolean {
         return isSameDay(date, new Date(2019, 3, 7, 0, 0, 0))
       },
       callbackDate: new Date(2019, 3, 4, 0, 0, 0),
@@ -560,7 +560,7 @@ describe('useDatepicker', () => {
         endDate: new Date(2019, 3, 8, 0, 0, 0),
         focusedInput: START_DATE,
         onDatesChange: onDatesChange,
-        isDayBlocked(date: Date): boolean {
+        isDateBlocked(date: Date): boolean {
           return isSameDay(date, new Date(2019, 3, 4, 0, 0, 0))
         },
       }),
@@ -632,7 +632,7 @@ describe('useDatepicker', () => {
           exactMinBookingDays: true,
           focusedInput: START_DATE,
           onDatesChange: onDatesChange,
-          isDayBlocked(date: Date): boolean {
+          isDateBlocked(date: Date): boolean {
             return isSameDay(date, blockedDate)
           },
         }),
@@ -684,7 +684,7 @@ describe('useDatepicker', () => {
           exactMinBookingDays: true,
           focusedInput: START_DATE,
           onDatesChange: onDatesChange,
-          isDayBlocked(date: Date): boolean {
+          isDateBlocked(date: Date): boolean {
             return isSameDay(date, blockedDate)
           },
         }),
@@ -809,7 +809,7 @@ describe('isDateBlocked', () => {
   const equalDate = new Date(2019, 2, 25, 0, 0, 0)
 
   test('should be blocked', () => {
-    function isDayBlockedFn(date: Date) {
+    function isDateBlockedFn(date: Date) {
       return isEqual(date, equalDate)
     }
 
@@ -838,7 +838,7 @@ describe('isDateBlocked', () => {
         date: new Date(2019, 2, 25, 0, 0, 0),
         minBookingDate,
         maxBookingDate,
-        isDayBlockedFn,
+        isDateBlockedFn,
       }),
     ).toBe(true)
     expect(
@@ -864,7 +864,7 @@ describe('isDateBlocked', () => {
   })
 
   test('should not be blocked', () => {
-    function isDayBlockedFn(date: Date) {
+    function isDateBlockedFn(date: Date) {
       return isEqual(date, equalDate)
     }
 
@@ -896,7 +896,7 @@ describe('isDateBlocked', () => {
         date: new Date(2019, 2, 26, 0, 0, 0),
         minBookingDate,
         maxBookingDate,
-        isDayBlockedFn,
+        isDateBlockedFn,
       }),
     ).toBe(false)
     expect(

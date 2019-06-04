@@ -653,7 +653,7 @@ function ke(e) {
   var t = e.date,
     n = e.minBookingDate,
     r = e.maxBookingDate,
-    a = e.isDayBlockedFn,
+    a = e.isDateBlockedFn,
     o = e.startDate,
     i = e.endDate,
     l = e.minBookingDays,
@@ -738,7 +738,7 @@ function be(e) {
     u = void 0 === p ? 2 : p,
     m = e.firstDayOfWeek,
     f = void 0 === m ? 1 : m,
-    g = e.isDayBlocked,
+    g = e.isDateBlocked,
     y =
       void 0 === g
         ? function() {
@@ -783,7 +783,7 @@ function be(e) {
           startDate: t,
           endDate: n,
           minBookingDays: d,
-          isDayBlockedFn: y,
+          isDateBlockedFn: y,
         })
       },
       [a, o, t, n, d, y],
@@ -2975,7 +2975,7 @@ function Datepicker(e) {
     v = void 0 === b || b,
     D = e.exactMinBookingDays,
     k = void 0 !== D && D,
-    x = e.isDayBlocked,
+    x = e.isDateBlocked,
     S =
       void 0 === x
         ? function() {
@@ -3000,7 +3000,7 @@ function Datepicker(e) {
       minBookingDate: r,
       maxBookingDate: a,
       minBookingDays: R,
-      isDayBlocked: S,
+      isDateBlocked: S,
       exactMinBookingDays: k,
       numberOfMonths: I,
       firstDayOfWeek: B,
@@ -3008,18 +3008,18 @@ function Datepicker(e) {
     P = W.activeMonths,
     H = W.isDateSelected,
     E = W.isFirstOrLastSelectedDate,
-    L = W.isDateBlocked,
-    $ = W.isDateHovered,
-    A = W.firstDayOfWeek,
-    z = W.onDaySelect,
-    Y = W.onResetDates,
-    G = W.goToPreviousMonths,
-    V = W.goToNextMonths,
-    N = W.numberOfMonths,
-    K = W.onDayHover,
-    Q = W.isDateFocused,
-    U = W.focusedDate,
-    Z = W.onDayFocus,
+    L = W.isDateHovered,
+    $ = W.firstDayOfWeek,
+    A = W.onDaySelect,
+    z = W.onResetDates,
+    Y = W.goToPreviousMonths,
+    G = W.goToNextMonths,
+    V = W.numberOfMonths,
+    N = W.onDayHover,
+    K = W.isDateFocused,
+    Q = W.focusedDate,
+    U = W.onDayFocus,
+    Z = W.isDateBlocked,
     q = React.useRef(null),
     J = useThemeProps({
       datepickerBackground: '#ffffff',
@@ -3061,26 +3061,26 @@ function Datepicker(e) {
     q && q.current && u && (q.current.scrollTop = 0)
   }
   function ee() {
-    V(), X()
+    G(), X()
   }
   function te() {
-    G(), X()
+    Y(), X()
   }
   return React__default.createElement(
     DatepickerContext.Provider,
     {
       value: {
         rtl: f,
-        isDateFocused: Q,
+        isDateFocused: K,
         isDateSelected: H,
-        isDateHovered: $,
-        isDateBlocked: L,
+        isDateHovered: L,
         isFirstOrLastSelectedDate: E,
-        onDayFocus: Z,
-        focusedDate: U,
-        onDaySelect: z,
-        onDayHover: K,
+        onDayFocus: U,
+        focusedDate: Q,
+        onDaySelect: A,
+        onDayHover: N,
         onDayRender: d,
+        isDateBlocked: Z,
       },
     },
     React__default.createElement(
@@ -3151,7 +3151,7 @@ function Datepicker(e) {
             {
               overflow: J.datepickerMonthsGridOverflow,
               height: J.datepickerMonthsGridHeight,
-              gridTemplateColumns: u ? '1fr' : 'repeat(' + N + ', 1fr)',
+              gridTemplateColumns: u ? '1fr' : 'repeat(' + V + ', 1fr)',
               gridGap: J.datepickerMonthsGridGap,
               pr: f ? '1px' : '0',
               ref: q,
@@ -3161,7 +3161,7 @@ function Datepicker(e) {
                 key: e.year + '-' + e.month,
                 year: e.year,
                 month: e.month,
-                firstDayOfWeek: A,
+                firstDayOfWeek: $,
                 dayFormat: l || ae,
                 weekDayFormat: c || oe,
                 monthLabelFormat: s || ue,
@@ -3181,7 +3181,7 @@ function Datepicker(e) {
                 {flex: '1', m: J.datepickerResetDatesWrapperMargin},
                 React__default.createElement(ResetDates, {
                   rtl: f,
-                  onResetDates: Y,
+                  onResetDates: z,
                   text: j.resetDates,
                 }),
               ),
@@ -3317,7 +3317,7 @@ function DateRangeInput(e) {
     k = void 0 !== D && D,
     x = e.rtl,
     S = void 0 !== x && x,
-    C = e.isDayBlocked,
+    C = e.isDateBlocked,
     R =
       void 0 === C
         ? function() {
@@ -3445,7 +3445,7 @@ function DateRangeInput(e) {
             displayFormat: P,
             onDatesChange: s,
             minBookingDays: O,
-            isDayBlocked: R,
+            isDateBlocked: R,
             exactMinBookingDays: d,
             showResetDates: v,
             vertical: k,

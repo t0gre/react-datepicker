@@ -32,7 +32,7 @@ declare function Datepicker({
   showClose,
   showSelectedDates,
   exactMinBookingDays,
-  isDayBlocked,
+  isDateBlocked,
   minBookingDays,
   onClose,
   numberOfMonths: numberOfMonthsProp,

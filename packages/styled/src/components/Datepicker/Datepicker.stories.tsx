@@ -25,7 +25,7 @@ interface AppProps {
   numberOfMonths?: number
   firstDayOfWeek?: FirstDayOfWeek
   phrasesProp?: phrases.DatepickerPhrases
-  isDayBlocked?(date: Date): boolean
+  isDateBlocked?(date: Date): boolean
   minBookingDate?: Date
   maxBookingDate?: Date
   dayFormat?(date: Date): string
@@ -46,7 +46,7 @@ function App({
   numberOfMonths = 2,
   firstDayOfWeek = 1,
   phrasesProp = phrases.datepickerPhrases,
-  isDayBlocked = () => false,
+  isDateBlocked = () => false,
   minBookingDate,
   maxBookingDate,
   dayFormat = dayFormatFn,
@@ -89,7 +89,7 @@ function App({
       numberOfMonths={numberOfMonths}
       firstDayOfWeek={firstDayOfWeek}
       phrases={phrasesProp}
-      isDayBlocked={isDayBlocked}
+      isDateBlocked={isDateBlocked}
       dayFormat={dayFormat}
       weekDayFormat={weekDayFormat}
       monthLabelFormat={monthLabelFormat}
@@ -197,7 +197,7 @@ storiesOf('Datepicker', module)
       showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/DD/YYYY')}
       firstDayOfWeek={0}
-      isDayBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
+      isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
     />
   ))
   .add('Custom day size', () => (
@@ -217,7 +217,7 @@ storiesOf('Datepicker', module)
         showSelectedDates={boolean('showSelectedDates', true)}
         displayFormat={text('displayFormat', 'MM/DD/YYYY')}
         firstDayOfWeek={0}
-        isDayBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
+        isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
       />
     </ThemeProvider>
   ))
@@ -240,7 +240,7 @@ storiesOf('Datepicker', module)
         showSelectedDates={boolean('showSelectedDates', true)}
         displayFormat={text('displayFormat', 'MM/DD/YYYY')}
         firstDayOfWeek={0}
-        isDayBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
+        isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
       />
     </ThemeProvider>
   ))

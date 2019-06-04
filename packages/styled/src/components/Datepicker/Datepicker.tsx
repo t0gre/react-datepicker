@@ -132,7 +132,7 @@ function Datepicker({
   showClose = true,
   showSelectedDates = true,
   exactMinBookingDays = false,
-  isDayBlocked = () => false,
+  isDateBlocked = () => false,
   minBookingDays = 1,
   onClose = () => {},
   numberOfMonths: numberOfMonthsProp,
@@ -144,7 +144,6 @@ function Datepicker({
     activeMonths,
     isDateSelected,
     isFirstOrLastSelectedDate,
-    isDateBlocked,
     isDateHovered,
     firstDayOfWeek,
     onDaySelect,
@@ -156,6 +155,7 @@ function Datepicker({
     isDateFocused,
     focusedDate,
     onDayFocus,
+    isDateBlocked: isDateBlockedFn,
   } = useDatepicker({
     startDate,
     endDate,
@@ -164,7 +164,7 @@ function Datepicker({
     minBookingDate,
     maxBookingDate,
     minBookingDays,
-    isDayBlocked,
+    isDateBlocked,
     exactMinBookingDays,
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
@@ -231,13 +231,13 @@ function Datepicker({
         isDateFocused,
         isDateSelected,
         isDateHovered,
-        isDateBlocked,
         isFirstOrLastSelectedDate,
         onDayFocus,
         focusedDate,
         onDaySelect,
         onDayHover,
         onDayRender,
+        isDateBlocked: isDateBlockedFn,
       }}
     >
       <StyledDatepicker

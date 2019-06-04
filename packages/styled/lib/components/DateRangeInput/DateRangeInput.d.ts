@@ -39,7 +39,7 @@ declare function DateRangeInput({
   showResetDates,
   vertical,
   rtl,
-  isDayBlocked,
+  isDateBlocked,
   minBookingDays,
   onClose,
   showStartDateCalendarIcon,

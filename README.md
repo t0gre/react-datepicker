@@ -96,7 +96,7 @@ minBookingDays?: number // Default: 1
 exactMinBookingDays?: boolean // Default: false
 firstDayOfWeek?: FirstDayOfWeek // Default: 1
 initialVisibleMonth?(numberOfMonths: number): MonthType[]
-isDayBlocked?(date: Date): boolean
+isDateBlocked?(date: Date): boolean
 dayFormat?(date: Date): string
 weekDayFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
@@ -159,7 +159,7 @@ minBookingDays?: number // Default: 1
 exactMinBookingDays?: boolean // Default: false
 firstDayOfWeek?: FirstDayOfWeek // Default: 0
 initialVisibleMonth?(numberOfMonths: number): MonthType[]
-isDayBlocked?(date: Date): boolean
+isDateBlocked?(date: Date): boolean
 dayFormat?(date: Date): string
 weekDayFormat?(date: Date): string
 monthLabelFormat?(date: Date): string

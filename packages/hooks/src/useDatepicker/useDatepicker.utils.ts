@@ -34,13 +34,13 @@ interface IsDateBlockedProps {
   minBookingDays?: number
   minBookingDate?: Date
   maxBookingDate?: Date
-  isDayBlockedFn?: (date?: Date) => boolean
+  isDateBlockedFn?: (date?: Date) => boolean
 }
 export function isDateBlocked({
   date,
   minBookingDate,
   maxBookingDate,
-  isDayBlockedFn,
+  isDateBlockedFn,
   startDate,
   endDate,
   minBookingDays = 1,
@@ -73,7 +73,7 @@ export function isDateBlocked({
       !endDate &&
       minBookingDays > 1 &&
       isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))) ||
-    (isDayBlockedFn && isDayBlockedFn(date))
+    (isDateBlockedFn && isDateBlockedFn(date))
   )
 }
 

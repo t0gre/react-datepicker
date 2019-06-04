@@ -117,7 +117,7 @@ function DateRangeInput({
   showResetDates = true,
   vertical = false,
   rtl = false,
-  isDayBlocked = () => false,
+  isDateBlocked = () => false,
   minBookingDays = 1,
   onClose = () => {},
   showStartDateCalendarIcon = true,
@@ -234,7 +234,7 @@ function DateRangeInput({
             displayFormat={displayFormat}
             onDatesChange={onDatesChange}
             minBookingDays={minBookingDays}
-            isDayBlocked={isDayBlocked}
+            isDateBlocked={isDateBlocked}
             exactMinBookingDays={exactMinBookingDays}
             showResetDates={showResetDates}
             vertical={vertical}
