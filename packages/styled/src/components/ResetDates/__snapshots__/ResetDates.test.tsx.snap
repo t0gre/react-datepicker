@@ -2,10 +2,19 @@
 
 exports[`should match snapshot 1`] = `
 .c1 {
+  line-height: 1.18;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  line-height: 1.18;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
   line-height: 1.18;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   margin: 1px 0 0 8px;
 }
 
@@ -63,10 +72,19 @@ exports[`should match snapshot 1`] = `
 
 exports[`should render rtl variant 1`] = `
 .c2 {
+  line-height: 1.18;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  line-height: 1.18;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
   line-height: 1.18;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   margin: 1px 8px 0 0;
 }
 

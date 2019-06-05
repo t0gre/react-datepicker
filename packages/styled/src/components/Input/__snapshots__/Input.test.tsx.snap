@@ -4,17 +4,33 @@ exports[`should render rtl variant 1`] = `
 .c0 {
   position: relative;
   border: 1px solid #d0d0d0;
+  border-radius: 2px;
   background: #ffffff;
   display: block;
+  border: 1px solid #d0d0d0;
   border-radius: 2px;
   margin: 0;
 }
 
 .c1 {
   position: absolute;
+  top: 16px;
   left: unset;
   right: 16px;
+  position: absolute;
   top: 16px;
+  left: unset;
+  right: 16px;
+  position: absolute;
+  top: 16px;
+  left: unset;
+  right: 16px;
+  position: absolute;
+  top: 16px;
+  left: unset;
+  right: 16px;
+  height: 12px;
+  width: 12px;
   height: 12px;
   width: 12px;
   cursor: pointer;
@@ -28,9 +44,17 @@ exports[`should render rtl variant 1`] = `
   background: #ffffff;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   color: #001217;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
   font-weight: 600;
   border: 0;
+  width: 100%;
+  min-height: 46px;
   width: 100%;
   min-height: 46px;
   box-shadow: none;
@@ -104,8 +128,10 @@ exports[`should render vertical variant 1`] = `
 .c0 {
   position: relative;
   border: 1px solid #d0d0d0;
+  border-radius: 2px;
   background: #ffffff;
   display: block;
+  border: 1px solid #d0d0d0;
   border-radius: 2px;
   margin: 0;
 }
@@ -114,9 +140,17 @@ exports[`should render vertical variant 1`] = `
   background: #ffffff;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   color: #001217;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
   font-weight: 600;
   border: 0;
+  width: 100%;
+  min-height: 46px;
   width: 100%;
   min-height: 46px;
   box-shadow: inset 0px -3px 0 #00aeef;
@@ -170,17 +204,33 @@ exports[`should render with icon 1`] = `
 .c0 {
   position: relative;
   border: 1px solid #d0d0d0;
+  border-radius: 2px;
   background: #ffffff;
   display: block;
+  border: 1px solid #d0d0d0;
   border-radius: 2px;
   margin: 0;
 }
 
 .c1 {
   position: absolute;
+  top: 16px;
   left: 16px;
   right: unset;
+  position: absolute;
   top: 16px;
+  left: 16px;
+  right: unset;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: unset;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: unset;
+  height: 12px;
+  width: 12px;
   height: 12px;
   width: 12px;
   cursor: pointer;
@@ -194,9 +244,17 @@ exports[`should render with icon 1`] = `
   background: #ffffff;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   color: #001217;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
   font-weight: 600;
   border: 0;
+  width: 100%;
+  min-height: 46px;
   width: 100%;
   min-height: 46px;
   box-shadow: none;
@@ -270,8 +328,10 @@ exports[`should render with value 1`] = `
 .c0 {
   position: relative;
   border: 1px solid #d0d0d0;
+  border-radius: 2px;
   background: #ffffff;
   display: block;
+  border: 1px solid #d0d0d0;
   border-radius: 2px;
   margin: 0;
 }
@@ -280,9 +340,17 @@ exports[`should render with value 1`] = `
   background: #ffffff;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   color: #001217;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
   font-weight: 600;
   border: 0;
+  width: 100%;
+  min-height: 46px;
   width: 100%;
   min-height: 46px;
   box-shadow: none;
@@ -336,8 +404,10 @@ exports[`should render without icon 1`] = `
 .c0 {
   position: relative;
   border: 1px solid #d0d0d0;
+  border-radius: 2px;
   background: #ffffff;
   display: block;
+  border: 1px solid #d0d0d0;
   border-radius: 2px;
   margin: 0;
 }
@@ -346,9 +416,17 @@ exports[`should render without icon 1`] = `
   background: #ffffff;
   font-family: Montserrat,sans-serif;
   font-size: 14px;
+  font-weight: 600;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   color: #001217;
+  font-family: Montserrat,sans-serif;
+  font-size: 14px;
   font-weight: 600;
   border: 0;
+  width: 100%;
+  min-height: 46px;
   width: 100%;
   min-height: 46px;
   box-shadow: none;

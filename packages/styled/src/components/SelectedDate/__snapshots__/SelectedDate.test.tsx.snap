@@ -4,7 +4,13 @@ exports[`should be active 1`] = `
 .c1 {
   font-family: Montserrat,sans-serif;
   font-size: 11px;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   color: #929598;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   margin: 0 0 8px;
 }
 
@@ -14,10 +20,19 @@ exports[`should be active 1`] = `
 }
 
 .c2 {
+  font-size: 24px;
+  font-weight: 500;
   font-family: Montserrat,sans-serif;
   font-size: 24px;
   font-weight: 500;
+  font-family: Montserrat,sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
   color: #001217;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -66,7 +81,13 @@ exports[`should be unactive 1`] = `
 .c1 {
   font-family: Montserrat,sans-serif;
   font-size: 11px;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   color: #929598;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   margin: 0 0 8px;
 }
 
@@ -76,10 +97,19 @@ exports[`should be unactive 1`] = `
 }
 
 .c2 {
+  font-size: 24px;
+  font-weight: 500;
   font-family: Montserrat,sans-serif;
   font-size: 24px;
   font-weight: 500;
+  font-family: Montserrat,sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
   color: #001217;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -124,7 +154,13 @@ exports[`should render vertical variant 1`] = `
 .c1 {
   font-family: Montserrat,sans-serif;
   font-size: 11px;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   color: #929598;
+  font-family: Montserrat,sans-serif;
+  font-size: 11px;
   margin: 0 0 8px;
 }
 
@@ -134,10 +170,19 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c2 {
+  font-size: 16px;
+  font-weight: 500;
   font-family: Montserrat,sans-serif;
   font-size: 16px;
   font-weight: 500;
+  font-family: Montserrat,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
   color: #001217;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;

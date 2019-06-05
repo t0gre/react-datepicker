@@ -10,6 +10,8 @@ exports[`should execute onClick callback 1`] = `
 .c0 {
   width: 30px;
   height: 30px;
+  width: 30px;
+  height: 30px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -64,6 +66,8 @@ exports[`should match snapshot - next month 1`] = `
 }
 
 .c0 {
+  width: 30px;
+  height: 30px;
   width: 30px;
   height: 30px;
   background: #ffffff;
@@ -122,6 +126,8 @@ exports[`should match snapshot - next month rtl 1`] = `
 .c0 {
   width: 30px;
   height: 30px;
+  width: 30px;
+  height: 30px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -176,6 +182,8 @@ exports[`should match snapshot - next month vertical 1`] = `
 }
 
 .c0 {
+  width: 48px;
+  height: 48px;
   width: 48px;
   height: 48px;
   background: #ffffff;
@@ -234,6 +242,8 @@ exports[`should match snapshot - next month vertical, rtl 1`] = `
 .c0 {
   width: 48px;
   height: 48px;
+  width: 48px;
+  height: 48px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -288,6 +298,8 @@ exports[`should match snapshot - prev month 1`] = `
 }
 
 .c0 {
+  width: 30px;
+  height: 30px;
   width: 30px;
   height: 30px;
   background: #ffffff;
@@ -346,6 +358,8 @@ exports[`should match snapshot - prev month rtl 1`] = `
 .c0 {
   width: 30px;
   height: 30px;
+  width: 30px;
+  height: 30px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -402,6 +416,8 @@ exports[`should match snapshot - prev month vertical 1`] = `
 .c0 {
   width: 48px;
   height: 48px;
+  width: 48px;
+  height: 48px;
   background: #ffffff;
   padding: 0;
   border: 1px solid #929598;
@@ -456,6 +472,8 @@ exports[`should match snapshot - prev month vertical, rtl 1`] = `
 }
 
 .c0 {
+  width: 48px;
+  height: 48px;
   width: 48px;
   height: 48px;
   background: #ffffff;
