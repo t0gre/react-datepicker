@@ -25,75 +25,79 @@ import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
 
 ## Table of Contents
 
-- [`useDatepicker`](#-usedatepicker-)
-  * [`useDatepickerProps`](#-usedatepickerprops-)
-    + [`onDatesChange: (data: OnDatesChangeProps) => void`](#-ondateschange---data--ondateschangeprops-----void-)
-    + [`minBookingDate: Date | undefined`](#-minbookingdate--date---undefined-)
-    + [`maxBookingDate: Date | undefined`](#-maxbookingdate--date---undefined-)
-    + [`startDate: Date | null`](#-startdate--date---null-)
-    + [`endDate: Date | null`](#-enddate--date---null-)
-    + [`focusedInput: 'startDate' | 'endDate' | null`](#-focusedinput---startdate-----enddate----null-)
-    + [`numberOfMonths: number | undefined (Default: 2)`](#-numberofmonths--number---undefined--default--2--)
-    + [`minBookingDays: number | undefined (Default: 1)`](#-minbookingdays--number---undefined--default--1--)
-    + [`exactMinBookingDays: boolean | undefined (Default: false)`](#-exactminbookingdays--boolean---undefined--default--false--)
-    + [`firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6 (Default: 1 - Monday)`](#-firstdayofweek--0---1---2---3---4---5---6--default--1---monday--)
-    + [`isDateBlocked: (date: Date) => boolean`](#-isdateblocked---date--date-----boolean-)
-  * [`useDatepickerResult`](#-usedatepickerresult-)
-    + [`firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6`](#-firstdayofweek--0---1---2---3---4---5---6-)
-    + [`activeMonths: ({year: number, month: number})[]`](#-activemonths----year--number--month--number-----)
-    + [`numberOfMonths: number`](#-numberofmonths--number-)
-    + [`focusedDate: Date | null`](#-focuseddate--date---null-)
-    + [`isDateSelected: (date: Date) => boolean`](#-isdateselected---date--date-----boolean-)
-    + [`isDateHovered: (date: Date) => boolean`](#-isdatehovered---date--date-----boolean-)
-    + [`isDateBlocked: (date: Date) => boolean`](#-isdateblocked---date--date-----boolean--1)
-    + [`isDateFocused: (date: Date) => boolean`](#-isdatefocused---date--date-----boolean-)
-    + [`isFirstOrLastSelectedDate: (date: Date) => boolean`](#-isfirstorlastselecteddate---date--date-----boolean-)
-    + [`onResetDates: () => void`](#-onresetdates--------void-)
-    + [`onDateHover: (date: Date) => void`](#-ondatehover---date--date-----void-)
-    + [`onDateSelect: (date: Date) => void`](#-ondateselect---date--date-----void-)
-    + [`onDateFocus: (date: Date) => void`](#-ondatefocus---date--date-----void-)
-    + [`goToNextMonths: () => void`](#-gotonextmonths--------void-)
-    + [`goToPreviousMonths: () => void`](#-gotopreviousmonths--------void-)
-- [`useMonth`](#-usemonth-)
-  * [`useMonthProps`](#-usemonthprops-)
-    + [`Year`](#-year-)
-    + [`Month`](#-month-)
-    + [`firstDayOfWeek: number | undefined (Default: 1)`](#-firstdayofweek--number---undefined--default--1--)
-    + [`dayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'MMMM YYYY'))`](#-daylabelformat---date--date-----string---undefined--default---date--date-----format-date---mmmm-yyyy----)
-    + [`weekdayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`](#-weekdaylabelformat---date--date-----string---undefined--default---date--date-----format-date---dd----)
-    + [`monthLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))`](#-monthlabelformat---date--date-----string---undefined--default---date--date-----format-date---dd----)
-  * [`useMonthResult`](#-usemonthresult-)
-    + [`days: ({date: Date, dayLabel: string})[]`](#-days----date--date--daylabel--string-----)
-    + [`weekdayLabels: (string)[]`](#-weekdaylabels---string----)
-    + [`monthLabel: string`](#-monthlabel--string-)
-- [`useDay`](#-useday-)
-  * [`useDayProps`](#-usedayprops-)
-    + [`date: Date`](#-date--date-)
-    + [`dayRef: React.RefObject<HTMLButtonElement>`](#-dayref--reactrefobject-htmlbuttonelement--)
-    + [`focusedDate: Date | null`](#-focuseddate--date---null--1)
-    + [`isDateFocused(date: Date): boolean`](#-isdatefocused-date--date---boolean-)
-    + [`isDateSelected(date: Date): boolean`](#-isdateselected-date--date---boolean-)
-    + [`isDateHovered(date: Date): boolean`](#-isdatehovered-date--date---boolean-)
-    + [`isDateBlocked(date: Date): boolean`](#-isdateblocked-date--date---boolean-)
-    + [`isFirstOrLastSelectedDate(date: Date): boolean`](#-isfirstorlastselecteddate-date--date---boolean-)
-    + [`onDateFocus(date: Date): void`](#-ondatefocus-date--date---void-)
-    + [`onDateSelect(date: Date): void`](#-ondateselect-date--date---void-)
-    + [`onDateHover(date: Date): void`](#-ondatehover-date--date---void-)
-  * [`useDayResult`](#-usedayresult-)
-    + [`tabIndex: 0 | -1`](#-tabindex--0----1-)
-    + [`onKeyDown: (e: KeyboardEvent) => void`](#-onkeydown---e--keyboardevent-----void-)
-    + [`onClick: () => void`](#-onclick--------void-)
-    + [`onMouseEnter: () => void`](#-onmouseenter--------void-)
-    + [`disabledDate: boolean`](#-disableddate--boolean-)
-    + [`isWithinHoverRange: boolean`](#-iswithinhoverrange--boolean-)
-    + [`isSelectedStartOrEnd: boolean`](#-isselectedstartorend--boolean-)
-    + [`isSelected: boolean`](#-isselected--boolean-)
+- [useDatepickerProps](#usedatepickerprops)
+	- [onDatesChange: (data: OnDatesChangeProps) => void](#ondateschange-data-ondateschangeprops--void)
+	- [minBookingDate: Date | undefined](#minbookingdate-date--undefined)
+	- [maxBookingDate: Date | undefined](#maxbookingdate-date--undefined)
+	- [startDate: Date | null](#startdate-date--null)
+	- [endDate: Date | null](#enddate-date--null)
+	- [focusedInput: 'startDate' | 'endDate' | null](#focusedinput-startdate--enddate--null)
+	- [numberOfMonths: number | undefined (Default: 2)](#numberofmonths-number--undefined-default-2)
+	- [minBookingDays: number | undefined (Default: 1)](#minbookingdays-number--undefined-default-1)
+	- [exactMinBookingDays: boolean | undefined (Default: false)](#exactminbookingdays-boolean--undefined-default-false)
+	- [firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6 (Default: 1 - Monday)](#firstdayofweek-0--1--2--3--4--5--6-default-1---monday)
+	- [isDateBlocked: (date: Date) => boolean](#isdateblocked-date-date--boolean)
+- [useDatepickerResult](#usedatepickerresult)
+	- [firstDayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6](#firstdayofweek-0--1--2--3--4--5--6)
+	- [activeMonths: ({year: number, month: number})[]](#activemonths-year-number-month-number)
+	- [numberOfMonths: number](#numberofmonths-number)
+	- [focusedDate: Date | null](#focuseddate-date--null)
+	- [isDateSelected: (date: Date) => boolean](#isdateselected-date-date--boolean)
+	- [isDateHovered: (date: Date) => boolean](#isdatehovered-date-date--boolean)
+	- [isDateBlocked: (date: Date) => boolean](#isdateblocked-date-date--boolean-1)
+	- [isDateFocused: (date: Date) => boolean](#isdatefocused-date-date--boolean)
+	- [isFirstOrLastSelectedDate: (date: Date) => boolean](#isfirstorlastselecteddate-date-date--boolean)
+	- [onResetDates: () => void](#onresetdates---void)
+	- [onDateHover: (date: Date) => void](#ondatehover-date-date--void)
+	- [onDateSelect: (date: Date) => void](#ondateselect-date-date--void)
+	- [onDateFocus: (date: Date) => void](#ondatefocus-date-date--void)
+	- [goToNextMonths: () => void](#gotonextmonths---void)
+	- [goToPreviousMonths: () => void](#gotopreviousmonths---void)
+- [useMonth](#usemonth)
+	- [useMonthProps](#usemonthprops)
+		- [Year](#year)
+		- [Month](#month)
+		- [firstDayOfWeek: number | undefined (Default: 1)](#firstdayofweek-number--undefined-default-1)
+		- [dayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'MMMM YYYY'))](#daylabelformat-date-date--string--undefined-default-date-date--formatdate-mmmm-yyyy)
+		- [weekdayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))](#weekdaylabelformat-date-date--string--undefined-default-date-date--formatdate-dd)
+		- [monthLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'dd'))](#monthlabelformat-date-date--string--undefined-default-date-date--formatdate-dd)
+	- [useMonthResult](#usemonthresult)
+		- [days: ({date: Date, dayLabel: string})[]](#days-date-date-daylabel-string)
+		- [weekdayLabels: (string)[]](#weekdaylabels-string)
+		- [monthLabel: string](#monthlabel-string)
+- [useDay](#useday)
+	- [useDayProps](#usedayprops)
+		- [date: Date](#date-date)
+		- [dayRef: React.RefObject<HTMLButtonElement>](#dayref-reactrefobjecthtmlbuttonelement)
+		- [focusedDate: Date | null](#focuseddate-date--null-1)
+		- [isDateFocused: (date: Date) => boolean](#isdatefocused-date-date--boolean-1)
+		- [isDateSelected: (date: Date) => boolean](#isdateselected-date-date--boolean-1)
+		- [isDateHovered: (date: Date) => boolean](#isdatehovered-date-date--boolean-1)
+		- [isDateBlocked: (date: Date) => boolean](#isdateblocked-date-date--boolean-2)
+		- [isFirstOrLastSelectedDate: (date: Date) => boolean](#isfirstorlastselecteddate-date-date--boolean-1)
+		- [onDateFocus: (date: Date) => void](#ondatefocus-date-date--void-1)
+		- [onDateSelect: (date: Date) => void](#ondateselect-date-date--void-1)
+		- [onDateHover: (date: Date) => void](#ondatehover-date-date--void-1)
+	- [useDayResult](#usedayresult)
+		- [tabIndex: 0 | -1](#tabindex-0---1)
+		- [onKeyDown: (e: KeyboardEvent) => void](#onkeydown-e-keyboardevent--void)
+		- [onClick: () => void](#onclick---void)
+		- [onMouseEnter: () => void](#onmouseenter---void)
+		- [disabledDate: boolean](#disableddate-boolean)
+		- [isWithinHoverRange: boolean](#iswithinhoverrange-boolean)
+		- [isSelectedStartOrEnd: boolean](#isselectedstartorend-boolean)
+		- [isSelected: boolean](#isselected-boolean)
+- [Who's using](#whos-using)
+- [License](#license)
 
+<br/>
 
 ## `useDatepicker`
 
 The `useDatepicker` hook returns functions like `goToPreviousMonths`, `goToNextMonths`, etc., which
 allows us to control the datepicker.
+
+<br/>
 
 ### `useDatepickerProps`
 
@@ -140,6 +144,8 @@ First day of the week.
 #### `isDateBlocked: (date: Date) => boolean`
 
 If `isDateBlocked` returns `true`, then the date is blocked.
+
+<br/>
 
 ### `useDatepickerResult`
 
@@ -203,9 +209,14 @@ Updates `activeMonths` (next months) in accordance with the `numberOfMonths` pro
 
 Updates `activeMonths` (previous months) in accordance with the `numberOfMonths` prop.
 
+<br/>
+<br/>
+
 ## `useMonth`
 
 The `useMonth` returns all days of the month, weekday labels and month label.
+
+<br/>
 
 ### `useMonthProps`
 
@@ -233,6 +244,8 @@ Formats weekday label.
 
 Formats month label.
 
+<br/>
+
 ### `useMonthResult`
 
 #### `days: ({date: Date, dayLabel: string})[]`
@@ -247,7 +260,12 @@ Formats month label.
 
 Month label.
 
+<br/>
+<br/>
+
 ## `useDay`
+
+<br/>
 
 ### `useDayProps`
 
@@ -259,23 +277,25 @@ Day date
 
 `Ref` of a day button.
 
-#### [`focusedDate: Date | null`](#-focuseddate--date---null-)
+#### [`focusedDate: Date | null`](#focuseddate-date--null)
 
-#### [`isDateFocused: (date: Date) => boolean`](#-isdatefocused---date--date-----boolean-)
+#### [`isDateFocused: (date: Date) => boolean`](#isdatefocused-date-date--boolean)
 
-#### [`isDateSelected: (date: Date) => boolean`](#-isdateselected---date--date-----boolean-)
+#### [`isDateSelected: (date: Date) => boolean`](#isdateselected-date-date--boolean)
 
-#### [`isDateHovered: (date: Date) => boolean`](#-isdatehovered---date--date-----boolean-)
+#### [`isDateHovered: (date: Date) => boolean`](#isdatehovered-date-date--boolean)
 
-#### [`isDateBlocked: (date: Date) => boolean`](#-isdateblocked---date--date-----boolean--1)
+#### [`isDateBlocked: (date: Date) => boolean`](#isdateblocked-date-date--boolean-1)
 
-#### [`isFirstOrLastSelectedDate: (date: Date) => boolean`](#-isfirstorlastselecteddate---date--date-----boolean-)
+#### [`isFirstOrLastSelectedDate: (date: Date) => boolean`](#isfirstorlastselecteddate-date-date--boolean)
 
-#### [`onDateFocus: (date: Date) => void`](#-ondatefocus---date--date-----void-)
+#### [`onDateFocus: (date: Date) => void`](#ondatefocus-date-date--void)
 
-#### [`onDateSelect: (date: Date) => void`](#-ondateselect---date--date-----void-)
+#### [`onDateSelect: (date: Date) => void`](#ondateselect-date-date--void)
 
-#### [`onDateHover: (date: Date) => void`](#-ondatehover---date--date-----void-)
+#### [`onDateHover: (date: Date) => void`](#ondatehover-date-date--void)
+
+<br/>
 
 ### `useDayResult`
 
@@ -310,6 +330,8 @@ If `true`, then the date is the first or the last selected date.
 #### `isSelected: boolean`
 
 If `true`, then the date is selected.
+
+<br/>
 
 ## Who's using
 
