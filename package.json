@@ -36,6 +36,7 @@
     "lerna:publish": "lerna publish --from-package",
     "lerna:version-prerelease": "lerna version prerelease --github-release --conventional-commits",
     "lerna:version-patch": "lerna version patch --github-release --conventional-commits",
+    "lerna:version-minor": "lerna version minor --github-release --conventional-commits",
     "coveralls": "yarn run test:coverage && cat ./coverage/lcov.info | coveralls"
   },
   "author": "Miha Sedej",
