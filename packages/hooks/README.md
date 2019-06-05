@@ -90,14 +90,10 @@ import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
 - [Who's using](#whos-using)
 - [License](#license)
 
-<br/>
-
 ## `useDatepicker`
 
 The `useDatepicker` hook returns functions like `goToPreviousMonths`, `goToNextMonths`, etc., which
 allows us to control the datepicker.
-
-<br/>
 
 ### `useDatepickerProps`
 
@@ -144,8 +140,6 @@ First day of the week.
 #### `isDateBlocked: (date: Date) => boolean`
 
 If `isDateBlocked` returns `true`, then the date is blocked.
-
-<br/>
 
 ### `useDatepickerResult`
 
@@ -209,22 +203,17 @@ Updates `activeMonths` (next months) in accordance with the `numberOfMonths` pro
 
 Updates `activeMonths` (previous months) in accordance with the `numberOfMonths` prop.
 
-<br/>
-<br/>
-
 ## `useMonth`
 
 The `useMonth` returns all days of the month, weekday labels and month label.
 
-<br/>
-
 ### `useMonthProps`
 
-#### `Year`
+#### `year`
 
 Year
 
-#### `Month`
+#### `month`
 
 Month
 
@@ -244,8 +233,6 @@ Formats weekday label.
 
 Formats month label.
 
-<br/>
-
 ### `useMonthResult`
 
 #### `days: ({date: Date, dayLabel: string})[]`
@@ -260,12 +247,7 @@ Formats month label.
 
 Month label.
 
-<br/>
-<br/>
-
 ## `useDay`
-
-<br/>
 
 ### `useDayProps`
 
@@ -294,8 +276,6 @@ Day date
 #### [`onDateSelect: (date: Date) => void`](#ondateselect-date-date--void)
 
 #### [`onDateHover: (date: Date) => void`](#ondatehover-date-date--void)
-
-<br/>
 
 ### `useDayResult`
 
@@ -330,8 +310,6 @@ If `true`, then the date is the first or the last selected date.
 #### `isSelected: boolean`
 
 If `true`, then the date is selected.
-
-<br/>
 
 ## Who's using
 
