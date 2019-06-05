@@ -122,7 +122,7 @@ function App() {
     focusedInput: START_DATE,
   })
   
-  function handleDataChange(data: OnDatesChangeProps) {
+  function handleDatesChange(data: OnDatesChangeProps) {
     if (!data.focusedInput) {
       setState({...data, focusedInput: START_DATE})
     } else {
@@ -132,7 +132,7 @@ function App() {
   
   return (
     <Datepicker
-      onDatesChange={handleDataChange}
+      onDatesChange={handleDatesChange}
       startDate={state.startDate} // Date or null
       endDate={state.endDate} // Date or null
       focusedInput={state.focusedInput} // START_DATE, END_DATE or null

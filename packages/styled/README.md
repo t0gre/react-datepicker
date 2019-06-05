@@ -35,10 +35,10 @@ import {DateRangeInput, Datepicker} from '@datepicker-react/styled'
 The `DateRangeInput` is a fully controlled component that allows users to select a date range. You can control the selected
 dates using the `startDate`, `endDate`, and `onDatesChange` props as shown below. The `DateRangeInput` also manages internal
 state for partial dates entered by typing (although `onDatesChange` will not trigger until a date has been entered
-completely in that case). Similarly, you can control which input is focused as well as the calendar visibility (the calendar is
+completely in that case). Similarly, you can control which input is focused as well as calendar visibility (the calendar is
 only visible if `focusedInput` is defined) with the `focusedInput` and `onFocusChange` props as shown below.
 
-Here is a minimum *REQUIRED* setup you need to get the `DateRangeInput` working:
+Here is the minimum *REQUIRED* setup you need to get the `DateRangeInput` working:
 ```jsx
 import React, {useReducer} from 'react'
 import {DateRangeInput} from '@datepicker-react/styled'
@@ -75,7 +75,7 @@ function App() {
 }
 ```
 
-The following is a list of *OPTIONAL* props you may provide to the `DateRangeInput` to customize appearance and behavior to your heart's desire.
+The following is a list of other *OPTIONAL* props you may provide to the `DateRangeInput` to customize appearance and behavior to your heart's desire.
 
 ```ts
 displayFormat?: string | FormatFunction // Default: 'MM/DD/YYYY'
@@ -122,7 +122,7 @@ function App() {
     focusedInput: START_DATE,
   })
   
-  function handleDataChange(data: OnDatesChangeProps) {
+  function handleDatesChange(data: OnDatesChangeProps) {
     if (!data.focusedInput) {
       setState({...data, focusedInput: START_DATE})
     } else {
@@ -132,7 +132,7 @@ function App() {
   
   return (
     <Datepicker
-      onDatesChange={handleDataChange}
+      onDatesChange={handleDatesChange}
       startDate={state.startDate} // Date or null
       endDate={state.endDate} // Date or null
       focusedInput={state.focusedInput} // START_DATE, END_DATE or null

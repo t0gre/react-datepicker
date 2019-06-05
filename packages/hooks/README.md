@@ -21,6 +21,8 @@ yarn add @datepicker-react/hooks
 import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
 ```
 
+### [Example (codesandbox)](https://codesandbox.io/s/datepickerreacthooks-example-06dxk)
+
 ## Table of Contents
 
 - [`useDatepicker`](#-usedatepicker-)
