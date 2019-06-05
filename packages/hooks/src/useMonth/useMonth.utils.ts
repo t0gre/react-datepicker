@@ -8,15 +8,15 @@ import startOfMonth from 'date-fns/start_of_month'
 import startOfWeek from 'date-fns/start_of_week'
 
 type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
-export interface GetWeekDaysProps {
+export interface GetWeekdayLabelsProps {
   firstDayOfWeek?: FirstDayOfWeek
   weekdayLabelFormat?(date: Date): string
 }
 
-export function getWeekDays({
+export function getWeekdayLabels({
   firstDayOfWeek = 1,
   weekdayLabelFormat = (date: Date) => format(date, 'dd'),
-}: GetWeekDaysProps = {}) {
+}: GetWeekdayLabelsProps = {}) {
   const now = new Date()
   const arr = eachDay(
     addDays(startOfWeek(now), firstDayOfWeek),
@@ -36,7 +36,7 @@ export interface GetDaysProps {
   dayLabelFormat?(date: Date): string
 }
 
-export type CalendarDay = number | {day: string; date: Date}
+export type CalendarDay = number | {dayLabel: string; date: Date}
 export function getDays({
   year,
   month,
@@ -54,7 +54,7 @@ export function getDays({
   ).fill(0)
   const days = eachDay(monthStart, monthEnd).map(date => ({
     date,
-    day: dayLabelFormat(date),
+    dayLabel: dayLabelFormat(date),
   }))
 
   return [...prevMonthDays, ...days]

@@ -71,12 +71,12 @@ describe('useDatepicker', () => {
     )
     expect(result.current.isDateFocused(date)).toBe(false)
     act(() => {
-      result.current.onDayFocus(date)
+      result.current.onDateFocus(date)
     })
     expect(result.current.isDateFocused(date)).toBe(true)
 
     act(() => {
-      result.current.onDayFocus(new Date(2019, 5, 27, 0, 0, 0))
+      result.current.onDateFocus(new Date(2019, 5, 27, 0, 0, 0))
     })
     expect(result.current.isDateFocused(new Date(2019, 5, 27, 0, 0, 0))).toBe(true)
 
@@ -155,7 +155,7 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDaySelect(new Date(2019, 3, 1, 0, 0, 0))
+      result.current.onDateSelect(new Date(2019, 3, 1, 0, 0, 0))
     })
     expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 1, 0, 0, 0),
@@ -178,7 +178,7 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDaySelect(new Date(2019, 3, 2, 0, 0, 0))
+      result.current.onDateSelect(new Date(2019, 3, 2, 0, 0, 0))
     })
     expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 1, 0, 0, 0),
@@ -201,7 +201,7 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDaySelect(new Date(2019, 2, 27, 0, 0, 0))
+      result.current.onDateSelect(new Date(2019, 2, 27, 0, 0, 0))
     })
     expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 2, 27, 0, 0, 0),
@@ -224,7 +224,7 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDaySelect(new Date(2019, 3, 27, 0, 0, 0))
+      result.current.onDateSelect(new Date(2019, 3, 27, 0, 0, 0))
     })
     expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 27, 0, 0, 0),
@@ -334,7 +334,7 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDaySelect(new Date(2019, 3, 4, 0, 0, 0))
+      result.current.onDateSelect(new Date(2019, 3, 4, 0, 0, 0))
     })
     expect(onDatesChange).not.toBeCalled()
     clear()
@@ -506,6 +506,21 @@ describe('useDatepicker', () => {
       exactMinBookingDays: true,
       expected: true,
     },
+    {
+      startDate: null,
+      endDate: null,
+      minBookingDate: null,
+      maxBookingDate: null,
+      focusedInput: START_DATE,
+      minBookingDays: 3,
+      isDateBlocked(date: Date): boolean {
+        return isSameDay(date, new Date(2019, 3, 7, 0, 0, 0))
+      },
+      callbackDate: null,
+      expectedHoveredDate: null,
+      exactMinBookingDays: true,
+      expected: false,
+    },
   ])('should hover date', props => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
@@ -517,7 +532,7 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDayHover(props.callbackDate)
+      result.current.onDateHover(props.callbackDate)
     })
     expect(result.current.isDateHovered(props.expectedHoveredDate)).toBe(props.expected)
     clear()
@@ -539,12 +554,12 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDayHover(new Date(2019, 3, 4, 0, 0, 0))
+      result.current.onDateHover(new Date(2019, 3, 4, 0, 0, 0))
     })
     expect(result.current.isDateHovered(new Date(2019, 3, 4, 0, 0, 0))).toBe(true)
 
     act(() => {
-      result.current.onDayHover(new Date(2019, 2, 4, 0, 0, 0))
+      result.current.onDateHover(new Date(2019, 2, 4, 0, 0, 0))
     })
     expect(result.current.isDateHovered(new Date(2019, 2, 4, 0, 0, 0))).toBe(false)
 
@@ -567,7 +582,7 @@ describe('useDatepicker', () => {
     )
 
     act(() => {
-      result.current.onDaySelect(new Date(2019, 3, 1, 0, 0, 0))
+      result.current.onDateSelect(new Date(2019, 3, 1, 0, 0, 0))
     })
     expect(onDatesChange).toBeCalledWith({
       startDate: new Date(2019, 3, 1, 0, 0, 0),
@@ -611,7 +626,7 @@ describe('useDatepicker', () => {
       expectedEndDate: new Date(2019, 3, 10, 0, 0, 0),
     },
   ])(
-    'should execute onDaySelect callback with exact range selected (minBookingDays)',
+    'should execute onDateSelect callback with exact range selected (minBookingDays)',
     ({
       blockedDate,
       minBookingDate,
@@ -639,7 +654,7 @@ describe('useDatepicker', () => {
       )
 
       act(() => {
-        result.current.onDaySelect(selectedDate)
+        result.current.onDateSelect(selectedDate)
       })
       expect(onDatesChange).toBeCalledWith({
         startDate: expectedStartDate,
@@ -691,7 +706,7 @@ describe('useDatepicker', () => {
       )
 
       act(() => {
-        result.current.onDaySelect(selectedDate)
+        result.current.onDateSelect(selectedDate)
       })
       expect(onDatesChange).not.toBeCalled()
       clear()

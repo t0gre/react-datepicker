@@ -6,7 +6,13 @@ import {
   monthLabelFormatFn as monthLabelFormat,
   weekdayLabelFormatFn as weekdayLabelFormat,
 } from './useMonth'
-import {getDays, getWeekDays, GetWeekDaysProps, GetDaysProps, CalendarDay} from './useMonth.utils'
+import {
+  getDays,
+  getWeekdayLabels,
+  GetWeekdayLabelsProps,
+  GetDaysProps,
+  CalendarDay,
+} from './useMonth.utils'
 
 export {
   dayLabelFormat,
@@ -14,8 +20,8 @@ export {
   weekdayLabelFormat,
   useMonth,
   getDays,
-  getWeekDays,
-  GetWeekDaysProps,
+  getWeekdayLabels,
+  GetWeekdayLabelsProps,
   GetDaysProps,
   UseMonthResult,
   UseMonthProps,

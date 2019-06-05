@@ -9,21 +9,21 @@ const dayRef = {
 }
 
 test('should execute onClick callback', () => {
-  const onDaySelect = jest.fn()
+  const onDateSelect = jest.fn()
   const {result} = renderHook(() =>
     useDay({
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect,
+      onDateSelect,
       focusedDate: null,
       isDateSelected: jest.fn(),
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: jest.fn(),
       isDateHovered: jest.fn(),
       isDateBlocked: jest.fn(),
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 
@@ -31,25 +31,25 @@ test('should execute onClick callback', () => {
     result.current.onClick()
   })
 
-  expect(onDaySelect).toBeCalled()
+  expect(onDateSelect).toBeCalled()
 })
 
 test('should not execute onClick callback, because day is disabled', () => {
-  const onDaySelect = jest.fn()
+  const onDateSelect = jest.fn()
   const {result} = renderHook(() =>
     useDay({
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect,
+      onDateSelect,
       focusedDate: null,
       isDateSelected: jest.fn(),
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: jest.fn(),
       isDateHovered: jest.fn(),
       isDateBlocked: () => true,
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 
@@ -58,7 +58,7 @@ test('should not execute onClick callback, because day is disabled', () => {
   })
 
   expect(result.current.disabledDate).toBe(true)
-  expect(onDaySelect).not.toBeCalled()
+  expect(onDateSelect).not.toBeCalled()
 })
 
 test('should be active', () => {
@@ -67,19 +67,19 @@ test('should be active', () => {
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect: jest.fn(),
+      onDateSelect: jest.fn(),
       focusedDate: null,
       isDateSelected: () => true,
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: jest.fn(),
       isDateHovered: jest.fn(),
       isDateBlocked: jest.fn(),
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 
-  expect(result.current.isActive).toBe(true)
+  expect(result.current.isSelected).toBe(true)
 })
 
 test('should be active first or last day', () => {
@@ -88,19 +88,19 @@ test('should be active first or last day', () => {
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect: jest.fn(),
+      onDateSelect: jest.fn(),
       focusedDate: null,
       isDateSelected: jest.fn(),
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: () => true,
       isDateHovered: jest.fn(),
       isDateBlocked: jest.fn(),
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 
-  expect(result.current.isStartOrEnd).toBe(true)
+  expect(result.current.isSelectedStartOrEnd).toBe(true)
 })
 
 test('should be within range', () => {
@@ -109,15 +109,15 @@ test('should be within range', () => {
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect: jest.fn(),
+      onDateSelect: jest.fn(),
       focusedDate: null,
       isDateSelected: jest.fn(),
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: jest.fn(),
       isDateHovered: () => true,
       isDateBlocked: jest.fn(),
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 
@@ -130,15 +130,15 @@ test('tabIndex should be 0', () => {
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect: jest.fn(),
+      onDateSelect: jest.fn(),
       focusedDate: null,
       isDateSelected: jest.fn(),
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: jest.fn(),
       isDateHovered: jest.fn(),
       isDateBlocked: jest.fn(),
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 
@@ -151,15 +151,15 @@ test('should be unfocused', () => {
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect: jest.fn(),
+      onDateSelect: jest.fn(),
       focusedDate: date,
       isDateSelected: jest.fn(),
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: jest.fn(),
       isDateHovered: jest.fn(),
       isDateBlocked: jest.fn(),
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 
@@ -172,15 +172,15 @@ test('should be focused', () => {
       date,
       // @ts-ignore
       dayRef,
-      onDaySelect: jest.fn(),
+      onDateSelect: jest.fn(),
       focusedDate: date,
       isDateSelected: jest.fn(),
       isDateFocused: () => true,
       isFirstOrLastSelectedDate: jest.fn(),
       isDateHovered: jest.fn(),
       isDateBlocked: jest.fn(),
-      onDayFocus: jest.fn(),
-      onDayHover: jest.fn(),
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
     }),
   )
 

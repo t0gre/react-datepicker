@@ -109,9 +109,9 @@ interface StyledDayProps
     FontSizeProps,
     FontFamilyProps,
     FontWeightProps {
-  isActive: boolean
+  isSelected: boolean
   disabledDate: boolean
-  isStartOrEnd: boolean
+  isSelectedStartOrEnd: boolean
   isWithinHoverRange: boolean
   dayHeight: number | (number | null)[] | undefined
   dayWidth: number | (number | null)[] | undefined
@@ -135,23 +135,23 @@ const StyledDay = styled('button')<StyledDayProps>`
   padding: 0;
   outline: 0;
   
-  ${({disabledDate, isStartOrEnd}) =>
+  ${({disabledDate, isSelectedStartOrEnd}) =>
     disabledDate &&
-    !isStartOrEnd &&
+    !isSelectedStartOrEnd &&
     css`
       cursor: initial;
       opacity: 0.4;
     `}
   
-  ${({disabledDate, isActive, isStartOrEnd, isWithinHoverRange}) => {
-    if (!disabledDate && !isActive && !isStartOrEnd && !isWithinHoverRange) {
+  ${({disabledDate, isSelected, isSelectedStartOrEnd, isWithinHoverRange}) => {
+    if (!disabledDate && !isSelected && !isSelectedStartOrEnd && !isWithinHoverRange) {
       return css`
         &:hover {
           ${dayHoverBackground}
           ${dayHoverColor}
         }
       `
-    } else if (isActive && !isStartOrEnd) {
+    } else if (isSelected && !isSelectedStartOrEnd) {
       return css`
         &:hover {
           ${daySelectedHoverBackground}
@@ -172,8 +172,8 @@ const StyledDay = styled('button')<StyledDayProps>`
 `
 
 function getColor(
-  isActive: boolean,
-  isStartOrEnd: boolean,
+  isSelected: boolean,
+  isSelectedStartOrEnd: boolean,
   isWithinHoverRange: boolean,
   {
     selectedFirstOrLast,
@@ -187,9 +187,9 @@ function getColor(
     rangeHover: ResponsiveValue<ColorProperty>
   },
 ) {
-  if (isStartOrEnd) {
+  if (isSelectedStartOrEnd) {
     return selectedFirstOrLast
-  } else if (isActive) {
+  } else if (isSelected) {
     return selected
   } else if (isWithinHoverRange) {
     return rangeHover
@@ -211,9 +211,9 @@ function Day({day, date}: DayProps) {
     isDateHovered,
     isDateBlocked,
     isFirstOrLastSelectedDate,
-    onDaySelect,
-    onDayFocus,
-    onDayHover,
+    onDateSelect,
+    onDateFocus,
+    onDateHover,
     onDayRender,
   } = useContext(datepickerContext)
   const dayProps = useDay({
@@ -224,9 +224,9 @@ function Day({day, date}: DayProps) {
     isDateHovered,
     isDateBlocked,
     isFirstOrLastSelectedDate,
-    onDayFocus,
-    onDaySelect,
-    onDayHover,
+    onDateFocus,
+    onDateSelect,
+    onDateHover,
     dayRef,
   })
   const theme: DayTheme = useThemeProps({
@@ -254,7 +254,7 @@ function Day({day, date}: DayProps) {
   })
   const borderColor = useMemo(
     () =>
-      getColor(dayProps.isActive, dayProps.isStartOrEnd, dayProps.isWithinHoverRange, {
+      getColor(dayProps.isSelected, dayProps.isSelectedStartOrEnd, dayProps.isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastBorderColor,
         // @ts-ignore
@@ -264,11 +264,11 @@ function Day({day, date}: DayProps) {
         // @ts-ignore
         rangeHover: theme.dayHoverRangeColor,
       }),
-    [dayProps.isActive, dayProps.isStartOrEnd, theme, dayProps.isWithinHoverRange],
+    [dayProps.isSelected, dayProps.isSelectedStartOrEnd, theme, dayProps.isWithinHoverRange],
   )
   const background = useMemo(
     () =>
-      getColor(dayProps.isActive, dayProps.isStartOrEnd, dayProps.isWithinHoverRange, {
+      getColor(dayProps.isSelected, dayProps.isSelectedStartOrEnd, dayProps.isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastBackground,
         // @ts-ignore
@@ -278,11 +278,11 @@ function Day({day, date}: DayProps) {
         // @ts-ignore
         rangeHover: theme.dayHoverRangeBackground,
       }),
-    [dayProps.isActive, dayProps.isStartOrEnd, theme, dayProps.isWithinHoverRange],
+    [dayProps.isSelected, dayProps.isSelectedStartOrEnd, theme, dayProps.isWithinHoverRange],
   )
   const color = useMemo(
     () =>
-      getColor(dayProps.isActive, dayProps.isStartOrEnd, dayProps.isWithinHoverRange, {
+      getColor(dayProps.isSelected, dayProps.isSelectedStartOrEnd, dayProps.isWithinHoverRange, {
         // @ts-ignore
         selectedFirstOrLast: theme.daySelectedFirstOrLastColor,
         // @ts-ignore
@@ -292,7 +292,7 @@ function Day({day, date}: DayProps) {
         // @ts-ignore
         rangeHover: theme.dayHoverRangeColor,
       }),
-    [dayProps.isActive, dayProps.isStartOrEnd, theme, dayProps.isWithinHoverRange],
+    [dayProps.isSelected, dayProps.isSelectedStartOrEnd, theme, dayProps.isWithinHoverRange],
   )
 
   return (

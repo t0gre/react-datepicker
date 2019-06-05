@@ -1,18 +1,18 @@
 import {useMemo} from 'react'
 import format from 'date-fns/format'
-import {getDays, GetDaysProps, getWeekDays, GetWeekDaysProps} from './useMonth.utils'
+import {getDays, GetDaysProps, getWeekdayLabels, GetWeekdayLabelsProps} from './useMonth.utils'
 
 export const dayLabelFormatFn = (date: Date) => format(date, 'DD')
 export const weekdayLabelFormatFn = (date: Date) => format(date, 'dd')
 export const monthLabelFormatFn = (date: Date) => format(date, 'MMMM YYYY')
 
 export interface UseMonthResult {
-  weekDays: string[]
-  days: (number | {day: string; date: Date})[]
+  weekdayLabels: string[]
+  days: (number | {dayLabel: string; date: Date})[]
   monthLabel: string
 }
 
-export interface UseMonthProps extends GetWeekDaysProps, GetDaysProps {
+export interface UseMonthProps extends GetWeekdayLabelsProps, GetDaysProps {
   monthLabelFormat?(date: Date): string
 }
 
@@ -30,14 +30,14 @@ export function useMonth({
     firstDayOfWeek,
     dayLabelFormat,
   ])
-  const weekDays = useMemo(() => getWeekDays({firstDayOfWeek, weekdayLabelFormat}), [
+  const weekdayLabels = useMemo(() => getWeekdayLabels({firstDayOfWeek, weekdayLabelFormat}), [
     firstDayOfWeek,
     weekdayLabelFormat,
   ])
 
   return {
     days,
-    weekDays,
+    weekdayLabels,
     monthLabel: monthLabelFormat(new Date(year, month)),
   }
 }

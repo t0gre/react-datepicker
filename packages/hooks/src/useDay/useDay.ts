@@ -9,9 +9,9 @@ interface UseDayProps {
   isDateHovered(date: Date): boolean
   isDateBlocked(date: Date): boolean
   isFirstOrLastSelectedDate(date: Date): boolean
-  onDayFocus(date: Date): void
-  onDaySelect(date: Date): void
-  onDayHover(date: Date): void
+  onDateFocus(date: Date): void
+  onDateSelect(date: Date): void
+  onDateHover(date: Date): void
   dayRef: React.RefObject<HTMLButtonElement>
 }
 
@@ -23,13 +23,13 @@ function useDay({
   isFirstOrLastSelectedDate,
   isDateHovered,
   isDateBlocked,
-  onDaySelect,
-  onDayFocus,
-  onDayHover,
+  onDateSelect,
+  onDateFocus,
+  onDateHover,
   dayRef,
 }: UseDayProps) {
-  const onClick = useCallback(() => onDaySelect(date), [date, onDaySelect])
-  const onMouseEnter = useCallback(() => onDayHover(date), [date, onDayHover])
+  const onClick = useCallback(() => onDateSelect(date), [date, onDateSelect])
+  const onMouseEnter = useCallback(() => onDateHover(date), [date, onDateHover])
   useEffect(() => {
     if (dayRef && dayRef.current && isDateFocused(date)) {
       dayRef.current.focus()
@@ -39,21 +39,20 @@ function useDay({
   const disabled = isDateBlocked(date) && !isDateHovered(date)
 
   return {
-    role: 'button',
     tabIndex: focusedDate === null || isDateFocused(date) ? 0 : -1,
-    isActive: isDateSelected(date),
-    isStartOrEnd: isFirstOrLastSelectedDate(date),
+    isSelected: isDateSelected(date),
+    isSelectedStartOrEnd: isFirstOrLastSelectedDate(date),
     isWithinHoverRange: isDateHovered(date),
     disabledDate: disabled,
     onKeyDown: (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') {
-        onDayFocus(addDays(date, 1))
+        onDateFocus(addDays(date, 1))
       } else if (e.key === 'ArrowLeft') {
-        onDayFocus(addDays(date, -1))
+        onDateFocus(addDays(date, -1))
       } else if (e.key === 'ArrowUp') {
-        onDayFocus(addDays(date, -7))
+        onDateFocus(addDays(date, -7))
       } else if (e.key === 'ArrowDown') {
-        onDayFocus(addDays(date, 7))
+        onDateFocus(addDays(date, 7))
       }
     },
     onClick: disabled ? () => {} : onClick,

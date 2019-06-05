@@ -1,16 +1,32 @@
 import {renderHook} from 'react-hooks-testing-library'
 import {format} from 'date-fns'
-import {useMonth, getDays, getWeekDays} from '.'
+import {useMonth, getDays, getWeekdayLabels} from '.'
 
-describe('getWeekDays', () => {
+describe('getWeekdayLabels', () => {
   test('should return week days start with monday', () => {
-    expect(getWeekDays()).toEqual(['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'])
+    expect(getWeekdayLabels()).toEqual(['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'])
   })
   test('should return week days start with sunday', () => {
-    expect(getWeekDays({firstDayOfWeek: 0})).toEqual(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'])
+    expect(getWeekdayLabels({firstDayOfWeek: 0})).toEqual([
+      'Su',
+      'Mo',
+      'Tu',
+      'We',
+      'Th',
+      'Fr',
+      'Sa',
+    ])
   })
   test('should return week days start with saturday', () => {
-    expect(getWeekDays({firstDayOfWeek: 6})).toEqual(['Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr'])
+    expect(getWeekdayLabels({firstDayOfWeek: 6})).toEqual([
+      'Sa',
+      'Su',
+      'Mo',
+      'Tu',
+      'We',
+      'Th',
+      'Fr',
+    ])
   })
 })
 
@@ -20,9 +36,9 @@ describe('getDays', () => {
     expect(result.current.length).toBe(30)
     expect(typeof result.current[0]).toBe('object')
     // @ts-ignore
-    expect(result.current[0].day).toBe('01')
+    expect(result.current[0].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current[result.current.length - 1].day).toBe('30')
+    expect(result.current[result.current.length - 1].dayLabel).toBe('30')
   })
 
   test('should return days for april 2019 start with sunday', () => {
@@ -31,9 +47,9 @@ describe('getDays', () => {
     expect(typeof result.current[0]).toBe('number')
     expect(typeof result.current[1]).toBe('object')
     // @ts-ignore
-    expect(result.current[1].day).toBe('01')
+    expect(result.current[1].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current[result.current.length - 1].day).toBe('30')
+    expect(result.current[result.current.length - 1].dayLabel).toBe('30')
   })
 
   test('should return days for march 2019', () => {
@@ -43,9 +59,9 @@ describe('getDays', () => {
     expect(typeof result.current[3]).toBe('number')
     expect(typeof result.current[4]).toBe('object')
     // @ts-ignore
-    expect(result.current[4].day).toBe('01')
+    expect(result.current[4].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current[result.current.length - 1].day).toBe('31')
+    expect(result.current[result.current.length - 1].dayLabel).toBe('31')
   })
 
   test('should return days for march 2019 start with sunday', () => {
@@ -55,9 +71,9 @@ describe('getDays', () => {
     expect(typeof result.current[4]).toBe('number')
     expect(typeof result.current[5]).toBe('object')
     // @ts-ignore
-    expect(result.current[5].day).toBe('01')
+    expect(result.current[5].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current[result.current.length - 1].day).toBe('31')
+    expect(result.current[result.current.length - 1].dayLabel).toBe('31')
   })
 
   test('should return days for march 2019 start with saturday', () => {
@@ -67,9 +83,9 @@ describe('getDays', () => {
     expect(typeof result.current[5]).toBe('number')
     expect(typeof result.current[6]).toBe('object')
     // @ts-ignore
-    expect(result.current[6].day).toBe('01')
+    expect(result.current[6].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current[result.current.length - 1].day).toBe('31')
+    expect(result.current[result.current.length - 1].dayLabel).toBe('31')
   })
 })
 
@@ -81,14 +97,14 @@ describe('useMonth', () => {
     expect(result.current.days.length).toBe(30)
     expect(typeof result.current.days[0]).toBe('object')
     // @ts-ignore
-    expect(result.current.days[0].day).toBe('01')
+    expect(result.current.days[0].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current.days[result.current.days.length - 1].day).toBe('30')
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('30')
 
     // Week days
-    expect(result.current.weekDays.length).toBe(7)
-    expect(result.current.weekDays[0]).toBe('Mo')
-    expect(result.current.weekDays[6]).toBe('Su')
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Mo')
+    expect(result.current.weekdayLabels[6]).toBe('Su')
 
     // Month Label
     expect(result.current.monthLabel).toBe('April 2019')
@@ -102,14 +118,14 @@ describe('useMonth', () => {
     expect(typeof result.current.days[0]).toBe('number')
     expect(typeof result.current.days[1]).toBe('object')
     // @ts-ignore
-    expect(result.current.days[1].day).toBe('01')
+    expect(result.current.days[1].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current.days[result.current.days.length - 1].day).toBe('30')
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('30')
 
     // Week days
-    expect(result.current.weekDays.length).toBe(7)
-    expect(result.current.weekDays[0]).toBe('Su')
-    expect(result.current.weekDays[6]).toBe('Sa')
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Su')
+    expect(result.current.weekdayLabels[6]).toBe('Sa')
   })
 
   test('should return days for march 2019', () => {
@@ -121,14 +137,14 @@ describe('useMonth', () => {
     expect(typeof result.current.days[3]).toBe('number')
     expect(typeof result.current.days[4]).toBe('object')
     // @ts-ignore
-    expect(result.current.days[4].day).toBe('01')
+    expect(result.current.days[4].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current.days[result.current.days.length - 1].day).toBe('31')
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('31')
 
     // Week days
-    expect(result.current.weekDays.length).toBe(7)
-    expect(result.current.weekDays[0]).toBe('Mo')
-    expect(result.current.weekDays[6]).toBe('Su')
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Mo')
+    expect(result.current.weekdayLabels[6]).toBe('Su')
 
     // Month Label
     expect(result.current.monthLabel).toBe('March 2019')
@@ -143,14 +159,14 @@ describe('useMonth', () => {
     expect(typeof result.current.days[4]).toBe('number')
     expect(typeof result.current.days[5]).toBe('object')
     // @ts-ignore
-    expect(result.current.days[5].day).toBe('01')
+    expect(result.current.days[5].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current.days[result.current.days.length - 1].day).toBe('31')
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('31')
 
     // Week days
-    expect(result.current.weekDays.length).toBe(7)
-    expect(result.current.weekDays[0]).toBe('Su')
-    expect(result.current.weekDays[6]).toBe('Sa')
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Su')
+    expect(result.current.weekdayLabels[6]).toBe('Sa')
   })
 
   test('should return days for march 2019 start with saturday', () => {
@@ -162,14 +178,14 @@ describe('useMonth', () => {
     expect(typeof result.current.days[5]).toBe('number')
     expect(typeof result.current.days[6]).toBe('object')
     // @ts-ignore
-    expect(result.current.days[6].day).toBe('01')
+    expect(result.current.days[6].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current.days[result.current.days.length - 1].day).toBe('31')
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('31')
 
     // Week days
-    expect(result.current.weekDays.length).toBe(7)
-    expect(result.current.weekDays[0]).toBe('Sa')
-    expect(result.current.weekDays[6]).toBe('Fr')
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Sa')
+    expect(result.current.weekdayLabels[6]).toBe('Fr')
   })
 
   test('should return right formats', () => {
@@ -190,13 +206,13 @@ describe('useMonth', () => {
     expect(typeof result.current.days[5]).toBe('number')
     expect(typeof result.current.days[6]).toBe('object')
     // @ts-ignore
-    expect(result.current.days[6].day).toBe('01')
+    expect(result.current.days[6].dayLabel).toBe('01')
     // @ts-ignore
-    expect(result.current.days[result.current.days.length - 1].day).toBe('31')
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('31')
 
     // Week days
-    expect(result.current.weekDays.length).toBe(7)
-    expect(result.current.weekDays[0]).toBe('Sa')
-    expect(result.current.weekDays[6]).toBe('Fr')
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Sa')
+    expect(result.current.weekdayLabels[6]).toBe('Fr')
   })
 })

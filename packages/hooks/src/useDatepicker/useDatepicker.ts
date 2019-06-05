@@ -62,7 +62,7 @@ export function useDatepicker({
   )
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
   const [focusedDate, setFocusedDate] = useState<Date | null>(startDate)
-  const onDayFocus = useCallback(
+  const onDateFocus = useCallback(
     (date: Date) => {
       setFocusedDate(date)
 
@@ -133,7 +133,7 @@ export function useDatepicker({
         e.key === 'ArrowUp') &&
       !focusedDate
     ) {
-      onDayFocus(new Date())
+      onDateFocus(new Date())
       setActiveMonths(getInitialMonths(numberOfMonths, new Date()))
     }
   }
@@ -146,7 +146,7 @@ export function useDatepicker({
     })
   }
 
-  function onDaySelect(date: Date) {
+  function onDateSelect(date: Date) {
     if (
       (focusedInput === END_DATE || focusedInput === START_DATE) &&
       minBookingDays > 0 &&
@@ -226,49 +226,55 @@ export function useDatepicker({
     }
   }
 
-  function onDayHover(date: Date) {
-    const isNotBlocked = !isDateBlocked(date) || (startDate && isSameDay(date, startDate))
-    const isHoveredDateAfterOrEqualMinDate = minBookingDate
-      ? !isBefore(date, addDays(minBookingDate, -1))
-      : true
-    const isHoveredDateBeforeOrEqualMaxDate = maxBookingDate ? !isAfter(date, maxBookingDate) : true
-
-    // Exact minimal booking days
-    const potentialEndDate = addDays(date, minBookingDays - 1)
-    const isPotentialEndDateAfterOrEqualMinDate = minBookingDate
-      ? !isBefore(potentialEndDate, minBookingDate)
-      : true
-    const isPotentialEndDateBeforeOrEqualMaxDate = maxBookingDate
-      ? !isAfter(potentialEndDate, maxBookingDate)
-      : true
-    const isExactAndInRange =
-      exactMinBookingDays &&
-      minBookingDays > 1 &&
-      isHoveredDateAfterOrEqualMinDate &&
-      isHoveredDateBeforeOrEqualMaxDate &&
-      isPotentialEndDateAfterOrEqualMinDate &&
-      isPotentialEndDateBeforeOrEqualMaxDate
-
-    // Is date in range
-    const isInRange =
-      startDate &&
-      !endDate &&
-      !exactMinBookingDays &&
-      isHoveredDateAfterOrEqualMinDate &&
-      isHoveredDateBeforeOrEqualMaxDate
-
-    // Is start date hovered and in range
-    const isMinBookingDaysInRange =
-      minBookingDays > 1 && startDate
-        ? isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))
-        : true
-    const isStartDateHoveredAndInRange =
-      startDate && isSameDay(date, startDate) && isMinBookingDaysInRange
-
-    if (isNotBlocked && (isExactAndInRange || isInRange || isStartDateHoveredAndInRange)) {
-      setHoveredDate(date)
-    } else if (hoveredDate !== null) {
+  function onDateHover(date: Date | null) {
+    if (!date) {
       setHoveredDate(null)
+    } else if (date) {
+      const isNotBlocked = !isDateBlocked(date) || (startDate && isSameDay(date, startDate))
+      const isHoveredDateAfterOrEqualMinDate = minBookingDate
+        ? !isBefore(date, addDays(minBookingDate, -1))
+        : true
+      const isHoveredDateBeforeOrEqualMaxDate = maxBookingDate
+        ? !isAfter(date, maxBookingDate)
+        : true
+
+      // Exact minimal booking days
+      const potentialEndDate = addDays(date, minBookingDays - 1)
+      const isPotentialEndDateAfterOrEqualMinDate = minBookingDate
+        ? !isBefore(potentialEndDate, minBookingDate)
+        : true
+      const isPotentialEndDateBeforeOrEqualMaxDate = maxBookingDate
+        ? !isAfter(potentialEndDate, maxBookingDate)
+        : true
+      const isExactAndInRange =
+        exactMinBookingDays &&
+        minBookingDays > 1 &&
+        isHoveredDateAfterOrEqualMinDate &&
+        isHoveredDateBeforeOrEqualMaxDate &&
+        isPotentialEndDateAfterOrEqualMinDate &&
+        isPotentialEndDateBeforeOrEqualMaxDate
+
+      // Is date in range
+      const isInRange =
+        startDate &&
+        !endDate &&
+        !exactMinBookingDays &&
+        isHoveredDateAfterOrEqualMinDate &&
+        isHoveredDateBeforeOrEqualMaxDate
+
+      // Is start date hovered and in range
+      const isMinBookingDaysInRange =
+        minBookingDays > 1 && startDate
+          ? isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))
+          : true
+      const isStartDateHoveredAndInRange =
+        startDate && isSameDay(date, startDate) && isMinBookingDaysInRange
+
+      if (isNotBlocked && (isExactAndInRange || isInRange || isStartDateHoveredAndInRange)) {
+        setHoveredDate(date)
+      } else if (hoveredDate !== null) {
+        setHoveredDate(null)
+      }
     }
   }
 
@@ -292,10 +298,11 @@ export function useDatepicker({
     numberOfMonths,
     isDateFocused,
     focusedDate,
+    hoveredDate,
     onResetDates,
-    onDayHover,
-    onDaySelect,
-    onDayFocus,
+    onDateHover,
+    onDateSelect,
+    onDateFocus,
     goToPreviousMonths,
     goToNextMonths,
   }

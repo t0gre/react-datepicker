@@ -44,10 +44,11 @@ export declare function useDatepicker({
   numberOfMonths: number
   isDateFocused: (date: any) => boolean
   focusedDate: Date | null
+  hoveredDate: Date | null
   onResetDates: () => void
-  onDayHover: (date: Date) => void
-  onDaySelect: (date: Date) => void
-  onDayFocus: (date: Date) => void
+  onDateHover: (date: Date | null) => void
+  onDateSelect: (date: Date) => void
+  onDateFocus: (date: Date) => void
   goToPreviousMonths: () => void
   goToNextMonths: () => void
 }

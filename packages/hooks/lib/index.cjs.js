@@ -532,7 +532,7 @@ function startOfMonth(e) {
   return t.setDate(1), t.setHours(0, 0, 0, 0), t
 }
 var start_of_month = startOfMonth
-function getWeekDays(e) {
+function getWeekdayLabels(e) {
   var t = void 0 === e ? {} : e,
     a = t.firstDayOfWeek,
     r = void 0 === a ? 1 : a,
@@ -570,7 +570,7 @@ function getDays(e) {
     c = end_of_month(i),
     f = Array.from(Array(d >= n ? d - n : n).keys()).fill(0),
     D = each_day(u, c).map(function(e) {
-      return {date: e, day: s(e)}
+      return {date: e, dayLabel: s(e)}
     })
   return f.concat(D)
 }
@@ -601,9 +601,9 @@ function useMonth(e) {
       },
       [t, a, n, s],
     ),
-    weekDays: react.useMemo(
+    weekdayLabels: react.useMemo(
       function() {
-        return getWeekDays({firstDayOfWeek: n, weekdayLabelFormat: u})
+        return getWeekdayLabels({firstDayOfWeek: n, weekdayLabelFormat: u})
       },
       [n, u],
     ),
@@ -821,13 +821,13 @@ function useDatepicker(e) {
       },
       [t, a],
     ),
-    O = react.useCallback(
+    L = react.useCallback(
       function(e) {
         return isFirstOrLastSelectedDate(e, t, a)
       },
       [t, a],
     ),
-    L = react.useCallback(
+    O = react.useCallback(
       function(e) {
         return isDateBlocked({
           date: e,
@@ -841,13 +841,13 @@ function useDatepicker(e) {
       },
       [n, o, t, a, c, m],
     ),
-    F = react.useCallback(
+    b = react.useCallback(
       function(e) {
         return !!S && is_same_day(e, S)
       },
       [S],
     ),
-    b = react.useCallback(
+    F = react.useCallback(
       function(e) {
         return isDateHovered({
           date: e,
@@ -882,29 +882,34 @@ function useDatepicker(e) {
       firstDayOfWeek: l,
       activeMonths: h,
       isDateSelected: w,
-      isDateHovered: b,
-      isFirstOrLastSelectedDate: O,
-      isDateBlocked: L,
+      isDateHovered: F,
+      isFirstOrLastSelectedDate: L,
+      isDateBlocked: O,
       numberOfMonths: D,
-      isDateFocused: F,
+      isDateFocused: b,
       focusedDate: S,
+      hoveredDate: p,
       onResetDates: function() {
         s({startDate: null, endDate: null, focusedInput: START_DATE})
       },
-      onDayHover: function(e) {
-        var r = !L(e) || (t && is_same_day(e, t)),
-          s = !n || !is_before(e, add_days(n, -1)),
-          i = !o || !is_after(e, o),
-          d = add_days(e, c - 1),
-          f = !n || !is_before(d, n),
-          D = !o || !is_after(d, o),
-          _ = u && c > 1 && s && i && f && D,
-          l = t && !a && !u && s && i,
-          g = !(c > 1 && t) || is_within_range(e, t, add_days(t, c - 2)),
-          m = t && is_same_day(e, t) && g
-        r && (_ || l || m) ? k(e) : null !== p && k(null)
+      onDateHover: function(e) {
+        if (e) {
+          if (e) {
+            var r = !O(e) || (t && is_same_day(e, t)),
+              s = !n || !is_before(e, add_days(n, -1)),
+              i = !o || !is_after(e, o),
+              d = add_days(e, c - 1),
+              f = !n || !is_before(d, n),
+              D = !o || !is_after(d, o),
+              _ = u && c > 1 && s && i && f && D,
+              l = t && !a && !u && s && i,
+              g = !(c > 1 && t) || is_within_range(e, t, add_days(t, c - 2)),
+              m = t && is_same_day(e, t) && g
+            r && (_ || l || m) ? k(e) : null !== p && k(null)
+          }
+        } else k(null)
       },
-      onDaySelect: function(e) {
+      onDateSelect: function(e) {
         ;(r === END_DATE || r === START_DATE) &&
         c > 0 &&
         u &&
@@ -939,7 +944,7 @@ function useDatepicker(e) {
             s({startDate: t, endDate: e, focusedInput: null}),
           (!S || (S && !is_same_month(e, S))) && T(getInitialMonths(D, e))
       },
-      onDayFocus: Y,
+      onDateFocus: Y,
       goToPreviousMonths: function() {
         T(getNextActiveMonth(h, D, -1)), I(null)
       },
@@ -957,9 +962,9 @@ function useDay(e) {
     o = e.isFirstOrLastSelectedDate,
     s = e.isDateHovered,
     i = e.isDateBlocked,
-    u = e.onDaySelect,
-    d = e.onDayFocus,
-    c = e.onDayHover,
+    u = e.onDateSelect,
+    d = e.onDateFocus,
+    c = e.onDateHover,
     f = e.dayRef,
     D = react.useCallback(
       function() {
@@ -981,10 +986,9 @@ function useDay(e) {
   )
   var l = i(t) && !s(t)
   return {
-    role: 'button',
     tabIndex: null === a || n(t) ? 0 : -1,
-    isActive: r(t),
-    isStartOrEnd: o(t),
+    isSelected: r(t),
+    isSelectedStartOrEnd: o(t),
     isWithinHoverRange: s(t),
     disabledDate: l,
     onKeyDown: function(e) {
@@ -1008,7 +1012,7 @@ function useDay(e) {
   (exports.getDays = getDays),
   (exports.getInitialMonths = getInitialMonths),
   (exports.getInputValue = getInputValue),
-  (exports.getWeekDays = getWeekDays),
+  (exports.getWeekdayLabels = getWeekdayLabels),
   (exports.isDateBlocked = isDateBlocked),
   (exports.isDateSelected = isDateSelected),
   (exports.isFirstOrLastSelectedDate = isFirstOrLastSelectedDate),

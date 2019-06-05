@@ -34,7 +34,7 @@ const Month = ({
   monthLabelFormat,
   weekdayLabelFormat,
 }: MonthProps) => {
-  const {days, weekDays, monthLabel} = useMonth({
+  const {days, weekdayLabels, monthLabel} = useMonth({
     dayLabelFormat,
     monthLabelFormat,
     weekdayLabelFormat,
@@ -54,16 +54,16 @@ const Month = ({
         <MonthLabel label={monthLabel} />
       </Flex>
       <Grid daySizeGridTemplateColumns={theme.daySize}>
-        {weekDays.map((day: string) => (
-          <Flex key={day} justifyContent="center" m={theme.monthDayLabelMargin}>
-            <DayLabel label={day} />
+        {weekdayLabels.map((weekdayLabel: string) => (
+          <Flex key={weekdayLabel} justifyContent="center" m={theme.monthDayLabelMargin}>
+            <DayLabel label={weekdayLabel} />
           </Flex>
         ))}
       </Grid>
       <Grid daySizeGridTemplateColumns={theme.daySize}>
         {days.map((day: CalendarDay, index: number) => {
           if (typeof day === 'object') {
-            return <Day date={day.date} key={day.day} day={day.day} />
+            return <Day date={day.date} key={day.dayLabel} day={day.dayLabel} />
           }
           return <div key={index} />
         })}

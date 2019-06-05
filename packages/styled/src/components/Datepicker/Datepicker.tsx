@@ -146,15 +146,16 @@ function Datepicker({
     isFirstOrLastSelectedDate,
     isDateHovered,
     firstDayOfWeek,
-    onDaySelect,
+    onDateSelect,
     onResetDates,
     goToPreviousMonths,
     goToNextMonths,
     numberOfMonths,
-    onDayHover,
+    hoveredDate,
+    onDateHover,
     isDateFocused,
     focusedDate,
-    onDayFocus,
+    onDateFocus,
     isDateBlocked: isDateBlockedFn,
   } = useDatepicker({
     startDate,
@@ -232,10 +233,10 @@ function Datepicker({
         isDateSelected,
         isDateHovered,
         isFirstOrLastSelectedDate,
-        onDayFocus,
+        onDateFocus,
         focusedDate,
-        onDaySelect,
-        onDayHover,
+        onDateSelect,
+        onDateHover,
         onDayRender,
         isDateBlocked: isDateBlockedFn,
       }}
@@ -300,12 +301,18 @@ function Datepicker({
         <Box position="relative">
           <Box m={theme.datepickerMonthsWrapperMargin}>
             <MonthGrid
+              data-testid="MonthGrid"
               overflow={theme.datepickerMonthsGridOverflow}
               height={theme.datepickerMonthsGridHeight}
               gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
               gridGap={theme.datepickerMonthsGridGap}
               pr={rtl ? '1px' : '0'}
               ref={monthGridRef}
+              onMouseLeave={() => {
+                if (hoveredDate) {
+                  onDateHover(null)
+                }
+              }}
             >
               {activeMonths.map((month: MonthType) => (
                 <Month

@@ -3,9 +3,9 @@ import React from 'react'
 interface DatepickerContext {
   rtl: boolean
   focusedDate: Date | null
-  onDayFocus(date: Date): void
-  onDaySelect(date: Date): void
-  onDayHover(date: Date): void
+  onDateFocus(date: Date): void
+  onDateSelect(date: Date): void
+  onDateHover(date: Date): void
   isDateFocused(date: Date): boolean
   isDateSelected(date: Date): boolean
   isDateHovered(date: Date): boolean
@@ -22,9 +22,9 @@ export const datepickerContextDefaultValue = {
   isDateHovered: () => false,
   isDateBlocked: () => false,
   isFirstOrLastSelectedDate: () => false,
-  onDayFocus: () => {},
-  onDayHover: () => {},
-  onDaySelect: () => {},
+  onDateFocus: () => {},
+  onDateHover: () => {},
+  onDateSelect: () => {},
   onDayRender: undefined,
 }
 

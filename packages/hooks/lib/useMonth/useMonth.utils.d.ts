@@ -1,12 +1,12 @@
 declare type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
-export interface GetWeekDaysProps {
+export interface GetWeekdayLabelsProps {
   firstDayOfWeek?: FirstDayOfWeek
   weekdayLabelFormat?(date: Date): string
 }
-export declare function getWeekDays({
+export declare function getWeekdayLabels({
   firstDayOfWeek,
   weekdayLabelFormat,
-}?: GetWeekDaysProps): never[]
+}?: GetWeekdayLabelsProps): never[]
 export interface GetDaysProps {
   year: number
   month: number
@@ -16,7 +16,7 @@ export interface GetDaysProps {
 export declare type CalendarDay =
   | number
   | {
-      day: string
+      dayLabel: string
       date: Date
     }
 export declare function getDays({

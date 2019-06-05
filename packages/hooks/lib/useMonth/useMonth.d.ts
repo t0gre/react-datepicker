@@ -1,18 +1,18 @@
-import {GetDaysProps, GetWeekDaysProps} from './useMonth.utils'
+import {GetDaysProps, GetWeekdayLabelsProps} from './useMonth.utils'
 export declare const dayLabelFormatFn: (date: Date) => string
 export declare const weekdayLabelFormatFn: (date: Date) => string
 export declare const monthLabelFormatFn: (date: Date) => string
 export interface UseMonthResult {
-  weekDays: string[]
+  weekdayLabels: string[]
   days: (
     | number
     | {
-        day: string
+        dayLabel: string
         date: Date
       })[]
   monthLabel: string
 }
-export interface UseMonthProps extends GetWeekDaysProps, GetDaysProps {
+export interface UseMonthProps extends GetWeekdayLabelsProps, GetDaysProps {
   monthLabelFormat?(date: Date): string
 }
 export declare function useMonth({

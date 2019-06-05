@@ -12,16 +12,16 @@ test('should render disabled day', () => {
 })
 
 test('should render normal day', () => {
-  const onDaySelect = jest.fn()
+  const onDateSelect = jest.fn()
   const {container} = render(
     <Day date={new Date(2019, 2, 27, 0, 0, 0)} day="1" />,
     {},
-    {onDaySelect},
+    {onDateSelect},
   )
   expect(container).toMatchSnapshot()
   // @ts-ignore
   fireEvent.click(container.firstChild)
-  expect(onDaySelect).toBeCalled()
+  expect(onDateSelect).toBeCalled()
 })
 
 test('should render active day', () => {
@@ -42,14 +42,14 @@ test('should render first or last active day', () => {
   expect(container).toMatchSnapshot()
 })
 
-test('should execute onDayHover callback', () => {
-  const onDayHover = jest.fn()
+test('should execute onDateHover callback', () => {
+  const onDateHover = jest.fn()
   const {container} = render(
     <Day date={new Date(2019, 2, 27, 0, 0, 0)} day="1" />,
     {},
-    {onDayHover, isDateHovered: () => true},
+    {onDateHover, isDateHovered: () => true},
   )
   // @ts-ignore
   fireEvent.mouseEnter(container.firstChild)
-  expect(onDayHover).toBeCalled()
+  expect(onDateHover).toBeCalled()
 })

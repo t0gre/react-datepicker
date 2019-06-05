@@ -908,6 +908,7 @@ exports[`should custom render day 1`] = `
           >
             <div
               class="c22"
+              data-testid="MonthGrid"
               height="100%"
               overflow="auto"
             >
@@ -1045,7 +1046,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1060,7 +1060,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1075,7 +1074,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1090,7 +1088,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1105,7 +1102,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1120,7 +1116,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1135,7 +1130,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1150,7 +1144,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1165,7 +1158,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1180,7 +1172,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1195,7 +1186,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1210,7 +1200,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1225,7 +1214,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1240,7 +1228,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1255,7 +1242,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1270,7 +1256,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1285,7 +1270,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1300,7 +1284,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1315,7 +1298,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1330,7 +1312,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1345,7 +1326,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1360,7 +1340,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1375,7 +1354,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1390,7 +1368,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1405,7 +1382,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1420,7 +1396,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1435,7 +1410,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1450,7 +1424,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1465,7 +1438,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1480,7 +1452,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1495,7 +1466,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1634,7 +1604,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1649,7 +1618,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1664,7 +1632,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1679,7 +1646,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1694,7 +1660,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1709,7 +1674,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1724,7 +1688,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1739,7 +1702,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1754,7 +1716,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1769,7 +1730,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1784,7 +1744,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1799,7 +1758,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1814,7 +1772,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1829,7 +1786,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1844,7 +1800,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1859,7 +1814,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1874,7 +1828,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1889,7 +1842,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1904,7 +1856,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1919,7 +1870,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1934,7 +1884,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1949,7 +1898,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1964,7 +1912,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1979,7 +1926,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -1994,7 +1940,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -2009,7 +1954,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -2024,7 +1968,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -2039,7 +1982,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -2054,7 +1996,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -2069,7 +2010,6 @@ exports[`should custom render day 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div>
@@ -2908,6 +2848,7 @@ exports[`should have empty end date and focused end date 1`] = `
           >
             <div
               class="c22"
+              data-testid="MonthGrid"
               height="100%"
               overflow="auto"
             >
@@ -3046,7 +2987,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3065,7 +3005,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3084,7 +3023,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3103,7 +3041,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3122,7 +3059,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3141,7 +3077,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3160,7 +3095,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3179,7 +3113,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3198,7 +3131,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3217,7 +3149,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3236,7 +3167,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3255,7 +3185,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3274,7 +3203,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3293,7 +3221,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3312,7 +3239,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3331,7 +3257,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -3350,7 +3275,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3369,7 +3293,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3388,7 +3311,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3407,7 +3329,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3426,7 +3347,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3445,7 +3365,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3464,7 +3383,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3483,7 +3401,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3502,7 +3419,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3521,7 +3437,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3540,7 +3455,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3559,7 +3473,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3578,7 +3491,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3597,7 +3509,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3616,7 +3527,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3760,7 +3670,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3779,7 +3688,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3798,7 +3706,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3817,7 +3724,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3836,7 +3742,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3855,7 +3760,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3874,7 +3778,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3893,7 +3796,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3912,7 +3814,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3931,7 +3832,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3950,7 +3850,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3969,7 +3868,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -3988,7 +3886,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4007,7 +3904,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4026,7 +3922,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4045,7 +3940,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4064,7 +3958,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4083,7 +3976,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4102,7 +3994,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4121,7 +4012,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4140,7 +4030,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4159,7 +4048,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4178,7 +4066,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4197,7 +4084,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4216,7 +4102,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4235,7 +4120,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4254,7 +4138,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4273,7 +4156,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4292,7 +4174,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -4311,7 +4192,6 @@ exports[`should have empty end date and focused end date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -5134,6 +5014,7 @@ exports[`should have empty start and end date and focused start date - placement
           >
             <div
               class="c22"
+              data-testid="MonthGrid"
               height="100%"
               overflow="auto"
             >
@@ -5271,7 +5152,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5290,7 +5170,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5309,7 +5188,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5328,7 +5206,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5347,7 +5224,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5366,7 +5242,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5385,7 +5260,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5404,7 +5278,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5423,7 +5296,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5442,7 +5314,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5461,7 +5332,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5480,7 +5350,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5499,7 +5368,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5518,7 +5386,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5537,7 +5404,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5556,7 +5422,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5575,7 +5440,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5594,7 +5458,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5613,7 +5476,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5632,7 +5494,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5651,7 +5512,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5670,7 +5530,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5689,7 +5548,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5708,7 +5566,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5727,7 +5584,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5746,7 +5602,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5765,7 +5620,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5784,7 +5638,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5803,7 +5656,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5822,7 +5674,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5841,7 +5692,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -5984,7 +5834,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6003,7 +5852,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6022,7 +5870,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6041,7 +5888,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6060,7 +5906,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6079,7 +5924,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6098,7 +5942,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6117,7 +5960,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6136,7 +5978,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6155,7 +5996,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6174,7 +6014,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6193,7 +6032,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6212,7 +6050,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6231,7 +6068,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6250,7 +6086,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6269,7 +6104,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6288,7 +6122,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6307,7 +6140,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6326,7 +6158,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6345,7 +6176,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6364,7 +6194,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6383,7 +6212,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6402,7 +6230,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6421,7 +6248,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6440,7 +6266,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6459,7 +6284,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6478,7 +6302,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6497,7 +6320,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6516,7 +6338,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -6535,7 +6356,6 @@ exports[`should have empty start and end date and focused start date - placement
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7358,6 +7178,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
           >
             <div
               class="c22"
+              data-testid="MonthGrid"
               height="100%"
               overflow="auto"
             >
@@ -7495,7 +7316,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7514,7 +7334,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7533,7 +7352,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7552,7 +7370,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7571,7 +7388,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7590,7 +7406,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7609,7 +7424,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7628,7 +7442,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7647,7 +7460,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7666,7 +7478,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7685,7 +7496,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7704,7 +7514,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7723,7 +7532,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7742,7 +7550,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7761,7 +7568,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7780,7 +7586,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7799,7 +7604,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7818,7 +7622,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7837,7 +7640,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7856,7 +7658,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7875,7 +7676,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7894,7 +7694,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7913,7 +7712,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7932,7 +7730,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7951,7 +7748,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7970,7 +7766,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -7989,7 +7784,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8008,7 +7802,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8027,7 +7820,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8046,7 +7838,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8065,7 +7856,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8208,7 +7998,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8227,7 +8016,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8246,7 +8034,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8265,7 +8052,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8284,7 +8070,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8303,7 +8088,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8322,7 +8106,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8341,7 +8124,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8360,7 +8142,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8379,7 +8160,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8398,7 +8178,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8417,7 +8196,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8436,7 +8214,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8455,7 +8232,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8474,7 +8250,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8493,7 +8268,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8512,7 +8286,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8531,7 +8304,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8550,7 +8322,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8569,7 +8340,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8588,7 +8358,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8607,7 +8376,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8626,7 +8394,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8645,7 +8412,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8664,7 +8430,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8683,7 +8448,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8702,7 +8466,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8721,7 +8484,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8740,7 +8502,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -8759,7 +8520,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -9548,6 +9308,7 @@ exports[`should not render calendar icons 1`] = `
           >
             <div
               class="c21"
+              data-testid="MonthGrid"
               height="100%"
               overflow="auto"
             >
@@ -9686,7 +9447,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9705,7 +9465,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9724,7 +9483,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9743,7 +9501,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9762,7 +9519,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9781,7 +9537,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9800,7 +9555,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9819,7 +9573,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9838,7 +9591,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9857,7 +9609,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9876,7 +9627,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9895,7 +9645,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9914,7 +9663,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9933,7 +9681,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9952,7 +9699,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -9971,7 +9717,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -9990,7 +9735,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10009,7 +9753,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10028,7 +9771,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10047,7 +9789,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10066,7 +9807,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10085,7 +9825,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10104,7 +9843,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10123,7 +9861,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10142,7 +9879,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10161,7 +9897,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10180,7 +9915,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10199,7 +9933,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10218,7 +9951,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10237,7 +9969,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10256,7 +9987,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10400,7 +10130,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10419,7 +10148,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10438,7 +10166,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10457,7 +10184,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10476,7 +10202,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10495,7 +10220,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10514,7 +10238,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10533,7 +10256,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10552,7 +10274,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10571,7 +10292,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10590,7 +10310,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10609,7 +10328,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10628,7 +10346,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10647,7 +10364,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10666,7 +10382,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10685,7 +10400,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10704,7 +10418,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10723,7 +10436,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10742,7 +10454,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10761,7 +10472,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10780,7 +10490,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10799,7 +10508,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10818,7 +10526,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10837,7 +10544,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10856,7 +10562,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10875,7 +10580,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10894,7 +10598,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10913,7 +10616,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10932,7 +10634,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -10951,7 +10652,6 @@ exports[`should not render calendar icons 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -11805,6 +11505,7 @@ exports[`should render rtl variant 1`] = `
           >
             <div
               class="c22"
+              data-testid="MonthGrid"
               height="100%"
               overflow="auto"
             >
@@ -11942,7 +11643,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -11961,7 +11661,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -11980,7 +11679,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -11999,7 +11697,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12018,7 +11715,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12037,7 +11733,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12056,7 +11751,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12075,7 +11769,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12094,7 +11787,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12113,7 +11805,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12132,7 +11823,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12151,7 +11841,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12170,7 +11859,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12189,7 +11877,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12208,7 +11895,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12227,7 +11913,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -12246,7 +11931,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12265,7 +11949,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12284,7 +11967,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12303,7 +11985,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12322,7 +12003,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12341,7 +12021,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12360,7 +12039,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12379,7 +12057,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12398,7 +12075,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12417,7 +12093,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12436,7 +12111,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12455,7 +12129,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12474,7 +12147,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12493,7 +12165,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12512,7 +12183,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12655,7 +12325,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12674,7 +12343,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12693,7 +12361,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12712,7 +12379,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12731,7 +12397,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12750,7 +12415,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12769,7 +12433,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12788,7 +12451,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12807,7 +12469,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12826,7 +12487,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12845,7 +12505,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12864,7 +12523,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12883,7 +12541,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12902,7 +12559,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12921,7 +12577,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12940,7 +12595,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12959,7 +12613,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12978,7 +12631,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -12997,7 +12649,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13016,7 +12667,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13035,7 +12685,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13054,7 +12703,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13073,7 +12721,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13092,7 +12739,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13111,7 +12757,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13130,7 +12775,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13149,7 +12793,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13168,7 +12811,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13187,7 +12829,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -13206,7 +12847,6 @@ exports[`should render rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14065,6 +13705,7 @@ exports[`should render vertical variant 1`] = `
           >
             <div
               class="c22"
+              data-testid="MonthGrid"
               height="50vh"
               overflow="auto"
             >
@@ -14202,7 +13843,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14221,7 +13861,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14240,7 +13879,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14259,7 +13897,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14278,7 +13915,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14297,7 +13933,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14316,7 +13951,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14335,7 +13969,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14354,7 +13987,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14373,7 +14005,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14392,7 +14023,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14411,7 +14041,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14430,7 +14059,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14449,7 +14077,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14468,7 +14095,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14487,7 +14113,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -14506,7 +14131,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14525,7 +14149,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14544,7 +14167,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14563,7 +14185,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14582,7 +14203,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14601,7 +14221,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14620,7 +14239,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14639,7 +14257,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14658,7 +14275,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14677,7 +14293,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14696,7 +14311,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14715,7 +14329,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14734,7 +14347,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14753,7 +14365,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14772,7 +14383,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14915,7 +14525,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14934,7 +14543,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14953,7 +14561,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14972,7 +14579,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -14991,7 +14597,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15010,7 +14615,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15029,7 +14633,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15048,7 +14651,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15067,7 +14669,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15086,7 +14687,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15105,7 +14705,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15124,7 +14723,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15143,7 +14741,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15162,7 +14759,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15181,7 +14777,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15200,7 +14795,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15219,7 +14813,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15238,7 +14831,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15257,7 +14849,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15276,7 +14867,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15295,7 +14885,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15314,7 +14903,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15333,7 +14921,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15352,7 +14939,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15371,7 +14957,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15390,7 +14975,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15409,7 +14993,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15428,7 +15011,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15447,7 +15029,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -15466,7 +15047,6 @@ exports[`should render vertical variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16336,6 +15916,7 @@ exports[`should render vertical, rtl variant 1`] = `
           >
             <div
               class="c22"
+              data-testid="MonthGrid"
               height="50vh"
               overflow="auto"
             >
@@ -16473,7 +16054,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16492,7 +16072,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16511,7 +16090,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16530,7 +16108,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16549,7 +16126,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16568,7 +16144,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16587,7 +16162,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16606,7 +16180,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16625,7 +16198,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16644,7 +16216,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16663,7 +16234,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16682,7 +16252,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16701,7 +16270,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16720,7 +16288,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16739,7 +16306,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16758,7 +16324,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -16777,7 +16342,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16796,7 +16360,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16815,7 +16378,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16834,7 +16396,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16853,7 +16414,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16872,7 +16432,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16891,7 +16450,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16910,7 +16468,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16929,7 +16486,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16948,7 +16504,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16967,7 +16522,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -16986,7 +16540,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17005,7 +16558,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17024,7 +16576,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17043,7 +16594,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17186,7 +16736,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17205,7 +16754,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17224,7 +16772,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17243,7 +16790,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17262,7 +16808,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17281,7 +16826,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17300,7 +16844,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17319,7 +16862,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17338,7 +16880,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17357,7 +16898,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17376,7 +16916,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17395,7 +16934,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17414,7 +16952,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17433,7 +16970,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17452,7 +16988,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17471,7 +17006,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17490,7 +17024,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17509,7 +17042,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17528,7 +17060,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17547,7 +17078,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17566,7 +17096,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17585,7 +17114,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17604,7 +17132,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17623,7 +17150,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17642,7 +17168,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17661,7 +17186,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17680,7 +17204,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17699,7 +17222,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17718,7 +17240,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -17737,7 +17258,6 @@ exports[`should render vertical, rtl variant 1`] = `
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18319,6 +17839,7 @@ exports[`should render without reset dates, close and selected dates component 1
           >
             <div
               class="c12"
+              data-testid="MonthGrid"
               height="50vh"
               overflow="auto"
             >
@@ -18456,7 +17977,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18475,7 +17995,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18494,7 +18013,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18513,7 +18031,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18532,7 +18049,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18551,7 +18067,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18570,7 +18085,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18589,7 +18103,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18608,7 +18121,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18627,7 +18139,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18646,7 +18157,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18665,7 +18175,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18684,7 +18193,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18703,7 +18211,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18722,7 +18229,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18741,7 +18247,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -18760,7 +18265,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18779,7 +18283,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18798,7 +18301,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18817,7 +18319,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18836,7 +18337,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18855,7 +18355,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18874,7 +18373,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18893,7 +18391,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18912,7 +18409,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18931,7 +18427,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18950,7 +18445,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18969,7 +18463,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -18988,7 +18481,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19007,7 +18499,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19026,7 +18517,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19169,7 +18659,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19188,7 +18677,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19207,7 +18695,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19226,7 +18713,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19245,7 +18731,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19264,7 +18749,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19283,7 +18767,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19302,7 +18785,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19321,7 +18803,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19340,7 +18821,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19359,7 +18839,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19378,7 +18857,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19397,7 +18875,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19416,7 +18893,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19435,7 +18911,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19454,7 +18929,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19473,7 +18947,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19492,7 +18965,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19511,7 +18983,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19530,7 +19001,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19549,7 +19019,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19568,7 +19037,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19587,7 +19055,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19606,7 +19073,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19625,7 +19091,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19644,7 +19109,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19663,7 +19127,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19682,7 +19145,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19701,7 +19163,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -19720,7 +19181,6 @@ exports[`should render without reset dates, close and selected dates component 1
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
                     font-weight="500"
-                    role="button"
                     tabindex="-1"
                   >
                     <div

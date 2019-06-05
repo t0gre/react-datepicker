@@ -117,6 +117,30 @@ test('should select exact range', () => {
   })
 })
 
+test('should hover exact range and move the mouse out of the MonthGrid', () => {
+  const {container, getAllByText, getAllByTestId, getByTestId} = render(
+    <Datepicker
+      exactMinBookingDays
+      minBookingDays={7}
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDatesChange={jest.fn()}
+    />,
+  )
+  expect(container).toMatchSnapshot()
+  expect(getAllByText('Select').length).toBe(2)
+
+  // Hover the March 16
+  const hoveredDay = getAllByTestId('Day')[15]
+  // @ts-ignore
+  expect(hoveredDay).toHaveTextContent('16')
+  fireEvent.mouseEnter(hoveredDay)
+  expect(container).toMatchSnapshot()
+  fireEvent.mouseLeave(getByTestId('MonthGrid'))
+  expect(container).toMatchSnapshot()
+})
+
 test('should render vertical datepicker', () => {
   const onDatesChange = jest.fn()
   const {container} = render(

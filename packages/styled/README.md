@@ -35,10 +35,10 @@ import {DateRangeInput, Datepicker} from '@datepicker-react/styled'
 The `DateRangeInput` is a fully controlled component that allows users to select a date range. You can control the selected
 dates using the `startDate`, `endDate`, and `onDatesChange` props as shown below. The `DateRangeInput` also manages internal
 state for partial dates entered by typing (although `onDatesChange` will not trigger until a date has been entered
-completely in that case). Similarly, you can control which input is focused as well as calendar visibility (the calendar is
+completely in that case). Similarly, you can control which input is focused as well as the calendar visibility (the calendar is
 only visible if `focusedInput` is defined) with the `focusedInput` and `onFocusChange` props as shown below.
 
-Here is the minimum *REQUIRED* setup you need to get the `DateRangeInput` working:
+Here is a minimum *REQUIRED* setup you need to get the `DateRangeInput` working:
 ```jsx
 import React, {useReducer} from 'react'
 import {DateRangeInput} from '@datepicker-react/styled'
@@ -75,7 +75,7 @@ function App() {
 }
 ```
 
-The following is a list of other *OPTIONAL* props you may provide to the `DateRangeInput` to customize appearance and behavior to your heart's desire.
+The following is a list of *OPTIONAL* props you may provide to the `DateRangeInput` to customize appearance and behavior to your heart's desire.
 
 ```ts
 displayFormat?: string | FormatFunction // Default: 'MM/DD/YYYY'
@@ -97,8 +97,8 @@ exactMinBookingDays?: boolean // Default: false
 firstDayOfWeek?: FirstDayOfWeek // Default: 1
 initialVisibleMonth?(numberOfMonths: number): MonthType[]
 isDateBlocked?(date: Date): boolean
-dayFormat?(date: Date): string
-weekDayFormat?(date: Date): string
+dayLabelFormat?(date: Date): string
+weekdayLabelFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
 onDayRender?(date: Date): React.ReactNode
 ```
@@ -160,8 +160,8 @@ exactMinBookingDays?: boolean // Default: false
 firstDayOfWeek?: FirstDayOfWeek // Default: 0
 initialVisibleMonth?(numberOfMonths: number): MonthType[]
 isDateBlocked?(date: Date): boolean
-dayFormat?(date: Date): string
-weekDayFormat?(date: Date): string
+dayLabelFormat?(date: Date): string
+weekdayLabelFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
 onDayRender?(date: Date): React.ReactNode
 ```
@@ -184,156 +184,7 @@ onDayRender?(date: Date): React.ReactNode
 </ThemeProvider>
 ```
 
-#### Theme props:
-```ts
-fontFamily?: ResponsiveValue<FontFamilyProperty>
-daySize?: number | (number | null)[] | undefined
-
-
-closeColor?: ResponsiveValue<ColorProperty>
-closeHoverColor?: ResponsiveValue<ColorProperty>
-closeMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-closeFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-closeFontWeight?: ResponsiveValue<FontWeightProperty>
-
-selectDateLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-selectDateLabelColor?: ResponsiveValue<ColorProperty>
-selectDateLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-selectDateDateColor?: ResponsiveValue<ColorProperty>
-selectDateDateFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-selectDateDateFontWeight?: ResponsiveValue<FontWeightProperty>
-selectDateDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-selectDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-
-resetDatesIconColor?: string
-resetDatesIconHeight?: string
-resetDatesIconWidth?: string
-resetDatesTextColor?: ResponsiveValue<ColorProperty>
-resetDatesTextMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-resetDatesTextFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-resetDatesTextLineHeight?: ResponsiveValue<LineHeightProperty<TLengthStyledSystem>>
-
-navButtonHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
-navButtonWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
-navButtonBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-navButtonBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-navButtonPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-navButtonIconHeight?: string
-navButtonIconWidth?: string
-navButtonIconColor?: string
-
-monthLabelLineHeight?: ResponsiveValue<LineHeightProperty<TLengthStyledSystem>>
-monthLabelFontWeight?: ResponsiveValue<FontWeightProperty>
-monthLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-monthLabelColor?: ResponsiveValue<ColorProperty>
-
-dayLabelFontWeight?: ResponsiveValue<FontWeightProperty>
-dayLabelFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-dayLabelColor?: ResponsiveValue<ColorProperty>
-
-dayFontWeight?: ResponsiveValue<FontWeightProperty>
-dayFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-dayColor?: ResponsiveValue<ColorProperty>
-dayHoverColor?: ResponsiveValue<ColorProperty>
-dayHoverRangeColor?: ResponsiveValue<ColorProperty>
-daySelectedColor?: ResponsiveValue<ColorProperty>
-daySelectedHoverColor?: ResponsiveValue<ColorProperty>
-daySelectedFirstOrLastColor?: ResponsiveValue<ColorProperty>
-dayBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-dayHoverBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-dayHoverRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-daySelectedBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-daySelectedHoverBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-daySelectedFirstOrLastBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-dayBorderColor?: ColorProperty
-dayHoverRangeBorderColor?: ColorProperty
-daySelectedBorderColor?: ColorProperty
-daySelectedFirstOrLastBorderColor?: ColorProperty
-dayAccessibilityBorderColor?: ColorProperty
-
-monthLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-monthDayLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-
-inputLabelDisplay?: ResponsiveValue<DisplayProperty>
-inputLabelPosition?: ResponsiveValue<PositionProperty>
-inputLabelBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-inputLabelBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
-inputLabelBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-inputLabelMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-inputFontWeight?: ResponsiveValue<FontWeightProperty>
-inputPlaceholderFontWeight?: ResponsiveValue<FontWeightProperty>
-inputFontSize?: ResponsiveValue<FontSizeProperty<TLengthStyledSystem>>
-inputColor?: ResponsiveValue<ColorProperty>
-inputPlaceholderColor?: ResponsiveValue<ColorProperty>
-inputBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-inputMinHeight?: ResponsiveValue<MinHeightProperty<TLengthStyledSystem>>
-inputWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
-inputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-inputBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-inputActiveBoxShadow?: ResponsiveValue<BoxShadowProperty>
-inputCalendarWrapperPosition?: ResponsiveValue<PositionProperty>
-inputCalendarWrapperHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
-inputCalendarWrapperWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
-inputCalendarWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
-inputCalendarWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
-inputCalendarWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
-inputCalendarIconWidth?: string
-inputCalendarIconHeight?: string
-inputCalendarIconColor?: string
-
-datepickerBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-datepickerBoxShadow?: ResponsiveValue<BoxShadowProperty>
-datepickerPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-datepickerBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
-datepickerPosition?: ResponsiveValue<PositionProperty>
-datepickerWidth?: ResponsiveValue<WidthProperty<TLengthStyledSystem>>
-datepickerCloseWrapperPosition?: ResponsiveValue<PositionProperty>
-datepickerCloseWrapperDisplay?: ResponsiveValue<DisplayProperty>
-datepickerCloseWrapperJustifyContent?: ResponsiveValue<JustifyContentProperty>
-datepickerCloseWrapperMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-datepickerCloseWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
-datepickerCloseWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
-datepickerCloseWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
-datepickerCloseWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
-datepickerCloseWrapperZIndex?: ResponsiveValue<ZIndexProperty>
-datepickerSelectDateGridTemplateColumns?: ResponsiveValue<
-  GridTemplateColumnsProperty<TLengthStyledSystem>
->
-datepickerSelectDateArrowIconWidth?: string
-datepickerSelectDateArrowIconHeight?: string
-datepickerSelectDateArrowIconColor?: string
-datepickerMonthsWrapperMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-datepickerResetDatesWrapperMargin?: ResponsiveValue<MarginProperty<TLengthStyledSystem>>
-datepickerMonthsGridGap?: ResponsiveValue<GridGapProperty<TLengthStyledSystem>>
-datepickerPreviousMonthButtonPosition?: ResponsiveValue<PositionProperty>
-datepickerPreviousMonthButtonRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
-datepickerPreviousMonthButtonTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
-datepickerPreviousMonthButtonLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
-datepickerPreviousMonthButtonBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
-datepickerNextMonthButtonPosition?: ResponsiveValue<PositionProperty>
-datepickerNextMonthButtonRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
-datepickerNextMonthButtonTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
-datepickerNextMonthButtonLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
-datepickerNextMonthButtonBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
-datepickerMonthsGridHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
-datepickerMonthsGridOverflow?: ResponsiveValue<OverflowProperty>
-
-dateRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
-dateRangeGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
-dateRangeBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
-dateRangeBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
-dateRangeArrowIconWidth?: string
-dateRangeArrowIconHeight?: string
-dateRangeArrowIconColor?: ResponsiveValue<ColorProperty>
-dateRangeArrowIconOpacity?: ResponsiveValue<GlobalsNumber>
-dateRangeDatepickerWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
-dateRangeDatepickerWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
-dateRangeDatepickerWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
-dateRangeDatepickerWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
-dateRangeDatepickerWrapperPosition?: ResponsiveValue<PositionProperty>
-dateRangeStartDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-dateRangeEndDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
-```
+[See all theme props](../../docs/THEME_PROPS.md)
 
 ## How to build your own datepicker?
 
