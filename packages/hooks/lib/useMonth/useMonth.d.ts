@@ -18,7 +18,7 @@ export interface UseMonthProps extends GetWeekDaysProps, GetDaysProps {
 export declare function useMonth({
   year,
   month,
-  weekStartsOn,
+  firstDayOfWeek,
   dayLabelFormat,
   weekdayLabelFormat,
   monthLabelFormat,

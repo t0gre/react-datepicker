@@ -40,7 +40,7 @@ const Month = ({
     weekdayLabelFormat,
     year,
     month,
-    weekStartsOn: firstDayOfWeek,
+    firstDayOfWeek,
   })
   const theme: MonthTheme = useThemeProps({
     daySize: globalStyles.daySize,

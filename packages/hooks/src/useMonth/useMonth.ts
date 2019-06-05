@@ -19,19 +19,19 @@ export interface UseMonthProps extends GetWeekDaysProps, GetDaysProps {
 export function useMonth({
   year,
   month,
-  weekStartsOn = 1,
+  firstDayOfWeek = 1,
   dayLabelFormat = dayLabelFormatFn,
   weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
 }: UseMonthProps): UseMonthResult {
-  const days = useMemo(() => getDays({year, month, weekStartsOn, dayLabelFormat}), [
+  const days = useMemo(() => getDays({year, month, firstDayOfWeek, dayLabelFormat}), [
     year,
     month,
-    weekStartsOn,
+    firstDayOfWeek,
     dayLabelFormat,
   ])
-  const weekDays = useMemo(() => getWeekDays({weekStartsOn, weekdayLabelFormat}), [
-    weekStartsOn,
+  const weekDays = useMemo(() => getWeekDays({firstDayOfWeek, weekdayLabelFormat}), [
+    firstDayOfWeek,
     weekdayLabelFormat,
   ])
 

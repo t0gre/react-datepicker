@@ -33,9 +33,9 @@ var React = require('react'),
   w = /^(\d{2}):?(\d{2}([.,]\d*)?)$/,
   p = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
   T = /([Z+-].*)$/,
-  S = /^(Z)$/,
-  F = /^([+-])(\d{2})$/,
-  Y = /^([+-])(\d{2}):?(\d{2})$/
+  F = /^(Z)$/,
+  Y = /^([+-])(\d{2})$/,
+  S = /^([+-])(\d{2}):?(\d{2})$/
 function x(e, t, n) {
   ;(t = t || 0), (n = n || 0)
   var r = new Date(0)
@@ -124,11 +124,11 @@ var b = function(e, t) {
       )
         (r = C.timezone),
           (B =
-            ((_ = S.exec(r))
+            ((_ = F.exec(r))
               ? 0
-              : (_ = F.exec(r))
-              ? ((b = 60 * parseInt(_[2], 10)), '+' === _[1] ? -b : b)
               : (_ = Y.exec(r))
+              ? ((b = 60 * parseInt(_[2], 10)), '+' === _[1] ? -b : b)
+              : (_ = S.exec(r))
               ? ((b = 60 * parseInt(_[2], 10) + parseInt(_[3], 10)), '+' === _[1] ? -b : b)
               : 0) * i)
       else {
@@ -162,40 +162,40 @@ var b = function(e, t) {
       o = r.getTime() - r.getTimezoneOffset() * I
     return Math.round((a - o) / O)
   },
-  L = function(e) {
+  W = function(e) {
     var t = b(e)
     return A(t, B(t)) + 1
   },
-  $ = function(e, t) {
+  L = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
       r = b(e),
       a = r.getDay(),
       o = (a < n ? 7 : 0) + a - n
     return r.setDate(r.getDate() - o), r.setHours(0, 0, 0, 0), r
   },
-  W = function(e) {
-    return $(e, {weekStartsOn: 1})
+  $ = function(e) {
+    return L(e, {weekStartsOn: 1})
   },
   E = function(e) {
     var t = b(e),
       n = t.getFullYear(),
       r = new Date(0)
     r.setFullYear(n + 1, 0, 4), r.setHours(0, 0, 0, 0)
-    var a = W(r),
+    var a = $(r),
       o = new Date(0)
     o.setFullYear(n, 0, 4), o.setHours(0, 0, 0, 0)
-    var i = W(o)
+    var i = $(o)
     return t.getTime() >= a.getTime() ? n + 1 : t.getTime() >= i.getTime() ? n : n - 1
   },
   G = function(e) {
     var t = E(e),
       n = new Date(0)
-    return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), W(n)
+    return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), $(n)
   },
   C = 6048e5,
   N = function(e) {
     var t = b(e),
-      n = W(t).getTime() - G(t).getTime()
+      n = $(t).getTime() - G(t).getTime()
     return Math.round(n / C) + 1
   },
   R = function(e) {
@@ -364,10 +364,10 @@ var b = function(e, t) {
       return Q(e.getDate(), 2)
     },
     DDD: function(e) {
-      return L(e)
+      return W(e)
     },
     DDDD: function(e) {
-      return Q(L(e), 3)
+      return Q(W(e), 3)
     },
     d: function(e) {
       return e.getDay()
@@ -518,7 +518,7 @@ var j = function(e, t, n) {
   }
 function ne(e) {
   var t = void 0 === e ? {} : e,
-    n = t.weekStartsOn,
+    n = t.firstDayOfWeek,
     r = void 0 === n ? 1 : n,
     a = t.weekdayLabelFormat,
     o =
@@ -528,14 +528,14 @@ function ne(e) {
           }
         : a,
     i = new Date()
-  return q(K($(i), r), K(_(i), r)).reduce(function(e, t) {
+  return q(K(L(i), r), K(_(i), r)).reduce(function(e, t) {
     return e.push(o(t)), e
   }, [])
 }
 function re(e) {
   var t = e.year,
     n = e.month,
-    r = e.weekStartsOn,
+    r = e.firstDayOfWeek,
     a = void 0 === r ? 1 : r,
     o = e.dayLabelFormat,
     i =
@@ -566,7 +566,7 @@ var ae = function(e) {
 function ie(e) {
   var t = e.year,
     n = e.month,
-    r = e.weekStartsOn,
+    r = e.firstDayOfWeek,
     a = void 0 === r ? 1 : r,
     o = e.dayLabelFormat,
     i = void 0 === o ? ae : o,
@@ -577,13 +577,13 @@ function ie(e) {
   return {
     days: React.useMemo(
       function() {
-        return re({year: t, month: n, weekStartsOn: a, dayLabelFormat: i})
+        return re({year: t, month: n, firstDayOfWeek: a, dayLabelFormat: i})
       },
       [t, n, a, i],
     ),
     weekDays: React.useMemo(
       function() {
-        return ne({weekStartsOn: a, weekdayLabelFormat: c})
+        return ne({firstDayOfWeek: a, weekdayLabelFormat: c})
       },
       [a, c],
     ),
@@ -685,16 +685,16 @@ function Te(e, t) {
     a
   )
 }
-function Se(e, t, n) {
+function Fe(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
     return (r = he(r, n)), n > 0 ? e.concat([we(r)]) : [we(r)].concat(e)
   }, [])
 }
-function Fe(e, t, n) {
+function Ye(e, t, n) {
   return e && 'string' == typeof t ? j(e, t) : e && 'function' == typeof t ? t(e) : n
 }
-function Ye(e) {
+function Se(e) {
   var t = e.startDate,
     n = e.endDate,
     r = e.isDateBlocked,
@@ -755,13 +755,13 @@ function Be(e) {
     x = React.useState(t),
     S = x[0],
     C = x[1],
-    w = React.useCallback(
+    R = React.useCallback(
       function(e) {
         C(e), (!S || (S && !de(e, S))) && b(Te(u, e))
       },
       [C, b, u, S],
     ),
-    R = React.useCallback(
+    w = React.useCallback(
       function(e) {
         return ye(e, t, n)
       },
@@ -832,7 +832,7 @@ function Be(e) {
       'ArrowDown' !== e.key &&
       'ArrowUp' !== e.key) ||
       S ||
-      (w(new Date()), b(Te(u, new Date())))
+      (R(new Date()), b(Te(u, new Date())))
   }
   return (
     React.useEffect(function() {
@@ -846,7 +846,7 @@ function Be(e) {
     {
       firstDayOfWeek: f,
       activeMonths: _,
-      isDateSelected: R,
+      isDateSelected: w,
       isDateHovered: B,
       isFirstOrLastSelectedDate: O,
       isDateBlocked: I,
@@ -873,7 +873,7 @@ function Be(e) {
         ;(r === be || r === xe) &&
         d > 0 &&
         c &&
-        Ye({
+        Se({
           minBookingDays: d,
           exactMinBookingDays: c,
           minBookingDate: a,
@@ -885,26 +885,26 @@ function Be(e) {
           ? i({startDate: e, endDate: K(e, d - 1), focusedInput: null})
           : ((r === be && t && se(e, t)) || (r === xe && n && ce(e, n))) &&
             !c &&
-            Ye({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+            Se({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
           ? i({endDate: null, startDate: e, focusedInput: be})
-          : r === xe && !c && Ye({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
+          : r === xe && !c && Se({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
           ? i({endDate: n, startDate: e, focusedInput: be})
-          : r === xe && !c && Ye({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
+          : r === xe && !c && Se({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
           ? i({endDate: null, startDate: e, focusedInput: be})
           : r === be &&
             t &&
             !se(e, t) &&
             !c &&
-            Ye({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
+            Se({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
             i({startDate: t, endDate: e, focusedInput: null}),
           (!S || (S && !de(e, S))) && b(Te(u, e))
       },
-      onDayFocus: w,
+      onDayFocus: R,
       goToPreviousMonths: function() {
-        b(Se(_, u, -1)), C(null)
+        b(Fe(_, u, -1)), C(null)
       },
       goToNextMonths: function() {
-        b(Se(_, u, 1)), C(null)
+        b(Fe(_, u, 1)), C(null)
       },
     }
   )
@@ -2529,7 +2529,7 @@ var templateObject_1$7,
         weekdayLabelFormat: e.weekdayLabelFormat,
         year: t,
         month: n,
-        weekStartsOn: r,
+        firstDayOfWeek: r,
       }),
       o = a.days,
       i = a.weekDays,
@@ -2982,9 +2982,9 @@ function Datepicker(e) {
           }
         : x,
     C = e.minBookingDays,
-    w = void 0 === C ? 1 : C,
-    R = e.onClose,
-    O = void 0 === R ? function() {} : R,
+    R = void 0 === C ? 1 : C,
+    w = e.onClose,
+    O = void 0 === w ? function() {} : w,
     I = e.numberOfMonths,
     T = e.firstDayOfWeek,
     B = e.displayFormat,
@@ -2998,7 +2998,7 @@ function Datepicker(e) {
       onDatesChange: i,
       minBookingDate: r,
       maxBookingDate: a,
-      minBookingDays: w,
+      minBookingDays: R,
       isDateBlocked: S,
       exactMinBookingDays: k,
       numberOfMonths: I,
@@ -3118,7 +3118,7 @@ function Datepicker(e) {
             {gridTemplateColumns: J.datepickerSelectDateGridTemplateColumns},
             React__default.createElement(SelectDate, {
               title: j.datepickerStartDateLabel,
-              date: Fe(t, F, j.datepickerStartDatePlaceholder),
+              date: Ye(t, F, j.datepickerStartDatePlaceholder),
               isActive: o === xe,
               vertical: u,
             }),
@@ -3133,7 +3133,7 @@ function Datepicker(e) {
             ),
             React__default.createElement(SelectDate, {
               title: j.datepickerEndDateLabel,
-              date: Fe(n, F, j.datepickerEndDatePlaceholder),
+              date: Ye(n, F, j.datepickerEndDatePlaceholder),
               isActive: o === be,
               vertical: u,
             }),
@@ -3317,14 +3317,14 @@ function DateRangeInput(e) {
     x = e.rtl,
     S = void 0 !== x && x,
     C = e.isDateBlocked,
-    w =
+    R =
       void 0 === C
         ? function() {
             return !1
           }
         : C,
-    R = e.minBookingDays,
-    O = void 0 === R ? 1 : R,
+    w = e.minBookingDays,
+    O = void 0 === w ? 1 : w,
     I = e.onClose,
     T = void 0 === I ? function() {} : I,
     B = e.showStartDateCalendarIcon,
@@ -3383,7 +3383,7 @@ function DateRangeInput(e) {
           id: 'startDate',
           ariaLabel: H.startDateAriaLabel,
           placeholder: H.startDatePlaceholder,
-          value: Fe(t, P, ''),
+          value: Ye(t, P, ''),
           onClick: function() {
             return i(xe)
           },
@@ -3408,7 +3408,7 @@ function DateRangeInput(e) {
           id: 'endDate',
           ariaLabel: H.endDateAriaLabel,
           placeholder: H.endDatePlaceholder,
-          value: Fe(n, P, ''),
+          value: Ye(n, P, ''),
           onClick: function() {
             return i(t ? be : xe)
           },
@@ -3444,7 +3444,7 @@ function DateRangeInput(e) {
             displayFormat: P,
             onDatesChange: s,
             minBookingDays: O,
-            isDateBlocked: w,
+            isDateBlocked: R,
             exactMinBookingDays: d,
             showResetDates: v,
             vertical: k,

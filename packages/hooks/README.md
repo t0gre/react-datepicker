@@ -213,9 +213,9 @@ Year
 
 Month
 
-#### `weekStartsOn: number | undefined (Default: 1)`
+#### `firstDayOfWeek: number | undefined (Default: 1)`
 
-With which day the week begins
+First day of the week.
 
 #### `dayLabelFormat: (date: Date) => string | undefined (Default: (date: Date) => format(date, 'MMMM YYYY'))`
 

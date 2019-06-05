@@ -7,20 +7,20 @@ import getDay from 'date-fns/get_day'
 import startOfMonth from 'date-fns/start_of_month'
 import startOfWeek from 'date-fns/start_of_week'
 
-type WeekStartsOn = 0 | 1 | 2 | 3 | 4 | 5 | 6
+type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export interface GetWeekDaysProps {
-  weekStartsOn?: WeekStartsOn
+  firstDayOfWeek?: FirstDayOfWeek
   weekdayLabelFormat?(date: Date): string
 }
 
 export function getWeekDays({
-  weekStartsOn = 1,
+  firstDayOfWeek = 1,
   weekdayLabelFormat = (date: Date) => format(date, 'dd'),
 }: GetWeekDaysProps = {}) {
   const now = new Date()
   const arr = eachDay(
-    addDays(startOfWeek(now), weekStartsOn),
-    addDays(endOfWeek(now), weekStartsOn),
+    addDays(startOfWeek(now), firstDayOfWeek),
+    addDays(endOfWeek(now), firstDayOfWeek),
   )
   return arr.reduce((array, date) => {
     // @ts-ignore
@@ -32,7 +32,7 @@ export function getWeekDays({
 export interface GetDaysProps {
   year: number
   month: number
-  weekStartsOn?: WeekStartsOn
+  firstDayOfWeek?: FirstDayOfWeek
   dayLabelFormat?(date: Date): string
 }
 
@@ -40,7 +40,7 @@ export type CalendarDay = number | {day: string; date: Date}
 export function getDays({
   year,
   month,
-  weekStartsOn = 1,
+  firstDayOfWeek = 1,
   dayLabelFormat = (date: Date) => format(date, 'DD'),
 }: GetDaysProps): CalendarDay[] {
   const date = new Date(year, month)
@@ -50,7 +50,7 @@ export function getDays({
   const monthEnd = endOfMonth(date)
 
   const prevMonthDays = Array.from(
-    Array(monthStartDay >= weekStartsOn ? monthStartDay - weekStartsOn : weekStartsOn).keys(),
+    Array(monthStartDay >= firstDayOfWeek ? monthStartDay - firstDayOfWeek : firstDayOfWeek).keys(),
   ).fill(0)
   const days = eachDay(monthStart, monthEnd).map(date => ({
     date,

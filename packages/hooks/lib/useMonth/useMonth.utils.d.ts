@@ -1,13 +1,16 @@
-declare type WeekStartsOn = 0 | 1 | 2 | 3 | 4 | 5 | 6
+declare type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export interface GetWeekDaysProps {
-  weekStartsOn?: WeekStartsOn
+  firstDayOfWeek?: FirstDayOfWeek
   weekdayLabelFormat?(date: Date): string
 }
-export declare function getWeekDays({weekStartsOn, weekdayLabelFormat}?: GetWeekDaysProps): never[]
+export declare function getWeekDays({
+  firstDayOfWeek,
+  weekdayLabelFormat,
+}?: GetWeekDaysProps): never[]
 export interface GetDaysProps {
   year: number
   month: number
-  weekStartsOn?: WeekStartsOn
+  firstDayOfWeek?: FirstDayOfWeek
   dayLabelFormat?(date: Date): string
 }
 export declare type CalendarDay =
@@ -19,7 +22,7 @@ export declare type CalendarDay =
 export declare function getDays({
   year,
   month,
-  weekStartsOn,
+  firstDayOfWeek,
   dayLabelFormat,
 }: GetDaysProps): CalendarDay[]
 export {}

@@ -7,10 +7,10 @@ describe('getWeekDays', () => {
     expect(getWeekDays()).toEqual(['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'])
   })
   test('should return week days start with sunday', () => {
-    expect(getWeekDays({weekStartsOn: 0})).toEqual(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'])
+    expect(getWeekDays({firstDayOfWeek: 0})).toEqual(['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'])
   })
   test('should return week days start with saturday', () => {
-    expect(getWeekDays({weekStartsOn: 6})).toEqual(['Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr'])
+    expect(getWeekDays({firstDayOfWeek: 6})).toEqual(['Sa', 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr'])
   })
 })
 
@@ -26,7 +26,7 @@ describe('getDays', () => {
   })
 
   test('should return days for april 2019 start with sunday', () => {
-    const {result} = renderHook(() => getDays({year: 2019, month: 3, weekStartsOn: 0}))
+    const {result} = renderHook(() => getDays({year: 2019, month: 3, firstDayOfWeek: 0}))
     expect(result.current.length).toBe(31)
     expect(typeof result.current[0]).toBe('number')
     expect(typeof result.current[1]).toBe('object')
@@ -49,7 +49,7 @@ describe('getDays', () => {
   })
 
   test('should return days for march 2019 start with sunday', () => {
-    const {result} = renderHook(() => getDays({year: 2019, month: 2, weekStartsOn: 0}))
+    const {result} = renderHook(() => getDays({year: 2019, month: 2, firstDayOfWeek: 0}))
     expect(result.current.length).toBe(36)
     expect(typeof result.current[0]).toBe('number')
     expect(typeof result.current[4]).toBe('number')
@@ -61,7 +61,7 @@ describe('getDays', () => {
   })
 
   test('should return days for march 2019 start with saturday', () => {
-    const {result} = renderHook(() => getDays({year: 2019, month: 2, weekStartsOn: 6}))
+    const {result} = renderHook(() => getDays({year: 2019, month: 2, firstDayOfWeek: 6}))
     expect(result.current.length).toBe(37)
     expect(typeof result.current[0]).toBe('number')
     expect(typeof result.current[5]).toBe('number')
@@ -95,7 +95,7 @@ describe('useMonth', () => {
   })
 
   test('should return days for april 2019 start with sunday', () => {
-    const {result} = renderHook(() => useMonth({year: 2019, month: 3, weekStartsOn: 0}))
+    const {result} = renderHook(() => useMonth({year: 2019, month: 3, firstDayOfWeek: 0}))
 
     // Days
     expect(result.current.days.length).toBe(31)
@@ -135,7 +135,7 @@ describe('useMonth', () => {
   })
 
   test('should return days for march 2019 start with sunday', () => {
-    const {result} = renderHook(() => useMonth({year: 2019, month: 2, weekStartsOn: 0}))
+    const {result} = renderHook(() => useMonth({year: 2019, month: 2, firstDayOfWeek: 0}))
 
     // Days
     expect(result.current.days.length).toBe(36)
@@ -154,7 +154,7 @@ describe('useMonth', () => {
   })
 
   test('should return days for march 2019 start with saturday', () => {
-    const {result} = renderHook(() => useMonth({year: 2019, month: 2, weekStartsOn: 6}))
+    const {result} = renderHook(() => useMonth({year: 2019, month: 2, firstDayOfWeek: 6}))
 
     // Days
     expect(result.current.days.length).toBe(37)
@@ -177,7 +177,7 @@ describe('useMonth', () => {
       useMonth({
         year: 2019,
         month: 2,
-        weekStartsOn: 6,
+        firstDayOfWeek: 6,
         dayLabelFormat: (date: Date) => format(date, 'DD'),
         weekdayLabelFormat: (date: Date) => format(date, 'dd'),
         monthLabelFormat: (date: Date) => format(date, 'MMMM YYYY'),
