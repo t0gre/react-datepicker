@@ -5,19 +5,7 @@ exports[`Sunday should be first day of the week 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  line-height: 1.57;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.57;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.57;
   color: #343132;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
   line-height: 1.57;
 }
 
@@ -25,16 +13,7 @@ exports[`Sunday should be first day of the week 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   font-weight: 500;
-  font-family: Montserrat,sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  font-family: Montserrat,sans-serif;
-  font-size: 11px;
-  font-weight: 500;
   color: #929598;
-  font-family: Montserrat,sans-serif;
-  font-size: 11px;
-  font-weight: 500;
 }
 
 .c1 {
@@ -43,22 +22,6 @@ exports[`Sunday should be first day of the week 1`] = `
   display: -ms-flexbox;
   display: flex;
   margin: 0 0 28px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -75,22 +38,6 @@ exports[`Sunday should be first day of the week 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c7 {
@@ -98,10 +45,6 @@ exports[`Sunday should be first day of the week 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -110,36 +53,6 @@ exports[`Sunday should be first day of the week 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
   height: 100%;
   width: 100%;
 }
@@ -155,12 +68,6 @@ exports[`Sunday should be first day of the week 1`] = `
   box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
-  font-family: Montserrat,sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  font-family: Montserrat,sans-serif;
-  font-weight: 500;
-  font-size: 14px;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -826,19 +733,7 @@ exports[`should match snapshot 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  line-height: 1.57;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.57;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.57;
   color: #343132;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
   line-height: 1.57;
 }
 
@@ -846,16 +741,7 @@ exports[`should match snapshot 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   font-weight: 500;
-  font-family: Montserrat,sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  font-family: Montserrat,sans-serif;
-  font-size: 11px;
-  font-weight: 500;
   color: #929598;
-  font-family: Montserrat,sans-serif;
-  font-size: 11px;
-  font-weight: 500;
 }
 
 .c1 {
@@ -864,22 +750,6 @@ exports[`should match snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   margin: 0 0 28px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -896,22 +766,6 @@ exports[`should match snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
 .c7 {
@@ -919,10 +773,6 @@ exports[`should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -931,36 +781,6 @@ exports[`should match snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
   height: 100%;
   width: 100%;
 }
@@ -976,12 +796,6 @@ exports[`should match snapshot 1`] = `
   box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
-  font-family: Montserrat,sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  font-family: Montserrat,sans-serif;
-  font-weight: 500;
-  font-size: 14px;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
