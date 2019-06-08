@@ -6,6 +6,8 @@
 
 > An easily internationalizable, accessible, mobile-friendly datepicker library for the web, build with styled-components.
 
+![example](../../docs/datepicker.gif)
+
 ## Live Playground
 
 For examples of the datepicker in action, go to https://react-datepicker.netlify.com/.
