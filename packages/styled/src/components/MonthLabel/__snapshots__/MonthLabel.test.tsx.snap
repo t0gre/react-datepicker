@@ -5,19 +5,7 @@ exports[`should match snapshot 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  line-height: 1.57;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.57;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.57;
   color: #343132;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  font-weight: 600;
   line-height: 1.57;
 }
 
