@@ -7,6 +7,8 @@ var React = require('react'),
   React__default = _interopDefault(React),
   styled = require('styled-components'),
   styled__default = _interopDefault(styled),
+  ReactDOM = require('react-dom'),
+  ReactDOM__default = _interopDefault(ReactDOM),
   a = function(e) {
     var t = new Date(e.getTime()),
       n = t.getTimezoneOffset()
@@ -38,10 +40,10 @@ var React = require('react'),
   Y = /^([+-])(\d{2}):?(\d{2})$/
 function b(e, t, n) {
   ;(t = t || 0), (n = n || 0)
-  var r = new Date(0)
-  r.setUTCFullYear(e, 0, 4)
-  var a = 7 * t + n + 1 - (r.getUTCDay() || 7)
-  return r.setUTCDate(r.getUTCDate() + a), r
+  var a = new Date(0)
+  a.setUTCFullYear(e, 0, 4)
+  var r = 7 * t + n + 1 - (a.getUTCDay() || 7)
+  return a.setUTCDate(a.getUTCDate() + r), a
 }
 var x = function(e, t) {
     if (o(e)) return new Date(e.getTime())
@@ -54,76 +56,76 @@ var x = function(e, t) {
       C = (function(e) {
         var t,
           n = {},
-          r = e.split(c)
-        if ((f.test(r[0]) ? ((n.date = null), (t = r[0])) : ((n.date = r[0]), (t = r[1])), t)) {
-          var a = T.exec(t)
-          a ? ((n.time = t.replace(a[1], '')), (n.timezone = a[1])) : (n.time = t)
+          a = e.split(c)
+        if ((f.test(a[0]) ? ((n.date = null), (t = a[0])) : ((n.date = a[0]), (t = a[1])), t)) {
+          var r = T.exec(t)
+          r ? ((n.time = t.replace(r[1], '')), (n.timezone = r[1])) : (n.time = t)
         }
         return n
       })(e),
       R = (function(e, t) {
         var n,
-          r = d[t],
-          a = g[t]
-        if ((n = l.exec(e) || a.exec(e))) {
+          a = d[t],
+          r = g[t]
+        if ((n = l.exec(e) || r.exec(e))) {
           var o = n[1]
           return {year: parseInt(o, 10), restDateString: e.slice(o.length)}
         }
-        if ((n = D.exec(e) || r.exec(e))) {
+        if ((n = D.exec(e) || a.exec(e))) {
           var i = n[1]
           return {year: 100 * parseInt(i, 10), restDateString: e.slice(i.length)}
         }
         return {year: null}
       })(C.date, n),
-      O = R.year,
-      I = (function(e, t) {
+      E = R.year,
+      O = (function(e, t) {
         if (null === t) return null
-        var n, r, a
-        if (0 === e.length) return (r = new Date(0)).setUTCFullYear(t), r
+        var n, a, r
+        if (0 === e.length) return (a = new Date(0)).setUTCFullYear(t), a
         if ((n = v.exec(e)))
-          return (r = new Date(0)), (a = parseInt(n[1], 10) - 1), r.setUTCFullYear(t, a), r
+          return (a = new Date(0)), (r = parseInt(n[1], 10) - 1), a.setUTCFullYear(t, r), a
         if ((n = m.exec(e))) {
-          r = new Date(0)
+          a = new Date(0)
           var o = parseInt(n[1], 10)
-          return r.setUTCFullYear(t, 0, o), r
+          return a.setUTCFullYear(t, 0, o), a
         }
         if ((n = h.exec(e))) {
-          ;(r = new Date(0)), (a = parseInt(n[1], 10) - 1)
+          ;(a = new Date(0)), (r = parseInt(n[1], 10) - 1)
           var i = parseInt(n[2], 10)
-          return r.setUTCFullYear(t, a, i), r
+          return a.setUTCFullYear(t, r, i), a
         }
         return (n = y.exec(e))
           ? b(t, parseInt(n[1], 10) - 1)
           : (n = M.exec(e))
           ? b(t, parseInt(n[1], 10) - 1, parseInt(n[2], 10) - 1)
           : null
-      })(R.restDateString, O)
-    if (I) {
-      var B,
-        j = I.getTime(),
-        W = 0
+      })(R.restDateString, E)
+    if (O) {
+      var I,
+        j = O.getTime(),
+        B = 0
       if (
         (C.time &&
-          (W = (function(e) {
-            var t, n, r
+          (B = (function(e) {
+            var t, n, a
             if ((t = k.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * u
             if ((t = w.exec(e)))
               return (
                 (n = parseInt(t[1], 10)),
-                (r = parseFloat(t[2].replace(',', '.'))),
-                (n % 24) * u + r * i
+                (a = parseFloat(t[2].replace(',', '.'))),
+                (n % 24) * u + a * i
               )
             if ((t = p.exec(e))) {
-              ;(n = parseInt(t[1], 10)), (r = parseInt(t[2], 10))
-              var a = parseFloat(t[3].replace(',', '.'))
-              return (n % 24) * u + r * i + 1e3 * a
+              ;(n = parseInt(t[1], 10)), (a = parseInt(t[2], 10))
+              var r = parseFloat(t[3].replace(',', '.'))
+              return (n % 24) * u + a * i + 1e3 * r
             }
             return null
           })(C.time)),
         C.timezone)
       )
         (r = C.timezone),
-          (B =
+          (I =
             ((_ = F.exec(r))
               ? 0
               : (_ = S.exec(r))
@@ -132,15 +134,15 @@ var x = function(e, t) {
               ? ((x = 60 * parseInt(_[2], 10) + parseInt(_[3], 10)), '+' === _[1] ? -x : x)
               : 0) * i)
       else {
-        var L = j + W,
-          P = new Date(L)
-        B = a(P)
-        var H = new Date(L)
-        H.setDate(P.getDate() + 1)
-        var E = a(H) - a(P)
-        E > 0 && (B += E)
+        var W = j + B,
+          P = new Date(W)
+        I = a(P)
+        var L = new Date(W)
+        L.setDate(P.getDate() + 1)
+        var $ = a(L) - a(P)
+        $ > 0 && (I += $)
       }
-      return new Date(j + W + B)
+      return new Date(j + B + I)
     }
     return new Date(e)
   },
@@ -157,10 +159,10 @@ var x = function(e, t) {
   O = 864e5,
   A = function(e, t) {
     var n = H(e),
-      r = H(t),
-      a = n.getTime() - n.getTimezoneOffset() * I,
-      o = r.getTime() - r.getTimezoneOffset() * I
-    return Math.round((a - o) / O)
+      a = H(t),
+      r = n.getTime() - n.getTimezoneOffset() * I,
+      o = a.getTime() - a.getTimezoneOffset() * I
+    return Math.round((r - o) / O)
   },
   W = function(e) {
     var t = x(e)
@@ -168,10 +170,10 @@ var x = function(e, t) {
   },
   L = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
-      r = x(e),
-      a = r.getDay(),
-      o = (a < n ? 7 : 0) + a - n
-    return r.setDate(r.getDate() - o), r.setHours(0, 0, 0, 0), r
+      a = x(e),
+      r = a.getDay(),
+      o = (r < n ? 7 : 0) + r - n
+    return a.setDate(a.getDate() - o), a.setHours(0, 0, 0, 0), a
   },
   $ = function(e) {
     return L(e, {weekStartsOn: 1})
@@ -179,13 +181,13 @@ var x = function(e, t) {
   E = function(e) {
     var t = x(e),
       n = t.getFullYear(),
-      r = new Date(0)
-    r.setFullYear(n + 1, 0, 4), r.setHours(0, 0, 0, 0)
-    var a = $(r),
+      a = new Date(0)
+    a.setFullYear(n + 1, 0, 4), a.setHours(0, 0, 0, 0)
+    var r = $(a),
       o = new Date(0)
     o.setFullYear(n, 0, 4), o.setHours(0, 0, 0, 0)
     var i = $(o)
-    return t.getTime() >= a.getTime() ? n + 1 : t.getTime() >= i.getTime() ? n : n - 1
+    return t.getTime() >= r.getTime() ? n + 1 : t.getTime() >= i.getTime() ? n : n - 1
   },
   G = function(e) {
     var t = E(e),
@@ -237,10 +239,10 @@ var x = function(e, t) {
   z = function(e) {
     var t = []
     for (var n in e) e.hasOwnProperty(n) && t.push(n)
-    var r = U.concat(t)
+    var a = U.concat(t)
       .sort()
       .reverse()
-    return new RegExp('(\\[[^\\[]*\\])|(\\\\)?(' + r.join('|') + '|.)', 'g')
+    return new RegExp('(\\[[^\\[]*\\])|(\\\\)?(' + a.join('|') + '|.)', 'g')
   },
   X = function() {
     var e = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -259,12 +261,12 @@ var x = function(e, t) {
         'December',
       ],
       n = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-      r = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      a = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      a = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      r = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       o = ['AM', 'PM'],
       i = ['am', 'pm'],
       l = ['a.m.', 'p.m.'],
-      c = {
+      s = {
         MMM: function(t) {
           return e[t.getMonth()]
         },
@@ -275,10 +277,10 @@ var x = function(e, t) {
           return n[e.getDay()]
         },
         ddd: function(e) {
-          return r[e.getDay()]
+          return a[e.getDay()]
         },
         dddd: function(e) {
-          return a[e.getDay()]
+          return r[e.getDay()]
         },
         A: function(e) {
           return e.getHours() / 12 >= 1 ? o[1] : o[0]
@@ -292,7 +294,7 @@ var x = function(e, t) {
       }
     return (
       ['M', 'D', 'DDD', 'd', 'Q', 'W'].forEach(function(e) {
-        c[e + 'o'] = function(t, n) {
+        s[e + 'o'] = function(t, n) {
           return (function(e) {
             var t = e % 100
             if (t > 20 || t < 10)
@@ -308,7 +310,7 @@ var x = function(e, t) {
           })(n[e](t))
         }
       }),
-      {formatters: c, formattingTokensRegExp: z(c)}
+      {formatters: s, formattingTokensRegExp: z(s)}
     )
   },
   Z = {
@@ -330,17 +332,17 @@ var x = function(e, t) {
         almostXYears: {one: 'almost 1 year', other: 'almost {{count}} years'},
       }
       return {
-        localize: function(t, n, r) {
-          var a
+        localize: function(t, n, a) {
+          var r
           return (
-            (r = r || {}),
-            (a =
+            (a = a || {}),
+            (r =
               'string' == typeof e[t]
                 ? e[t]
                 : 1 === n
                 ? e[t].one
                 : e[t].other.replace('{{count}}', n)),
-            r.addSuffix ? (r.comparison > 0 ? 'in ' + a : a + ' ago') : a
+            a.addSuffix ? (a.comparison > 0 ? 'in ' + r : r + ' ago') : r
           )
         },
       }
@@ -443,58 +445,58 @@ var x = function(e, t) {
 function P(e, t) {
   t = t || ''
   var n = e > 0 ? '-' : '+',
-    r = Math.abs(e),
-    a = r % 60
-  return n + Q(Math.floor(r / 60), 2) + t + Q(a, 2)
+    a = Math.abs(e),
+    r = a % 60
+  return n + Q(Math.floor(a / 60), 2) + t + Q(r, 2)
 }
 function Q(e, t) {
   for (var n = Math.abs(e).toString(); n.length < t; ) n = '0' + n
   return n
 }
 var j = function(e, t, n) {
-    var r = t ? String(t) : 'YYYY-MM-DDTHH:mm:ss.SSSZ',
-      a = (n || {}).locale,
+    var a = t ? String(t) : 'YYYY-MM-DDTHH:mm:ss.SSSZ',
+      r = (n || {}).locale,
       o = Z.format.formatters,
       i = Z.format.formattingTokensRegExp
-    a &&
-      a.format &&
-      a.format.formatters &&
-      ((o = a.format.formatters),
-      a.format.formattingTokensRegExp && (i = a.format.formattingTokensRegExp))
+    r &&
+      r.format &&
+      r.format.formatters &&
+      ((o = r.format.formatters),
+      r.format.formattingTokensRegExp && (i = r.format.formattingTokensRegExp))
     var l = x(e)
     return R(l)
       ? (function(e, t, n) {
-          var r,
-            a,
+          var a,
+            r,
             o,
             i = e.match(n),
             l = i.length
-          for (r = 0; r < l; r++)
-            (a = t[i[r]] || J[i[r]]),
-              (i[r] =
-                a ||
-                ((o = i[r]).match(/\[[\s\S]/) ? o.replace(/^\[|]$/g, '') : o.replace(/\\/g, '')))
+          for (a = 0; a < l; a++)
+            (r = t[i[a]] || J[i[a]]),
+              (i[a] =
+                r ||
+                ((o = i[a]).match(/\[[\s\S]/) ? o.replace(/^\[|]$/g, '') : o.replace(/\\/g, '')))
           return function(e) {
             for (var t = '', n = 0; n < l; n++)
               i[n] instanceof Function ? (t += i[n](e, J)) : (t += i[n])
             return t
           }
-        })(r, o, i)(l)
+        })(a, o, i)(l)
       : 'Invalid Date'
   },
   K = function(e, t) {
     var n = x(e),
-      r = Number(t)
-    return n.setDate(n.getDate() + r), n
+      a = Number(t)
+    return n.setDate(n.getDate() + a), n
   },
   q = function(e, t, n) {
-    var r = x(e),
-      a = void 0 !== n ? n : 1,
+    var a = x(e),
+      r = void 0 !== n ? n : 1,
       o = x(t).getTime()
-    if (r.getTime() > o) throw new Error('The first date cannot be after the second date')
+    if (a.getTime() > o) throw new Error('The first date cannot be after the second date')
     var i = [],
-      l = r
-    for (l.setHours(0, 0, 0, 0); l.getTime() <= o; ) i.push(x(l)), l.setDate(l.getDate() + a)
+      l = a
+    for (l.setHours(0, 0, 0, 0); l.getTime() <= o; ) i.push(x(l)), l.setDate(l.getDate() + r)
     return i
   },
   V = function(e) {
@@ -504,10 +506,10 @@ var j = function(e, t, n) {
   },
   _ = function(e, t) {
     var n = (t && Number(t.weekStartsOn)) || 0,
-      r = x(e),
-      a = r.getDay(),
-      o = 6 + (a < n ? -7 : 0) - (a - n)
-    return r.setDate(r.getDate() + o), r.setHours(23, 59, 59, 999), r
+      a = x(e),
+      r = a.getDay(),
+      o = 6 + (r < n ? -7 : 0) - (r - n)
+    return a.setDate(a.getDate() + o), a.setHours(23, 59, 59, 999), a
   },
   ee = function(e) {
     return x(e).getDay()
@@ -519,24 +521,24 @@ var j = function(e, t, n) {
 function ne(e) {
   var t = void 0 === e ? {} : e,
     n = t.firstDayOfWeek,
-    r = void 0 === n ? 1 : n,
-    a = t.weekdayLabelFormat,
+    a = void 0 === n ? 1 : n,
+    r = t.weekdayLabelFormat,
     o =
-      void 0 === a
+      void 0 === r
         ? function(e) {
             return j(e, 'dd')
           }
-        : a,
+        : r,
     i = new Date()
-  return q(K(L(i), r), K(_(i), r)).reduce(function(e, t) {
+  return q(K(L(i), a), K(_(i), a)).reduce(function(e, t) {
     return e.push(o(t)), e
   }, [])
 }
 function re(e) {
   var t = e.year,
     n = e.month,
-    r = e.firstDayOfWeek,
-    a = void 0 === r ? 1 : r,
+    a = e.firstDayOfWeek,
+    r = void 0 === a ? 1 : a,
     o = e.dayLabelFormat,
     i =
       void 0 === o
@@ -545,14 +547,14 @@ function re(e) {
           }
         : o,
     l = new Date(t, n),
-    c = te(l),
-    s = ee(c),
+    s = te(l),
+    c = ee(s),
     d = V(l),
-    u = Array.from(Array(s >= a ? s - a : a).keys()).fill(0),
-    p = q(c, d).map(function(e) {
+    p = Array.from(Array(c >= r ? c - r : r).keys()).fill(0),
+    u = q(s, d).map(function(e) {
       return {date: e, dayLabel: i(e)}
     })
-  return u.concat(p)
+  return p.concat(u)
 }
 var ae = function(e) {
     return j(e, 'DD')
@@ -566,56 +568,56 @@ var ae = function(e) {
 function ie(e) {
   var t = e.year,
     n = e.month,
-    r = e.firstDayOfWeek,
-    a = void 0 === r ? 1 : r,
+    a = e.firstDayOfWeek,
+    r = void 0 === a ? 1 : a,
     o = e.dayLabelFormat,
     i = void 0 === o ? ae : o,
     l = e.weekdayLabelFormat,
-    c = void 0 === l ? oe : l,
-    s = e.monthLabelFormat,
-    d = void 0 === s ? ue : s
+    s = void 0 === l ? oe : l,
+    c = e.monthLabelFormat,
+    d = void 0 === c ? ue : c
   return {
     days: React.useMemo(
       function() {
-        return re({year: t, month: n, firstDayOfWeek: a, dayLabelFormat: i})
+        return re({year: t, month: n, firstDayOfWeek: r, dayLabelFormat: i})
       },
-      [t, n, a, i],
+      [t, n, r, i],
     ),
     weekdayLabels: React.useMemo(
       function() {
-        return ne({firstDayOfWeek: a, weekdayLabelFormat: c})
+        return ne({firstDayOfWeek: r, weekdayLabelFormat: s})
       },
-      [a, c],
+      [r, s],
     ),
     monthLabel: d(new Date(t, n)),
   }
 }
 var se = function(e, t) {
     var n = x(e),
-      r = x(t)
-    return n.getTime() < r.getTime()
+      a = x(t)
+    return n.getTime() < a.getTime()
   },
   ce = function(e, t) {
     var n = x(e),
-      r = x(t)
-    return n.getTime() > r.getTime()
+      a = x(t)
+    return n.getTime() > a.getTime()
   },
   fe = function(e, t, n) {
-    var r = x(e).getTime(),
-      a = x(t).getTime(),
+    var a = x(e).getTime(),
+      r = x(t).getTime(),
       o = x(n).getTime()
-    if (a > o) throw new Error('The start of the range cannot be after the end of the range')
-    return r >= a && r <= o
+    if (r > o) throw new Error('The start of the range cannot be after the end of the range')
+    return a >= r && a <= o
   },
   De = function(e, t) {
     var n = H(e),
-      r = H(t)
-    return n.getTime() === r.getTime()
+      a = H(t)
+    return n.getTime() === a.getTime()
   },
   de = function(e, t) {
     var n = x(e),
-      r = x(t)
-    return n.getFullYear() === r.getFullYear() && n.getMonth() === r.getMonth()
+      a = x(t)
+    return n.getFullYear() === a.getFullYear() && n.getMonth() === a.getMonth()
   },
   le = function(e) {
     return x(e).getFullYear()
@@ -629,18 +631,18 @@ var se = function(e, t) {
   me = function(e) {
     var t = x(e),
       n = t.getFullYear(),
-      r = t.getMonth(),
-      a = new Date(0)
-    return a.setFullYear(n, r + 1, 0), a.setHours(0, 0, 0, 0), a.getDate()
+      a = t.getMonth(),
+      r = new Date(0)
+    return r.setFullYear(n, a + 1, 0), r.setHours(0, 0, 0, 0), r.getDate()
   },
   he = function(e, t) {
     var n = x(e),
-      r = Number(t),
-      a = n.getMonth() + r,
+      a = Number(t),
+      r = n.getMonth() + a,
       o = new Date(0)
-    o.setFullYear(n.getFullYear(), a, 1), o.setHours(0, 0, 0, 0)
+    o.setFullYear(n.getFullYear(), r, 1), o.setHours(0, 0, 0, 0)
     var i = me(o)
-    return n.setMonth(a, Math.min(i, n.getDate())), n
+    return n.setMonth(r, Math.min(i, n.getDate())), n
   }
 function ye(e, t, n) {
   return !(!t || !n) && fe(e, t, n)
@@ -651,19 +653,19 @@ function Me(e, t, n) {
 function ke(e) {
   var t = e.date,
     n = e.minBookingDate,
-    r = e.maxBookingDate,
-    a = e.isDateBlockedFn,
+    a = e.maxBookingDate,
+    r = e.isDateBlockedFn,
     o = e.startDate,
     i = e.endDate,
     l = e.minBookingDays,
-    c = void 0 === l ? 1 : l,
-    s = n ? new Date(n.getFullYear(), n.getMonth(), n.getDate(), 0, 0, 0) : n,
-    d = r ? new Date(r.getFullYear(), r.getMonth(), r.getDate(), 0, 0, 0) : r
+    s = void 0 === l ? 1 : l,
+    c = n ? new Date(n.getFullYear(), n.getMonth(), n.getDate(), 0, 0, 0) : n,
+    d = a ? new Date(a.getFullYear(), a.getMonth(), a.getDate(), 0, 0, 0) : a
   return !!(
-    (s && se(t, s)) ||
+    (c && se(t, c)) ||
     (d && ce(t, d)) ||
-    (o && !i && c > 1 && fe(t, o, K(o, c - 2))) ||
-    (a && a(t))
+    (o && !i && s > 1 && fe(t, o, K(o, s - 2))) ||
+    (r && r(t))
   )
 }
 function we(e) {
@@ -675,20 +677,20 @@ function pe() {
 }
 function Te(e, t) {
   var n = t ? we(t) : pe(),
-    r = n.date,
-    a = [n]
+    a = n.date,
+    r = [n]
   return (
     e > 1 &&
-      (a = Array.from(Array(e - 1).keys()).reduce(function(e) {
-        return (r = he(e[e.length - 1].date, 1)), e.concat([we(r)])
-      }, a)),
-    a
+      (r = Array.from(Array(e - 1).keys()).reduce(function(e) {
+        return (a = he(e[e.length - 1].date, 1)), e.concat([we(a)])
+      }, r)),
+    r
   )
 }
 function Fe(e, t, n) {
-  var r = e[n > 0 ? e.length - 1 : 0].date
+  var a = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = he(r, n)), n > 0 ? e.concat([we(r)]) : [we(r)].concat(e)
+    return (a = he(a, n)), n > 0 ? e.concat([we(a)]) : [we(a)].concat(e)
   }, [])
 }
 function Se(e, t, n) {
@@ -697,24 +699,24 @@ function Se(e, t, n) {
 function Ye(e) {
   var t = e.startDate,
     n = e.endDate,
-    r = e.isDateBlocked,
-    a = e.minBookingDays,
+    a = e.isDateBlocked,
+    r = e.minBookingDays,
     o = e.exactMinBookingDays,
     i = e.minBookingDate,
     l = e.maxBookingDate,
-    c = !i || !se(t, K(i, -1)),
-    s = !l || !ce(K(t, a - 1), l)
-  if (t && 1 === a && !n && !r(t)) return !0
-  if ((t && a > 1 && !n && !o) || (t && a > 0 && o && c && s) || (t && a > 0 && o && !i && !l))
-    return q(t, K(t, a - 1)).reduce(function(e, t) {
-      return e ? !r(t) : e
+    s = !i || !se(t, K(i, -1)),
+    c = !l || !ce(K(t, r - 1), l)
+  if (t && 1 === r && !n && !a(t)) return !0
+  if ((t && r > 1 && !n && !o) || (t && r > 0 && o && s && c) || (t && r > 0 && o && !i && !l))
+    return q(t, K(t, r - 1)).reduce(function(e, t) {
+      return e ? !a(t) : e
     }, !0)
   if (t && n && !o) {
-    var d = K(t, a - 1)
+    var d = K(t, r - 1)
     return (
       !se(n, d) &&
       q(t, n).reduce(function(e, t) {
-        return e ? !r(t) : e
+        return e ? !a(t) : e
       }, !0)
     )
   }
@@ -725,94 +727,94 @@ var be = 'startDate',
 function Be(e) {
   var t = e.startDate,
     n = e.endDate,
-    r = e.focusedInput,
-    a = e.minBookingDate,
+    a = e.focusedInput,
+    r = e.minBookingDate,
     o = e.maxBookingDate,
     i = e.onDatesChange,
     l = e.exactMinBookingDays,
-    c = void 0 !== l && l,
-    s = e.minBookingDays,
-    d = void 0 === s ? 1 : s,
-    u = e.numberOfMonths,
-    p = void 0 === u ? 2 : u,
-    m = e.firstDayOfWeek,
-    f = void 0 === m ? 1 : m,
+    s = void 0 !== l && l,
+    c = e.minBookingDays,
+    d = void 0 === c ? 1 : c,
+    p = e.numberOfMonths,
+    u = void 0 === p ? 2 : p,
+    f = e.firstDayOfWeek,
+    m = void 0 === f ? 1 : f,
     g = e.isDateBlocked,
-    y =
+    h =
       void 0 === g
         ? function() {
             return !1
           }
         : g,
-    h = React.useState(function() {
-      return Te(p, t)
+    y = React.useState(function() {
+      return Te(u, t)
     }),
-    _ = h[0],
-    b = h[1],
+    _ = y[0],
+    b = y[1],
     v = React.useState(null),
     D = v[0],
-    k = v[1],
-    x = React.useState(t),
-    S = x[0],
-    C = x[1],
+    x = v[1],
+    k = React.useState(t),
+    S = k[0],
+    C = k[1],
     R = React.useCallback(
       function(e) {
-        C(e), (!S || (S && !de(e, S))) && b(Te(p, e))
+        C(e), (!S || (S && !de(e, S))) && b(Te(u, e))
       },
-      [C, b, p, S],
+      [C, b, u, S],
     ),
-    w = React.useCallback(
+    E = React.useCallback(
       function(e) {
         return ye(e, t, n)
       },
       [t, n],
     ),
-    O = React.useCallback(
+    T = React.useCallback(
       function(e) {
         return Me(e, t, n)
       },
       [t, n],
     ),
-    I = React.useCallback(
+    O = React.useCallback(
       function(e) {
         return ke({
           date: e,
-          minBookingDate: a,
+          minBookingDate: r,
           maxBookingDate: o,
           startDate: t,
           endDate: n,
           minBookingDays: d,
-          isDateBlockedFn: y,
+          isDateBlockedFn: h,
         })
       },
-      [a, o, t, n, d, y],
+      [r, o, t, n, d, h],
     ),
-    T = React.useCallback(
+    I = React.useCallback(
       function(e) {
         return !!S && De(e, S)
       },
       [S],
     ),
-    B = React.useCallback(
+    w = React.useCallback(
       function(e) {
         return (function(e) {
           var t = e.date,
             n = e.startDate,
-            r = e.endDate,
-            a = e.isDateBlocked,
+            a = e.endDate,
+            r = e.isDateBlocked,
             o = e.hoveredDate,
             i = e.minBookingDays
           return o && i > 1 && e.exactMinBookingDays && fe(t, o, K(o, i - 1))
             ? q(o, K(o, i - 1)).reduce(function(e, t) {
-                return e ? !a(t) : e
+                return e ? !r(t) : e
               }, !0)
-            : n && !r && o && fe(t, n, K(n, i - 1)) && De(n, o) && i > 1
+            : n && !a && o && fe(t, n, K(n, i - 1)) && De(n, o) && i > 1
             ? q(n, K(n, i - 1)).reduce(function(e, t) {
-                return e ? !a(t) : e
+                return e ? !r(t) : e
               }, !0)
-            : !(!n || r || !o || se(o, n) || !fe(t, n, o)) &&
+            : !(!n || a || !o || se(o, n) || !fe(t, n, o)) &&
               q(n, o).reduce(function(e, t) {
-                return e ? !a(t) : e
+                return e ? !r(t) : e
               }, !0)
         })({
           date: e,
@@ -820,38 +822,38 @@ function Be(e) {
           startDate: t,
           endDate: n,
           minBookingDays: d,
-          exactMinBookingDays: c,
-          isDateBlocked: y,
+          exactMinBookingDays: s,
+          isDateBlocked: h,
         })
       },
-      [D, t, n, d, c, y],
+      [D, t, n, d, s, h],
     )
-  function F(e) {
+  function M(e) {
     ;('ArrowRight' !== e.key &&
       'ArrowLeft' !== e.key &&
       'ArrowDown' !== e.key &&
       'ArrowUp' !== e.key) ||
       S ||
-      (R(new Date()), b(Te(p, new Date())))
+      (R(new Date()), b(Te(u, new Date())))
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('keydown', F),
+        'undefined' != typeof window && window.addEventListener('keydown', M),
         function() {
-          window.removeEventListener('keydown', F)
+          window.removeEventListener('keydown', M)
         }
       )
     }),
     {
-      firstDayOfWeek: f,
+      firstDayOfWeek: m,
       activeMonths: _,
-      isDateSelected: w,
-      isDateHovered: B,
-      isFirstOrLastSelectedDate: O,
-      isDateBlocked: I,
-      numberOfMonths: p,
-      isDateFocused: T,
+      isDateSelected: E,
+      isDateHovered: w,
+      isFirstOrLastSelectedDate: T,
+      isDateBlocked: O,
+      numberOfMonths: u,
+      isDateFocused: I,
       focusedDate: S,
       hoveredDate: D,
       onResetDates: function() {
@@ -860,56 +862,56 @@ function Be(e) {
       onDateHover: function(e) {
         if (e) {
           if (e) {
-            var r = !I(e) || (t && De(e, t)),
-              i = !a || !se(e, K(a, -1)),
+            var a = !O(e) || (t && De(e, t)),
+              i = !r || !se(e, K(r, -1)),
               l = !o || !ce(e, o),
-              s = K(e, d - 1),
-              u = !a || !se(s, a),
-              p = !o || !ce(s, o),
-              m = c && d > 1 && i && l && u && p,
-              f = t && !n && !c && i && l,
+              c = K(e, d - 1),
+              p = !r || !se(c, r),
+              u = !o || !ce(c, o),
+              f = s && d > 1 && i && l && p && u,
+              m = t && !n && !s && i && l,
               g = !(d > 1 && t) || fe(e, t, K(t, d - 2)),
-              y = t && De(e, t) && g
-            r && (m || f || y) ? k(e) : null !== D && k(null)
+              h = t && De(e, t) && g
+            a && (f || m || h) ? x(e) : null !== D && x(null)
           }
-        } else k(null)
+        } else x(null)
       },
       onDateSelect: function(e) {
-        ;(r === xe || r === be) &&
+        ;(a === xe || a === be) &&
         d > 0 &&
-        c &&
+        s &&
         Ye({
           minBookingDays: d,
-          exactMinBookingDays: c,
-          minBookingDate: a,
+          exactMinBookingDays: s,
+          minBookingDate: r,
           maxBookingDate: o,
-          isDateBlocked: y,
+          isDateBlocked: h,
           startDate: e,
           endDate: null,
         })
           ? i({startDate: e, endDate: K(e, d - 1), focusedInput: null})
-          : ((r === xe && t && se(e, t)) || (r === be && n && ce(e, n))) &&
-            !c &&
-            Ye({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+          : ((a === xe && t && se(e, t)) || (a === be && n && ce(e, n))) &&
+            !s &&
+            Ye({minBookingDays: d, isDateBlocked: h, startDate: e, endDate: null})
           ? i({endDate: null, startDate: e, focusedInput: xe})
-          : r === be && !c && Ye({minBookingDays: d, isDateBlocked: y, endDate: n, startDate: e})
+          : a === be && !s && Ye({minBookingDays: d, isDateBlocked: h, endDate: n, startDate: e})
           ? i({endDate: n, startDate: e, focusedInput: xe})
-          : r === be && !c && Ye({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
+          : a === be && !s && Ye({minBookingDays: d, isDateBlocked: h, endDate: null, startDate: e})
           ? i({endDate: null, startDate: e, focusedInput: xe})
-          : r === xe &&
+          : a === xe &&
             t &&
             !se(e, t) &&
-            !c &&
-            Ye({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
+            !s &&
+            Ye({minBookingDays: d, isDateBlocked: h, startDate: t, endDate: e}) &&
             i({startDate: t, endDate: e, focusedInput: null}),
-          (!S || (S && !de(e, S))) && b(Te(p, e))
+          (!S || (S && !de(e, S))) && b(Te(u, e))
       },
       onDateFocus: R,
       goToPreviousMonths: function() {
-        b(Fe(_, p, -1)), C(null)
+        b(Fe(_, u, -1)), C(null)
       },
       goToNextMonths: function() {
-        b(Fe(_, p, 1)), C(null)
+        b(Fe(_, u, 1)), C(null)
       },
     }
   )
@@ -917,22 +919,22 @@ function Be(e) {
 function He(e) {
   var t = e.date,
     n = e.focusedDate,
-    r = e.isDateSelected,
-    a = e.isDateFocused,
+    a = e.isDateSelected,
+    r = e.isDateFocused,
     o = e.isFirstOrLastSelectedDate,
     i = e.isDateHovered,
     l = e.isDateBlocked,
-    c = e.onDateSelect,
-    s = e.onDateFocus,
+    s = e.onDateSelect,
+    c = e.onDateFocus,
     d = e.onDateHover,
-    u = e.dayRef,
-    p = React.useCallback(
+    p = e.dayRef,
+    u = React.useCallback(
       function() {
-        return c(t)
+        return s(t)
       },
-      [t, c],
+      [t, s],
     ),
-    m = React.useCallback(
+    f = React.useCallback(
       function() {
         return d(t)
       },
@@ -940,37 +942,37 @@ function He(e) {
     )
   React.useEffect(
     function() {
-      u && u.current && a(t) && u.current.focus()
+      p && p.current && r(t) && p.current.focus()
     },
-    [u, t, a],
+    [p, t, r],
   )
-  var f = l(t) && !i(t)
+  var m = l(t) && !i(t)
   return {
-    tabIndex: null === n || a(t) ? 0 : -1,
-    isSelected: r(t),
+    tabIndex: null === n || r(t) ? 0 : -1,
+    isSelected: a(t),
     isSelectedStartOrEnd: o(t),
     isWithinHoverRange: i(t),
-    disabledDate: f,
+    disabledDate: m,
     onKeyDown: function(e) {
       'ArrowRight' === e.key
-        ? s(K(t, 1))
+        ? c(K(t, 1))
         : 'ArrowLeft' === e.key
-        ? s(K(t, -1))
+        ? c(K(t, -1))
         : 'ArrowUp' === e.key
-        ? s(K(t, -7))
-        : 'ArrowDown' === e.key && s(K(t, 7))
+        ? c(K(t, -7))
+        : 'ArrowDown' === e.key && c(K(t, 7))
     },
-    onClick: f ? function() {} : p,
-    onMouseEnter: m,
+    onClick: m ? function() {} : u,
+    onMouseEnter: f,
   }
 }
 var __assign = function() {
   return (__assign =
     Object.assign ||
     function(e) {
-      for (var t, n = 1, r = arguments.length; n < r; n++)
-        for (var a in (t = arguments[n]))
-          Object.prototype.hasOwnProperty.call(t, a) && (e[a] = t[a])
+      for (var t, n = 1, a = arguments.length; n < a; n++)
+        for (var r in (t = arguments[n]))
+          Object.prototype.hasOwnProperty.call(t, r) && (e[r] = t[r])
       return e
     }).apply(this, arguments)
 }
@@ -983,7 +985,7 @@ function _extends() {
     function(e) {
       for (var t = 1; t < arguments.length; t++) {
         var n = arguments[t]
-        for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
+        for (var a in n) Object.prototype.hasOwnProperty.call(n, a) && (e[a] = n[a])
       }
       return e
     }).apply(this, arguments)
@@ -997,120 +999,120 @@ function createCommonjsModule(e, t) {
 var reactIs_production_min = createCommonjsModule(function(e, t) {
   Object.defineProperty(t, '__esModule', {value: !0})
   var n = 'function' == typeof Symbol && Symbol.for,
-    r = n ? Symbol.for('react.element') : 60103,
-    a = n ? Symbol.for('react.portal') : 60106,
+    a = n ? Symbol.for('react.element') : 60103,
+    r = n ? Symbol.for('react.portal') : 60106,
     o = n ? Symbol.for('react.fragment') : 60107,
     i = n ? Symbol.for('react.strict_mode') : 60108,
     l = n ? Symbol.for('react.profiler') : 60114,
-    c = n ? Symbol.for('react.provider') : 60109,
-    s = n ? Symbol.for('react.context') : 60110,
+    s = n ? Symbol.for('react.provider') : 60109,
+    c = n ? Symbol.for('react.context') : 60110,
     d = n ? Symbol.for('react.async_mode') : 60111,
-    u = n ? Symbol.for('react.concurrent_mode') : 60111,
-    p = n ? Symbol.for('react.forward_ref') : 60112,
-    m = n ? Symbol.for('react.suspense') : 60113,
-    f = n ? Symbol.for('react.memo') : 60115,
+    p = n ? Symbol.for('react.concurrent_mode') : 60111,
+    u = n ? Symbol.for('react.forward_ref') : 60112,
+    f = n ? Symbol.for('react.suspense') : 60113,
+    m = n ? Symbol.for('react.memo') : 60115,
     g = n ? Symbol.for('react.lazy') : 60116
-  function y(e) {
+  function h(e) {
     if ('object' == typeof e && null !== e) {
       var t = e.$$typeof
       switch (t) {
-        case r:
+        case a:
           switch ((e = e.type)) {
             case d:
-            case u:
+            case p:
             case o:
             case l:
             case i:
-            case m:
+            case f:
               return e
             default:
               switch ((e = e && e.$$typeof)) {
-                case s:
-                case p:
                 case c:
+                case u:
+                case s:
                   return e
                 default:
                   return t
               }
           }
         case g:
-        case f:
-        case a:
+        case m:
+        case r:
           return t
       }
     }
   }
-  function h(e) {
-    return y(e) === u
+  function y(e) {
+    return h(e) === p
   }
-  ;(t.typeOf = y),
+  ;(t.typeOf = h),
     (t.AsyncMode = d),
-    (t.ConcurrentMode = u),
-    (t.ContextConsumer = s),
-    (t.ContextProvider = c),
-    (t.Element = r),
-    (t.ForwardRef = p),
+    (t.ConcurrentMode = p),
+    (t.ContextConsumer = c),
+    (t.ContextProvider = s),
+    (t.Element = a),
+    (t.ForwardRef = u),
     (t.Fragment = o),
     (t.Lazy = g),
-    (t.Memo = f),
-    (t.Portal = a),
+    (t.Memo = m),
+    (t.Portal = r),
     (t.Profiler = l),
     (t.StrictMode = i),
-    (t.Suspense = m),
+    (t.Suspense = f),
     (t.isValidElementType = function(e) {
       return (
         'string' == typeof e ||
         'function' == typeof e ||
         e === o ||
-        e === u ||
+        e === p ||
         e === l ||
         e === i ||
-        e === m ||
+        e === f ||
         ('object' == typeof e &&
           null !== e &&
           (e.$$typeof === g ||
-            e.$$typeof === f ||
-            e.$$typeof === c ||
+            e.$$typeof === m ||
             e.$$typeof === s ||
-            e.$$typeof === p))
+            e.$$typeof === c ||
+            e.$$typeof === u))
       )
     }),
     (t.isAsyncMode = function(e) {
-      return h(e) || y(e) === d
+      return y(e) || h(e) === d
     }),
-    (t.isConcurrentMode = h),
+    (t.isConcurrentMode = y),
     (t.isContextConsumer = function(e) {
-      return y(e) === s
+      return h(e) === c
     }),
     (t.isContextProvider = function(e) {
-      return y(e) === c
+      return h(e) === s
     }),
     (t.isElement = function(e) {
-      return 'object' == typeof e && null !== e && e.$$typeof === r
+      return 'object' == typeof e && null !== e && e.$$typeof === a
     }),
     (t.isForwardRef = function(e) {
-      return y(e) === p
+      return h(e) === u
     }),
     (t.isFragment = function(e) {
-      return y(e) === o
+      return h(e) === o
     }),
     (t.isLazy = function(e) {
-      return y(e) === g
+      return h(e) === g
     }),
     (t.isMemo = function(e) {
-      return y(e) === f
+      return h(e) === m
     }),
     (t.isPortal = function(e) {
-      return y(e) === a
+      return h(e) === r
     }),
     (t.isProfiler = function(e) {
-      return y(e) === l
+      return h(e) === l
     }),
     (t.isStrictMode = function(e) {
-      return y(e) === i
+      return h(e) === i
     }),
     (t.isSuspense = function(e) {
-      return y(e) === m
+      return h(e) === f
     })
 })
 unwrapExports(reactIs_production_min)
@@ -1197,12 +1199,12 @@ function shouldUseNative() {
         .join('')
     )
       return !1
-    var r = {}
+    var a = {}
     return (
       'abcdefghijklmnopqrst'.split('').forEach(function(e) {
-        r[e] = e
+        a[e] = e
       }),
-      'abcdefghijklmnopqrst' === Object.keys(Object.assign({}, r)).join('')
+      'abcdefghijklmnopqrst' === Object.keys(Object.assign({}, a)).join('')
     )
   } catch (e) {
     return !1
@@ -1211,14 +1213,14 @@ function shouldUseNative() {
 var objectAssign = shouldUseNative()
     ? Object.assign
     : function(e, t) {
-        for (var n, r, a = toObject(e), o = 1; o < arguments.length; o++) {
-          for (var i in (n = Object(arguments[o]))) hasOwnProperty.call(n, i) && (a[i] = n[i])
+        for (var n, a, r = toObject(e), o = 1; o < arguments.length; o++) {
+          for (var i in (n = Object(arguments[o]))) hasOwnProperty.call(n, i) && (r[i] = n[i])
           if (getOwnPropertySymbols) {
-            r = getOwnPropertySymbols(n)
-            for (var l = 0; l < r.length; l++) propIsEnumerable.call(n, r[l]) && (a[r[l]] = n[r[l]])
+            a = getOwnPropertySymbols(n)
+            for (var l = 0; l < a.length; l++) propIsEnumerable.call(n, a[l]) && (r[a[l]] = n[a[l]])
           }
         }
-        return a
+        return r
       },
   ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED',
   ReactPropTypesSecret_1 = ReactPropTypesSecret,
@@ -1230,7 +1232,7 @@ var templateObject_1,
   templateObject_1$1,
   templateObject_1$2,
   factoryWithThrowingShims = function() {
-    function e(e, t, n, r, a, o) {
+    function e(e, t, n, a, r, o) {
       if (o !== ReactPropTypesSecret_1) {
         var i = new Error(
           'Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types',
@@ -1287,16 +1289,16 @@ var templateObject_1,
     }
   },
   get = function(e) {
-    for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)
-      n[r - 1] = arguments[r]
-    var a = n.reduce(function(t, n) {
+    for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), a = 1; a < t; a++)
+      n[a - 1] = arguments[a]
+    var r = n.reduce(function(t, n) {
       return is(t)
         ? t
         : ('string' == typeof n ? n.split('.') : [n]).reduce(function(e, t) {
             return e && is(e[t]) ? e[t] : null
           }, e)
     }, null)
-    return is(a) ? a : n[n.length - 1]
+    return is(r) ? r : n[n.length - 1]
   },
   is = function(e) {
     return null != e
@@ -1317,10 +1319,10 @@ var templateObject_1,
     return get(t, e)
   },
   merge = function e(t, n) {
-    var r = {}
-    for (var a in t) r[a] = t[a]
-    for (var o in n) t[o] && 'object' == typeof t[o] ? (r[o] = e(t[o], n[o])) : (r[o] = n[o])
-    return r
+    var a = {}
+    for (var r in t) a[r] = t[r]
+    for (var o in n) t[o] && 'object' == typeof t[o] ? (a[o] = e(t[o], n[o])) : (a[o] = n[o])
+    return a
   },
   mergeAll = function() {
     for (var e = {}, t = 0; t < arguments.length; t++)
@@ -1330,62 +1332,62 @@ var templateObject_1,
   style = function(e) {
     var t,
       n = e.prop,
-      r = e.cssProperty,
-      a = e.alias,
+      a = e.cssProperty,
+      r = e.alias,
       o = e.key,
       i = e.transformValue,
       l = void 0 === i ? getValue : i,
-      c = e.scale,
-      s = void 0 === c ? {} : c,
-      d = r || n,
-      u = function(e) {
-        var t = get(e, n, a, null)
+      s = e.scale,
+      c = void 0 === s ? {} : s,
+      d = a || n,
+      p = function(e) {
+        var t = get(e, n, r, null)
         if (!is(t)) return null
-        var r = get(e.theme, o, s),
+        var a = get(e.theme, o, c),
           i = function(e) {
             var t
-            return is(e) ? (((t = {})[d] = l(e, r)), t) : null
+            return is(e) ? (((t = {})[d] = l(e, a)), t) : null
           }
         if (!isObject(t)) return i(t)
-        var c = get(e.theme, 'breakpoints', defaultBreakpoints),
-          u = []
+        var s = get(e.theme, 'breakpoints', defaultBreakpoints),
+          p = []
         if (Array.isArray(t)) {
-          u.push(i(t[0]))
-          for (var p = 1; p < t.slice(0, c.length + 1).length; p++) {
-            var m = i(t[p])
-            if (m) {
-              var f,
-                g = createMediaQuery(c[p - 1])
-              u.push((((f = {})[g] = m), f))
+          p.push(i(t[0]))
+          for (var u = 1; u < t.slice(0, s.length + 1).length; u++) {
+            var f = i(t[u])
+            if (f) {
+              var m,
+                g = createMediaQuery(s[u - 1])
+              p.push((((m = {})[g] = f), m))
             }
           }
         } else {
-          for (var y in t) {
-            var h,
-              _ = c[y],
+          for (var h in t) {
+            var y,
+              _ = s[h],
               b = createMediaQuery(_),
-              v = i(t[y])
-            if (_) u.push((((h = {})[b] = v), h))
-            else u.unshift(v)
+              v = i(t[h])
+            if (_) p.push((((y = {})[b] = v), y))
+            else p.unshift(v)
           }
-          u.sort(compare)
+          p.sort(compare)
         }
-        return mergeAll.apply(void 0, u)
+        return mergeAll.apply(void 0, p)
       }
     return (
-      ((u.propTypes = (((t = {})[n] = cloneFunction(propType)), t))[n].meta = {
+      ((p.propTypes = (((t = {})[n] = cloneFunction(propType)), t))[n].meta = {
         prop: n,
         themeKey: o,
       }),
-      a &&
-        ((u.propTypes[a] = cloneFunction(propType)),
-        (u.propTypes[a].meta = {prop: a, themeKey: o})),
-      u
+      r &&
+        ((p.propTypes[r] = cloneFunction(propType)),
+        (p.propTypes[r].meta = {prop: r, themeKey: o})),
+      p
     )
   },
   compose = function() {
     for (var e = arguments.length, t = new Array(e), n = 0; n < e; n++) t[n] = arguments[n]
-    var r = function(e) {
+    var a = function(e) {
       var n = t
         .map(function(t) {
           return t(e)
@@ -1394,11 +1396,11 @@ var templateObject_1,
       return mergeAll.apply(void 0, n)
     }
     return (
-      (r.propTypes = {}),
+      (a.propTypes = {}),
       t.forEach(function(e) {
-        r.propTypes = _extends({}, r.propTypes, e.propTypes)
+        a.propTypes = _extends({}, a.propTypes, e.propTypes)
       }),
-      r
+      a
     )
   },
   mapProps = function(e) {
@@ -1406,21 +1408,21 @@ var templateObject_1,
       var n = function(n) {
         return t(e(n))
       }
-      for (var r in t) n[r] = t[r]
+      for (var a in t) n[a] = t[a]
       return n
     }
   },
   variant = function(e) {
     var t,
       n = e.key,
-      r = e.prop,
-      a = void 0 === r ? 'variant' : r,
+      a = e.prop,
+      r = void 0 === a ? 'variant' : a,
       o = function(e) {
-        return get(e.theme, [n, e[a]].join('.'), null)
+        return get(e.theme, [n, e[r]].join('.'), null)
       }
     return (
-      (o.propTypes = (((t = {})[a] = propTypes.oneOfType([propTypes.number, propTypes.string])),
-      t)),
+      (o.propTypes =
+        (((t = {})[r] = propTypes.oneOfType([propTypes.number, propTypes.string])), t)),
       o
     )
   },
@@ -1428,9 +1430,9 @@ var templateObject_1,
   getSpace = function(e, t) {
     if (!num(e)) return px(get(t, e, e))
     var n = e < 0,
-      r = Math.abs(e),
-      a = get(t, r)
-    return num(a) ? px(a * (n ? -1 : 1)) : n ? '-' + a : a
+      a = Math.abs(e),
+      r = get(t, a)
+    return num(r) ? px(r * (n ? -1 : 1)) : n ? '-' + r : r
   },
   margin = style({
     prop: 'margin',
@@ -1638,6 +1640,7 @@ var templateObject_1,
     datepickerEndDatePlaceholder: 'Select',
     datepickerEndDateLabel: 'End date:',
     resetDates: 'Reset dates',
+    close: 'Close',
   },
   dateRangeInputPhrases = __assign({}, datepickerPhrases, {
     startDateAriaLabel: 'Start date',
@@ -1645,9 +1648,9 @@ var templateObject_1,
     startDatePlaceholder: 'Start date',
     endDatePlaceholder: 'End date',
   }),
-  phrases = Object.freeze({
-    datepickerPhrases: datepickerPhrases,
-    dateRangeInputPhrases: dateRangeInputPhrases,
+  dateSingleInputPhrases = __assign({}, datepickerPhrases, {
+    dateAriaLabel: 'Select date',
+    datePlaceholder: 'Select date',
   }),
   daySizeGridTemplateColumns = style({
     prop: 'daySizeGridTemplateColumns',
@@ -1790,15 +1793,15 @@ var templateObject_1,
 function CalendarIcon(e) {
   var t = e.height,
     n = e.width,
-    r = e.color,
-    a = e.className,
-    o = void 0 === a ? '' : a
+    a = e.color,
+    r = e.className,
+    o = void 0 === r ? '' : r
   return React__default.createElement(
     'svg',
     {
       width: n,
       height: t,
-      color: r,
+      color: a,
       className: o,
       viewBox: '0 0 12 12',
       xmlns: 'http://www.w3.org/2000/svg',
@@ -1817,9 +1820,9 @@ function useThemeProps(e) {
   return React.useMemo(
     function() {
       return t && 'object' == typeof t && t.reactDatepicker && 'object' == typeof t.reactDatepicker
-        ? Object.keys(e).reduce(function(n, r) {
-            var a
-            return __assign({}, n, (((a = {})[r] = t.reactDatepicker[r] || e[r]), a))
+        ? Object.keys(e).reduce(function(n, a) {
+            var r
+            return __assign({}, n, (((r = {})[a] = t.reactDatepicker[a] || e[a]), r))
           }, {})
         : e
     },
@@ -1949,16 +1952,16 @@ var templateObject_1$3,
 function Input(e) {
   var t = e.placeholder,
     n = e.id,
-    r = e.vertical,
-    a = e.isActive,
+    a = e.vertical,
+    r = e.isActive,
     o = e.ariaLabel,
     i = e.onClick,
     l = e.value,
-    c = e.showCalendarIcon,
-    s = e.padding,
+    s = e.showCalendarIcon,
+    c = e.padding,
     d = e.rtl,
-    u = e.disableAccessibility,
-    p = useThemeProps({
+    p = e.disableAccessibility,
+    u = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       inputFontWeight: 600,
       inputFontSize: '14px',
@@ -1966,7 +1969,7 @@ function Input(e) {
       inputBackground: '#ffffff',
       inputMinHeight: '46px',
       inputWidth: '100%',
-      inputPadding: s,
+      inputPadding: c,
       inputBorder: '0',
       inputPlaceholderFontWeight: 500,
       inputPlaceholderColor: globalStyles.colors.silverCloud,
@@ -1974,8 +1977,8 @@ function Input(e) {
       inputCalendarWrapperHeight: '12px',
       inputCalendarWrapperWidth: '12px',
       inputCalendarWrapperTop: '16px',
-      inputCalendarWrapperLeft: d ? 'unset' : r ? '8px' : '16px',
-      inputCalendarWrapperRight: d ? (r ? '8px' : '16px') : 'unset',
+      inputCalendarWrapperLeft: d ? 'unset' : a ? '8px' : '16px',
+      inputCalendarWrapperRight: d ? (a ? '8px' : '16px') : 'unset',
       inputCalendarIconWidth: '12px',
       inputCalendarIconHeight: '12px',
       inputCalendarIconColor: '#BCBEC0',
@@ -1991,45 +1994,45 @@ function Input(e) {
     InputLabel,
     {
       htmlFor: n,
-      display: p.inputLabelDisplay,
-      position: p.inputLabelPosition,
-      border: p.inputLabelBorder,
-      background: p.inputLabelBackground,
-      borderRadius: p.inputLabelBorderRadius,
-      m: p.inputLabelMargin,
+      display: u.inputLabelDisplay,
+      position: u.inputLabelPosition,
+      border: u.inputLabelBorder,
+      background: u.inputLabelBackground,
+      borderRadius: u.inputLabelBorderRadius,
+      m: u.inputLabelMargin,
     },
-    c &&
+    s &&
       React__default.createElement(
         CalendarWrapper,
         {
-          position: p.inputCalendarWrapperPosition,
-          height: p.inputCalendarWrapperHeight,
-          width: p.inputCalendarWrapperWidth,
-          top: p.inputCalendarWrapperTop,
-          left: p.inputCalendarWrapperLeft,
-          right: p.inputCalendarWrapperRight,
+          position: u.inputCalendarWrapperPosition,
+          height: u.inputCalendarWrapperHeight,
+          width: u.inputCalendarWrapperWidth,
+          top: u.inputCalendarWrapperTop,
+          left: u.inputCalendarWrapperLeft,
+          right: u.inputCalendarWrapperRight,
         },
         React__default.createElement(CalendarIcon, {
-          width: p.inputCalendarIconWidth,
-          height: p.inputCalendarIconHeight,
-          color: p.inputCalendarIconColor,
+          width: u.inputCalendarIconWidth,
+          height: u.inputCalendarIconHeight,
+          color: u.inputCalendarIconColor,
         }),
       ),
     React__default.createElement(StyledInput, {
       readOnly: !0,
-      tabIndex: u ? -1 : 0,
-      border: p.inputBorder,
-      p: p.inputPadding,
-      width: p.inputWidth,
-      minHeight: p.inputMinHeight,
-      background: p.inputBackground,
-      fontFamily: p.fontFamily,
-      color: p.inputColor,
-      fontSize: p.inputFontSize,
-      fontWeight: p.inputFontWeight,
-      placeholderColor: p.inputPlaceholderColor,
-      placeholderFontWeight: p.inputPlaceholderFontWeight,
-      boxShadow: a ? p.inputActiveBoxShadow : 'none',
+      tabIndex: p ? -1 : 0,
+      border: u.inputBorder,
+      p: u.inputPadding,
+      width: u.inputWidth,
+      minHeight: u.inputMinHeight,
+      background: u.inputBackground,
+      fontFamily: u.fontFamily,
+      color: u.inputColor,
+      fontSize: u.inputFontSize,
+      fontWeight: u.inputFontWeight,
+      placeholderColor: u.inputPlaceholderColor,
+      placeholderFontWeight: u.inputPlaceholderFontWeight,
+      boxShadow: r ? u.inputActiveBoxShadow : 'none',
       id: n,
       placeholder: t,
       'aria-label': o,
@@ -2056,20 +2059,20 @@ function calculateAngle(e) {
 function ArrowIcon(e) {
   var t = e.height,
     n = e.width,
-    r = e.iconColor,
-    a = e.direction,
-    o = void 0 === a ? 'right' : a,
+    a = e.iconColor,
+    r = e.direction,
+    o = void 0 === r ? 'right' : r,
     i = e.className,
     l = void 0 === i ? '' : i,
-    c = calculateAngle(o)
+    s = calculateAngle(o)
   return React__default.createElement(
     'svg',
     {
       width: n,
       height: t,
-      color: r,
+      color: a,
       className: l,
-      transform: 'rotate(' + c + ' 0 0)',
+      transform: 'rotate(' + s + ' 0 0)',
       viewBox: '0 0 9 12',
       xmlns: 'http://www.w3.org/2000/svg',
     },
@@ -2080,6 +2083,535 @@ function ArrowIcon(e) {
     }),
   )
 }
+function _extends$1() {
+  return (_extends$1 =
+    Object.assign ||
+    function(e) {
+      for (var t = 1; t < arguments.length; t++) {
+        var n = arguments[t]
+        for (var a in n) Object.prototype.hasOwnProperty.call(n, a) && (e[a] = n[a])
+      }
+      return e
+    }).apply(this, arguments)
+}
+function _objectWithoutPropertiesLoose(e, t) {
+  if (null == e) return {}
+  var n,
+    a,
+    r = {},
+    o = Object.keys(e)
+  for (a = 0; a < o.length; a++) (n = o[a]), t.indexOf(n) >= 0 || (r[n] = e[n])
+  return r
+}
+function _inheritsLoose(e, t) {
+  ;(e.prototype = Object.create(t.prototype)), (e.prototype.constructor = e), (e.__proto__ = t)
+}
+var interopRequireDefault = createCommonjsModule(function(e) {
+  e.exports = function(e) {
+    return e && e.__esModule ? e : {default: e}
+  }
+})
+unwrapExports(interopRequireDefault)
+var hasClass_1 = createCommonjsModule(function(e, t) {
+  ;(t.__esModule = !0),
+    (t.default = function(e, t) {
+      return e.classList
+        ? !!t && e.classList.contains(t)
+        : -1 !== (' ' + (e.className.baseVal || e.className) + ' ').indexOf(' ' + t + ' ')
+    }),
+    (e.exports = t.default)
+})
+unwrapExports(hasClass_1)
+var addClass_1 = createCommonjsModule(function(e, t) {
+    ;(t.__esModule = !0),
+      (t.default = function(e, t) {
+        e.classList
+          ? e.classList.add(t)
+          : (0, n.default)(e, t) ||
+            ('string' == typeof e.className
+              ? (e.className = e.className + ' ' + t)
+              : e.setAttribute('class', ((e.className && e.className.baseVal) || '') + ' ' + t))
+      })
+    var n = interopRequireDefault(hasClass_1)
+    e.exports = t.default
+  }),
+  addOneClass = unwrapExports(addClass_1)
+function replaceClassName(e, t) {
+  return e
+    .replace(new RegExp('(^|\\s)' + t + '(?:\\s|$)', 'g'), '$1')
+    .replace(/\s+/g, ' ')
+    .replace(/^\s*|\s*$/g, '')
+}
+var removeClass = function(e, t) {
+    e.classList
+      ? e.classList.remove(t)
+      : 'string' == typeof e.className
+      ? (e.className = replaceClassName(e.className, t))
+      : e.setAttribute('class', replaceClassName((e.className && e.className.baseVal) || '', t))
+  },
+  config = {disabled: !1},
+  TransitionGroupContext = React__default.createContext(null),
+  UNMOUNTED = 'unmounted',
+  EXITED = 'exited',
+  ENTERING = 'entering',
+  ENTERED = 'entered',
+  EXITING = 'exiting',
+  Transition = (function(e) {
+    function t(t, n) {
+      var a
+      a = e.call(this, t, n) || this
+      var r,
+        o = n && !n.isMounting ? t.enter : t.appear
+      return (
+        (a.appearStatus = null),
+        t.in
+          ? o
+            ? ((r = EXITED), (a.appearStatus = ENTERING))
+            : (r = ENTERED)
+          : (r = t.unmountOnExit || t.mountOnEnter ? UNMOUNTED : EXITED),
+        (a.state = {status: r}),
+        (a.nextCallback = null),
+        a
+      )
+    }
+    _inheritsLoose(t, e),
+      (t.getDerivedStateFromProps = function(e, t) {
+        return e.in && t.status === UNMOUNTED ? {status: EXITED} : null
+      })
+    var n = t.prototype
+    return (
+      (n.componentDidMount = function() {
+        this.updateStatus(!0, this.appearStatus)
+      }),
+      (n.componentDidUpdate = function(e) {
+        var t = null
+        if (e !== this.props) {
+          var n = this.state.status
+          this.props.in
+            ? n !== ENTERING && n !== ENTERED && (t = ENTERING)
+            : (n !== ENTERING && n !== ENTERED) || (t = EXITING)
+        }
+        this.updateStatus(!1, t)
+      }),
+      (n.componentWillUnmount = function() {
+        this.cancelNextCallback()
+      }),
+      (n.getTimeouts = function() {
+        var e,
+          t,
+          n,
+          a = this.props.timeout
+        return (
+          (e = t = n = a),
+          null != a &&
+            'number' != typeof a &&
+            ((e = a.exit), (t = a.enter), (n = void 0 !== a.appear ? a.appear : t)),
+          {exit: e, enter: t, appear: n}
+        )
+      }),
+      (n.updateStatus = function(e, t) {
+        if ((void 0 === e && (e = !1), null !== t)) {
+          this.cancelNextCallback()
+          var n = ReactDOM__default.findDOMNode(this)
+          t === ENTERING ? this.performEnter(n, e) : this.performExit(n)
+        } else
+          this.props.unmountOnExit &&
+            this.state.status === EXITED &&
+            this.setState({status: UNMOUNTED})
+      }),
+      (n.performEnter = function(e, t) {
+        var n = this,
+          a = this.props.enter,
+          r = this.context ? this.context.isMounting : t,
+          o = this.getTimeouts(),
+          i = r ? o.appear : o.enter
+        ;(!t && !a) || config.disabled
+          ? this.safeSetState({status: ENTERED}, function() {
+              n.props.onEntered(e)
+            })
+          : (this.props.onEnter(e, r),
+            this.safeSetState({status: ENTERING}, function() {
+              n.props.onEntering(e, r),
+                n.onTransitionEnd(e, i, function() {
+                  n.safeSetState({status: ENTERED}, function() {
+                    n.props.onEntered(e, r)
+                  })
+                })
+            }))
+      }),
+      (n.performExit = function(e) {
+        var t = this,
+          n = this.props.exit,
+          a = this.getTimeouts()
+        n && !config.disabled
+          ? (this.props.onExit(e),
+            this.safeSetState({status: EXITING}, function() {
+              t.props.onExiting(e),
+                t.onTransitionEnd(e, a.exit, function() {
+                  t.safeSetState({status: EXITED}, function() {
+                    t.props.onExited(e)
+                  })
+                })
+            }))
+          : this.safeSetState({status: EXITED}, function() {
+              t.props.onExited(e)
+            })
+      }),
+      (n.cancelNextCallback = function() {
+        null !== this.nextCallback && (this.nextCallback.cancel(), (this.nextCallback = null))
+      }),
+      (n.safeSetState = function(e, t) {
+        ;(t = this.setNextCallback(t)), this.setState(e, t)
+      }),
+      (n.setNextCallback = function(e) {
+        var t = this,
+          n = !0
+        return (
+          (this.nextCallback = function(a) {
+            n && ((n = !1), (t.nextCallback = null), e(a))
+          }),
+          (this.nextCallback.cancel = function() {
+            n = !1
+          }),
+          this.nextCallback
+        )
+      }),
+      (n.onTransitionEnd = function(e, t, n) {
+        this.setNextCallback(n)
+        var a = null == t && !this.props.addEndListener
+        e && !a
+          ? (this.props.addEndListener && this.props.addEndListener(e, this.nextCallback),
+            null != t && setTimeout(this.nextCallback, t))
+          : setTimeout(this.nextCallback, 0)
+      }),
+      (n.render = function() {
+        var e = this.state.status
+        if (e === UNMOUNTED) return null
+        var t = this.props,
+          n = t.children,
+          a = _objectWithoutPropertiesLoose(t, ['children'])
+        if (
+          (delete a.in,
+          delete a.mountOnEnter,
+          delete a.unmountOnExit,
+          delete a.appear,
+          delete a.enter,
+          delete a.exit,
+          delete a.timeout,
+          delete a.addEndListener,
+          delete a.onEnter,
+          delete a.onEntering,
+          delete a.onEntered,
+          delete a.onExit,
+          delete a.onExiting,
+          delete a.onExited,
+          'function' == typeof n)
+        )
+          return React__default.createElement(
+            TransitionGroupContext.Provider,
+            {value: null},
+            n(e, a),
+          )
+        var r = React__default.Children.only(n)
+        return React__default.createElement(
+          TransitionGroupContext.Provider,
+          {value: null},
+          React__default.cloneElement(r, a),
+        )
+      }),
+      t
+    )
+  })(React__default.Component)
+function noop() {}
+;(Transition.contextType = TransitionGroupContext),
+  (Transition.propTypes = {}),
+  (Transition.defaultProps = {
+    in: !1,
+    mountOnEnter: !1,
+    unmountOnExit: !1,
+    appear: !1,
+    enter: !0,
+    exit: !0,
+    onEnter: noop,
+    onEntering: noop,
+    onEntered: noop,
+    onExit: noop,
+    onExiting: noop,
+    onExited: noop,
+  }),
+  (Transition.UNMOUNTED = 0),
+  (Transition.EXITED = 1),
+  (Transition.ENTERING = 2),
+  (Transition.ENTERED = 3),
+  (Transition.EXITING = 4)
+var _addClass = function(e, t) {
+    return (
+      e &&
+      t &&
+      t.split(' ').forEach(function(t) {
+        return addOneClass(e, t)
+      })
+    )
+  },
+  removeClass$1 = function(e, t) {
+    return (
+      e &&
+      t &&
+      t.split(' ').forEach(function(t) {
+        return removeClass(e, t)
+      })
+    )
+  },
+  CSSTransition = (function(e) {
+    function t() {
+      for (var t, n = arguments.length, a = new Array(n), r = 0; r < n; r++) a[r] = arguments[r]
+      return (
+        ((t = e.call.apply(e, [this].concat(a)) || this).appliedClasses = {
+          appear: {},
+          enter: {},
+          exit: {},
+        }),
+        (t.onEnter = function(e, n) {
+          t.removeClasses(e, 'exit'),
+            t.addClass(e, n ? 'appear' : 'enter', 'base'),
+            t.props.onEnter && t.props.onEnter(e, n)
+        }),
+        (t.onEntering = function(e, n) {
+          var a = n ? 'appear' : 'enter'
+          t.addClass(e, a, 'active'), t.props.onEntering && t.props.onEntering(e, n)
+        }),
+        (t.onEntered = function(e, n) {
+          var a = n ? 'appear' : 'enter'
+          t.removeClasses(e, a),
+            t.addClass(e, a, 'done'),
+            t.props.onEntered && t.props.onEntered(e, n)
+        }),
+        (t.onExit = function(e) {
+          t.removeClasses(e, 'appear'),
+            t.removeClasses(e, 'enter'),
+            t.addClass(e, 'exit', 'base'),
+            t.props.onExit && t.props.onExit(e)
+        }),
+        (t.onExiting = function(e) {
+          t.addClass(e, 'exit', 'active'), t.props.onExiting && t.props.onExiting(e)
+        }),
+        (t.onExited = function(e) {
+          t.removeClasses(e, 'exit'),
+            t.addClass(e, 'exit', 'done'),
+            t.props.onExited && t.props.onExited(e)
+        }),
+        (t.getClassNames = function(e) {
+          var n = t.props.classNames,
+            a = 'string' == typeof n,
+            r = a ? '' + (a && n ? n + '-' : '') + e : n[e]
+          return {
+            baseClassName: r,
+            activeClassName: a ? r + '-active' : n[e + 'Active'],
+            doneClassName: a ? r + '-done' : n[e + 'Done'],
+          }
+        }),
+        t
+      )
+    }
+    _inheritsLoose(t, e)
+    var n = t.prototype
+    return (
+      (n.addClass = function(e, t, n) {
+        var a = this.getClassNames(t)[n + 'ClassName']
+        'appear' === t && 'done' === n && (a += ' ' + this.getClassNames('enter').doneClassName),
+          'active' === n && e && e.scrollTop,
+          (this.appliedClasses[t][n] = a),
+          _addClass(e, a)
+      }),
+      (n.removeClasses = function(e, t) {
+        var n = this.appliedClasses[t],
+          a = n.base,
+          r = n.active,
+          o = n.done
+        ;(this.appliedClasses[t] = {}),
+          a && removeClass$1(e, a),
+          r && removeClass$1(e, r),
+          o && removeClass$1(e, o)
+      }),
+      (n.render = function() {
+        var e = this.props,
+          t = (e.classNames, _objectWithoutPropertiesLoose(e, ['classNames']))
+        return React__default.createElement(
+          Transition,
+          _extends$1({}, t, {
+            onEnter: this.onEnter,
+            onEntered: this.onEntered,
+            onEntering: this.onEntering,
+            onExit: this.onExit,
+            onExiting: this.onExiting,
+            onExited: this.onExited,
+          }),
+        )
+      }),
+      t
+    )
+  })(React__default.Component)
+function _assertThisInitialized(e) {
+  if (void 0 === e)
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+  return e
+}
+function getChildMapping(e, t) {
+  var n = Object.create(null)
+  return (
+    e &&
+      React.Children.map(e, function(e) {
+        return e
+      }).forEach(function(e) {
+        n[e.key] = (function(e) {
+          return t && React.isValidElement(e) ? t(e) : e
+        })(e)
+      }),
+    n
+  )
+}
+function mergeChildMappings(e, t) {
+  function n(n) {
+    return n in t ? t[n] : e[n]
+  }
+  ;(e = e || {}), (t = t || {})
+  var a,
+    r = Object.create(null),
+    o = []
+  for (var i in e) i in t ? o.length && ((r[i] = o), (o = [])) : o.push(i)
+  var l = {}
+  for (var s in t) {
+    if (r[s])
+      for (a = 0; a < r[s].length; a++) {
+        var c = r[s][a]
+        l[r[s][a]] = n(c)
+      }
+    l[s] = n(s)
+  }
+  for (a = 0; a < o.length; a++) l[o[a]] = n(o[a])
+  return l
+}
+function getProp(e, t, n) {
+  return null != n[t] ? n[t] : e.props[t]
+}
+function getInitialChildMapping(e, t) {
+  return getChildMapping(e.children, function(n) {
+    return React.cloneElement(n, {
+      onExited: t.bind(null, n),
+      in: !0,
+      appear: getProp(n, 'appear', e),
+      enter: getProp(n, 'enter', e),
+      exit: getProp(n, 'exit', e),
+    })
+  })
+}
+function getNextChildMapping(e, t, n) {
+  var a = getChildMapping(e.children),
+    r = mergeChildMappings(t, a)
+  return (
+    Object.keys(r).forEach(function(o) {
+      var i = r[o]
+      if (React.isValidElement(i)) {
+        var l = o in t,
+          s = o in a,
+          c = t[o],
+          d = React.isValidElement(c) && !c.props.in
+        !s || (l && !d)
+          ? s || !l || d
+            ? s &&
+              l &&
+              React.isValidElement(c) &&
+              (r[o] = React.cloneElement(i, {
+                onExited: n.bind(null, i),
+                in: c.props.in,
+                exit: getProp(i, 'exit', e),
+                enter: getProp(i, 'enter', e),
+              }))
+            : (r[o] = React.cloneElement(i, {in: !1}))
+          : (r[o] = React.cloneElement(i, {
+              onExited: n.bind(null, i),
+              in: !0,
+              exit: getProp(i, 'exit', e),
+              enter: getProp(i, 'enter', e),
+            }))
+      }
+    }),
+    r
+  )
+}
+;(CSSTransition.defaultProps = {classNames: ''}), (CSSTransition.propTypes = {})
+var values =
+    Object.values ||
+    function(e) {
+      return Object.keys(e).map(function(t) {
+        return e[t]
+      })
+    },
+  defaultProps = {
+    component: 'div',
+    childFactory: function(e) {
+      return e
+    },
+  },
+  TransitionGroup = (function(e) {
+    function t(t, n) {
+      var a,
+        r = (a = e.call(this, t, n) || this).handleExited.bind(
+          _assertThisInitialized(_assertThisInitialized(a)),
+        )
+      return (a.state = {contextValue: {isMounting: !0}, handleExited: r, firstRender: !0}), a
+    }
+    _inheritsLoose(t, e)
+    var n = t.prototype
+    return (
+      (n.componentDidMount = function() {
+        ;(this.mounted = !0), this.setState({contextValue: {isMounting: !1}})
+      }),
+      (n.componentWillUnmount = function() {
+        this.mounted = !1
+      }),
+      (t.getDerivedStateFromProps = function(e, t) {
+        var n = t.children,
+          a = t.handleExited
+        return {
+          children: t.firstRender ? getInitialChildMapping(e, a) : getNextChildMapping(e, n, a),
+          firstRender: !1,
+        }
+      }),
+      (n.handleExited = function(e, t) {
+        var n = getChildMapping(this.props.children)
+        e.key in n ||
+          (e.props.onExited && e.props.onExited(t),
+          this.mounted &&
+            this.setState(function(t) {
+              var n = _extends$1({}, t.children)
+              return delete n[e.key], {children: n}
+            }))
+      }),
+      (n.render = function() {
+        var e = this.props,
+          t = e.component,
+          n = e.childFactory,
+          a = _objectWithoutPropertiesLoose(e, ['component', 'childFactory']),
+          r = this.state.contextValue,
+          o = values(this.state.children).map(n)
+        return (
+          delete a.appear,
+          delete a.enter,
+          delete a.exit,
+          null === t
+            ? React__default.createElement(TransitionGroupContext.Provider, {value: r}, o)
+            : React__default.createElement(
+                TransitionGroupContext.Provider,
+                {value: r},
+                React__default.createElement(t, a, o),
+              )
+        )
+      }),
+      t
+    )
+  })(React__default.Component)
+;(TransitionGroup.propTypes = {}), (TransitionGroup.defaultProps = defaultProps)
 var templateObject_1$4,
   templateObject_1$5,
   templateObject_2$1,
@@ -2124,15 +2656,15 @@ var templateObject_1$4,
 function SelectDate(e) {
   var t = e.title,
     n = e.isActive,
-    r = e.date,
-    a = e.vertical,
+    a = e.date,
+    r = e.vertical,
     o = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       selectDateLabelFontSize: '11px',
       selectDateLabelColor: globalStyles.colors.silverCloud,
       selectDateLabelMargin: '0 0 8px',
       selectDateDateColor: globalStyles.colors.charcoal,
-      selectDateDateFontSize: a ? '16px' : '24px',
+      selectDateDateFontSize: r ? '16px' : '24px',
       selectDateDateFontWeight: 500,
       selectDateDatePadding: '0 0 15px',
       selectDatePadding: '0',
@@ -2161,7 +2693,7 @@ function SelectDate(e) {
         p: o.selectDateDatePadding,
         isActive: n,
       },
-      r,
+      a,
     ),
   )
 }
@@ -2348,10 +2880,10 @@ var templateObject_1$6,
     function(e) {
       var t = e.disabledDate,
         n = e.isSelected,
-        r = e.isSelectedStartOrEnd,
-        a = e.isWithinHoverRange
-      return t || n || r || a
-        ? n && !r
+        a = e.isSelectedStartOrEnd,
+        r = e.isWithinHoverRange
+      return t || n || a || r
+        ? n && !a
           ? styled.css(
               templateObject_3$1 ||
                 (templateObject_3$1 = __makeTemplateObject(
@@ -2384,42 +2916,42 @@ var templateObject_1$6,
       )
     },
   )
-function getColor(e, t, n, r) {
-  var a = r.selectedFirstOrLast,
-    o = r.normal,
-    i = r.selected,
-    l = r.rangeHover
-  return t ? a : e ? i : n ? l : o
+function getColor(e, t, n, a) {
+  var r = a.selectedFirstOrLast,
+    o = a.normal,
+    i = a.selected,
+    l = a.rangeHover
+  return t ? r : e ? i : n ? l : o
 }
 function Day(e) {
   var t = e.day,
     n = e.date,
-    r = React.useRef(null),
-    a = React.useContext(DatepickerContext),
-    o = a.focusedDate,
-    i = a.isDateFocused,
-    l = a.isDateSelected,
-    c = a.isDateHovered,
-    s = a.isDateBlocked,
-    d = a.isFirstOrLastSelectedDate,
-    u = a.onDateSelect,
-    p = a.onDateFocus,
-    m = a.onDateHover,
-    f = a.onDayRender,
+    a = React.useRef(null),
+    r = React.useContext(DatepickerContext),
+    o = r.focusedDate,
+    i = r.isDateFocused,
+    l = r.isDateSelected,
+    s = r.isDateHovered,
+    c = r.isDateBlocked,
+    d = r.isFirstOrLastSelectedDate,
+    p = r.onDateSelect,
+    u = r.onDateFocus,
+    f = r.onDateHover,
+    m = r.onDayRender,
     g = He({
       date: n,
       focusedDate: o,
       isDateFocused: i,
       isDateSelected: l,
-      isDateHovered: c,
-      isDateBlocked: s,
+      isDateHovered: s,
+      isDateBlocked: c,
       isFirstOrLastSelectedDate: d,
-      onDateFocus: p,
-      onDateSelect: u,
-      onDateHover: m,
-      dayRef: r,
+      onDateFocus: u,
+      onDateSelect: p,
+      onDateHover: f,
+      dayRef: a,
     }),
-    y = useThemeProps({
+    h = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       daySize: globalStyles.daySize,
       dayFontWeight: 500,
@@ -2442,72 +2974,72 @@ function Day(e) {
       daySelectedFirstOrLastBorderColor: '#00aeef',
       dayAccessibilityBorderColor: '#009fef',
     }),
-    h = React.useMemo(
+    y = React.useMemo(
       function() {
         return getColor(g.isSelected, g.isSelectedStartOrEnd, g.isWithinHoverRange, {
-          selectedFirstOrLast: y.daySelectedFirstOrLastBorderColor,
-          selected: y.daySelectedBorderColor,
-          normal: y.dayBorderColor,
-          rangeHover: y.dayHoverRangeColor,
+          selectedFirstOrLast: h.daySelectedFirstOrLastBorderColor,
+          selected: h.daySelectedBorderColor,
+          normal: h.dayBorderColor,
+          rangeHover: h.dayHoverRangeColor,
         })
       },
-      [g.isSelected, g.isSelectedStartOrEnd, y, g.isWithinHoverRange],
+      [g.isSelected, g.isSelectedStartOrEnd, h, g.isWithinHoverRange],
     ),
     _ = React.useMemo(
       function() {
         return getColor(g.isSelected, g.isSelectedStartOrEnd, g.isWithinHoverRange, {
-          selectedFirstOrLast: y.daySelectedFirstOrLastBackground,
-          selected: y.daySelectedBackground,
-          normal: y.dayBackground,
-          rangeHover: y.dayHoverRangeBackground,
+          selectedFirstOrLast: h.daySelectedFirstOrLastBackground,
+          selected: h.daySelectedBackground,
+          normal: h.dayBackground,
+          rangeHover: h.dayHoverRangeBackground,
         })
       },
-      [g.isSelected, g.isSelectedStartOrEnd, y, g.isWithinHoverRange],
+      [g.isSelected, g.isSelectedStartOrEnd, h, g.isWithinHoverRange],
     ),
     b = React.useMemo(
       function() {
         return getColor(g.isSelected, g.isSelectedStartOrEnd, g.isWithinHoverRange, {
-          selectedFirstOrLast: y.daySelectedFirstOrLastColor,
-          selected: y.daySelectedColor,
-          normal: y.dayColor,
-          rangeHover: y.dayHoverRangeColor,
+          selectedFirstOrLast: h.daySelectedFirstOrLastColor,
+          selected: h.daySelectedColor,
+          normal: h.dayColor,
+          rangeHover: h.dayHoverRangeColor,
         })
       },
-      [g.isSelected, g.isSelectedStartOrEnd, y, g.isWithinHoverRange],
+      [g.isSelected, g.isSelectedStartOrEnd, h, g.isWithinHoverRange],
     )
   return React__default.createElement(
     StyledDay,
     __assign({}, g, {
-      ref: r,
-      dayHeight: y.daySize,
-      dayWidth: y.daySize,
+      ref: a,
+      dayHeight: h.daySize,
+      dayWidth: h.daySize,
       background: _,
       color: b,
-      fontFamily: y.fontFamily,
-      fontWeight: y.dayFontWeight,
-      fontSize: y.dayFontSize,
-      daySelectedHoverBackground: y.daySelectedHoverBackground,
-      dayHoverBackground: y.dayHoverBackground,
-      dayHoverColor: y.dayHoverColor,
-      daySelectedHoverColor: y.daySelectedHoverColor,
-      borderAccessibilityColor: y.dayAccessibilityBorderColor,
+      fontFamily: h.fontFamily,
+      fontWeight: h.dayFontWeight,
+      fontSize: h.dayFontSize,
+      daySelectedHoverBackground: h.daySelectedHoverBackground,
+      dayHoverBackground: h.dayHoverBackground,
+      dayHoverColor: h.dayHoverColor,
+      daySelectedHoverColor: h.daySelectedHoverColor,
+      borderAccessibilityColor: h.dayAccessibilityBorderColor,
       boxShadow:
         '1px 0 0 0 ' +
-        h +
+        y +
         ',\n        0 1px 0 0 ' +
-        h +
+        y +
         ',\n        1px 1px 0 0 ' +
-        h +
+        y +
         ',\n        1px 0 0 0 ' +
-        h +
+        y +
         ' inset,\n        0 1px 0 0 ' +
-        h +
+        y +
         ' inset',
       'data-testid': 'Day',
       'aria-label': 'Day-' + n.toDateString(),
     }),
-    'function' == typeof f
-      ? f(n)
+    'function' == typeof m
+      ? m(n)
       : React__default.createElement(
           Flex,
           {justifyContent: 'center', alignItems: 'center', height: '100%', width: '100%'},
@@ -2526,19 +3058,19 @@ var templateObject_1$7,
   Month = function(e) {
     var t = e.year,
       n = e.month,
-      r = e.firstDayOfWeek,
-      a = ie({
+      a = e.firstDayOfWeek,
+      r = ie({
         dayLabelFormat: e.dayLabelFormat,
         monthLabelFormat: e.monthLabelFormat,
         weekdayLabelFormat: e.weekdayLabelFormat,
         year: t,
         month: n,
-        firstDayOfWeek: r,
+        firstDayOfWeek: a,
       }),
-      o = a.days,
-      i = a.weekdayLabels,
-      l = a.monthLabel,
-      c = useThemeProps({
+      o = r.days,
+      i = r.weekdayLabels,
+      l = r.monthLabel,
+      s = useThemeProps({
         daySize: globalStyles.daySize,
         monthLabelMargin: '0 0 28px',
         monthDayLabelMargin: '0 0 16px',
@@ -2548,23 +3080,23 @@ var templateObject_1$7,
       null,
       React__default.createElement(
         Flex,
-        {justifyContent: 'center', m: c.monthLabelMargin},
+        {justifyContent: 'center', m: s.monthLabelMargin},
         React__default.createElement(MonthLabel, {label: l}),
       ),
       React__default.createElement(
         Grid,
-        {daySizeGridTemplateColumns: c.daySize},
+        {daySizeGridTemplateColumns: s.daySize},
         i.map(function(e) {
           return React__default.createElement(
             Flex,
-            {key: e, justifyContent: 'center', m: c.monthDayLabelMargin},
+            {key: e, justifyContent: 'center', m: s.monthDayLabelMargin},
             React__default.createElement(MonthLabel$1, {label: e}),
           )
         }),
       ),
       React__default.createElement(
         Grid,
-        {daySizeGridTemplateColumns: c.daySize},
+        {daySizeGridTemplateColumns: s.daySize},
         o.map(function(e, t) {
           return 'object' == typeof e
             ? React__default.createElement(Day, {date: e.date, key: e.dayLabel, day: e.dayLabel})
@@ -2576,15 +3108,15 @@ var templateObject_1$7,
 function CaretIcon(e) {
   var t = e.height,
     n = e.width,
-    r = e.color,
-    a = e.className,
-    o = void 0 === a ? '' : a
+    a = e.color,
+    r = e.className,
+    o = void 0 === r ? '' : r
   return React__default.createElement(
     'svg',
     {
       width: n,
       height: t,
-      color: r,
+      color: a,
       className: o,
       viewBox: '0 0 14 14',
       xmlns: 'http://www.w3.org/2000/svg',
@@ -2630,15 +3162,15 @@ var templateObject_1$8,
 function ResetDates(e) {
   var t = e.onResetDates,
     n = e.text,
-    r = e.rtl,
-    a = React.useRef(null),
+    a = e.rtl,
+    r = React.useRef(null),
     o = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       resetDatesIconColor: globalStyles.colors.mud,
       resetDatesIconHeight: '14px',
       resetDatesIconWidth: '14px',
       resetDatesTextColor: globalStyles.colors.darcula,
-      resetDatesTextMargin: r ? '1px 8px 0 0' : '1px 0 0 8px',
+      resetDatesTextMargin: a ? '1px 8px 0 0' : '1px 0 0 8px',
       resetDatesTextLineHeight: 1.18,
       resetDatesTextFontSize: '11px',
     })
@@ -2649,15 +3181,15 @@ function ResetDates(e) {
       tabIndex: -1,
       onClick: t,
       onMouseUp: function() {
-        a && a.current && a.current.blur()
+        r && r.current && r.current.blur()
       },
-      ref: a,
+      ref: r,
     },
     React__default.createElement(RedoIconStyle, {
       height: o.resetDatesIconHeight,
       width: o.resetDatesIconWidth,
       color: o.resetDatesIconColor,
-      rtl: r,
+      rtl: a,
     }),
     React__default.createElement(
       Text,
@@ -2705,20 +3237,20 @@ function calculateAngle$1(e) {
 function CaretIcon$1(e) {
   var t = e.height,
     n = e.width,
-    r = e.color,
-    a = e.direction,
-    o = void 0 === a ? 'right' : a,
+    a = e.color,
+    r = e.direction,
+    o = void 0 === r ? 'right' : r,
     i = e.className,
     l = void 0 === i ? '' : i,
-    c = calculateAngle$1(o)
+    s = calculateAngle$1(o)
   return React__default.createElement(
     Svg,
     {
       width: n,
       height: t,
-      color: r,
+      color: a,
       className: l,
-      angle: c,
+      angle: s,
       viewBox: '0 0 9 6',
       xmlns: 'http://www.w3.org/2000/svg',
     },
@@ -2760,25 +3292,25 @@ var templateObject_1$a,
 function NavButton(e) {
   var t = e.type,
     n = e.onClick,
-    r = e.vertical,
-    a = e.rtl,
+    a = e.vertical,
+    r = e.rtl,
     o = e.ariaLabel,
     i = React.useRef(null),
     l = useThemeProps({
-      navButtonWidth: r ? '48px' : '30px',
-      navButtonHeight: r ? '48px' : '30px',
+      navButtonWidth: a ? '48px' : '30px',
+      navButtonHeight: a ? '48px' : '30px',
       navButtonBackground: '#ffffff',
       navButtonBorder: '1px solid #929598',
       navButtonPadding: '0',
-      navButtonIconHeight: r ? '18px' : '11px',
-      navButtonIconWidth: r ? '28px' : '18px',
+      navButtonIconHeight: a ? '18px' : '11px',
+      navButtonIconWidth: a ? '28px' : '18px',
       navButtonIconColor: globalStyles.colors.greey,
     })
-  function c() {
-    return 'next' !== t || r
-      ? 'next' === t && r
+  function s() {
+    return 'next' !== t || a
+      ? 'next' === t && a
         ? 'down'
-        : 'prev' !== t || r
+        : 'prev' !== t || a
         ? 'up'
         : 'left'
       : 'right'
@@ -2790,8 +3322,8 @@ function NavButton(e) {
       height: l.navButtonHeight,
       background: l.navButtonBackground,
       border: l.navButtonBorder,
-      borderRight: 'up' !== c() || a ? l.navButtonBorder : 'unset',
-      borderLeft: 'up' === c() && a ? 'unset' : l.navButtonBorder,
+      borderRight: 'up' !== s() || r ? l.navButtonBorder : 'unset',
+      borderLeft: 'up' === s() && r ? 'unset' : l.navButtonBorder,
       p: l.navButtonPadding,
       type: 'button',
       'aria-label': o,
@@ -2806,22 +3338,22 @@ function NavButton(e) {
       width: l.navButtonIconWidth,
       height: l.navButtonIconHeight,
       color: l.navButtonIconColor,
-      direction: c(),
+      direction: s(),
     }),
   )
 }
 function CloseIcon(e) {
   var t = e.height,
     n = e.width,
-    r = e.color,
-    a = e.className,
-    o = void 0 === a ? '' : a
+    a = e.color,
+    r = e.className,
+    o = void 0 === r ? '' : r
   return React__default.createElement(
     'svg',
     {
       width: n,
       height: t,
-      color: r,
+      color: a,
       className: o,
       viewBox: '0 0 15 16',
       xmlns: 'http://www.w3.org/2000/svg',
@@ -2871,6 +3403,7 @@ var templateObject_1$b,
 function Close(e) {
   var t = e.onClick,
     n = e.rtl,
+    a = e.closeText,
     r = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       closeMargin: n ? '1px 16px 0 0' : '1px 0 0 16px',
@@ -2898,7 +3431,7 @@ function Close(e) {
         fontFamily: r.fontFamily,
         fontWeight: r.closeFontWeight,
       },
-      'Close',
+      a,
     ),
   )
 }
@@ -2907,11 +3440,39 @@ var templateObject_1$c,
   templateObject_3$3,
   templateObject_4$1,
   templateObject_5$1,
+  templateObject_6,
+  opacity0To100 = styled.keyframes(
+    templateObject_1$c ||
+      (templateObject_1$c = __makeTemplateObject(
+        ['\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n'],
+        ['\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n'],
+      )),
+  ),
   StyledDatepicker = styled__default('div')(
-    templateObject_2$6 ||
-      (templateObject_2$6 = __makeTemplateObject(
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
-        ['\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n  ', '\n'],
+    templateObject_3$3 ||
+      (templateObject_3$3 = __makeTemplateObject(
+        [
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  \n  animation-name: ',
+          ';\n  animation-duration: 0.15s;\n  \n  .item-enter {\n    opacity: 0;\n  }\n  .item-enter-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n  .item-exit {\n    opacity: 1;\n  }\n  .item-exit-active {\n    opacity: 0;\n    transition: opacity 250ms ease-in;\n  }\n',
+        ],
+        [
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  ',
+          '\n  \n  animation-name: ',
+          ';\n  animation-duration: 0.15s;\n  \n  .item-enter {\n    opacity: 0;\n  }\n  .item-enter-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n  .item-exit {\n    opacity: 1;\n  }\n  .item-exit-active {\n    opacity: 0;\n    transition: opacity 250ms ease-in;\n  }\n',
+        ],
       )),
     background,
     space,
@@ -2923,18 +3484,19 @@ var templateObject_1$c,
       return (
         e.rtl &&
         styled.css(
-          templateObject_1$c ||
-            (templateObject_1$c = __makeTemplateObject(
+          templateObject_2$6 ||
+            (templateObject_2$6 = __makeTemplateObject(
               ['\n      direction: rtl;\n    '],
               ['\n      direction: rtl;\n    '],
             )),
         )
       )
     },
+    opacity0To100,
   ),
   DateWrapper = styled__default('div')(
-    templateObject_3$3 ||
-      (templateObject_3$3 = __makeTemplateObject(
+    templateObject_4$1 ||
+      (templateObject_4$1 = __makeTemplateObject(
         [
           "\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: '';\n    position: absolute;\n    height: 1px;\n    width: 100%;\n    background: #e6e7e8;\n    bottom: 0;\n    left: 0;\n  }\n",
         ],
@@ -2944,145 +3506,145 @@ var templateObject_1$c,
       )),
   ),
   CloseWrapper = styled__default(Box)(
-    templateObject_4$1 ||
-      (templateObject_4$1 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_5$1 ||
+      (templateObject_5$1 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     display,
     justifyContent,
   ),
   MonthGrid = styled__default(Grid)(
-    templateObject_5$1 ||
-      (templateObject_5$1 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    templateObject_6 ||
+      (templateObject_6 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
     overflow,
     height,
   )
 function Datepicker(e) {
   var t = e.startDate,
     n = e.endDate,
-    r = e.minBookingDate,
-    a = e.maxBookingDate,
+    a = e.minBookingDate,
+    r = e.maxBookingDate,
     o = e.focusedInput,
     i = e.onDatesChange,
     l = e.dayLabelFormat,
-    c = e.weekdayLabelFormat,
-    s = e.monthLabelFormat,
+    s = e.weekdayLabelFormat,
+    c = e.monthLabelFormat,
     d = e.onDayRender,
-    u = e.vertical,
-    p = void 0 !== u && u,
-    m = e.rtl,
-    f = void 0 !== m && m,
+    p = e.vertical,
+    u = void 0 !== p && p,
+    f = e.rtl,
+    m = void 0 !== f && f,
     g = e.showResetDates,
-    y = void 0 === g || g,
-    h = e.showClose,
-    _ = void 0 === h || h,
+    h = void 0 === g || g,
+    y = e.showClose,
+    _ = void 0 === y || y,
     b = e.showSelectedDates,
     v = void 0 === b || b,
     D = e.exactMinBookingDays,
-    k = void 0 !== D && D,
-    x = e.isDateBlocked,
+    x = void 0 !== D && D,
+    k = e.isDateBlocked,
     S =
-      void 0 === x
+      void 0 === k
         ? function() {
             return !1
           }
-        : x,
+        : k,
     C = e.minBookingDays,
     R = void 0 === C ? 1 : C,
-    w = e.onClose,
-    O = void 0 === w ? function() {} : w,
-    I = e.numberOfMonths,
-    T = e.firstDayOfWeek,
-    B = e.displayFormat,
-    F = void 0 === B ? 'MM/DD/YYYY' : B,
-    M = e.phrases,
-    j = void 0 === M ? datepickerPhrases : M,
-    W = Be({
+    E = e.onClose,
+    T = void 0 === E ? function() {} : E,
+    O = e.numberOfMonths,
+    I = e.firstDayOfWeek,
+    w = e.displayFormat,
+    M = void 0 === w ? 'MM/DD/YYYY' : w,
+    j = e.phrases,
+    B = void 0 === j ? datepickerPhrases : j,
+    F = Be({
       startDate: t,
       endDate: n,
       focusedInput: o,
       onDatesChange: i,
-      minBookingDate: r,
-      maxBookingDate: a,
+      minBookingDate: a,
+      maxBookingDate: r,
       minBookingDays: R,
       isDateBlocked: S,
-      exactMinBookingDays: k,
-      numberOfMonths: I,
-      firstDayOfWeek: T,
+      exactMinBookingDays: x,
+      numberOfMonths: O,
+      firstDayOfWeek: I,
     }),
-    L = W.activeMonths,
-    P = W.isDateSelected,
-    H = W.isFirstOrLastSelectedDate,
-    E = W.isDateHovered,
-    $ = W.firstDayOfWeek,
-    A = W.onDateSelect,
-    z = W.onResetDates,
-    Y = W.goToPreviousMonths,
-    G = W.goToNextMonths,
-    V = W.numberOfMonths,
-    N = W.hoveredDate,
-    K = W.onDateHover,
-    Q = W.isDateFocused,
-    U = W.focusedDate,
-    Z = W.onDateFocus,
-    q = W.isDateBlocked,
-    J = React.useRef(null),
-    X = useThemeProps({
+    W = F.activeMonths,
+    P = F.isDateSelected,
+    L = F.isFirstOrLastSelectedDate,
+    $ = F.isDateHovered,
+    H = F.firstDayOfWeek,
+    N = F.onDateSelect,
+    A = F.onResetDates,
+    z = F.goToPreviousMonths,
+    G = F.goToNextMonths,
+    Y = F.numberOfMonths,
+    V = F.hoveredDate,
+    U = F.onDateHover,
+    K = F.isDateFocused,
+    X = F.focusedDate,
+    Q = F.onDateFocus,
+    q = F.isDateBlocked,
+    Z = React.useRef(null),
+    J = useThemeProps({
       datepickerBackground: '#ffffff',
-      datepickerPadding: p ? '16px 16px 0' : '32px',
+      datepickerPadding: u ? '16px 16px 0' : '32px',
       datepickerBorderRadius: '2px',
       datepickerPosition: 'relative',
       datepickerWidth: 'fit-content',
-      datepickerCloseWrapperPosition: p ? 'relative' : 'absolute',
-      datepickerCloseWrapperDisplay: p ? 'flex' : 'block',
-      datepickerCloseWrapperJustifyContent: p ? 'flex-end' : 'initial',
-      datepickerCloseWrapperMargin: p ? '0 0 16px' : '0',
-      datepickerCloseWrapperRight: f ? 'unset' : p ? '0' : '32px',
+      datepickerCloseWrapperPosition: u ? 'relative' : 'absolute',
+      datepickerCloseWrapperDisplay: u ? 'flex' : 'block',
+      datepickerCloseWrapperJustifyContent: u ? 'flex-end' : 'initial',
+      datepickerCloseWrapperMargin: u ? '0 0 16px' : '0',
+      datepickerCloseWrapperRight: m ? 'unset' : u ? '0' : '32px',
       datepickerCloseWrapperTop: 'unset',
-      datepickerCloseWrapperLeft: f ? '32px' : 'unset',
+      datepickerCloseWrapperLeft: m ? '32px' : 'unset',
       datepickerCloseWrapperBottom: 'unset',
       datepickerCloseWrapperZIndex: 1,
-      datepickerSelectDateGridTemplateColumns: p ? '87px 50px 87px' : '126px 75px 126px',
+      datepickerSelectDateGridTemplateColumns: u ? '87px 50px 87px' : '126px 75px 126px',
       datepickerSelectDateArrowIconWidth: '15px',
       datepickerSelectDateArrowIconHeight: '12px',
       datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
       datepickerMonthsWrapperMargin: _ || v ? (v ? '28px 0 0' : '48px 0 0') : 'unset',
-      datepickerPreviousMonthButtonPosition: p ? 'relative' : 'absolute',
-      datepickerPreviousMonthButtonTop: p ? 'unset' : '-5px',
-      datepickerPreviousMonthButtonLeft: p ? 'unset' : '0',
+      datepickerPreviousMonthButtonPosition: u ? 'relative' : 'absolute',
+      datepickerPreviousMonthButtonTop: u ? 'unset' : '-5px',
+      datepickerPreviousMonthButtonLeft: u ? 'unset' : '0',
       datepickerPreviousMonthButtonRight: 'unset',
       datepickerPreviousMonthButtonBottom: 'unset',
-      datepickerNextMonthButtonPosition: p ? 'relative' : 'absolute',
-      datepickerNextMonthButtonTop: p ? 'unset' : '-5px',
+      datepickerNextMonthButtonPosition: u ? 'relative' : 'absolute',
+      datepickerNextMonthButtonTop: u ? 'unset' : '-5px',
       datepickerNextMonthButtonLeft: 'unset',
-      datepickerNextMonthButtonRight: p ? 'unset' : '0',
+      datepickerNextMonthButtonRight: u ? 'unset' : '0',
       datepickerNextMonthButtonBottom: 'unset',
-      datepickerMonthsGridGap: p ? '32px' : '0 32px',
+      datepickerMonthsGridGap: u ? '32px' : '0 32px',
       datepickerMonthsGridOverflow: 'auto',
-      datepickerMonthsGridHeight: p ? '50vh' : '100%',
-      datepickerResetDatesWrapperMargin: p ? 'unset' : '32px 0 0',
+      datepickerMonthsGridHeight: u ? '50vh' : '100%',
+      datepickerResetDatesWrapperMargin: u ? 'unset' : '32px 0 0',
       datepickerBoxShadow: 'rgba(0, 0, 0, 0.05) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px',
     })
   function ee() {
-    J && J.current && p && (J.current.scrollTop = 0)
+    Z && Z.current && u && (Z.current.scrollTop = 0)
   }
   function te() {
     G(), ee()
   }
   function ne() {
-    Y(), ee()
+    z(), ee()
   }
   return React__default.createElement(
     DatepickerContext.Provider,
     {
       value: {
-        rtl: f,
-        isDateFocused: Q,
+        rtl: m,
+        isDateFocused: K,
         isDateSelected: P,
-        isDateHovered: E,
-        isFirstOrLastSelectedDate: H,
-        onDateFocus: Z,
-        focusedDate: U,
-        onDateSelect: A,
-        onDateHover: K,
+        isDateHovered: $,
+        isFirstOrLastSelectedDate: L,
+        onDateFocus: Q,
+        focusedDate: X,
+        onDateSelect: N,
+        onDateHover: U,
         onDayRender: d,
         isDateBlocked: q,
       },
@@ -3090,29 +3652,29 @@ function Datepicker(e) {
     React__default.createElement(
       StyledDatepicker,
       {
-        background: X.datepickerBackground,
-        p: X.datepickerPadding,
-        borderRadius: X.datepickerBorderRadius,
-        position: X.datepickerPosition,
-        boxShadow: X.datepickerBoxShadow,
-        width: X.datepickerWidth,
-        rtl: f,
+        background: J.datepickerBackground,
+        p: J.datepickerPadding,
+        borderRadius: J.datepickerBorderRadius,
+        position: J.datepickerPosition,
+        boxShadow: J.datepickerBoxShadow,
+        width: J.datepickerWidth,
+        rtl: m,
       },
       _ &&
         React__default.createElement(
           CloseWrapper,
           {
-            m: X.datepickerCloseWrapperMargin,
-            display: X.datepickerCloseWrapperDisplay,
-            justifyContent: X.datepickerCloseWrapperJustifyContent,
-            position: X.datepickerCloseWrapperPosition,
-            right: X.datepickerCloseWrapperRight,
-            top: X.datepickerCloseWrapperTop,
-            left: X.datepickerCloseWrapperLeft,
-            bottom: X.datepickerCloseWrapperBottom,
-            zIndex: X.datepickerCloseWrapperZIndex,
+            m: J.datepickerCloseWrapperMargin,
+            display: J.datepickerCloseWrapperDisplay,
+            justifyContent: J.datepickerCloseWrapperJustifyContent,
+            position: J.datepickerCloseWrapperPosition,
+            right: J.datepickerCloseWrapperRight,
+            top: J.datepickerCloseWrapperTop,
+            left: J.datepickerCloseWrapperLeft,
+            bottom: J.datepickerCloseWrapperBottom,
+            zIndex: J.datepickerCloseWrapperZIndex,
           },
-          React__default.createElement(Close, {onClick: O, rtl: f}),
+          React__default.createElement(Close, {onClick: T, rtl: m, closeText: B.close}),
         ),
       v &&
         React__default.createElement(
@@ -3120,27 +3682,27 @@ function Datepicker(e) {
           null,
           React__default.createElement(
             Grid,
-            {gridTemplateColumns: X.datepickerSelectDateGridTemplateColumns},
+            {gridTemplateColumns: J.datepickerSelectDateGridTemplateColumns},
             React__default.createElement(SelectDate, {
-              title: j.datepickerStartDateLabel,
-              date: Se(t, F, j.datepickerStartDatePlaceholder),
+              title: B.datepickerStartDateLabel,
+              date: Se(t, M, B.datepickerStartDatePlaceholder),
               isActive: o === be,
-              vertical: p,
+              vertical: u,
             }),
             React__default.createElement(
               Flex,
               {justifyContent: 'center', alignItems: 'center'},
               React__default.createElement(ArrowIcon, {
-                height: X.datepickerSelectDateArrowIconHeight,
-                width: X.datepickerSelectDateArrowIconWidth,
-                iconColor: X.datepickerSelectDateArrowIconColor,
+                height: J.datepickerSelectDateArrowIconHeight,
+                width: J.datepickerSelectDateArrowIconWidth,
+                iconColor: J.datepickerSelectDateArrowIconColor,
               }),
             ),
             React__default.createElement(SelectDate, {
-              title: j.datepickerEndDateLabel,
-              date: Se(n, F, j.datepickerEndDatePlaceholder),
+              title: B.datepickerEndDateLabel,
+              date: Se(n, M, B.datepickerEndDatePlaceholder),
               isActive: o === xe,
-              vertical: p,
+              vertical: u,
             }),
           ),
         ),
@@ -3149,32 +3711,40 @@ function Datepicker(e) {
         {position: 'relative'},
         React__default.createElement(
           Box,
-          {m: X.datepickerMonthsWrapperMargin},
+          {m: J.datepickerMonthsWrapperMargin},
           React__default.createElement(
-            MonthGrid,
-            {
-              'data-testid': 'MonthGrid',
-              overflow: X.datepickerMonthsGridOverflow,
-              height: X.datepickerMonthsGridHeight,
-              gridTemplateColumns: p ? '1fr' : 'repeat(' + V + ', 1fr)',
-              gridGap: X.datepickerMonthsGridGap,
-              pr: f ? '1px' : '0',
-              ref: J,
-              onMouseLeave: function() {
-                N && K(null)
+            TransitionGroup,
+            {className: 'todo-list'},
+            React__default.createElement(
+              MonthGrid,
+              {
+                'data-testid': 'MonthGrid',
+                overflow: J.datepickerMonthsGridOverflow,
+                height: J.datepickerMonthsGridHeight,
+                gridTemplateColumns: u ? '1fr' : 'repeat(' + Y + ', 1fr)',
+                gridGap: J.datepickerMonthsGridGap,
+                pr: m ? '1px' : '0',
+                ref: Z,
+                onMouseLeave: function() {
+                  V && U(null)
+                },
               },
-            },
-            L.map(function(e) {
-              return React__default.createElement(Month, {
-                key: e.year + '-' + e.month,
-                year: e.year,
-                month: e.month,
-                firstDayOfWeek: $,
-                dayLabelFormat: l || ae,
-                weekdayLabelFormat: c || oe,
-                monthLabelFormat: s || ue,
-              })
-            }),
+              W.map(function(e) {
+                return React__default.createElement(
+                  CSSTransition,
+                  {key: e.year + '-' + e.month, timeout: 250, classNames: 'item', in: !0},
+                  React__default.createElement(Month, {
+                    key: 'month-' + e.year + '-' + e.month,
+                    year: e.year,
+                    month: e.month,
+                    firstDayOfWeek: H,
+                    dayLabelFormat: l || ae,
+                    weekdayLabelFormat: s || oe,
+                    monthLabelFormat: c || ue,
+                  }),
+                )
+              }),
+            ),
           ),
         ),
         React__default.createElement(
@@ -3183,47 +3753,47 @@ function Datepicker(e) {
           React__default.createElement(
             React__default.Fragment,
             null,
-            y &&
+            h &&
               React__default.createElement(
                 Flex,
-                {flex: '1', m: X.datepickerResetDatesWrapperMargin},
+                {flex: '1', m: J.datepickerResetDatesWrapperMargin},
                 React__default.createElement(ResetDates, {
-                  rtl: f,
-                  onResetDates: z,
-                  text: j.resetDates,
+                  rtl: m,
+                  onResetDates: A,
+                  text: B.resetDates,
                 }),
               ),
             React__default.createElement(
               Box,
               {
-                position: X.datepickerPreviousMonthButtonPosition,
-                top: X.datepickerPreviousMonthButtonTop,
-                left: X.datepickerPreviousMonthButtonLeft,
-                right: X.datepickerPreviousMonthButtonRight,
-                bottom: X.datepickerPreviousMonthButtonBottom,
+                position: J.datepickerPreviousMonthButtonPosition,
+                top: J.datepickerPreviousMonthButtonTop,
+                left: J.datepickerPreviousMonthButtonLeft,
+                right: J.datepickerPreviousMonthButtonRight,
+                bottom: J.datepickerPreviousMonthButtonBottom,
               },
               React__default.createElement(NavButton, {
                 type: 'prev',
-                onClick: f && !p ? te : ne,
-                vertical: p,
-                rtl: f,
+                onClick: m && !u ? te : ne,
+                vertical: u,
+                rtl: m,
                 ariaLabel: 'Previous month',
               }),
             ),
             React__default.createElement(
               Box,
               {
-                position: X.datepickerNextMonthButtonPosition,
-                top: X.datepickerNextMonthButtonTop,
-                left: X.datepickerNextMonthButtonLeft,
-                right: X.datepickerNextMonthButtonRight,
-                bottom: X.datepickerNextMonthButtonBottom,
+                position: J.datepickerNextMonthButtonPosition,
+                top: J.datepickerNextMonthButtonTop,
+                left: J.datepickerNextMonthButtonLeft,
+                right: J.datepickerNextMonthButtonRight,
+                bottom: J.datepickerNextMonthButtonBottom,
               },
               React__default.createElement(NavButton, {
                 type: 'next',
-                onClick: f && !p ? ne : te,
-                vertical: p,
-                rtl: f,
+                onClick: m && !u ? ne : te,
+                vertical: u,
+                rtl: m,
                 ariaLabel: 'Next month',
               }),
             ),
@@ -3303,28 +3873,28 @@ function getPlacement(e) {
 function DateRangeInput(e) {
   var t = e.startDate,
     n = e.endDate,
-    r = e.minBookingDate,
-    a = e.maxBookingDate,
+    a = e.minBookingDate,
+    r = e.maxBookingDate,
     o = e.firstDayOfWeek,
     i = e.onFocusChange,
     l = e.numberOfMonths,
-    c = e.focusedInput,
-    s = e.onDatesChange,
+    s = e.focusedInput,
+    c = e.onDatesChange,
     d = e.exactMinBookingDays,
-    u = e.dayLabelFormat,
-    p = e.weekdayLabelFormat,
-    m = e.monthLabelFormat,
-    f = e.onDayRender,
+    p = e.dayLabelFormat,
+    u = e.weekdayLabelFormat,
+    f = e.monthLabelFormat,
+    m = e.onDayRender,
     g = e.showClose,
-    y = void 0 === g || g,
-    h = e.showSelectedDates,
-    _ = void 0 === h || h,
+    h = void 0 === g || g,
+    y = e.showSelectedDates,
+    _ = void 0 === y || y,
     b = e.showResetDates,
     v = void 0 === b || b,
     D = e.vertical,
-    k = void 0 !== D && D,
-    x = e.rtl,
-    S = void 0 !== x && x,
+    x = void 0 !== D && D,
+    k = e.rtl,
+    S = void 0 !== k && k,
     C = e.isDateBlocked,
     R =
       void 0 === C
@@ -3332,145 +3902,305 @@ function DateRangeInput(e) {
             return !1
           }
         : C,
-    w = e.minBookingDays,
-    O = void 0 === w ? 1 : w,
-    I = e.onClose,
-    T = void 0 === I ? function() {} : I,
-    B = e.showStartDateCalendarIcon,
-    F = void 0 === B || B,
-    M = e.showEndDateCalendarIcon,
-    j = void 0 === M || M,
-    W = e.displayFormat,
-    L = void 0 === W ? 'MM/DD/YYYY' : W,
+    E = e.minBookingDays,
+    T = void 0 === E ? 1 : E,
+    O = e.onClose,
+    I = void 0 === O ? function() {} : O,
+    w = e.showStartDateCalendarIcon,
+    M = void 0 === w || w,
+    j = e.showEndDateCalendarIcon,
+    B = void 0 === j || j,
+    F = e.displayFormat,
+    W = void 0 === F ? 'MM/DD/YYYY' : F,
     P = e.phrases,
-    H = void 0 === P ? dateRangeInputPhrases : P,
-    E = e.placement,
-    $ = void 0 === E ? 'bottom' : E,
-    A = React.useRef(null),
-    z = useThemeProps(
+    L = void 0 === P ? dateRangeInputPhrases : P,
+    $ = e.placement,
+    H = void 0 === $ ? 'bottom' : $,
+    N = React.useRef(null),
+    A = useThemeProps(
       __assign(
         {
           dateRangeBackground: 'transparent',
-          dateRangeGridTemplateColumns: k ? '1fr 24px 1fr' : '194px 39px 194px',
+          dateRangeGridTemplateColumns: x ? '1fr 24px 1fr' : '194px 39px 194px',
           dateRangeBorder: '0',
           dateRangeBorderRadius: '0',
           dateRangeArrowIconWidth: '15px',
           dateRangeArrowIconHeight: '12px',
           dateRangeArrowIconColor: '#BCBEC0',
           dateRangeArrowIconOpacity: 1,
-          dateRangeStartDateInputPadding: k ? (S ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
-          dateRangeEndDateInputPadding: k ? (S ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+          dateRangeStartDateInputPadding: x ? (S ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+          dateRangeEndDateInputPadding: x ? (S ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
           dateRangeDatepickerWrapperPosition: 'absolute',
         },
-        getPlacement($),
+        getPlacement(H),
       ),
     )
-  function Y(e) {
-    null !== c && A && A.current && !A.current.contains(e.target) && i(null)
+  function z(e) {
+    null !== s && N && N.current && !N.current.contains(e.target) && i(null)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', Y),
+        'undefined' != typeof window && window.addEventListener('click', z),
         function() {
-          window.removeEventListener('click', Y)
+          window.removeEventListener('click', z)
         }
       )
     }),
     React__default.createElement(
       Wrapper$1,
-      {rtl: S, position: 'relative', ref: A},
+      {rtl: S, position: 'relative', ref: N},
       React__default.createElement(
         InputGrid,
         {
-          background: z.dateRangeBackground,
-          gridTemplateColumns: z.dateRangeGridTemplateColumns,
-          border: z.dateRangeBorder,
-          borderRadius: z.dateRangeBorderRadius,
+          background: A.dateRangeBackground,
+          gridTemplateColumns: A.dateRangeGridTemplateColumns,
+          border: A.dateRangeBorder,
+          borderRadius: A.dateRangeBorderRadius,
         },
         React__default.createElement(Input, {
           id: 'startDate',
-          ariaLabel: H.startDateAriaLabel,
-          placeholder: H.startDatePlaceholder,
-          value: Se(t, L, ''),
+          ariaLabel: L.startDateAriaLabel,
+          placeholder: L.startDatePlaceholder,
+          value: Se(t, W, ''),
           onClick: function() {
             return i(be)
           },
-          showCalendarIcon: F,
-          vertical: k,
-          isActive: c === be,
-          padding: z.dateRangeStartDateInputPadding,
+          showCalendarIcon: M,
+          vertical: x,
+          isActive: s === be,
+          padding: A.dateRangeStartDateInputPadding,
           rtl: S,
         }),
         React__default.createElement(
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
           React__default.createElement(InputArrowIcon, {
-            width: z.dateRangeArrowIconWidth,
-            height: z.dateRangeArrowIconHeight,
-            color: z.dateRangeArrowIconColor,
-            opacity: z.dateRangeArrowIconOpacity,
+            width: A.dateRangeArrowIconWidth,
+            height: A.dateRangeArrowIconHeight,
+            color: A.dateRangeArrowIconColor,
+            opacity: A.dateRangeArrowIconOpacity,
             rtl: S,
           }),
         ),
         React__default.createElement(Input, {
           id: 'endDate',
-          ariaLabel: H.endDateAriaLabel,
-          placeholder: H.endDatePlaceholder,
-          value: Se(n, L, ''),
+          ariaLabel: L.endDateAriaLabel,
+          placeholder: L.endDatePlaceholder,
+          value: Se(n, W, ''),
           onClick: function() {
             return i(t ? xe : be)
           },
-          showCalendarIcon: j,
-          vertical: k,
-          isActive: c === xe,
-          padding: z.dateRangeEndDateInputPadding,
+          showCalendarIcon: B,
+          vertical: x,
+          isActive: s === xe,
+          padding: A.dateRangeEndDateInputPadding,
           rtl: S,
-          disableAccessibility: c === be,
+          disableAccessibility: s === be,
         }),
       ),
       React__default.createElement(
         Box,
         {
-          position: z.dateRangeDatepickerWrapperPosition,
-          bottom: z.dateRangeDatepickerWrapperBottom,
-          left: z.dateRangeDatepickerWrapperLeft,
-          top: z.dateRangeDatepickerWrapperTop,
-          right: z.dateRangeDatepickerWrapperRight,
+          position: A.dateRangeDatepickerWrapperPosition,
+          bottom: A.dateRangeDatepickerWrapperBottom,
+          left: A.dateRangeDatepickerWrapperLeft,
+          top: A.dateRangeDatepickerWrapperTop,
+          right: A.dateRangeDatepickerWrapperRight,
         },
-        null !== c &&
+        null !== s &&
           React__default.createElement(Datepicker, {
             onClose: function() {
-              T(), i(null)
+              I(), i(null)
             },
             startDate: t,
             endDate: n,
-            minBookingDate: r,
-            maxBookingDate: a,
+            minBookingDate: a,
+            maxBookingDate: r,
             firstDayOfWeek: o,
             numberOfMonths: l,
-            focusedInput: c,
-            displayFormat: L,
-            onDatesChange: s,
-            minBookingDays: O,
+            focusedInput: s,
+            displayFormat: W,
+            onDatesChange: c,
+            minBookingDays: T,
             isDateBlocked: R,
             exactMinBookingDays: d,
             showResetDates: v,
-            vertical: k,
+            vertical: x,
             showSelectedDates: _,
-            showClose: y,
+            showClose: h,
             rtl: S,
-            dayLabelFormat: u,
-            weekdayLabelFormat: p,
-            monthLabelFormat: m,
-            onDayRender: f,
+            dayLabelFormat: p,
+            weekdayLabelFormat: u,
+            monthLabelFormat: f,
+            onDayRender: m,
+            phrases: L,
+          }),
+      ),
+    )
+  )
+}
+var templateObject_1$e,
+  templateObject_2$8,
+  Wrapper$2 = styled__default(Box)(
+    templateObject_2$8 ||
+      (templateObject_2$8 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+    function(e) {
+      return (
+        e.rtl &&
+        styled.css(
+          templateObject_1$e ||
+            (templateObject_1$e = __makeTemplateObject(
+              ['\n      direction: rtl;\n    '],
+              ['\n      direction: rtl;\n    '],
+            )),
+        )
+      )
+    },
+  )
+function getPlacement$1(e) {
+  return 'top' === e
+    ? {
+        dateSingleDatepickerWrapperTop: 'unset',
+        dateSingleDatepickerWrapperRight: 'unset',
+        dateSingleDatepickerWrapperBottom: '65px',
+        dateSingleDatepickerWrapperLeft: '0',
+      }
+    : {
+        dateSingleDatepickerWrapperTop: 'unset',
+        dateSingleDatepickerWrapperRight: '65px',
+        dateSingleDatepickerWrapperBottom: 'unset',
+        dateSingleDatepickerWrapperLeft: '0',
+      }
+}
+function DateSingleInput(e) {
+  var t = e.date,
+    n = e.minBookingDate,
+    a = e.maxBookingDate,
+    r = e.firstDayOfWeek,
+    o = e.onFocusChange,
+    i = e.showDatepicker,
+    l = e.onDateChange,
+    s = e.dayLabelFormat,
+    c = e.weekdayLabelFormat,
+    d = e.monthLabelFormat,
+    p = e.onDayRender,
+    u = e.numberOfMonths,
+    f = void 0 === u ? 1 : u,
+    m = e.showClose,
+    g = void 0 === m || m,
+    h = e.showResetDate,
+    y = void 0 === h || h,
+    _ = e.vertical,
+    b = void 0 !== _ && _,
+    v = e.rtl,
+    D = void 0 !== v && v,
+    x = e.isDateBlocked,
+    k =
+      void 0 === x
+        ? function() {
+            return !1
+          }
+        : x,
+    S = e.onClose,
+    C = void 0 === S ? function() {} : S,
+    R = e.showCalendarIcon,
+    E = void 0 === R || R,
+    T = e.displayFormat,
+    O = void 0 === T ? 'MM/DD/YYYY' : T,
+    I = e.phrases,
+    w = void 0 === I ? dateSingleInputPhrases : I,
+    M = e.placement,
+    j = void 0 === M ? 'bottom' : M,
+    B = React.useRef(null),
+    F = useThemeProps(
+      __assign(
+        {
+          dateSingleInputPadding: b ? (D ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+          dateSingleDatepickerWrapperPosition: 'absolute',
+        },
+        getPlacement$1(j),
+      ),
+    )
+  function W(e) {
+    i && B && B.current && !B.current.contains(e.target) && o(!1)
+  }
+  return (
+    React.useEffect(function() {
+      return (
+        'undefined' != typeof window && window.addEventListener('click', W),
+        function() {
+          window.removeEventListener('click', W)
+        }
+      )
+    }),
+    React__default.createElement(
+      Wrapper$2,
+      {rtl: D, position: 'relative', ref: B},
+      React__default.createElement(Input, {
+        id: 'startDate',
+        ariaLabel: w.dateAriaLabel,
+        placeholder: w.datePlaceholder,
+        value: Se(t, O, ''),
+        onClick: function() {
+          return o(!0)
+        },
+        showCalendarIcon: E,
+        vertical: b,
+        isActive: !1,
+        padding: F.dateSingleInputPadding,
+        rtl: D,
+      }),
+      React__default.createElement(
+        Box,
+        {
+          position: F.dateSingleDatepickerWrapperPosition,
+          bottom: F.dateSingleDatepickerWrapperBottom,
+          left: F.dateSingleDatepickerWrapperLeft,
+          top: F.dateSingleDatepickerWrapperTop,
+          right: F.dateSingleDatepickerWrapperRight,
+        },
+        i &&
+          React__default.createElement(Datepicker, {
+            exactMinBookingDays: !0,
+            minBookingDays: 1,
+            onClose: function() {
+              C(), o(!1)
+            },
+            startDate: t,
+            endDate: t,
+            minBookingDate: n,
+            maxBookingDate: a,
+            firstDayOfWeek: r,
+            numberOfMonths: f,
+            focusedInput: i ? be : null,
+            displayFormat: O,
+            onDatesChange: function(e) {
+              var t = e.focusedInput,
+                n = e.startDate
+              l({showDatepicker: null !== t, date: n})
+            },
+            isDateBlocked: k,
+            showResetDates: y,
+            vertical: b,
+            showSelectedDates: !1,
+            showClose: g,
+            rtl: D,
+            dayLabelFormat: s,
+            weekdayLabelFormat: c,
+            monthLabelFormat: d,
+            onDayRender: p,
+            phrases: w,
           }),
       ),
     )
   )
 }
 ;(exports.DateRangeInput = DateRangeInput),
+  (exports.DateSingleInput = DateSingleInput),
   (exports.Datepicker = Datepicker),
   (exports.END_DATE = xe),
   (exports.START_DATE = be),
-  (exports.phrases = phrases)
+  (exports.dateRangeInputPhrases = dateRangeInputPhrases),
+  (exports.dateSingleInputPhrases = dateSingleInputPhrases),
+  (exports.datepickerPhrases = datepickerPhrases)

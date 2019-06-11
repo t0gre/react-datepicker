@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@datepicker-react/hooks": "^1.3.0",
-    "react-transition-group": "^4.1.0",
+    "react-transition-group": "^4.1.1",
     "styled-system": "^4.2.4"
   },
   "publishConfig": {
