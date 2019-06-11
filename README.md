@@ -188,7 +188,7 @@ the `showDatepicker` and `onFocusChange` props as shown below.
 Here is the minimum _REQUIRED_ setup you need to get the `DateSingleInput` working:
 
 ```jsx
-import React, {useState} from 'react'
+import React, {useReducer} from 'react'
 import {DateSingleInput} from '@datepicker-react/styled'
 
 const initialState = {
