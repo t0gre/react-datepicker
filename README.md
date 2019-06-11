@@ -1,8 +1,4 @@
-<p align="center">
-  <img width="150" height="150" src="./docs/logo.jpg">
-</p>
-
-<br />
+# @datepicker-react/styled
 
 [![Gzip size](https://img.shields.io/bundlephobia/minzip/@datepicker-react/styled.svg)](https://img.shields.io/bundlephobia/minzip/@datepicker-react/styled.svg)
 [![Coverage Status](https://coveralls.io/repos/github/tresko/react-datepicker/badge.svg?branch=master)](https://coveralls.io/github/tresko/react-datepicker?branch=master)
