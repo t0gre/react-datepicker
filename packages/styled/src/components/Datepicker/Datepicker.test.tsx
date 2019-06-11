@@ -236,6 +236,7 @@ test('should execute onClose callback', () => {
         datepickerEndDateLabel: 'test',
         datepickerEndDatePlaceholder: 'test',
         resetDates: 'test',
+        close: 'test',
       }}
     />,
   )
@@ -243,7 +244,7 @@ test('should execute onClose callback', () => {
   // Get formatted date
   getByText('16.03.2019')
 
-  expect(getAllByText('test').length).toBe(4)
+  expect(getAllByText('test').length).toBe(5)
 
   fireEvent.click(getByTestId('DatepickerClose'))
   expect(onClose).toHaveBeenCalled()

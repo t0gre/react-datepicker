@@ -60,9 +60,10 @@ const Wrapper = styled('button')<ColorProps>`
 interface CloseProps {
   onClick(): void
   rtl: boolean
+  closeText: string
 }
 
-function Close({onClick, rtl}: CloseProps) {
+function Close({onClick, rtl, closeText}: CloseProps) {
   const theme: CloseTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     closeMargin: rtl ? '1px 16px 0 0' : '1px 0 0 16px',
@@ -90,7 +91,7 @@ function Close({onClick, rtl}: CloseProps) {
         fontFamily={theme.fontFamily}
         fontWeight={theme.closeFontWeight}
       >
-        Close
+        {closeText}
       </Text>
     </Wrapper>
   )

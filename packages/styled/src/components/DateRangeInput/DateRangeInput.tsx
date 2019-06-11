@@ -245,6 +245,7 @@ function DateRangeInput({
             weekdayLabelFormat={weekdayLabelFormat}
             monthLabelFormat={monthLabelFormat}
             onDayRender={onDayRender}
+            phrases={phrases}
           />
         )}
       </Box>

@@ -48,7 +48,7 @@ test('should have empty start and end date and focused start date', () => {
   })
 })
 
-test('should custom render day', () => {
+test('should render custom day', () => {
   const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()
   const {container, getAllByText, getByText, getAllByTestId, getByTestId} = render(
@@ -265,6 +265,7 @@ test('should execute onClose callback', () => {
         endDateAriaLabel: 'test',
         startDatePlaceholder: 'test',
         endDatePlaceholder: 'test',
+        close: 'test',
       }}
     />,
   )
@@ -310,6 +311,7 @@ test('should not render calendar icons', () => {
         endDateAriaLabel: 'test',
         startDatePlaceholder: 'test',
         endDatePlaceholder: 'test',
+        close: 'test',
       }}
     />,
   )

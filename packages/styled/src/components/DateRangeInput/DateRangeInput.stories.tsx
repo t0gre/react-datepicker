@@ -11,7 +11,13 @@ import {
 } from '@datepicker-react/hooks'
 import slLocale from 'date-fns/locale/sl'
 import Flex from '../Flex'
-import {DateRangeInput, OnDatesChangeProps, FirstDayOfWeek, phrases} from '../../index'
+import {
+  DateRangeInput,
+  OnDatesChangeProps,
+  FirstDayOfWeek,
+  DateRangeInputPhrases,
+  dateRangeInputPhrases,
+} from '../../index'
 
 const initialState: OnDatesChangeProps = {
   startDate: null,
@@ -41,7 +47,7 @@ interface AppProps {
   minBookingDays?: number
   numberOfMonths?: number
   firstDayOfWeek?: FirstDayOfWeek
-  phrasesProp?: phrases.DateRangeInputPhrases
+  phrasesProp?: DateRangeInputPhrases
   isDateBlocked?(date: Date): boolean
   minBookingDate?: Date
   maxBookingDate?: Date
@@ -62,7 +68,7 @@ function App({
   minBookingDays = 1,
   numberOfMonths = 2,
   firstDayOfWeek = 1,
-  phrasesProp = phrases.dateRangeInputPhrases,
+  phrasesProp = dateRangeInputPhrases,
   isDateBlocked = () => false,
   minBookingDate,
   maxBookingDate,
@@ -74,35 +80,37 @@ function App({
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <DateRangeInput
-      minBookingDate={minBookingDate}
-      maxBookingDate={maxBookingDate}
-      onDatesChange={data => dispatch({type: 'dateChange', payload: data})}
-      onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-      // @ts-ignore
-      startDate={state.startDate}
-      // @ts-ignore
-      endDate={state.endDate}
-      // @ts-ignore
-      focusedInput={state.focusedInput}
-      onClose={action('onClose')}
-      displayFormat={displayFormat}
-      vertical={vertical}
-      rtl={rtl}
-      showClose={showClose}
-      showResetDates={showResetDates}
-      showSelectedDates={showSelectedDates}
-      exactMinBookingDays={exactMinBookingDays}
-      minBookingDays={minBookingDays}
-      numberOfMonths={numberOfMonths}
-      firstDayOfWeek={firstDayOfWeek}
-      phrases={phrasesProp}
-      isDateBlocked={isDateBlocked}
-      dayLabelFormat={dayLabelFormat}
-      weekdayLabelFormat={weekdayLabelFormat}
-      monthLabelFormat={monthLabelFormat}
-      onDayRender={onDayRender}
-    />
+    <div style={{width: '300px'}}>
+      <DateRangeInput
+        minBookingDate={minBookingDate}
+        maxBookingDate={maxBookingDate}
+        onDatesChange={data => dispatch({type: 'dateChange', payload: data})}
+        onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
+        // @ts-ignore
+        startDate={state.startDate}
+        // @ts-ignore
+        endDate={state.endDate}
+        // @ts-ignore
+        focusedInput={state.focusedInput}
+        onClose={action('onClose')}
+        displayFormat={displayFormat}
+        vertical={vertical}
+        rtl={rtl}
+        showClose={showClose}
+        showResetDates={showResetDates}
+        showSelectedDates={showSelectedDates}
+        exactMinBookingDays={exactMinBookingDays}
+        minBookingDays={minBookingDays}
+        numberOfMonths={numberOfMonths}
+        firstDayOfWeek={firstDayOfWeek}
+        phrases={phrasesProp}
+        isDateBlocked={isDateBlocked}
+        dayLabelFormat={dayLabelFormat}
+        weekdayLabelFormat={weekdayLabelFormat}
+        monthLabelFormat={monthLabelFormat}
+        onDayRender={onDayRender}
+      />
+    </div>
   )
 }
 
@@ -174,6 +182,7 @@ storiesOf('DateRangeInput', module)
         endDateAriaLabel: 'Končni datum',
         startDatePlaceholder: 'Začetni datum',
         endDatePlaceholder: 'Končni datum',
+        close: 'Zapri',
       }}
     />
   ))
@@ -197,6 +206,7 @@ storiesOf('DateRangeInput', module)
         endDateAriaLabel: 'Končni datum',
         startDatePlaceholder: 'Začetni datum',
         endDatePlaceholder: 'Končni datum',
+        close: 'Zapri',
       }}
       dayLabelFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
       weekdayLabelFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}

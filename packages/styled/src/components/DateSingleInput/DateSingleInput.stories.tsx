@@ -1,37 +1,49 @@
-import React, {useState} from 'react'
+import React, {useReducer} from 'react'
 import {ThemeProvider} from 'styled-components'
-import {format, addDays, isSameDay} from 'date-fns'
+import {addDays, isSameDay, format} from 'date-fns'
+import {storiesOf} from '@storybook/react'
+import {action} from '@storybook/addon-actions'
+import {text, boolean} from '@storybook/addon-knobs'
 import {
   dayLabelFormat as dayLabelFormatFn,
   weekdayLabelFormat as weekdayLabelFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
-import {storiesOf} from '@storybook/react'
-import {action} from '@storybook/addon-actions'
-import {text, boolean} from '@storybook/addon-knobs'
 import slLocale from 'date-fns/locale/sl'
-import {
-  Datepicker,
-  START_DATE,
-  OnDatesChangeProps,
-  FirstDayOfWeek,
-  DatepickerPhrases,
-  datepickerPhrases,
-} from '../../index'
 import Flex from '../Flex'
+import {
+  DateSingleInput,
+  OnDateChangeProps,
+  FirstDayOfWeek,
+  dateSingleInputPhrases,
+  DateSingleInputPhrases,
+} from '../../index'
+
+const initialState: OnDateChangeProps = {
+  date: null,
+  showDatepicker: false,
+}
+
+function reducer(state: OnDateChangeProps, action: Record<string, unknown>) {
+  switch (action.type) {
+    case 'focusChange':
+      return {...state, showDatepicker: action.payload}
+    case 'dateChange':
+      return action.payload
+    default:
+      throw new Error()
+  }
+}
 
 interface AppProps {
   displayFormat?: string
   vertical?: boolean
   rtl?: boolean
-  showResetDates?: boolean
+  showResetDate?: boolean
   showClose?: boolean
-  showSelectedDates?: boolean
-  exactMinBookingDays?: boolean
-  minBookingDays?: number
   numberOfMonths?: number
   firstDayOfWeek?: FirstDayOfWeek
-  phrasesProp?: DatepickerPhrases
+  phrasesProp?: DateSingleInputPhrases
   isDateBlocked?(date: Date): boolean
   minBookingDate?: Date
   maxBookingDate?: Date
@@ -44,15 +56,12 @@ interface AppProps {
 function App({
   displayFormat = 'MM/DD/YYYY',
   showClose = true,
-  showSelectedDates = true,
-  showResetDates = false,
+  showResetDate = false,
   vertical = false,
   rtl = false,
-  exactMinBookingDays = false,
-  minBookingDays = 1,
-  numberOfMonths = 2,
+  numberOfMonths = 1,
   firstDayOfWeek = 1,
-  phrasesProp = datepickerPhrases,
+  phrasesProp = dateSingleInputPhrases,
   isDateBlocked = () => false,
   minBookingDate,
   maxBookingDate,
@@ -61,82 +70,54 @@ function App({
   monthLabelFormat = monthLabelFormatFn,
   onDayRender = undefined,
 }: AppProps) {
-  const [state, setState] = useState<OnDatesChangeProps>({
-    startDate: null,
-    endDate: null,
-    focusedInput: START_DATE,
-  })
-
-  function handleDataChange(data: OnDatesChangeProps) {
-    action('onDatesChange')(data)
-    if (!data.focusedInput) {
-      setState({...data, focusedInput: START_DATE})
-    } else {
-      setState(data)
-    }
-  }
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <Datepicker
-      minBookingDate={minBookingDate}
-      maxBookingDate={maxBookingDate}
-      onDatesChange={handleDataChange}
-      startDate={state.startDate}
-      endDate={state.endDate}
-      focusedInput={state.focusedInput}
-      onClose={action('onClose')}
-      displayFormat={displayFormat}
-      vertical={vertical}
-      rtl={rtl}
-      showClose={showClose}
-      showResetDates={showResetDates}
-      showSelectedDates={showSelectedDates}
-      exactMinBookingDays={exactMinBookingDays}
-      minBookingDays={minBookingDays}
-      numberOfMonths={numberOfMonths}
-      firstDayOfWeek={firstDayOfWeek}
-      phrases={phrasesProp}
-      isDateBlocked={isDateBlocked}
-      dayLabelFormat={dayLabelFormat}
-      weekdayLabelFormat={weekdayLabelFormat}
-      monthLabelFormat={monthLabelFormat}
-      onDayRender={onDayRender}
-    />
+    <div style={{width: '300px'}}>
+      <DateSingleInput
+        minBookingDate={minBookingDate}
+        maxBookingDate={maxBookingDate}
+        onDateChange={data => dispatch({type: 'dateChange', payload: data})}
+        onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
+        // @ts-ignore
+        date={state.date}
+        // @ts-ignore
+        showDatepicker={state.showDatepicker}
+        onClose={action('onClose')}
+        displayFormat={displayFormat}
+        vertical={vertical}
+        rtl={rtl}
+        showClose={showClose}
+        showResetDate={showResetDate}
+        numberOfMonths={numberOfMonths}
+        firstDayOfWeek={firstDayOfWeek}
+        phrases={phrasesProp}
+        isDateBlocked={isDateBlocked}
+        dayLabelFormat={dayLabelFormat}
+        weekdayLabelFormat={weekdayLabelFormat}
+        monthLabelFormat={monthLabelFormat}
+        onDayRender={onDayRender}
+      />
+    </div>
   )
 }
 
-storiesOf('Datepicker', module)
+storiesOf('DateSingleInput', module)
   .add('Simple demo', () => (
     <App
       rtl={boolean('rtl', false)}
       vertical={boolean('vertical', false)}
-      exactMinBookingDays={boolean('exactMinBookingDays', false)}
-      showResetDates={boolean('showResetDates', true)}
+      showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/DD/YYYY')}
-    />
-  ))
-  .add('Minimum booking days (7 days)', () => (
-    <App
-      rtl={boolean('rtl', false)}
-      vertical={boolean('vertical', false)}
-      exactMinBookingDays={boolean('exactMinBookingDays', false)}
-      showResetDates={boolean('showResetDates', true)}
-      showClose={boolean('showClose', true)}
-      showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
-      minBookingDays={7}
     />
   ))
   .add('Number of months (3 months)', () => (
     <App
       rtl={boolean('rtl', false)}
       vertical={boolean('vertical', false)}
-      exactMinBookingDays={boolean('exactMinBookingDays', false)}
-      showResetDates={boolean('showResetDates', true)}
+      showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/DD/YYYY')}
       numberOfMonths={3}
     />
@@ -145,10 +126,8 @@ storiesOf('Datepicker', module)
     <App
       rtl={boolean('rtl', false)}
       vertical={boolean('vertical', false)}
-      exactMinBookingDays={boolean('exactMinBookingDays', false)}
-      showResetDates={boolean('showResetDates', true)}
+      showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/DD/YYYY')}
       firstDayOfWeek={0}
     />
@@ -157,10 +136,8 @@ storiesOf('Datepicker', module)
     <App
       rtl={boolean('rtl', false)}
       vertical={boolean('vertical', false)}
-      exactMinBookingDays={boolean('exactMinBookingDays', false)}
-      showResetDates={boolean('showResetDates', true)}
+      showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/DD/YYYY')}
       firstDayOfWeek={0}
       phrasesProp={{
@@ -169,6 +146,8 @@ storiesOf('Datepicker', module)
         datepickerEndDatePlaceholder: 'Izberi',
         datepickerEndDateLabel: 'Končni datum:',
         resetDates: 'Razveljavi',
+        dateAriaLabel: 'Izberite datum',
+        datePlaceholder: 'Izberite datum',
         close: 'Zapri',
       }}
     />
@@ -177,10 +156,8 @@ storiesOf('Datepicker', module)
     <App
       rtl={boolean('rtl', false)}
       vertical={boolean('vertical', false)}
-      exactMinBookingDays={boolean('exactMinBookingDays', false)}
-      showResetDates={boolean('showResetDates', true)}
+      showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/DD/YYYY')}
       firstDayOfWeek={0}
       phrasesProp={{
@@ -189,6 +166,8 @@ storiesOf('Datepicker', module)
         datepickerEndDatePlaceholder: 'Izberi',
         datepickerEndDateLabel: 'Končni datum:',
         resetDates: 'Razveljavi',
+        dateAriaLabel: 'Izberite datum',
+        datePlaceholder: 'Izberite datum',
         close: 'Zapri',
       }}
       dayLabelFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
@@ -200,10 +179,8 @@ storiesOf('Datepicker', module)
     <App
       rtl={boolean('rtl', false)}
       vertical={boolean('vertical', false)}
-      exactMinBookingDays={boolean('exactMinBookingDays', false)}
-      showResetDates={boolean('showResetDates', true)}
+      showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/DD/YYYY')}
       firstDayOfWeek={0}
       isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
@@ -220,10 +197,8 @@ storiesOf('Datepicker', module)
       <App
         rtl={boolean('rtl', false)}
         vertical={boolean('vertical', false)}
-        exactMinBookingDays={boolean('exactMinBookingDays', false)}
-        showResetDates={boolean('showResetDates', true)}
+        showResetDate={boolean('showResetDate', true)}
         showClose={boolean('showClose', true)}
-        showSelectedDates={boolean('showSelectedDates', true)}
         displayFormat={text('displayFormat', 'MM/DD/YYYY')}
         firstDayOfWeek={0}
         isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
@@ -243,10 +218,8 @@ storiesOf('Datepicker', module)
         maxBookingDate={addDays(new Date(), 20)}
         rtl={boolean('rtl', false)}
         vertical={boolean('vertical', false)}
-        exactMinBookingDays={boolean('exactMinBookingDays', false)}
-        showResetDates={boolean('showResetDates', true)}
+        showResetDate={boolean('showResetDate', true)}
         showClose={boolean('showClose', true)}
-        showSelectedDates={boolean('showSelectedDates', true)}
         displayFormat={text('displayFormat', 'MM/DD/YYYY')}
         firstDayOfWeek={0}
         isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
@@ -264,10 +237,8 @@ storiesOf('Datepicker', module)
       <App
         rtl={boolean('rtl', false)}
         vertical={boolean('vertical', false)}
-        exactMinBookingDays={boolean('exactMinBookingDays', false)}
-        showResetDates={boolean('showResetDates', true)}
+        showResetDate={boolean('showResetDate', true)}
         showClose={boolean('showClose', true)}
-        showSelectedDates={boolean('showSelectedDates', true)}
         displayFormat={text('displayFormat', 'MM/DD/YYYY')}
         onDayRender={(date: Date) => (
           <Flex alignItems="center" justifyContent="center" width="100%" height="100%">

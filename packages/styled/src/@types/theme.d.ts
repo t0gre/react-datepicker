@@ -198,3 +198,12 @@ export interface DateRangeInputTheme extends CommonTheme {
   dateRangeStartDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   dateRangeEndDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 }
+
+export interface DateSingleInputTheme extends CommonTheme {
+  dateSingleDatepickerWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+  dateSingleDatepickerWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
+  dateSingleDatepickerWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+  dateSingleDatepickerWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+  dateSingleDatepickerWrapperPosition?: ResponsiveValue<PositionProperty>
+  dateSingleInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+}

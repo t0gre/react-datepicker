@@ -291,7 +291,7 @@ function Datepicker({
             bottom={theme.datepickerCloseWrapperBottom}
             zIndex={theme.datepickerCloseWrapperZIndex}
           >
-            <Close onClick={onClose} rtl={rtl} />
+            <Close onClick={onClose} rtl={rtl} closeText={phrases.close} />
           </CloseWrapper>
         )}
 
