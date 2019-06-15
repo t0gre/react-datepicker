@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/tresko/react-datepicker/compare/v1.3.1...v1.4.0) (2019-06-15)
+
+
+### Features
+
+* **styled-system:** upgraded system-system to version 5.0.6. ([d21fefa](https://github.com/tresko/react-datepicker/commit/d21fefa))
+
+
+
+
+
 ## [1.3.1](https://github.com/tresko/react-datepicker/compare/v1.3.0...v1.3.1) (2019-06-11)
 
 
