@@ -12,6 +12,7 @@ import {
   LineHeightProps,
   space,
   SpaceProps,
+  compose,
 } from 'styled-system'
 
 interface TextProps
@@ -22,13 +23,17 @@ interface TextProps
     SpaceProps,
     LineHeightProps {}
 
+const composeStyles = compose(
+  fontFamily,
+  fontSize,
+  fontWeight,
+  color,
+  lineHeight,
+  space,
+)
+
 const Text = styled('div')<TextProps>`
-  ${fontFamily}
-  ${fontSize}
-  ${fontWeight}
-  ${color}
-  ${lineHeight}
-  ${space}
+  ${composeStyles}
 `
 
 export default Text

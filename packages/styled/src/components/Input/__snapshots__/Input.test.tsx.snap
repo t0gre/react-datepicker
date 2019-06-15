@@ -2,21 +2,21 @@
 
 exports[`should render rtl variant 1`] = `
 .c0 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c1 {
   position: absolute;
-  left: unset;
-  right: 16px;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: unset;
+  right: 16px;
   cursor: pointer;
 }
 
@@ -25,14 +25,14 @@ exports[`should render rtl variant 1`] = `
 }
 
 .c2 {
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
   border: 0;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -102,23 +102,23 @@ exports[`should render rtl variant 1`] = `
 
 exports[`should render vertical variant 1`] = `
 .c0 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c1 {
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
   border: 0;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: inset 0px -3px 0 #00aeef;
   cursor: pointer;
   box-sizing: border-box;
@@ -168,21 +168,21 @@ exports[`should render vertical variant 1`] = `
 
 exports[`should render with icon 1`] = `
 .c0 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c1 {
   position: absolute;
-  left: 16px;
-  right: unset;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: 16px;
+  right: unset;
   cursor: pointer;
 }
 
@@ -191,14 +191,14 @@ exports[`should render with icon 1`] = `
 }
 
 .c2 {
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
   border: 0;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -268,23 +268,23 @@ exports[`should render with icon 1`] = `
 
 exports[`should render with value 1`] = `
 .c0 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c1 {
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
   border: 0;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -334,23 +334,23 @@ exports[`should render with value 1`] = `
 
 exports[`should render without icon 1`] = `
 .c0 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c1 {
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
   border: 0;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;

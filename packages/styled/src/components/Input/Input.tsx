@@ -38,6 +38,7 @@ import {
   style,
   ResponsiveValue,
   TLengthStyledSystem,
+  compose,
 } from 'styled-system'
 import CalendarIcon from '../../icons/CalendarIcon'
 // eslint-disable-next-line import/no-unresolved
@@ -63,13 +64,17 @@ interface InputLabelProps
     DisplayProps,
     SpaceProps,
     BorderRadiusProps {}
+
+const composeInputLabelStyles = compose(
+  position,
+  border,
+  background,
+  display,
+  borderRadius,
+  space,
+)
 const InputLabel = styled('label')<InputLabelProps>`
-  ${position}
-  ${border}
-  ${background}
-  ${display}
-  ${borderRadius}
-  ${space}
+  ${composeInputLabelStyles}
 `
 
 interface CalendarWrapperProps
@@ -79,15 +84,20 @@ interface CalendarWrapperProps
     TopProps,
     HeightProps,
     WidthProps {}
+
+const composeCalendarWrapperStyles = compose(
+  position,
+  left,
+  right,
+  top,
+  height,
+  width,
+)
+
 const CalendarWrapper = styled('div')<CalendarWrapperProps>`
-  ${position}
-  ${left}
-  ${right}
-  ${top}
-  ${height}
-  ${width}
+  ${composeCalendarWrapperStyles}
   cursor: pointer;
-  
+
   svg {
     display: block;
   }
@@ -104,31 +114,39 @@ interface StyledInputProps
     MinHeightProps,
     BoxShadowProps,
     FontSizeProps {}
+
+const composeStyledInputStyle = compose(
+  background,
+  space,
+  fontFamily,
+  fontSize,
+  color,
+  fontWeight,
+  space,
+  border,
+  width,
+  minHeight,
+  boxShadow,
+)
+
 const StyledInput = styled('input')<StyledInputProps>`
-  ${background}
-  ${space}
-  ${fontFamily}
-  ${fontSize}
-  ${color}
-  ${fontWeight}
-  ${space}
-  ${border}
-  ${width}
-  ${minHeight}
-  ${boxShadow}
+  ${composeStyledInputStyle}
   cursor: pointer;
   box-sizing: border-box;
   outline: 0;
-  
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
     ${placeholderFontWeight}
     ${placeholderColor}
   }
-  ::-moz-placeholder { /* Firefox 19+ */
+  ::-moz-placeholder {
+    /* Firefox 19+ */
     ${placeholderFontWeight}
     ${placeholderColor}
   }
-  :-moz-placeholder { /* Firefox 18- */
+  :-moz-placeholder {
+    /* Firefox 18- */
     ${placeholderFontWeight}
     ${placeholderColor}
   }

@@ -26,19 +26,33 @@ const Wrapper = styled(Box)<RtlProps>`
     `}
 `
 
-function getPlacement(placement: 'bottom' | 'top') {
-  if (placement === 'top') {
+function getPlacement(placement: 'bottom' | 'top', rtl: boolean) {
+  if (placement === 'top' && !rtl) {
     return {
       dateSingleDatepickerWrapperTop: 'unset',
       dateSingleDatepickerWrapperRight: 'unset',
       dateSingleDatepickerWrapperBottom: '65px',
       dateSingleDatepickerWrapperLeft: '0',
     }
+  } else if (placement === 'top' && rtl) {
+    return {
+      dateSingleDatepickerWrapperTop: 'unset',
+      dateSingleDatepickerWrapperRight: '0',
+      dateSingleDatepickerWrapperBottom: '65px',
+      dateSingleDatepickerWrapperLeft: 'unset',
+    }
+  } else if (placement === 'bottom' && rtl) {
+    return {
+      dateSingleDatepickerWrapperTop: 'unset',
+      dateSingleDatepickerWrapperRight: '0',
+      dateSingleDatepickerWrapperBottom: 'unset',
+      dateSingleDatepickerWrapperLeft: 'unset',
+    }
   }
 
   return {
     dateSingleDatepickerWrapperTop: 'unset',
-    dateSingleDatepickerWrapperRight: '65px',
+    dateSingleDatepickerWrapperRight: 'unset',
     dateSingleDatepickerWrapperBottom: 'unset',
     dateSingleDatepickerWrapperLeft: '0',
   }
@@ -103,7 +117,7 @@ function DateSingleInput({
   const theme: DateSingleInputTheme = useThemeProps({
     dateSingleInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
     dateSingleDatepickerWrapperPosition: 'absolute',
-    ...getPlacement(placement),
+    ...getPlacement(placement, rtl),
   })
 
   useEffect(() => {

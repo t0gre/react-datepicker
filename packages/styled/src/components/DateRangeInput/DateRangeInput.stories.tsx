@@ -80,37 +80,35 @@ function App({
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <div style={{width: '300px'}}>
-      <DateRangeInput
-        minBookingDate={minBookingDate}
-        maxBookingDate={maxBookingDate}
-        onDatesChange={data => dispatch({type: 'dateChange', payload: data})}
-        onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
-        // @ts-ignore
-        startDate={state.startDate}
-        // @ts-ignore
-        endDate={state.endDate}
-        // @ts-ignore
-        focusedInput={state.focusedInput}
-        onClose={action('onClose')}
-        displayFormat={displayFormat}
-        vertical={vertical}
-        rtl={rtl}
-        showClose={showClose}
-        showResetDates={showResetDates}
-        showSelectedDates={showSelectedDates}
-        exactMinBookingDays={exactMinBookingDays}
-        minBookingDays={minBookingDays}
-        numberOfMonths={numberOfMonths}
-        firstDayOfWeek={firstDayOfWeek}
-        phrases={phrasesProp}
-        isDateBlocked={isDateBlocked}
-        dayLabelFormat={dayLabelFormat}
-        weekdayLabelFormat={weekdayLabelFormat}
-        monthLabelFormat={monthLabelFormat}
-        onDayRender={onDayRender}
-      />
-    </div>
+    <DateRangeInput
+      minBookingDate={minBookingDate}
+      maxBookingDate={maxBookingDate}
+      onDatesChange={data => dispatch({type: 'dateChange', payload: data})}
+      onFocusChange={focusedInput => dispatch({type: 'focusChange', payload: focusedInput})}
+      // @ts-ignore
+      startDate={state.startDate}
+      // @ts-ignore
+      endDate={state.endDate}
+      // @ts-ignore
+      focusedInput={state.focusedInput}
+      onClose={action('onClose')}
+      displayFormat={displayFormat}
+      vertical={vertical}
+      rtl={rtl}
+      showClose={showClose}
+      showResetDates={showResetDates}
+      showSelectedDates={showSelectedDates}
+      exactMinBookingDays={exactMinBookingDays}
+      minBookingDays={minBookingDays}
+      numberOfMonths={numberOfMonths}
+      firstDayOfWeek={firstDayOfWeek}
+      phrases={phrasesProp}
+      isDateBlocked={isDateBlocked}
+      dayLabelFormat={dayLabelFormat}
+      weekdayLabelFormat={weekdayLabelFormat}
+      monthLabelFormat={monthLabelFormat}
+      onDayRender={onDayRender}
+    />
   )
 }
 
@@ -229,8 +227,9 @@ storiesOf('DateRangeInput', module)
   .add('Custom day size', () => (
     <ThemeProvider
       theme={{
+        breakpoints: ['576px', '768px', '992px', '1200px', '1376px'],
         reactDatepicker: {
-          daySize: 40,
+          daySize: [40, null, null, 50],
         },
       }}
     >

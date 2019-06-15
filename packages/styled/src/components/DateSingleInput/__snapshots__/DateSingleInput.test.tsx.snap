@@ -32,28 +32,28 @@ exports[`placement top 1`] = `
 .c4 {
   box-sizing: border-box;
   position: absolute;
-  top: unset;
-  left: 0;
-  right: unset;
   bottom: 65px;
+  left: 0;
+  top: unset;
+  right: unset;
 }
 
 .c1 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c2 {
   position: absolute;
-  left: 16px;
-  right: unset;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: 16px;
+  right: unset;
   cursor: pointer;
 }
 
@@ -62,16 +62,15 @@ exports[`placement top 1`] = `
 }
 
 .c3 {
-  background: #ffffff;
-  padding: 0 44px;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
-  padding: 0 44px;
   border: 0;
+  padding: 0 44px;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -97,8 +96,8 @@ exports[`placement top 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c18 {
@@ -109,11 +108,11 @@ exports[`placement top 1`] = `
 }
 
 .c24 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c16 {
@@ -126,11 +125,11 @@ exports[`placement top 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c17 {
@@ -138,11 +137,11 @@ exports[`placement top 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c20 {
@@ -150,14 +149,14 @@ exports[`placement top 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -178,21 +177,21 @@ exports[`placement top 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c19 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -249,10 +248,10 @@ exports[`placement top 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -344,10 +343,11 @@ exports[`placement top 1`] = `
 .c6 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -359,8 +359,8 @@ exports[`placement top 1`] = `
 
 .c12 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(1,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;
@@ -1265,10 +1265,10 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 .c4 {
   box-sizing: border-box;
   position: absolute;
-  top: unset;
-  left: 0;
-  right: 65px;
   bottom: unset;
+  left: 0;
+  top: unset;
+  right: unset;
 }
 
 .c10 {
@@ -1300,21 +1300,21 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 }
 
 .c1 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c2 {
   position: absolute;
-  left: 16px;
-  right: unset;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: 16px;
+  right: unset;
   cursor: pointer;
 }
 
@@ -1323,16 +1323,15 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 }
 
 .c3 {
-  background: #ffffff;
-  padding: 0 44px;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
-  padding: 0 44px;
   border: 0;
+  padding: 0 44px;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -1358,8 +1357,8 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c18 {
@@ -1370,11 +1369,11 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 }
 
 .c24 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c16 {
@@ -1387,11 +1386,11 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c17 {
@@ -1399,11 +1398,11 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c20 {
@@ -1411,14 +1410,14 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -1439,21 +1438,21 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c19 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -1510,10 +1509,10 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1605,10 +1604,11 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 .c6 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -1620,8 +1620,8 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 
 .c12 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(1,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;
@@ -2526,10 +2526,10 @@ exports[`should render custom day 1`] = `
 .c4 {
   box-sizing: border-box;
   position: absolute;
-  top: unset;
-  left: 0;
-  right: 65px;
   bottom: unset;
+  left: 0;
+  top: unset;
+  right: unset;
 }
 
 .c10 {
@@ -2561,21 +2561,21 @@ exports[`should render custom day 1`] = `
 }
 
 .c1 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c2 {
   position: absolute;
-  left: 16px;
-  right: unset;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: 16px;
+  right: unset;
   cursor: pointer;
 }
 
@@ -2584,16 +2584,15 @@ exports[`should render custom day 1`] = `
 }
 
 .c3 {
-  background: #ffffff;
-  padding: 0 44px;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
-  padding: 0 44px;
   border: 0;
+  padding: 0 44px;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -2619,8 +2618,8 @@ exports[`should render custom day 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c18 {
@@ -2631,11 +2630,11 @@ exports[`should render custom day 1`] = `
 }
 
 .c23 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c16 {
@@ -2648,11 +2647,11 @@ exports[`should render custom day 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c17 {
@@ -2660,11 +2659,11 @@ exports[`should render custom day 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c20 {
@@ -2683,21 +2682,21 @@ exports[`should render custom day 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c19 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -2754,10 +2753,10 @@ exports[`should render custom day 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2849,10 +2848,11 @@ exports[`should render custom day 1`] = `
 .c6 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -2864,8 +2864,8 @@ exports[`should render custom day 1`] = `
 
 .c12 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(1,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;
@@ -3674,28 +3674,28 @@ exports[`should render rtl, variant 1`] = `
 .c4 {
   box-sizing: border-box;
   position: absolute;
-  top: unset;
-  left: 0;
-  right: unset;
   bottom: 65px;
+  left: unset;
+  top: unset;
+  right: 0;
 }
 
 .c1 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c2 {
   position: absolute;
-  left: unset;
-  right: 16px;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: unset;
+  right: 16px;
   cursor: pointer;
 }
 
@@ -3704,16 +3704,15 @@ exports[`should render rtl, variant 1`] = `
 }
 
 .c3 {
-  background: #ffffff;
-  padding: 0 44px;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
-  padding: 0 44px;
   border: 0;
+  padding: 0 44px;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -3739,8 +3738,8 @@ exports[`should render rtl, variant 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c18 {
@@ -3751,11 +3750,11 @@ exports[`should render rtl, variant 1`] = `
 }
 
 .c25 {
+  margin: 1px 8px 0 0;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 8px 0 0;
 }
 
 .c16 {
@@ -3768,11 +3767,11 @@ exports[`should render rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c17 {
@@ -3780,11 +3779,11 @@ exports[`should render rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c20 {
@@ -3792,14 +3791,14 @@ exports[`should render rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -3820,21 +3819,21 @@ exports[`should render rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c19 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -3897,10 +3896,10 @@ exports[`should render rtl, variant 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3993,10 +3992,11 @@ exports[`should render rtl, variant 1`] = `
 .c6 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: unset;
   top: unset;
   left: 32px;
-  right: unset;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -4008,8 +4008,8 @@ exports[`should render rtl, variant 1`] = `
 
 .c12 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(1,1fr);
+  grid-gap: 0 32px;
   padding-right: 1px;
   overflow: auto;
   height: 100%;
@@ -4925,10 +4925,10 @@ exports[`should render vertical variant 1`] = `
 .c4 {
   box-sizing: border-box;
   position: absolute;
-  top: unset;
-  left: 0;
-  right: unset;
   bottom: 65px;
+  left: 0;
+  top: unset;
+  right: unset;
 }
 
 .c25 {
@@ -4941,21 +4941,21 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c1 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c2 {
   position: absolute;
-  left: 8px;
-  right: unset;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: 8px;
+  right: unset;
   cursor: pointer;
 }
 
@@ -4964,16 +4964,15 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c3 {
-  background: #ffffff;
-  padding: 0 8px 0 32px;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
-  padding: 0 8px 0 32px;
   border: 0;
+  padding: 0 8px 0 32px;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -4999,8 +4998,8 @@ exports[`should render vertical variant 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c18 {
@@ -5011,11 +5010,11 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c24 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c16 {
@@ -5028,11 +5027,11 @@ exports[`should render vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c17 {
@@ -5040,11 +5039,11 @@ exports[`should render vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c20 {
@@ -5052,14 +5051,14 @@ exports[`should render vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -5080,21 +5079,21 @@ exports[`should render vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: unset;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: unset;
 }
 
 .c19 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -5151,10 +5150,10 @@ exports[`should render vertical variant 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: unset;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5173,10 +5172,10 @@ exports[`should render vertical variant 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5268,10 +5267,14 @@ exports[`should render vertical variant 1`] = `
 .c6 {
   box-sizing: border-box;
   margin: 0 0 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+  right: 0;
   top: unset;
   left: unset;
-  right: 0;
   bottom: unset;
   z-index: 1;
   display: -webkit-box;
@@ -5286,8 +5289,8 @@ exports[`should render vertical variant 1`] = `
 
 .c12 {
   display: grid;
-  grid-gap: 32px;
   grid-template-columns: 1fr;
+  grid-gap: 32px;
   padding-right: 0;
   overflow: auto;
   height: 50vh;
@@ -6199,15 +6202,6 @@ exports[`should render vertical, rtl, variant 1`] = `
   margin: 48px 0 0;
 }
 
-.c4 {
-  box-sizing: border-box;
-  position: absolute;
-  top: unset;
-  left: 0;
-  right: unset;
-  bottom: 65px;
-}
-
 .c26 {
   box-sizing: border-box;
   position: relative;
@@ -6217,22 +6211,31 @@ exports[`should render vertical, rtl, variant 1`] = `
   bottom: unset;
 }
 
+.c4 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: unset;
+  top: unset;
+  right: 0;
+}
+
 .c1 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c2 {
   position: absolute;
-  left: unset;
-  right: 8px;
-  top: 16px;
   height: 12px;
   width: 12px;
+  top: 16px;
+  left: unset;
+  right: 8px;
   cursor: pointer;
 }
 
@@ -6241,16 +6244,15 @@ exports[`should render vertical, rtl, variant 1`] = `
 }
 
 .c3 {
-  background: #ffffff;
-  padding: 0 32px 0 8px;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
-  padding: 0 32px 0 8px;
   border: 0;
+  padding: 0 32px 0 8px;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -6276,8 +6278,8 @@ exports[`should render vertical, rtl, variant 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c18 {
@@ -6288,11 +6290,11 @@ exports[`should render vertical, rtl, variant 1`] = `
 }
 
 .c25 {
+  margin: 1px 8px 0 0;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 8px 0 0;
 }
 
 .c16 {
@@ -6305,11 +6307,11 @@ exports[`should render vertical, rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c17 {
@@ -6317,11 +6319,11 @@ exports[`should render vertical, rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c20 {
@@ -6329,14 +6331,14 @@ exports[`should render vertical, rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -6357,21 +6359,21 @@ exports[`should render vertical, rtl, variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: unset;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: unset;
 }
 
 .c19 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -6434,10 +6436,10 @@ exports[`should render vertical, rtl, variant 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6456,10 +6458,10 @@ exports[`should render vertical, rtl, variant 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: unset;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6552,10 +6554,14 @@ exports[`should render vertical, rtl, variant 1`] = `
 .c6 {
   box-sizing: border-box;
   margin: 0 0 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+  right: unset;
   top: unset;
   left: 32px;
-  right: unset;
   bottom: unset;
   z-index: 1;
   display: -webkit-box;
@@ -6570,8 +6576,8 @@ exports[`should render vertical, rtl, variant 1`] = `
 
 .c12 {
   display: grid;
-  grid-gap: 32px;
   grid-template-columns: 1fr;
+  grid-gap: 32px;
   padding-right: 1px;
   overflow: auto;
   height: 50vh;
@@ -7500,10 +7506,10 @@ exports[`should render without calendar icon, reset dates and close component 1`
 .c3 {
   box-sizing: border-box;
   position: absolute;
-  top: unset;
-  left: 0;
-  right: unset;
   bottom: 65px;
+  left: unset;
+  top: unset;
+  right: 0;
 }
 
 .c6 {
@@ -7512,25 +7518,24 @@ exports[`should render without calendar icon, reset dates and close component 1`
 }
 
 .c1 {
+  display: block;
   position: relative;
   border: 1px solid #d0d0d0;
   background: #ffffff;
-  display: block;
   border-radius: 2px;
   margin: 0;
 }
 
 .c2 {
-  background: #ffffff;
-  padding: 0 44px;
-  font-family: Montserrat,sans-serif;
-  font-size: 14px;
-  color: #001217;
-  font-weight: 600;
-  padding: 0 44px;
   border: 0;
+  padding: 0 44px;
   width: 100%;
   min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
   box-shadow: none;
   cursor: pointer;
   box-sizing: border-box;
@@ -7556,8 +7561,8 @@ exports[`should render without calendar icon, reset dates and close component 1`
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c13 {
@@ -7577,11 +7582,11 @@ exports[`should render without calendar icon, reset dates and close component 1`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c12 {
@@ -7589,11 +7594,11 @@ exports[`should render without calendar icon, reset dates and close component 1`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c15 {
@@ -7601,14 +7606,14 @@ exports[`should render without calendar icon, reset dates and close component 1`
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -7627,12 +7632,12 @@ exports[`should render without calendar icon, reset dates and close component 1`
 .c14 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -7669,10 +7674,10 @@ exports[`should render without calendar icon, reset dates and close component 1`
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7725,8 +7730,8 @@ exports[`should render without calendar icon, reset dates and close component 1`
 
 .c7 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(1,1fr);
+  grid-gap: 0 32px;
   padding-right: 1px;
   overflow: auto;
   height: 100%;

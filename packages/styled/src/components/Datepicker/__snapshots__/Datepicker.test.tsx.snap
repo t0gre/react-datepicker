@@ -12,8 +12,8 @@ exports[`should custom render day 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c20 {
@@ -24,11 +24,11 @@ exports[`should custom render day 1`] = `
 }
 
 .c25 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c7 {
@@ -65,10 +65,10 @@ exports[`should custom render day 1`] = `
 }
 
 .c9 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -89,10 +89,10 @@ exports[`should custom render day 1`] = `
 }
 
 .c11 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -123,14 +123,14 @@ exports[`should custom render day 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c16 {
@@ -138,11 +138,11 @@ exports[`should custom render day 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c19 {
@@ -150,11 +150,11 @@ exports[`should custom render day 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c22 {
@@ -173,21 +173,21 @@ exports[`should custom render day 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c21 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -244,10 +244,10 @@ exports[`should custom render day 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -354,10 +354,11 @@ exports[`should custom render day 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -369,8 +370,8 @@ exports[`should custom render day 1`] = `
 
 .c14 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;
@@ -1716,8 +1717,8 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c20 {
@@ -1728,11 +1729,11 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 }
 
 .c26 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c7 {
@@ -1760,10 +1761,10 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 }
 
 .c9 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 16px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -1784,10 +1785,10 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 }
 
 .c11 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 16px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -1818,14 +1819,14 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c16 {
@@ -1833,11 +1834,11 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c19 {
@@ -1845,11 +1846,11 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c22 {
@@ -1857,14 +1858,14 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -1885,21 +1886,21 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: unset;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: unset;
 }
 
 .c21 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -1956,10 +1957,10 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: unset;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1978,10 +1979,10 @@ exports[`should go to next and previous month - vertical variant 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2088,10 +2089,14 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0 0 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+  right: 0;
   top: unset;
   left: unset;
-  right: 0;
   bottom: unset;
   z-index: 1;
   display: -webkit-box;
@@ -2106,8 +2111,8 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 
 .c14 {
   display: grid;
-  grid-gap: 32px;
   grid-template-columns: 1fr;
+  grid-gap: 32px;
   padding-right: 0;
   overflow: auto;
   height: 50vh;
@@ -3688,11 +3693,11 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 exports[`should go to next and previous month - vertical variant 2`] = `
 <div>
   <div
-    class="sc-VigVT busuLx"
+    class="sc-VigVT dgtrQF"
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX dJcnHX"
+      class="sc-bwzfXH sc-fjdhpX hYIDaZ"
       display="flex"
     >
       <button
@@ -3717,7 +3722,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           />
         </svg>
         <div
-          class="sc-gZMcBi CwFTY"
+          class="sc-gZMcBi jLGSuQ"
           color="#929598"
           font-family="Montserrat, sans-serif"
           font-size="12px"
@@ -3731,13 +3736,13 @@ exports[`should go to next and previous month - vertical variant 2`] = `
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb cWSMRp"
+        class="sc-bxivhb clHSJu"
       >
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -3745,7 +3750,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
             Start date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat ieoKLr"
+            class="sc-bdVaJa sc-htpNat faDrCU"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="16px"
@@ -3755,7 +3760,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           </span>
         </div>
         <div
-          class="sc-ifAKCX iijDlk"
+          class="sc-ifAKCX jjDLzg"
         >
           <svg
             class=""
@@ -3773,10 +3778,10 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           </svg>
         </div>
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -3784,7 +3789,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
             End date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat qNbRA"
+            class="sc-bdVaJa sc-htpNat hmoeyc"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="16px"
@@ -3796,16 +3801,16 @@ exports[`should go to next and previous month - vertical variant 2`] = `
       </div>
     </div>
     <div
-      class="sc-bwzfXH hyxCvn"
+      class="sc-bwzfXH hpebXv"
     >
       <div
-        class="sc-bwzfXH cOIPJR"
+        class="sc-bwzfXH bcJteN"
       >
         <div
           class="todo-list"
         >
           <div
-            class="sc-bxivhb sc-jzJRlG MsQHR"
+            class="sc-bxivhb sc-jzJRlG gXAQRc"
             data-testid="MonthGrid"
             height="50vh"
             overflow="auto"
@@ -3814,8 +3819,8 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c5 {
@@ -3835,11 +3840,11 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c4 {
@@ -3847,11 +3852,11 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c7 {
@@ -3859,14 +3864,14 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -3874,12 +3879,12 @@ exports[`should go to next and previous month - vertical variant 2`] = `
 .c6 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -4588,8 +4593,8 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c5 {
@@ -4609,11 +4614,11 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c4 {
@@ -4621,11 +4626,11 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c7 {
@@ -4633,14 +4638,14 @@ exports[`should go to next and previous month - vertical variant 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -4648,12 +4653,12 @@ exports[`should go to next and previous month - vertical variant 2`] = `
 .c6 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -5347,10 +5352,10 @@ exports[`should go to next and previous month - vertical variant 2`] = `
         </div>
       </div>
       <div
-        class="sc-ifAKCX fNpgzt"
+        class="sc-ifAKCX dCoIjQ"
       >
         <div
-          class="sc-ifAKCX hMJzrX"
+          class="sc-ifAKCX bkMIhG"
         >
           <button
             aria-label="Reset dates"
@@ -5372,7 +5377,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
               />
             </svg>
             <div
-              class="sc-bdVaJa ghfIJL"
+              class="sc-bdVaJa bzmSNa"
               color="#343132"
               font-family="Montserrat, sans-serif"
               font-size="11px"
@@ -5382,11 +5387,11 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           </button>
         </div>
         <div
-          class="sc-bwzfXH dmXum"
+          class="sc-bwzfXH jGujXI"
         >
           <button
             aria-label="Previous month"
-            class="sc-iwsKbI eVZyJB"
+            class="sc-iwsKbI gUMulf"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
@@ -5409,11 +5414,11 @@ exports[`should go to next and previous month - vertical variant 2`] = `
           </button>
         </div>
         <div
-          class="sc-bwzfXH dmXum"
+          class="sc-bwzfXH jGujXI"
         >
           <button
             aria-label="Next month"
-            class="sc-iwsKbI ddvgpv"
+            class="sc-iwsKbI cKgegU"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
@@ -5444,11 +5449,11 @@ exports[`should go to next and previous month - vertical variant 2`] = `
 exports[`should go to next and previous month - vertical variant 3`] = `
 <div>
   <div
-    class="sc-VigVT busuLx"
+    class="sc-VigVT dgtrQF"
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX dJcnHX"
+      class="sc-bwzfXH sc-fjdhpX hYIDaZ"
       display="flex"
     >
       <button
@@ -5473,7 +5478,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           />
         </svg>
         <div
-          class="sc-gZMcBi CwFTY"
+          class="sc-gZMcBi jLGSuQ"
           color="#929598"
           font-family="Montserrat, sans-serif"
           font-size="12px"
@@ -5487,13 +5492,13 @@ exports[`should go to next and previous month - vertical variant 3`] = `
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb cWSMRp"
+        class="sc-bxivhb clHSJu"
       >
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -5501,7 +5506,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
             Start date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat ieoKLr"
+            class="sc-bdVaJa sc-htpNat faDrCU"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="16px"
@@ -5511,7 +5516,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           </span>
         </div>
         <div
-          class="sc-ifAKCX iijDlk"
+          class="sc-ifAKCX jjDLzg"
         >
           <svg
             class=""
@@ -5529,10 +5534,10 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           </svg>
         </div>
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -5540,7 +5545,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
             End date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat qNbRA"
+            class="sc-bdVaJa sc-htpNat hmoeyc"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="16px"
@@ -5552,16 +5557,16 @@ exports[`should go to next and previous month - vertical variant 3`] = `
       </div>
     </div>
     <div
-      class="sc-bwzfXH hyxCvn"
+      class="sc-bwzfXH hpebXv"
     >
       <div
-        class="sc-bwzfXH cOIPJR"
+        class="sc-bwzfXH bcJteN"
       >
         <div
           class="todo-list"
         >
           <div
-            class="sc-bxivhb sc-jzJRlG MsQHR"
+            class="sc-bxivhb sc-jzJRlG gXAQRc"
             data-testid="MonthGrid"
             height="50vh"
             overflow="auto"
@@ -5570,8 +5575,8 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c5 {
@@ -5591,11 +5596,11 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c4 {
@@ -5603,11 +5608,11 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c7 {
@@ -5615,14 +5620,14 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -5630,12 +5635,12 @@ exports[`should go to next and previous month - vertical variant 3`] = `
 .c6 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -6346,8 +6351,8 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c5 {
@@ -6367,11 +6372,11 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c4 {
@@ -6379,11 +6384,11 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c7 {
@@ -6391,14 +6396,14 @@ exports[`should go to next and previous month - vertical variant 3`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -6406,12 +6411,12 @@ exports[`should go to next and previous month - vertical variant 3`] = `
 .c6 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -7100,10 +7105,10 @@ exports[`should go to next and previous month - vertical variant 3`] = `
         </div>
       </div>
       <div
-        class="sc-ifAKCX fNpgzt"
+        class="sc-ifAKCX dCoIjQ"
       >
         <div
-          class="sc-ifAKCX hMJzrX"
+          class="sc-ifAKCX bkMIhG"
         >
           <button
             aria-label="Reset dates"
@@ -7125,7 +7130,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
               />
             </svg>
             <div
-              class="sc-bdVaJa ghfIJL"
+              class="sc-bdVaJa bzmSNa"
               color="#343132"
               font-family="Montserrat, sans-serif"
               font-size="11px"
@@ -7135,11 +7140,11 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           </button>
         </div>
         <div
-          class="sc-bwzfXH dmXum"
+          class="sc-bwzfXH jGujXI"
         >
           <button
             aria-label="Previous month"
-            class="sc-iwsKbI eVZyJB"
+            class="sc-iwsKbI gUMulf"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
@@ -7162,11 +7167,11 @@ exports[`should go to next and previous month - vertical variant 3`] = `
           </button>
         </div>
         <div
-          class="sc-bwzfXH dmXum"
+          class="sc-bwzfXH jGujXI"
         >
           <button
             aria-label="Next month"
-            class="sc-iwsKbI ddvgpv"
+            class="sc-iwsKbI cKgegU"
             data-testid="DatepickerNavButton"
             height="48px"
             type="button"
@@ -7206,8 +7211,8 @@ exports[`should have empty end date and focused end date 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c20 {
@@ -7218,11 +7223,11 @@ exports[`should have empty end date and focused end date 1`] = `
 }
 
 .c27 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c7 {
@@ -7259,10 +7264,10 @@ exports[`should have empty end date and focused end date 1`] = `
 }
 
 .c11 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -7283,10 +7288,10 @@ exports[`should have empty end date and focused end date 1`] = `
 }
 
 .c9 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -7317,14 +7322,14 @@ exports[`should have empty end date and focused end date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c16 {
@@ -7332,11 +7337,11 @@ exports[`should have empty end date and focused end date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c19 {
@@ -7344,11 +7349,11 @@ exports[`should have empty end date and focused end date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c22 {
@@ -7356,14 +7361,14 @@ exports[`should have empty end date and focused end date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -7384,21 +7389,21 @@ exports[`should have empty end date and focused end date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c21 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -7418,12 +7423,12 @@ exports[`should have empty end date and focused end date 1`] = `
 .c23 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #00aeef, 0 1px 0 0 #00aeef, 1px 1px 0 0 #00aeef, 1px 0 0 0 #00aeef inset, 0 1px 0 0 #00aeef inset;
   background: #00aeef;
   color: #ffffff;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #00aeef, 0 1px 0 0 #00aeef, 1px 1px 0 0 #00aeef, 1px 0 0 0 #00aeef inset, 0 1px 0 0 #00aeef inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -7475,10 +7480,10 @@ exports[`should have empty end date and focused end date 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7585,10 +7590,11 @@ exports[`should have empty end date and focused end date 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -7600,8 +7606,8 @@ exports[`should have empty end date and focused end date 1`] = `
 
 .c14 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;
@@ -9193,8 +9199,8 @@ exports[`should have empty start and end date and focused start date 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c20 {
@@ -9205,11 +9211,11 @@ exports[`should have empty start and end date and focused start date 1`] = `
 }
 
 .c26 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c7 {
@@ -9246,10 +9252,10 @@ exports[`should have empty start and end date and focused start date 1`] = `
 }
 
 .c9 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -9270,10 +9276,10 @@ exports[`should have empty start and end date and focused start date 1`] = `
 }
 
 .c11 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -9304,14 +9310,14 @@ exports[`should have empty start and end date and focused start date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c16 {
@@ -9319,11 +9325,11 @@ exports[`should have empty start and end date and focused start date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c19 {
@@ -9331,11 +9337,11 @@ exports[`should have empty start and end date and focused start date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c22 {
@@ -9343,14 +9349,14 @@ exports[`should have empty start and end date and focused start date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -9371,21 +9377,21 @@ exports[`should have empty start and end date and focused start date 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c21 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -9442,10 +9448,10 @@ exports[`should have empty start and end date and focused start date 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9552,10 +9558,11 @@ exports[`should have empty start and end date and focused start date 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -9567,8 +9574,8 @@ exports[`should have empty start and end date and focused start date 1`] = `
 
 .c14 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;
@@ -11158,8 +11165,8 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c20 {
@@ -11170,11 +11177,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 }
 
 .c26 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c7 {
@@ -11211,10 +11218,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 }
 
 .c9 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -11235,10 +11242,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 }
 
 .c11 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -11269,14 +11276,14 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c16 {
@@ -11284,11 +11291,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c19 {
@@ -11296,11 +11303,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c22 {
@@ -11308,14 +11315,14 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -11336,21 +11343,21 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c21 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -11407,10 +11414,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11517,10 +11524,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 .c1 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -11532,8 +11540,8 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 
 .c14 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;
@@ -13114,11 +13122,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = `
 <div>
   <div
-    class="sc-VigVT jGEHFI"
+    class="sc-VigVT cSChgK"
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX jVQUms"
+      class="sc-bwzfXH sc-fjdhpX jElpuc"
       display="block"
     >
       <button
@@ -13143,7 +13151,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
           />
         </svg>
         <div
-          class="sc-gZMcBi CwFTY"
+          class="sc-gZMcBi jLGSuQ"
           color="#929598"
           font-family="Montserrat, sans-serif"
           font-size="12px"
@@ -13157,13 +13165,13 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb biAwHq"
+        class="sc-bxivhb dBljuL"
       >
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -13171,7 +13179,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
             Start date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat XUBVH"
+            class="sc-bdVaJa sc-htpNat gfXVBk"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="24px"
@@ -13181,7 +13189,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
           </span>
         </div>
         <div
-          class="sc-ifAKCX iijDlk"
+          class="sc-ifAKCX jjDLzg"
         >
           <svg
             class=""
@@ -13199,10 +13207,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
           </svg>
         </div>
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -13210,7 +13218,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
             End date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat bSdFCg"
+            class="sc-bdVaJa sc-htpNat bCScGb"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="24px"
@@ -13222,16 +13230,16 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
       </div>
     </div>
     <div
-      class="sc-bwzfXH hyxCvn"
+      class="sc-bwzfXH hpebXv"
     >
       <div
-        class="sc-bwzfXH cOIPJR"
+        class="sc-bwzfXH bcJteN"
       >
         <div
           class="todo-list"
         >
           <div
-            class="sc-bxivhb sc-jzJRlG lkUOjR"
+            class="sc-bxivhb sc-jzJRlG kUqCab"
             data-testid="MonthGrid"
             height="100%"
             overflow="auto"
@@ -13240,10 +13248,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
               class="sc-bZQynM gujkHR"
             >
               <div
-                class="sc-ifAKCX jhORaO"
+                class="sc-ifAKCX hYWFLK"
               >
                 <div
-                  class="sc-bdVaJa fYDGwj"
+                  class="sc-bdVaJa dUWpPK"
                   color="#343132"
                   data-testid="MonthLabel"
                   font-family="Montserrat, sans-serif"
@@ -13254,13 +13262,13 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13271,10 +13279,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13285,10 +13293,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13299,10 +13307,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13313,10 +13321,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13327,10 +13335,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13341,10 +13349,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13356,7 +13364,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <div />
                 <div />
@@ -13364,7 +13372,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 <div />
                 <button
                   aria-label="Day-Fri Mar 01 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13373,7 +13381,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13382,7 +13390,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 02 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13391,7 +13399,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13400,7 +13408,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 03 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13409,7 +13417,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13418,7 +13426,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 04 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13427,7 +13435,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13436,7 +13444,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 05 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13445,7 +13453,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13454,7 +13462,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 06 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13463,7 +13471,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13472,7 +13480,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 07 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13481,7 +13489,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13490,7 +13498,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 08 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13499,7 +13507,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13508,7 +13516,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 09 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13517,7 +13525,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13526,7 +13534,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 10 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13535,7 +13543,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13544,7 +13552,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 11 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13553,7 +13561,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13562,7 +13570,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 12 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13571,7 +13579,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13580,7 +13588,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 13 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13589,7 +13597,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13598,7 +13606,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 14 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13607,7 +13615,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13616,7 +13624,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 15 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13625,7 +13633,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13634,7 +13642,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 16 2019"
-                  class="sc-EHOje erLovJ"
+                  class="sc-EHOje xqeWV"
                   color="#ffffff"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13643,7 +13651,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13652,7 +13660,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 17 2019"
-                  class="sc-EHOje erLovJ"
+                  class="sc-EHOje xqeWV"
                   color="#ffffff"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13661,7 +13669,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13670,7 +13678,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 18 2019"
-                  class="sc-EHOje erLovJ"
+                  class="sc-EHOje xqeWV"
                   color="#ffffff"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13679,7 +13687,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13688,7 +13696,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 19 2019"
-                  class="sc-EHOje erLovJ"
+                  class="sc-EHOje xqeWV"
                   color="#ffffff"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13697,7 +13705,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13706,7 +13714,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 20 2019"
-                  class="sc-EHOje erLovJ"
+                  class="sc-EHOje xqeWV"
                   color="#ffffff"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13715,7 +13723,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13724,7 +13732,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 21 2019"
-                  class="sc-EHOje erLovJ"
+                  class="sc-EHOje xqeWV"
                   color="#ffffff"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13733,7 +13741,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13742,7 +13750,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 22 2019"
-                  class="sc-EHOje erLovJ"
+                  class="sc-EHOje xqeWV"
                   color="#ffffff"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13751,7 +13759,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13760,7 +13768,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 23 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13769,7 +13777,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13778,7 +13786,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 24 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13787,7 +13795,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13796,7 +13804,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 25 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13805,7 +13813,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13814,7 +13822,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 26 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13823,7 +13831,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13832,7 +13840,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 27 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13841,7 +13849,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13850,7 +13858,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 28 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13859,7 +13867,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13868,7 +13876,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 29 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13877,7 +13885,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13886,7 +13894,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 30 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13895,7 +13903,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13904,7 +13912,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 31 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -13913,7 +13921,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -13926,10 +13934,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
               class="sc-bZQynM gujkHR"
             >
               <div
-                class="sc-ifAKCX jhORaO"
+                class="sc-ifAKCX hYWFLK"
               >
                 <div
-                  class="sc-bdVaJa fYDGwj"
+                  class="sc-bdVaJa dUWpPK"
                   color="#343132"
                   data-testid="MonthLabel"
                   font-family="Montserrat, sans-serif"
@@ -13940,13 +13948,13 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13957,10 +13965,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13971,10 +13979,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13985,10 +13993,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -13999,10 +14007,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14013,10 +14021,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14027,10 +14035,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14042,11 +14050,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <button
                   aria-label="Day-Mon Apr 01 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14055,7 +14063,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14064,7 +14072,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 02 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14073,7 +14081,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14082,7 +14090,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 03 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14091,7 +14099,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14100,7 +14108,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 04 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14109,7 +14117,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14118,7 +14126,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 05 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14127,7 +14135,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14136,7 +14144,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 06 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14145,7 +14153,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14154,7 +14162,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 07 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14163,7 +14171,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14172,7 +14180,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 08 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14181,7 +14189,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14190,7 +14198,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 09 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14199,7 +14207,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14208,7 +14216,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 10 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14217,7 +14225,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14226,7 +14234,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 11 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14235,7 +14243,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14244,7 +14252,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 12 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14253,7 +14261,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14262,7 +14270,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 13 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14271,7 +14279,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14280,7 +14288,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 14 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14289,7 +14297,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14298,7 +14306,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 15 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14307,7 +14315,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14316,7 +14324,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 16 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14325,7 +14333,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14334,7 +14342,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 17 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14343,7 +14351,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14352,7 +14360,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 18 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14361,7 +14369,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14370,7 +14378,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 19 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14379,7 +14387,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14388,7 +14396,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 20 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14397,7 +14405,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14406,7 +14414,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 21 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14415,7 +14423,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14424,7 +14432,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 22 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14433,7 +14441,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14442,7 +14450,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 23 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14451,7 +14459,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14460,7 +14468,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 24 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14469,7 +14477,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14478,7 +14486,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 25 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14487,7 +14495,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14496,7 +14504,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 26 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14505,7 +14513,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14514,7 +14522,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 27 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14523,7 +14531,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14532,7 +14540,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 28 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14541,7 +14549,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14550,7 +14558,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 29 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14559,7 +14567,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14568,7 +14576,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 30 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14577,7 +14585,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14590,10 +14598,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
         </div>
       </div>
       <div
-        class="sc-ifAKCX fNpgzt"
+        class="sc-ifAKCX dCoIjQ"
       >
         <div
-          class="sc-ifAKCX jZfEwH"
+          class="sc-ifAKCX kjBgcc"
         >
           <button
             aria-label="Reset dates"
@@ -14615,7 +14623,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
               />
             </svg>
             <div
-              class="sc-bdVaJa ghfIJL"
+              class="sc-bdVaJa bzmSNa"
               color="#343132"
               font-family="Montserrat, sans-serif"
               font-size="11px"
@@ -14625,11 +14633,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
           </button>
         </div>
         <div
-          class="sc-bwzfXH hLOQPH"
+          class="sc-bwzfXH bJNzPD"
         >
           <button
             aria-label="Previous month"
-            class="sc-iwsKbI hEJbNg"
+            class="sc-iwsKbI btEkdR"
             data-testid="DatepickerNavButton"
             height="30px"
             type="button"
@@ -14652,11 +14660,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
           </button>
         </div>
         <div
-          class="sc-bwzfXH jSRukn"
+          class="sc-bwzfXH dILOKO"
         >
           <button
             aria-label="Next month"
-            class="sc-iwsKbI hEJbNg"
+            class="sc-iwsKbI btEkdR"
             data-testid="DatepickerNavButton"
             height="30px"
             type="button"
@@ -14687,11 +14695,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
 exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = `
 <div>
   <div
-    class="sc-VigVT jGEHFI"
+    class="sc-VigVT cSChgK"
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX jVQUms"
+      class="sc-bwzfXH sc-fjdhpX jElpuc"
       display="block"
     >
       <button
@@ -14716,7 +14724,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
           />
         </svg>
         <div
-          class="sc-gZMcBi CwFTY"
+          class="sc-gZMcBi jLGSuQ"
           color="#929598"
           font-family="Montserrat, sans-serif"
           font-size="12px"
@@ -14730,13 +14738,13 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb biAwHq"
+        class="sc-bxivhb dBljuL"
       >
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -14744,7 +14752,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
             Start date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat XUBVH"
+            class="sc-bdVaJa sc-htpNat gfXVBk"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="24px"
@@ -14754,7 +14762,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
           </span>
         </div>
         <div
-          class="sc-ifAKCX iijDlk"
+          class="sc-ifAKCX jjDLzg"
         >
           <svg
             class=""
@@ -14772,10 +14780,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
           </svg>
         </div>
         <div
-          class="sc-bwzfXH knAJcV"
+          class="sc-bwzfXH boAnbR"
         >
           <div
-            class="sc-bdVaJa ghYBZo"
+            class="sc-bdVaJa doChSp"
             color="#929598"
             font-family="Montserrat, sans-serif"
             font-size="11px"
@@ -14783,7 +14791,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
             End date:
           </div>
           <span
-            class="sc-bdVaJa sc-htpNat bSdFCg"
+            class="sc-bdVaJa sc-htpNat bCScGb"
             color="#001217"
             font-family="Montserrat, sans-serif"
             font-size="24px"
@@ -14795,16 +14803,16 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
       </div>
     </div>
     <div
-      class="sc-bwzfXH hyxCvn"
+      class="sc-bwzfXH hpebXv"
     >
       <div
-        class="sc-bwzfXH cOIPJR"
+        class="sc-bwzfXH bcJteN"
       >
         <div
           class="todo-list"
         >
           <div
-            class="sc-bxivhb sc-jzJRlG lkUOjR"
+            class="sc-bxivhb sc-jzJRlG kUqCab"
             data-testid="MonthGrid"
             height="100%"
             overflow="auto"
@@ -14813,10 +14821,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
               class="sc-bZQynM gujkHR"
             >
               <div
-                class="sc-ifAKCX jhORaO"
+                class="sc-ifAKCX hYWFLK"
               >
                 <div
-                  class="sc-bdVaJa fYDGwj"
+                  class="sc-bdVaJa dUWpPK"
                   color="#343132"
                   data-testid="MonthLabel"
                   font-family="Montserrat, sans-serif"
@@ -14827,13 +14835,13 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14844,10 +14852,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14858,10 +14866,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14872,10 +14880,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14886,10 +14894,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14900,10 +14908,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14914,10 +14922,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -14929,7 +14937,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <div />
                 <div />
@@ -14937,7 +14945,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 <div />
                 <button
                   aria-label="Day-Fri Mar 01 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14946,7 +14954,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14955,7 +14963,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 02 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14964,7 +14972,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14973,7 +14981,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 03 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -14982,7 +14990,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -14991,7 +14999,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 04 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15000,7 +15008,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15009,7 +15017,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 05 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15018,7 +15026,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15027,7 +15035,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 06 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15036,7 +15044,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15045,7 +15053,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 07 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15054,7 +15062,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15063,7 +15071,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 08 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15072,7 +15080,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15081,7 +15089,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 09 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15090,7 +15098,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15099,7 +15107,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 10 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15108,7 +15116,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15117,7 +15125,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 11 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15126,7 +15134,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15135,7 +15143,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 12 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15144,7 +15152,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15153,7 +15161,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 13 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15162,7 +15170,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15171,7 +15179,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 14 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15180,7 +15188,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15189,7 +15197,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 15 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15198,7 +15206,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15207,7 +15215,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 16 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15216,7 +15224,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15225,7 +15233,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 17 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15234,7 +15242,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15243,7 +15251,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 18 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15252,7 +15260,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15261,7 +15269,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 19 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15270,7 +15278,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15279,7 +15287,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 20 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15288,7 +15296,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15297,7 +15305,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 21 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15306,7 +15314,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15315,7 +15323,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 22 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15324,7 +15332,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15333,7 +15341,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 23 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15342,7 +15350,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15351,7 +15359,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 24 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15360,7 +15368,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15369,7 +15377,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Mar 25 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15378,7 +15386,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15387,7 +15395,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Mar 26 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15396,7 +15404,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15405,7 +15413,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Mar 27 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15414,7 +15422,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15423,7 +15431,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Mar 28 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15432,7 +15440,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15441,7 +15449,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Mar 29 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15450,7 +15458,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15459,7 +15467,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Mar 30 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15468,7 +15476,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15477,7 +15485,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Mar 31 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15486,7 +15494,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15499,10 +15507,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
               class="sc-bZQynM gujkHR"
             >
               <div
-                class="sc-ifAKCX jhORaO"
+                class="sc-ifAKCX hYWFLK"
               >
                 <div
-                  class="sc-bdVaJa fYDGwj"
+                  class="sc-bdVaJa dUWpPK"
                   color="#343132"
                   data-testid="MonthLabel"
                   font-family="Montserrat, sans-serif"
@@ -15513,13 +15521,13 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -15530,10 +15538,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -15544,10 +15552,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -15558,10 +15566,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -15572,10 +15580,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -15586,10 +15594,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -15600,10 +15608,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   </div>
                 </div>
                 <div
-                  class="sc-ifAKCX dltons"
+                  class="sc-ifAKCX dytDqS"
                 >
                   <div
-                    class="sc-bdVaJa cqGkOW"
+                    class="sc-bdVaJa farpVV"
                     color="#929598"
                     data-testid="DayLabel"
                     font-family="Montserrat, sans-serif"
@@ -15615,11 +15623,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </div>
               </div>
               <div
-                class="sc-bxivhb cfNEIc"
+                class="sc-bxivhb iDGJDP"
               >
                 <button
                   aria-label="Day-Mon Apr 01 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15628,7 +15636,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15637,7 +15645,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 02 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15646,7 +15654,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15655,7 +15663,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 03 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15664,7 +15672,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15673,7 +15681,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 04 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15682,7 +15690,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15691,7 +15699,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 05 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15700,7 +15708,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15709,7 +15717,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 06 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15718,7 +15726,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15727,7 +15735,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 07 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15736,7 +15744,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15745,7 +15753,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 08 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15754,7 +15762,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15763,7 +15771,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 09 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15772,7 +15780,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15781,7 +15789,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 10 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15790,7 +15798,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15799,7 +15807,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 11 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15808,7 +15816,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15817,7 +15825,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 12 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15826,7 +15834,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15835,7 +15843,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 13 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15844,7 +15852,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15853,7 +15861,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 14 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15862,7 +15870,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15871,7 +15879,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 15 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15880,7 +15888,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15889,7 +15897,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 16 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15898,7 +15906,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15907,7 +15915,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 17 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15916,7 +15924,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15925,7 +15933,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 18 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15934,7 +15942,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15943,7 +15951,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 19 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15952,7 +15960,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15961,7 +15969,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 20 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15970,7 +15978,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15979,7 +15987,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 21 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -15988,7 +15996,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -15997,7 +16005,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 22 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16006,7 +16014,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16015,7 +16023,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 23 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16024,7 +16032,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16033,7 +16041,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Wed Apr 24 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16042,7 +16050,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16051,7 +16059,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Thu Apr 25 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16060,7 +16068,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16069,7 +16077,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Fri Apr 26 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16078,7 +16086,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16087,7 +16095,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sat Apr 27 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16096,7 +16104,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16105,7 +16113,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Sun Apr 28 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16114,7 +16122,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16123,7 +16131,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Mon Apr 29 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16132,7 +16140,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16141,7 +16149,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 </button>
                 <button
                   aria-label="Day-Tue Apr 30 2019"
-                  class="sc-EHOje fMukGi"
+                  class="sc-EHOje czcgKO"
                   color="#58595b"
                   data-testid="Day"
                   font-family="Montserrat, sans-serif"
@@ -16150,7 +16158,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                   tabindex="0"
                 >
                   <div
-                    class="sc-ifAKCX bIMHgz"
+                    class="sc-ifAKCX fOOfzd"
                     height="100%"
                     width="100%"
                   >
@@ -16163,10 +16171,10 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
         </div>
       </div>
       <div
-        class="sc-ifAKCX fNpgzt"
+        class="sc-ifAKCX dCoIjQ"
       >
         <div
-          class="sc-ifAKCX jZfEwH"
+          class="sc-ifAKCX kjBgcc"
         >
           <button
             aria-label="Reset dates"
@@ -16188,7 +16196,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
               />
             </svg>
             <div
-              class="sc-bdVaJa ghfIJL"
+              class="sc-bdVaJa bzmSNa"
               color="#343132"
               font-family="Montserrat, sans-serif"
               font-size="11px"
@@ -16198,11 +16206,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
           </button>
         </div>
         <div
-          class="sc-bwzfXH hLOQPH"
+          class="sc-bwzfXH bJNzPD"
         >
           <button
             aria-label="Previous month"
-            class="sc-iwsKbI hEJbNg"
+            class="sc-iwsKbI btEkdR"
             data-testid="DatepickerNavButton"
             height="30px"
             type="button"
@@ -16225,11 +16233,11 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
           </button>
         </div>
         <div
-          class="sc-bwzfXH jSRukn"
+          class="sc-bwzfXH dILOKO"
         >
           <button
             aria-label="Next month"
-            class="sc-iwsKbI hEJbNg"
+            class="sc-iwsKbI btEkdR"
             data-testid="DatepickerNavButton"
             height="30px"
             type="button"
@@ -16269,8 +16277,8 @@ exports[`should render vertical datepicker 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c20 {
@@ -16281,11 +16289,11 @@ exports[`should render vertical datepicker 1`] = `
 }
 
 .c26 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c7 {
@@ -16313,10 +16321,10 @@ exports[`should render vertical datepicker 1`] = `
 }
 
 .c9 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 16px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -16337,10 +16345,10 @@ exports[`should render vertical datepicker 1`] = `
 }
 
 .c11 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 16px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -16371,14 +16379,14 @@ exports[`should render vertical datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c16 {
@@ -16386,11 +16394,11 @@ exports[`should render vertical datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c19 {
@@ -16398,11 +16406,11 @@ exports[`should render vertical datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c22 {
@@ -16410,14 +16418,14 @@ exports[`should render vertical datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -16438,21 +16446,21 @@ exports[`should render vertical datepicker 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: unset;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: unset;
 }
 
 .c21 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -16509,10 +16517,10 @@ exports[`should render vertical datepicker 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: unset;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16531,10 +16539,10 @@ exports[`should render vertical datepicker 1`] = `
   width: 48px;
   height: 48px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16641,10 +16649,14 @@ exports[`should render vertical datepicker 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0 0 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+  right: 0;
   top: unset;
   left: unset;
-  right: 0;
   bottom: unset;
   z-index: 1;
   display: -webkit-box;
@@ -16659,8 +16671,8 @@ exports[`should render vertical datepicker 1`] = `
 
 .c14 {
   display: grid;
-  grid-gap: 32px;
   grid-template-columns: 1fr;
+  grid-gap: 32px;
   padding-right: 0;
   overflow: auto;
   height: 50vh;
@@ -18250,8 +18262,8 @@ exports[`should select exact range 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c20 {
@@ -18262,11 +18274,11 @@ exports[`should select exact range 1`] = `
 }
 
 .c26 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c7 {
@@ -18303,10 +18315,10 @@ exports[`should select exact range 1`] = `
 }
 
 .c9 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -18327,10 +18339,10 @@ exports[`should select exact range 1`] = `
 }
 
 .c11 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -18361,14 +18373,14 @@ exports[`should select exact range 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c16 {
@@ -18376,11 +18388,11 @@ exports[`should select exact range 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c19 {
@@ -18388,11 +18400,11 @@ exports[`should select exact range 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c22 {
@@ -18400,14 +18412,14 @@ exports[`should select exact range 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -18428,21 +18440,21 @@ exports[`should select exact range 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 0 0;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin: 32px 0 0;
 }
 
 .c21 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -18499,10 +18511,10 @@ exports[`should select exact range 1`] = `
   width: 30px;
   height: 30px;
   background: #ffffff;
-  padding: 0;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
   border-left: 1px solid #929598;
+  padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18609,10 +18621,11 @@ exports[`should select exact range 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
+  display: block;
   position: absolute;
+  right: 32px;
   top: unset;
   left: unset;
-  right: 32px;
   bottom: unset;
   z-index: 1;
   display: block;
@@ -18624,8 +18637,8 @@ exports[`should select exact range 1`] = `
 
 .c14 {
   display: grid;
-  grid-gap: 0 32px;
   grid-template-columns: repeat(2,1fr);
+  grid-gap: 0 32px;
   padding-right: 0;
   overflow: auto;
   height: 100%;

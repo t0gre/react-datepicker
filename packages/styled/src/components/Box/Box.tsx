@@ -1,6 +1,7 @@
 import {
   bottom,
   BottomProps,
+  compose,
   gridArea,
   GridAreaProps,
   height,
@@ -33,20 +34,22 @@ interface BoxProps
     RightProps,
     ZIndexProps,
     WidthProps {}
+const composeBoxStyles = compose(
+  gridArea,
+  height,
+  space,
+  width,
+  position,
+  top,
+  left,
+  right,
+  bottom,
+  zIndex,
+)
 
 const Box = styled('div')<BoxProps>`
   box-sizing: border-box;
-
-  ${gridArea}
-  ${height}
-  ${space}
-  ${width}
-  ${position}
-  ${top}
-  ${left}
-  ${right}
-  ${bottom}
-  ${zIndex}
+  ${composeBoxStyles}
 `
 
 export default Box

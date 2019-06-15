@@ -5,8 +5,8 @@ exports[`Sunday should be first day of the week 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c5 {
@@ -21,11 +21,11 @@ exports[`Sunday should be first day of the week 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c4 {
@@ -33,11 +33,11 @@ exports[`Sunday should be first day of the week 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c7 {
@@ -45,14 +45,14 @@ exports[`Sunday should be first day of the week 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -65,12 +65,12 @@ exports[`Sunday should be first day of the week 1`] = `
 .c6 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -733,8 +733,8 @@ exports[`should match snapshot 1`] = `
   font-family: Montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #343132;
   line-height: 1.57;
+  color: #343132;
 }
 
 .c5 {
@@ -749,11 +749,11 @@ exports[`should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 28px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 28px;
 }
 
 .c4 {
@@ -761,11 +761,11 @@ exports[`should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 16px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0 0 16px;
 }
 
 .c7 {
@@ -773,14 +773,14 @@ exports[`should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
@@ -793,12 +793,12 @@ exports[`should match snapshot 1`] = `
 .c6 {
   height: 36px;
   width: 36px;
-  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   background: #ffffff;
   color: #58595b;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
+  box-shadow: 1px 0 0 0 #e6e7e8, 0 1px 0 0 #e6e7e8, 1px 1px 0 0 #e6e7e8, 1px 0 0 0 #e6e7e8 inset, 0 1px 0 0 #e6e7e8 inset;
   cursor: pointer;
   border: 0;
   padding: 0;

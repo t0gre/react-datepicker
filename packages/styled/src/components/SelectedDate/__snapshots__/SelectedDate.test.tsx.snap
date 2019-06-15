@@ -14,10 +14,10 @@ exports[`should be active 1`] = `
 }
 
 .c2 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -76,10 +76,10 @@ exports[`should be unactive 1`] = `
 }
 
 .c2 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 24px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;
@@ -134,10 +134,10 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c2 {
-  font-family: Montserrat,sans-serif;
+  color: #001217;
   font-size: 16px;
   font-weight: 500;
-  color: #001217;
+  font-family: Montserrat,sans-serif;
   padding: 0 0 15px;
   position: relative;
   display: inline-block;

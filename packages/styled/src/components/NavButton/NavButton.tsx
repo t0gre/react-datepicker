@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {
   width,
@@ -11,6 +11,7 @@ import {
   SpaceProps,
   borders,
   BordersProps,
+  compose,
 } from 'styled-system'
 import CaretIcon from '../../icons/CaretIcon'
 // eslint-disable-next-line import/no-unresolved
@@ -24,12 +25,17 @@ interface StyledNavButtonProps
     BackgroundProps,
     SpaceProps,
     BordersProps {}
+
+const composeSyles = compose(
+  width,
+  height,
+  background,
+  space,
+  borders,
+)
+
 const StyledNavButton = styled('button')<StyledNavButtonProps>`
-  ${width}
-  ${height}
-  ${background}
-  ${space}
-  ${borders}
+  ${composeSyles}
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +50,6 @@ interface NavButtonProps {
 }
 
 function NavButton({type, onClick, vertical, rtl, ariaLabel}: NavButtonProps) {
-  const ref = useRef<HTMLButtonElement>(null)
   const theme: NavButtonTheme = useThemeProps({
     navButtonWidth: vertical ? '48px' : '30px',
     navButtonHeight: vertical ? '48px' : '30px',
@@ -56,10 +61,9 @@ function NavButton({type, onClick, vertical, rtl, ariaLabel}: NavButtonProps) {
     navButtonIconColor: globalStyles.colors.greey,
   })
 
-  function handleMouseUp() {
-    if (ref && ref.current) {
-      ref.current.blur()
-    }
+  function handleMouseUp(e: React.MouseEvent) {
+    // @ts-ignore
+    e.currentTarget.blur()
   }
 
   function getDirection() {
@@ -87,7 +91,6 @@ function NavButton({type, onClick, vertical, rtl, ariaLabel}: NavButtonProps) {
       aria-label={ariaLabel}
       onClick={onClick}
       onMouseUp={handleMouseUp}
-      ref={ref}
       data-testid="DatepickerNavButton"
     >
       <CaretIcon

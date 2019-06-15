@@ -11,6 +11,7 @@ import {
   FontFamilyProps,
   fontWeight,
   FontWeightProps,
+  compose,
 } from 'styled-system'
 import CloseIcon from '../../icons/CloseIcon'
 // eslint-disable-next-line import/no-unresolved
@@ -24,12 +25,15 @@ interface TextProps
     FontSizeProps,
     FontFamilyProps,
     FontWeightProps {}
+const composeTextStyles = compose(
+  space,
+  color,
+  fontSize,
+  fontFamily,
+  fontWeight,
+)
 const Text = styled('div')<TextProps>`
-  ${space}
-  ${color}
-  ${fontSize}
-  ${fontFamily}
-  ${fontWeight}
+  ${composeTextStyles}
   float: left;
   transition: color 0.15s;
 `

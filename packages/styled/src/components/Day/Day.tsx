@@ -1,6 +1,6 @@
 import React, {useMemo, useContext, useRef} from 'react'
 import styled, {css} from 'styled-components'
-import {ResponsiveValue, style, TLengthStyledSystem} from 'styled-system'
+import {compose, ResponsiveValue, style, TLengthStyledSystem} from 'styled-system'
 import {useDay} from '@datepicker-react/hooks'
 import {
   boxShadow,
@@ -121,15 +121,20 @@ interface StyledDayProps
   dayHoverColor: ResponsiveValue<ColorProperty>
   daySelectedHoverColor: ResponsiveValue<ColorProperty>
 }
+
+const composeStyledDayStyles = compose(
+  boxShadow,
+  background,
+  color,
+  fontFamily,
+  fontWeight,
+  fontSize,
+)
+
 const StyledDay = styled('button')<StyledDayProps>`
   ${dayHeight}
   ${dayWidth}
-  ${boxShadow}
-  ${background}
-  ${color}
-  ${fontFamily}
-  ${fontWeight}
-  ${fontSize}
+  ${composeStyledDayStyles}
   cursor: pointer;
   border: 0;
   padding: 0;

@@ -11,6 +11,7 @@ import {
   BorderRadiusProps,
   color,
   ColorProps,
+  compose,
 } from 'styled-system'
 import {
   UseDatepickerProps,
@@ -43,9 +44,14 @@ const Wrapper = styled(Box)<RtlProps>`
 `
 
 interface InputArrowIconProps extends OpacityProps, ColorProps, RtlProps {}
+
+const composeInputArrowIconStyles = compose(
+  color,
+  opacity,
+)
+
 const InputArrowIcon = styled(ArrowIcon)<InputArrowIconProps>`
-  ${opacity}
-  ${color}
+  ${composeInputArrowIconStyles}
   ${({rtl}) =>
     rtl &&
     css`
@@ -54,25 +60,44 @@ const InputArrowIcon = styled(ArrowIcon)<InputArrowIconProps>`
 `
 
 interface StyledGridProps extends BackgroundProps, BorderProps, BorderRadiusProps {}
+
+const composeInputGridStyles = compose(
+  background,
+  border,
+  borderRadius,
+)
+
 const InputGrid = styled(Grid)<StyledGridProps>`
-  ${background}
-  ${border}
-  ${borderRadius}
+  ${composeInputGridStyles}
 `
 
-function getPlacement(placement: 'bottom' | 'top') {
-  if (placement === 'top') {
+function getPlacement(placement: 'bottom' | 'top', rtl: boolean) {
+  if (placement === 'top' && !rtl) {
     return {
       dateRangeDatepickerWrapperTop: 'unset',
       dateRangeDatepickerWrapperRight: 'unset',
       dateRangeDatepickerWrapperBottom: '65px',
       dateRangeDatepickerWrapperLeft: '0',
     }
+  } else if (placement === 'top' && rtl) {
+    return {
+      dateRangeDatepickerWrapperTop: 'unset',
+      dateRangeDatepickerWrapperRight: '0',
+      dateRangeDatepickerWrapperBottom: '65px',
+      dateRangeDatepickerWrapperLeft: 'unset',
+    }
+  } else if (placement === 'bottom' && rtl) {
+    return {
+      dateRangeDatepickerWrapperTop: 'unset',
+      dateRangeDatepickerWrapperRight: '0',
+      dateRangeDatepickerWrapperBottom: 'unset',
+      dateRangeDatepickerWrapperLeft: 'unset',
+    }
   }
 
   return {
     dateRangeDatepickerWrapperTop: 'unset',
-    dateRangeDatepickerWrapperRight: '65px',
+    dateRangeDatepickerWrapperRight: 'unset',
     dateRangeDatepickerWrapperBottom: 'unset',
     dateRangeDatepickerWrapperLeft: '0',
   }
@@ -139,7 +164,7 @@ function DateRangeInput({
     dateRangeStartDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
     dateRangeEndDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
     dateRangeDatepickerWrapperPosition: 'absolute',
-    ...getPlacement(placement),
+    ...getPlacement(placement, rtl),
   })
 
   useEffect(() => {

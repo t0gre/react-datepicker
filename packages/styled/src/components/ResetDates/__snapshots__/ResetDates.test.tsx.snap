@@ -2,11 +2,11 @@
 
 exports[`should match snapshot 1`] = `
 .c1 {
+  margin: 1px 0 0 8px;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 0 0 8px;
 }
 
 .c0 {
@@ -63,11 +63,11 @@ exports[`should match snapshot 1`] = `
 
 exports[`should render rtl variant 1`] = `
 .c2 {
+  margin: 1px 8px 0 0;
+  line-height: 1.18;
   font-family: Montserrat,sans-serif;
   font-size: 11px;
   color: #343132;
-  line-height: 1.18;
-  margin: 1px 8px 0 0;
 }
 
 .c0 {

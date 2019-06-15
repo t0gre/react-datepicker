@@ -25,6 +25,7 @@ import {
   space,
   SpaceProps,
   style,
+  compose,
 } from 'styled-system'
 
 interface GridProps
@@ -57,20 +58,24 @@ const daySizeGridTemplateColumns = style({
   scale: [0, 4, 8, 16, 32],
 })
 
+const composeGridStyles = compose(
+  gridAutoColumns,
+  gridAutoFlow,
+  gridAutoRows,
+  gridColumnGap,
+  gridGap,
+  gridRowGap,
+  gridTemplateAreas,
+  gridTemplateColumns,
+  gridTemplateRows,
+  alignItems,
+  justifyContent,
+  space,
+)
+
 const Grid = styled('div')<GridProps>`
   display: grid;
-  ${gridAutoColumns}
-  ${gridAutoFlow}
-  ${gridAutoRows}
-  ${gridColumnGap}
-  ${gridGap}
-  ${gridRowGap}
-  ${gridTemplateAreas}
-  ${gridTemplateColumns}
-  ${gridTemplateRows}
-  ${alignItems}
-  ${justifyContent}
-  ${space}
+  ${composeGridStyles}
   ${daySizeGridTemplateColumns}
 `
 

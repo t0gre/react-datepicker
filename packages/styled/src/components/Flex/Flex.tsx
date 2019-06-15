@@ -17,6 +17,7 @@ import {
   HeightProps,
   width,
   WidthProps,
+  compose,
 } from 'styled-system'
 import styled from 'styled-components'
 
@@ -30,18 +31,22 @@ interface FlexComponentProps
     WidthProps,
     FlexProps,
     JustifyContentProps {}
+
+const composeFlexStyles = compose(
+  space,
+  flex,
+  flexWrap,
+  flexDirection,
+  alignItems,
+  justifyContent,
+  gridArea,
+  height,
+  width,
+)
+
 const Flex = styled('div')<FlexComponentProps>`
   display: flex;
-
-  ${space}
-  ${flex}
-  ${flexWrap}
-  ${flexDirection}
-  ${alignItems}
-  ${justifyContent}
-  ${gridArea}
-  ${height}
-  ${width}
+  ${composeFlexStyles}
 `
 
 export default Flex

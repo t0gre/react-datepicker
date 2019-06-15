@@ -5,8 +5,8 @@ exports[`should match snapshot 1`] = `
   box-sizing: border-box;
   grid-area: test;
   height: 150px;
-  padding: 10px;
   width: 150px;
+  padding: 10px;
   position: relative;
   top: 10px;
   left: 15px;

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import styled, {css} from 'styled-components'
 import RedoIcon from '../../icons/RedoIcon'
 import Text from '../Text'
@@ -38,7 +38,6 @@ interface ResetDatesProps {
 }
 
 function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
-  const ref = useRef<HTMLButtonElement>(null)
   const theme: ResetDatesTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     resetDatesIconColor: globalStyles.colors.mud,
@@ -50,10 +49,9 @@ function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
     resetDatesTextFontSize: '11px',
   })
 
-  function handleMouseUp() {
-    if (ref && ref.current) {
-      ref.current.blur()
-    }
+  function handleMouseUp(e: React.MouseEvent) {
+    // @ts-ignore
+    e.currentTarget.blur()
   }
 
   return (
@@ -62,7 +60,6 @@ function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
       tabIndex={-1}
       onClick={onResetDates}
       onMouseUp={handleMouseUp}
-      ref={ref}
     >
       <RedoIconStyle
         // @ts-ignore

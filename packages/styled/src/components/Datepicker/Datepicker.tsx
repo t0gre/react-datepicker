@@ -21,6 +21,7 @@ import {
   HeightProps,
   WidthProps,
   width,
+  compose,
 } from 'styled-system'
 import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import {
@@ -70,13 +71,17 @@ interface StyledDatepicker
     BoxShadowProps {
   rtl: boolean
 }
+const composeStyledDatepickerStyles = compose(
+  background,
+  space,
+  borderRadius,
+  position,
+  boxShadow,
+  width,
+)
+
 const StyledDatepicker = styled('div')<StyledDatepicker>`
-  ${background}
-  ${space}
-  ${borderRadius}
-  ${position}
-  ${boxShadow}
-  ${width}
+  ${composeStyledDatepickerStyles}
   ${({rtl}) =>
     rtl &&
     css`
@@ -118,15 +123,23 @@ const DateWrapper = styled('div')`
 `
 
 interface CloseWrapperProps extends JustifyContentProps, DisplayProps {}
+const composeCloseWrapperStyles = compose(
+  display,
+  justifyContent,
+)
+
 const CloseWrapper = styled(Box)<CloseWrapperProps>`
-  ${display}
-  ${justifyContent}
+  ${composeCloseWrapperStyles}
 `
 
 interface MonthGridProps extends HeightProps, OverflowProps {}
+const composeMonthGridStyles = compose(
+  overflow,
+  height,
+)
+
 const MonthGrid = styled(Grid)<MonthGridProps>`
-  ${overflow}
-  ${height}
+  ${composeMonthGridStyles}
 `
 
 export interface DatepickerProps extends UseDatepickerProps {
