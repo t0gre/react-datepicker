@@ -36,7 +36,7 @@ yarn add @datepicker-react/styled styled-components
 ### Include component
 
 ```js
-import {DateRangeInput, Datepicker} from '@datepicker-react/styled'
+import {DateRangeInput, DateSingleInput, Datepicker} from '@datepicker-react/styled'
 ```
 
 ### DateRangeInput

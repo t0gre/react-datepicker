@@ -10,7 +10,7 @@
 > An easily internationalizable, accessible, mobile-friendly datepicker library for the web, build
 > with styled-components.
 
-![example](../../docs/datepicker.gif)
+![example](https://github.com/tresko/react-datepicker/raw/master/docs/datepicker.gif)
 
 ## Live Playground
 
@@ -36,7 +36,7 @@ yarn add @datepicker-react/styled styled-components
 ### Include component
 
 ```js
-import {DateRangeInput, Datepicker} from '@datepicker-react/styled'
+import {DateRangeInput, DateSingleInput, Datepicker} from '@datepicker-react/styled'
 ```
 
 ### DateRangeInput
