@@ -23,7 +23,6 @@ import {
   width,
   compose,
 } from 'styled-system'
-import {CSSTransition, TransitionGroup} from 'react-transition-group'
 import {
   useDatepicker,
   MonthType,
@@ -90,21 +89,7 @@ const StyledDatepicker = styled('div')<StyledDatepicker>`
   
   animation-name: ${opacity0To100};
   animation-duration: 0.15s;
-  
-  .item-enter {
-    opacity: 0;
-  }
-  .item-enter-active {
-    opacity: 1;
-    transition: opacity 250ms ease-in;
-  }
-  .item-exit {
-    opacity: 1;
-  }
-  .item-exit-active {
-    opacity: 0;
-    transition: opacity 250ms ease-in;
-  }
+  animation-timing-function: ease-in;
 `
 
 const DateWrapper = styled('div')`
@@ -342,41 +327,32 @@ function Datepicker({
         )}
         <Box position="relative">
           <Box m={theme.datepickerMonthsWrapperMargin}>
-            <TransitionGroup className="todo-list">
-              <MonthGrid
-                data-testid="MonthGrid"
-                overflow={theme.datepickerMonthsGridOverflow}
-                height={theme.datepickerMonthsGridHeight}
-                gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
-                gridGap={theme.datepickerMonthsGridGap}
-                pr={rtl ? '1px' : '0'}
-                ref={monthGridRef}
-                onMouseLeave={() => {
-                  if (hoveredDate) {
-                    onDateHover(null)
-                  }
-                }}
-              >
-                {activeMonths.map((month: MonthType) => (
-                  <CSSTransition
-                    key={`${month.year}-${month.month}`}
-                    timeout={250}
-                    classNames="item"
-                    in
-                  >
-                    <Month
-                      key={`month-${month.year}-${month.month}`}
-                      year={month.year}
-                      month={month.month}
-                      firstDayOfWeek={firstDayOfWeek}
-                      dayLabelFormat={dayLabelFormat || dayLabelFormatFn}
-                      weekdayLabelFormat={weekdayLabelFormat || weekdayLabelFormatFn}
-                      monthLabelFormat={monthLabelFormat || monthLabelFormatFn}
-                    />
-                  </CSSTransition>
-                ))}
-              </MonthGrid>
-            </TransitionGroup>
+            <MonthGrid
+              data-testid="MonthGrid"
+              overflow={theme.datepickerMonthsGridOverflow}
+              height={theme.datepickerMonthsGridHeight}
+              gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
+              gridGap={theme.datepickerMonthsGridGap}
+              pr={rtl ? '1px' : '0'}
+              ref={monthGridRef}
+              onMouseLeave={() => {
+                if (hoveredDate) {
+                  onDateHover(null)
+                }
+              }}
+            >
+              {activeMonths.map((month: MonthType) => (
+                <Month
+                  key={`month-${month.year}-${month.month}`}
+                  year={month.year}
+                  month={month.month}
+                  firstDayOfWeek={firstDayOfWeek}
+                  dayLabelFormat={dayLabelFormat || dayLabelFormatFn}
+                  weekdayLabelFormat={weekdayLabelFormat || weekdayLabelFormatFn}
+                  monthLabelFormat={monthLabelFormat || monthLabelFormatFn}
+                />
+              ))}
+            </MonthGrid>
           </Box>
           <Flex alignItems="center">
             <>

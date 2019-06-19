@@ -133,8 +133,9 @@ export function useDatepicker({
         e.key === 'ArrowUp') &&
       !focusedDate
     ) {
-      onDateFocus(new Date())
-      setActiveMonths(getInitialMonths(numberOfMonths, new Date()))
+      const activeMonth = activeMonths[0]
+      onDateFocus(activeMonth.date)
+      setActiveMonths(getInitialMonths(numberOfMonths, activeMonth.date))
     }
   }
 
@@ -221,7 +222,10 @@ export function useDatepicker({
       })
     }
 
-    if (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate))) {
+    if (
+      focusedInput !== END_DATE &&
+      (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate)))
+    ) {
       setActiveMonths(getInitialMonths(numberOfMonths, date))
     }
   }

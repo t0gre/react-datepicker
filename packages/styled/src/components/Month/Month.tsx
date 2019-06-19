@@ -1,6 +1,6 @@
 import React from 'react'
 import {useMonth, CalendarDay, FirstDayOfWeek} from '@datepicker-react/hooks'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import MonthLabel from '../MonthLabel'
 import DayLabel from '../DayLabel'
 import Flex from '../Flex'
@@ -11,7 +11,21 @@ import globalStyles from '../../globalStyles'
 // eslint-disable-next-line import/no-unresolved
 import {MonthTheme} from '../../@types/theme'
 
+const opacity0To100 = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
+
 const MonthWrapper = styled('div')`
+  animation-name: ${opacity0To100};
+  animation-duration: 0.25s;
+  animation-timing-function: ease-in;
+
   &:last-child {
     padding: 0 1px 1px 0;
   }

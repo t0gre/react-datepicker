@@ -22,8 +22,8 @@ var o = function(e) {
   y = /^-?W(\d{2})$/,
   M = /^-?W(\d{2})-?(\d{1})$/,
   k = /^(\d{2}([.,]\d*)?)$/,
-  w = /^(\d{2}):?(\d{2}([.,]\d*)?)$/,
-  p = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
+  p = /^(\d{2}):?(\d{2}([.,]\d*)?)$/,
+  w = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
   T = /([Z+-].*)$/,
   F = /^(Z)$/,
   S = /^([+-])(\d{2})$/,
@@ -98,13 +98,13 @@ var x = function(e, t) {
         (A = (function(e) {
           var t, n, r
           if ((t = k.exec(e))) return ((n = parseFloat(t[1].replace(',', '.'))) % 24) * u
-          if ((t = w.exec(e)))
+          if ((t = p.exec(e)))
             return (
               (n = parseInt(t[1], 10)),
               (r = parseFloat(t[2].replace(',', '.'))),
               (n % 24) * u + r * i
             )
-          if ((t = p.exec(e))) {
+          if ((t = w.exec(e))) {
             ;(n = parseInt(t[1], 10)), (r = parseInt(t[2], 10))
             var a = parseFloat(t[3].replace(',', '.'))
             return (n % 24) * u + r * i + 1e3 * a
@@ -657,21 +657,21 @@ function ke(e) {
     (a && a(t))
   )
 }
-function we(e) {
+function pe(e) {
   var t = te(e)
   return {year: le(t), month: ge(t), date: t}
 }
-function pe() {
-  return we(ve())
+function we() {
+  return pe(ve())
 }
 function Te(e, t) {
-  var n = t ? we(t) : pe(),
+  var n = t ? pe(t) : we(),
     r = n.date,
     a = [n]
   return (
     e > 1 &&
       (a = Array.from(Array(e - 1).keys()).reduce(function(e) {
-        return (r = he(e[e.length - 1].date, 1)), e.concat([we(r)])
+        return (r = he(e[e.length - 1].date, 1)), e.concat([pe(r)])
       }, a)),
     a
   )
@@ -679,7 +679,7 @@ function Te(e, t) {
 function Fe(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = he(r, n)), n > 0 ? e.concat([we(r)]) : [we(r)].concat(e)
+    return (r = he(r, n)), n > 0 ? e.concat([pe(r)]) : [pe(r)].concat(e)
   }, [])
 }
 function Se(e, t, n) {
@@ -738,8 +738,8 @@ function Be(e) {
     k = t(function() {
       return Te(v, a)
     }),
-    w = k[0],
-    p = k[1],
+    p = k[0],
+    w = k[1],
     T = t(null),
     F = T[0],
     S = T[1],
@@ -748,9 +748,9 @@ function Be(e) {
     x = Y[1],
     B = n(
       function(e) {
-        x(e), (!b || (b && !de(e, b))) && p(Te(v, e))
+        x(e), (!b || (b && !de(e, b))) && w(Te(v, e))
       },
-      [x, p, v, b],
+      [x, w, v, b],
     ),
     H = n(
       function(e) {
@@ -819,12 +819,16 @@ function Be(e) {
       [F, a, o, l, D, M],
     )
   function L(e) {
-    ;('ArrowRight' !== e.key &&
-      'ArrowLeft' !== e.key &&
-      'ArrowDown' !== e.key &&
-      'ArrowUp' !== e.key) ||
-      b ||
-      (B(new Date()), p(Te(v, new Date())))
+    if (
+      ('ArrowRight' === e.key ||
+        'ArrowLeft' === e.key ||
+        'ArrowDown' === e.key ||
+        'ArrowUp' === e.key) &&
+      !b
+    ) {
+      var t = p[0]
+      B(t.date), w(Te(v, t.date))
+    }
   }
   return (
     r(function() {
@@ -837,7 +841,7 @@ function Be(e) {
     }),
     {
       firstDayOfWeek: h,
-      activeMonths: w,
+      activeMonths: p,
       isDateSelected: H,
       isDateHovered: W,
       isFirstOrLastSelectedDate: I,
@@ -894,14 +898,14 @@ function Be(e) {
             !D &&
             Ye({minBookingDays: l, isDateBlocked: M, startDate: a, endDate: e}) &&
             c({startDate: a, endDate: e, focusedInput: null}),
-          (!b || (b && !de(e, b))) && p(Te(v, e))
+          u === xe || (b && (!b || de(e, b))) || w(Te(v, e))
       },
       onDateFocus: B,
       goToPreviousMonths: function() {
-        p(Fe(w, v, -1)), x(null)
+        w(Fe(p, v, -1)), x(null)
       },
       goToNextMonths: function() {
-        p(Fe(w, v, 1)), x(null)
+        w(Fe(p, v, 1)), x(null)
       },
     }
   )
@@ -960,8 +964,8 @@ export {
   xe as END_DATE,
   be as START_DATE,
   ae as dayLabelFormat,
-  pe as getCurrentYearMonthAndDate,
-  we as getDateMonthAndYear,
+  we as getCurrentYearMonthAndDate,
+  pe as getDateMonthAndYear,
   re as getDays,
   Te as getInitialMonths,
   Se as getInputValue,

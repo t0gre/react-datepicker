@@ -815,13 +815,13 @@ function useDatepicker(e) {
       },
       [I, T, D, S],
     ),
-    w = react.useCallback(
+    L = react.useCallback(
       function(e) {
         return isDateSelected(e, t, a)
       },
       [t, a],
     ),
-    L = react.useCallback(
+    w = react.useCallback(
       function(e) {
         return isFirstOrLastSelectedDate(e, t, a)
       },
@@ -862,12 +862,16 @@ function useDatepicker(e) {
       [p, t, a, c, u, m],
     )
   function E(e) {
-    ;('ArrowRight' !== e.key &&
-      'ArrowLeft' !== e.key &&
-      'ArrowDown' !== e.key &&
-      'ArrowUp' !== e.key) ||
-      S ||
-      (Y(new Date()), T(getInitialMonths(D, new Date())))
+    if (
+      ('ArrowRight' === e.key ||
+        'ArrowLeft' === e.key ||
+        'ArrowDown' === e.key ||
+        'ArrowUp' === e.key) &&
+      !S
+    ) {
+      var t = h[0]
+      Y(t.date), T(getInitialMonths(D, t.date))
+    }
   }
   return (
     react.useEffect(function() {
@@ -881,9 +885,9 @@ function useDatepicker(e) {
     {
       firstDayOfWeek: l,
       activeMonths: h,
-      isDateSelected: w,
+      isDateSelected: L,
       isDateHovered: F,
-      isFirstOrLastSelectedDate: L,
+      isFirstOrLastSelectedDate: w,
       isDateBlocked: O,
       numberOfMonths: D,
       isDateFocused: b,
@@ -942,7 +946,7 @@ function useDatepicker(e) {
             !u &&
             canSelectRange({minBookingDays: c, isDateBlocked: m, startDate: t, endDate: e}) &&
             s({startDate: t, endDate: e, focusedInput: null}),
-          (!S || (S && !is_same_month(e, S))) && T(getInitialMonths(D, e))
+          r === END_DATE || (S && (!S || is_same_month(e, S))) || T(getInitialMonths(D, e))
       },
       onDateFocus: Y,
       goToPreviousMonths: function() {

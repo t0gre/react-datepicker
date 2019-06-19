@@ -87,6 +87,15 @@ exports[`Sunday should be first day of the week 1`] = `
   border: 2px solid #009fef;
 }
 
+.c0 {
+  -webkit-animation-name: eMLfYp;
+  animation-name: eMLfYp;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
 .c0:last-child {
   padding: 0 1px 1px 0;
 }
@@ -813,6 +822,15 @@ exports[`should match snapshot 1`] = `
 .c6:focus {
   box-shadow: none;
   border: 2px solid #009fef;
+}
+
+.c0 {
+  -webkit-animation-name: eMLfYp;
+  animation-name: eMLfYp;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
 }
 
 .c0:last-child {
