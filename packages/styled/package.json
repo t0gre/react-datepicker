@@ -39,7 +39,6 @@
     "styled-components": ">= 4.0.0"
   },
   "devDependencies": {
-    "@types/react-transition-group": "^2.9.2",
     "@types/styled-components": "^4.1.16",
     "@types/styled-system": "^4.2.1",
     "csstype": "^2.6.5",
