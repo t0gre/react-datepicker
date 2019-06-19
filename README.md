@@ -221,8 +221,8 @@ function App() {
 }
 ```
 
-The following is a list of other _OPTIONAL_ props you may provide to the `DateSingleInput` to customize
-appearance and behavior to your heart's desire.
+The following is a list of other _OPTIONAL_ props you may provide to the `DateSingleInput` to
+customize appearance and behavior to your heart's desire.
 
 ```ts
 minBookingDate?: Date
@@ -275,6 +275,10 @@ Simple. Use
 ## Who's using
 
 [LifeOnScreen](https://lifeonscreen.com)
+
+## Articles
+
+[Yet another datepicker in React](https://tresko.dev/yet-another-datepicker-in-react)
 
 ## License
 
