@@ -50,6 +50,7 @@ export interface SelectDateTheme extends CommonTheme {
   selectDateDateFontWeight?: ResponsiveValue<FontWeightProperty>
   selectDateDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   selectDatePadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  selectDateBorderColor?: string
 }
 
 export interface ResetDatesTheme extends CommonTheme {

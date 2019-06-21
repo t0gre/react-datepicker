@@ -9,6 +9,7 @@ import Box from '../Box'
 
 interface StyledDateProps {
   isActive: boolean
+  selectDateBorderColor: string
 }
 const StyledDate = styled(Text)<StyledDateProps>`
   position: relative;
@@ -24,11 +25,11 @@ const StyledDate = styled(Text)<StyledDateProps>`
     z-index: 1;
   }
 
-  ${({isActive}) =>
+  ${({isActive, selectDateBorderColor}) =>
     isActive &&
     css`
       &:after {
-        background: #00aeef;
+        background: ${selectDateBorderColor};
       }
     `}
 `
@@ -50,6 +51,7 @@ function SelectDate({title, isActive, date, vertical}: SelectDateProps) {
     selectDateDateFontSize: vertical ? '16px' : '24px',
     selectDateDateFontWeight: 500,
     selectDateDatePadding: '0 0 15px',
+    selectDateBorderColor: globalStyles.colors.primaryColor,
     selectDatePadding: '0',
   })
 
@@ -73,6 +75,8 @@ function SelectDate({title, isActive, date, vertical}: SelectDateProps) {
         fontFamily={theme.fontFamily}
         p={theme.selectDateDatePadding}
         isActive={isActive}
+        // @ts-ignore
+        selectDateBorderColor={theme.selectDateBorderColor}
       >
         {date}
       </StyledDate>
