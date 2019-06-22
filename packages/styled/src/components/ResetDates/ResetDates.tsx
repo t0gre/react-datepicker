@@ -1,11 +1,12 @@
-import React from 'react'
-import styled, {css} from 'styled-components'
+import React, {useContext} from 'react'
+import styled, {css, ThemeContext} from 'styled-components'
 import RedoIcon from '../../icons/RedoIcon'
 import Text from '../Text'
 // eslint-disable-next-line import/no-unresolved
 import {ResetDatesTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
+import getThemeProp from '../../utils/getThemeProp'
 
 const StyledReactDates = styled('button')`
   display: flex;
@@ -38,12 +39,13 @@ interface ResetDatesProps {
 }
 
 function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
+  const themeContext = useContext(ThemeContext)
   const theme: ResetDatesTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
-    resetDatesIconColor: globalStyles.colors.mud,
+    resetDatesIconColor: getThemeProp('mud', globalStyles.colors.mud, themeContext),
     resetDatesIconHeight: '14px',
     resetDatesIconWidth: '14px',
-    resetDatesTextColor: globalStyles.colors.darcula,
+    resetDatesTextColor: getThemeProp('darcula', globalStyles.colors.darcula, themeContext),
     resetDatesTextMargin: rtl ? '1px 8px 0 0' : '1px 0 0 8px',
     resetDatesTextLineHeight: 1.18,
     resetDatesTextFontSize: '11px',

@@ -87,7 +87,7 @@ exports[`should render disabled day 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -109,7 +109,7 @@ exports[`should render disabled day 1`] = `
   <button
     aria-label="Day-Wed Mar 27 2019"
     class="c0"
-    color="#58595b"
+    color="#58595B"
     data-testid="Day"
     font-family="Montserrat, sans-serif"
     font-size="14px"
@@ -209,7 +209,7 @@ exports[`should render normal day 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -222,7 +222,7 @@ exports[`should render normal day 1`] = `
 
 .c0:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c0:focus {
@@ -234,7 +234,7 @@ exports[`should render normal day 1`] = `
   <button
     aria-label="Day-Wed Mar 27 2019"
     class="c0"
-    color="#58595b"
+    color="#58595B"
     data-testid="Day"
     font-family="Montserrat, sans-serif"
     font-size="14px"

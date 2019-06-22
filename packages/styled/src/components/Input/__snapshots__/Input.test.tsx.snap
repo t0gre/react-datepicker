@@ -4,7 +4,7 @@ exports[`should render rtl variant 1`] = `
 .c0 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -104,7 +104,7 @@ exports[`should render vertical variant 1`] = `
 .c0 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -170,7 +170,7 @@ exports[`should render with icon 1`] = `
 .c0 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -270,7 +270,7 @@ exports[`should render with value 1`] = `
 .c0 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -336,7 +336,7 @@ exports[`should render without icon 1`] = `
 .c0 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;

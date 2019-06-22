@@ -1,5 +1,5 @@
 import React, {useMemo, useContext, useRef} from 'react'
-import styled, {css} from 'styled-components'
+import styled, {css, ThemeContext} from 'styled-components'
 import {compose, ResponsiveValue, style, TLengthStyledSystem} from 'styled-system'
 import {useDay} from '@datepicker-react/hooks'
 import {
@@ -23,6 +23,7 @@ import {DayTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
 import {BackgroundProperty, ColorProperty} from 'csstype'
+import getThemeProp from '../../utils/getThemeProp'
 
 const dayHeight = style({
   // React prop name and CSS property
@@ -234,28 +235,48 @@ function Day({day, date}: DayProps) {
     onDateHover,
     dayRef,
   })
+  const themeContext = useContext(ThemeContext)
+  const white = getThemeProp('white', globalStyles.colors.white, themeContext)
+  const mud = getThemeProp('mud', globalStyles.colors.mud, themeContext)
+  const primaryColor = getThemeProp('primaryColor', globalStyles.colors.primaryColor, themeContext)
+  const accessibility = getThemeProp(
+    'accessibility',
+    globalStyles.colors.accessibility,
+    themeContext,
+  )
+  const selectedDay = getThemeProp('selectedDay', globalStyles.colors.selectedDay, themeContext)
+  const selectedDayHover = getThemeProp(
+    'selectedDayHover',
+    globalStyles.colors.selectedDayHover,
+    themeContext,
+  )
+  const normalDayHover = getThemeProp(
+    'normalDayHover',
+    globalStyles.colors.normalDayHover,
+    themeContext,
+  )
   const theme: DayTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     daySize: globalStyles.daySize,
     dayFontWeight: 500,
     dayFontSize: '14px',
-    dayColor: '#58595b',
-    dayHoverColor: '#58595b',
-    daySelectedColor: '#ffffff',
-    daySelectedHoverColor: '#ffffff',
-    dayHoverRangeColor: '#ffffff',
-    daySelectedFirstOrLastColor: '#ffffff',
-    dayBackground: '#ffffff',
-    dayHoverBackground: '#e6e7e8',
-    daySelectedBackground: '#71c9ed',
-    daySelectedHoverBackground: '#39beef',
-    dayHoverRangeBackground: '#71c9ed',
-    daySelectedFirstOrLastBackground: '#00aeef',
-    dayBorderColor: '#e6e7e8',
-    daySelectedBorderColor: '#71c9ed',
-    dayHoverRangeBorderColor: '#71c9ed',
-    daySelectedFirstOrLastBorderColor: '#00aeef',
-    dayAccessibilityBorderColor: '#009fef',
+    dayColor: mud,
+    dayHoverColor: mud,
+    daySelectedColor: white,
+    daySelectedHoverColor: white,
+    dayHoverRangeColor: white,
+    daySelectedFirstOrLastColor: white,
+    dayBackground: white,
+    dayHoverBackground: normalDayHover,
+    daySelectedBackground: selectedDay,
+    daySelectedHoverBackground: selectedDayHover,
+    dayHoverRangeBackground: selectedDay,
+    daySelectedFirstOrLastBackground: primaryColor,
+    dayBorderColor: normalDayHover,
+    daySelectedBorderColor: selectedDay,
+    dayHoverRangeBorderColor: selectedDay,
+    daySelectedFirstOrLastBorderColor: primaryColor,
+    dayAccessibilityBorderColor: accessibility,
   })
   const borderColor = useMemo(
     () =>

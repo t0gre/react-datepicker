@@ -249,3 +249,26 @@ storiesOf('DateSingleInput', module)
       />
     </ThemeProvider>
   ))
+  .add('Theming', () => (
+    <ThemeProvider
+      theme={{
+        reactDatepicker: {
+          fontFamily: 'system-ui, -apple-system',
+          colors: {
+            accessibility: '#D80249',
+            selectedDay: '#f7518b',
+            selectedDayHover: '#F75D95',
+            primaryColor: '#d8366f',
+          },
+        },
+      }}
+    >
+      <App
+        rtl={boolean('rtl', false)}
+        vertical={boolean('vertical', false)}
+        showResetDate={boolean('showResetDate', true)}
+        showClose={boolean('showClose', true)}
+        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      />
+    </ThemeProvider>
+  ))

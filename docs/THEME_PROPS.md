@@ -4,6 +4,20 @@
 fontFamily?: ResponsiveValue<FontFamilyProperty>
 daySize?: number | (number | null)[] | undefined
 
+colors: {
+  primaryColor: string ('#00aeef'),
+  silverCloud: string ('#929598'),
+  charcoal: string ('#001217'),
+  darcula: string ('#343132'),
+  mud: string ('#58595B'),
+  greey: string ('#808285'),
+  graci: string ('#BCBEC0'),
+  white: string ('#ffffff'),
+  accessibility: string ('#009fef'),
+  selectedDay: string ('#71c9ed'),
+  selectedDayHover: string ('#39beef'),
+  normalDayHover: string ('#e6e7e8'),
+}
 
 closeColor?: ResponsiveValue<ColorProperty>
 closeHoverColor?: ResponsiveValue<ColorProperty>

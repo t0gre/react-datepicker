@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, {useContext} from 'react'
+import styled, {ThemeContext} from 'styled-components'
 import {
   width,
   WidthProps,
@@ -18,6 +18,7 @@ import CaretIcon from '../../icons/CaretIcon'
 import {NavButtonTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
+import getThemeProp from '../../utils/getThemeProp'
 
 interface StyledNavButtonProps
   extends HeightProps,
@@ -50,15 +51,20 @@ interface NavButtonProps {
 }
 
 function NavButton({type, onClick, vertical, rtl, ariaLabel}: NavButtonProps) {
+  const themeContext = useContext(ThemeContext)
   const theme: NavButtonTheme = useThemeProps({
     navButtonWidth: vertical ? '48px' : '30px',
     navButtonHeight: vertical ? '48px' : '30px',
-    navButtonBackground: '#ffffff',
-    navButtonBorder: '1px solid #929598',
+    navButtonBackground: getThemeProp('white', globalStyles.colors.white, themeContext),
+    navButtonBorder: `1px solid ${getThemeProp(
+      'silverCloud',
+      globalStyles.colors.silverCloud,
+      themeContext,
+    )}`,
     navButtonPadding: '0',
     navButtonIconHeight: vertical ? '18px' : '11px',
     navButtonIconWidth: vertical ? '28px' : '18px',
-    navButtonIconColor: globalStyles.colors.greey,
+    navButtonIconColor: getThemeProp('greey', globalStyles.colors.greey, themeContext),
   })
 
   function handleMouseUp(e: React.MouseEvent) {

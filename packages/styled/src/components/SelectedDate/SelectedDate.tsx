@@ -1,9 +1,10 @@
-import React from 'react'
-import styled, {css} from 'styled-components'
+import React, {useContext} from 'react'
+import styled, {css, ThemeContext} from 'styled-components'
 import useThemeProps from '../../hooks/useThemeProps'
 // eslint-disable-next-line import/no-unresolved
 import {SelectDateTheme} from '../../@types/theme'
 import globalStyles from '../../globalStyles'
+import getThemeProp from '../../utils/getThemeProp'
 import Text from '../Text'
 import Box from '../Box'
 
@@ -42,16 +43,25 @@ export interface SelectDateProps {
 }
 
 function SelectDate({title, isActive, date, vertical}: SelectDateProps) {
+  const themeContext = useContext(ThemeContext)
   const theme: SelectDateTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     selectDateLabelFontSize: '11px',
-    selectDateLabelColor: globalStyles.colors.silverCloud,
+    selectDateLabelColor: getThemeProp(
+      'silverCloud',
+      globalStyles.colors.silverCloud,
+      themeContext,
+    ),
     selectDateLabelMargin: '0 0 8px',
-    selectDateDateColor: globalStyles.colors.charcoal,
+    selectDateDateColor: getThemeProp('charcoal', globalStyles.colors.charcoal, themeContext),
     selectDateDateFontSize: vertical ? '16px' : '24px',
     selectDateDateFontWeight: 500,
     selectDateDatePadding: '0 0 15px',
-    selectDateBorderColor: globalStyles.colors.primaryColor,
+    selectDateBorderColor: getThemeProp(
+      'primaryColor',
+      globalStyles.colors.primaryColor,
+      themeContext,
+    ),
     selectDatePadding: '0',
   })
 

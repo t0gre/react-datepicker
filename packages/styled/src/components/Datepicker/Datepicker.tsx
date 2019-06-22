@@ -1,5 +1,5 @@
-import React, {useRef} from 'react'
-import styled, {css, keyframes} from 'styled-components'
+import React, {useRef, useContext} from 'react'
+import styled, {css, keyframes, ThemeContext} from 'styled-components'
 import {
   background,
   BackgroundProps,
@@ -50,6 +50,7 @@ import DatepickerContext from '../../context/datepickerContext'
 import {DatepickerTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
+import getThemeProp from '../../utils/getThemeProp'
 
 const opacity0To100 = keyframes`
   from {
@@ -198,6 +199,7 @@ function Datepicker({
     firstDayOfWeek: firstDayOfWeekProp,
   })
   const monthGridRef = useRef<HTMLDivElement>(null)
+  const themeContext = useContext(ThemeContext)
   const theme: DatepickerTheme = useThemeProps({
     datepickerBackground: '#ffffff',
     datepickerPadding: vertical ? '16px 16px 0' : '32px',
@@ -216,7 +218,11 @@ function Datepicker({
     datepickerSelectDateGridTemplateColumns: vertical ? '87px 50px 87px' : '126px 75px 126px',
     datepickerSelectDateArrowIconWidth: '15px',
     datepickerSelectDateArrowIconHeight: '12px',
-    datepickerSelectDateArrowIconColor: globalStyles.colors.silverCloud,
+    datepickerSelectDateArrowIconColor: getThemeProp(
+      'silverCloud',
+      globalStyles.colors.silverCloud,
+      themeContext,
+    ),
     datepickerMonthsWrapperMargin:
       !showClose && !showSelectedDates ? 'unset' : !showSelectedDates ? '48px 0 0' : '28px 0 0',
     datepickerPreviousMonthButtonPosition: vertical ? 'relative' : 'absolute',

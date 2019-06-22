@@ -41,7 +41,7 @@ exports[`placement top 1`] = `
 .c1 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -187,7 +187,7 @@ exports[`placement top 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -200,7 +200,7 @@ exports[`placement top 1`] = `
 
 .c19:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c19:focus {
@@ -592,7 +592,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Fri Mar 01 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -610,7 +610,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sat Mar 02 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -628,7 +628,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sun Mar 03 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -646,7 +646,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Mon Mar 04 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -664,7 +664,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Tue Mar 05 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -682,7 +682,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Wed Mar 06 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -700,7 +700,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Thu Mar 07 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -718,7 +718,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Fri Mar 08 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -736,7 +736,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sat Mar 09 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -754,7 +754,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sun Mar 10 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -772,7 +772,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Mon Mar 11 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -790,7 +790,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Tue Mar 12 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -808,7 +808,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Wed Mar 13 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -826,7 +826,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Thu Mar 14 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -844,7 +844,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Fri Mar 15 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -862,7 +862,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sat Mar 16 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -880,7 +880,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sun Mar 17 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -898,7 +898,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Mon Mar 18 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -916,7 +916,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Tue Mar 19 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -934,7 +934,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Wed Mar 20 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -952,7 +952,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Thu Mar 21 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -970,7 +970,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Fri Mar 22 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -988,7 +988,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sat Mar 23 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1006,7 +1006,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sun Mar 24 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1024,7 +1024,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Mon Mar 25 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1042,7 +1042,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Tue Mar 26 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1060,7 +1060,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Wed Mar 27 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1078,7 +1078,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Thu Mar 28 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1096,7 +1096,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Fri Mar 29 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1114,7 +1114,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sat Mar 30 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1132,7 +1132,7 @@ exports[`placement top 1`] = `
                   <button
                     aria-label="Day-Sun Mar 31 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1289,7 +1289,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 .c1 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -1435,7 +1435,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -1448,7 +1448,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 
 .c19:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c19:focus {
@@ -1840,7 +1840,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Fri Mar 01 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1858,7 +1858,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sat Mar 02 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1876,7 +1876,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sun Mar 03 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1894,7 +1894,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Mon Mar 04 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1912,7 +1912,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Tue Mar 05 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1930,7 +1930,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Wed Mar 06 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1948,7 +1948,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Thu Mar 07 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1966,7 +1966,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Fri Mar 08 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -1984,7 +1984,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sat Mar 09 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2002,7 +2002,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sun Mar 10 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2020,7 +2020,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Mon Mar 11 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2038,7 +2038,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Tue Mar 12 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2056,7 +2056,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Wed Mar 13 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2074,7 +2074,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Thu Mar 14 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2092,7 +2092,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Fri Mar 15 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2110,7 +2110,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sat Mar 16 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2128,7 +2128,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sun Mar 17 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2146,7 +2146,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Mon Mar 18 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2164,7 +2164,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Tue Mar 19 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2182,7 +2182,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Wed Mar 20 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2200,7 +2200,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Thu Mar 21 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2218,7 +2218,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Fri Mar 22 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2236,7 +2236,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sat Mar 23 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2254,7 +2254,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sun Mar 24 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2272,7 +2272,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Mon Mar 25 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2290,7 +2290,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Tue Mar 26 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2308,7 +2308,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Wed Mar 27 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2326,7 +2326,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Thu Mar 28 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2344,7 +2344,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Fri Mar 29 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2362,7 +2362,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sat Mar 30 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2380,7 +2380,7 @@ exports[`should have empty empty date and opened datepicker 1`] = `
                   <button
                     aria-label="Day-Sun Mar 31 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -2537,7 +2537,7 @@ exports[`should render custom day 1`] = `
 .c1 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -2666,7 +2666,7 @@ exports[`should render custom day 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -2679,7 +2679,7 @@ exports[`should render custom day 1`] = `
 
 .c19:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c19:focus {
@@ -3071,7 +3071,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Fri Mar 01 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3085,7 +3085,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sat Mar 02 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3099,7 +3099,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sun Mar 03 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3113,7 +3113,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Mon Mar 04 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3127,7 +3127,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Tue Mar 05 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3141,7 +3141,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Wed Mar 06 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3155,7 +3155,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Thu Mar 07 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3169,7 +3169,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Fri Mar 08 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3183,7 +3183,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sat Mar 09 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3197,7 +3197,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sun Mar 10 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3211,7 +3211,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Mon Mar 11 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3225,7 +3225,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Tue Mar 12 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3239,7 +3239,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Wed Mar 13 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3253,7 +3253,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Thu Mar 14 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3267,7 +3267,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Fri Mar 15 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3281,7 +3281,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sat Mar 16 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3295,7 +3295,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sun Mar 17 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3309,7 +3309,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Mon Mar 18 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3323,7 +3323,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Tue Mar 19 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3337,7 +3337,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Wed Mar 20 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3351,7 +3351,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Thu Mar 21 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3365,7 +3365,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Fri Mar 22 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3379,7 +3379,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sat Mar 23 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3393,7 +3393,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sun Mar 24 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3407,7 +3407,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Mon Mar 25 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3421,7 +3421,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Tue Mar 26 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3435,7 +3435,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Wed Mar 27 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3449,7 +3449,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Thu Mar 28 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3463,7 +3463,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Fri Mar 29 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3477,7 +3477,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sat Mar 30 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3491,7 +3491,7 @@ exports[`should render custom day 1`] = `
                   <button
                     aria-label="Day-Sun Mar 31 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -3644,7 +3644,7 @@ exports[`should render rtl, variant 1`] = `
 .c1 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -3790,7 +3790,7 @@ exports[`should render rtl, variant 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -3803,7 +3803,7 @@ exports[`should render rtl, variant 1`] = `
 
 .c19:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c19:focus {
@@ -4203,7 +4203,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 01 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4221,7 +4221,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 02 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4239,7 +4239,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 03 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4257,7 +4257,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 04 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4275,7 +4275,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 05 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4293,7 +4293,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 06 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4311,7 +4311,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 07 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4329,7 +4329,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 08 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4347,7 +4347,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 09 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4365,7 +4365,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 10 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4383,7 +4383,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 11 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4401,7 +4401,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 12 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4419,7 +4419,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 13 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4437,7 +4437,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 14 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4455,7 +4455,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 15 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4473,7 +4473,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 16 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4491,7 +4491,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 17 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4509,7 +4509,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 18 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4527,7 +4527,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 19 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4545,7 +4545,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 20 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4563,7 +4563,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 21 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4581,7 +4581,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 22 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4599,7 +4599,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 23 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4617,7 +4617,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 24 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4635,7 +4635,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 25 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4653,7 +4653,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 26 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4671,7 +4671,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 27 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4689,7 +4689,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 28 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4707,7 +4707,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 29 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4725,7 +4725,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 30 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4743,7 +4743,7 @@ exports[`should render rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 31 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -4891,7 +4891,7 @@ exports[`should render vertical variant 1`] = `
 .c1 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -5037,7 +5037,7 @@ exports[`should render vertical variant 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -5050,7 +5050,7 @@ exports[`should render vertical variant 1`] = `
 
 .c19:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c19:focus {
@@ -5470,7 +5470,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 01 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5488,7 +5488,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 02 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5506,7 +5506,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 03 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5524,7 +5524,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 04 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5542,7 +5542,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 05 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5560,7 +5560,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 06 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5578,7 +5578,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 07 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5596,7 +5596,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 08 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5614,7 +5614,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 09 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5632,7 +5632,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 10 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5650,7 +5650,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 11 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5668,7 +5668,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 12 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5686,7 +5686,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 13 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5704,7 +5704,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 14 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5722,7 +5722,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 15 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5740,7 +5740,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 16 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5758,7 +5758,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 17 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5776,7 +5776,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 18 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5794,7 +5794,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 19 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5812,7 +5812,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 20 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5830,7 +5830,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 21 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5848,7 +5848,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 22 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5866,7 +5866,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 23 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5884,7 +5884,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 24 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5902,7 +5902,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 25 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5920,7 +5920,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 26 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5938,7 +5938,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 27 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5956,7 +5956,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 28 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5974,7 +5974,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 29 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -5992,7 +5992,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 30 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6010,7 +6010,7 @@ exports[`should render vertical variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 31 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6158,7 +6158,7 @@ exports[`should render vertical, rtl, variant 1`] = `
 .c1 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -6304,7 +6304,7 @@ exports[`should render vertical, rtl, variant 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -6317,7 +6317,7 @@ exports[`should render vertical, rtl, variant 1`] = `
 
 .c19:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c19:focus {
@@ -6745,7 +6745,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 01 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6763,7 +6763,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 02 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6781,7 +6781,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 03 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6799,7 +6799,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 04 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6817,7 +6817,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 05 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6835,7 +6835,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 06 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6853,7 +6853,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 07 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6871,7 +6871,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 08 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6889,7 +6889,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 09 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6907,7 +6907,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 10 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6925,7 +6925,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 11 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6943,7 +6943,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 12 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6961,7 +6961,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 13 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6979,7 +6979,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 14 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -6997,7 +6997,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 15 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7015,7 +7015,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 16 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7033,7 +7033,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 17 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7051,7 +7051,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 18 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7069,7 +7069,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 19 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7087,7 +7087,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 20 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7105,7 +7105,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 21 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7123,7 +7123,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 22 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7141,7 +7141,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 23 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7159,7 +7159,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 24 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7177,7 +7177,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Mon Mar 25 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7195,7 +7195,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Tue Mar 26 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7213,7 +7213,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Wed Mar 27 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7231,7 +7231,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Thu Mar 28 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7249,7 +7249,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Fri Mar 29 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7267,7 +7267,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sat Mar 30 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7285,7 +7285,7 @@ exports[`should render vertical, rtl, variant 1`] = `
                   <button
                     aria-label="Day-Sun Mar 31 2019"
                     class="c19"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7442,7 +7442,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
 .c1 {
   display: block;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #BCBEC0;
   background: #ffffff;
   border-radius: 2px;
   margin: 0;
@@ -7555,7 +7555,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -7568,7 +7568,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
 
 .c14:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c14:focus {
@@ -7830,7 +7830,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Fri Mar 01 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7848,7 +7848,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sat Mar 02 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7866,7 +7866,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sun Mar 03 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7884,7 +7884,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Mon Mar 04 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7902,7 +7902,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Tue Mar 05 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7920,7 +7920,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Wed Mar 06 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7938,7 +7938,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Thu Mar 07 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7956,7 +7956,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Fri Mar 08 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7974,7 +7974,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sat Mar 09 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -7992,7 +7992,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sun Mar 10 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8010,7 +8010,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Mon Mar 11 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8028,7 +8028,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Tue Mar 12 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8046,7 +8046,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Wed Mar 13 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8064,7 +8064,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Thu Mar 14 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8082,7 +8082,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Fri Mar 15 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8100,7 +8100,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sat Mar 16 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8118,7 +8118,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sun Mar 17 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8136,7 +8136,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Mon Mar 18 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8154,7 +8154,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Tue Mar 19 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8172,7 +8172,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Wed Mar 20 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8190,7 +8190,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Thu Mar 21 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8208,7 +8208,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Fri Mar 22 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8226,7 +8226,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sat Mar 23 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8244,7 +8244,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sun Mar 24 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8262,7 +8262,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Mon Mar 25 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8280,7 +8280,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Tue Mar 26 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8298,7 +8298,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Wed Mar 27 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8316,7 +8316,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Thu Mar 28 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8334,7 +8334,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Fri Mar 29 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8352,7 +8352,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sat Mar 30 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"
@@ -8370,7 +8370,7 @@ exports[`should render without calendar icon, reset dates and close component 1`
                   <button
                     aria-label="Day-Sun Mar 31 2019"
                     class="c14"
-                    color="#58595b"
+                    color="#58595B"
                     data-testid="Day"
                     font-family="Montserrat, sans-serif"
                     font-size="14px"

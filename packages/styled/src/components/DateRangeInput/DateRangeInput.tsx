@@ -1,5 +1,5 @@
-import React, {useRef, useEffect} from 'react'
-import styled, {css} from 'styled-components'
+import React, {useRef, useEffect, useContext} from 'react'
+import styled, {css, ThemeContext} from 'styled-components'
 import {
   opacity,
   OpacityProps,
@@ -31,6 +31,8 @@ import Datepicker from '../Datepicker'
 // eslint-disable-next-line import/no-unresolved
 import {DateRangeInputTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
+import getThemeProp from '../../utils/getThemeProp'
+import globalStyles from '../../globalStyles'
 
 interface RtlProps {
   rtl: boolean
@@ -152,6 +154,7 @@ function DateRangeInput({
   placement = 'bottom',
 }: DateRangeInputProps) {
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
+  const themeContext = useContext(ThemeContext)
   const theme: DateRangeInputTheme = useThemeProps({
     dateRangeBackground: 'transparent',
     dateRangeGridTemplateColumns: vertical ? '1fr 24px 1fr' : '194px 39px 194px',
@@ -159,7 +162,7 @@ function DateRangeInput({
     dateRangeBorderRadius: '0',
     dateRangeArrowIconWidth: '15px',
     dateRangeArrowIconHeight: '12px',
-    dateRangeArrowIconColor: '#BCBEC0',
+    dateRangeArrowIconColor: getThemeProp('graci', globalStyles.colors.graci, themeContext),
     dateRangeArrowIconOpacity: 1,
     dateRangeStartDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
     dateRangeEndDateInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
