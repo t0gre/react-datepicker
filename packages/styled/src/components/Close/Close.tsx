@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, {useContext} from 'react'
+import styled, {ThemeContext} from 'styled-components'
 import {
   color,
   ColorProps,
@@ -18,6 +18,7 @@ import CloseIcon from '../../icons/CloseIcon'
 import {CloseTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
+import getThemeProp from '../../utils/getThemeProp'
 
 interface TextProps
   extends ColorProps,
@@ -68,11 +69,12 @@ interface CloseProps {
 }
 
 function Close({onClick, rtl, closeText}: CloseProps) {
+  const themeContext = useContext(ThemeContext)
   const theme: CloseTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     closeMargin: rtl ? '1px 16px 0 0' : '1px 0 0 16px',
-    closeColor: '#929598',
-    closeHoverColor: '#343132',
+    closeColor: getThemeProp('silverCloud', globalStyles.colors.silverCloud, themeContext),
+    closeHoverColor: getThemeProp('darcula', globalStyles.colors.darcula, themeContext),
     closeFontSize: '12px',
     closeFontWeight: 600,
   })

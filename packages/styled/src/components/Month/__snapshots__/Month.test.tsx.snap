@@ -66,7 +66,7 @@ exports[`Sunday should be first day of the week 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -79,7 +79,7 @@ exports[`Sunday should be first day of the week 1`] = `
 
 .c6:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c6:focus {
@@ -231,7 +231,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Fri Feb 01 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -249,7 +249,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sat Feb 02 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -267,7 +267,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sun Feb 03 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -285,7 +285,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Mon Feb 04 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -303,7 +303,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Tue Feb 05 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -321,7 +321,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Wed Feb 06 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -339,7 +339,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Thu Feb 07 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -357,7 +357,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Fri Feb 08 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -375,7 +375,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sat Feb 09 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -393,7 +393,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sun Feb 10 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -411,7 +411,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Mon Feb 11 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -429,7 +429,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Tue Feb 12 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -447,7 +447,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Wed Feb 13 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -465,7 +465,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Thu Feb 14 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -483,7 +483,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Fri Feb 15 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -501,7 +501,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sat Feb 16 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -519,7 +519,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sun Feb 17 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -537,7 +537,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Mon Feb 18 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -555,7 +555,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Tue Feb 19 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -573,7 +573,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Wed Feb 20 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -591,7 +591,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Thu Feb 21 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -609,7 +609,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Fri Feb 22 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -627,7 +627,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sat Feb 23 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -645,7 +645,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Sun Feb 24 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -663,7 +663,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Mon Feb 25 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -681,7 +681,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Tue Feb 26 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -699,7 +699,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Wed Feb 27 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -717,7 +717,7 @@ exports[`Sunday should be first day of the week 1`] = `
       <button
         aria-label="Day-Thu Feb 28 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -803,7 +803,7 @@ exports[`should match snapshot 1`] = `
   height: 36px;
   width: 36px;
   background: #ffffff;
-  color: #58595b;
+  color: #58595B;
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -816,7 +816,7 @@ exports[`should match snapshot 1`] = `
 
 .c6:hover {
   background: #e6e7e8;
-  color: #58595b;
+  color: #58595B;
 }
 
 .c6:focus {
@@ -967,7 +967,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Fri Feb 01 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -985,7 +985,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sat Feb 02 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1003,7 +1003,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sun Feb 03 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1021,7 +1021,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Mon Feb 04 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1039,7 +1039,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Tue Feb 05 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1057,7 +1057,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Wed Feb 06 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1075,7 +1075,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Thu Feb 07 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1093,7 +1093,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Fri Feb 08 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1111,7 +1111,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sat Feb 09 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1129,7 +1129,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sun Feb 10 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1147,7 +1147,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Mon Feb 11 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1165,7 +1165,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Tue Feb 12 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1183,7 +1183,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Wed Feb 13 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1201,7 +1201,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Thu Feb 14 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1219,7 +1219,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Fri Feb 15 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1237,7 +1237,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sat Feb 16 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1255,7 +1255,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sun Feb 17 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1273,7 +1273,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Mon Feb 18 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1291,7 +1291,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Tue Feb 19 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1309,7 +1309,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Wed Feb 20 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1327,7 +1327,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Thu Feb 21 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1345,7 +1345,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Fri Feb 22 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1363,7 +1363,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sat Feb 23 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1381,7 +1381,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Sun Feb 24 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1399,7 +1399,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Mon Feb 25 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1417,7 +1417,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Tue Feb 26 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1435,7 +1435,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Wed Feb 27 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"
@@ -1453,7 +1453,7 @@ exports[`should match snapshot 1`] = `
       <button
         aria-label="Day-Thu Feb 28 2019"
         class="c6"
-        color="#58595b"
+        color="#58595B"
         data-testid="Day"
         font-family="Montserrat, sans-serif"
         font-size="14px"

@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, {useContext} from 'react'
+import styled, {ThemeContext} from 'styled-components'
 import {
   background,
   BackgroundProps,
@@ -46,6 +46,7 @@ import {InputTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
 import globalStyles from '../../globalStyles'
 import {PaddingProperty} from 'csstype'
+import getThemeProp from '../../utils/getThemeProp'
 
 const placeholderColor = style({
   prop: 'placeholderColor',
@@ -179,18 +180,23 @@ function Input({
   rtl,
   disableAccessibility,
 }: InputProps) {
+  const themeContext = useContext(ThemeContext)
   const theme: InputTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
     inputFontWeight: 600,
     inputFontSize: '14px',
-    inputColor: globalStyles.colors.charcoal,
-    inputBackground: '#ffffff',
+    inputColor: getThemeProp('charcoal', globalStyles.colors.charcoal, themeContext),
+    inputBackground: getThemeProp('white', globalStyles.colors.white, themeContext),
     inputMinHeight: '46px',
     inputWidth: '100%',
     inputPadding: padding,
     inputBorder: '0',
     inputPlaceholderFontWeight: 500,
-    inputPlaceholderColor: globalStyles.colors.silverCloud,
+    inputPlaceholderColor: getThemeProp(
+      'silverCloud',
+      globalStyles.colors.silverCloud,
+      themeContext,
+    ),
     inputCalendarWrapperPosition: 'absolute',
     inputCalendarWrapperHeight: '12px',
     inputCalendarWrapperWidth: '12px',
@@ -199,14 +205,18 @@ function Input({
     inputCalendarWrapperRight: rtl ? (vertical ? '8px' : '16px') : 'unset',
     inputCalendarIconWidth: '12px',
     inputCalendarIconHeight: '12px',
-    inputCalendarIconColor: '#BCBEC0',
+    inputCalendarIconColor: getThemeProp('graci', globalStyles.colors.graci, themeContext),
     inputLabelDisplay: 'block',
     inputLabelPosition: 'relative',
-    inputLabelBorder: '1px solid #d0d0d0',
+    inputLabelBorder: `1px solid ${getThemeProp('graci', globalStyles.colors.graci, themeContext)}`,
     inputLabelBorderRadius: '2px',
-    inputLabelBackground: '#ffffff',
+    inputLabelBackground: getThemeProp('white', globalStyles.colors.white, themeContext),
     inputLabelMargin: '0',
-    inputActiveBoxShadow: 'inset 0px -3px 0 #00aeef',
+    inputActiveBoxShadow: `inset 0px -3px 0 ${getThemeProp(
+      'primaryColor',
+      globalStyles.colors.primaryColor,
+      themeContext,
+    )}`,
   })
 
   return (

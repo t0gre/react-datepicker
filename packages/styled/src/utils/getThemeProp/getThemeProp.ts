@@ -4,9 +4,11 @@ function getThemeProp(themeProp: string, defaultValue: any, theme?: Record<strin
     typeof theme === 'object' &&
     theme.reactDatepicker &&
     typeof theme.reactDatepicker === 'object' &&
-    theme.reactDatepicker[themeProp]
+    theme.reactDatepicker.colors &&
+    typeof theme.reactDatepicker.colors === 'object' &&
+    theme.reactDatepicker.colors[themeProp]
   ) {
-    return theme.reactDatepicker[themeProp]
+    return theme.reactDatepicker.colors[themeProp]
   }
 
   return defaultValue

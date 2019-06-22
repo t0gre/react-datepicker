@@ -278,3 +278,28 @@ storiesOf('Datepicker', module)
       />
     </ThemeProvider>
   ))
+  .add('Theming', () => (
+    <ThemeProvider
+      theme={{
+        reactDatepicker: {
+          fontFamily: 'system-ui, -apple-system',
+          colors: {
+            accessibility: '#D80249',
+            selectedDay: '#f7518b',
+            selectedDayHover: '#F75D95',
+            primaryColor: '#d8366f',
+          },
+        },
+      }}
+    >
+      <App
+        rtl={boolean('rtl', false)}
+        vertical={boolean('vertical', false)}
+        exactMinBookingDays={boolean('exactMinBookingDays', false)}
+        showResetDates={boolean('showResetDates', true)}
+        showClose={boolean('showClose', true)}
+        showSelectedDates={boolean('showSelectedDates', true)}
+        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      />
+    </ThemeProvider>
+  ))
