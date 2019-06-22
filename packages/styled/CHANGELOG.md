@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/tresko/react-datepicker/compare/v1.4.1...v1.5.0) (2019-06-22)
+
+
+### Bug Fixes
+
+* **theming:** select date border ([ffd61b6](https://github.com/tresko/react-datepicker/commit/ffd61b6))
+
+
+### Features
+
+* **theming:** simplified color palette change ([035bc6e](https://github.com/tresko/react-datepicker/commit/035bc6e))
+
+
+
+
+
 ## [1.4.1](https://github.com/tresko/react-datepicker/compare/v1.4.0...v1.4.1) (2019-06-19)
 
 
