@@ -271,7 +271,8 @@ onDayRender?(date: Date): React.ReactNode
 </ThemeProvider>
 ```
 
-[See all theme props](../../docs/THEME_PROPS.md)
+- [See all theme props](../../docs/THEME_PROPS.md)
+- [CodeSandbox example](https://codesandbox.io/s/theming-datepicker-reactstyled-42pdb?fontsize=14)
 
 ## How to build your own datepicker?
 
@@ -284,9 +285,8 @@ Simple. Use
 
 ## Articles
 
-[Yet another datepicker in React](https://tresko.dev/yet-another-datepicker-in-react)
-<br />
-[Theming React datepicker](https://tresko.dev/theming-react-datepicker-datepicker-react-styled)
+- [Yet another datepicker in React](https://tresko.dev/yet-another-datepicker-in-react)
+- [Theming React datepicker](https://tresko.dev/theming-react-datepicker-datepicker-react-styled)
 
 ## License
 
