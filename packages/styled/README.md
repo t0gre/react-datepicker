@@ -279,6 +279,7 @@ Simple. Use
 ## Articles
 
 [Yet another datepicker in React](https://tresko.dev/yet-another-datepicker-in-react)
+[Theming React datepicker ](https://tresko.dev/theming-react-datepicker-datepicker-react-styled)
 
 ## License
 
