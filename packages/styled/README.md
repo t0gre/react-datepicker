@@ -221,8 +221,8 @@ function App() {
 }
 ```
 
-The following is a list of other _OPTIONAL_ props you may provide to the `DateSingleInput` to customize
-appearance and behavior to your heart's desire.
+The following is a list of other _OPTIONAL_ props you may provide to the `DateSingleInput` to
+customize appearance and behavior to your heart's desire.
 
 ```ts
 minBookingDate?: Date
@@ -253,13 +253,19 @@ onDayRender?(date: Date): React.ReactNode
 
 ```jsx
 <ThemeProvider
-  theme={styledTheme => ({
-    ...styledTheme,
+  theme={{
+    breakpoints: ['32em', '48em', '64em'],
     reactDatepicker: {
-      dateRangeBackground: ['#ffffff', null, null, null, 'transparent'],
-      dateRangeBorderRadius: ['2px', null, null, null, '0'],
+      daySize: [36, 40],
+      fontFamily: 'system-ui, -apple-system',
+      colors: {
+        accessibility: '#D80249',
+        selectedDay: '#f7518b',
+        selectedDayHover: '#F75D95',
+        primaryColor: '#d8366f',
+      },
     },
-  })}
+  }}
 >
   ...
 </ThemeProvider>
@@ -279,7 +285,7 @@ Simple. Use
 ## Articles
 
 [Yet another datepicker in React](https://tresko.dev/yet-another-datepicker-in-react)
-[Theming React datepicker ](https://tresko.dev/theming-react-datepicker-datepicker-react-styled)
+[Theming React datepicker](https://tresko.dev/theming-react-datepicker-datepicker-react-styled)
 
 ## License
 
