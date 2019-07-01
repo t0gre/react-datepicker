@@ -1,5 +1,5 @@
 import {advanceTo, clear} from 'jest-date-mock'
-import {renderHook, act} from 'react-hooks-testing-library'
+import {renderHook, act} from '@testing-library/react-hooks'
 import {isEqual, format, isSameDay} from 'date-fns'
 import {
   getCurrentYearMonthAndDate,

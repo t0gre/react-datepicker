@@ -1,4 +1,4 @@
-import {renderHook, act} from 'react-hooks-testing-library'
+import {renderHook, act} from '@testing-library/react-hooks'
 import useDay from '.'
 
 const date = new Date(2019, 2, 1, 0, 0, 0)
