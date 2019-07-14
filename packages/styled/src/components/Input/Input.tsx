@@ -243,12 +243,12 @@ function Input({
       onClick()
       // @ts-ignore
       const parsedDate = parseDate(dateValue, dateFormat)
-      console.log(parsedDate)
+
       // @ts-ignore
       if (!isNaN(parsedDate)) {
         onChange(parsedDate)
       }
-    }, 600)
+    }, 1000)
   }
 
   return (
