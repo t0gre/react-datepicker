@@ -1,5 +1,6 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect, useRef} from 'react'
 import styled, {ThemeContext} from 'styled-components'
+import {parseDate} from '@datepicker-react/hooks'
 import {
   background,
   BackgroundProps,
@@ -165,6 +166,8 @@ interface InputProps {
   rtl: boolean
   disableAccessibility?: boolean
   padding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  onChange?(date: Date): void
+  dateFormat: string
 }
 
 function Input({
@@ -179,7 +182,14 @@ function Input({
   padding,
   rtl,
   disableAccessibility,
+  dateFormat,
+  onChange = () => {},
 }: InputProps) {
+  const [searchString, setSearchString] = useState(value)
+  const ref = useRef(null)
+  useEffect(() => {
+    setSearchString(value)
+  }, [value])
   const themeContext = useContext(ThemeContext)
   const theme: InputTheme = useThemeProps({
     fontFamily: globalStyles.fontFamily,
@@ -219,6 +229,28 @@ function Input({
     )}`,
   })
 
+  function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const dateValue = e.target.value
+    setSearchString(dateValue)
+
+    if (typeof ref.current === 'number') {
+      // @ts-ignore
+      clearTimeout(ref.current)
+    }
+
+    // @ts-ignore
+    ref.current = setTimeout(() => {
+      onClick()
+      // @ts-ignore
+      const parsedDate = parseDate(dateValue, dateFormat)
+      console.log(parsedDate)
+      // @ts-ignore
+      if (!isNaN(parsedDate)) {
+        onChange(parsedDate)
+      }
+    }, 600)
+  }
+
   return (
     <InputLabel
       htmlFor={id}
@@ -249,7 +281,6 @@ function Input({
         </CalendarWrapper>
       )}
       <StyledInput
-        readOnly
         tabIndex={disableAccessibility ? -1 : 0}
         border={theme.inputBorder}
         p={theme.inputPadding}
@@ -268,8 +299,9 @@ function Input({
         id={id}
         placeholder={placeholder}
         aria-label={ariaLabel}
-        value={value}
+        value={searchString}
         autoComplete="off"
+        onChange={handleOnChange}
         onFocus={onClick}
         data-testid="DatepickerInput"
       />

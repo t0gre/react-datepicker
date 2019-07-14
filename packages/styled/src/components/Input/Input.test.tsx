@@ -15,6 +15,7 @@ test('should render with icon', () => {
       placeholder="Placeholder"
       onClick={onClick}
       value=""
+      dateFormat="MM/DD/YYYY"
     />,
   )
 
@@ -38,6 +39,7 @@ test('should render rtl variant', () => {
       placeholder="Placeholder"
       onClick={onClick}
       value=""
+      dateFormat="MM/DD/YYYY"
     />,
   )
 
@@ -61,6 +63,7 @@ test('should render without icon', () => {
       placeholder="Placeholder"
       onClick={onClick}
       value=""
+      dateFormat="MM/DD/YYYY"
     />,
   )
 
@@ -80,6 +83,7 @@ test('should render with value', () => {
       placeholder="Placeholder"
       onClick={onClick}
       value="14/11/1992"
+      dateFormat="MM/DD/YYYY"
     />,
   )
 
@@ -100,6 +104,7 @@ test('should render vertical variant', () => {
       placeholder="Placeholder"
       onClick={onClick}
       value="14/11/1992"
+      dateFormat="MM/DD/YYYY"
     />,
   )
 

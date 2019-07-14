@@ -113,6 +113,7 @@ function DateSingleInput({
   phrases = dateSingleInputPhrases,
   placement = 'bottom',
 }: DateRangeInputProps) {
+  const ref = useRef(null)
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
   const theme: DateSingleInputTheme = useThemeProps({
     dateSingleInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
@@ -154,6 +155,14 @@ function DateSingleInput({
     })
   }
 
+  function handleInputChange(date: Date) {
+    // @ts-ignore
+    if (ref && ref.current && ref.current.onDateSelect) {
+      // @ts-ignore
+      ref.current.onDateSelect(date)
+    }
+  }
+
   return (
     <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
       <Input
@@ -167,6 +176,9 @@ function DateSingleInput({
         isActive={false}
         padding={theme.dateSingleInputPadding}
         rtl={rtl}
+        onChange={handleInputChange}
+        // @ts-ignore
+        dateFormat={displayFormat}
       />
       <Box
         position={theme.dateSingleDatepickerWrapperPosition}
@@ -200,6 +212,7 @@ function DateSingleInput({
             monthLabelFormat={monthLabelFormat}
             onDayRender={onDayRender}
             phrases={phrases}
+            ref={ref}
           />
         )}
       </Box>

@@ -153,6 +153,7 @@ function DateRangeInput({
   phrases = dateRangeInputPhrases,
   placement = 'bottom',
 }: DateRangeInputProps) {
+  const ref = useRef(null)
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
   const themeContext = useContext(ThemeContext)
   const theme: DateRangeInputTheme = useThemeProps({
@@ -197,6 +198,14 @@ function DateRangeInput({
     onFocusChange(null)
   }
 
+  function handleInputChange(date: Date) {
+    // @ts-ignore
+    if (ref && ref.current && ref.current.onDateSelect) {
+      // @ts-ignore
+      ref.current.onDateSelect(date)
+    }
+  }
+
   return (
     <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
       <InputGrid
@@ -216,6 +225,9 @@ function DateRangeInput({
           isActive={focusedInput === START_DATE}
           padding={theme.dateRangeStartDateInputPadding}
           rtl={rtl}
+          onChange={handleInputChange}
+          // @ts-ignore
+          dateFormat={displayFormat}
         />
         <Flex alignItems="center" justifyContent="center">
           <InputArrowIcon
@@ -240,6 +252,9 @@ function DateRangeInput({
           padding={theme.dateRangeEndDateInputPadding}
           rtl={rtl}
           disableAccessibility={focusedInput === START_DATE}
+          onChange={handleInputChange}
+          // @ts-ignore
+          dateFormat={displayFormat}
         />
       </InputGrid>
       <Box
@@ -274,6 +289,7 @@ function DateRangeInput({
             monthLabelFormat={monthLabelFormat}
             onDayRender={onDayRender}
             phrases={phrases}
+            ref={ref}
           />
         )}
       </Box>

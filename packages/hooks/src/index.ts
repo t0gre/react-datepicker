@@ -1,3 +1,4 @@
+import parseDate from 'date-fns/parse'
 import {
   useMonth,
   UseMonthProps,
@@ -29,7 +30,6 @@ import {
   FirstDayOfWeek,
   OnDatesChangeProps,
 } from './useDatepicker'
-
 import useDay from './useDay'
 
 export {
@@ -61,4 +61,5 @@ export {
   dayLabelFormat,
   weekdayLabelFormat,
   monthLabelFormat,
+  parseDate,
 }
