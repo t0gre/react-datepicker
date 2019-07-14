@@ -15,29 +15,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
 }
-declare function Datepicker({
-  startDate,
-  endDate,
-  minBookingDate,
-  maxBookingDate,
-  focusedInput,
-  onDatesChange,
-  dayLabelFormat,
-  weekdayLabelFormat,
-  monthLabelFormat,
-  onDayRender,
-  vertical,
-  rtl,
-  showResetDates,
-  showClose,
-  showSelectedDates,
-  exactMinBookingDays,
-  isDateBlocked,
-  minBookingDays,
-  onClose,
-  numberOfMonths: numberOfMonthsProp,
-  firstDayOfWeek: firstDayOfWeekProp,
-  displayFormat,
-  phrases,
-}: DatepickerProps): JSX.Element
-export default Datepicker
+declare const _default: React.ForwardRefExoticComponent<
+  DatepickerProps & React.RefAttributes<unknown>
+>
+export default _default

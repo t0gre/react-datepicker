@@ -1,4 +1,4 @@
-import React, {useRef, useContext} from 'react'
+import React, {useRef, useContext, useImperativeHandle} from 'react'
 import styled, {css, keyframes, ThemeContext} from 'styled-components'
 import {
   background,
@@ -143,31 +143,34 @@ export interface DatepickerProps extends UseDatepickerProps {
   onDayRender?(date: Date): React.ReactNode
 }
 
-function Datepicker({
-  startDate,
-  endDate,
-  minBookingDate,
-  maxBookingDate,
-  focusedInput,
-  onDatesChange,
-  dayLabelFormat,
-  weekdayLabelFormat,
-  monthLabelFormat,
-  onDayRender,
-  vertical = false,
-  rtl = false,
-  showResetDates = true,
-  showClose = true,
-  showSelectedDates = true,
-  exactMinBookingDays = false,
-  isDateBlocked = () => false,
-  minBookingDays = 1,
-  onClose = () => {},
-  numberOfMonths: numberOfMonthsProp,
-  firstDayOfWeek: firstDayOfWeekProp,
-  displayFormat = 'MM/DD/YYYY',
-  phrases = datepickerPhrases,
-}: DatepickerProps) {
+function Datepicker(
+  {
+    startDate,
+    endDate,
+    minBookingDate,
+    maxBookingDate,
+    focusedInput,
+    onDatesChange,
+    dayLabelFormat,
+    weekdayLabelFormat,
+    monthLabelFormat,
+    onDayRender,
+    vertical = false,
+    rtl = false,
+    showResetDates = true,
+    showClose = true,
+    showSelectedDates = true,
+    exactMinBookingDays = false,
+    isDateBlocked = () => false,
+    minBookingDays = 1,
+    onClose = () => {},
+    numberOfMonths: numberOfMonthsProp,
+    firstDayOfWeek: firstDayOfWeekProp,
+    displayFormat = 'MM/DD/YYYY',
+    phrases = datepickerPhrases,
+  }: DatepickerProps,
+  ref?: React.Ref<unknown>,
+) {
   const {
     activeMonths,
     isDateSelected,
@@ -198,6 +201,11 @@ function Datepicker({
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })
+  useImperativeHandle(ref, () => ({
+    onDateSelect: (date: Date) => {
+      onDateSelect(date)
+    },
+  }))
   const monthGridRef = useRef<HTMLDivElement>(null)
   const themeContext = useContext(ThemeContext)
   const theme: DatepickerTheme = useThemeProps({
@@ -405,4 +413,4 @@ function Datepicker({
   )
 }
 
-export default Datepicker
+export default React.forwardRef(Datepicker)

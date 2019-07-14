@@ -12,6 +12,8 @@ interface InputProps {
   rtl: boolean
   disableAccessibility?: boolean
   padding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+  onChange?(date: Date): void
+  dateFormat: string
 }
 declare function Input({
   placeholder,
@@ -25,5 +27,7 @@ declare function Input({
   padding,
   rtl,
   disableAccessibility,
+  dateFormat,
+  onChange,
 }: InputProps): JSX.Element
 export default Input

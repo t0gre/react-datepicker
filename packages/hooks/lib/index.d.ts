@@ -1,3 +1,4 @@
+import parseDate from 'date-fns/parse'
 import {
   useMonth,
   UseMonthProps,
@@ -59,4 +60,5 @@ export {
   dayLabelFormat,
   weekdayLabelFormat,
   monthLabelFormat,
+  parseDate,
 }

@@ -803,9 +803,9 @@ function useDatepicker(e) {
     }),
     h = y[0],
     T = y[1],
-    M = react.useState(null),
-    p = M[0],
-    k = M[1],
+    p = react.useState(null),
+    M = p[0],
+    k = p[1],
     v = react.useState(t),
     S = v[0],
     I = v[1],
@@ -851,7 +851,7 @@ function useDatepicker(e) {
       function(e) {
         return isDateHovered({
           date: e,
-          hoveredDate: p,
+          hoveredDate: M,
           startDate: t,
           endDate: a,
           minBookingDays: c,
@@ -859,7 +859,7 @@ function useDatepicker(e) {
           isDateBlocked: m,
         })
       },
-      [p, t, a, c, u, m],
+      [M, t, a, c, u, m],
     )
   function E(e) {
     if (
@@ -892,7 +892,7 @@ function useDatepicker(e) {
       numberOfMonths: D,
       isDateFocused: b,
       focusedDate: S,
-      hoveredDate: p,
+      hoveredDate: M,
       onResetDates: function() {
         s({startDate: null, endDate: null, focusedInput: START_DATE})
       },
@@ -909,7 +909,7 @@ function useDatepicker(e) {
               l = t && !a && !u && s && i,
               g = !(c > 1 && t) || is_within_range(e, t, add_days(t, c - 2)),
               m = t && is_same_day(e, t) && g
-            r && (_ || l || m) ? k(e) : null !== p && k(null)
+            r && (_ || l || m) ? k(e) : null !== M && k(null)
           }
         } else k(null)
       },
@@ -1021,6 +1021,7 @@ function useDay(e) {
   (exports.isDateSelected = isDateSelected),
   (exports.isFirstOrLastSelectedDate = isFirstOrLastSelectedDate),
   (exports.monthLabelFormat = monthLabelFormatFn),
+  (exports.parseDate = parse_1),
   (exports.useDatepicker = useDatepicker),
   (exports.useDay = useDay),
   (exports.useMonth = useMonth),

@@ -974,6 +974,7 @@ export {
   ye as isDateSelected,
   Me as isFirstOrLastSelectedDate,
   ue as monthLabelFormat,
+  x as parseDate,
   Be as useDatepicker,
   He as useDay,
   ie as useMonth,

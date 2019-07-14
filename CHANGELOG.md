@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/tresko/react-datepicker/compare/v1.5.0...v1.6.0) (2019-07-14)
+
+
+### Bug Fixes
+
+* **styled-system:** upgrade to version 5.0.12 ([6ce33b1](https://github.com/tresko/react-datepicker/commit/6ce33b1))
+
+
+### Features
+
+* **input:** manual entry of the date is enabled ([3fb3232](https://github.com/tresko/react-datepicker/commit/3fb3232))
+
+
+
+
+
+
 ## [1.5.1](https://github.com/tresko/react-datepicker/compare/v1.5.0...v1.5.1) (2019-07-01)
 
 
