@@ -23,6 +23,10 @@ import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks'
 
 ### [Example (codesandbox)](https://codesandbox.io/s/datepickerreacthooks-example-06dxk)
 
+## Articles
+
+- [Create a custom React date picker in 10 minutes](https://tresko.dev/create-a-custom-react-date-picker-in-10-minutes)
+
 ## Table of Contents
 
 - [useDatepickerProps](#usedatepickerprops)
