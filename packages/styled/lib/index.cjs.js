@@ -133,11 +133,11 @@ var b = function(e, t) {
               : 0) * i)
       else {
         var L = W + $,
-          P = new Date(L)
-        j = a(P)
-        var I = new Date(L)
-        I.setDate(P.getDate() + 1)
-        var H = a(I) - a(P)
+          I = new Date(L)
+        j = a(I)
+        var P = new Date(L)
+        P.setDate(I.getDate() + 1)
+        var H = a(P) - a(I)
         H > 0 && (j += H)
       }
       return new Date(W + $ + j)
@@ -741,17 +741,17 @@ function Be(e) {
     g = e.firstDayOfWeek,
     f = void 0 === g ? 1 : g,
     m = e.isDateBlocked,
-    y =
+    h =
       void 0 === m
         ? function() {
             return !1
           }
         : m,
-    h = React.useState(function() {
+    y = React.useState(function() {
       return Te(u, t)
     }),
-    b = h[0],
-    D = h[1],
+    b = y[0],
+    D = y[1],
     v = React.useState(null),
     k = v[0],
     _ = v[1],
@@ -764,13 +764,13 @@ function Be(e) {
       },
       [C, D, u, x],
     ),
-    O = React.useCallback(
+    w = React.useCallback(
       function(e) {
         return ye(e, t, a)
       },
       [t, a],
     ),
-    w = React.useCallback(
+    O = React.useCallback(
       function(e) {
         return Me(e, t, a)
       },
@@ -785,10 +785,10 @@ function Be(e) {
           startDate: t,
           endDate: a,
           minBookingDays: d,
-          isDateBlockedFn: y,
+          isDateBlockedFn: h,
         })
       },
-      [r, o, t, a, d, y],
+      [r, o, t, a, d, h],
     ),
     B = React.useCallback(
       function(e) {
@@ -824,10 +824,10 @@ function Be(e) {
           endDate: a,
           minBookingDays: d,
           exactMinBookingDays: c,
-          isDateBlocked: y,
+          isDateBlocked: h,
         })
       },
-      [k, t, a, d, c, y],
+      [k, t, a, d, c, h],
     )
   function F(e) {
     if (
@@ -853,9 +853,9 @@ function Be(e) {
     {
       firstDayOfWeek: f,
       activeMonths: b,
-      isDateSelected: O,
+      isDateSelected: w,
       isDateHovered: j,
-      isFirstOrLastSelectedDate: w,
+      isFirstOrLastSelectedDate: O,
       isDateBlocked: T,
       numberOfMonths: u,
       isDateFocused: B,
@@ -876,8 +876,8 @@ function Be(e) {
               g = c && d > 1 && i && l && p && u,
               f = t && !a && !c && i && l,
               m = !(d > 1 && t) || fe(e, t, K(t, d - 2)),
-              y = t && De(e, t) && m
-            n && (g || f || y) ? _(e) : null !== k && _(null)
+              h = t && De(e, t) && m
+            n && (g || f || h) ? _(e) : null !== k && _(null)
           }
         } else _(null)
       },
@@ -890,24 +890,24 @@ function Be(e) {
           exactMinBookingDays: c,
           minBookingDate: r,
           maxBookingDate: o,
-          isDateBlocked: y,
+          isDateBlocked: h,
           startDate: e,
           endDate: null,
         })
           ? i({startDate: e, endDate: K(e, d - 1), focusedInput: null})
           : ((n === be && t && se(e, t)) || (n === xe && a && ce(e, a))) &&
             !c &&
-            Se({minBookingDays: d, isDateBlocked: y, startDate: e, endDate: null})
+            Se({minBookingDays: d, isDateBlocked: h, startDate: e, endDate: null})
           ? i({endDate: null, startDate: e, focusedInput: be})
-          : n === xe && !c && Se({minBookingDays: d, isDateBlocked: y, endDate: a, startDate: e})
+          : n === xe && !c && Se({minBookingDays: d, isDateBlocked: h, endDate: a, startDate: e})
           ? i({endDate: a, startDate: e, focusedInput: be})
-          : n === xe && !c && Se({minBookingDays: d, isDateBlocked: y, endDate: null, startDate: e})
+          : n === xe && !c && Se({minBookingDays: d, isDateBlocked: h, endDate: null, startDate: e})
           ? i({endDate: null, startDate: e, focusedInput: be})
           : n === be &&
             t &&
             !se(e, t) &&
             !c &&
-            Se({minBookingDays: d, isDateBlocked: y, startDate: t, endDate: e}) &&
+            Se({minBookingDays: d, isDateBlocked: h, startDate: t, endDate: e}) &&
             i({startDate: t, endDate: e, focusedInput: null}),
           n === be || (x && (!x || de(e, x))) || D(Te(u, e))
       },
@@ -1045,6 +1045,17 @@ var objectAssign = shouldUseNative()
     }
     return a
   },
+  sort = function(e) {
+    var t = {}
+    return (
+      Object.keys(e)
+        .sort()
+        .forEach(function(a) {
+          t[a] = e[a]
+        }),
+      t
+    )
+  },
   defaults = {
     breakpoints: [40, 52, 64].map(function(e) {
       return e + 'em'
@@ -1060,32 +1071,46 @@ var objectAssign = shouldUseNative()
     for (t = t && t.split ? t.split('.') : [t], n = 0; n < t.length; n++) e = e ? e[t[n]] : r
     return e === r ? a : e
   },
-  createParser = function(e) {
-    var t = {},
-      a = function(a) {
-        var n = {}
-        for (var r in a)
-          if (e[r]) {
-            var o = e[r],
-              i = a[r],
-              l = get(a.theme, o.scale, o.defaults)
-            if ('object' != typeof i) objectAssign(n, o(i, l))
+  createParser = function e(t) {
+    var a = {},
+      n = function(e) {
+        var n = {},
+          r = !1,
+          o = e.theme && e.theme.disableStyledSystemCache
+        for (var i in e)
+          if (t[i]) {
+            var l = t[i],
+              c = e[i],
+              s = get(e.theme, l.scale, l.defaults)
+            if ('object' != typeof c) objectAssign(n, l(c, s))
             else {
               if (
-                ((t.breakpoints =
-                  t.breakpoints || get(a.theme, 'breakpoints', defaults.breakpoints)),
-                Array.isArray(i))
+                ((a.breakpoints =
+                  (!o && a.breakpoints) || get(e.theme, 'breakpoints', defaults.breakpoints)),
+                Array.isArray(c))
               ) {
-                ;(t.media = t.media || [null].concat(t.breakpoints.map(createMediaQuery))),
-                  (n = merge(n, parseResponsiveStyle(t.media, o, l, i)))
+                ;(a.media = (!o && a.media) || [null].concat(a.breakpoints.map(createMediaQuery))),
+                  (n = merge(n, parseResponsiveStyle(a.media, l, s, c)))
                 continue
               }
-              null !== i && (n = merge(n, parseResponsiveObject(t.breakpoints, o, l, i)))
+              null !== c &&
+                ((n = merge(n, parseResponsiveObject(a.breakpoints, l, s, c))), (r = !0))
             }
           }
-        return n
+        return r && (n = sort(n)), n
       }
-    return (a.config = e), (a.propNames = Object.keys(e)), (a.cache = t), a
+    ;(n.config = t), (n.propNames = Object.keys(t)), (n.cache = a)
+    var r = Object.keys(t).filter(function(e) {
+      return 'config' !== e
+    })
+    return (
+      r.length > 1 &&
+        r.forEach(function(a) {
+          var r
+          n[a] = e((((r = {})[a] = t[a]), r))
+        }),
+      n
+    )
   },
   parseResponsiveStyle = function(e, t, a, n) {
     var r = {}
@@ -1094,7 +1119,7 @@ var objectAssign = shouldUseNative()
         var i,
           l = e[o],
           c = t(n, a)
-        void 0 !== c && objectAssign(r, l ? (((i = {})[l] = objectAssign({}, r[l], c)), i) : c)
+        l ? objectAssign(r, (((i = {})[l] = objectAssign({}, r[l], c)), i)) : objectAssign(r, c)
       }),
       r
     )
@@ -1139,135 +1164,31 @@ var objectAssign = shouldUseNative()
     return (
       Object.keys(e).forEach(function(a) {
         var n = e[a]
-        t[a] = createStyleFunction(!0 !== n ? n : {property: a, scale: a})
+        t[a] =
+          !0 !== n
+            ? 'function' != typeof n
+              ? createStyleFunction(n)
+              : n
+            : createStyleFunction({property: a, scale: a})
       }),
       createParser(t)
     )
   },
   compose = function() {
     for (var e = {}, t = arguments.length, a = new Array(t), n = 0; n < t; n++) a[n] = arguments[n]
-    return (
-      a.forEach(function(t) {
-        t && t.config && objectAssign(e, t.config)
-      }),
-      createParser(e)
-    )
-  }
-function _extends() {
-  return (_extends =
-    Object.assign ||
-    function(e) {
-      for (var t = 1; t < arguments.length; t++) {
-        var a = arguments[t]
-        for (var n in a) Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n])
-      }
-      return e
-    }).apply(this, arguments)
-}
-var defaults$1 = {space: [0, 4, 8, 16, 32, 64, 128, 256, 512]},
+    a.forEach(function(t) {
+      t && t.config && objectAssign(e, t.config)
+    })
+    var r = createParser(e)
+    return r
+  },
   isNumber = function(e) {
     return 'number' == typeof e && !isNaN(e)
   },
-  getMargin = function(e, t) {
-    if (!isNumber(e)) return get(t, e, e)
-    var a = e < 0,
-      n = Math.abs(e),
-      r = get(t, n, n)
-    return isNumber(r) ? r * (a ? -1 : 1) : a ? '-' + r : r
-  },
-  configs = {}
-;(configs.margin = {
-  margin: {
-    property: 'margin',
-    scale: 'space',
-    transform: getMargin,
-    defaultScale: defaults$1.space,
-  },
-  marginTop: {
-    property: 'marginTop',
-    scale: 'space',
-    transform: getMargin,
-    defaultScale: defaults$1.space,
-  },
-  marginRight: {
-    property: 'marginRight',
-    scale: 'space',
-    transform: getMargin,
-    defaultScale: defaults$1.space,
-  },
-  marginBottom: {
-    property: 'marginBottom',
-    scale: 'space',
-    transform: getMargin,
-    defaultScale: defaults$1.space,
-  },
-  marginLeft: {
-    property: 'marginLeft',
-    scale: 'space',
-    transform: getMargin,
-    defaultScale: defaults$1.space,
-  },
-  marginX: {
-    properties: ['marginLeft', 'marginRight'],
-    scale: 'space',
-    transform: getMargin,
-    defaultScale: defaults$1.space,
-  },
-  marginY: {
-    properties: ['marginTop', 'marginBottom'],
-    scale: 'space',
-    transform: getMargin,
-    defaultScale: defaults$1.space,
-  },
-}),
-  (configs.margin.m = configs.margin.margin),
-  (configs.margin.mt = configs.margin.marginTop),
-  (configs.margin.mr = configs.margin.marginRight),
-  (configs.margin.mb = configs.margin.marginBottom),
-  (configs.margin.ml = configs.margin.marginLeft),
-  (configs.margin.mx = configs.margin.marginX),
-  (configs.margin.my = configs.margin.marginY),
-  (configs.padding = {
-    padding: {property: 'padding', scale: 'space', defaultScale: defaults$1.space},
-    paddingTop: {property: 'paddingTop', scale: 'space', defaultScale: defaults$1.space},
-    paddingRight: {property: 'paddingRight', scale: 'space', defaultScale: defaults$1.space},
-    paddingBottom: {property: 'paddingBottom', scale: 'space', defaultScale: defaults$1.space},
-    paddingLeft: {property: 'paddingLeft', scale: 'space', defaultScale: defaults$1.space},
-    paddingX: {
-      properties: ['paddingLeft', 'paddingRight'],
-      scale: 'space',
-      defaultScale: defaults$1.space,
-    },
-    paddingY: {
-      properties: ['paddingTop', 'paddingBottom'],
-      scale: 'space',
-      defaultScale: defaults$1.space,
-    },
-  }),
-  (configs.padding.p = configs.padding.padding),
-  (configs.padding.pt = configs.padding.paddingTop),
-  (configs.padding.pr = configs.padding.paddingRight),
-  (configs.padding.pb = configs.padding.paddingBottom),
-  (configs.padding.pl = configs.padding.paddingLeft),
-  (configs.padding.px = configs.padding.paddingX),
-  (configs.padding.py = configs.padding.paddingY)
-var margin = system(configs.margin),
-  padding = system(configs.padding),
-  space = system(_extends({}, configs.margin, configs.padding)),
-  config = {
-    color: {property: 'color', scale: 'colors'},
-    backgroundColor: {property: 'backgroundColor', scale: 'colors'},
-    opacity: !0,
-  }
-config.bg = config.backgroundColor
-var color = system(config),
-  isNumber$1 = function(e) {
-    return 'number' == typeof e && !isNaN(e)
-  },
   getWidth = function(e, t) {
-    return get(t, e, !isNumber$1(e) || e > 1 ? e : 100 * e + '%')
+    return get(t, e, !isNumber(e) || e > 1 ? e : 100 * e + '%')
   },
-  config$1 = {
+  config = {
     width: {property: 'width', scale: 'sizes', transform: getWidth},
     height: {property: 'height', scale: 'sizes'},
     minWidth: {property: 'minWidth', scale: 'sizes'},
@@ -1279,11 +1200,18 @@ var color = system(config),
     display: !0,
     verticalAlign: !0,
   },
-  layout = system(config$1),
-  defaults$2 = {fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72]},
+  layout = system(config),
+  config$1 = {
+    color: {property: 'color', scale: 'colors'},
+    backgroundColor: {property: 'backgroundColor', scale: 'colors'},
+    opacity: !0,
+  }
+config$1.bg = config$1.backgroundColor
+var color = system(config$1),
+  defaults$1 = {fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72]},
   config$2 = {
     fontFamily: {property: 'fontFamily', scale: 'fonts'},
-    fontSize: {property: 'fontSize', scale: 'fontSizes', defaultScale: defaults$2.fontSizes},
+    fontSize: {property: 'fontSize', scale: 'fontSizes', defaultScale: defaults$1.fontSizes},
     fontWeight: {property: 'fontWeight', scale: 'fontWeights'},
     lineHeight: {property: 'lineHeight', scale: 'lineHeights'},
     letterSpacing: {property: 'letterSpacing', scale: 'letterSpacings'},
@@ -1307,7 +1235,23 @@ var color = system(config),
     order: !0,
   },
   flexbox = system(config$3),
+  defaults$2 = {space: [0, 4, 8, 16, 32, 64, 128, 256, 512]},
   config$4 = {
+    gridGap: {property: 'gridGap', scale: 'space', defaultScale: defaults$2.space},
+    gridColumnGap: {property: 'gridColumnGap', scale: 'space', defaultScale: defaults$2.space},
+    gridRowGap: {property: 'gridRowGap', scale: 'space', defaultScale: defaults$2.space},
+    gridColumn: !0,
+    gridRow: !0,
+    gridAutoFlow: !0,
+    gridAutoColumns: !0,
+    gridAutoRows: !0,
+    gridTemplateColumns: !0,
+    gridTemplateRows: !0,
+    gridTemplateAreas: !0,
+    gridArea: !0,
+  },
+  grid = system(config$4),
+  config$5 = {
     border: {property: 'border', scale: 'borders'},
     borderWidth: {property: 'borderWidth', scale: 'borderWidths'},
     borderStyle: {property: 'borderStyle', scale: 'borderStyles'},
@@ -1320,47 +1264,125 @@ var color = system(config),
     borderX: {properties: ['borderLeft', 'borderRight'], scale: 'borders'},
     borderY: {properties: ['borderTop', 'borderBottom'], scale: 'borders'},
   },
-  border = system(config$4),
-  config$5 = {
+  border = system(config$5),
+  config$6 = {
     background: !0,
     backgroundImage: !0,
     backgroundSize: !0,
     backgroundPosition: !0,
     backgroundRepeat: !0,
   }
-;(config$5.bgImage = config$5.backgroundImage),
-  (config$5.bgSize = config$5.backgroundSize),
-  (config$5.bgPosition = config$5.backgroundPosition),
-  (config$5.bgRepeat = config$5.backgroundRepeat)
+;(config$6.bgImage = config$6.backgroundImage),
+  (config$6.bgSize = config$6.backgroundSize),
+  (config$6.bgPosition = config$6.backgroundPosition),
+  (config$6.bgRepeat = config$6.backgroundRepeat)
+var background = system(config$6),
+  defaults$3 = {space: [0, 4, 8, 16, 32, 64, 128, 256, 512]},
+  config$7 = {
+    position: !0,
+    zIndex: {property: 'zIndex', scale: 'zIndices'},
+    top: {property: 'top', scale: 'space', defaultScale: defaults$3.space},
+    right: {property: 'right', scale: 'space', defaultScale: defaults$3.space},
+    bottom: {property: 'bottom', scale: 'space', defaultScale: defaults$3.space},
+    left: {property: 'left', scale: 'space', defaultScale: defaults$3.space},
+  },
+  position = system(config$7),
+  defaults$4 = {space: [0, 4, 8, 16, 32, 64, 128, 256, 512]},
+  isNumber$1 = function(e) {
+    return 'number' == typeof e && !isNaN(e)
+  },
+  getMargin = function(e, t) {
+    if (!isNumber$1(e)) return get(t, e, e)
+    var a = e < 0,
+      n = Math.abs(e),
+      r = get(t, n, n)
+    return isNumber$1(r) ? r * (a ? -1 : 1) : a ? '-' + r : r
+  },
+  configs = {}
+;(configs.margin = {
+  margin: {
+    property: 'margin',
+    scale: 'space',
+    transform: getMargin,
+    defaultScale: defaults$4.space,
+  },
+  marginTop: {
+    property: 'marginTop',
+    scale: 'space',
+    transform: getMargin,
+    defaultScale: defaults$4.space,
+  },
+  marginRight: {
+    property: 'marginRight',
+    scale: 'space',
+    transform: getMargin,
+    defaultScale: defaults$4.space,
+  },
+  marginBottom: {
+    property: 'marginBottom',
+    scale: 'space',
+    transform: getMargin,
+    defaultScale: defaults$4.space,
+  },
+  marginLeft: {
+    property: 'marginLeft',
+    scale: 'space',
+    transform: getMargin,
+    defaultScale: defaults$4.space,
+  },
+  marginX: {
+    properties: ['marginLeft', 'marginRight'],
+    scale: 'space',
+    transform: getMargin,
+    defaultScale: defaults$4.space,
+  },
+  marginY: {
+    properties: ['marginTop', 'marginBottom'],
+    scale: 'space',
+    transform: getMargin,
+    defaultScale: defaults$4.space,
+  },
+}),
+  (configs.margin.m = configs.margin.margin),
+  (configs.margin.mt = configs.margin.marginTop),
+  (configs.margin.mr = configs.margin.marginRight),
+  (configs.margin.mb = configs.margin.marginBottom),
+  (configs.margin.ml = configs.margin.marginLeft),
+  (configs.margin.mx = configs.margin.marginX),
+  (configs.margin.my = configs.margin.marginY),
+  (configs.padding = {
+    padding: {property: 'padding', scale: 'space', defaultScale: defaults$4.space},
+    paddingTop: {property: 'paddingTop', scale: 'space', defaultScale: defaults$4.space},
+    paddingRight: {property: 'paddingRight', scale: 'space', defaultScale: defaults$4.space},
+    paddingBottom: {property: 'paddingBottom', scale: 'space', defaultScale: defaults$4.space},
+    paddingLeft: {property: 'paddingLeft', scale: 'space', defaultScale: defaults$4.space},
+    paddingX: {
+      properties: ['paddingLeft', 'paddingRight'],
+      scale: 'space',
+      defaultScale: defaults$4.space,
+    },
+    paddingY: {
+      properties: ['paddingTop', 'paddingBottom'],
+      scale: 'space',
+      defaultScale: defaults$4.space,
+    },
+  }),
+  (configs.padding.p = configs.padding.padding),
+  (configs.padding.pt = configs.padding.paddingTop),
+  (configs.padding.pr = configs.padding.paddingRight),
+  (configs.padding.pb = configs.padding.paddingBottom),
+  (configs.padding.pl = configs.padding.paddingLeft),
+  (configs.padding.px = configs.padding.paddingX),
+  (configs.padding.py = configs.padding.paddingY)
 var templateObject_1,
   templateObject_1$1,
   templateObject_1$2,
-  background = system(config$5),
-  config$6 = {
-    position: !0,
-    zIndex: {property: 'zIndex', scale: 'zIndices'},
-    top: !0,
-    right: !0,
-    bottom: !0,
-    left: !0,
-  },
-  position = system(config$6),
-  defaults$3 = {space: [0, 4, 8, 16, 32, 64, 128, 256, 512]},
-  config$7 = {
-    gridGap: {property: 'gridGap', scale: 'space', defaultScale: defaults$3.space},
-    gridColumnGap: {property: 'gridColumnGap', scale: 'space', defaultScale: defaults$3.space},
-    gridRowGap: {property: 'gridRowGap', scale: 'space', defaultScale: defaults$3.space},
-    gridColumn: !0,
-    gridRow: !0,
-    gridAutoFlow: !0,
-    gridAutoColumns: !0,
-    gridAutoRows: !0,
-    gridTemplateColumns: !0,
-    gridTemplateRows: !0,
-    gridTemplateAreas: !0,
-    gridArea: !0,
-  },
-  grid = system(config$7),
+  margin = system(configs.margin),
+  padding = system(configs.padding),
+  space = compose(
+    margin,
+    padding,
+  ),
   shadow = system({
     boxShadow: {property: 'boxShadow', scale: 'shadows'},
     textShadow: {property: 'textShadow', scale: 'shadows'},
@@ -1381,6 +1403,37 @@ var templateObject_1,
   buttonStyle = variant({key: 'buttons'}),
   textStyle = variant({key: 'textStyles', prop: 'textStyle'}),
   colorStyle = variant({key: 'colorStyles', prop: 'colors'}),
+  width = layout.width,
+  height = layout.height,
+  minHeight = layout.minHeight,
+  display = layout.display,
+  overflow = layout.overflow,
+  opacity = color.opacity,
+  fontSize = typography.fontSize,
+  fontFamily = typography.fontFamily,
+  fontWeight = typography.fontWeight,
+  lineHeight = typography.lineHeight,
+  alignItems = flexbox.alignItems,
+  justifyContent = flexbox.justifyContent,
+  flexWrap = flexbox.flexWrap,
+  flexDirection = flexbox.flexDirection,
+  flex = flexbox.flex,
+  gridGap = grid.gridGap,
+  gridColumnGap = grid.gridColumnGap,
+  gridRowGap = grid.gridRowGap,
+  gridAutoFlow = grid.gridAutoFlow,
+  gridAutoColumns = grid.gridAutoColumns,
+  gridAutoRows = grid.gridAutoRows,
+  gridTemplateColumns = grid.gridTemplateColumns,
+  gridTemplateRows = grid.gridTemplateRows,
+  gridTemplateAreas = grid.gridTemplateAreas,
+  gridArea = grid.gridArea,
+  borderRadius = border.borderRadius,
+  zIndex = position.zIndex,
+  top = position.top,
+  right = position.right,
+  bottom = position.bottom,
+  left = position.left,
   style = function(e) {
     var t = e.prop,
       a = e.cssProperty,
@@ -1430,17 +1483,17 @@ var templateObject_1,
     scale: [0, 4, 8, 16, 32],
   }),
   composeGridStyles = compose(
-    grid,
-    grid,
-    grid,
-    grid,
-    grid,
-    grid,
-    grid,
-    grid,
-    grid,
-    flexbox,
-    flexbox,
+    gridAutoColumns,
+    gridAutoFlow,
+    gridAutoRows,
+    gridColumnGap,
+    gridGap,
+    gridRowGap,
+    gridTemplateAreas,
+    gridTemplateColumns,
+    gridTemplateRows,
+    alignItems,
+    justifyContent,
     space,
   ),
   Grid = styled__default('div')(
@@ -1454,14 +1507,14 @@ var templateObject_1,
   ),
   composeFlexStyles = compose(
     space,
-    flexbox,
-    flexbox,
-    flexbox,
-    flexbox,
-    flexbox,
-    grid,
-    layout,
-    layout,
+    flex,
+    flexWrap,
+    flexDirection,
+    alignItems,
+    justifyContent,
+    gridArea,
+    height,
+    width,
   ),
   Flex = styled__default('div')(
     templateObject_1$1 ||
@@ -1472,16 +1525,16 @@ var templateObject_1,
     composeFlexStyles,
   ),
   composeBoxStyles = compose(
-    grid,
-    layout,
+    gridArea,
+    height,
     space,
-    layout,
+    width,
     position,
-    position,
-    position,
-    position,
-    position,
-    position,
+    top,
+    left,
+    right,
+    bottom,
+    zIndex,
   ),
   Box = styled__default('div')(
     templateObject_1$2 ||
@@ -1568,8 +1621,8 @@ var templateObject_1$3,
     position,
     border,
     background,
-    layout,
-    border,
+    display,
+    borderRadius,
     space,
   ),
   InputLabel = styled__default('label')(
@@ -1579,11 +1632,11 @@ var templateObject_1$3,
   ),
   composeCalendarWrapperStyles = compose(
     position,
-    position,
-    position,
-    position,
-    layout,
-    layout,
+    left,
+    right,
+    top,
+    height,
+    width,
   ),
   CalendarWrapper = styled__default('div')(
     templateObject_2 ||
@@ -1596,14 +1649,14 @@ var templateObject_1$3,
   composeStyledInputStyle = compose(
     background,
     space,
-    typography,
-    typography,
+    fontFamily,
+    fontSize,
     color,
-    typography,
+    fontWeight,
     space,
     border,
-    layout,
-    layout,
+    width,
+    minHeight,
     shadow,
   ),
   StyledInput = styled__default('input')(
@@ -1654,12 +1707,12 @@ function Input(e) {
     g = e.onChange,
     f = void 0 === g ? function() {} : g,
     m = React.useState(l),
-    y = m[0],
-    h = m[1],
+    h = m[0],
+    y = m[1],
     D = React.useRef(null)
   React.useEffect(
     function() {
-      h(l)
+      y(l)
     },
     [l],
   )
@@ -1739,11 +1792,11 @@ function Input(e) {
       id: a,
       placeholder: t,
       'aria-label': o,
-      value: y,
+      value: h,
       autoComplete: 'off',
       onChange: function(e) {
         var t = e.target.value
-        h(t),
+        y(t),
           'number' == typeof D.current && clearTimeout(D.current),
           (D.current = setTimeout(function() {
             i()
@@ -1800,11 +1853,11 @@ var templateObject_1$4,
   templateObject_1$5,
   templateObject_2$1,
   composeStyles = compose(
-    typography,
-    typography,
-    typography,
+    fontFamily,
+    fontSize,
+    fontWeight,
     color,
-    typography,
+    lineHeight,
     space,
   ),
   Text = styled__default('div')(
@@ -2018,9 +2071,9 @@ var templateObject_1$6,
     shadow,
     background,
     color,
-    typography,
-    typography,
-    typography,
+    fontFamily,
+    fontWeight,
+    fontSize,
   ),
   StyledDay = styled__default('button')(
     templateObject_5 ||
@@ -2136,14 +2189,14 @@ function Day(e) {
       onDateHover: g,
       dayRef: n,
     }),
-    y = React.useContext(styled.ThemeContext),
-    h = getThemeProp('white', globalStyles.colors.white, y),
-    b = getThemeProp('mud', globalStyles.colors.mud, y),
-    D = getThemeProp('primaryColor', globalStyles.colors.primaryColor, y),
-    v = getThemeProp('accessibility', globalStyles.colors.accessibility, y),
-    k = getThemeProp('selectedDay', globalStyles.colors.selectedDay, y),
-    _ = getThemeProp('selectedDayHover', globalStyles.colors.selectedDayHover, y),
-    S = getThemeProp('normalDayHover', globalStyles.colors.normalDayHover, y),
+    h = React.useContext(styled.ThemeContext),
+    y = getThemeProp('white', globalStyles.colors.white, h),
+    b = getThemeProp('mud', globalStyles.colors.mud, h),
+    D = getThemeProp('primaryColor', globalStyles.colors.primaryColor, h),
+    v = getThemeProp('accessibility', globalStyles.colors.accessibility, h),
+    k = getThemeProp('selectedDay', globalStyles.colors.selectedDay, h),
+    _ = getThemeProp('selectedDayHover', globalStyles.colors.selectedDayHover, h),
+    S = getThemeProp('normalDayHover', globalStyles.colors.normalDayHover, h),
     x = useThemeProps({
       fontFamily: globalStyles.fontFamily,
       daySize: globalStyles.daySize,
@@ -2151,11 +2204,11 @@ function Day(e) {
       dayFontSize: '14px',
       dayColor: b,
       dayHoverColor: b,
-      daySelectedColor: h,
-      daySelectedHoverColor: h,
-      dayHoverRangeColor: h,
-      daySelectedFirstOrLastColor: h,
-      dayBackground: h,
+      daySelectedColor: y,
+      daySelectedHoverColor: y,
+      dayHoverRangeColor: y,
+      daySelectedFirstOrLastColor: y,
+      dayBackground: y,
       dayHoverBackground: S,
       daySelectedBackground: k,
       daySelectedHoverBackground: _,
@@ -2189,7 +2242,7 @@ function Day(e) {
       },
       [m.isSelected, m.isSelectedStartOrEnd, x, m.isWithinHoverRange],
     ),
-    O = React.useMemo(
+    w = React.useMemo(
       function() {
         return getColor(m.isSelected, m.isSelectedStartOrEnd, m.isWithinHoverRange, {
           selectedFirstOrLast: x.daySelectedFirstOrLastColor,
@@ -2207,7 +2260,7 @@ function Day(e) {
       dayHeight: x.daySize,
       dayWidth: x.daySize,
       background: R,
-      color: O,
+      color: w,
       fontFamily: x.fontFamily,
       fontWeight: x.dayFontWeight,
       fontSize: x.dayFontSize,
@@ -2471,8 +2524,8 @@ function CaretIcon$1(e) {
 }
 var templateObject_1$a,
   composeSyles = compose(
-    layout,
-    layout,
+    width,
+    height,
     background,
     space,
     border,
@@ -2567,9 +2620,9 @@ var templateObject_1$b,
   composeTextStyles = compose(
     space,
     color,
-    typography,
-    typography,
-    typography,
+    fontSize,
+    fontFamily,
+    fontWeight,
   ),
   Text$1 = styled__default('div')(
     templateObject_1$b ||
@@ -2645,10 +2698,10 @@ var opacity0To100$1 = styled.keyframes(
   composeStyledDatepickerStyles = compose(
     background,
     space,
-    border,
+    borderRadius,
     position,
     shadow,
-    layout,
+    width,
   ),
   StyledDatepicker = styled__default('div')(
     templateObject_3$3 ||
@@ -2693,8 +2746,8 @@ var opacity0To100$1 = styled.keyframes(
       )),
   ),
   composeCloseWrapperStyles = compose(
-    layout,
-    flexbox,
+    display,
+    justifyContent,
   ),
   CloseWrapper = styled__default(Box)(
     templateObject_5$1 ||
@@ -2702,8 +2755,8 @@ var opacity0To100$1 = styled.keyframes(
     composeCloseWrapperStyles,
   ),
   composeMonthGridStyles = compose(
-    layout,
-    layout,
+    overflow,
+    height,
   ),
   MonthGrid = styled__default(Grid)(
     templateObject_6 || (templateObject_6 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
@@ -2724,8 +2777,8 @@ function Datepicker(e, t) {
     g = void 0 !== u && u,
     f = e.rtl,
     m = void 0 !== f && f,
-    y = e.showResetDates,
-    h = void 0 === y || y,
+    h = e.showResetDates,
+    y = void 0 === h || h,
     b = e.showClose,
     D = void 0 === b || b,
     v = e.showSelectedDates,
@@ -2740,9 +2793,9 @@ function Datepicker(e, t) {
           }
         : x,
     R = e.minBookingDays,
-    O = void 0 === R ? 1 : R,
-    w = e.onClose,
-    T = void 0 === w ? function() {} : w,
+    w = void 0 === R ? 1 : R,
+    O = e.onClose,
+    T = void 0 === O ? function() {} : O,
     B = e.numberOfMonths,
     j = e.firstDayOfWeek,
     F = e.displayFormat,
@@ -2756,21 +2809,21 @@ function Datepicker(e, t) {
       onDatesChange: l,
       minBookingDate: r,
       maxBookingDate: o,
-      minBookingDays: O,
+      minBookingDays: w,
       isDateBlocked: C,
       exactMinBookingDays: S,
       numberOfMonths: B,
       firstDayOfWeek: j,
     }),
-    P = L.activeMonths,
-    I = L.isDateSelected,
+    I = L.activeMonths,
+    P = L.isDateSelected,
     H = L.isFirstOrLastSelectedDate,
     E = L.isDateHovered,
-    z = L.firstDayOfWeek,
-    A = L.onDateSelect,
+    A = L.firstDayOfWeek,
+    z = L.onDateSelect,
     Y = L.onResetDates,
-    N = L.goToPreviousMonths,
-    G = L.goToNextMonths,
+    G = L.goToPreviousMonths,
+    N = L.goToNextMonths,
     K = L.numberOfMonths,
     Q = L.hoveredDate,
     V = L.onDateHover,
@@ -2781,7 +2834,7 @@ function Datepicker(e, t) {
   React.useImperativeHandle(t, function() {
     return {
       onDateSelect: function(e) {
-        A(e)
+        z(e)
       },
     }
   })
@@ -2831,10 +2884,10 @@ function Datepicker(e, t) {
     J && J.current && g && (J.current.scrollTop = 0)
   }
   function re() {
-    G(), ne()
+    N(), ne()
   }
   function ie() {
-    N(), ne()
+    G(), ne()
   }
   return React__default.createElement(
     DatepickerContext.Provider,
@@ -2842,12 +2895,12 @@ function Datepicker(e, t) {
       value: {
         rtl: m,
         isDateFocused: U,
-        isDateSelected: I,
+        isDateSelected: P,
         isDateHovered: E,
         isFirstOrLastSelectedDate: H,
         onDateFocus: Z,
         focusedDate: X,
-        onDateSelect: A,
+        onDateSelect: z,
         onDateHover: V,
         onDayRender: p,
         isDateBlocked: q,
@@ -2930,12 +2983,12 @@ function Datepicker(e, t) {
                 Q && V(null)
               },
             },
-            P.map(function(e) {
+            I.map(function(e) {
               return React__default.createElement(Month, {
                 key: 'month-' + e.year + '-' + e.month,
                 year: e.year,
                 month: e.month,
-                firstDayOfWeek: z,
+                firstDayOfWeek: A,
                 dayLabelFormat: c || ae,
                 weekdayLabelFormat: s || oe,
                 monthLabelFormat: d || ue,
@@ -2949,7 +3002,7 @@ function Datepicker(e, t) {
           React__default.createElement(
             React__default.Fragment,
             null,
-            h &&
+            y &&
               React__default.createElement(
                 Flex,
                 {flex: '1', m: te.datepickerResetDatesWrapperMargin},
@@ -3029,7 +3082,7 @@ var templateObject_1$c,
   ),
   composeInputArrowIconStyles = compose(
     color,
-    color,
+    opacity,
   ),
   InputArrowIcon = styled__default(ArrowIcon)(
     templateObject_4$2 ||
@@ -3051,7 +3104,7 @@ var templateObject_1$c,
   composeInputGridStyles = compose(
     background,
     border,
-    border,
+    borderRadius,
   ),
   InputGrid = styled__default(Grid)(
     templateObject_5$2 ||
@@ -3103,9 +3156,9 @@ function DateRangeInput(e) {
     g = e.monthLabelFormat,
     f = e.onDayRender,
     m = e.showClose,
-    y = void 0 === m || m,
-    h = e.showSelectedDates,
-    b = void 0 === h || h,
+    h = void 0 === m || m,
+    y = e.showSelectedDates,
+    b = void 0 === y || y,
     D = e.showResetDates,
     v = void 0 === D || D,
     k = e.vertical,
@@ -3119,8 +3172,8 @@ function DateRangeInput(e) {
             return !1
           }
         : C,
-    O = e.minBookingDays,
-    w = void 0 === O ? 1 : O,
+    w = e.minBookingDays,
+    O = void 0 === w ? 1 : w,
     T = e.onClose,
     B = void 0 === T ? function() {} : T,
     j = e.showStartDateCalendarIcon,
@@ -3129,14 +3182,14 @@ function DateRangeInput(e) {
     M = void 0 === W || W,
     $ = e.displayFormat,
     L = void 0 === $ ? 'MM/DD/YYYY' : $,
-    P = e.phrases,
-    I = void 0 === P ? dateRangeInputPhrases : P,
+    I = e.phrases,
+    P = void 0 === I ? dateRangeInputPhrases : I,
     H = e.placement,
     E = void 0 === H ? 'bottom' : H,
-    z = React.useRef(null),
     A = React.useRef(null),
+    z = React.useRef(null),
     Y = React.useContext(styled.ThemeContext),
-    N = useThemeProps(
+    G = useThemeProps(
       __assign(
         {
           dateRangeBackground: 'transparent',
@@ -3154,36 +3207,36 @@ function DateRangeInput(e) {
         getPlacement(E, x),
       ),
     )
-  function G(e) {
-    null !== c && A && A.current && !A.current.contains(e.target) && i(null)
+  function N(e) {
+    null !== c && z && z.current && !z.current.contains(e.target) && i(null)
   }
   function K(e) {
-    z && z.current && z.current.onDateSelect && z.current.onDateSelect(e)
+    A && A.current && A.current.onDateSelect && A.current.onDateSelect(e)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', G),
+        'undefined' != typeof window && window.addEventListener('click', N),
         function() {
-          window.removeEventListener('click', G)
+          window.removeEventListener('click', N)
         }
       )
     }),
     React__default.createElement(
       Wrapper$1,
-      {rtl: x, position: 'relative', ref: A},
+      {rtl: x, position: 'relative', ref: z},
       React__default.createElement(
         InputGrid,
         {
-          background: N.dateRangeBackground,
-          gridTemplateColumns: N.dateRangeGridTemplateColumns,
-          border: N.dateRangeBorder,
-          borderRadius: N.dateRangeBorderRadius,
+          background: G.dateRangeBackground,
+          gridTemplateColumns: G.dateRangeGridTemplateColumns,
+          border: G.dateRangeBorder,
+          borderRadius: G.dateRangeBorderRadius,
         },
         React__default.createElement(Input, {
           id: 'startDate',
-          ariaLabel: I.startDateAriaLabel,
-          placeholder: I.startDatePlaceholder,
+          ariaLabel: P.startDateAriaLabel,
+          placeholder: P.startDatePlaceholder,
           value: Ye(t, L, ''),
           onClick: function() {
             return i(xe)
@@ -3191,7 +3244,7 @@ function DateRangeInput(e) {
           showCalendarIcon: F,
           vertical: _,
           isActive: c === xe,
-          padding: N.dateRangeStartDateInputPadding,
+          padding: G.dateRangeStartDateInputPadding,
           rtl: x,
           onChange: K,
           dateFormat: L,
@@ -3200,17 +3253,17 @@ function DateRangeInput(e) {
           Flex,
           {alignItems: 'center', justifyContent: 'center'},
           React__default.createElement(InputArrowIcon, {
-            width: N.dateRangeArrowIconWidth,
-            height: N.dateRangeArrowIconHeight,
-            color: N.dateRangeArrowIconColor,
-            opacity: N.dateRangeArrowIconOpacity,
+            width: G.dateRangeArrowIconWidth,
+            height: G.dateRangeArrowIconHeight,
+            color: G.dateRangeArrowIconColor,
+            opacity: G.dateRangeArrowIconOpacity,
             rtl: x,
           }),
         ),
         React__default.createElement(Input, {
           id: 'endDate',
-          ariaLabel: I.endDateAriaLabel,
-          placeholder: I.endDatePlaceholder,
+          ariaLabel: P.endDateAriaLabel,
+          placeholder: P.endDatePlaceholder,
           value: Ye(a, L, ''),
           onClick: function() {
             return i(t ? be : xe)
@@ -3218,7 +3271,7 @@ function DateRangeInput(e) {
           showCalendarIcon: M,
           vertical: _,
           isActive: c === be,
-          padding: N.dateRangeEndDateInputPadding,
+          padding: G.dateRangeEndDateInputPadding,
           rtl: x,
           disableAccessibility: c === xe,
           onChange: K,
@@ -3228,11 +3281,11 @@ function DateRangeInput(e) {
       React__default.createElement(
         Box,
         {
-          position: N.dateRangeDatepickerWrapperPosition,
-          bottom: N.dateRangeDatepickerWrapperBottom,
-          left: N.dateRangeDatepickerWrapperLeft,
-          top: N.dateRangeDatepickerWrapperTop,
-          right: N.dateRangeDatepickerWrapperRight,
+          position: G.dateRangeDatepickerWrapperPosition,
+          bottom: G.dateRangeDatepickerWrapperBottom,
+          left: G.dateRangeDatepickerWrapperLeft,
+          top: G.dateRangeDatepickerWrapperTop,
+          right: G.dateRangeDatepickerWrapperRight,
         },
         null !== c &&
           React__default.createElement(Datepicker$1, {
@@ -3248,20 +3301,20 @@ function DateRangeInput(e) {
             focusedInput: c,
             displayFormat: L,
             onDatesChange: s,
-            minBookingDays: w,
+            minBookingDays: O,
             isDateBlocked: R,
             exactMinBookingDays: d,
             showResetDates: v,
             vertical: _,
             showSelectedDates: b,
-            showClose: y,
+            showClose: h,
             rtl: x,
             dayLabelFormat: p,
             weekdayLabelFormat: u,
             monthLabelFormat: g,
             onDayRender: f,
-            phrases: I,
-            ref: z,
+            phrases: P,
+            ref: A,
           }),
       ),
     )
@@ -3330,8 +3383,8 @@ function DateSingleInput(e) {
     g = void 0 === u ? 1 : u,
     f = e.showClose,
     m = void 0 === f || f,
-    y = e.showResetDate,
-    h = void 0 === y || y,
+    h = e.showResetDate,
+    y = void 0 === h || h,
     b = e.vertical,
     D = void 0 !== b && b,
     v = e.rtl,
@@ -3346,9 +3399,9 @@ function DateSingleInput(e) {
     x = e.onClose,
     C = void 0 === x ? function() {} : x,
     R = e.showCalendarIcon,
-    O = void 0 === R || R,
-    w = e.displayFormat,
-    T = void 0 === w ? 'MM/DD/YYYY' : w,
+    w = void 0 === R || R,
+    O = e.displayFormat,
+    T = void 0 === O ? 'MM/DD/YYYY' : O,
     B = e.phrases,
     j = void 0 === B ? dateSingleInputPhrases : B,
     F = e.placement,
@@ -3364,15 +3417,15 @@ function DateSingleInput(e) {
         getPlacement$1(W, k),
       ),
     )
-  function P(e) {
+  function I(e) {
     i && $ && $.current && !$.current.contains(e.target) && o(!1)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', P),
+        'undefined' != typeof window && window.addEventListener('click', I),
         function() {
-          window.removeEventListener('click', P)
+          window.removeEventListener('click', I)
         }
       )
     }),
@@ -3387,7 +3440,7 @@ function DateSingleInput(e) {
         onClick: function() {
           return o(!0)
         },
-        showCalendarIcon: O,
+        showCalendarIcon: w,
         vertical: D,
         isActive: !1,
         padding: L.dateSingleInputPadding,
@@ -3427,7 +3480,7 @@ function DateSingleInput(e) {
               l({showDatepicker: null !== t, date: a})
             },
             isDateBlocked: S,
-            showResetDates: h,
+            showResetDates: y,
             vertical: D,
             showSelectedDates: !1,
             showClose: m,
