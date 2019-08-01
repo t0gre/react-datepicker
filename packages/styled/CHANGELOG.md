@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/tresko/react-datepicker/compare/v1.6.0...v1.7.0) (2019-08-01)
+
+
+### Features
+
+* **hooks:** add goToNextYear and goToPreviousYear methods to the hooks. ([6040c7b](https://github.com/tresko/react-datepicker/commit/6040c7b))
+
+
+
+
+
 # [1.6.0](https://github.com/tresko/react-datepicker/compare/v1.5.0...v1.6.0) (2019-07-14)
 
 
