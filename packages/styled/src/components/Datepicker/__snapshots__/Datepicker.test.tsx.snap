@@ -345,7 +345,6 @@ exports[`should custom render day 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -2067,10 +2066,6 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0 0 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
   right: 0;
   top: unset;
@@ -3671,7 +3666,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX hYIDaZ"
+      class="sc-bwzfXH sc-fjdhpX bXtEXw"
       display="flex"
     >
       <button
@@ -5441,7 +5436,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX hYIDaZ"
+      class="sc-bwzfXH sc-fjdhpX bXtEXw"
       display="flex"
     >
       <button
@@ -7583,7 +7578,6 @@ exports[`should have empty end date and focused end date 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -9538,7 +9532,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -11491,7 +11484,6 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 .c1 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -13089,7 +13081,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX jElpuc"
+      class="sc-bwzfXH sc-fjdhpX hdNeHS"
       display="block"
     >
       <button
@@ -14658,7 +14650,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
     width="fit-content"
   >
     <div
-      class="sc-bwzfXH sc-fjdhpX jElpuc"
+      class="sc-bwzfXH sc-fjdhpX hdNeHS"
       display="block"
     >
       <button
@@ -16595,10 +16587,6 @@ exports[`should render vertical datepicker 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0 0 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
   right: 0;
   top: unset;
@@ -18554,7 +18542,6 @@ exports[`should select exact range 1`] = `
 .c1 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;

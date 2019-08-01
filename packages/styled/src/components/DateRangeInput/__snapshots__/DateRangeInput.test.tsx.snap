@@ -702,7 +702,6 @@ exports[`should have empty end date and focused end date 1`] = `
 .c10 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -2895,7 +2894,6 @@ exports[`should have empty start and end date and focused start date - placement
 .c10 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -5086,7 +5084,6 @@ exports[`should have empty start and end date and focused start date 1`] = `
 .c10 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -7283,7 +7280,6 @@ exports[`should not render calendar icons 1`] = `
 .c9 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -9419,7 +9415,6 @@ exports[`should render custom day 1`] = `
 .c10 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: 32px;
   top: unset;
@@ -11393,7 +11388,6 @@ exports[`should render rtl variant 1`] = `
 .c10 {
   box-sizing: border-box;
   margin: 0;
-  display: block;
   position: absolute;
   right: unset;
   top: unset;
@@ -13621,10 +13615,6 @@ exports[`should render vertical variant 1`] = `
 .c10 {
   box-sizing: border-box;
   margin: 0 0 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
   right: 0;
   top: unset;
@@ -15858,10 +15848,6 @@ exports[`should render vertical, rtl variant 1`] = `
 .c10 {
   box-sizing: border-box;
   margin: 0 0 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   position: relative;
   right: unset;
   top: unset;
