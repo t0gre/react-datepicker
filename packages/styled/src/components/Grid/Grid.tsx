@@ -17,7 +17,7 @@ import {
   gridRowGap,
   GridRowGapProps,
   gridTemplateAreas,
-  GridTemplatesAreasProps,
+  GridTemplateAreasProps,
   gridTemplateColumns,
   GridTemplateColumnsProps,
   gridTemplateRows,
@@ -37,7 +37,7 @@ interface GridProps
     GridColumnGapProps,
     GridGapProps,
     GridRowGapProps,
-    GridTemplatesAreasProps,
+    GridTemplateAreasProps,
     GridTemplateColumnsProps,
     SpaceProps,
     GridTemplateRowsProps {
