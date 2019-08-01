@@ -55,6 +55,24 @@ describe('useDatepicker', () => {
     expect(result.current.activeMonths[1].year).toBe(2019)
     expect(result.current.activeMonths[1].month).toBe(3)
 
+    // next year
+    act(() => {
+      result.current.goToNextYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2020)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2020)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    // next year
+    act(() => {
+      result.current.goToPreviousYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
     clear()
   })
 
@@ -744,6 +762,18 @@ describe('getNextActiveMonth', () => {
     clear()
   })
 
+  test('get next year', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const months = getInitialMonths(2, null)
+    const nextMonths = getNextActiveMonth(months, 2, 11)
+    expect(nextMonths.length).toBe(2)
+    expect(nextMonths[0].year).toEqual(2020)
+    expect(nextMonths[0].month).toEqual(2)
+    expect(nextMonths[1].year).toEqual(2020)
+    expect(nextMonths[1].month).toEqual(3)
+    clear()
+  })
+
   test('get past 2 months', () => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const months = getInitialMonths(2, null)
@@ -753,6 +783,18 @@ describe('getNextActiveMonth', () => {
     expect(nextMonths[0].month).toEqual(0)
     expect(nextMonths[1].year).toEqual(2019)
     expect(nextMonths[1].month).toEqual(1)
+    clear()
+  })
+
+  test('get past year', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const months = getInitialMonths(2, null)
+    const nextMonths = getNextActiveMonth(months, 2, -11)
+    expect(nextMonths.length).toBe(2)
+    expect(nextMonths[0].year).toEqual(2018)
+    expect(nextMonths[0].month).toEqual(2)
+    expect(nextMonths[1].year).toEqual(2018)
+    expect(nextMonths[1].month).toEqual(3)
     clear()
   })
 })

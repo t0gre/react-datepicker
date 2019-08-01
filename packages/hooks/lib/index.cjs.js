@@ -719,7 +719,7 @@ function getNextActiveMonth(e, t, a) {
   var r = e[a > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
     return (
-      (r = add_months(r, a)),
+      (r = 0 === e.length ? add_months(r, a) : add_months(r, a >= 0 ? 1 : -1)),
       a > 0 ? e.concat([getDateMonthAndYear(r)]) : [getDateMonthAndYear(r)].concat(e)
     )
   }, [])
@@ -803,12 +803,12 @@ function useDatepicker(e) {
     }),
     h = y[0],
     T = y[1],
-    p = react.useState(null),
-    M = p[0],
-    k = p[1],
-    v = react.useState(t),
-    S = v[0],
-    I = v[1],
+    M = react.useState(null),
+    p = M[0],
+    v = M[1],
+    k = react.useState(t),
+    S = k[0],
+    I = k[1],
     Y = react.useCallback(
       function(e) {
         I(e), (!S || (S && !is_same_month(e, S))) && T(getInitialMonths(D, e))
@@ -851,7 +851,7 @@ function useDatepicker(e) {
       function(e) {
         return isDateHovered({
           date: e,
-          hoveredDate: M,
+          hoveredDate: p,
           startDate: t,
           endDate: a,
           minBookingDays: c,
@@ -859,7 +859,7 @@ function useDatepicker(e) {
           isDateBlocked: m,
         })
       },
-      [M, t, a, c, u, m],
+      [p, t, a, c, u, m],
     )
   function E(e) {
     if (
@@ -892,7 +892,7 @@ function useDatepicker(e) {
       numberOfMonths: D,
       isDateFocused: b,
       focusedDate: S,
-      hoveredDate: M,
+      hoveredDate: p,
       onResetDates: function() {
         s({startDate: null, endDate: null, focusedInput: START_DATE})
       },
@@ -909,9 +909,9 @@ function useDatepicker(e) {
               l = t && !a && !u && s && i,
               g = !(c > 1 && t) || is_within_range(e, t, add_days(t, c - 2)),
               m = t && is_same_day(e, t) && g
-            r && (_ || l || m) ? k(e) : null !== M && k(null)
+            r && (_ || l || m) ? v(e) : null !== p && v(null)
           }
-        } else k(null)
+        } else v(null)
       },
       onDateSelect: function(e) {
         ;(r === END_DATE || r === START_DATE) &&
@@ -954,6 +954,12 @@ function useDatepicker(e) {
       },
       goToNextMonths: function() {
         T(getNextActiveMonth(h, D, 1)), I(null)
+      },
+      goToPreviousYear: function() {
+        T(getNextActiveMonth(h, D, -11)), I(null)
+      },
+      goToNextYear: function() {
+        T(getNextActiveMonth(h, D, 11)), I(null)
       },
     }
   )

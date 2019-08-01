@@ -122,7 +122,12 @@ export function getNextActiveMonth(
   let prevMonthDate = activeMonth[prevMonth].date
 
   return Array.from(Array(numberOfMonths).keys()).reduce((m: MonthType[]) => {
-    prevMonthDate = addMonths(prevMonthDate, counter)
+    if (m.length === 0) {
+      prevMonthDate = addMonths(prevMonthDate, counter)
+    } else {
+      prevMonthDate = addMonths(prevMonthDate, counter >= 0 ? 1 : -1)
+    }
+
     return counter > 0
       ? m.concat([getDateMonthAndYear(prevMonthDate)])
       : [getDateMonthAndYear(prevMonthDate)].concat(m)

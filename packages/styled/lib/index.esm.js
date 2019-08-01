@@ -658,7 +658,10 @@ function he(e, t) {
 function De(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = ge(r, n)), n > 0 ? e.concat([me(r)]) : [me(r)].concat(e)
+    return (
+      (r = 0 === e.length ? ge(r, n) : ge(r, n >= 0 ? 1 : -1)),
+      n > 0 ? e.concat([me(r)]) : [me(r)].concat(e)
+    )
   }, [])
 }
 function ye(e, t, n) {
@@ -905,6 +908,12 @@ function xe(e) {
       },
       goToNextMonths: function() {
         x(De(b, m, 1)), W(null)
+      },
+      goToPreviousYear: function() {
+        x(De(b, m, -11)), W(null)
+      },
+      goToNextYear: function() {
+        x(De(b, m, 11)), W(null)
       },
     }
   )

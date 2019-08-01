@@ -26,16 +26,16 @@ var o = function(e) {
   w = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/,
   T = /([Z+-].*)$/,
   F = /^(Z)$/,
-  S = /^([+-])(\d{2})$/,
-  Y = /^([+-])(\d{2}):?(\d{2})$/
-function b(e, t, n) {
+  Y = /^([+-])(\d{2})$/,
+  S = /^([+-])(\d{2}):?(\d{2})$/
+function x(e, t, n) {
   ;(t = t || 0), (n = n || 0)
   var r = new Date(0)
   r.setUTCFullYear(e, 0, 4)
   var a = 7 * t + n + 1 - (r.getUTCDay() || 7)
   return r.setUTCDate(r.getUTCDate() + a), r
 }
-var x = function(e, t) {
+var b = function(e, t) {
   if (o(e)) return new Date(e.getTime())
   if ('string' != typeof e) return new Date(e)
   var n = (t || {}).additionalDigits
@@ -50,7 +50,7 @@ var x = function(e, t) {
       }
       return n
     })(e),
-    x = (function(e, t) {
+    b = (function(e, t) {
       var n,
         r = d[t],
         a = g[t]
@@ -64,7 +64,7 @@ var x = function(e, t) {
       }
       return {year: null}
     })(r.date, n),
-    B = x.year,
+    B = b.year,
     H = (function(e, t) {
       if (null === t) return null
       var n, r, a, o
@@ -81,14 +81,14 @@ var x = function(e, t) {
         var i = parseInt(n[2], 10)
         return r.setUTCFullYear(t, a, i), r
       }
-      if ((n = y.exec(e))) return (o = parseInt(n[1], 10) - 1), b(t, o)
+      if ((n = y.exec(e))) return (o = parseInt(n[1], 10) - 1), x(t, o)
       if ((n = M.exec(e))) {
         o = parseInt(n[1], 10) - 1
         var s = parseInt(n[2], 10) - 1
-        return b(t, o, s)
+        return x(t, o, s)
       }
       return null
-    })(x.restDateString, B)
+    })(b.restDateString, B)
   if (H) {
     var I,
       O = H.getTime(),
@@ -115,12 +115,12 @@ var x = function(e, t) {
     )
       (G = r.timezone),
         (I =
-          ((C = F.exec(G))
+          ((N = F.exec(G))
             ? 0
-            : (C = S.exec(G))
-            ? ((N = 60 * parseInt(C[2], 10)), '+' === C[1] ? -N : N)
-            : (C = Y.exec(G))
-            ? ((N = 60 * parseInt(C[2], 10) + parseInt(C[3], 10)), '+' === C[1] ? -N : N)
+            : (N = Y.exec(G))
+            ? ((C = 60 * parseInt(N[2], 10)), '+' === N[1] ? -C : C)
+            : (N = S.exec(G))
+            ? ((C = 60 * parseInt(N[2], 10) + parseInt(N[3], 10)), '+' === N[1] ? -C : C)
             : 0) * i)
     else {
       var W = O + A,
@@ -133,16 +133,16 @@ var x = function(e, t) {
     }
     return new Date(O + A + I)
   }
-  var G, C, N
+  var G, N, C
   return new Date(e)
 }
 var B = function(e) {
-  var t = x(e),
+  var t = b(e),
     n = new Date(0)
   return n.setFullYear(t.getFullYear(), 0, 1), n.setHours(0, 0, 0, 0), n
 }
 var H = function(e) {
-    var t = x(e)
+    var t = b(e)
     return t.setHours(0, 0, 0, 0), t
   },
   I = 6e4,
@@ -155,12 +155,12 @@ var A = function(e, t) {
   return Math.round((a - o) / O)
 }
 var W = function(e) {
-  var t = x(e)
+  var t = b(e)
   return A(t, B(t)) + 1
 }
 var L = function(e, t) {
   var n = (t && Number(t.weekStartsOn)) || 0,
-    r = x(e),
+    r = b(e),
     a = r.getDay(),
     o = (a < n ? 7 : 0) + a - n
   return r.setDate(r.getDate() - o), r.setHours(0, 0, 0, 0), r
@@ -169,7 +169,7 @@ var $ = function(e) {
   return L(e, {weekStartsOn: 1})
 }
 var E = function(e) {
-  var t = x(e),
+  var t = b(e),
     n = t.getFullYear(),
     r = new Date(0)
   r.setFullYear(n + 1, 0, 4), r.setHours(0, 0, 0, 0)
@@ -184,11 +184,11 @@ var G = function(e) {
       n = new Date(0)
     return n.setFullYear(t, 0, 4), n.setHours(0, 0, 0, 0), $(n)
   },
-  C = 6048e5
-var N = function(e) {
-  var t = x(e),
+  N = 6048e5
+var C = function(e) {
+  var t = b(e),
     n = $(t).getTime() - G(t).getTime()
-  return Math.round(n / C) + 1
+  return Math.round(n / N) + 1
 }
 var R = function(e) {
   if (o(e)) return !isNaN(e)
@@ -368,10 +368,10 @@ var J = {
     return e.getDay() || 7
   },
   W: function(e) {
-    return N(e)
+    return C(e)
   },
   WW: function(e) {
-    return Q(N(e), 2)
+    return Q(C(e), 2)
   },
   YY: function(e) {
     return Q(e.getFullYear(), 4).substr(2)
@@ -453,7 +453,7 @@ var j = function(e, t, n) {
     a.format.formatters &&
     ((o = a.format.formatters),
     a.format.formattingTokensRegExp && (u = a.format.formattingTokensRegExp))
-  var i = x(e)
+  var i = b(e)
   return R(i)
     ? (function(e, t, n) {
         var r,
@@ -474,37 +474,37 @@ var j = function(e, t, n) {
     : 'Invalid Date'
 }
 var K = function(e, t) {
-  var n = x(e),
+  var n = b(e),
     r = Number(t)
   return n.setDate(n.getDate() + r), n
 }
 var q = function(e, t, n) {
-  var r = x(e),
+  var r = b(e),
     a = void 0 !== n ? n : 1,
-    o = x(t).getTime()
+    o = b(t).getTime()
   if (r.getTime() > o) throw new Error('The first date cannot be after the second date')
   var u = [],
     i = r
-  for (i.setHours(0, 0, 0, 0); i.getTime() <= o; ) u.push(x(i)), i.setDate(i.getDate() + a)
+  for (i.setHours(0, 0, 0, 0); i.getTime() <= o; ) u.push(b(i)), i.setDate(i.getDate() + a)
   return u
 }
 var V = function(e) {
-  var t = x(e),
+  var t = b(e),
     n = t.getMonth()
   return t.setFullYear(t.getFullYear(), n + 1, 0), t.setHours(23, 59, 59, 999), t
 }
 var _ = function(e, t) {
   var n = (t && Number(t.weekStartsOn)) || 0,
-    r = x(e),
+    r = b(e),
     a = r.getDay(),
     o = 6 + (a < n ? -7 : 0) - (a - n)
   return r.setDate(r.getDate() + o), r.setHours(23, 59, 59, 999), r
 }
 var ee = function(e) {
-  return x(e).getDay()
+  return b(e).getDay()
 }
 var te = function(e) {
-  var t = x(e)
+  var t = b(e)
   return t.setDate(1), t.setHours(0, 0, 0, 0), t
 }
 function ne(e) {
@@ -582,19 +582,19 @@ function ie(t) {
   }
 }
 var se = function(e, t) {
-  var n = x(e),
-    r = x(t)
+  var n = b(e),
+    r = b(t)
   return n.getTime() < r.getTime()
 }
 var ce = function(e, t) {
-  var n = x(e),
-    r = x(t)
+  var n = b(e),
+    r = b(t)
   return n.getTime() > r.getTime()
 }
 var fe = function(e, t, n) {
-  var r = x(e).getTime(),
-    a = x(t).getTime(),
-    o = x(n).getTime()
+  var r = b(e).getTime(),
+    a = b(t).getTime(),
+    o = b(n).getTime()
   if (a > o) throw new Error('The start of the range cannot be after the end of the range')
   return r >= a && r <= o
 }
@@ -604,28 +604,28 @@ var De = function(e, t) {
   return n.getTime() === r.getTime()
 }
 var de = function(e, t) {
-  var n = x(e),
-    r = x(t)
+  var n = b(e),
+    r = b(t)
   return n.getFullYear() === r.getFullYear() && n.getMonth() === r.getMonth()
 }
 var le = function(e) {
-  return x(e).getFullYear()
+  return b(e).getFullYear()
 }
 var ge = function(e) {
-  return x(e).getMonth()
+  return b(e).getMonth()
 }
 var ve = function() {
   return H(new Date())
 }
 var me = function(e) {
-  var t = x(e),
+  var t = b(e),
     n = t.getFullYear(),
     r = t.getMonth(),
     a = new Date(0)
   return a.setFullYear(n, r + 1, 0), a.setHours(0, 0, 0, 0), a.getDate()
 }
 var he = function(e, t) {
-  var n = x(e),
+  var n = b(e),
     r = Number(t),
     a = n.getMonth() + r,
     o = new Date(0)
@@ -679,13 +679,16 @@ function Te(e, t) {
 function Fe(e, t, n) {
   var r = e[n > 0 ? e.length - 1 : 0].date
   return Array.from(Array(t).keys()).reduce(function(e) {
-    return (r = he(r, n)), n > 0 ? e.concat([pe(r)]) : [pe(r)].concat(e)
+    return (
+      (r = 0 === e.length ? he(r, n) : he(r, n >= 0 ? 1 : -1)),
+      n > 0 ? e.concat([pe(r)]) : [pe(r)].concat(e)
+    )
   }, [])
 }
-function Se(e, t, n) {
+function Ye(e, t, n) {
   return e && 'string' == typeof t ? j(e, t) : e && 'function' == typeof t ? t(e) : n
 }
-function Ye(e) {
+function Se(e) {
   var t = e.startDate,
     n = e.endDate,
     r = e.isDateBlocked,
@@ -711,8 +714,8 @@ function Ye(e) {
   }
   return !1
 }
-var be = 'startDate',
-  xe = 'endDate'
+var xe = 'startDate',
+  be = 'endDate'
 function Be(e) {
   var a = e.startDate,
     o = e.endDate,
@@ -742,15 +745,15 @@ function Be(e) {
     w = k[1],
     T = t(null),
     F = T[0],
-    S = T[1],
-    Y = t(a),
-    b = Y[0],
-    x = Y[1],
+    Y = T[1],
+    S = t(a),
+    x = S[0],
+    b = S[1],
     B = n(
       function(e) {
-        x(e), (!b || (b && !de(e, b))) && w(Te(v, e))
+        b(e), (!x || (x && !de(e, x))) && w(Te(v, e))
       },
-      [x, w, v, b],
+      [b, w, v, x],
     ),
     H = n(
       function(e) {
@@ -780,9 +783,9 @@ function Be(e) {
     ),
     A = n(
       function(e) {
-        return !!b && De(e, b)
+        return !!x && De(e, x)
       },
-      [b],
+      [x],
     ),
     W = n(
       function(e) {
@@ -824,7 +827,7 @@ function Be(e) {
         'ArrowLeft' === e.key ||
         'ArrowDown' === e.key ||
         'ArrowUp' === e.key) &&
-      !b
+      !x
     ) {
       var t = p[0]
       B(t.date), w(Te(v, t.date))
@@ -848,10 +851,10 @@ function Be(e) {
       isDateBlocked: O,
       numberOfMonths: v,
       isDateFocused: A,
-      focusedDate: b,
+      focusedDate: x,
       hoveredDate: F,
       onResetDates: function() {
-        c({startDate: null, endDate: null, focusedInput: be})
+        c({startDate: null, endDate: null, focusedInput: xe})
       },
       onDateHover: function(e) {
         if (e) {
@@ -866,15 +869,15 @@ function Be(e) {
               g = a && !o && !D && n && r,
               v = !(l > 1 && a) || fe(e, a, K(a, l - 2)),
               m = a && De(e, a) && v
-            t && (d || g || m) ? S(e) : null !== F && S(null)
+            t && (d || g || m) ? Y(e) : null !== F && Y(null)
           }
-        } else S(null)
+        } else Y(null)
       },
       onDateSelect: function(e) {
-        ;(u === xe || u === be) &&
+        ;(u === be || u === xe) &&
         l > 0 &&
         D &&
-        Ye({
+        Se({
           minBookingDays: l,
           exactMinBookingDays: D,
           minBookingDate: i,
@@ -884,28 +887,34 @@ function Be(e) {
           endDate: null,
         })
           ? c({startDate: e, endDate: K(e, l - 1), focusedInput: null})
-          : ((u === xe && a && se(e, a)) || (u === be && o && ce(e, o))) &&
+          : ((u === be && a && se(e, a)) || (u === xe && o && ce(e, o))) &&
             !D &&
-            Ye({minBookingDays: l, isDateBlocked: M, startDate: e, endDate: null})
-          ? c({endDate: null, startDate: e, focusedInput: xe})
-          : u === be && !D && Ye({minBookingDays: l, isDateBlocked: M, endDate: o, startDate: e})
-          ? c({endDate: o, startDate: e, focusedInput: xe})
-          : u === be && !D && Ye({minBookingDays: l, isDateBlocked: M, endDate: null, startDate: e})
-          ? c({endDate: null, startDate: e, focusedInput: xe})
-          : u === xe &&
+            Se({minBookingDays: l, isDateBlocked: M, startDate: e, endDate: null})
+          ? c({endDate: null, startDate: e, focusedInput: be})
+          : u === xe && !D && Se({minBookingDays: l, isDateBlocked: M, endDate: o, startDate: e})
+          ? c({endDate: o, startDate: e, focusedInput: be})
+          : u === xe && !D && Se({minBookingDays: l, isDateBlocked: M, endDate: null, startDate: e})
+          ? c({endDate: null, startDate: e, focusedInput: be})
+          : u === be &&
             a &&
             !se(e, a) &&
             !D &&
-            Ye({minBookingDays: l, isDateBlocked: M, startDate: a, endDate: e}) &&
+            Se({minBookingDays: l, isDateBlocked: M, startDate: a, endDate: e}) &&
             c({startDate: a, endDate: e, focusedInput: null}),
-          u === xe || (b && (!b || de(e, b))) || w(Te(v, e))
+          u === be || (x && (!x || de(e, x))) || w(Te(v, e))
       },
       onDateFocus: B,
       goToPreviousMonths: function() {
-        w(Fe(p, v, -1)), x(null)
+        w(Fe(p, v, -1)), b(null)
       },
       goToNextMonths: function() {
-        w(Fe(p, v, 1)), x(null)
+        w(Fe(p, v, 1)), b(null)
+      },
+      goToPreviousYear: function() {
+        w(Fe(p, v, -11)), b(null)
+      },
+      goToNextYear: function() {
+        w(Fe(p, v, 11)), b(null)
       },
     }
   )
@@ -961,20 +970,20 @@ function He(e) {
   }
 }
 export {
-  xe as END_DATE,
-  be as START_DATE,
+  be as END_DATE,
+  xe as START_DATE,
   ae as dayLabelFormat,
   we as getCurrentYearMonthAndDate,
   pe as getDateMonthAndYear,
   re as getDays,
   Te as getInitialMonths,
-  Se as getInputValue,
+  Ye as getInputValue,
   ne as getWeekdayLabels,
   ke as isDateBlocked,
   ye as isDateSelected,
   Me as isFirstOrLastSelectedDate,
   ue as monthLabelFormat,
-  x as parseDate,
+  b as parseDate,
   Be as useDatepicker,
   He as useDay,
   ie as useMonth,

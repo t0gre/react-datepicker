@@ -292,6 +292,16 @@ export function useDatepicker({
     setFocusedDate(null)
   }
 
+  function goToPreviousYear() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -11))
+    setFocusedDate(null)
+  }
+
+  function goToNextYear() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 11))
+    setFocusedDate(null)
+  }
+
   return {
     firstDayOfWeek,
     activeMonths,
@@ -309,5 +319,7 @@ export function useDatepicker({
     onDateFocus,
     goToPreviousMonths,
     goToNextMonths,
+    goToPreviousYear,
+    goToNextYear,
   }
 }
