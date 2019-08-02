@@ -76,6 +76,129 @@ describe('useDatepicker', () => {
     clear()
   })
 
+  test('change years, numberOfMonts = 1', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: null,
+        onDatesChange: jest.fn(),
+        numberOfMonths: 1,
+      }),
+    )
+    expect(result.current.numberOfMonths).toBe(1)
+    expect(result.current.firstDayOfWeek).toBe(1)
+
+    // Check active months
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+
+    // next year
+    act(() => {
+      result.current.goToNextYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2020)
+    expect(result.current.activeMonths[0].month).toBe(2)
+
+    // next year
+    act(() => {
+      result.current.goToPreviousYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+
+    clear()
+  })
+
+  test('change years, numberOfMonts = 2', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: null,
+        onDatesChange: jest.fn(),
+        numberOfMonths: 2,
+      }),
+    )
+    expect(result.current.numberOfMonths).toBe(2)
+    expect(result.current.firstDayOfWeek).toBe(1)
+
+    // Check active months
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    // next year
+    act(() => {
+      result.current.goToNextYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2020)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2020)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    // next year
+    act(() => {
+      result.current.goToPreviousYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    clear()
+  })
+
+  test('change years, numberOfMonts = 3', () => {
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: null,
+        onDatesChange: jest.fn(),
+        numberOfMonths: 3,
+      }),
+    )
+    expect(result.current.numberOfMonths).toBe(3)
+    expect(result.current.firstDayOfWeek).toBe(1)
+
+    // Check active months
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+    expect(result.current.activeMonths[2].year).toBe(2019)
+    expect(result.current.activeMonths[2].month).toBe(4)
+
+    // next year
+    act(() => {
+      result.current.goToNextYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2020)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2020)
+    expect(result.current.activeMonths[1].month).toBe(3)
+    expect(result.current.activeMonths[2].year).toBe(2020)
+    expect(result.current.activeMonths[2].month).toBe(4)
+
+    // next year
+    act(() => {
+      result.current.goToPreviousYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+    expect(result.current.activeMonths[2].year).toBe(2019)
+    expect(result.current.activeMonths[2].month).toBe(4)
+
+    clear()
+  })
+
   test('should set focus state', () => {
     const date = new Date(2019, 2, 27, 0, 0, 0)
     advanceTo(date)

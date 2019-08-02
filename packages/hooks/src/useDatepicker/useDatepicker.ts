@@ -293,12 +293,12 @@ export function useDatepicker({
   }
 
   function goToPreviousYear() {
-    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -11))
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -(12 - numberOfMonths + 1)))
     setFocusedDate(null)
   }
 
   function goToNextYear() {
-    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 11))
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 12 - numberOfMonths + 1))
     setFocusedDate(null)
   }
 

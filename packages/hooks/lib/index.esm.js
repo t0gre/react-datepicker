@@ -911,10 +911,10 @@ function Be(e) {
         w(Fe(p, v, 1)), b(null)
       },
       goToPreviousYear: function() {
-        w(Fe(p, v, -11)), b(null)
+        w(Fe(p, v, -(12 - v + 1))), b(null)
       },
       goToNextYear: function() {
-        w(Fe(p, v, 11)), b(null)
+        w(Fe(p, v, 12 - v + 1)), b(null)
       },
     }
   )

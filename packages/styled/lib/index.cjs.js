@@ -919,10 +919,10 @@ function Be(e) {
         D(Fe(b, u, 1)), C(null)
       },
       goToPreviousYear: function() {
-        D(Fe(b, u, -11)), C(null)
+        D(Fe(b, u, -(12 - u + 1))), C(null)
       },
       goToNextYear: function() {
-        D(Fe(b, u, 11)), C(null)
+        D(Fe(b, u, 12 - u + 1)), C(null)
       },
     }
   )

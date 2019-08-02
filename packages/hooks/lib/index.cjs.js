@@ -956,10 +956,10 @@ function useDatepicker(e) {
         T(getNextActiveMonth(h, D, 1)), I(null)
       },
       goToPreviousYear: function() {
-        T(getNextActiveMonth(h, D, -11)), I(null)
+        T(getNextActiveMonth(h, D, -(12 - D + 1))), I(null)
       },
       goToNextYear: function() {
-        T(getNextActiveMonth(h, D, 11)), I(null)
+        T(getNextActiveMonth(h, D, 12 - D + 1)), I(null)
       },
     }
   )

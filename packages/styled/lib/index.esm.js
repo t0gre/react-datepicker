@@ -910,10 +910,10 @@ function xe(e) {
         x(De(b, m, 1)), W(null)
       },
       goToPreviousYear: function() {
-        x(De(b, m, -11)), W(null)
+        x(De(b, m, -(12 - m + 1))), W(null)
       },
       goToNextYear: function() {
-        x(De(b, m, 11)), W(null)
+        x(De(b, m, 12 - m + 1)), W(null)
       },
     }
   )
