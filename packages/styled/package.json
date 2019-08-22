@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@datepicker-react/hooks": "^1.7.1",
-    "styled-system": "^5.0.18"
+    "styled-system": "^5.1.1"
   },
   "publishConfig": {
     "access": "public"
