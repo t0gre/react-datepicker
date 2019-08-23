@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/tresko/react-datepicker/compare/v1.7.1...v2.0.0) (2019-08-23)
+
+
+### Features
+
+* **date-fns:** we update date-fns to version v2.0.0 ([38d961e](https://github.com/tresko/react-datepicker/commit/38d961e)), closes [#4](https://github.com/tresko/react-datepicker/issues/4)
+
+
+### BREAKING CHANGES
+
+* **date-fns:** date format, parseDate
+
+
+
+
+
 ## [1.7.1](https://github.com/tresko/react-datepicker/compare/v1.7.0...v1.7.1) (2019-08-02)
 
 
