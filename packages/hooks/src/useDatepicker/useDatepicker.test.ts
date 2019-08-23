@@ -1125,11 +1125,11 @@ describe('isDateBlocked', () => {
 describe('getInputValue', () => {
   test('should return formatted value', () => {
     const date = new Date(2019, 2, 10, 0, 0, 0)
-    expect(getInputValue(date, 'DD/MM/YYYY', 'default value')).toBe('10/03/2019')
-    expect(getInputValue(date, (date: Date) => format(date, 'YYYY'), 'default value')).toBe('2019')
+    expect(getInputValue(date, 'dd/MM/yyyy', 'default value')).toBe('10/03/2019')
+    expect(getInputValue(date, (date: Date) => format(date, 'yyyy'), 'default value')).toBe('2019')
   })
   test('should return default value', () => {
-    expect(getInputValue(null, 'DD/MM/YYYY', 'default value')).toBe('default value')
+    expect(getInputValue(null, 'dd/MM/yyyy', 'default value')).toBe('default value')
   })
 })
 

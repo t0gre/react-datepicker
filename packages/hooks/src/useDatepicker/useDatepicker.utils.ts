@@ -1,19 +1,19 @@
-import isWithinRange from 'date-fns/is_within_range'
-import isSameDay from 'date-fns/is_same_day'
-import eachDay from 'date-fns/each_day'
-import isBefore from 'date-fns/is_before'
-import isAfter from 'date-fns/is_after'
-import getYear from 'date-fns/get_year'
-import getMonth from 'date-fns/get_month'
-import startOfToday from 'date-fns/start_of_today'
-import startOfMonth from 'date-fns/start_of_month'
-import addMonths from 'date-fns/add_months'
+import isWithinRange from 'date-fns/isWithinInterval'
+import isSameDay from 'date-fns/isSameDay'
+import eachDay from 'date-fns/eachDayOfInterval'
+import isBefore from 'date-fns/isBefore'
+import isAfter from 'date-fns/isAfter'
+import getYear from 'date-fns/getYear'
+import getMonth from 'date-fns/getMonth'
+import startOfToday from 'date-fns/startOfToday'
+import startOfMonth from 'date-fns/startOfMonth'
+import addMonths from 'date-fns/addMonths'
 import format from 'date-fns/format'
-import addDays from 'date-fns/add_days'
+import addDays from 'date-fns/addDays'
 
 export function isDateSelected(date: Date, startDate: Date | null, endDate: Date | null) {
   if (startDate && endDate) {
-    return isWithinRange(date, startDate, endDate)
+    return isWithinRange(date, {start: startDate, end: endDate})
   }
 
   return false
@@ -72,7 +72,7 @@ export function isDateBlocked({
     (startDate &&
       !endDate &&
       minBookingDays > 1 &&
-      isWithinRange(date, startDate, addDays(startDate, minBookingDays - 2))) ||
+      isWithinRange(date, {start: startDate, end: addDays(startDate, minBookingDays - 2)})) ||
     (isDateBlockedFn && isDateBlockedFn(date))
   )
 }
@@ -185,7 +185,7 @@ export function canSelectRange({
       isStartDateBeforeOrEqualMaxDate) ||
     (startDate && minBookingDays > 0 && exactMinBookingDays && !minBookingDate && !maxBookingDate)
   ) {
-    return eachDay(startDate, addDays(startDate, minBookingDays - 1)).reduce(
+    return eachDay({start: startDate, end: addDays(startDate, minBookingDays - 1)}).reduce(
       (returnValue, date) => {
         if (!returnValue) return returnValue
 
@@ -200,7 +200,7 @@ export function canSelectRange({
       return false
     }
 
-    return eachDay(startDate, endDate).reduce((returnValue, date) => {
+    return eachDay({start: startDate, end: endDate}).reduce((returnValue, date) => {
       if (!returnValue) return returnValue
 
       return !isDateBlocked(date)
@@ -233,9 +233,9 @@ export function isDateHovered({
     hoveredDate &&
     minBookingDays > 1 &&
     exactMinBookingDays &&
-    isWithinRange(date, hoveredDate, addDays(hoveredDate, minBookingDays - 1))
+    isWithinRange(date, {start: hoveredDate, end: addDays(hoveredDate, minBookingDays - 1)})
   ) {
-    return eachDay(hoveredDate, addDays(hoveredDate, minBookingDays - 1)).reduce(
+    return eachDay({start: hoveredDate, end: addDays(hoveredDate, minBookingDays - 1)}).reduce(
       (returnValue, date) => {
         if (!returnValue) return returnValue
 
@@ -248,11 +248,11 @@ export function isDateHovered({
     startDate &&
     !endDate &&
     hoveredDate &&
-    isWithinRange(date, startDate, addDays(startDate, minBookingDays - 1)) &&
+    isWithinRange(date, {start: startDate, end: addDays(startDate, minBookingDays - 1)}) &&
     isSameDay(startDate, hoveredDate) &&
     minBookingDays > 1
   ) {
-    return eachDay(startDate, addDays(startDate, minBookingDays - 1)).reduce(
+    return eachDay({start: startDate, end: addDays(startDate, minBookingDays - 1)}).reduce(
       (returnValue, date) => {
         if (!returnValue) return returnValue
 
@@ -266,10 +266,10 @@ export function isDateHovered({
     !endDate &&
     hoveredDate &&
     !isBefore(hoveredDate, startDate) &&
-    isWithinRange(date, startDate, hoveredDate)
+    isWithinRange(date, {start: startDate, end: hoveredDate})
   ) {
     // @ts-ignore
-    return eachDay(startDate, hoveredDate).reduce((returnValue, date) => {
+    return eachDay({start: startDate, end: hoveredDate}).reduce((returnValue, date) => {
       if (!returnValue) return returnValue
 
       return !isDateBlocked(date)

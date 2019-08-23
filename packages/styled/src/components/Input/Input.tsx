@@ -242,7 +242,7 @@ function Input({
     ref.current = setTimeout(() => {
       onClick()
       // @ts-ignore
-      const parsedDate = parseDate(dateValue, dateFormat)
+      const parsedDate = parseDate(dateValue, dateFormat, new Date())
 
       // @ts-ignore
       if (!isNaN(parsedDate)) {

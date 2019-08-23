@@ -11,7 +11,8 @@
         "extensions": [".js", ".tsx", ".ts"]
       }
     ],
-    "import/no-unresolved": ["error", {"ignore": ["^react$", "csstype"]}]
+    "import/no-unresolved": ["error", {"ignore": ["^react$", "csstype"]}],
+    "@typescript-eslint/no-angle-bracket-type-assertion": 0
   },
   "settings": {
     "import/resolver": {

@@ -194,9 +194,9 @@ describe('useMonth', () => {
         year: 2019,
         month: 2,
         firstDayOfWeek: 6,
-        dayLabelFormat: (date: Date) => format(date, 'DD'),
-        weekdayLabelFormat: (date: Date) => format(date, 'dd'),
-        monthLabelFormat: (date: Date) => format(date, 'MMMM YYYY'),
+        dayLabelFormat: (date: Date) => format(date, 'dd'),
+        weekdayLabelFormat: (date: Date) => format(date, 'iiiiii'),
+        monthLabelFormat: (date: Date) => format(date, 'MMMM yyyy'),
       }),
     )
 

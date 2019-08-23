@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect} from 'react'
-import addDays from 'date-fns/add_days'
+import addDays from 'date-fns/addDays'
 
 interface UseDayProps {
   date: Date

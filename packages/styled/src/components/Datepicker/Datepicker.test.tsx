@@ -229,7 +229,7 @@ test('should execute onClose callback', () => {
       focusedInput={END_DATE}
       onDatesChange={onDatesChange}
       onClose={onClose}
-      displayFormat="DD.MM.YYYY"
+      displayFormat="dd.MM.yyyy"
       phrases={{
         datepickerStartDatePlaceholder: 'test',
         datepickerStartDateLabel: 'test',

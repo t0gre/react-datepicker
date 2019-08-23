@@ -9,7 +9,7 @@ import {
   weekdayLabelFormat as weekdayLabelFormatFn,
   monthLabelFormat as monthLabelFormatFn,
 } from '@datepicker-react/hooks'
-import slLocale from 'date-fns/locale/sl'
+import {es as locale} from 'date-fns/locale'
 import Flex from '../Flex'
 import {
   DateSingleInput,
@@ -54,7 +54,7 @@ interface AppProps {
 }
 
 function App({
-  displayFormat = 'MM/DD/YYYY',
+  displayFormat = 'MM/dd/yyyy',
   showClose = true,
   showResetDate = false,
   vertical = false,
@@ -73,7 +73,7 @@ function App({
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <div style={{width: '300px'}}>
+    <div style={{width: '350px'}}>
       <DateSingleInput
         minBookingDate={minBookingDate}
         maxBookingDate={maxBookingDate}
@@ -109,7 +109,7 @@ storiesOf('DateSingleInput', module)
       vertical={boolean('vertical', false)}
       showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
     />
   ))
   .add('Number of months (3 months)', () => (
@@ -118,7 +118,7 @@ storiesOf('DateSingleInput', module)
       vertical={boolean('vertical', false)}
       showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       numberOfMonths={3}
     />
   ))
@@ -128,7 +128,7 @@ storiesOf('DateSingleInput', module)
       vertical={boolean('vertical', false)}
       showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
     />
   ))
@@ -138,17 +138,17 @@ storiesOf('DateSingleInput', module)
       vertical={boolean('vertical', false)}
       showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       phrasesProp={{
-        datepickerStartDatePlaceholder: 'Izberi',
-        datepickerStartDateLabel: 'Začetni datum:',
-        datepickerEndDatePlaceholder: 'Izberi',
-        datepickerEndDateLabel: 'Končni datum:',
-        resetDates: 'Razveljavi',
-        dateAriaLabel: 'Izberite datum',
-        datePlaceholder: 'Izberite datum',
-        close: 'Zapri',
+        datepickerStartDatePlaceholder: 'Seleccionar',
+        datepickerStartDateLabel: 'Fecha de inicio:',
+        datepickerEndDatePlaceholder: 'Seleccionar',
+        datepickerEndDateLabel: 'Fecha de inicio:',
+        resetDates: 'Deshacer',
+        dateAriaLabel: 'Seleccione fecha',
+        datePlaceholder: 'Seleccione fecha',
+        close: 'Cerca',
       }}
     />
   ))
@@ -158,21 +158,21 @@ storiesOf('DateSingleInput', module)
       vertical={boolean('vertical', false)}
       showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       phrasesProp={{
-        datepickerStartDatePlaceholder: 'Izberi',
-        datepickerStartDateLabel: 'Začetni datum:',
-        datepickerEndDatePlaceholder: 'Izberi',
-        datepickerEndDateLabel: 'Končni datum:',
-        resetDates: 'Razveljavi',
-        dateAriaLabel: 'Izberite datum',
-        datePlaceholder: 'Izberite datum',
-        close: 'Zapri',
+        datepickerStartDatePlaceholder: 'Seleccionar',
+        datepickerStartDateLabel: 'Fecha de inicio:',
+        datepickerEndDatePlaceholder: 'Seleccionar',
+        datepickerEndDateLabel: 'Fecha de inicio:',
+        resetDates: 'Deshacer',
+        dateAriaLabel: 'Seleccione fecha',
+        datePlaceholder: 'Seleccione fecha',
+        close: 'Cerca',
       }}
-      dayLabelFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
-      weekdayLabelFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}
-      monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: slLocale})}
+      dayLabelFormat={(date: Date) => format(date, 'dd', {locale})}
+      weekdayLabelFormat={(date: Date) => format(date, 'eeeeee', {locale})}
+      monthLabelFormat={(date: Date) => format(date, 'MMMM yyyy', {locale})}
     />
   ))
   .add('Block date', () => (
@@ -181,7 +181,7 @@ storiesOf('DateSingleInput', module)
       vertical={boolean('vertical', false)}
       showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
     />
@@ -199,7 +199,7 @@ storiesOf('DateSingleInput', module)
         vertical={boolean('vertical', false)}
         showResetDate={boolean('showResetDate', true)}
         showClose={boolean('showClose', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
         firstDayOfWeek={0}
         isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
       />
@@ -220,7 +220,7 @@ storiesOf('DateSingleInput', module)
         vertical={boolean('vertical', false)}
         showResetDate={boolean('showResetDate', true)}
         showClose={boolean('showClose', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
         firstDayOfWeek={0}
         isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
       />
@@ -239,7 +239,7 @@ storiesOf('DateSingleInput', module)
         vertical={boolean('vertical', false)}
         showResetDate={boolean('showResetDate', true)}
         showClose={boolean('showClose', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
         onDayRender={(date: Date) => (
           <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
             {dayLabelFormatFn(date)}
@@ -268,7 +268,7 @@ storiesOf('DateSingleInput', module)
         vertical={boolean('vertical', false)}
         showResetDate={boolean('showResetDate', true)}
         showClose={boolean('showClose', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       />
     </ThemeProvider>
   ))

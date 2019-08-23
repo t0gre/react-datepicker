@@ -109,7 +109,7 @@ function DateSingleInput({
   isDateBlocked = () => false,
   onClose = () => {},
   showCalendarIcon = true,
-  displayFormat = 'MM/DD/YYYY',
+  displayFormat = 'MM/dd/yyyy',
   phrases = dateSingleInputPhrases,
   placement = 'bottom',
 }: DateRangeInputProps) {

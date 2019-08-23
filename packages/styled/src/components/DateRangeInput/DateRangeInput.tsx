@@ -149,7 +149,7 @@ function DateRangeInput({
   onClose = () => {},
   showStartDateCalendarIcon = true,
   showEndDateCalendarIcon = true,
-  displayFormat = 'MM/DD/YYYY',
+  displayFormat = 'MM/dd/yyyy',
   phrases = dateRangeInputPhrases,
   placement = 'bottom',
 }: DateRangeInputProps) {

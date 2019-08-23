@@ -166,7 +166,7 @@ function Datepicker(
     onClose = () => {},
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
-    displayFormat = 'MM/DD/YYYY',
+    displayFormat = 'MM/dd/yyyy',
     phrases = datepickerPhrases,
   }: DatepickerProps,
   ref?: React.Ref<unknown>,

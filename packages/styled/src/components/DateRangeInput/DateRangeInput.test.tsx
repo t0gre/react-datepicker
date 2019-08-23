@@ -254,7 +254,7 @@ test('should execute onClose callback', () => {
       onDatesChange={onDatesChange}
       onClose={onClose}
       onFocusChange={onFocusChange}
-      displayFormat="DD.MM.YYYY"
+      displayFormat="dd.MM.yyyy"
       phrases={{
         datepickerStartDatePlaceholder: 'test',
         datepickerStartDateLabel: 'test',
@@ -300,7 +300,7 @@ test('should not render calendar icons', () => {
       onDatesChange={onDatesChange}
       onClose={onClose}
       onFocusChange={onFocusChange}
-      displayFormat="DD.MM.YYYY"
+      displayFormat="dd.MM.yyyy"
       phrases={{
         datepickerStartDatePlaceholder: 'test',
         datepickerStartDateLabel: 'test',

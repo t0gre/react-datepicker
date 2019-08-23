@@ -9,7 +9,7 @@ import {
 import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import {text, boolean} from '@storybook/addon-knobs'
-import slLocale from 'date-fns/locale/sl'
+import {es as locale} from 'date-fns/locale'
 import {
   Datepicker,
   START_DATE,
@@ -114,7 +114,7 @@ storiesOf('Datepicker', module)
       showResetDates={boolean('showResetDates', true)}
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
     />
   ))
   .add('Minimum booking days (7 days)', () => (
@@ -125,7 +125,7 @@ storiesOf('Datepicker', module)
       showResetDates={boolean('showResetDates', true)}
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       minBookingDays={7}
     />
   ))
@@ -137,7 +137,7 @@ storiesOf('Datepicker', module)
       showResetDates={boolean('showResetDates', true)}
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       numberOfMonths={3}
     />
   ))
@@ -149,7 +149,7 @@ storiesOf('Datepicker', module)
       showResetDates={boolean('showResetDates', true)}
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
     />
   ))
@@ -161,15 +161,15 @@ storiesOf('Datepicker', module)
       showResetDates={boolean('showResetDates', true)}
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       phrasesProp={{
-        datepickerStartDatePlaceholder: 'Izberi',
-        datepickerStartDateLabel: 'Začetni datum:',
-        datepickerEndDatePlaceholder: 'Izberi',
-        datepickerEndDateLabel: 'Končni datum:',
-        resetDates: 'Razveljavi',
-        close: 'Zapri',
+        datepickerStartDatePlaceholder: 'Seleccionar',
+        datepickerStartDateLabel: 'Fecha de inicio:',
+        datepickerEndDatePlaceholder: 'Seleccionar',
+        datepickerEndDateLabel: 'Fecha final:',
+        resetDates: 'Deshacer',
+        close: 'Cerca',
       }}
     />
   ))
@@ -181,19 +181,19 @@ storiesOf('Datepicker', module)
       showResetDates={boolean('showResetDates', true)}
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       phrasesProp={{
-        datepickerStartDatePlaceholder: 'Izberi',
-        datepickerStartDateLabel: 'Začetni datum:',
-        datepickerEndDatePlaceholder: 'Izberi',
-        datepickerEndDateLabel: 'Končni datum:',
-        resetDates: 'Razveljavi',
-        close: 'Zapri',
+        datepickerStartDatePlaceholder: 'Seleccionar',
+        datepickerStartDateLabel: 'Fecha de inicio:',
+        datepickerEndDatePlaceholder: 'Seleccionar',
+        datepickerEndDateLabel: 'Fecha final:',
+        resetDates: 'Deshacer',
+        close: 'Cerca',
       }}
-      dayLabelFormat={(date: Date) => format(date, 'DD', {locale: slLocale})}
-      weekdayLabelFormat={(date: Date) => format(date, 'dd', {locale: slLocale})}
-      monthLabelFormat={(date: Date) => format(date, 'MMMM YYYY', {locale: slLocale})}
+      dayLabelFormat={(date: Date) => format(date, 'dd', {locale})}
+      weekdayLabelFormat={(date: Date) => format(date, 'eeeeee', {locale})}
+      monthLabelFormat={(date: Date) => format(date, 'MMMM yyyy', {locale})}
     />
   ))
   .add('Block date', () => (
@@ -204,7 +204,7 @@ storiesOf('Datepicker', module)
       showResetDates={boolean('showResetDates', true)}
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
-      displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
     />
@@ -224,7 +224,7 @@ storiesOf('Datepicker', module)
         showResetDates={boolean('showResetDates', true)}
         showClose={boolean('showClose', true)}
         showSelectedDates={boolean('showSelectedDates', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
         firstDayOfWeek={0}
         isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
       />
@@ -247,7 +247,7 @@ storiesOf('Datepicker', module)
         showResetDates={boolean('showResetDates', true)}
         showClose={boolean('showClose', true)}
         showSelectedDates={boolean('showSelectedDates', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
         firstDayOfWeek={0}
         isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
       />
@@ -268,7 +268,7 @@ storiesOf('Datepicker', module)
         showResetDates={boolean('showResetDates', true)}
         showClose={boolean('showClose', true)}
         showSelectedDates={boolean('showSelectedDates', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
         onDayRender={(date: Date) => (
           <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
             {dayLabelFormatFn(date)}
@@ -299,7 +299,7 @@ storiesOf('Datepicker', module)
         showResetDates={boolean('showResetDates', true)}
         showClose={boolean('showClose', true)}
         showSelectedDates={boolean('showSelectedDates', true)}
-        displayFormat={text('displayFormat', 'MM/DD/YYYY')}
+        displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       />
     </ThemeProvider>
   ))
