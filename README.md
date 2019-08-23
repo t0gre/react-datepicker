@@ -12,6 +12,12 @@
 
 ![example](./docs/datepicker.gif)
 
+## How to build your own datepicker?
+
+Simple. Use
+[React hooks (@datepicker-react/hooks)](https://github.com/tresko/react-datepicker/tree/master/packages/hooks).
+
+
 ## Live Playground
 
 For examples of the datepicker in action, go to https://react-datepicker.netlify.com/.
@@ -273,11 +279,6 @@ onDayRender?(date: Date): React.ReactNode
 
 - [See all theme props](./docs/THEME_PROPS.md)
 - [CodeSandbox example](https://codesandbox.io/s/theming-datepicker-reactstyled-42pdb?fontsize=14)
-
-## How to build your own datepicker?
-
-Simple. Use
-[React hooks (@datepicker-react/hooks)](https://github.com/tresko/react-datepicker/tree/master/packages/hooks).
 
 ## Who's using
 
