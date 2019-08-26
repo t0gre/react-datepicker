@@ -623,6 +623,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Mar 01 2019
@@ -637,6 +638,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Mar 02 2019
@@ -651,6 +653,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Mar 03 2019
@@ -665,6 +668,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Mar 04 2019
@@ -679,6 +683,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Mar 05 2019
@@ -693,6 +698,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Mar 06 2019
@@ -707,6 +713,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Mar 07 2019
@@ -721,6 +728,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Mar 08 2019
@@ -735,6 +743,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Mar 09 2019
@@ -749,6 +758,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Mar 10 2019
@@ -763,6 +773,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Mar 11 2019
@@ -777,6 +788,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Mar 12 2019
@@ -791,6 +803,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Mar 13 2019
@@ -805,6 +818,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Mar 14 2019
@@ -819,6 +833,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Mar 15 2019
@@ -833,6 +848,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Mar 16 2019
@@ -847,6 +863,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Mar 17 2019
@@ -861,6 +878,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Mar 18 2019
@@ -875,6 +893,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Mar 19 2019
@@ -889,6 +908,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Mar 20 2019
@@ -903,6 +923,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Mar 21 2019
@@ -917,6 +938,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Mar 22 2019
@@ -931,6 +953,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Mar 23 2019
@@ -945,6 +968,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Mar 24 2019
@@ -959,6 +983,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Mar 25 2019
@@ -973,6 +998,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Mar 26 2019
@@ -987,6 +1013,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Mar 27 2019
@@ -1001,6 +1028,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Mar 28 2019
@@ -1015,6 +1043,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Mar 29 2019
@@ -1029,6 +1058,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Mar 30 2019
@@ -1043,6 +1073,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Mar 31 2019
@@ -1181,6 +1212,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Apr 01 2019
@@ -1195,6 +1227,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Apr 02 2019
@@ -1209,6 +1242,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Apr 03 2019
@@ -1223,6 +1257,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Apr 04 2019
@@ -1237,6 +1272,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Apr 05 2019
@@ -1251,6 +1287,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Apr 06 2019
@@ -1265,6 +1302,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Apr 07 2019
@@ -1279,6 +1317,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Apr 08 2019
@@ -1293,6 +1332,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Apr 09 2019
@@ -1307,6 +1347,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Apr 10 2019
@@ -1321,6 +1362,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Apr 11 2019
@@ -1335,6 +1377,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Apr 12 2019
@@ -1349,6 +1392,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Apr 13 2019
@@ -1363,6 +1407,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Apr 14 2019
@@ -1377,6 +1422,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Apr 15 2019
@@ -1391,6 +1437,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Apr 16 2019
@@ -1405,6 +1452,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Apr 17 2019
@@ -1419,6 +1467,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Apr 18 2019
@@ -1433,6 +1482,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Apr 19 2019
@@ -1447,6 +1497,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Apr 20 2019
@@ -1461,6 +1512,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Apr 21 2019
@@ -1475,6 +1527,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Apr 22 2019
@@ -1489,6 +1542,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Apr 23 2019
@@ -1503,6 +1557,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Wed Apr 24 2019
@@ -1517,6 +1572,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Thu Apr 25 2019
@@ -1531,6 +1587,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Fri Apr 26 2019
@@ -1545,6 +1602,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sat Apr 27 2019
@@ -1559,6 +1617,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Sun Apr 28 2019
@@ -1573,6 +1632,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Mon Apr 29 2019
@@ -1587,6 +1647,7 @@ exports[`should custom render day 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div>
                   Tue Apr 30 2019
@@ -2347,6 +2408,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2365,6 +2427,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2383,6 +2446,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2401,6 +2465,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2419,6 +2484,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2437,6 +2503,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2455,6 +2522,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2473,6 +2541,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2491,6 +2560,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2509,6 +2579,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2527,6 +2598,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2545,6 +2617,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2563,6 +2636,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2581,6 +2655,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2599,6 +2674,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2617,6 +2693,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2635,6 +2712,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2653,6 +2731,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2671,6 +2750,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2689,6 +2769,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2707,6 +2788,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2725,6 +2807,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2743,6 +2826,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2761,6 +2845,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2779,6 +2864,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2797,6 +2883,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2815,6 +2902,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2833,6 +2921,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2851,6 +2940,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2869,6 +2959,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -2887,6 +2978,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3029,6 +3121,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3047,6 +3140,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3065,6 +3159,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3083,6 +3178,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3101,6 +3197,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3119,6 +3216,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3137,6 +3235,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3155,6 +3254,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3173,6 +3273,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3191,6 +3292,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3209,6 +3311,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3227,6 +3330,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3245,6 +3349,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3263,6 +3368,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3281,6 +3387,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3299,6 +3406,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3317,6 +3425,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3335,6 +3444,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3353,6 +3463,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3371,6 +3482,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3389,6 +3501,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3407,6 +3520,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3425,6 +3539,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3443,6 +3558,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3461,6 +3577,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3479,6 +3596,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3497,6 +3615,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3515,6 +3634,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3533,6 +3653,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -3551,6 +3672,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -4013,6 +4135,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4031,6 +4154,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4049,6 +4173,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4067,6 +4192,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4085,6 +4211,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4103,6 +4230,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4121,6 +4249,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4139,6 +4268,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4157,6 +4287,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4175,6 +4306,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4193,6 +4325,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4211,6 +4344,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4229,6 +4363,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4247,6 +4382,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4265,6 +4401,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4283,6 +4420,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4301,6 +4439,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4319,6 +4458,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4337,6 +4477,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4355,6 +4496,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4373,6 +4515,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4391,6 +4534,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4409,6 +4553,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4427,6 +4572,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4445,6 +4591,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4463,6 +4610,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4481,6 +4629,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4499,6 +4648,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4517,6 +4667,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4535,6 +4686,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4553,6 +4705,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4799,6 +4952,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4817,6 +4971,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4835,6 +4990,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4853,6 +5009,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4871,6 +5028,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4889,6 +5047,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4907,6 +5066,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4925,6 +5085,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4943,6 +5104,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4961,6 +5123,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4979,6 +5142,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -4997,6 +5161,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5015,6 +5180,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5033,6 +5199,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5051,6 +5218,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5069,6 +5237,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5087,6 +5256,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5105,6 +5275,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5123,6 +5294,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5141,6 +5313,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5159,6 +5332,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5177,6 +5351,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5195,6 +5370,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5213,6 +5389,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5231,6 +5408,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5249,6 +5427,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5267,6 +5446,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5285,6 +5465,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5303,6 +5484,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5321,6 +5503,7 @@ exports[`should go to next and previous month - vertical variant 2`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5785,6 +5968,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5803,6 +5987,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5821,6 +6006,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5839,6 +6025,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5857,6 +6044,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5875,6 +6063,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5893,6 +6082,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5911,6 +6101,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5929,6 +6120,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5947,6 +6139,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5965,6 +6158,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -5983,6 +6177,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6001,6 +6196,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6019,6 +6215,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6037,6 +6234,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6055,6 +6253,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6073,6 +6272,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6091,6 +6291,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6109,6 +6310,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6127,6 +6329,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6145,6 +6348,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6163,6 +6367,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6181,6 +6386,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6199,6 +6405,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6217,6 +6424,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6235,6 +6443,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6253,6 +6462,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6271,6 +6481,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6289,6 +6500,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6307,6 +6519,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6325,6 +6538,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6566,6 +6780,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6584,6 +6799,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6602,6 +6818,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6620,6 +6837,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6638,6 +6856,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6656,6 +6875,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6674,6 +6894,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6692,6 +6913,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6710,6 +6932,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6728,6 +6951,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6746,6 +6970,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6764,6 +6989,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6782,6 +7008,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6800,6 +7027,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6818,6 +7046,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6836,6 +7065,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6854,6 +7084,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6872,6 +7103,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6890,6 +7122,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6908,6 +7141,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6926,6 +7160,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6944,6 +7179,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6962,6 +7198,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6980,6 +7217,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -6998,6 +7236,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -7016,6 +7255,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -7034,6 +7274,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -7052,6 +7293,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -7070,6 +7312,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -7088,6 +7331,7 @@ exports[`should go to next and previous month - vertical variant 3`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c7"
@@ -7857,6 +8101,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -7875,6 +8120,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -7893,6 +8139,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -7911,6 +8158,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -7929,6 +8177,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -7947,6 +8196,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -7965,6 +8215,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -7983,6 +8234,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8001,6 +8253,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8019,6 +8272,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8037,6 +8291,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8055,6 +8310,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8073,6 +8329,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8091,6 +8348,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8109,6 +8367,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8127,6 +8386,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8145,6 +8405,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8163,6 +8424,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8181,6 +8443,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8199,6 +8462,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8217,6 +8481,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8235,6 +8500,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8253,6 +8519,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8271,6 +8538,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8289,6 +8557,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8307,6 +8576,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8325,6 +8595,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8343,6 +8614,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8361,6 +8633,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8379,6 +8652,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8397,6 +8671,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8540,6 +8815,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8558,6 +8834,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8576,6 +8853,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8594,6 +8872,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8612,6 +8891,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8630,6 +8910,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8648,6 +8929,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8666,6 +8948,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8684,6 +8967,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8702,6 +8986,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8720,6 +9005,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8738,6 +9024,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8756,6 +9043,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8774,6 +9062,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8792,6 +9081,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8810,6 +9100,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8828,6 +9119,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8846,6 +9138,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8864,6 +9157,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8882,6 +9176,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8900,6 +9195,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8918,6 +9214,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8936,6 +9233,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8954,6 +9252,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8972,6 +9271,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -8990,6 +9290,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9008,6 +9309,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9026,6 +9328,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9044,6 +9347,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9062,6 +9366,7 @@ exports[`should have empty end date and focused end date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9810,6 +10115,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9828,6 +10134,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9846,6 +10153,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9864,6 +10172,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9882,6 +10191,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9900,6 +10210,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9918,6 +10229,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9936,6 +10248,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9954,6 +10267,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9972,6 +10286,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -9990,6 +10305,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10008,6 +10324,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10026,6 +10343,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10044,6 +10362,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10062,6 +10381,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10080,6 +10400,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10098,6 +10419,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10116,6 +10438,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10134,6 +10457,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10152,6 +10476,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10170,6 +10495,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10188,6 +10514,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10206,6 +10533,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10224,6 +10552,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10242,6 +10571,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10260,6 +10590,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10278,6 +10609,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10296,6 +10628,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10314,6 +10647,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10332,6 +10666,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10350,6 +10685,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10492,6 +10828,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10510,6 +10847,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10528,6 +10866,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10546,6 +10885,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10564,6 +10904,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10582,6 +10923,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10600,6 +10942,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10618,6 +10961,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10636,6 +10980,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10654,6 +10999,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10672,6 +11018,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10690,6 +11037,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10708,6 +11056,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10726,6 +11075,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10744,6 +11094,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10762,6 +11113,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10780,6 +11132,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10798,6 +11151,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10816,6 +11170,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10834,6 +11189,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10852,6 +11208,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10870,6 +11227,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10888,6 +11246,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10906,6 +11265,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10924,6 +11284,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10942,6 +11303,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10960,6 +11322,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10978,6 +11341,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -10996,6 +11360,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11014,6 +11379,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11762,6 +12128,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11780,6 +12147,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11798,6 +12166,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11816,6 +12185,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11834,6 +12204,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11852,6 +12223,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11870,6 +12242,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11888,6 +12261,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11906,6 +12280,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11924,6 +12299,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11942,6 +12318,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11960,6 +12337,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11978,6 +12356,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -11996,6 +12375,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12014,6 +12394,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12032,6 +12413,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12050,6 +12432,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12068,6 +12451,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12086,6 +12470,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12104,6 +12489,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12122,6 +12508,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12140,6 +12527,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12158,6 +12546,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12176,6 +12565,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12194,6 +12584,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12212,6 +12603,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12230,6 +12622,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12248,6 +12641,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12266,6 +12660,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12284,6 +12679,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12302,6 +12698,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12444,6 +12841,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12462,6 +12860,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12480,6 +12879,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12498,6 +12898,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12516,6 +12917,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12534,6 +12936,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12552,6 +12955,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12570,6 +12974,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12588,6 +12993,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12606,6 +13012,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12624,6 +13031,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12642,6 +13050,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12660,6 +13069,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12678,6 +13088,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12696,6 +13107,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12714,6 +13126,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12732,6 +13145,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12750,6 +13164,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12768,6 +13183,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12786,6 +13202,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12804,6 +13221,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12822,6 +13240,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12840,6 +13259,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12858,6 +13278,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12876,6 +13297,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12894,6 +13316,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12912,6 +13335,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12930,6 +13354,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12948,6 +13373,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -12966,6 +13392,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -13331,6 +13758,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13349,6 +13777,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13367,6 +13796,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13385,6 +13815,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13403,6 +13834,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13421,6 +13853,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13439,6 +13872,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13457,6 +13891,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13475,6 +13910,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13493,6 +13929,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13511,6 +13948,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13529,6 +13967,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13547,6 +13986,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13565,6 +14005,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13583,6 +14024,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13601,6 +14043,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13619,6 +14062,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13637,6 +14081,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13655,6 +14100,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13673,6 +14119,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13691,6 +14138,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13709,6 +14157,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13727,6 +14176,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13745,6 +14195,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13763,6 +14214,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13781,6 +14233,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13799,6 +14252,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13817,6 +14271,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13835,6 +14290,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13853,6 +14309,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -13871,6 +14328,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14013,6 +14471,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14031,6 +14490,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14049,6 +14509,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14067,6 +14528,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14085,6 +14547,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14103,6 +14566,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14121,6 +14585,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14139,6 +14604,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14157,6 +14623,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14175,6 +14642,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14193,6 +14661,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14211,6 +14680,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14229,6 +14699,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14247,6 +14718,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14265,6 +14737,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14283,6 +14756,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14301,6 +14775,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14319,6 +14794,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14337,6 +14813,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14355,6 +14832,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14373,6 +14851,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14391,6 +14870,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14409,6 +14889,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14427,6 +14908,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14445,6 +14927,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14463,6 +14946,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14481,6 +14965,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14499,6 +14984,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14517,6 +15003,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14535,6 +15022,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14900,6 +15388,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14918,6 +15407,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14936,6 +15426,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14954,6 +15445,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14972,6 +15464,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -14990,6 +15483,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15008,6 +15502,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15026,6 +15521,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15044,6 +15540,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15062,6 +15559,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15080,6 +15578,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15098,6 +15597,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15116,6 +15616,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15134,6 +15635,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15152,6 +15654,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15170,6 +15673,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15188,6 +15692,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15206,6 +15711,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15224,6 +15730,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15242,6 +15749,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15260,6 +15768,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15278,6 +15787,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15296,6 +15806,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15314,6 +15825,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15332,6 +15844,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15350,6 +15863,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15368,6 +15882,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15386,6 +15901,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15404,6 +15920,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15422,6 +15939,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15440,6 +15958,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15582,6 +16101,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15600,6 +16120,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15618,6 +16139,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15636,6 +16158,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15654,6 +16177,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15672,6 +16196,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15690,6 +16215,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15708,6 +16234,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15726,6 +16253,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15744,6 +16272,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15762,6 +16291,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15780,6 +16310,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15798,6 +16329,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15816,6 +16348,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15834,6 +16367,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15852,6 +16386,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15870,6 +16405,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15888,6 +16424,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15906,6 +16443,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15924,6 +16462,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15942,6 +16481,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15960,6 +16500,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15978,6 +16519,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -15996,6 +16538,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -16014,6 +16557,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -16032,6 +16576,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -16050,6 +16595,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -16068,6 +16614,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -16086,6 +16633,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -16104,6 +16652,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="sc-ifAKCX fOOfzd"
@@ -16868,6 +17417,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -16886,6 +17436,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -16904,6 +17455,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -16922,6 +17474,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -16940,6 +17493,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -16958,6 +17512,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -16976,6 +17531,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -16994,6 +17550,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17012,6 +17569,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17030,6 +17588,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17048,6 +17607,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17066,6 +17626,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17084,6 +17645,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17102,6 +17664,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17120,6 +17683,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17138,6 +17702,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17156,6 +17721,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17174,6 +17740,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17192,6 +17759,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17210,6 +17778,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17228,6 +17797,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17246,6 +17816,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17264,6 +17835,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17282,6 +17854,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17300,6 +17873,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17318,6 +17892,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17336,6 +17911,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17354,6 +17930,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17372,6 +17949,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17390,6 +17968,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17408,6 +17987,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17550,6 +18130,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17568,6 +18149,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17586,6 +18168,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17604,6 +18187,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17622,6 +18206,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17640,6 +18225,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17658,6 +18244,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17676,6 +18263,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17694,6 +18282,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17712,6 +18301,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17730,6 +18320,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17748,6 +18339,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17766,6 +18358,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17784,6 +18377,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17802,6 +18396,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17820,6 +18415,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17838,6 +18434,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17856,6 +18453,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17874,6 +18472,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17892,6 +18491,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17910,6 +18510,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17928,6 +18529,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17946,6 +18548,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17964,6 +18567,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -17982,6 +18586,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18000,6 +18605,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18018,6 +18624,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18036,6 +18643,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18054,6 +18662,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18072,6 +18681,7 @@ exports[`should render vertical datepicker 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18820,6 +19430,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18838,6 +19449,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18856,6 +19468,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18874,6 +19487,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18892,6 +19506,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18910,6 +19525,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18928,6 +19544,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18946,6 +19563,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18964,6 +19582,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -18982,6 +19601,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19000,6 +19620,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19018,6 +19639,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19036,6 +19658,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19054,6 +19677,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19072,6 +19696,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19090,6 +19715,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19108,6 +19734,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19126,6 +19753,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19144,6 +19772,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19162,6 +19791,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19180,6 +19810,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19198,6 +19829,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19216,6 +19848,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19234,6 +19867,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19252,6 +19886,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19270,6 +19905,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19288,6 +19924,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19306,6 +19943,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19324,6 +19962,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19342,6 +19981,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19360,6 +20000,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19502,6 +20143,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19520,6 +20162,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19538,6 +20181,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19556,6 +20200,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19574,6 +20219,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19592,6 +20238,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19610,6 +20257,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19628,6 +20276,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19646,6 +20295,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19664,6 +20314,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19682,6 +20333,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19700,6 +20352,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19718,6 +20371,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19736,6 +20390,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19754,6 +20409,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19772,6 +20428,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19790,6 +20447,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19808,6 +20466,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19826,6 +20485,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19844,6 +20504,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19862,6 +20523,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19880,6 +20542,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19898,6 +20561,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19916,6 +20580,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19934,6 +20599,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19952,6 +20618,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19970,6 +20637,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -19988,6 +20656,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -20006,6 +20675,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
@@ -20024,6 +20694,7 @@ exports[`should select exact range 1`] = `
                 font-size="14px"
                 font-weight="500"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="c22"
