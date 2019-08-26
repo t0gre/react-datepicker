@@ -53,6 +53,7 @@ exports[`should render active day 1`] = `
     font-size="14px"
     font-weight="500"
     tabindex="0"
+    type="button"
   >
     <div
       class="c1"
@@ -115,6 +116,7 @@ exports[`should render disabled day 1`] = `
     font-size="14px"
     font-weight="500"
     tabindex="0"
+    type="button"
   >
     <div
       class="c1"
@@ -175,6 +177,7 @@ exports[`should render first or last active day 1`] = `
     font-size="14px"
     font-weight="500"
     tabindex="0"
+    type="button"
   >
     <div
       class="c1"
@@ -240,6 +243,7 @@ exports[`should render normal day 1`] = `
     font-size="14px"
     font-weight="500"
     tabindex="0"
+    type="button"
   >
     <div
       class="c1"
