@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/tresko/react-datepicker/compare/v2.0.0...v2.0.1) (2019-08-26)
+
+**Note:** Version bump only for package @datepicker-react/hooks
+
+
+
+
+
 # [2.0.0](https://github.com/tresko/react-datepicker/compare/v1.7.1...v2.0.0) (2019-08-23)
 
 
