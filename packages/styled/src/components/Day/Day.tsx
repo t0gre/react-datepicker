@@ -349,6 +349,7 @@ function Day({day, date}: DayProps) {
         0 1px 0 0 ${borderColor} inset`}
       data-testid="Day"
       aria-label={`Day-${date.toDateString()}`}
+      type="button"
     >
       {typeof onDayRender === 'function' ? (
         onDayRender(date)
