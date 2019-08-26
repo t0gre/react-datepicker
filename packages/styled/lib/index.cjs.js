@@ -4275,6 +4275,7 @@ function Day(e) {
         ' inset',
       'data-testid': 'Day',
       'aria-label': 'Day-' + r.toDateString(),
+      type: 'button',
     }),
     'function' == typeof f
       ? f(r)

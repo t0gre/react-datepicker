@@ -4133,6 +4133,7 @@ function Sn(r) {
         ' inset',
       'data-testid': 'Day',
       'aria-label': 'Day-' + d.toDateString(),
+      type: 'button',
     }),
     'function' == typeof D
       ? D(d)
