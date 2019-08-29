@@ -200,6 +200,76 @@ describe('useMonth', () => {
     expect(result.current.weekdayLabels[6]).toBe('Fr')
   })
 
+  test('should return days for september 2019', () => {
+    const {result} = renderHook(() => useMonth({year: 2019, month: 8}))
+
+    // Days
+    expect(result.current.days.length).toBe(36)
+    expect(typeof result.current.days[0]).toBe('number')
+    expect(typeof result.current.days[1]).toBe('number')
+    expect(typeof result.current.days[2]).toBe('number')
+    expect(typeof result.current.days[3]).toBe('number')
+    expect(typeof result.current.days[4]).toBe('number')
+    expect(typeof result.current.days[5]).toBe('number')
+    // @ts-ignore
+    expect(result.current.days[6].dayLabel).toBe('01')
+    // @ts-ignore
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('30')
+
+    // Week days
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Mo')
+    expect(result.current.weekdayLabels[6]).toBe('Su')
+
+    // Month Label
+    expect(result.current.monthLabel).toBe('September 2019')
+  })
+
+  test('should return days for september 2019 start with wednesday', () => {
+    const {result} = renderHook(() => useMonth({year: 2019, month: 8, firstDayOfWeek: 3}))
+
+    // Days
+    expect(result.current.days.length).toBe(34)
+    expect(typeof result.current.days[0]).toBe('number')
+    expect(typeof result.current.days[1]).toBe('number')
+    expect(typeof result.current.days[2]).toBe('number')
+    expect(typeof result.current.days[3]).toBe('number')
+    // @ts-ignore
+    expect(result.current.days[4].dayLabel).toBe('01')
+    // @ts-ignore
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('30')
+
+    // Week days
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('We')
+    expect(result.current.weekdayLabels[6]).toBe('Tu')
+
+    // Month Label
+    expect(result.current.monthLabel).toBe('September 2019')
+  })
+
+  test('should return days for october 2019 start with friday', () => {
+    const {result} = renderHook(() => useMonth({year: 2019, month: 9, firstDayOfWeek: 5}))
+    // Days
+    expect(result.current.days.length).toBe(35)
+    expect(typeof result.current.days[0]).toBe('number')
+    expect(typeof result.current.days[1]).toBe('number')
+    expect(typeof result.current.days[2]).toBe('number')
+    expect(typeof result.current.days[3]).toBe('number')
+    // @ts-ignore
+    expect(result.current.days[4].dayLabel).toBe('01')
+    // @ts-ignore
+    expect(result.current.days[result.current.days.length - 1].dayLabel).toBe('31')
+
+    // Week days
+    expect(result.current.weekdayLabels.length).toBe(7)
+    expect(result.current.weekdayLabels[0]).toBe('Fr')
+    expect(result.current.weekdayLabels[6]).toBe('Th')
+
+    // Month Label
+    expect(result.current.monthLabel).toBe('October 2019')
+  })
+
   test('should return right formats', () => {
     const {result} = renderHook(() =>
       useMonth({
