@@ -50,7 +50,11 @@ export function getDays({
   const monthEnd = endOfMonth(date)
 
   const prevMonthDays = Array.from(
-    Array(monthStartDay >= firstDayOfWeek ? monthStartDay - firstDayOfWeek : firstDayOfWeek).keys(),
+    Array(
+      monthStartDay >= firstDayOfWeek
+        ? monthStartDay - firstDayOfWeek
+        : 6 - firstDayOfWeek + monthStartDay + 1,
+    ).keys(),
   ).fill(0)
   const days = eachDay({start: monthStart, end: monthEnd}).map(date => ({
     date,

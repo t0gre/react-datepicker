@@ -2304,7 +2304,7 @@ function It(e) {
         r = t.getMonth()
       return t.setFullYear(t.getFullYear(), r + 1, 0), t.setHours(23, 59, 59, 999), t
     })(s),
-    u = Array.from(Array(c >= n ? c - n : n).keys()).fill(0),
+    u = Array.from(Array(c >= n ? c - n : 6 - n + c + 1).keys()).fill(0),
     p = Lt({start: l, end: d}).map(function(e) {
       return {date: e, dayLabel: i(e)}
     })

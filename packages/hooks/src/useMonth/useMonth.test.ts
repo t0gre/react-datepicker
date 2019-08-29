@@ -64,6 +64,18 @@ describe('getDays', () => {
     expect(result.current[result.current.length - 1].dayLabel).toBe('31')
   })
 
+  test('should return days for september 2019', () => {
+    const {result} = renderHook(() => getDays({year: 2019, month: 8}))
+    expect(result.current.length).toBe(36)
+    expect(typeof result.current[0]).toBe('number')
+    expect(typeof result.current[5]).toBe('number')
+    expect(typeof result.current[6]).toBe('object')
+    // @ts-ignore
+    expect(result.current[6].dayLabel).toBe('01')
+    // @ts-ignore
+    expect(result.current[result.current.length - 1].dayLabel).toBe('30')
+  })
+
   test('should return days for march 2019 start with sunday', () => {
     const {result} = renderHook(() => getDays({year: 2019, month: 2, firstDayOfWeek: 0}))
     expect(result.current.length).toBe(36)

@@ -2200,7 +2200,7 @@ function Oe(e) {
                 r = t.getMonth()
               return t.setFullYear(t.getFullYear(), r + 1, 0), t.setHours(23, 59, 59, 999), t
             })(s),
-            u = Array.from(Array(c >= a ? c - a : a).keys()).fill(0),
+            u = Array.from(Array(c >= a ? c - a : 6 - a + c + 1).keys()).fill(0),
             p = Me({start: d, end: l}).map(function(e) {
               return {date: e, dayLabel: i(e)}
             })

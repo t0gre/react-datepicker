@@ -2359,7 +2359,7 @@ function getDays(e) {
     u = startOfMonth(s),
     d = getDay(u),
     c = endOfMonth(s),
-    l = Array.from(Array(d >= a ? d - a : a).keys()).fill(0),
+    l = Array.from(Array(d >= a ? d - a : 6 - a + d + 1).keys()).fill(0),
     f = eachDayOfInterval({start: u, end: c}).map(function(e) {
       return {date: e, dayLabel: o(e)}
     })
