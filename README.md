@@ -27,7 +27,7 @@ OR
 To run that demo on your own computer:
 
 - Clone this repository
-- `yarn install && bootstrap`
+- `yarn install && yarn bootstrap`
 - `yarn storybook`
 - Visit http://localhost:6006/
 
