@@ -5,6 +5,8 @@ import {
   FormatFunction,
   getInputValue,
   OnDatesChangeProps,
+  FirstDayOfWeek,
+  MonthType,
 } from '@datepicker-react/hooks'
 import {dateSingleInputPhrases, DateSingleInputPhrases} from '../../phrases'
 import Box from '../Box'
@@ -13,7 +15,6 @@ import Datepicker from '../Datepicker'
 // eslint-disable-next-line import/no-unresolved
 import {DateSingleInputTheme} from '../../@types/theme'
 import useThemeProps from '../../hooks/useThemeProps'
-import {FirstDayOfWeek, MonthType} from '@datepicker-react/hooks/src'
 
 interface RtlProps {
   rtl: boolean
