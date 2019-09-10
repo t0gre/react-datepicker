@@ -1,7 +1,6 @@
 import React from 'react'
-import {FormatFunction} from '@datepicker-react/hooks'
+import {FormatFunction, FirstDayOfWeek, MonthType} from '@datepicker-react/hooks'
 import {DateSingleInputPhrases} from '../../phrases'
-import {FirstDayOfWeek, MonthType} from '@datepicker-react/hooks/src'
 export interface OnDateChangeProps {
   date: Date | null
   showDatepicker: boolean
