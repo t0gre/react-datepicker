@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react'
-import styled, {css} from 'styled-components'
+import styled, {css, ThemeProvider} from 'styled-components'
 import {
   START_DATE,
   FormatFunction,
@@ -165,59 +165,61 @@ function DateSingleInput({
   }
 
   return (
-    <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
-      <Input
-        id="startDate"
-        ariaLabel={phrases.dateAriaLabel}
-        placeholder={phrases.datePlaceholder}
-        value={getInputValue(date, displayFormat, '')}
-        onClick={() => onFocusChange(true)}
-        showCalendarIcon={showCalendarIcon}
-        vertical={vertical}
-        isActive={false}
-        padding={theme.dateSingleInputPadding}
-        rtl={rtl}
-        onChange={handleInputChange}
-        // @ts-ignore
-        dateFormat={displayFormat}
-      />
-      <Box
-        position={theme.dateSingleDatepickerWrapperPosition}
-        bottom={theme.dateSingleDatepickerWrapperBottom}
-        left={theme.dateSingleDatepickerWrapperLeft}
-        top={theme.dateSingleDatepickerWrapperTop}
-        right={theme.dateSingleDatepickerWrapperRight}
-      >
-        {showDatepicker && (
-          <Datepicker
-            exactMinBookingDays
-            minBookingDays={1}
-            onClose={handleDatepickerClose}
-            startDate={date}
-            endDate={date}
-            minBookingDate={minBookingDate}
-            maxBookingDate={maxBookingDate}
-            firstDayOfWeek={firstDayOfWeek}
-            numberOfMonths={numberOfMonths}
-            focusedInput={showDatepicker ? START_DATE : null}
-            displayFormat={displayFormat}
-            onDatesChange={onDatesChange}
-            isDateBlocked={isDateBlocked}
-            showResetDates={showResetDate}
-            vertical={vertical}
-            showSelectedDates={false}
-            showClose={showClose}
-            rtl={rtl}
-            dayLabelFormat={dayLabelFormat}
-            weekdayLabelFormat={weekdayLabelFormat}
-            monthLabelFormat={monthLabelFormat}
-            onDayRender={onDayRender}
-            phrases={phrases}
-            ref={ref}
-          />
-        )}
-      </Box>
-    </Wrapper>
+    <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
+      <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
+        <Input
+          id="startDate"
+          ariaLabel={phrases.dateAriaLabel}
+          placeholder={phrases.datePlaceholder}
+          value={getInputValue(date, displayFormat, '')}
+          onClick={() => onFocusChange(true)}
+          showCalendarIcon={showCalendarIcon}
+          vertical={vertical}
+          isActive={false}
+          padding={theme.dateSingleInputPadding}
+          rtl={rtl}
+          onChange={handleInputChange}
+          // @ts-ignore
+          dateFormat={displayFormat}
+        />
+        <Box
+          position={theme.dateSingleDatepickerWrapperPosition}
+          bottom={theme.dateSingleDatepickerWrapperBottom}
+          left={theme.dateSingleDatepickerWrapperLeft}
+          top={theme.dateSingleDatepickerWrapperTop}
+          right={theme.dateSingleDatepickerWrapperRight}
+        >
+          {showDatepicker && (
+            <Datepicker
+              exactMinBookingDays
+              minBookingDays={1}
+              onClose={handleDatepickerClose}
+              startDate={date}
+              endDate={date}
+              minBookingDate={minBookingDate}
+              maxBookingDate={maxBookingDate}
+              firstDayOfWeek={firstDayOfWeek}
+              numberOfMonths={numberOfMonths}
+              focusedInput={showDatepicker ? START_DATE : null}
+              displayFormat={displayFormat}
+              onDatesChange={onDatesChange}
+              isDateBlocked={isDateBlocked}
+              showResetDates={showResetDate}
+              vertical={vertical}
+              showSelectedDates={false}
+              showClose={showClose}
+              rtl={rtl}
+              dayLabelFormat={dayLabelFormat}
+              weekdayLabelFormat={weekdayLabelFormat}
+              monthLabelFormat={monthLabelFormat}
+              onDayRender={onDayRender}
+              phrases={phrases}
+              ref={ref}
+            />
+          )}
+        </Box>
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 

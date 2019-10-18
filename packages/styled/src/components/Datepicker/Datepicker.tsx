@@ -1,5 +1,5 @@
 import React, {useRef, useContext, useImperativeHandle} from 'react'
-import styled, {css, keyframes, ThemeContext} from 'styled-components'
+import styled, {css, keyframes, ThemeContext, ThemeProvider} from 'styled-components'
 import {
   background,
   BackgroundProps,
@@ -267,149 +267,151 @@ function Datepicker(
   }
 
   return (
-    <DatepickerContext.Provider
-      value={{
-        rtl,
-        isDateFocused,
-        isDateSelected,
-        isDateHovered,
-        isFirstOrLastSelectedDate,
-        onDateFocus,
-        focusedDate,
-        onDateSelect,
-        onDateHover,
-        onDayRender,
-        isDateBlocked: isDateBlockedFn,
-      }}
-    >
-      <StyledDatepicker
-        background={theme.datepickerBackground}
-        p={theme.datepickerPadding}
-        borderRadius={theme.datepickerBorderRadius}
-        position={theme.datepickerPosition}
-        boxShadow={theme.datepickerBoxShadow}
-        width={theme.datepickerWidth}
-        rtl={rtl}
+    <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
+      <DatepickerContext.Provider
+        value={{
+          rtl,
+          isDateFocused,
+          isDateSelected,
+          isDateHovered,
+          isFirstOrLastSelectedDate,
+          onDateFocus,
+          focusedDate,
+          onDateSelect,
+          onDateHover,
+          onDayRender,
+          isDateBlocked: isDateBlockedFn,
+        }}
       >
-        {showClose && (
-          <CloseWrapper
-            m={theme.datepickerCloseWrapperMargin}
-            display={theme.datepickerCloseWrapperDisplay}
-            justifyContent={theme.datepickerCloseWrapperJustifyContent}
-            position={theme.datepickerCloseWrapperPosition}
-            right={theme.datepickerCloseWrapperRight}
-            top={theme.datepickerCloseWrapperTop}
-            left={theme.datepickerCloseWrapperLeft}
-            bottom={theme.datepickerCloseWrapperBottom}
-            zIndex={theme.datepickerCloseWrapperZIndex}
-          >
-            <Close onClick={onClose} rtl={rtl} closeText={phrases.close} />
-          </CloseWrapper>
-        )}
-
-        {showSelectedDates && (
-          <DateWrapper>
-            <Grid gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}>
-              <SelectedDate
-                title={phrases.datepickerStartDateLabel}
-                date={getInputValue(
-                  startDate,
-                  displayFormat,
-                  phrases.datepickerStartDatePlaceholder,
-                )}
-                isActive={focusedInput === START_DATE}
-                vertical={vertical}
-              />
-              <Flex justifyContent="center" alignItems="center">
-                <ArrowIcon
-                  // @ts-ignore
-                  height={theme.datepickerSelectDateArrowIconHeight}
-                  // @ts-ignore
-                  width={theme.datepickerSelectDateArrowIconWidth}
-                  // @ts-ignore
-                  iconColor={theme.datepickerSelectDateArrowIconColor}
-                />
-              </Flex>
-              <SelectedDate
-                title={phrases.datepickerEndDateLabel}
-                date={getInputValue(endDate, displayFormat, phrases.datepickerEndDatePlaceholder)}
-                isActive={focusedInput === END_DATE}
-                vertical={vertical}
-              />
-            </Grid>
-          </DateWrapper>
-        )}
-        <Box position="relative">
-          <Box m={theme.datepickerMonthsWrapperMargin}>
-            <MonthGrid
-              data-testid="MonthGrid"
-              overflow={theme.datepickerMonthsGridOverflow}
-              height={theme.datepickerMonthsGridHeight}
-              gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
-              gridGap={theme.datepickerMonthsGridGap}
-              pr={rtl ? '1px' : '0'}
-              ref={monthGridRef}
-              onMouseLeave={() => {
-                if (hoveredDate) {
-                  onDateHover(null)
-                }
-              }}
+        <StyledDatepicker
+          background={theme.datepickerBackground}
+          p={theme.datepickerPadding}
+          borderRadius={theme.datepickerBorderRadius}
+          position={theme.datepickerPosition}
+          boxShadow={theme.datepickerBoxShadow}
+          width={theme.datepickerWidth}
+          rtl={rtl}
+        >
+          {showClose && (
+            <CloseWrapper
+              m={theme.datepickerCloseWrapperMargin}
+              display={theme.datepickerCloseWrapperDisplay}
+              justifyContent={theme.datepickerCloseWrapperJustifyContent}
+              position={theme.datepickerCloseWrapperPosition}
+              right={theme.datepickerCloseWrapperRight}
+              top={theme.datepickerCloseWrapperTop}
+              left={theme.datepickerCloseWrapperLeft}
+              bottom={theme.datepickerCloseWrapperBottom}
+              zIndex={theme.datepickerCloseWrapperZIndex}
             >
-              {activeMonths.map((month: MonthType) => (
-                <Month
-                  key={`month-${month.year}-${month.month}`}
-                  year={month.year}
-                  month={month.month}
-                  firstDayOfWeek={firstDayOfWeek}
-                  dayLabelFormat={dayLabelFormat || dayLabelFormatFn}
-                  weekdayLabelFormat={weekdayLabelFormat || weekdayLabelFormatFn}
-                  monthLabelFormat={monthLabelFormat || monthLabelFormatFn}
+              <Close onClick={onClose} rtl={rtl} closeText={phrases.close} />
+            </CloseWrapper>
+          )}
+
+          {showSelectedDates && (
+            <DateWrapper>
+              <Grid gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}>
+                <SelectedDate
+                  title={phrases.datepickerStartDateLabel}
+                  date={getInputValue(
+                    startDate,
+                    displayFormat,
+                    phrases.datepickerStartDatePlaceholder,
+                  )}
+                  isActive={focusedInput === START_DATE}
+                  vertical={vertical}
                 />
-              ))}
-            </MonthGrid>
-          </Box>
-          <Flex alignItems="center">
-            <>
-              {showResetDates && (
-                <Flex flex="1" m={theme.datepickerResetDatesWrapperMargin}>
-                  <ResetDates rtl={rtl} onResetDates={onResetDates} text={phrases.resetDates} />
+                <Flex justifyContent="center" alignItems="center">
+                  <ArrowIcon
+                    // @ts-ignore
+                    height={theme.datepickerSelectDateArrowIconHeight}
+                    // @ts-ignore
+                    width={theme.datepickerSelectDateArrowIconWidth}
+                    // @ts-ignore
+                    iconColor={theme.datepickerSelectDateArrowIconColor}
+                  />
                 </Flex>
-              )}
-              <Box
-                position={theme.datepickerPreviousMonthButtonPosition}
-                top={theme.datepickerPreviousMonthButtonTop}
-                left={theme.datepickerPreviousMonthButtonLeft}
-                right={theme.datepickerPreviousMonthButtonRight}
-                bottom={theme.datepickerPreviousMonthButtonBottom}
-              >
-                <NavButton
-                  type="prev"
-                  onClick={rtl && !vertical ? handleGoToNextMonth : handleGoToPreviousMonth}
+                <SelectedDate
+                  title={phrases.datepickerEndDateLabel}
+                  date={getInputValue(endDate, displayFormat, phrases.datepickerEndDatePlaceholder)}
+                  isActive={focusedInput === END_DATE}
                   vertical={vertical}
-                  rtl={rtl}
-                  ariaLabel="Previous month"
                 />
-              </Box>
-              <Box
-                position={theme.datepickerNextMonthButtonPosition}
-                top={theme.datepickerNextMonthButtonTop}
-                left={theme.datepickerNextMonthButtonLeft}
-                right={theme.datepickerNextMonthButtonRight}
-                bottom={theme.datepickerNextMonthButtonBottom}
+              </Grid>
+            </DateWrapper>
+          )}
+          <Box position="relative">
+            <Box m={theme.datepickerMonthsWrapperMargin}>
+              <MonthGrid
+                data-testid="MonthGrid"
+                overflow={theme.datepickerMonthsGridOverflow}
+                height={theme.datepickerMonthsGridHeight}
+                gridTemplateColumns={vertical ? '1fr' : `repeat(${numberOfMonths}, 1fr)`}
+                gridGap={theme.datepickerMonthsGridGap}
+                pr={rtl ? '1px' : '0'}
+                ref={monthGridRef}
+                onMouseLeave={() => {
+                  if (hoveredDate) {
+                    onDateHover(null)
+                  }
+                }}
               >
-                <NavButton
-                  type="next"
-                  onClick={rtl && !vertical ? handleGoToPreviousMonth : handleGoToNextMonth}
-                  vertical={vertical}
-                  rtl={rtl}
-                  ariaLabel="Next month"
-                />
-              </Box>
-            </>
-          </Flex>
-        </Box>
-      </StyledDatepicker>
-    </DatepickerContext.Provider>
+                {activeMonths.map((month: MonthType) => (
+                  <Month
+                    key={`month-${month.year}-${month.month}`}
+                    year={month.year}
+                    month={month.month}
+                    firstDayOfWeek={firstDayOfWeek}
+                    dayLabelFormat={dayLabelFormat || dayLabelFormatFn}
+                    weekdayLabelFormat={weekdayLabelFormat || weekdayLabelFormatFn}
+                    monthLabelFormat={monthLabelFormat || monthLabelFormatFn}
+                  />
+                ))}
+              </MonthGrid>
+            </Box>
+            <Flex alignItems="center">
+              <>
+                {showResetDates && (
+                  <Flex flex="1" m={theme.datepickerResetDatesWrapperMargin}>
+                    <ResetDates rtl={rtl} onResetDates={onResetDates} text={phrases.resetDates} />
+                  </Flex>
+                )}
+                <Box
+                  position={theme.datepickerPreviousMonthButtonPosition}
+                  top={theme.datepickerPreviousMonthButtonTop}
+                  left={theme.datepickerPreviousMonthButtonLeft}
+                  right={theme.datepickerPreviousMonthButtonRight}
+                  bottom={theme.datepickerPreviousMonthButtonBottom}
+                >
+                  <NavButton
+                    type="prev"
+                    onClick={rtl && !vertical ? handleGoToNextMonth : handleGoToPreviousMonth}
+                    vertical={vertical}
+                    rtl={rtl}
+                    ariaLabel="Previous month"
+                  />
+                </Box>
+                <Box
+                  position={theme.datepickerNextMonthButtonPosition}
+                  top={theme.datepickerNextMonthButtonTop}
+                  left={theme.datepickerNextMonthButtonLeft}
+                  right={theme.datepickerNextMonthButtonRight}
+                  bottom={theme.datepickerNextMonthButtonBottom}
+                >
+                  <NavButton
+                    type="next"
+                    onClick={rtl && !vertical ? handleGoToPreviousMonth : handleGoToNextMonth}
+                    vertical={vertical}
+                    rtl={rtl}
+                    ariaLabel="Next month"
+                  />
+                </Box>
+              </>
+            </Flex>
+          </Box>
+        </StyledDatepicker>
+      </DatepickerContext.Provider>
+    </ThemeProvider>
   )
 }
 

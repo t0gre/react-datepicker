@@ -109,7 +109,7 @@ exports[`should get classname 1`] = `
 
 <div>
   <svg
-    class="test c0"
+    class="c0 test"
     color="red"
     height="30px"
     viewBox="0 0 9 6"

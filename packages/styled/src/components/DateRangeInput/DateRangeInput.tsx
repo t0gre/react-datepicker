@@ -1,5 +1,5 @@
 import React, {useRef, useEffect, useContext} from 'react'
-import styled, {css, ThemeContext} from 'styled-components'
+import styled, {css, ThemeContext, ThemeProvider} from 'styled-components'
 import {
   opacity,
   OpacityProps,
@@ -207,93 +207,95 @@ function DateRangeInput({
   }
 
   return (
-    <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
-      <InputGrid
-        background={theme.dateRangeBackground}
-        gridTemplateColumns={theme.dateRangeGridTemplateColumns}
-        border={theme.dateRangeBorder}
-        borderRadius={theme.dateRangeBorderRadius}
-      >
-        <Input
-          id="startDate"
-          ariaLabel={phrases.startDateAriaLabel}
-          placeholder={phrases.startDatePlaceholder}
-          value={getInputValue(startDate, displayFormat, '')}
-          onClick={() => onFocusChange(START_DATE)}
-          showCalendarIcon={showStartDateCalendarIcon}
-          vertical={vertical}
-          isActive={focusedInput === START_DATE}
-          padding={theme.dateRangeStartDateInputPadding}
-          rtl={rtl}
-          onChange={handleInputChange}
-          // @ts-ignore
-          dateFormat={displayFormat}
-        />
-        <Flex alignItems="center" justifyContent="center">
-          <InputArrowIcon
-            // @ts-ignore
-            width={theme.dateRangeArrowIconWidth}
-            // @ts-ignore
-            height={theme.dateRangeArrowIconHeight}
-            color={theme.dateRangeArrowIconColor}
-            opacity={theme.dateRangeArrowIconOpacity}
-            rtl={rtl}
-          />
-        </Flex>
-        <Input
-          id="endDate"
-          ariaLabel={phrases.endDateAriaLabel}
-          placeholder={phrases.endDatePlaceholder}
-          value={getInputValue(endDate, displayFormat, '')}
-          onClick={() => onFocusChange(!startDate ? START_DATE : END_DATE)}
-          showCalendarIcon={showEndDateCalendarIcon}
-          vertical={vertical}
-          isActive={focusedInput === END_DATE}
-          padding={theme.dateRangeEndDateInputPadding}
-          rtl={rtl}
-          disableAccessibility={focusedInput === START_DATE}
-          onChange={handleInputChange}
-          // @ts-ignore
-          dateFormat={displayFormat}
-        />
-      </InputGrid>
-      <Box
-        position={theme.dateRangeDatepickerWrapperPosition}
-        bottom={theme.dateRangeDatepickerWrapperBottom}
-        left={theme.dateRangeDatepickerWrapperLeft}
-        top={theme.dateRangeDatepickerWrapperTop}
-        right={theme.dateRangeDatepickerWrapperRight}
-      >
-        {focusedInput !== null && (
-          <Datepicker
-            onClose={handleDatepickerClose}
-            startDate={startDate}
-            endDate={endDate}
-            minBookingDate={minBookingDate}
-            maxBookingDate={maxBookingDate}
-            firstDayOfWeek={firstDayOfWeek}
-            numberOfMonths={numberOfMonths}
-            focusedInput={focusedInput}
-            displayFormat={displayFormat}
-            onDatesChange={onDatesChange}
-            minBookingDays={minBookingDays}
-            isDateBlocked={isDateBlocked}
-            exactMinBookingDays={exactMinBookingDays}
-            showResetDates={showResetDates}
+    <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
+      <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
+        <InputGrid
+          background={theme.dateRangeBackground}
+          gridTemplateColumns={theme.dateRangeGridTemplateColumns}
+          border={theme.dateRangeBorder}
+          borderRadius={theme.dateRangeBorderRadius}
+        >
+          <Input
+            id="startDate"
+            ariaLabel={phrases.startDateAriaLabel}
+            placeholder={phrases.startDatePlaceholder}
+            value={getInputValue(startDate, displayFormat, '')}
+            onClick={() => onFocusChange(START_DATE)}
+            showCalendarIcon={showStartDateCalendarIcon}
             vertical={vertical}
-            showSelectedDates={showSelectedDates}
-            showClose={showClose}
+            isActive={focusedInput === START_DATE}
+            padding={theme.dateRangeStartDateInputPadding}
             rtl={rtl}
-            dayLabelFormat={dayLabelFormat}
-            weekdayLabelFormat={weekdayLabelFormat}
-            monthLabelFormat={monthLabelFormat}
-            onDayRender={onDayRender}
-            phrases={phrases}
-            ref={ref}
+            onChange={handleInputChange}
+            // @ts-ignore
+            dateFormat={displayFormat}
           />
-        )}
-      </Box>
-    </Wrapper>
+          <Flex alignItems="center" justifyContent="center">
+            <InputArrowIcon
+              // @ts-ignore
+              width={theme.dateRangeArrowIconWidth}
+              // @ts-ignore
+              height={theme.dateRangeArrowIconHeight}
+              color={theme.dateRangeArrowIconColor}
+              opacity={theme.dateRangeArrowIconOpacity}
+              rtl={rtl}
+            />
+          </Flex>
+          <Input
+            id="endDate"
+            ariaLabel={phrases.endDateAriaLabel}
+            placeholder={phrases.endDatePlaceholder}
+            value={getInputValue(endDate, displayFormat, '')}
+            onClick={() => onFocusChange(!startDate ? START_DATE : END_DATE)}
+            showCalendarIcon={showEndDateCalendarIcon}
+            vertical={vertical}
+            isActive={focusedInput === END_DATE}
+            padding={theme.dateRangeEndDateInputPadding}
+            rtl={rtl}
+            disableAccessibility={focusedInput === START_DATE}
+            onChange={handleInputChange}
+            // @ts-ignore
+            dateFormat={displayFormat}
+          />
+        </InputGrid>
+        <Box
+          position={theme.dateRangeDatepickerWrapperPosition}
+          bottom={theme.dateRangeDatepickerWrapperBottom}
+          left={theme.dateRangeDatepickerWrapperLeft}
+          top={theme.dateRangeDatepickerWrapperTop}
+          right={theme.dateRangeDatepickerWrapperRight}
+        >
+          {focusedInput !== null && (
+            <Datepicker
+              onClose={handleDatepickerClose}
+              startDate={startDate}
+              endDate={endDate}
+              minBookingDate={minBookingDate}
+              maxBookingDate={maxBookingDate}
+              firstDayOfWeek={firstDayOfWeek}
+              numberOfMonths={numberOfMonths}
+              focusedInput={focusedInput}
+              displayFormat={displayFormat}
+              onDatesChange={onDatesChange}
+              minBookingDays={minBookingDays}
+              isDateBlocked={isDateBlocked}
+              exactMinBookingDays={exactMinBookingDays}
+              showResetDates={showResetDates}
+              vertical={vertical}
+              showSelectedDates={showSelectedDates}
+              showClose={showClose}
+              rtl={rtl}
+              dayLabelFormat={dayLabelFormat}
+              weekdayLabelFormat={weekdayLabelFormat}
+              monthLabelFormat={monthLabelFormat}
+              onDayRender={onDayRender}
+              phrases={phrases}
+              ref={ref}
+            />
+          )}
+        </Box>
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 
