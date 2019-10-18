@@ -84,7 +84,9 @@ function c(t) {
     return (
       (s =
         '[object Array]' === Object.prototype.toString.call(d)
-          ? d.findIndex(function(t) {
+          ? (function(t, e) {
+              for (var n = 0; n < t.length; n++) if (e(t[n])) return n
+            })(d, function(t) {
               return t.test(r)
             })
           : (function(t, e) {
@@ -441,7 +443,7 @@ function y(t, e) {
       return e.time({width: 'full'})
   }
 }
-var b = {
+var v = {
     p: y,
     P: function(t, e) {
       var n,
@@ -466,13 +468,13 @@ var b = {
       return n.replace('{{date}}', m(a, e)).replace('{{time}}', y(i, e))
     },
   },
-  v = 6e4
+  b = 6e4
 function p(t) {
   var e = new Date(t.getTime()),
     n = e.getTimezoneOffset()
   e.setSeconds(0, 0)
-  var r = e.getTime() % v
-  return n * v + r
+  var r = e.getTime() % b
+  return n * b + r
 }
 var T = ['D', 'DD'],
   D = ['YY', 'YYYY']
@@ -1614,7 +1616,7 @@ var tt = {
   et = 10,
   nt = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g,
   rt = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g,
-  at = /^'(.*?)'?$/,
+  at = /^'([^]*?)'?$/,
   it = /''/g,
   ot = /\S/,
   ut = /[a-zA-Z]/
@@ -1633,17 +1635,17 @@ function st(t, e, n, r) {
     throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively')
   var m = u.options && u.options.weekStartsOn,
     y = null == m ? 0 : f(m),
-    v = null == o.weekStartsOn ? y : f(o.weekStartsOn)
-  if (!(v >= 0 && v <= 6)) throw new RangeError('weekStartsOn must be between 0 and 6 inclusively')
+    b = null == o.weekStartsOn ? y : f(o.weekStartsOn)
+  if (!(b >= 0 && b <= 6)) throw new RangeError('weekStartsOn must be between 0 and 6 inclusively')
   if ('' === i) return '' === a ? h(n) : new Date(NaN)
   var T,
-    D = {firstWeekContainsDate: d, weekStartsOn: v, locale: u},
+    D = {firstWeekContainsDate: d, weekStartsOn: b, locale: u},
     M = [{priority: et, set: ct, index: 0}],
     U = i
       .match(rt)
       .map(function(t) {
         var e = t[0]
-        return 'p' === e || 'P' === e ? (0, b[e])(t, u.formatLong, D) : t
+        return 'p' === e || 'P' === e ? (0, v[e])(t, u.formatLong, D) : t
       })
       .join('')
       .match(nt),
@@ -1764,12 +1766,12 @@ var lt = function(t, e) {
   yt = function(t, e) {
     return dt(t.getUTCSeconds(), e.length)
   },
-  bt = function(t, e) {
+  vt = function(t, e) {
     var n = e.length,
       r = t.getUTCMilliseconds()
     return dt(Math.floor(r * Math.pow(10, n - 3)), e.length)
   },
-  vt = 864e5
+  bt = 864e5
 var pt = 'midnight',
   Tt = 'noon',
   Dt = 'morning',
@@ -1904,7 +1906,7 @@ var pt = 'midnight',
           n = e.getTime()
         e.setUTCMonth(0, 1), e.setUTCHours(0, 0, 0, 0)
         var r = n - e.getTime()
-        return Math.floor(r / vt) + 1
+        return Math.floor(r / bt) + 1
       })(t)
       return 'Do' === e ? n.ordinalNumber(r, {unit: 'dayOfYear'}) : dt(r, e.length)
     },
@@ -2056,7 +2058,7 @@ var pt = 'midnight',
       return 'so' === e ? n.ordinalNumber(t.getUTCSeconds(), {unit: 'second'}) : yt(t, e)
     },
     S: function(t, e) {
-      return bt(t, e)
+      return vt(t, e)
     },
     X: function(t, e, n, r) {
       var a = (r._originalDate || t).getTimezoneOffset()
@@ -2139,7 +2141,7 @@ function qt(t, e) {
 }
 var St = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g,
   Yt = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g,
-  Pt = /^'(.*?)'?$/,
+  Pt = /^'([^]*?)'?$/,
   Ht = /''/g,
   Ot = /[a-zA-Z]/
 function Bt(t, e, n) {
@@ -2170,12 +2172,12 @@ function Bt(t, e, n) {
   )
     throw new RangeError('Invalid time value')
   var y = g(m, p(m)),
-    v = {firstWeekContainsDate: s, weekStartsOn: w, locale: i, _originalDate: m}
+    b = {firstWeekContainsDate: s, weekStartsOn: w, locale: i, _originalDate: m}
   return r
     .match(Yt)
     .map(function(t) {
       var e = t[0]
-      return 'p' === e || 'P' === e ? (0, b[e])(t, i.formatLong, v) : t
+      return 'p' === e || 'P' === e ? (0, v[e])(t, i.formatLong, b) : t
     })
     .join('')
     .match(St)
@@ -2188,7 +2190,7 @@ function Bt(t, e, n) {
         return (
           !a.useAdditionalWeekYearTokens && x(t) && C(t),
           !a.useAdditionalDayOfYearTokens && k(t) && C(t),
-          n(y, t, i.localize, v)
+          n(y, t, i.localize, b)
         )
       if (e.match(Ot))
         throw new RangeError(
@@ -2295,12 +2297,20 @@ function It(t) {
       var e = h(t),
         n = e.getMonth()
       return e.setFullYear(e.getFullYear(), n + 1, 0), e.setHours(23, 59, 59, 999), e
-    })(u),
-    l = Array.from(Array(c >= a ? c - a : 6 - a + c + 1).keys()).fill(0),
-    f = Lt({start: s, end: d}).map(function(t) {
+    })(u)
+  return (function() {
+    for (var t = 0, e = 0, n = arguments.length; e < n; e++) t += arguments[e].length
+    var r = Array(t),
+      a = 0
+    for (e = 0; e < n; e++)
+      for (var i = arguments[e], o = 0, u = i.length; o < u; o++, a++) r[a] = i[o]
+    return r
+  })(
+    Array.from(Array(c >= a ? c - a : 6 - a + c + 1).keys()).fill(0),
+    Lt({start: s, end: d}).map(function(t) {
       return {date: t, dayLabel: o(t)}
-    })
-  return l.concat(f)
+    }),
+  )
 }
 var Xt = function(t) {
     return Bt(t, 'dd')
@@ -2501,13 +2511,13 @@ function de(t) {
     w = void 0 === g ? 2 : g,
     m = t.firstDayOfWeek,
     y = void 0 === m ? 1 : m,
-    b = t.isDateBlocked,
-    v =
-      void 0 === b
+    v = t.isDateBlocked,
+    b =
+      void 0 === v
         ? function() {
             return !1
           }
-        : b,
+        : v,
     p = e(function() {
       return ae(w, a)
     }),
@@ -2546,10 +2556,10 @@ function de(t) {
           startDate: a,
           endDate: i,
           minBookingDays: h,
-          isDateBlockedFn: v,
+          isDateBlockedFn: b,
         })
       },
-      [u, s, a, i, h, v],
+      [u, s, a, i, h, b],
     ),
     H = n(
       function(t) {
@@ -2586,10 +2596,10 @@ function de(t) {
           endDate: i,
           minBookingDays: h,
           exactMinBookingDays: l,
-          isDateBlocked: v,
+          isDateBlocked: b,
         })
       },
-      [x, a, i, h, l, v],
+      [x, a, i, h, l, b],
     )
   function B(t) {
     if (
@@ -2652,24 +2662,24 @@ function de(t) {
           exactMinBookingDays: l,
           minBookingDate: u,
           maxBookingDate: s,
-          isDateBlocked: v,
+          isDateBlocked: b,
           startDate: t,
           endDate: null,
         })
           ? c({startDate: t, endDate: Nt(t, h - 1), focusedInput: null})
           : ((o === ce && a && jt(t, a)) || (o === se && i && Kt(t, i))) &&
             !l &&
-            ue({minBookingDays: h, isDateBlocked: v, startDate: t, endDate: null})
+            ue({minBookingDays: h, isDateBlocked: b, startDate: t, endDate: null})
           ? c({endDate: null, startDate: t, focusedInput: ce})
-          : o === se && !l && ue({minBookingDays: h, isDateBlocked: v, endDate: i, startDate: t})
+          : o === se && !l && ue({minBookingDays: h, isDateBlocked: b, endDate: i, startDate: t})
           ? c({endDate: i, startDate: t, focusedInput: ce})
-          : o === se && !l && ue({minBookingDays: h, isDateBlocked: v, endDate: null, startDate: t})
+          : o === se && !l && ue({minBookingDays: h, isDateBlocked: b, endDate: null, startDate: t})
           ? c({endDate: null, startDate: t, focusedInput: ce})
           : o === ce &&
             a &&
             !jt(t, a) &&
             !l &&
-            ue({minBookingDays: h, isDateBlocked: v, startDate: a, endDate: t}) &&
+            ue({minBookingDays: h, isDateBlocked: b, startDate: a, endDate: t}) &&
             c({startDate: a, endDate: t, focusedInput: null}),
           o === ce || (U && (!U || _t(t, U))) || D(ae(w, t))
       },

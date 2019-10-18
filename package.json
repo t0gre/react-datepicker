@@ -23,11 +23,9 @@
     "test:coverage": "jest --coverage",
     "commit": "git-cz",
     "format": "lerna run format",
-    "lint:css": "stylelint 'packages/**/*.ts{,x}'",
-    "lint:ts": "eslint 'packages/**/*.ts{,x}'",
-    "lint": "run-p -c lint:*",
+    "lint:ts": "eslint ./packages/**/*.ts{,x}",
     "tsc": "lerna run tsc",
-    "prebuild": "yarn run tsc && yarn run lint && lerna run prebuild",
+    "prebuild": "yarn run tsc && yarn run lint:ts",
     "build": "lerna run build",
     "build:watch": "lerna run build:watch",
     "bootstrap": "lerna bootstrap",
@@ -109,6 +107,7 @@
     "rollup-plugin-typescript2": "^0.24.3",
     "rollup-plugin-visualizer": "^2.6.0",
     "ts-jest": "^24.1.0",
+    "tslib": "^1.10.0",
     "typescript": "^3.6.4"
   },
   "config": {

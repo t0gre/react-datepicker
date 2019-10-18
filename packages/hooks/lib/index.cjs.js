@@ -253,7 +253,7 @@ function buildMatchFn(e) {
     return (
       (u =
         '[object Array]' === Object.prototype.toString.call(c)
-          ? c.findIndex(function(e) {
+          ? findIndex(c, function(e) {
               return e.test(n)
             })
           : findKey(c, function(e) {
@@ -266,6 +266,9 @@ function buildMatchFn(e) {
 }
 function findKey(e, t) {
   for (var r in e) if (e.hasOwnProperty(r) && t(e[r])) return r
+}
+function findIndex(e, t) {
+  for (var r = 0; r < e.length; r++) if (t(e[r])) return r
 }
 var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i,
   parseOrdinalNumberPattern = /\d+/i,
@@ -1621,7 +1624,7 @@ var parsers = {
   TIMEZONE_UNIT_PRIORITY = 10,
   formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g,
   longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g,
-  escapedStringRegExp = /^'(.*?)'?$/,
+  escapedStringRegExp = /^'([^]*?)'?$/,
   doubleQuoteRegExp = /''/g,
   notWhitespaceRegExp = /\S/,
   unescapedLatinCharacterRegExp = /[a-zA-Z]/
@@ -2202,7 +2205,7 @@ function formatTimezone(e, t) {
 }
 var formattingTokensRegExp$1 = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g,
   longFormattingTokensRegExp$1 = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g,
-  escapedStringRegExp$1 = /^'(.*?)'?$/,
+  escapedStringRegExp$1 = /^'([^]*?)'?$/,
   doubleQuoteRegExp$1 = /''/g,
   unescapedLatinCharacterRegExp$1 = /[a-zA-Z]/
 function format(e, t, r) {
@@ -2255,6 +2258,14 @@ function format(e, t, r) {
 }
 function cleanEscapedString$1(e) {
   return e.match(escapedStringRegExp$1)[1].replace(doubleQuoteRegExp$1, "'")
+}
+function __spreadArrays() {
+  for (var e = 0, t = 0, r = arguments.length; t < r; t++) e += arguments[t].length
+  var n = Array(e),
+    a = 0
+  for (t = 0; t < r; t++)
+    for (var i = arguments[t], o = 0, s = i.length; o < s; o++, a++) n[a] = i[o]
+  return n
 }
 function addDays(e, t) {
   if (arguments.length < 2)
@@ -2358,12 +2369,13 @@ function getDays(e) {
     s = new Date(t, r),
     u = startOfMonth(s),
     d = getDay(u),
-    c = endOfMonth(s),
-    l = Array.from(Array(d >= a ? d - a : 6 - a + d + 1).keys()).fill(0),
-    f = eachDayOfInterval({start: u, end: c}).map(function(e) {
+    c = endOfMonth(s)
+  return __spreadArrays(
+    Array.from(Array(d >= a ? d - a : 6 - a + d + 1).keys()).fill(0),
+    eachDayOfInterval({start: u, end: c}).map(function(e) {
       return {date: e, dayLabel: o(e)}
-    })
-  return l.concat(f)
+    }),
+  )
 }
 var dayLabelFormatFn = function(e) {
     return format(e, 'dd')
