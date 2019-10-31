@@ -212,6 +212,7 @@ function DateRangeInput({
         <InputGrid
           background={theme.dateRangeBackground}
           gridTemplateColumns={theme.dateRangeGridTemplateColumns}
+          gridTemplateRows={theme.dateRangeGridTemplateRows}
           border={theme.dateRangeBorder}
           borderRadius={theme.dateRangeBorderRadius}
         >

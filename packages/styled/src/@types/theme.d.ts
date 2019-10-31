@@ -21,6 +21,7 @@ import {
   ZIndexProperty,
   BottomProperty,
   GridTemplateColumnsProperty,
+  GridTemplateRowsProperty,
   GridGapProperty,
   BoxShadowProperty,
   GlobalsNumber,
@@ -185,6 +186,7 @@ export interface DatepickerTheme extends CommonTheme {
 export interface DateRangeInputTheme extends CommonTheme {
   dateRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   dateRangeGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
+  dateRangeGridTemplateRows?: ResponsiveValue<GridTemplateRowsProperty<TLengthStyledSystem>>
   dateRangeBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
   dateRangeBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
   dateRangeArrowIconWidth?: string
