@@ -310,7 +310,10 @@ function Datepicker(
 
           {showSelectedDates && (
             <DateWrapper>
-              <Grid gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}>
+              <Grid
+                gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}
+                gridTemplateRows={theme.datepickerSelectDateGridTemplateRows}
+              >
                 <SelectedDate
                   title={phrases.datepickerStartDateLabel}
                   date={getInputValue(

@@ -163,6 +163,9 @@ export interface DatepickerTheme extends CommonTheme {
   datepickerSelectDateGridTemplateColumns?: ResponsiveValue<
     GridTemplateColumnsProperty<TLengthStyledSystem>
   >
+  datepickerSelectDateGridTemplateRows?: ResponsiveValue<
+    GridTemplateRowsProperty<TLengthStyledSystem>
+  >
   datepickerSelectDateArrowIconWidth?: string
   datepickerSelectDateArrowIconHeight?: string
   datepickerSelectDateArrowIconColor?: string

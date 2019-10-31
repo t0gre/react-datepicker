@@ -129,6 +129,9 @@ datepickerCloseWrapperZIndex?: ResponsiveValue<ZIndexProperty>
 datepickerSelectDateGridTemplateColumns?: ResponsiveValue<
   GridTemplateColumnsProperty<TLengthStyledSystem>
 >
+datepickerSelectDateGridTemplateRows?: ResponsiveValue<
+  GridTemplateRowsProperty<TLengthStyledSystem>
+>
 datepickerSelectDateArrowIconWidth?: string
 datepickerSelectDateArrowIconHeight?: string
 datepickerSelectDateArrowIconColor?: string
