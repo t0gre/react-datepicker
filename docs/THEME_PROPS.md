@@ -129,6 +129,9 @@ datepickerCloseWrapperZIndex?: ResponsiveValue<ZIndexProperty>
 datepickerSelectDateGridTemplateColumns?: ResponsiveValue<
   GridTemplateColumnsProperty<TLengthStyledSystem>
 >
+datepickerSelectDateGridTemplateRows?: ResponsiveValue<
+  GridTemplateRowsProperty<TLengthStyledSystem>
+>
 datepickerSelectDateArrowIconWidth?: string
 datepickerSelectDateArrowIconHeight?: string
 datepickerSelectDateArrowIconColor?: string
@@ -150,6 +153,7 @@ datepickerMonthsGridOverflow?: ResponsiveValue<OverflowProperty>
 
 dateRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
 dateRangeGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
+dateRangeGridTemplateRows?: ResponsiveValue<GridTemplateRowsProperty<TLengthStyledSystem>>
 dateRangeBorder?: ResponsiveValue<BorderProperty<TLengthStyledSystem>>
 dateRangeBorderRadius?: ResponsiveValue<BorderRadiusProperty<TLengthStyledSystem>>
 dateRangeArrowIconWidth?: string
