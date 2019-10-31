@@ -4951,7 +4951,10 @@ function Datepicker(e, t) {
             null,
             React__default.createElement(
               Grid,
-              {gridTemplateColumns: te.datepickerSelectDateGridTemplateColumns},
+              {
+                gridTemplateColumns: te.datepickerSelectDateGridTemplateColumns,
+                gridTemplateRows: te.datepickerSelectDateGridTemplateRows,
+              },
               React__default.createElement(SelectDate, {
                 title: P.datepickerStartDateLabel,
                 date: oe(r, j, P.datepickerStartDatePlaceholder),
@@ -5250,6 +5253,7 @@ function DateRangeInput(e) {
           {
             background: U.dateRangeBackground,
             gridTemplateColumns: U.dateRangeGridTemplateColumns,
+            gridTemplateRows: U.dateRangeGridTemplateRows,
             border: U.dateRangeBorder,
             borderRadius: U.dateRangeBorderRadius,
           },
