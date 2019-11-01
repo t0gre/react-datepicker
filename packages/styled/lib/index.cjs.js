@@ -109,6 +109,7 @@ function c(e) {
 }
 var d,
   l = {
+    code: 'en-US',
     formatDistance: function(e, t, r) {
       var n
       return (
@@ -4861,6 +4862,7 @@ function Datepicker(e, t) {
       datepickerCloseWrapperBottom: 'unset',
       datepickerCloseWrapperZIndex: 1,
       datepickerSelectDateGridTemplateColumns: g ? '87px 50px 87px' : '126px 75px 126px',
+      datepickerSelectDateGridTemplateRows: 'unset',
       datepickerSelectDateArrowIconWidth: '15px',
       datepickerSelectDateArrowIconHeight: '12px',
       datepickerSelectDateArrowIconColor: getThemeProp(
@@ -4952,6 +4954,7 @@ function Datepicker(e, t) {
             React__default.createElement(
               Grid,
               {
+                'data-testid': 'SelectedDatesGrid',
                 gridTemplateColumns: te.datepickerSelectDateGridTemplateColumns,
                 gridTemplateRows: te.datepickerSelectDateGridTemplateRows,
               },
@@ -5210,6 +5213,7 @@ function DateRangeInput(e) {
         {
           dateRangeBackground: 'transparent',
           dateRangeGridTemplateColumns: k ? '1fr 24px 1fr' : '194px 39px 194px',
+          dateRangeGridTemplateRows: 'unset',
           dateRangeBorder: '0',
           dateRangeBorderRadius: '0',
           dateRangeArrowIconWidth: '15px',
@@ -5251,6 +5255,7 @@ function DateRangeInput(e) {
         React__default.createElement(
           InputGrid,
           {
+            'data-testid': 'DateRangeInputGrid',
             background: U.dateRangeBackground,
             gridTemplateColumns: U.dateRangeGridTemplateColumns,
             gridTemplateRows: U.dateRangeGridTemplateRows,

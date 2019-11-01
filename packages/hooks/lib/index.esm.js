@@ -101,6 +101,7 @@ function c(t) {
 }
 var d,
   l = {
+    code: 'en-US',
     formatDistance: function(t, e, n) {
       var r
       return (

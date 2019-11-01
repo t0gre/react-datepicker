@@ -375,6 +375,7 @@ var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i,
     }),
   },
   locale = {
+    code: 'en-US',
     formatDistance: formatDistance,
     formatLong: formatLong,
     formatRelative: formatRelative,
@@ -1726,17 +1727,17 @@ function parse(e, t, r, n) {
       .map(function(e) {
         return e[0]
       }),
-    P = toDate(r)
-  if (isNaN(P)) return new Date(NaN)
-  var S = subMilliseconds(P, getTimezoneOffsetInMilliseconds(P)),
+    S = toDate(r)
+  if (isNaN(S)) return new Date(NaN)
+  var P = subMilliseconds(S, getTimezoneOffsetInMilliseconds(S)),
     O = {}
   for (h = 0; h < E.length; h++) {
     var N = E[h]
-    if (N.validate && !N.validate(S, N.value, m)) return new Date(NaN)
-    var I = N.set(S, O, N.value, m)
-    I[0] ? ((S = I[0]), assign(O, I[1])) : (S = I)
+    if (N.validate && !N.validate(P, N.value, m)) return new Date(NaN)
+    var I = N.set(P, O, N.value, m)
+    I[0] ? ((P = I[0]), assign(O, I[1])) : (P = I)
   }
-  return S
+  return P
 }
 function dateToSystemTimezone(e, t) {
   if (t.timestampIsSet) return e
@@ -2634,13 +2635,13 @@ function useDatepicker(e) {
       },
       [t, r],
     ),
-    P = react.useCallback(
+    S = react.useCallback(
       function(e) {
         return isFirstOrLastSelectedDate(e, t, r)
       },
       [t, r],
     ),
-    S = react.useCallback(
+    P = react.useCallback(
       function(e) {
         return isDateBlocked({
           date: e,
@@ -2700,8 +2701,8 @@ function useDatepicker(e) {
       activeMonths: D,
       isDateSelected: E,
       isDateHovered: N,
-      isFirstOrLastSelectedDate: P,
-      isDateBlocked: S,
+      isFirstOrLastSelectedDate: S,
+      isDateBlocked: P,
       numberOfMonths: f,
       isDateFocused: O,
       focusedDate: C,
@@ -2712,7 +2713,7 @@ function useDatepicker(e) {
       onDateHover: function(e) {
         if (e) {
           if (e) {
-            var n = !S(e) || (t && isSameDay(e, t)),
+            var n = !P(e) || (t && isSameDay(e, t)),
               o = !a || !isBefore(e, addDays(a, -1)),
               s = !i || !isAfter(e, i),
               d = addDays(e, c - 1),
