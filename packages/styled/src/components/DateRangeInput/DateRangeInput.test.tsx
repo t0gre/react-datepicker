@@ -3,6 +3,9 @@ import {advanceTo, clear} from 'jest-date-mock'
 import {END_DATE, START_DATE} from '@datepicker-react/hooks'
 import {render, fireEvent} from '../../testUtil'
 import Datepicker from '.'
+import {ThemeProvider} from 'styled-components'
+// eslint-disable-next-line import/no-unresolved
+import {DateRangeInputTheme, DatepickerTheme} from '../../@types/theme'
 
 beforeEach(() => {
   advanceTo(new Date(2019, 2, 27, 0, 0, 0))
@@ -355,4 +358,47 @@ test('should handle click outside (close datepicker)', () => {
   const {getByTestId} = render(<App onDatesChange={onDatesChange} onFocusChange={onFocusChange} />)
   fireEvent.click(getByTestId('outside'))
   expect(onFocusChange).toHaveBeenCalledWith(null)
+})
+
+test('should use dateRangeGridTemplateRows from theme', () => {
+  const dateRangeInputTheme: DateRangeInputTheme = {
+    dateRangeGridTemplateColumns: '1px 2px 3px',
+    dateRangeGridTemplateRows: '1fr 2fr 3fr',
+  }
+  const datepickerTheme: DatepickerTheme = {
+    datepickerSelectDateGridTemplateColumns: '4px 5px 6px',
+    datepickerSelectDateGridTemplateRows: '4fr 5fr 6fr',
+  }
+  const theme = {
+    reactDatepicker: {
+      ...dateRangeInputTheme,
+      ...datepickerTheme,
+    },
+  }
+  const {container, getByTestId} = render(
+    <ThemeProvider theme={theme}>
+      <Datepicker
+        startDate={null}
+        endDate={null}
+        focusedInput={START_DATE}
+        onFocusChange={jest.fn()}
+        onDatesChange={jest.fn()}
+      />
+    </ThemeProvider>,
+  )
+  expect(container).toMatchSnapshot()
+
+  const grid1 = getByTestId('DateRangeInputGrid')
+  // @ts-ignore
+  expect(grid1).toHaveStyleRule('grid-template-columns', '1px 2px 3px')
+  // @ts-ignore
+  expect(grid1).toHaveStyleRule('grid-template-columns', '1px 2px 3px')
+  // @ts-ignore
+  expect(grid1).toHaveStyleRule('grid-template-rows', '1fr 2fr 3fr')
+
+  const grid2 = getByTestId('SelectedDatesGrid')
+  // @ts-ignore
+  expect(grid2).toHaveStyleRule('grid-template-columns', '4px 5px 6px')
+  // @ts-ignore
+  expect(grid2).toHaveStyleRule('grid-template-rows', '4fr 5fr 6fr')
 })

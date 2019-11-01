@@ -224,6 +224,7 @@ function Datepicker(
     datepickerCloseWrapperBottom: 'unset',
     datepickerCloseWrapperZIndex: 1,
     datepickerSelectDateGridTemplateColumns: vertical ? '87px 50px 87px' : '126px 75px 126px',
+    datepickerSelectDateGridTemplateRows: 'unset',
     datepickerSelectDateArrowIconWidth: '15px',
     datepickerSelectDateArrowIconHeight: '12px',
     datepickerSelectDateArrowIconColor: getThemeProp(
@@ -311,6 +312,7 @@ function Datepicker(
           {showSelectedDates && (
             <DateWrapper>
               <Grid
+                data-testid="SelectedDatesGrid"
                 gridTemplateColumns={theme.datepickerSelectDateGridTemplateColumns}
                 gridTemplateRows={theme.datepickerSelectDateGridTemplateRows}
               >

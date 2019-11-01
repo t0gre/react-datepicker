@@ -111,6 +111,7 @@ exports[`should custom render day 1`] = `
 .c6 {
   display: grid;
   grid-template-columns: 126px 75px 126px;
+  grid-template-rows: unset;
 }
 
 .c18 {
@@ -413,6 +414,7 @@ exports[`should custom render day 1`] = `
     >
       <div
         class="c6"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="c7"
@@ -1859,6 +1861,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
 .c6 {
   display: grid;
   grid-template-columns: 87px 50px 87px;
+  grid-template-rows: unset;
 }
 
 .c10 {
@@ -2198,6 +2201,7 @@ exports[`should go to next and previous month - vertical variant 1`] = `
     >
       <div
         class="c6"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="c7"
@@ -3827,7 +3831,8 @@ exports[`should go to next and previous month - vertical variant 2`] = `
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb clHSJu"
+        class="sc-bxivhb fJoSrU"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="sc-bwzfXH boAnbR"
@@ -5658,7 +5663,8 @@ exports[`should go to next and previous month - vertical variant 3`] = `
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb clHSJu"
+        class="sc-bxivhb fJoSrU"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="sc-bwzfXH boAnbR"
@@ -7551,6 +7557,7 @@ exports[`should have empty end date and focused end date 1`] = `
 .c6 {
   display: grid;
   grid-template-columns: 126px 75px 126px;
+  grid-template-rows: unset;
 }
 
 .c18 {
@@ -7890,6 +7897,7 @@ exports[`should have empty end date and focused end date 1`] = `
     >
       <div
         class="c6"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="c7"
@@ -9586,6 +9594,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
 .c6 {
   display: grid;
   grid-template-columns: 126px 75px 126px;
+  grid-template-rows: unset;
 }
 
 .c18 {
@@ -9905,6 +9914,7 @@ exports[`should have empty start and end date and focused start date 1`] = `
     >
       <div
         class="c6"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="c7"
@@ -11599,6 +11609,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
 .c6 {
   display: grid;
   grid-template-columns: 126px 75px 126px;
+  grid-template-rows: unset;
 }
 
 .c18 {
@@ -11918,6 +11929,7 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 1`] = 
     >
       <div
         class="c6"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="c7"
@@ -13547,7 +13559,8 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 2`] = 
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb dBljuL"
+        class="sc-bxivhb clCtvd"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="sc-bwzfXH boAnbR"
@@ -15177,7 +15190,8 @@ exports[`should hover exact range and move the mouse out of the MonthGrid 3`] = 
       class="sc-jTzLTM bVXLkg"
     >
       <div
-        class="sc-bxivhb dBljuL"
+        class="sc-bxivhb clCtvd"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="sc-bwzfXH boAnbR"
@@ -16868,6 +16882,7 @@ exports[`should render vertical datepicker 1`] = `
 .c6 {
   display: grid;
   grid-template-columns: 87px 50px 87px;
+  grid-template-rows: unset;
 }
 
 .c10 {
@@ -17207,6 +17222,7 @@ exports[`should render vertical datepicker 1`] = `
     >
       <div
         class="c6"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="c7"
@@ -18901,6 +18917,7 @@ exports[`should select exact range 1`] = `
 .c6 {
   display: grid;
   grid-template-columns: 126px 75px 126px;
+  grid-template-rows: unset;
 }
 
 .c18 {
@@ -19220,6 +19237,7 @@ exports[`should select exact range 1`] = `
     >
       <div
         class="c6"
+        data-testid="SelectedDatesGrid"
       >
         <div
           class="c7"

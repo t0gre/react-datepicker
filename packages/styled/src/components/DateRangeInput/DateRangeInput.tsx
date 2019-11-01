@@ -159,6 +159,7 @@ function DateRangeInput({
   const theme: DateRangeInputTheme = useThemeProps({
     dateRangeBackground: 'transparent',
     dateRangeGridTemplateColumns: vertical ? '1fr 24px 1fr' : '194px 39px 194px',
+    dateRangeGridTemplateRows: 'unset',
     dateRangeBorder: '0',
     dateRangeBorderRadius: '0',
     dateRangeArrowIconWidth: '15px',
@@ -210,6 +211,7 @@ function DateRangeInput({
     <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
       <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
         <InputGrid
+          data-testid="DateRangeInputGrid"
           background={theme.dateRangeBackground}
           gridTemplateColumns={theme.dateRangeGridTemplateColumns}
           gridTemplateRows={theme.dateRangeGridTemplateRows}
