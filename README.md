@@ -17,7 +17,6 @@
 Simple. Use
 [React hooks (@datepicker-react/hooks)](https://github.com/tresko/react-datepicker/tree/master/packages/hooks).
 
-
 ## Live Playground
 
 For examples of the datepicker in action, go to https://react-datepicker.netlify.com/.
@@ -118,6 +117,8 @@ dayLabelFormat?(date: Date): string
 weekdayLabelFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
 onDayRender?(date: Date): React.ReactNode
+startDateInputId?: string
+endDateInputId?: string
 ```
 
 ### Datepicker
@@ -250,6 +251,7 @@ dayLabelFormat?(date: Date): string
 weekdayLabelFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
 onDayRender?(date: Date): React.ReactNode
+inputId?: string
 ```
 
 ### Theming
