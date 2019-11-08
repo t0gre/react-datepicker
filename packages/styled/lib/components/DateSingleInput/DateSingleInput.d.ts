@@ -29,6 +29,7 @@ export interface DateRangeInputProps {
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
+  inputId?: string
 }
 declare function DateSingleInput({
   date,
@@ -53,5 +54,6 @@ declare function DateSingleInput({
   displayFormat,
   phrases,
   placement,
+  inputId,
 }: DateRangeInputProps): JSX.Element
 export default DateSingleInput

@@ -4946,10 +4946,14 @@ function Ta(r) {
     G = void 0 === A ? Lr : A,
     j = r.placement,
     X = void 0 === j ? 'bottom' : j,
-    Q = i(null),
-    V = i(null),
-    K = o(c),
-    J = Ir(
+    Q = r.startDateInputId,
+    V = void 0 === Q ? 'startDate' : Q,
+    K = r.endDateInputId,
+    J = void 0 === K ? 'endDate' : K,
+    Z = i(null),
+    _ = i(null),
+    $ = o(c),
+    ee = Ir(
       _e(
         {
           dateRangeBackground: 'transparent',
@@ -4959,7 +4963,7 @@ function Ta(r) {
           dateRangeBorderRadius: '0',
           dateRangeArrowIconWidth: '15px',
           dateRangeArrowIconHeight: '12px',
-          dateRangeArrowIconColor: Nr('graci', qr.colors.graci, K),
+          dateRangeArrowIconColor: Nr('graci', qr.colors.graci, $),
           dateRangeArrowIconOpacity: 1,
           dateRangeStartDateInputPadding: R ? (M ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
           dateRangeEndDateInputPadding: R ? (M ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
@@ -4996,18 +5000,18 @@ function Ta(r) {
         })(X, M),
       ),
     )
-  function Z(e) {
-    null !== f && V && V.current && !V.current.contains(e.target) && u(null)
+  function te(e) {
+    null !== f && _ && _.current && !_.current.contains(e.target) && u(null)
   }
-  function _(e) {
-    Q && Q.current && Q.current.onDateSelect && Q.current.onDateSelect(e)
+  function re(e) {
+    Z && Z.current && Z.current.onDateSelect && Z.current.onDateSelect(e)
   }
   return (
     t(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', Z),
+        'undefined' != typeof window && window.addEventListener('click', te),
         function() {
-          window.removeEventListener('click', Z)
+          window.removeEventListener('click', te)
         }
       )
     }),
@@ -5020,19 +5024,19 @@ function Ta(r) {
       },
       e.createElement(
         va,
-        {rtl: M, position: 'relative', ref: V},
+        {rtl: M, position: 'relative', ref: _},
         e.createElement(
           Ca,
           {
             'data-testid': 'DateRangeInputGrid',
-            background: J.dateRangeBackground,
-            gridTemplateColumns: J.dateRangeGridTemplateColumns,
-            gridTemplateRows: J.dateRangeGridTemplateRows,
-            border: J.dateRangeBorder,
-            borderRadius: J.dateRangeBorderRadius,
+            background: ee.dateRangeBackground,
+            gridTemplateColumns: ee.dateRangeGridTemplateColumns,
+            gridTemplateRows: ee.dateRangeGridTemplateRows,
+            border: ee.dateRangeBorder,
+            borderRadius: ee.dateRangeBorderRadius,
           },
           e.createElement($r, {
-            id: 'startDate',
+            id: V,
             ariaLabel: G.startDateAriaLabel,
             placeholder: G.startDatePlaceholder,
             value: Qe(n, Y, ''),
@@ -5042,24 +5046,24 @@ function Ta(r) {
             showCalendarIcon: U,
             vertical: R,
             isActive: f === Ke,
-            padding: J.dateRangeStartDateInputPadding,
+            padding: ee.dateRangeStartDateInputPadding,
             rtl: M,
-            onChange: _,
+            onChange: re,
             dateFormat: Y,
           }),
           e.createElement(
             Pr,
             {alignItems: 'center', justifyContent: 'center'},
             e.createElement(ka, {
-              width: J.dateRangeArrowIconWidth,
-              height: J.dateRangeArrowIconHeight,
-              color: J.dateRangeArrowIconColor,
-              opacity: J.dateRangeArrowIconOpacity,
+              width: ee.dateRangeArrowIconWidth,
+              height: ee.dateRangeArrowIconHeight,
+              color: ee.dateRangeArrowIconColor,
+              opacity: ee.dateRangeArrowIconOpacity,
               rtl: M,
             }),
           ),
           e.createElement($r, {
-            id: 'endDate',
+            id: J,
             ariaLabel: G.endDateAriaLabel,
             placeholder: G.endDatePlaceholder,
             value: Qe(a, Y, ''),
@@ -5069,21 +5073,21 @@ function Ta(r) {
             showCalendarIcon: q,
             vertical: R,
             isActive: f === Je,
-            padding: J.dateRangeEndDateInputPadding,
+            padding: ee.dateRangeEndDateInputPadding,
             rtl: M,
             disableAccessibility: f === Ke,
-            onChange: _,
+            onChange: re,
             dateFormat: Y,
           }),
         ),
         e.createElement(
           zr,
           {
-            position: J.dateRangeDatepickerWrapperPosition,
-            bottom: J.dateRangeDatepickerWrapperBottom,
-            left: J.dateRangeDatepickerWrapperLeft,
-            top: J.dateRangeDatepickerWrapperTop,
-            right: J.dateRangeDatepickerWrapperRight,
+            position: ee.dateRangeDatepickerWrapperPosition,
+            bottom: ee.dateRangeDatepickerWrapperBottom,
+            left: ee.dateRangeDatepickerWrapperLeft,
+            top: ee.dateRangeDatepickerWrapperTop,
+            right: ee.dateRangeDatepickerWrapperRight,
           },
           null !== f &&
             e.createElement(wa, {
@@ -5112,7 +5116,7 @@ function Ta(r) {
               monthLabelFormat: w,
               onDayRender: v,
               phrases: G,
-              ref: Q,
+              ref: Z,
             }),
         ),
       ),
@@ -5166,9 +5170,11 @@ function La(r) {
     P = void 0 === H ? Mr : H,
     O = r.placement,
     z = void 0 === O ? 'bottom' : O,
-    U = i(null),
-    I = i(null),
-    q = Ir(
+    U = r.inputId,
+    I = void 0 === U ? 'startDate' : U,
+    q = i(null),
+    N = i(null),
+    Y = Ir(
       _e(
         {
           dateSingleInputPadding: x ? (T ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
@@ -5205,15 +5211,15 @@ function La(r) {
         })(z, T),
       ),
     )
-  function N(e) {
-    c && I && I.current && !I.current.contains(e.target) && d(!1)
+  function A(e) {
+    c && N && N.current && !N.current.contains(e.target) && d(!1)
   }
   return (
     t(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', N),
+        'undefined' != typeof window && window.addEventListener('click', A),
         function() {
-          window.removeEventListener('click', N)
+          window.removeEventListener('click', A)
         }
       )
     }),
@@ -5226,9 +5232,9 @@ function La(r) {
       },
       e.createElement(
         Ra,
-        {rtl: T, position: 'relative', ref: I},
+        {rtl: T, position: 'relative', ref: N},
         e.createElement($r, {
-          id: 'startDate',
+          id: I,
           ariaLabel: P.dateAriaLabel,
           placeholder: P.datePlaceholder,
           value: Qe(n, F, ''),
@@ -5238,21 +5244,21 @@ function La(r) {
           showCalendarIcon: W,
           vertical: x,
           isActive: !1,
-          padding: q.dateSingleInputPadding,
+          padding: Y.dateSingleInputPadding,
           rtl: T,
           onChange: function(e) {
-            U && U.current && U.current.onDateSelect && U.current.onDateSelect(e)
+            q && q.current && q.current.onDateSelect && q.current.onDateSelect(e)
           },
           dateFormat: F,
         }),
         e.createElement(
           zr,
           {
-            position: q.dateSingleDatepickerWrapperPosition,
-            bottom: q.dateSingleDatepickerWrapperBottom,
-            left: q.dateSingleDatepickerWrapperLeft,
-            top: q.dateSingleDatepickerWrapperTop,
-            right: q.dateSingleDatepickerWrapperRight,
+            position: Y.dateSingleDatepickerWrapperPosition,
+            bottom: Y.dateSingleDatepickerWrapperBottom,
+            left: Y.dateSingleDatepickerWrapperLeft,
+            top: Y.dateSingleDatepickerWrapperTop,
+            right: Y.dateSingleDatepickerWrapperRight,
           },
           c &&
             e.createElement(wa, {
@@ -5285,7 +5291,7 @@ function La(r) {
               monthLabelFormat: f,
               onDayRender: h,
               phrases: P,
-              ref: U,
+              ref: q,
             }),
         ),
       ),

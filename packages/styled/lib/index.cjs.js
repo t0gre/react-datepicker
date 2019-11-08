@@ -5205,10 +5205,14 @@ function DateRangeInput(e) {
     H = void 0 === F ? dateRangeInputPhrases : F,
     $ = e.placement,
     I = void 0 === $ ? 'bottom' : $,
-    A = React.useRef(null),
-    z = React.useRef(null),
-    N = React.useContext(styled.ThemeContext),
-    U = useThemeProps(
+    A = e.startDateInputId,
+    z = void 0 === A ? 'startDate' : A,
+    N = e.endDateInputId,
+    U = void 0 === N ? 'endDate' : N,
+    q = React.useRef(null),
+    G = React.useRef(null),
+    Y = React.useContext(styled.ThemeContext),
+    Q = useThemeProps(
       __assign(
         {
           dateRangeBackground: 'transparent',
@@ -5218,7 +5222,7 @@ function DateRangeInput(e) {
           dateRangeBorderRadius: '0',
           dateRangeArrowIconWidth: '15px',
           dateRangeArrowIconHeight: '12px',
-          dateRangeArrowIconColor: getThemeProp('graci', globalStyles.colors.graci, N),
+          dateRangeArrowIconColor: getThemeProp('graci', globalStyles.colors.graci, Y),
           dateRangeArrowIconOpacity: 1,
           dateRangeStartDateInputPadding: k ? (T ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
           dateRangeEndDateInputPadding: k ? (T ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
@@ -5227,18 +5231,18 @@ function DateRangeInput(e) {
         getPlacement(I, T),
       ),
     )
-  function q(e) {
-    null !== l && z && z.current && !z.current.contains(e.target) && i(null)
+  function X(e) {
+    null !== l && G && G.current && !G.current.contains(e.target) && i(null)
   }
-  function G(e) {
-    A && A.current && A.current.onDateSelect && A.current.onDateSelect(e)
+  function V(e) {
+    q && q.current && q.current.onDateSelect && q.current.onDateSelect(e)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', q),
+        'undefined' != typeof window && window.addEventListener('click', X),
         function() {
-          window.removeEventListener('click', q)
+          window.removeEventListener('click', X)
         }
       )
     }),
@@ -5251,19 +5255,19 @@ function DateRangeInput(e) {
       },
       React__default.createElement(
         Wrapper$1,
-        {rtl: T, position: 'relative', ref: z},
+        {rtl: T, position: 'relative', ref: G},
         React__default.createElement(
           InputGrid,
           {
             'data-testid': 'DateRangeInputGrid',
-            background: U.dateRangeBackground,
-            gridTemplateColumns: U.dateRangeGridTemplateColumns,
-            gridTemplateRows: U.dateRangeGridTemplateRows,
-            border: U.dateRangeBorder,
-            borderRadius: U.dateRangeBorderRadius,
+            background: Q.dateRangeBackground,
+            gridTemplateColumns: Q.dateRangeGridTemplateColumns,
+            gridTemplateRows: Q.dateRangeGridTemplateRows,
+            border: Q.dateRangeBorder,
+            borderRadius: Q.dateRangeBorderRadius,
           },
           React__default.createElement(Input, {
-            id: 'startDate',
+            id: z,
             ariaLabel: H.startDateAriaLabel,
             placeholder: H.startDatePlaceholder,
             value: oe(t, E, ''),
@@ -5273,24 +5277,24 @@ function DateRangeInput(e) {
             showCalendarIcon: M,
             vertical: k,
             isActive: l === se,
-            padding: U.dateRangeStartDateInputPadding,
+            padding: Q.dateRangeStartDateInputPadding,
             rtl: T,
-            onChange: G,
+            onChange: V,
             dateFormat: E,
           }),
           React__default.createElement(
             Flex,
             {alignItems: 'center', justifyContent: 'center'},
             React__default.createElement(InputArrowIcon, {
-              width: U.dateRangeArrowIconWidth,
-              height: U.dateRangeArrowIconHeight,
-              color: U.dateRangeArrowIconColor,
-              opacity: U.dateRangeArrowIconOpacity,
+              width: Q.dateRangeArrowIconWidth,
+              height: Q.dateRangeArrowIconHeight,
+              color: Q.dateRangeArrowIconColor,
+              opacity: Q.dateRangeArrowIconOpacity,
               rtl: T,
             }),
           ),
           React__default.createElement(Input, {
-            id: 'endDate',
+            id: U,
             ariaLabel: H.endDateAriaLabel,
             placeholder: H.endDatePlaceholder,
             value: oe(r, E, ''),
@@ -5300,21 +5304,21 @@ function DateRangeInput(e) {
             showCalendarIcon: L,
             vertical: k,
             isActive: l === ce,
-            padding: U.dateRangeEndDateInputPadding,
+            padding: Q.dateRangeEndDateInputPadding,
             rtl: T,
             disableAccessibility: l === se,
-            onChange: G,
+            onChange: V,
             dateFormat: E,
           }),
         ),
         React__default.createElement(
           Box,
           {
-            position: U.dateRangeDatepickerWrapperPosition,
-            bottom: U.dateRangeDatepickerWrapperBottom,
-            left: U.dateRangeDatepickerWrapperLeft,
-            top: U.dateRangeDatepickerWrapperTop,
-            right: U.dateRangeDatepickerWrapperRight,
+            position: Q.dateRangeDatepickerWrapperPosition,
+            bottom: Q.dateRangeDatepickerWrapperBottom,
+            left: Q.dateRangeDatepickerWrapperLeft,
+            top: Q.dateRangeDatepickerWrapperTop,
+            right: Q.dateRangeDatepickerWrapperRight,
           },
           null !== l &&
             React__default.createElement(Datepicker$1, {
@@ -5343,7 +5347,7 @@ function DateRangeInput(e) {
               monthLabelFormat: g,
               onDayRender: f,
               phrases: H,
-              ref: A,
+              ref: q,
             }),
         ),
       ),
@@ -5436,9 +5440,11 @@ function DateSingleInput(e) {
     W = void 0 === B ? dateSingleInputPhrases : B,
     M = e.placement,
     j = void 0 === M ? 'bottom' : M,
-    L = React.useRef(null),
-    P = React.useRef(null),
-    E = useThemeProps(
+    L = e.inputId,
+    P = void 0 === L ? 'startDate' : L,
+    E = React.useRef(null),
+    F = React.useRef(null),
+    H = useThemeProps(
       __assign(
         {
           dateSingleInputPadding: w ? (D ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
@@ -5447,15 +5453,15 @@ function DateSingleInput(e) {
         getPlacement$1(j, D),
       ),
     )
-  function F(e) {
-    i && P && P.current && !P.current.contains(e.target) && o(!1)
+  function $(e) {
+    i && F && F.current && !F.current.contains(e.target) && o(!1)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', F),
+        'undefined' != typeof window && window.addEventListener('click', $),
         function() {
-          window.removeEventListener('click', F)
+          window.removeEventListener('click', $)
         }
       )
     }),
@@ -5468,9 +5474,9 @@ function DateSingleInput(e) {
       },
       React__default.createElement(
         Wrapper$2,
-        {rtl: D, position: 'relative', ref: P},
+        {rtl: D, position: 'relative', ref: F},
         React__default.createElement(Input, {
-          id: 'startDate',
+          id: P,
           ariaLabel: W.dateAriaLabel,
           placeholder: W.datePlaceholder,
           value: oe(t, O, ''),
@@ -5480,21 +5486,21 @@ function DateSingleInput(e) {
           showCalendarIcon: S,
           vertical: w,
           isActive: !1,
-          padding: E.dateSingleInputPadding,
+          padding: H.dateSingleInputPadding,
           rtl: D,
           onChange: function(e) {
-            L && L.current && L.current.onDateSelect && L.current.onDateSelect(e)
+            E && E.current && E.current.onDateSelect && E.current.onDateSelect(e)
           },
           dateFormat: O,
         }),
         React__default.createElement(
           Box,
           {
-            position: E.dateSingleDatepickerWrapperPosition,
-            bottom: E.dateSingleDatepickerWrapperBottom,
-            left: E.dateSingleDatepickerWrapperLeft,
-            top: E.dateSingleDatepickerWrapperTop,
-            right: E.dateSingleDatepickerWrapperRight,
+            position: H.dateSingleDatepickerWrapperPosition,
+            bottom: H.dateSingleDatepickerWrapperBottom,
+            left: H.dateSingleDatepickerWrapperLeft,
+            top: H.dateSingleDatepickerWrapperTop,
+            right: H.dateSingleDatepickerWrapperRight,
           },
           i &&
             React__default.createElement(Datepicker$1, {
@@ -5527,7 +5533,7 @@ function DateSingleInput(e) {
               monthLabelFormat: d,
               onDayRender: u,
               phrases: W,
-              ref: L,
+              ref: E,
             }),
         ),
       ),

@@ -18,6 +18,8 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
+  startDateInputId?: string
+  endDateInputId?: string
 }
 declare function DateRangeInput({
   startDate,
@@ -47,5 +49,7 @@ declare function DateRangeInput({
   displayFormat,
   phrases,
   placement,
+  startDateInputId,
+  endDateInputId,
 }: DateRangeInputProps): JSX.Element
 export default DateRangeInput
