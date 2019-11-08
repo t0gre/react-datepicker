@@ -217,3 +217,19 @@ test('should handle click outside (close datepicker)', () => {
   fireEvent.click(getByTestId('outside'))
   expect(onFocusChange).toHaveBeenCalledWith(false)
 })
+
+test('should handle custom id for input field', () => {
+  const onDatesChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container, getByTestId} = render(
+    <Datepicker
+      showDatepicker
+      onFocusChange={onFocusChange}
+      date={null}
+      onDateChange={onDatesChange}
+      inputId="customId"
+    />,
+  )
+  expect(container).toMatchSnapshot()
+  expect(getByTestId('DatepickerInput').id).toEqual('customId')
+})
