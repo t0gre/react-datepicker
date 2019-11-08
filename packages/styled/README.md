@@ -112,6 +112,8 @@ dayLabelFormat?(date: Date): string
 weekdayLabelFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
 onDayRender?(date: Date): React.ReactNode
+startDateInputId?: string
+endDateInputId?: string
 ```
 
 ### Datepicker
@@ -244,6 +246,7 @@ dayLabelFormat?(date: Date): string
 weekdayLabelFormat?(date: Date): string
 monthLabelFormat?(date: Date): string
 onDayRender?(date: Date): React.ReactNode
+inputId?: string
 ```
 
 ### Theming
