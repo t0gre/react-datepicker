@@ -88,6 +88,7 @@ export interface DateRangeInputProps {
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
+  inputId?: string
 }
 
 function DateSingleInput({
@@ -113,6 +114,7 @@ function DateSingleInput({
   displayFormat = 'MM/dd/yyyy',
   phrases = dateSingleInputPhrases,
   placement = 'bottom',
+  inputId = 'startDate',
 }: DateRangeInputProps) {
   const ref = useRef(null)
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
@@ -168,7 +170,7 @@ function DateSingleInput({
     <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
       <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
         <Input
-          id="startDate"
+          id={inputId}
           ariaLabel={phrases.dateAriaLabel}
           placeholder={phrases.datePlaceholder}
           value={getInputValue(date, displayFormat, '')}

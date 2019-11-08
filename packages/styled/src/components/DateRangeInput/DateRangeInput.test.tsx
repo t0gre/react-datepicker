@@ -402,3 +402,22 @@ test('should use dateRangeGridTemplateRows from theme', () => {
   // @ts-ignore
   expect(grid2).toHaveStyleRule('grid-template-rows', '4fr 5fr 6fr')
 })
+
+test('should handle custom id for input fields', () => {
+  const onDatesChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container, getAllByTestId} = render(
+    <Datepicker
+      onFocusChange={onFocusChange}
+      startDate={null}
+      endDate={null}
+      focusedInput={START_DATE}
+      onDatesChange={onDatesChange}
+      startDateInputId="customStartDateId"
+      endDateInputId="customEndDateId"
+    />,
+  )
+  expect(container).toMatchSnapshot()
+  expect(getAllByTestId('DatepickerInput')[0].id).toEqual('customStartDateId')
+  expect(getAllByTestId('DatepickerInput')[1].id).toEqual('customEndDateId')
+})

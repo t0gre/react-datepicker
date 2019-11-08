@@ -122,6 +122,8 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
+  startDateInputId?: string
+  endDateInputId?: string
 }
 
 function DateRangeInput({
@@ -152,6 +154,8 @@ function DateRangeInput({
   displayFormat = 'MM/dd/yyyy',
   phrases = dateRangeInputPhrases,
   placement = 'bottom',
+  startDateInputId = 'startDate',
+  endDateInputId = 'endDate',
 }: DateRangeInputProps) {
   const ref = useRef(null)
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
@@ -219,7 +223,7 @@ function DateRangeInput({
           borderRadius={theme.dateRangeBorderRadius}
         >
           <Input
-            id="startDate"
+            id={startDateInputId}
             ariaLabel={phrases.startDateAriaLabel}
             placeholder={phrases.startDatePlaceholder}
             value={getInputValue(startDate, displayFormat, '')}
@@ -245,7 +249,7 @@ function DateRangeInput({
             />
           </Flex>
           <Input
-            id="endDate"
+            id={endDateInputId}
             ariaLabel={phrases.endDateAriaLabel}
             placeholder={phrases.endDatePlaceholder}
             value={getInputValue(endDate, displayFormat, '')}
