@@ -30,7 +30,7 @@ declare function useDay({
   isSelectedStartOrEnd: boolean
   isWithinHoverRange: boolean
   disabledDate: boolean
-  onKeyDown: (e: KeyboardEvent<HTMLButtonElement>) => void
+  onKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => void
   onClick: () => void
   onMouseEnter: () => void
 }

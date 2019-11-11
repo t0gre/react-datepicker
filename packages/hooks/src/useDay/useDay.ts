@@ -44,7 +44,7 @@ function useDay({
     isSelectedStartOrEnd: isFirstOrLastSelectedDate(date),
     isWithinHoverRange: isDateHovered(date),
     disabledDate: disabled,
-    onKeyDown: (e: KeyboardEvent<HTMLButtonElement>) => {
+    onKeyDown: (e: React.KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === 'ArrowRight') {
         onDateFocus(addDays(date, 1))
       } else if (e.key === 'ArrowLeft') {
