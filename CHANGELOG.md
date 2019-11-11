@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.4](https://github.com/tresko/react-datepicker/compare/v2.1.3...v2.1.4) (2019-11-11)
+
+
+### Bug Fixes
+
+* **typescript:** update KeyboardEvent at useDay ([8e26554](https://github.com/tresko/react-datepicker/commit/8e26554))
+
+
+
+
+
 ## [2.1.3](https://github.com/tresko/react-datepicker/compare/v2.1.2...v2.1.3) (2019-11-08)
 
 **Note:** Version bump only for package react-datepicker
