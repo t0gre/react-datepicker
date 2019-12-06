@@ -42,7 +42,7 @@
     "@types/styled-components": "^4.1.20",
     "@types/styled-system": "^5.1.2",
     "csstype": "^2.6.7",
-    "date-fns": "^2.6.0",
+    "date-fns": "^2.8.1",
     "styled-components": "^4.4.1"
   },
   "dependencies": {
