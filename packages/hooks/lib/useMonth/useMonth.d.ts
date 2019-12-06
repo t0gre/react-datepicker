@@ -9,7 +9,8 @@ export interface UseMonthResult {
     | {
         dayLabel: string
         date: Date
-      })[]
+      }
+  )[]
   monthLabel: string
 }
 export interface UseMonthProps extends GetWeekdayLabelsProps, GetDaysProps {

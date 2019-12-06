@@ -480,7 +480,7 @@ var v = {
   b = 6e4
 function p(e) {
   var t = new Date(e.getTime()),
-    r = t.getTimezoneOffset()
+    r = Math.ceil(t.getTimezoneOffset())
   t.setSeconds(0, 0)
   var a = t.getTime() % b
   return r * b + a
@@ -1726,17 +1726,17 @@ function st(e, t, r, a) {
       .map(function(e) {
         return e[0]
       }),
-    H = h(r)
-  if (isNaN(H)) return new Date(NaN)
-  var $ = g(H, p(H)),
-    I = {}
+    I = h(r)
+  if (isNaN(I)) return new Date(NaN)
+  var H = g(I, p(I)),
+    $ = {}
   for (D = 0; D < F.length; D++) {
-    var A = F[D]
-    if (A.validate && !A.validate($, A.value, T)) return new Date(NaN)
-    var z = A.set($, I, A.value, T)
-    z[0] ? (($ = z[0]), w(I, z[1])) : ($ = z)
+    var z = F[D]
+    if (z.validate && !z.validate(H, z.value, T)) return new Date(NaN)
+    var A = z.set(H, $, z.value, T)
+    A[0] ? ((H = A[0]), w($, A[1])) : (H = A)
   }
-  return $
+  return H
 }
 function ct(e, t) {
   if (t.timestampIsSet) return e
@@ -2698,11 +2698,11 @@ function de(e) {
       goToNextMonths: function() {
         w(ie(b, p, 1)), C(null)
       },
-      goToPreviousYear: function() {
-        w(ie(b, p, -(12 - p + 1))), C(null)
+      goToPreviousYear: function(e) {
+        void 0 === e && (e = 1), w(ie(b, p, -(12 * e - p + 1))), C(null)
       },
-      goToNextYear: function() {
-        w(ie(b, p, 12 - p + 1)), C(null)
+      goToNextYear: function(e) {
+        void 0 === e && (e = 1), w(ie(b, p, 12 * e - p + 1)), C(null)
       },
     }
   )
@@ -3183,10 +3183,7 @@ var background = system(config$6),
 var _scales,
   margin = system(configs.margin),
   padding = system(configs.padding),
-  space = compose(
-    margin,
-    padding,
-  ),
+  space = compose(margin, padding),
   shadow = system({
     boxShadow: {property: 'boxShadow', scale: 'shadows'},
     textShadow: {property: 'textShadow', scale: 'shadows'},
@@ -3622,27 +3619,13 @@ var templateObject_1$3,
   templateObject_3,
   placeholderColor = style({prop: 'placeholderColor', cssProperty: 'color'}),
   placeholderFontWeight = style({prop: 'placeholderFontWeight', cssProperty: 'fontWeight'}),
-  composeInputLabelStyles = compose(
-    position,
-    border,
-    background,
-    display,
-    borderRadius,
-    space,
-  ),
+  composeInputLabelStyles = compose(position, border, background, display, borderRadius, space),
   InputLabel = styled__default('label')(
     templateObject_1$3 ||
       (templateObject_1$3 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
     composeInputLabelStyles,
   ),
-  composeCalendarWrapperStyles = compose(
-    position,
-    left,
-    right,
-    top,
-    height,
-    width,
-  ),
+  composeCalendarWrapperStyles = compose(position, left, right, top, height, width),
   CalendarWrapper = styled__default('div')(
     templateObject_2 ||
       (templateObject_2 = __makeTemplateObject(
@@ -3857,14 +3840,7 @@ function ArrowIcon(e) {
 var templateObject_1$4,
   templateObject_1$5,
   templateObject_2$1,
-  composeStyles = compose(
-    fontFamily,
-    fontSize,
-    fontWeight,
-    color,
-    lineHeight,
-    space,
-  ),
+  composeStyles = compose(fontFamily, fontSize, fontWeight, color, lineHeight, space),
   Text = styled__default('div')(
     templateObject_1$4 ||
       (templateObject_1$4 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
@@ -4072,14 +4048,7 @@ var templateObject_1$6,
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  composeStyledDayStyles = compose(
-    shadow,
-    background,
-    color,
-    fontFamily,
-    fontWeight,
-    fontSize,
-  ),
+  composeStyledDayStyles = compose(shadow, background, color, fontFamily, fontWeight, fontSize),
   StyledDay = styled__default('button')(
     templateObject_5 ||
       (templateObject_5 = __makeTemplateObject(
@@ -4529,13 +4498,7 @@ function CaretIcon$1(e) {
   )
 }
 var templateObject_1$a,
-  composeSyles = compose(
-    width,
-    height,
-    background,
-    space,
-    border,
-  ),
+  composeSyles = compose(width, height, background, space, border),
   StyledNavButton = styled__default('button')(
     templateObject_1$a ||
       (templateObject_1$a = __makeTemplateObject(
@@ -4623,13 +4586,7 @@ function CloseIcon(e) {
 }
 var templateObject_1$b,
   templateObject_2$6,
-  composeTextStyles = compose(
-    space,
-    color,
-    fontSize,
-    fontFamily,
-    fontWeight,
-  ),
+  composeTextStyles = compose(space, color, fontSize, fontFamily, fontWeight),
   Text$1 = styled__default('div')(
     templateObject_1$b ||
       (templateObject_1$b = __makeTemplateObject(
@@ -4708,6 +4665,7 @@ var opacity0To100$1 = styled.keyframes(
     position,
     shadow,
     width,
+    zIndex,
   ),
   StyledDatepicker = styled__default('div')(
     templateObject_3$3 ||
@@ -4751,19 +4709,13 @@ var opacity0To100$1 = styled.keyframes(
         ],
       )),
   ),
-  composeCloseWrapperStyles = compose(
-    display,
-    justifyContent,
-  ),
+  composeCloseWrapperStyles = compose(display, justifyContent),
   CloseWrapper = styled__default(Box)(
     templateObject_5$1 ||
       (templateObject_5$1 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
     composeCloseWrapperStyles,
   ),
-  composeMonthGridStyles = compose(
-    overflow,
-    height,
-  ),
+  composeMonthGridStyles = compose(overflow, height),
   MonthGrid = styled__default(Grid)(
     templateObject_6 || (templateObject_6 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
     composeMonthGridStyles,
@@ -4822,11 +4774,11 @@ function Datepicker(e, t) {
       firstDayOfWeek: W,
     }),
     F = E.activeMonths,
-    H = E.isDateSelected,
-    $ = E.isFirstOrLastSelectedDate,
-    I = E.isDateHovered,
-    A = E.firstDayOfWeek,
-    z = E.onDateSelect,
+    I = E.isDateSelected,
+    H = E.isFirstOrLastSelectedDate,
+    $ = E.isDateHovered,
+    z = E.firstDayOfWeek,
+    A = E.onDateSelect,
     N = E.onResetDates,
     U = E.goToPreviousMonths,
     q = E.goToNextMonths,
@@ -4835,18 +4787,19 @@ function Datepicker(e, t) {
     Q = E.onDateHover,
     X = E.isDateFocused,
     V = E.focusedDate,
-    J = E.onDateFocus,
-    K = E.isDateBlocked
+    Z = E.onDateFocus,
+    J = E.isDateBlocked
   React.useImperativeHandle(t, function() {
     return {
       onDateSelect: function(e) {
-        z(e)
+        A(e)
       },
     }
   })
-  var Z = React.useRef(null),
+  var K = React.useRef(null),
     ee = React.useContext(styled.ThemeContext),
     te = useThemeProps({
+      datepickerZIndex: null,
       datepickerBackground: '#ffffff',
       datepickerPadding: g ? '16px 16px 0' : '32px',
       datepickerBorderRadius: '2px',
@@ -4888,7 +4841,7 @@ function Datepicker(e, t) {
       datepickerBoxShadow: 'rgba(0, 0, 0, 0.05) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px',
     })
   function re() {
-    Z && Z.current && g && (Z.current.scrollTop = 0)
+    K && K.current && g && (K.current.scrollTop = 0)
   }
   function ae() {
     q(), re()
@@ -4909,15 +4862,15 @@ function Datepicker(e, t) {
         value: {
           rtl: m,
           isDateFocused: X,
-          isDateSelected: H,
-          isDateHovered: I,
-          isFirstOrLastSelectedDate: $,
-          onDateFocus: J,
+          isDateSelected: I,
+          isDateHovered: $,
+          isFirstOrLastSelectedDate: H,
+          onDateFocus: Z,
           focusedDate: V,
-          onDateSelect: z,
+          onDateSelect: A,
           onDateHover: Q,
           onDayRender: u,
-          isDateBlocked: K,
+          isDateBlocked: J,
         },
       },
       React__default.createElement(
@@ -4929,6 +4882,7 @@ function Datepicker(e, t) {
           position: te.datepickerPosition,
           boxShadow: te.datepickerBoxShadow,
           width: te.datepickerWidth,
+          zIndex: te.datepickerZIndex,
           rtl: m,
         },
         w &&
@@ -4996,7 +4950,7 @@ function Datepicker(e, t) {
                 gridTemplateColumns: g ? '1fr' : 'repeat(' + G + ', 1fr)',
                 gridGap: te.datepickerMonthsGridGap,
                 pr: m ? '1px' : '0',
-                ref: Z,
+                ref: K,
                 onMouseLeave: function() {
                   Y && Q(null)
                 },
@@ -5006,7 +4960,7 @@ function Datepicker(e, t) {
                   key: 'month-' + e.year + '-' + e.month,
                   year: e.year,
                   month: e.month,
-                  firstDayOfWeek: A,
+                  firstDayOfWeek: z,
                   dayLabelFormat: l || Xt,
                   weekdayLabelFormat: c || Gt,
                   monthLabelFormat: d || At,
@@ -5085,7 +5039,8 @@ var templateObject_1$c,
   Datepicker$1 = React__default.forwardRef(Datepicker),
   Wrapper$1 = styled__default(Box)(
     templateObject_2$8 ||
-      (templateObject_2$8 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+      (templateObject_2$8 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    zIndex,
     function(e) {
       return (
         e.rtl &&
@@ -5099,10 +5054,7 @@ var templateObject_1$c,
       )
     },
   ),
-  composeInputArrowIconStyles = compose(
-    color,
-    opacity,
-  ),
+  composeInputArrowIconStyles = compose(color, opacity),
   InputArrowIcon = styled__default(ArrowIcon)(
     templateObject_4$2 ||
       (templateObject_4$2 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
@@ -5120,11 +5072,7 @@ var templateObject_1$c,
       )
     },
   ),
-  composeInputGridStyles = compose(
-    background,
-    border,
-    borderRadius,
-  ),
+  composeInputGridStyles = compose(background, border, borderRadius),
   InputGrid = styled__default(Grid)(
     templateObject_5$2 ||
       (templateObject_5$2 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
@@ -5202,11 +5150,11 @@ function DateRangeInput(e) {
     P = e.displayFormat,
     E = void 0 === P ? 'MM/dd/yyyy' : P,
     F = e.phrases,
-    H = void 0 === F ? dateRangeInputPhrases : F,
-    $ = e.placement,
-    I = void 0 === $ ? 'bottom' : $,
-    A = e.startDateInputId,
-    z = void 0 === A ? 'startDate' : A,
+    I = void 0 === F ? dateRangeInputPhrases : F,
+    H = e.placement,
+    $ = void 0 === H ? 'bottom' : H,
+    z = e.startDateInputId,
+    A = void 0 === z ? 'startDate' : z,
     N = e.endDateInputId,
     U = void 0 === N ? 'endDate' : N,
     q = React.useRef(null),
@@ -5215,6 +5163,7 @@ function DateRangeInput(e) {
     Q = useThemeProps(
       __assign(
         {
+          dateRangeZIndex: null,
           dateRangeBackground: 'transparent',
           dateRangeGridTemplateColumns: k ? '1fr 24px 1fr' : '194px 39px 194px',
           dateRangeGridTemplateRows: 'unset',
@@ -5228,7 +5177,7 @@ function DateRangeInput(e) {
           dateRangeEndDateInputPadding: k ? (T ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
           dateRangeDatepickerWrapperPosition: 'absolute',
         },
-        getPlacement(I, T),
+        getPlacement($, T),
       ),
     )
   function X(e) {
@@ -5255,7 +5204,7 @@ function DateRangeInput(e) {
       },
       React__default.createElement(
         Wrapper$1,
-        {rtl: T, position: 'relative', ref: G},
+        {zIndex: Q.dateRangeZIndex, rtl: T, position: 'relative', ref: G},
         React__default.createElement(
           InputGrid,
           {
@@ -5267,9 +5216,9 @@ function DateRangeInput(e) {
             borderRadius: Q.dateRangeBorderRadius,
           },
           React__default.createElement(Input, {
-            id: z,
-            ariaLabel: H.startDateAriaLabel,
-            placeholder: H.startDatePlaceholder,
+            id: A,
+            ariaLabel: I.startDateAriaLabel,
+            placeholder: I.startDatePlaceholder,
             value: oe(t, E, ''),
             onClick: function() {
               return i(se)
@@ -5295,8 +5244,8 @@ function DateRangeInput(e) {
           ),
           React__default.createElement(Input, {
             id: U,
-            ariaLabel: H.endDateAriaLabel,
-            placeholder: H.endDatePlaceholder,
+            ariaLabel: I.endDateAriaLabel,
+            placeholder: I.endDatePlaceholder,
             value: oe(r, E, ''),
             onClick: function() {
               return i(t ? ce : se)
@@ -5346,7 +5295,7 @@ function DateRangeInput(e) {
               weekdayLabelFormat: p,
               monthLabelFormat: g,
               onDayRender: f,
-              phrases: H,
+              phrases: I,
               ref: q,
             }),
         ),
@@ -5358,7 +5307,8 @@ var templateObject_1$e,
   templateObject_2$9,
   Wrapper$2 = styled__default(Box)(
     templateObject_2$9 ||
-      (templateObject_2$9 = __makeTemplateObject(['\n  ', '\n'], ['\n  ', '\n'])),
+      (templateObject_2$9 = __makeTemplateObject(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])),
+    zIndex,
     function(e) {
       return (
         e.rtl &&
@@ -5444,24 +5394,25 @@ function DateSingleInput(e) {
     P = void 0 === L ? 'startDate' : L,
     E = React.useRef(null),
     F = React.useRef(null),
-    H = useThemeProps(
+    I = useThemeProps(
       __assign(
         {
+          dateSingleZIndex: null,
           dateSingleInputPadding: w ? (D ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
           dateSingleDatepickerWrapperPosition: 'absolute',
         },
         getPlacement$1(j, D),
       ),
     )
-  function $(e) {
+  function H(e) {
     i && F && F.current && !F.current.contains(e.target) && o(!1)
   }
   return (
     React.useEffect(function() {
       return (
-        'undefined' != typeof window && window.addEventListener('click', $),
+        'undefined' != typeof window && window.addEventListener('click', H),
         function() {
-          window.removeEventListener('click', $)
+          window.removeEventListener('click', H)
         }
       )
     }),
@@ -5474,7 +5425,7 @@ function DateSingleInput(e) {
       },
       React__default.createElement(
         Wrapper$2,
-        {rtl: D, position: 'relative', ref: F},
+        {zIndex: I.dateSingleZIndex, rtl: D, position: 'relative', ref: F},
         React__default.createElement(Input, {
           id: P,
           ariaLabel: W.dateAriaLabel,
@@ -5486,7 +5437,7 @@ function DateSingleInput(e) {
           showCalendarIcon: S,
           vertical: w,
           isActive: !1,
-          padding: H.dateSingleInputPadding,
+          padding: I.dateSingleInputPadding,
           rtl: D,
           onChange: function(e) {
             E && E.current && E.current.onDateSelect && E.current.onDateSelect(e)
@@ -5496,11 +5447,11 @@ function DateSingleInput(e) {
         React__default.createElement(
           Box,
           {
-            position: H.dateSingleDatepickerWrapperPosition,
-            bottom: H.dateSingleDatepickerWrapperBottom,
-            left: H.dateSingleDatepickerWrapperLeft,
-            top: H.dateSingleDatepickerWrapperTop,
-            right: H.dateSingleDatepickerWrapperRight,
+            position: I.dateSingleDatepickerWrapperPosition,
+            bottom: I.dateSingleDatepickerWrapperBottom,
+            left: I.dateSingleDatepickerWrapperLeft,
+            top: I.dateSingleDatepickerWrapperTop,
+            right: I.dateSingleDatepickerWrapperRight,
           },
           i &&
             React__default.createElement(Datepicker$1, {

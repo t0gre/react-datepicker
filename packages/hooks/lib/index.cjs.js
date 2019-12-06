@@ -474,7 +474,7 @@ var longFormatters = {p: timeLongFormatter, P: dateTimeLongFormatter},
   MILLISECONDS_IN_MINUTE = 6e4
 function getTimezoneOffsetInMilliseconds(e) {
   var t = new Date(e.getTime()),
-    r = t.getTimezoneOffset()
+    r = Math.ceil(t.getTimezoneOffset())
   t.setSeconds(0, 0)
   var n = t.getTime() % MILLISECONDS_IN_MINUTE
   return r * MILLISECONDS_IN_MINUTE + n
@@ -2556,10 +2556,10 @@ function canSelectRange(e) {
           return e ? !n(t) : e
         }, !0)
       : !(!t || !r || i) &&
-        (!isBefore(r, addDays(t, a - 1)) &&
+        !isBefore(r, addDays(t, a - 1)) &&
           eachDayOfInterval({start: t, end: r}).reduce(function(e, t) {
             return e ? !n(t) : e
-          }, !0)))
+          }, !0))
   )
 }
 function isDateHovered(e) {
@@ -2768,11 +2768,11 @@ function useDatepicker(e) {
       goToNextMonths: function() {
         p(getNextActiveMonth(D, f, 1)), M(null)
       },
-      goToPreviousYear: function() {
-        p(getNextActiveMonth(D, f, -(12 - f + 1))), M(null)
+      goToPreviousYear: function(e) {
+        void 0 === e && (e = 1), p(getNextActiveMonth(D, f, -(12 * e - f + 1))), M(null)
       },
-      goToNextYear: function() {
-        p(getNextActiveMonth(D, f, 12 - f + 1)), M(null)
+      goToNextYear: function(e) {
+        void 0 === e && (e = 1), p(getNextActiveMonth(D, f, 12 * e - f + 1)), M(null)
       },
     }
   )

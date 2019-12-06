@@ -472,7 +472,7 @@ var v = {
   b = 6e4
 function p(t) {
   var e = new Date(t.getTime()),
-    n = e.getTimezoneOffset()
+    n = Math.ceil(e.getTimezoneOffset())
   e.setSeconds(0, 0)
   var r = e.getTime() % b
   return n * b + r
@@ -2489,10 +2489,10 @@ function ue(t) {
           return t ? !r(e) : t
         }, !0)
       : !(!e || !n || i) &&
-        (!jt(n, Nt(e, a - 1)) &&
+        !jt(n, Nt(e, a - 1)) &&
           Lt({start: e, end: n}).reduce(function(t, e) {
             return t ? !r(e) : t
-          }, !0)))
+          }, !0))
   )
 }
 var se = 'startDate',
@@ -2691,11 +2691,11 @@ function de(t) {
       goToNextMonths: function() {
         D(ie(T, w, 1)), E(null)
       },
-      goToPreviousYear: function() {
-        D(ie(T, w, -(12 - w + 1))), E(null)
+      goToPreviousYear: function(t) {
+        void 0 === t && (t = 1), D(ie(T, w, -(12 * t - w + 1))), E(null)
       },
-      goToNextYear: function() {
-        D(ie(T, w, 12 - w + 1)), E(null)
+      goToNextYear: function(t) {
+        void 0 === t && (t = 1), D(ie(T, w, 12 * t - w + 1)), E(null)
       },
     }
   )

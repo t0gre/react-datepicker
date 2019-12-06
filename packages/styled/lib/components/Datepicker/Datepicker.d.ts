@@ -15,7 +15,6 @@ export interface DatepickerProps extends UseDatepickerProps {
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
 }
-declare const _default: React.ForwardRefExoticComponent<
-  DatepickerProps & React.RefAttributes<unknown>
->
+declare const _default: React.ForwardRefExoticComponent<DatepickerProps &
+  React.RefAttributes<unknown>>
 export default _default
