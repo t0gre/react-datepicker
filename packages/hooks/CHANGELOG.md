@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/tresko/react-datepicker/compare/v2.1.4...v2.2.0) (2019-12-06)
+
+
+### Features
+
+* **useDatepicker:** update goToPreviousYear and goToNextYear methods ([15ac2b6](https://github.com/tresko/react-datepicker/commit/15ac2b6)), closes [#35](https://github.com/tresko/react-datepicker/issues/35)
+
+
+
+
+
 ## [2.1.4](https://github.com/tresko/react-datepicker/compare/v2.1.3...v2.1.4) (2019-11-11)
 
 
