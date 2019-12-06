@@ -145,6 +145,7 @@ export interface InputTheme extends CommonTheme {
 }
 
 export interface DatepickerTheme extends CommonTheme {
+  datepickerZIndex?: ResponsiveValue<ZIndexProperty>
   datepickerBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   datepickerBoxShadow?: ResponsiveValue<BoxShadowProperty>
   datepickerPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
@@ -187,6 +188,7 @@ export interface DatepickerTheme extends CommonTheme {
 }
 
 export interface DateRangeInputTheme extends CommonTheme {
+  dateRangeZIndex?: ResponsiveValue<ZIndexProperty>
   dateRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
   dateRangeGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
   dateRangeGridTemplateRows?: ResponsiveValue<GridTemplateRowsProperty<TLengthStyledSystem>>
@@ -206,6 +208,7 @@ export interface DateRangeInputTheme extends CommonTheme {
 }
 
 export interface DateSingleInputTheme extends CommonTheme {
+  dateSingleZIndex?: ResponsiveValue<ZIndexProperty>
   dateSingleDatepickerWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
   dateSingleDatepickerWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
   dateSingleDatepickerWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>

@@ -1,4 +1,5 @@
 import React, {useRef, useEffect} from 'react'
+import {zIndex, ZIndexProps} from 'styled-system'
 import styled, {css, ThemeProvider} from 'styled-components'
 import {
   START_DATE,
@@ -19,7 +20,9 @@ import useThemeProps from '../../hooks/useThemeProps'
 interface RtlProps {
   rtl: boolean
 }
-const Wrapper = styled(Box)<RtlProps>`
+interface WrapperProps extends RtlProps, ZIndexProps {}
+const Wrapper = styled(Box)<WrapperProps>`
+  ${zIndex}
   ${({rtl}) =>
     rtl &&
     css`
@@ -119,6 +122,7 @@ function DateSingleInput({
   const ref = useRef(null)
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
   const theme: DateSingleInputTheme = useThemeProps({
+    dateSingleZIndex: null,
     dateSingleInputPadding: vertical ? (rtl ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
     dateSingleDatepickerWrapperPosition: 'absolute',
     ...getPlacement(placement, rtl),
@@ -168,7 +172,12 @@ function DateSingleInput({
 
   return (
     <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
-      <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
+      <Wrapper
+        zIndex={theme.dateSingleZIndex}
+        rtl={rtl}
+        position="relative"
+        ref={datepickerWrapperRef}
+      >
         <Input
           id={inputId}
           ariaLabel={phrases.dateAriaLabel}

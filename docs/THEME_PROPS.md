@@ -111,6 +111,7 @@ inputCalendarIconWidth?: string
 inputCalendarIconHeight?: string
 inputCalendarIconColor?: string
 
+datepickerZIndex?: ResponsiveValue<ZIndexProperty>
 datepickerBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
 datepickerBoxShadow?: ResponsiveValue<BoxShadowProperty>
 datepickerPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
@@ -151,6 +152,7 @@ datepickerNextMonthButtonBottom?: ResponsiveValue<BottomProperty<TLengthStyledSy
 datepickerMonthsGridHeight?: ResponsiveValue<HeightProperty<TLengthStyledSystem>>
 datepickerMonthsGridOverflow?: ResponsiveValue<OverflowProperty>
 
+dateRangeZIndex?: ResponsiveValue<ZIndexProperty>
 dateRangeBackground?: ResponsiveValue<BackgroundProperty<TLengthStyledSystem>>
 dateRangeGridTemplateColumns?: ResponsiveValue<GridTemplateColumnsProperty<TLengthStyledSystem>>
 dateRangeGridTemplateRows?: ResponsiveValue<GridTemplateRowsProperty<TLengthStyledSystem>>
@@ -167,4 +169,12 @@ dateRangeDatepickerWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledS
 dateRangeDatepickerWrapperPosition?: ResponsiveValue<PositionProperty>
 dateRangeStartDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 dateRangeEndDateInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
+
+dateSingleZIndex?: ResponsiveValue<ZIndexProperty>
+dateSingleDatepickerWrapperTop?: ResponsiveValue<TopProperty<TLengthStyledSystem>>
+dateSingleDatepickerWrapperRight?: ResponsiveValue<RightProperty<TLengthStyledSystem>>
+dateSingleDatepickerWrapperLeft?: ResponsiveValue<LeftProperty<TLengthStyledSystem>>
+dateSingleDatepickerWrapperBottom?: ResponsiveValue<BottomProperty<TLengthStyledSystem>>
+dateSingleDatepickerWrapperPosition?: ResponsiveValue<PositionProperty>
+dateSingleInputPadding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
 ```

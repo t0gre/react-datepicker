@@ -21,6 +21,8 @@ import {
   HeightProps,
   WidthProps,
   width,
+  zIndex,
+  ZIndexProps,
   compose,
 } from 'styled-system'
 import {
@@ -68,6 +70,7 @@ interface StyledDatepicker
     BorderRadiusProps,
     PositionProps,
     WidthProps,
+    ZIndexProps,
     BoxShadowProps {
   rtl: boolean
 }
@@ -78,6 +81,7 @@ const composeStyledDatepickerStyles = compose(
   position,
   boxShadow,
   width,
+  zIndex,
 )
 
 const StyledDatepicker = styled('div')<StyledDatepicker>`
@@ -109,20 +113,14 @@ const DateWrapper = styled('div')`
 `
 
 interface CloseWrapperProps extends JustifyContentProps, DisplayProps {}
-const composeCloseWrapperStyles = compose(
-  display,
-  justifyContent,
-)
+const composeCloseWrapperStyles = compose(display, justifyContent)
 
 const CloseWrapper = styled(Box)<CloseWrapperProps>`
   ${composeCloseWrapperStyles}
 `
 
 interface MonthGridProps extends HeightProps, OverflowProps {}
-const composeMonthGridStyles = compose(
-  overflow,
-  height,
-)
+const composeMonthGridStyles = compose(overflow, height)
 
 const MonthGrid = styled(Grid)<MonthGridProps>`
   ${composeMonthGridStyles}
@@ -209,6 +207,7 @@ function Datepicker(
   const monthGridRef = useRef<HTMLDivElement>(null)
   const themeContext = useContext(ThemeContext)
   const theme: DatepickerTheme = useThemeProps({
+    datepickerZIndex: null,
     datepickerBackground: '#ffffff',
     datepickerPadding: vertical ? '16px 16px 0' : '32px',
     datepickerBorderRadius: '2px',
@@ -291,6 +290,7 @@ function Datepicker(
           position={theme.datepickerPosition}
           boxShadow={theme.datepickerBoxShadow}
           width={theme.datepickerWidth}
+          zIndex={theme.datepickerZIndex}
           rtl={rtl}
         >
           {showClose && (

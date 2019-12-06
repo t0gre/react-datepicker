@@ -11,6 +11,8 @@ import {
   BorderRadiusProps,
   color,
   ColorProps,
+  zIndex,
+  ZIndexProps,
   compose,
 } from 'styled-system'
 import {
@@ -37,7 +39,9 @@ import globalStyles from '../../globalStyles'
 interface RtlProps {
   rtl: boolean
 }
-const Wrapper = styled(Box)<RtlProps>`
+interface WrapperProps extends RtlProps, ZIndexProps {}
+const Wrapper = styled(Box)<WrapperProps>`
+  ${zIndex}
   ${({rtl}) =>
     rtl &&
     css`
@@ -47,10 +51,7 @@ const Wrapper = styled(Box)<RtlProps>`
 
 interface InputArrowIconProps extends OpacityProps, ColorProps, RtlProps {}
 
-const composeInputArrowIconStyles = compose(
-  color,
-  opacity,
-)
+const composeInputArrowIconStyles = compose(color, opacity)
 
 const InputArrowIcon = styled(ArrowIcon)<InputArrowIconProps>`
   ${composeInputArrowIconStyles}
@@ -63,11 +64,7 @@ const InputArrowIcon = styled(ArrowIcon)<InputArrowIconProps>`
 
 interface StyledGridProps extends BackgroundProps, BorderProps, BorderRadiusProps {}
 
-const composeInputGridStyles = compose(
-  background,
-  border,
-  borderRadius,
-)
+const composeInputGridStyles = compose(background, border, borderRadius)
 
 const InputGrid = styled(Grid)<StyledGridProps>`
   ${composeInputGridStyles}
@@ -161,6 +158,7 @@ function DateRangeInput({
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
   const themeContext = useContext(ThemeContext)
   const theme: DateRangeInputTheme = useThemeProps({
+    dateRangeZIndex: null,
     dateRangeBackground: 'transparent',
     dateRangeGridTemplateColumns: vertical ? '1fr 24px 1fr' : '194px 39px 194px',
     dateRangeGridTemplateRows: 'unset',
@@ -213,7 +211,12 @@ function DateRangeInput({
 
   return (
     <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
-      <Wrapper rtl={rtl} position="relative" ref={datepickerWrapperRef}>
+      <Wrapper
+        zIndex={theme.dateRangeZIndex}
+        rtl={rtl}
+        position="relative"
+        ref={datepickerWrapperRef}
+      >
         <InputGrid
           data-testid="DateRangeInputGrid"
           background={theme.dateRangeBackground}
