@@ -292,13 +292,17 @@ export function useDatepicker({
     setFocusedDate(null)
   }
 
-  function goToPreviousYear() {
-    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -(12 - numberOfMonths + 1)))
+  function goToPreviousYear(numYears: number = 1) {
+    setActiveMonths(
+      getNextActiveMonth(activeMonths, numberOfMonths, -(numYears * 12 - numberOfMonths + 1)),
+    )
     setFocusedDate(null)
   }
 
-  function goToNextYear() {
-    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 12 - numberOfMonths + 1))
+  function goToNextYear(numYears: number = 1) {
+    setActiveMonths(
+      getNextActiveMonth(activeMonths, numberOfMonths, numYears * 12 - numberOfMonths + 1),
+    )
     setFocusedDate(null)
   }
 

@@ -64,9 +64,25 @@ describe('useDatepicker', () => {
     expect(result.current.activeMonths[1].year).toBe(2020)
     expect(result.current.activeMonths[1].month).toBe(3)
 
-    // next year
+    // previous year
     act(() => {
       result.current.goToPreviousYear()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    act(() => {
+      result.current.goToNextYear(2)
+    })
+    expect(result.current.activeMonths[0].year).toBe(2021)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2021)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
+    act(() => {
+      result.current.goToPreviousYear(2)
     })
     expect(result.current.activeMonths[0].year).toBe(2019)
     expect(result.current.activeMonths[0].month).toBe(2)

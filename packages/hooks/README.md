@@ -198,6 +198,14 @@ Updates `activeMonths` (next months) in accordance with the `numberOfMonths` pro
 
 Updates `activeMonths` (previous months) in accordance with the `numberOfMonths` prop.
 
+#### `goToPreviousYear: (numYears: number = 1) => void`
+
+Go to the previous year by default. 
+
+#### `goToNextYear: (numYears: number = 1) => void`
+
+Go to the next year by default.
+
 ## `useMonth`
 
 The `useMonth` returns all days of the month, weekday labels and month label.
