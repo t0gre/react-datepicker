@@ -11,6 +11,7 @@ interface UseDayProps {
   onDateSelect(date: Date): void
   onDateHover(date: Date): void
   dayRef: React.RefObject<HTMLButtonElement>
+  unavailableDates?: Date[]
 }
 declare function useDay({
   date,
@@ -24,6 +25,7 @@ declare function useDay({
   onDateFocus,
   onDateHover,
   dayRef,
+  unavailableDates,
 }: UseDayProps): {
   tabIndex: number
   isSelected: boolean

@@ -221,7 +221,9 @@ function Day({day, date}: DayProps) {
     onDateFocus,
     onDateHover,
     onDayRender,
+    unavailableDates,
   } = useContext(datepickerContext)
+
   const dayProps = useDay({
     date,
     focusedDate,
@@ -234,7 +236,9 @@ function Day({day, date}: DayProps) {
     onDateSelect,
     onDateHover,
     dayRef,
+    unavailableDates,
   })
+
   const themeContext = useContext(ThemeContext)
   const white = getThemeProp('white', globalStyles.colors.white, themeContext)
   const mud = getThemeProp('mud', globalStyles.colors.mud, themeContext)

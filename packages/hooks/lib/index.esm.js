@@ -2712,13 +2712,14 @@ function le(t) {
     l = t.onDateFocus,
     f = t.onDateHover,
     h = t.dayRef,
-    g = n(
+    g = t.unavailableDates,
+    w = n(
       function() {
         return d(e)
       },
       [e, d],
     ),
-    w = n(
+    m = n(
       function() {
         return f(e)
       },
@@ -2730,13 +2731,22 @@ function le(t) {
     },
     [h, e, o],
   )
-  var m = c(e) && !s(e)
+  var y =
+    (c(e) && !s(e)) ||
+    (function(t, e) {
+      return (
+        void 0 === t && (t = []),
+        t.some(function(t) {
+          return _t(e, t)
+        })
+      )
+    })(g, e)
   return {
     tabIndex: null === a || o(e) ? 0 : -1,
     isSelected: i(e),
     isSelectedStartOrEnd: u(e),
     isWithinHoverRange: s(e),
-    disabledDate: m,
+    disabledDate: y,
     onKeyDown: function(t) {
       'ArrowRight' === t.key
         ? l(Nt(e, 1))
@@ -2746,8 +2756,8 @@ function le(t) {
         ? l(Nt(e, -7))
         : 'ArrowDown' === t.key && l(Nt(e, 7))
     },
-    onClick: m ? function() {} : g,
-    onMouseEnter: w,
+    onClick: y ? function() {} : w,
+    onMouseEnter: m,
   }
 }
 export {

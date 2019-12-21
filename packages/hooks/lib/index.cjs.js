@@ -2789,13 +2789,14 @@ function useDay(e) {
     d = e.onDateFocus,
     c = e.onDateHover,
     l = e.dayRef,
-    f = react.useCallback(
+    f = e.unavailableDates,
+    g = react.useCallback(
       function() {
         return u(t)
       },
       [t, u],
     ),
-    g = react.useCallback(
+    h = react.useCallback(
       function() {
         return c(t)
       },
@@ -2807,13 +2808,22 @@ function useDay(e) {
     },
     [l, t, a],
   )
-  var h = s(t) && !o(t)
+  var m =
+    (s(t) && !o(t)) ||
+    (function(e, t) {
+      return (
+        void 0 === e && (e = []),
+        e.some(function(e) {
+          return isSameDay(t, e)
+        })
+      )
+    })(f, t)
   return {
     tabIndex: null === r || a(t) ? 0 : -1,
     isSelected: n(t),
     isSelectedStartOrEnd: i(t),
     isWithinHoverRange: o(t),
-    disabledDate: h,
+    disabledDate: m,
     onKeyDown: function(e) {
       'ArrowRight' === e.key
         ? d(addDays(t, 1))
@@ -2823,8 +2833,8 @@ function useDay(e) {
         ? d(addDays(t, -7))
         : 'ArrowDown' === e.key && d(addDays(t, 7))
     },
-    onClick: h ? function() {} : f,
-    onMouseEnter: g,
+    onClick: m ? function() {} : g,
+    onMouseEnter: h,
   }
 }
 ;(exports.END_DATE = END_DATE),

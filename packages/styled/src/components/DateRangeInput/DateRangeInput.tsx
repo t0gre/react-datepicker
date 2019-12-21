@@ -121,6 +121,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   onDayRender?(date: Date): React.ReactNode
   startDateInputId?: string
   endDateInputId?: string
+  unavailableDates?: Date[]
 }
 
 function DateRangeInput({
@@ -153,6 +154,7 @@ function DateRangeInput({
   placement = 'bottom',
   startDateInputId = 'startDate',
   endDateInputId = 'endDate',
+  unavailableDates = [],
 }: DateRangeInputProps) {
   const ref = useRef(null)
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
@@ -300,6 +302,7 @@ function DateRangeInput({
               monthLabelFormat={monthLabelFormat}
               onDayRender={onDayRender}
               phrases={phrases}
+              unavailableDates={unavailableDates}
               ref={ref}
             />
           )}

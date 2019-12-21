@@ -24,6 +24,7 @@ test('should execute onClick callback', () => {
       isDateBlocked: jest.fn(),
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
     }),
   )
 
@@ -50,6 +51,35 @@ test('should not execute onClick callback, because day is disabled', () => {
       isDateBlocked: () => true,
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
+    }),
+  )
+
+  act(() => {
+    result.current.onClick()
+  })
+
+  expect(result.current.disabledDate).toBe(true)
+  expect(onDateSelect).not.toBeCalled()
+})
+
+test('should not allow date to be selected when supplied as unavailable', () => {
+  const onDateSelect = jest.fn()
+  const {result} = renderHook(() =>
+    useDay({
+      date,
+      // @ts-ignore
+      dayRef,
+      onDateSelect,
+      focusedDate: null,
+      isDateSelected: jest.fn(),
+      isDateFocused: jest.fn(),
+      isFirstOrLastSelectedDate: jest.fn(),
+      isDateHovered: jest.fn(),
+      isDateBlocked: () => true,
+      onDateFocus: jest.fn(),
+      onDateHover: jest.fn(),
+      unavailableDates: [new Date()],
     }),
   )
 
@@ -76,6 +106,7 @@ test('should be active', () => {
       isDateBlocked: jest.fn(),
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
     }),
   )
 
@@ -97,6 +128,7 @@ test('should be active first or last day', () => {
       isDateBlocked: jest.fn(),
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
     }),
   )
 
@@ -118,6 +150,7 @@ test('should be within range', () => {
       isDateBlocked: jest.fn(),
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
     }),
   )
 
@@ -139,6 +172,7 @@ test('tabIndex should be 0', () => {
       isDateBlocked: jest.fn(),
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
     }),
   )
 
@@ -160,6 +194,7 @@ test('should be unfocused', () => {
       isDateBlocked: jest.fn(),
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
     }),
   )
 
@@ -181,6 +216,7 @@ test('should be focused', () => {
       isDateBlocked: jest.fn(),
       onDateFocus: jest.fn(),
       onDateHover: jest.fn(),
+      unavailableDates: [],
     }),
   )
 

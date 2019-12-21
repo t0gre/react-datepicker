@@ -139,6 +139,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
+  unavailableDates?: Date[]
 }
 
 function Datepicker(
@@ -166,6 +167,7 @@ function Datepicker(
     firstDayOfWeek: firstDayOfWeekProp,
     displayFormat = 'MM/dd/yyyy',
     phrases = datepickerPhrases,
+    unavailableDates = [],
   }: DatepickerProps,
   ref?: React.Ref<unknown>,
 ) {
@@ -281,6 +283,7 @@ function Datepicker(
           onDateHover,
           onDayRender,
           isDateBlocked: isDateBlockedFn,
+          unavailableDates,
         }}
       >
         <StyledDatepicker
