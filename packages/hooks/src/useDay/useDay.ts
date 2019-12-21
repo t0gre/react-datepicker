@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect} from 'react'
 import addDays from 'date-fns/addDays'
+import {isSameDay} from 'date-fns'
 
 interface UseDayProps {
   date: Date
@@ -13,6 +14,7 @@ interface UseDayProps {
   onDateSelect(date: Date): void
   onDateHover(date: Date): void
   dayRef: React.RefObject<HTMLButtonElement>
+  unavailableDates?: Date[]
 }
 
 function useDay({
@@ -27,16 +29,23 @@ function useDay({
   onDateFocus,
   onDateHover,
   dayRef,
+  unavailableDates,
 }: UseDayProps) {
   const onClick = useCallback(() => onDateSelect(date), [date, onDateSelect])
   const onMouseEnter = useCallback(() => onDateHover(date), [date, onDateHover])
+
+  const isInUnavailableDates = (unavailableDates: Date[] = [], date: Date) => {
+    return unavailableDates.some(_date => isSameDay(date, _date))
+  }
+
   useEffect(() => {
     if (dayRef && dayRef.current && isDateFocused(date)) {
       dayRef.current.focus()
     }
   }, [dayRef, date, isDateFocused])
 
-  const disabled = isDateBlocked(date) && !isDateHovered(date)
+  const disabled =
+    (isDateBlocked(date) && !isDateHovered(date)) || isInUnavailableDates(unavailableDates, date)
 
   return {
     tabIndex: focusedDate === null || isDateFocused(date) ? 0 : -1,

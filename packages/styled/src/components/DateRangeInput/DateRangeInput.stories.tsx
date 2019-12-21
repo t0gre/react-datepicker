@@ -55,6 +55,7 @@ interface AppProps {
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
+  unavailableDates?: Date[]
 }
 
 function App({
@@ -76,6 +77,7 @@ function App({
   weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
   onDayRender = undefined,
+  unavailableDates = [],
 }: AppProps) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
@@ -109,6 +111,7 @@ function App({
       weekdayLabelFormat={weekdayLabelFormat}
       monthLabelFormat={monthLabelFormat}
       onDayRender={onDayRender}
+      unavailableDates={unavailableDates}
     />
   )
 }
@@ -212,7 +215,7 @@ storiesOf('DateRangeInput', module)
       monthLabelFormat={(date: Date) => format(date, 'MMMM yyyy', {locale})}
     />
   ))
-  .add('Block date', () => (
+  .add('Block dates', () => (
     <App
       rtl={boolean('rtl', false)}
       vertical={boolean('vertical', false)}
@@ -223,6 +226,19 @@ storiesOf('DateRangeInput', module)
       displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
+    />
+  ))
+  .add('Unavailable dates', () => (
+    <App
+      rtl={boolean('rtl', false)}
+      vertical={boolean('vertical', false)}
+      exactMinBookingDays={boolean('exactMinBookingDays', false)}
+      showResetDates={boolean('showResetDates', true)}
+      showClose={boolean('showClose', true)}
+      showSelectedDates={boolean('showSelectedDates', true)}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
+      firstDayOfWeek={0}
+      unavailableDates={[addDays(new Date(), 3), addDays(new Date(), 4), addDays(new Date(), 5)]}
     />
   ))
   .add('Custom day size', () => (

@@ -1,5 +1,5 @@
 {
-  "name": "@datepicker-react/styled",
+  "name": "@staydomio/datepicker-react-styled",
   "version": "2.2.0",
   "description": "A React datepicker build with styled-components.",
   "keywords": [
@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tresko/react-datepicker.git"
+    "url": "git+https://github.com/staydomio/react-datepicker.git"
   },
   "scripts": {
     "build": "../../node_modules/.bin/rollup -c rollup.config.js",
