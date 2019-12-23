@@ -67,7 +67,7 @@ export interface OnDateChangeProps {
   showDatepicker: boolean
 }
 
-export interface DateRangeInputProps {
+export interface DateSingleInputProps {
   date: Date | null
   minBookingDate?: Date
   maxBookingDate?: Date
@@ -92,6 +92,7 @@ export interface DateRangeInputProps {
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
   inputId?: string
+  unavailableDates?: Date[]
 }
 
 function DateSingleInput({
@@ -118,7 +119,8 @@ function DateSingleInput({
   phrases = dateSingleInputPhrases,
   placement = 'bottom',
   inputId = 'startDate',
-}: DateRangeInputProps) {
+  unavailableDates = [],
+}: DateSingleInputProps) {
   const ref = useRef(null)
   const datepickerWrapperRef = useRef<HTMLDivElement>(null)
   const theme: DateSingleInputTheme = useThemeProps({
@@ -226,6 +228,7 @@ function DateSingleInput({
               onDayRender={onDayRender}
               phrases={phrases}
               ref={ref}
+              unavailableDates={unavailableDates}
             />
           )}
         </Box>

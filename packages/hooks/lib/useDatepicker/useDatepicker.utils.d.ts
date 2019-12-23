@@ -1,3 +1,7 @@
+export declare const isInUnavailableDates: (
+  unavailableDates: Date[] | undefined,
+  date: Date,
+) => boolean
 export declare function isDateSelected(
   date: Date,
   startDate: Date | null,
@@ -16,6 +20,7 @@ interface IsDateBlockedProps {
   minBookingDate?: Date
   maxBookingDate?: Date
   isDateBlockedFn?: (date?: Date) => boolean
+  unavailableDates?: Date[]
 }
 export declare function isDateBlocked({
   date,
@@ -25,6 +30,7 @@ export declare function isDateBlocked({
   startDate,
   endDate,
   minBookingDays,
+  unavailableDates,
 }: IsDateBlockedProps): boolean
 export interface MonthType {
   year: number

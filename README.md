@@ -54,6 +54,8 @@ props as shown below.
 
 Here is the minimum _REQUIRED_ setup you need to get the `DateRangeInput` working:
 
+**IE11 is not supported**
+
 ```jsx
 import React, {useReducer} from 'react'
 import {DateRangeInput} from '@datepicker-react/styled'
@@ -105,6 +107,7 @@ showSelectedDates?: boolean // Default: true
 showClose?: boolean // Default: true
 rtl?: boolean // Default: false
 placement?: 'top' | 'bottom' // Default: bottom
+unavailableDates?: Date[] // Default: []
 minBookingDate?: Date
 maxBookingDate?: Date
 numberOfMonths?: number // Default: 2
@@ -128,6 +131,8 @@ control the selected dates using the `startDate`, `endDate`, and `onDatesChange`
 below. Similarly, you can control which input is focused with the `focusedInput` prop.
 
 Here is the minimum _REQUIRED_ setup you need to get the `Datepicker` working:
+
+**IE11 is not supported**
 
 ```jsx
 import React, {useState} from 'react'
@@ -171,6 +176,7 @@ showSelectedDates?: boolean // Default: true
 showClose?: boolean // Default: true
 vertical?: boolean // Default: false
 rtl?: boolean // Default: false
+unavailableDates?: Date[] // Default: []
 minBookingDate?: Date
 maxBookingDate?: Date
 numberOfMonths?: number // Default: 2
@@ -193,6 +199,8 @@ can control calendar visibility (the calendar is only visible if `showDatepicker
 the `showDatepicker` and `onFocusChange` props as shown below.
 
 Here is the minimum _REQUIRED_ setup you need to get the `DateSingleInput` working:
+
+**IE11 is not supported**
 
 ```jsx
 import React, {useReducer} from 'react'
@@ -245,6 +253,7 @@ showClose?: boolean
 rtl?: boolean
 placement?: 'top' | 'bottom'
 initialVisibleMonth?(numberOfMonths: number): MonthType[]
+unavailableDates?: Date[] // Default: []
 isDateBlocked?(date: Date): boolean
 onClose?(): void
 dayLabelFormat?(date: Date): string

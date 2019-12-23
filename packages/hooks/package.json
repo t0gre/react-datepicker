@@ -1,5 +1,5 @@
 {
-  "name": "@staydomio/datepicker-react-hooks",
+  "name": "@datepicker-react/hooks",
   "version": "2.2.0",
   "description": "React hooks for datepicker.",
   "keywords": [
@@ -22,7 +22,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/staydomio/react-datepicker.git"
+    "url": "git+https://github.com/tresko/react-datepicker.git"
   },
   "scripts": {
     "build": "../../node_modules/.bin/rollup -c rollup.config.js",

@@ -212,6 +212,19 @@ storiesOf('Datepicker', module)
       isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
     />
   ))
+  .add('Unavailable dates', () => (
+    <App
+      rtl={boolean('rtl', false)}
+      vertical={boolean('vertical', false)}
+      exactMinBookingDays={boolean('exactMinBookingDays', false)}
+      showResetDates={boolean('showResetDates', true)}
+      showClose={boolean('showClose', true)}
+      showSelectedDates={boolean('showSelectedDates', true)}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
+      firstDayOfWeek={0}
+      unavailableDates={[addDays(new Date(), 3), addDays(new Date(), 4), addDays(new Date(), 5)]}
+    />
+  ))
   .add('Custom day size', () => (
     <ThemeProvider
       theme={{

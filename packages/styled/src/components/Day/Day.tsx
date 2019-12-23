@@ -221,7 +221,6 @@ function Day({day, date}: DayProps) {
     onDateFocus,
     onDateHover,
     onDayRender,
-    unavailableDates,
   } = useContext(datepickerContext)
 
   const dayProps = useDay({
@@ -236,7 +235,6 @@ function Day({day, date}: DayProps) {
     onDateSelect,
     onDateHover,
     dayRef,
-    unavailableDates,
   })
 
   const themeContext = useContext(ThemeContext)

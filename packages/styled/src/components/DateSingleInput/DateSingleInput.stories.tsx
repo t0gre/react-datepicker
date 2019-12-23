@@ -51,6 +51,7 @@ interface AppProps {
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
+  unavailableDates?: Date[]
 }
 
 function App({
@@ -69,6 +70,7 @@ function App({
   weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
   onDayRender = undefined,
+  unavailableDates = [],
 }: AppProps) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
@@ -97,6 +99,7 @@ function App({
         weekdayLabelFormat={weekdayLabelFormat}
         monthLabelFormat={monthLabelFormat}
         onDayRender={onDayRender}
+        unavailableDates={unavailableDates}
       />
     </div>
   )
@@ -204,6 +207,17 @@ storiesOf('DateSingleInput', module)
         isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
       />
     </ThemeProvider>
+  ))
+  .add('Unavailable dates', () => (
+    <App
+      rtl={boolean('rtl', false)}
+      vertical={boolean('vertical', false)}
+      showResetDate={boolean('showResetDate', true)}
+      showClose={boolean('showClose', true)}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
+      firstDayOfWeek={0}
+      unavailableDates={[addDays(new Date(), 3), addDays(new Date(), 4), addDays(new Date(), 5)]}
+    />
   ))
   .add('MinBookingDate and maxBookingDate', () => (
     <ThemeProvider

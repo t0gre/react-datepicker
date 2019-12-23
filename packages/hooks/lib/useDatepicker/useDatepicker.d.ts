@@ -21,6 +21,7 @@ export interface UseDatepickerProps {
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
   isDateBlocked?(date: Date): boolean
+  unavailableDates?: Date[]
 }
 export declare function useDatepicker({
   startDate,
@@ -34,6 +35,7 @@ export declare function useDatepicker({
   numberOfMonths,
   firstDayOfWeek,
   isDateBlocked: isDateBlockedProps,
+  unavailableDates,
 }: UseDatepickerProps): {
   firstDayOfWeek: FirstDayOfWeek
   activeMonths: MonthType[]
@@ -42,7 +44,7 @@ export declare function useDatepicker({
   isFirstOrLastSelectedDate: (date: Date) => boolean
   isDateBlocked: (date: Date) => boolean
   numberOfMonths: number
-  isDateFocused: (date: any) => boolean
+  isDateFocused: (date: Date) => boolean
   focusedDate: Date | null
   hoveredDate: Date | null
   onResetDates: () => void

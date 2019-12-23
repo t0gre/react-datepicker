@@ -1,4 +1,4 @@
-import {useState, useCallback, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import isBefore from 'date-fns/isBefore'
 import isAfter from 'date-fns/isAfter'
 import addDays from 'date-fns/addDays'
@@ -14,6 +14,7 @@ import {
   isFirstOrLastSelectedDate as isFirstOrLastSelectedDateFn,
   canSelectRange,
   isDateHovered as isDateHoveredFn,
+  isInUnavailableDates,
 } from './useDatepicker.utils'
 
 export const START_DATE = 'startDate'
@@ -42,6 +43,7 @@ export interface UseDatepickerProps {
   firstDayOfWeek?: FirstDayOfWeek
   initialVisibleMonth?(numberOfMonths: number): MonthType[]
   isDateBlocked?(date: Date): boolean
+  unavailableDates?: Date[]
 }
 
 export function useDatepicker({
@@ -56,64 +58,13 @@ export function useDatepicker({
   numberOfMonths = 2,
   firstDayOfWeek = 1,
   isDateBlocked: isDateBlockedProps = () => false,
+  unavailableDates = [],
 }: UseDatepickerProps) {
   const [activeMonths, setActiveMonths] = useState(() =>
     getInitialMonths(numberOfMonths, startDate),
   )
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
   const [focusedDate, setFocusedDate] = useState<Date | null>(startDate)
-  const onDateFocus = useCallback(
-    (date: Date) => {
-      setFocusedDate(date)
-
-      if (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate))) {
-        setActiveMonths(getInitialMonths(numberOfMonths, date))
-      }
-    },
-    [setFocusedDate, setActiveMonths, numberOfMonths, focusedDate],
-  )
-
-  const isDateSelected = useCallback((date: Date) => isDateSelectedFn(date, startDate, endDate), [
-    startDate,
-    endDate,
-  ])
-
-  const isFirstOrLastSelectedDate = useCallback(
-    (date: Date) => isFirstOrLastSelectedDateFn(date, startDate, endDate),
-    [startDate, endDate],
-  )
-
-  const isDateBlocked = useCallback(
-    (date: Date) =>
-      isDateBlockedFn({
-        date,
-        minBookingDate,
-        maxBookingDate,
-        startDate,
-        endDate,
-        minBookingDays,
-        isDateBlockedFn: isDateBlockedProps,
-      }),
-    [minBookingDate, maxBookingDate, startDate, endDate, minBookingDays, isDateBlockedProps],
-  )
-
-  const isDateFocused = useCallback(date => (focusedDate ? isSameDay(date, focusedDate) : false), [
-    focusedDate,
-  ])
-
-  const isDateHovered = useCallback(
-    (date: Date) =>
-      isDateHoveredFn({
-        date,
-        hoveredDate,
-        startDate,
-        endDate,
-        minBookingDays,
-        exactMinBookingDays,
-        isDateBlocked: isDateBlockedProps,
-      }),
-    [hoveredDate, startDate, endDate, minBookingDays, exactMinBookingDays, isDateBlockedProps],
-  )
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -124,6 +75,47 @@ export function useDatepicker({
       window.removeEventListener('keydown', handleKeyDown)
     }
   })
+
+  const disabledDatesByUser = (date: Date) => {
+    return isInUnavailableDates(unavailableDates, date) || isDateBlockedProps(date)
+  }
+
+  const onDateFocus = (date: Date) => {
+    setFocusedDate(date)
+
+    if (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate))) {
+      setActiveMonths(getInitialMonths(numberOfMonths, date))
+    }
+  }
+
+  const isDateSelected = (date: Date) => isDateSelectedFn(date, startDate, endDate)
+
+  const isFirstOrLastSelectedDate = (date: Date) =>
+    isFirstOrLastSelectedDateFn(date, startDate, endDate)
+
+  const isDateBlocked = (date: Date) =>
+    isDateBlockedFn({
+      date,
+      minBookingDate,
+      maxBookingDate,
+      startDate,
+      endDate,
+      minBookingDays,
+      isDateBlockedFn: disabledDatesByUser,
+    })
+
+  const isDateFocused = (date: Date) => (focusedDate ? isSameDay(date, focusedDate) : false)
+
+  const isDateHovered = (date: Date) =>
+    isDateHoveredFn({
+      date,
+      hoveredDate,
+      startDate,
+      endDate,
+      minBookingDays,
+      exactMinBookingDays,
+      isDateBlocked: disabledDatesByUser,
+    })
 
   function handleKeyDown(e: KeyboardEvent) {
     if (
@@ -157,7 +149,7 @@ export function useDatepicker({
         exactMinBookingDays,
         minBookingDate,
         maxBookingDate,
-        isDateBlocked: isDateBlockedProps,
+        isDateBlocked: disabledDatesByUser,
         startDate: date,
         endDate: null,
       })
@@ -173,7 +165,7 @@ export function useDatepicker({
       !exactMinBookingDays &&
       canSelectRange({
         minBookingDays,
-        isDateBlocked: isDateBlockedProps,
+        isDateBlocked: disabledDatesByUser,
         startDate: date,
         endDate: null,
       })
@@ -186,7 +178,7 @@ export function useDatepicker({
     } else if (
       focusedInput === START_DATE &&
       !exactMinBookingDays &&
-      canSelectRange({minBookingDays, isDateBlocked: isDateBlockedProps, endDate, startDate: date})
+      canSelectRange({minBookingDays, isDateBlocked: disabledDatesByUser, endDate, startDate: date})
     ) {
       onDatesChange({
         endDate,
@@ -198,7 +190,7 @@ export function useDatepicker({
       !exactMinBookingDays &&
       canSelectRange({
         minBookingDays,
-        isDateBlocked: isDateBlockedProps,
+        isDateBlocked: disabledDatesByUser,
         endDate: null,
         startDate: date,
       })
@@ -213,7 +205,7 @@ export function useDatepicker({
       startDate &&
       !isBefore(date, startDate) &&
       !exactMinBookingDays &&
-      canSelectRange({minBookingDays, isDateBlocked: isDateBlockedProps, startDate, endDate: date})
+      canSelectRange({minBookingDays, isDateBlocked: disabledDatesByUser, startDate, endDate: date})
     ) {
       onDatesChange({
         startDate,

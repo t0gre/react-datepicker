@@ -198,6 +198,7 @@ function Datepicker(
     minBookingDays,
     isDateBlocked,
     exactMinBookingDays,
+    unavailableDates,
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })
@@ -283,7 +284,6 @@ function Datepicker(
           onDateHover,
           onDayRender,
           isDateBlocked: isDateBlockedFn,
-          unavailableDates,
         }}
       >
         <StyledDatepicker

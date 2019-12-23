@@ -1057,6 +1057,17 @@ describe('isDateBlocked', () => {
         minBookingDate,
       }),
     ).toBe(true)
+    expect(
+      isDateBlocked({
+        startDate: new Date(2019, 2, 20, 0, 0, 0),
+        endDate: null,
+        minBookingDays: 2,
+        maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
+        date: new Date(2019, 2, 25, 0, 0, 0),
+        unavailableDates: [new Date(2019, 2, 25, 0, 0, 0)],
+        minBookingDate,
+      }),
+    ).toBe(true)
   })
 
   test('should not be blocked', () => {
@@ -1132,6 +1143,17 @@ describe('isDateBlocked', () => {
         minBookingDays: 3,
         maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
         date: new Date(2019, 2, 22, 0, 0, 0),
+        minBookingDate,
+      }),
+    ).toBe(false)
+    expect(
+      isDateBlocked({
+        startDate: new Date(2019, 2, 20, 0, 0, 0),
+        endDate: null,
+        minBookingDays: 2,
+        maxBookingDate: new Date(2019, 2, 26, 0, 0, 0),
+        date: new Date(2019, 2, 25, 0, 0, 0),
+        unavailableDates: [new Date(2019, 2, 24, 0, 0, 0)],
         minBookingDate,
       }),
     ).toBe(false)

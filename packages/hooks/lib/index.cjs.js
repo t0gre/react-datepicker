@@ -1668,10 +1668,10 @@ function parse(e, t, r, n) {
     if (b) {
       var v = b.incompatibleTokens
       if (Array.isArray(v)) {
-        for (var k = void 0, C = 0; C < D.length; C++) {
-          var M = D[C].token
-          if (-1 !== v.indexOf(M) || M === T) {
-            k = D[C]
+        for (var k = void 0, M = 0; M < D.length; M++) {
+          var C = D[M].token
+          if (-1 !== v.indexOf(C) || C === T) {
+            k = D[M]
             break
           }
         }
@@ -2484,6 +2484,14 @@ function addMonths(e, t) {
   var o = getDaysInMonth(i)
   return r.setMonth(a, Math.min(o, r.getDate())), r
 }
+var isInUnavailableDates = function(e, t) {
+  return (
+    void 0 === e && (e = []),
+    e.some(function(e) {
+      return isSameDay(t, e)
+    })
+  )
+}
 function isDateSelected(e, t, r) {
   return !(!t || !r) && isWithinInterval(e, {start: t, end: r})
 }
@@ -2499,11 +2507,14 @@ function isDateBlocked(e) {
     o = e.endDate,
     s = e.minBookingDays,
     u = void 0 === s ? 1 : s,
-    d = r ? new Date(r.getFullYear(), r.getMonth(), r.getDate(), 0, 0, 0) : r,
-    c = n ? new Date(n.getFullYear(), n.getMonth(), n.getDate(), 0, 0, 0) : n
+    d = e.unavailableDates,
+    c = void 0 === d ? [] : d,
+    l = r ? new Date(r.getFullYear(), r.getMonth(), r.getDate(), 0, 0, 0) : r,
+    f = n ? new Date(n.getFullYear(), n.getMonth(), n.getDate(), 0, 0, 0) : n
   return !!(
-    (d && isBefore(t, d)) ||
-    (c && isAfter(t, c)) ||
+    isInUnavailableDates(c, t) ||
+    (l && isBefore(t, l)) ||
+    (f && isAfter(t, f)) ||
     (i && !o && u > 1 && isWithinInterval(t, {start: i, end: addDays(i, u - 2)})) ||
     (a && a(t))
   )
@@ -2552,14 +2563,14 @@ function canSelectRange(e) {
   return (
     !(!t || 1 !== a || r || n(t)) ||
     ((t && a > 1 && !r && !i) || (t && a > 0 && i && u && d) || (t && a > 0 && i && !o && !s)
-      ? eachDayOfInterval({start: t, end: addDays(t, a - 1)}).reduce(function(e, t) {
-          return e ? !n(t) : e
-        }, !0)
+      ? !eachDayOfInterval({start: t, end: addDays(t, a - 1)}).some(function(e) {
+          return n(e)
+        })
       : !(!t || !r || i) &&
         !isBefore(r, addDays(t, a - 1)) &&
-          eachDayOfInterval({start: t, end: r}).reduce(function(e, t) {
-            return e ? !n(t) : e
-          }, !0))
+          !eachDayOfInterval({start: t, end: r}).some(function(e) {
+            return n(e)
+          }))
   )
 }
 function isDateHovered(e) {
@@ -2571,22 +2582,22 @@ function isDateHovered(e) {
     o = e.minBookingDays,
     s = e.exactMinBookingDays
   return i && o > 1 && s && isWithinInterval(t, {start: i, end: addDays(i, o - 1)})
-    ? eachDayOfInterval({start: i, end: addDays(i, o - 1)}).reduce(function(e, t) {
-        return e ? !a(t) : e
-      }, !0)
+    ? !eachDayOfInterval({start: i, end: addDays(i, o - 1)}).some(function(e) {
+        return a(e)
+      })
     : r &&
       !n &&
       i &&
       isWithinInterval(t, {start: r, end: addDays(r, o - 1)}) &&
       isSameDay(r, i) &&
       o > 1
-    ? eachDayOfInterval({start: r, end: addDays(r, o - 1)}).reduce(function(e, t) {
-        return e ? !a(t) : e
-      }, !0)
+    ? !eachDayOfInterval({start: r, end: addDays(r, o - 1)}).some(function(e) {
+        return a(e)
+      })
     : !(!r || n || !i || isBefore(i, r) || !isWithinInterval(t, {start: r, end: i})) &&
-      eachDayOfInterval({start: r, end: i}).reduce(function(e, t) {
-        return e ? !a(t) : e
-      }, !0)
+      !eachDayOfInterval({start: r, end: i}).some(function(e) {
+        return a(e)
+      })
 }
 var START_DATE = 'startDate',
   END_DATE = 'endDate'
@@ -2612,170 +2623,151 @@ function useDatepicker(e) {
             return !1
           }
         : m,
-    y = react.useState(function() {
+    y = e.unavailableDates,
+    D = void 0 === y ? [] : y,
+    p = react.useState(function() {
       return getInitialMonths(f, t)
     }),
-    D = y[0],
-    p = y[1],
-    T = react.useState(null),
-    b = T[0],
-    v = T[1],
-    k = react.useState(t),
-    C = k[0],
-    M = k[1],
-    x = react.useCallback(
-      function(e) {
-        M(e), (!C || (C && !isSameDay(e, C))) && p(getInitialMonths(f, e))
-      },
-      [M, p, f, C],
-    ),
-    E = react.useCallback(
-      function(e) {
-        return isDateSelected(e, t, r)
-      },
-      [t, r],
-    ),
-    S = react.useCallback(
-      function(e) {
-        return isFirstOrLastSelectedDate(e, t, r)
-      },
-      [t, r],
-    ),
-    P = react.useCallback(
-      function(e) {
-        return isDateBlocked({
-          date: e,
-          minBookingDate: a,
-          maxBookingDate: i,
-          startDate: t,
-          endDate: r,
-          minBookingDays: c,
-          isDateBlockedFn: w,
-        })
-      },
-      [a, i, t, r, c, w],
-    ),
-    O = react.useCallback(
-      function(e) {
-        return !!C && isSameDay(e, C)
-      },
-      [C],
-    ),
-    N = react.useCallback(
-      function(e) {
-        return isDateHovered({
-          date: e,
-          hoveredDate: b,
-          startDate: t,
-          endDate: r,
-          minBookingDays: c,
-          exactMinBookingDays: u,
-          isDateBlocked: w,
-        })
-      },
-      [b, t, r, c, u, w],
+    T = p[0],
+    b = p[1],
+    v = react.useState(null),
+    k = v[0],
+    M = v[1],
+    C = react.useState(t),
+    x = C[0],
+    E = C[1]
+  react.useEffect(function() {
+    return (
+      'undefined' != typeof window && window.addEventListener('keydown', N),
+      function() {
+        window.removeEventListener('keydown', N)
+      }
     )
-  function I(e) {
+  })
+  var S = function(e) {
+      return isInUnavailableDates(D, e) || w(e)
+    },
+    P = function(e) {
+      E(e), (!x || (x && !isSameDay(e, x))) && b(getInitialMonths(f, e))
+    },
+    O = function(e) {
+      return isDateBlocked({
+        date: e,
+        minBookingDate: a,
+        maxBookingDate: i,
+        startDate: t,
+        endDate: r,
+        minBookingDays: c,
+        isDateBlockedFn: S,
+      })
+    }
+  function N(e) {
     if (
       ('ArrowRight' === e.key ||
         'ArrowLeft' === e.key ||
         'ArrowDown' === e.key ||
         'ArrowUp' === e.key) &&
-      !C
+      !x
     ) {
-      var t = D[0]
-      x(t.date), p(getInitialMonths(f, t.date))
+      var t = T[0]
+      P(t.date), b(getInitialMonths(f, t.date))
     }
   }
-  return (
-    react.useEffect(function() {
-      return (
-        'undefined' != typeof window && window.addEventListener('keydown', I),
-        function() {
-          window.removeEventListener('keydown', I)
-        }
-      )
-    }),
-    {
-      firstDayOfWeek: h,
-      activeMonths: D,
-      isDateSelected: E,
-      isDateHovered: N,
-      isFirstOrLastSelectedDate: S,
-      isDateBlocked: P,
-      numberOfMonths: f,
-      isDateFocused: O,
-      focusedDate: C,
-      hoveredDate: b,
-      onResetDates: function() {
-        o({startDate: null, endDate: null, focusedInput: START_DATE})
-      },
-      onDateHover: function(e) {
+  return {
+    firstDayOfWeek: h,
+    activeMonths: T,
+    isDateSelected: function(e) {
+      return isDateSelected(e, t, r)
+    },
+    isDateHovered: function(e) {
+      return isDateHovered({
+        date: e,
+        hoveredDate: k,
+        startDate: t,
+        endDate: r,
+        minBookingDays: c,
+        exactMinBookingDays: u,
+        isDateBlocked: S,
+      })
+    },
+    isFirstOrLastSelectedDate: function(e) {
+      return isFirstOrLastSelectedDate(e, t, r)
+    },
+    isDateBlocked: O,
+    numberOfMonths: f,
+    isDateFocused: function(e) {
+      return !!x && isSameDay(e, x)
+    },
+    focusedDate: x,
+    hoveredDate: k,
+    onResetDates: function() {
+      o({startDate: null, endDate: null, focusedInput: START_DATE})
+    },
+    onDateHover: function(e) {
+      if (e) {
         if (e) {
-          if (e) {
-            var n = !P(e) || (t && isSameDay(e, t)),
-              o = !a || !isBefore(e, addDays(a, -1)),
-              s = !i || !isAfter(e, i),
-              d = addDays(e, c - 1),
-              l = !a || !isBefore(d, a),
-              f = !i || !isAfter(d, i),
-              g = u && c > 1 && o && s && l && f,
-              h = t && !r && !u && o && s,
-              m = !(c > 1 && t) || isWithinInterval(e, {start: t, end: addDays(t, c - 2)}),
-              w = t && isSameDay(e, t) && m
-            n && (g || h || w) ? v(e) : null !== b && v(null)
-          }
-        } else v(null)
-      },
-      onDateSelect: function(e) {
-        ;(n === END_DATE || n === START_DATE) &&
-        c > 0 &&
-        u &&
-        canSelectRange({
-          minBookingDays: c,
-          exactMinBookingDays: u,
-          minBookingDate: a,
-          maxBookingDate: i,
-          isDateBlocked: w,
-          startDate: e,
-          endDate: null,
-        })
-          ? o({startDate: e, endDate: addDays(e, c - 1), focusedInput: null})
-          : ((n === END_DATE && t && isBefore(e, t)) || (n === START_DATE && r && isAfter(e, r))) &&
-            !u &&
-            canSelectRange({minBookingDays: c, isDateBlocked: w, startDate: e, endDate: null})
-          ? o({endDate: null, startDate: e, focusedInput: END_DATE})
-          : n === START_DATE &&
-            !u &&
-            canSelectRange({minBookingDays: c, isDateBlocked: w, endDate: r, startDate: e})
-          ? o({endDate: r, startDate: e, focusedInput: END_DATE})
-          : n === START_DATE &&
-            !u &&
-            canSelectRange({minBookingDays: c, isDateBlocked: w, endDate: null, startDate: e})
-          ? o({endDate: null, startDate: e, focusedInput: END_DATE})
-          : n === END_DATE &&
-            t &&
-            !isBefore(e, t) &&
-            !u &&
-            canSelectRange({minBookingDays: c, isDateBlocked: w, startDate: t, endDate: e}) &&
-            o({startDate: t, endDate: e, focusedInput: null}),
-          n === END_DATE || (C && (!C || isSameDay(e, C))) || p(getInitialMonths(f, e))
-      },
-      onDateFocus: x,
-      goToPreviousMonths: function() {
-        p(getNextActiveMonth(D, f, -1)), M(null)
-      },
-      goToNextMonths: function() {
-        p(getNextActiveMonth(D, f, 1)), M(null)
-      },
-      goToPreviousYear: function(e) {
-        void 0 === e && (e = 1), p(getNextActiveMonth(D, f, -(12 * e - f + 1))), M(null)
-      },
-      goToNextYear: function(e) {
-        void 0 === e && (e = 1), p(getNextActiveMonth(D, f, 12 * e - f + 1)), M(null)
-      },
-    }
-  )
+          var n = !O(e) || (t && isSameDay(e, t)),
+            o = !a || !isBefore(e, addDays(a, -1)),
+            s = !i || !isAfter(e, i),
+            d = addDays(e, c - 1),
+            l = !a || !isBefore(d, a),
+            f = !i || !isAfter(d, i),
+            g = u && c > 1 && o && s && l && f,
+            h = t && !r && !u && o && s,
+            m = !(c > 1 && t) || isWithinInterval(e, {start: t, end: addDays(t, c - 2)}),
+            w = t && isSameDay(e, t) && m
+          n && (g || h || w) ? M(e) : null !== k && M(null)
+        }
+      } else M(null)
+    },
+    onDateSelect: function(e) {
+      ;(n === END_DATE || n === START_DATE) &&
+      c > 0 &&
+      u &&
+      canSelectRange({
+        minBookingDays: c,
+        exactMinBookingDays: u,
+        minBookingDate: a,
+        maxBookingDate: i,
+        isDateBlocked: S,
+        startDate: e,
+        endDate: null,
+      })
+        ? o({startDate: e, endDate: addDays(e, c - 1), focusedInput: null})
+        : ((n === END_DATE && t && isBefore(e, t)) || (n === START_DATE && r && isAfter(e, r))) &&
+          !u &&
+          canSelectRange({minBookingDays: c, isDateBlocked: S, startDate: e, endDate: null})
+        ? o({endDate: null, startDate: e, focusedInput: END_DATE})
+        : n === START_DATE &&
+          !u &&
+          canSelectRange({minBookingDays: c, isDateBlocked: S, endDate: r, startDate: e})
+        ? o({endDate: r, startDate: e, focusedInput: END_DATE})
+        : n === START_DATE &&
+          !u &&
+          canSelectRange({minBookingDays: c, isDateBlocked: S, endDate: null, startDate: e})
+        ? o({endDate: null, startDate: e, focusedInput: END_DATE})
+        : n === END_DATE &&
+          t &&
+          !isBefore(e, t) &&
+          !u &&
+          canSelectRange({minBookingDays: c, isDateBlocked: S, startDate: t, endDate: e}) &&
+          o({startDate: t, endDate: e, focusedInput: null}),
+        n === END_DATE || (x && (!x || isSameDay(e, x))) || b(getInitialMonths(f, e))
+    },
+    onDateFocus: P,
+    goToPreviousMonths: function() {
+      b(getNextActiveMonth(T, f, -1)), E(null)
+    },
+    goToNextMonths: function() {
+      b(getNextActiveMonth(T, f, 1)), E(null)
+    },
+    goToPreviousYear: function(e) {
+      void 0 === e && (e = 1), b(getNextActiveMonth(T, f, -(12 * e - f + 1))), E(null)
+    },
+    goToNextYear: function(e) {
+      void 0 === e && (e = 1), b(getNextActiveMonth(T, f, 12 * e - f + 1)), E(null)
+    },
+  }
 }
 function useDay(e) {
   var t = e.date,
@@ -2789,14 +2781,13 @@ function useDay(e) {
     d = e.onDateFocus,
     c = e.onDateHover,
     l = e.dayRef,
-    f = e.unavailableDates,
-    g = react.useCallback(
+    f = react.useCallback(
       function() {
         return u(t)
       },
       [t, u],
     ),
-    h = react.useCallback(
+    g = react.useCallback(
       function() {
         return c(t)
       },
@@ -2808,22 +2799,13 @@ function useDay(e) {
     },
     [l, t, a],
   )
-  var m =
-    (s(t) && !o(t)) ||
-    (function(e, t) {
-      return (
-        void 0 === e && (e = []),
-        e.some(function(e) {
-          return isSameDay(t, e)
-        })
-      )
-    })(f, t)
+  var h = s(t) && !o(t)
   return {
     tabIndex: null === r || a(t) ? 0 : -1,
     isSelected: n(t),
     isSelectedStartOrEnd: i(t),
     isWithinHoverRange: o(t),
-    disabledDate: m,
+    disabledDate: h,
     onKeyDown: function(e) {
       'ArrowRight' === e.key
         ? d(addDays(t, 1))
@@ -2833,8 +2815,8 @@ function useDay(e) {
         ? d(addDays(t, -7))
         : 'ArrowDown' === e.key && d(addDays(t, 7))
     },
-    onClick: m ? function() {} : g,
-    onMouseEnter: h,
+    onClick: h ? function() {} : f,
+    onMouseEnter: g,
   }
 }
 ;(exports.END_DATE = END_DATE),
