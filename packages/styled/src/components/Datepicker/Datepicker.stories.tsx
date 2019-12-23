@@ -210,11 +210,6 @@ storiesOf('Datepicker', module)
       displayFormat={text('displayFormat', 'MM/dd/yyyy')}
       firstDayOfWeek={0}
       isDateBlocked={(date: Date) => isSameDay(date, addDays(new Date(), 1))}
-      unavailableDates={[
-        new Date('December 24 2019'),
-        new Date('December 25 2019'),
-        new Date('December 26 2019'),
-      ]}
     />
   ))
   .add('Custom day size', () => (
