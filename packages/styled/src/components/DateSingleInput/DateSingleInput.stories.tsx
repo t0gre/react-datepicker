@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react'
 import {ThemeProvider} from 'styled-components'
-import {addDays, isSameDay, format} from 'date-fns'
+import {addDays, isSameDay, format, addMonths} from 'date-fns'
 import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import {text, boolean} from '@storybook/addon-knobs'
@@ -52,6 +52,7 @@ interface AppProps {
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
   unavailableDates?: Date[]
+  initialVisibleMonth?: Date
 }
 
 function App({
@@ -66,6 +67,7 @@ function App({
   isDateBlocked = () => false,
   minBookingDate,
   maxBookingDate,
+  initialVisibleMonth,
   dayLabelFormat = dayLabelFormatFn,
   weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
@@ -100,6 +102,7 @@ function App({
         monthLabelFormat={monthLabelFormat}
         onDayRender={onDayRender}
         unavailableDates={unavailableDates}
+        initialVisibleMonth={initialVisibleMonth}
       />
     </div>
   )
@@ -113,6 +116,16 @@ storiesOf('DateSingleInput', module)
       showResetDate={boolean('showResetDate', true)}
       showClose={boolean('showClose', true)}
       displayFormat={text('displayFormat', 'MM/dd/yyyy')}
+    />
+  ))
+  .add('Initial visible month', () => (
+    <App
+      rtl={boolean('rtl', false)}
+      vertical={boolean('vertical', false)}
+      showResetDate={boolean('showResetDate', true)}
+      showClose={boolean('showClose', true)}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
+      initialVisibleMonth={addMonths(new Date(), 6)}
     />
   ))
   .add('Number of months (3 months)', () => (

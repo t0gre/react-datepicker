@@ -1,5 +1,5 @@
 import React from 'react'
-import {FormatFunction, FirstDayOfWeek, MonthType} from '@datepicker-react/hooks'
+import {FormatFunction, FirstDayOfWeek} from '@datepicker-react/hooks'
 import {DateSingleInputPhrases} from '../../phrases'
 export interface OnDateChangeProps {
   date: Date | null
@@ -20,9 +20,9 @@ export interface DateSingleInputProps {
   showClose?: boolean
   rtl?: boolean
   placement?: 'top' | 'bottom'
+  initialVisibleMonth?: Date
   onDateChange(data: OnDateChangeProps): void
   onFocusChange(focusInput: boolean): void
-  initialVisibleMonth?(numberOfMonths: number): MonthType[]
   isDateBlocked?(date: Date): boolean
   onClose?(): void
   dayLabelFormat?(date: Date): string
@@ -44,6 +44,7 @@ declare function DateSingleInput({
   weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,
+  initialVisibleMonth,
   numberOfMonths,
   showClose,
   showResetDate,

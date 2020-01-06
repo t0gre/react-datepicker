@@ -7,7 +7,6 @@ import {
   getInputValue,
   OnDatesChangeProps,
   FirstDayOfWeek,
-  MonthType,
 } from '@datepicker-react/hooks'
 import {dateSingleInputPhrases, DateSingleInputPhrases} from '../../phrases'
 import Box from '../Box'
@@ -82,9 +81,9 @@ export interface DateSingleInputProps {
   showClose?: boolean
   rtl?: boolean
   placement?: 'top' | 'bottom'
+  initialVisibleMonth?: Date
   onDateChange(data: OnDateChangeProps): void
   onFocusChange(focusInput: boolean): void
-  initialVisibleMonth?(numberOfMonths: number): MonthType[]
   isDateBlocked?(date: Date): boolean
   onClose?(): void
   dayLabelFormat?(date: Date): string
@@ -107,6 +106,7 @@ function DateSingleInput({
   weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,
+  initialVisibleMonth,
   numberOfMonths = 1,
   showClose = true,
   showResetDate = true,
@@ -229,6 +229,7 @@ function DateSingleInput({
               phrases={phrases}
               ref={ref}
               unavailableDates={unavailableDates}
+              initialVisibleMonth={initialVisibleMonth}
             />
           )}
         </Box>

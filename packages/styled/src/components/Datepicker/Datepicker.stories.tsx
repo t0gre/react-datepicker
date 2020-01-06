@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {ThemeProvider} from 'styled-components'
-import {format, addDays, isSameDay} from 'date-fns'
+import {format, addDays, isSameDay, addMonths} from 'date-fns'
 import {
   dayLabelFormat as dayLabelFormatFn,
   weekdayLabelFormat as weekdayLabelFormatFn,
@@ -40,6 +40,7 @@ interface AppProps {
   monthLabelFormat?(date: Date): string
   onDayRender?(date: Date): React.ReactNode
   unavailableDates?: Date[]
+  initialVisibleMonth?: Date
 }
 
 function App({
@@ -57,6 +58,7 @@ function App({
   isDateBlocked = () => false,
   minBookingDate,
   maxBookingDate,
+  initialVisibleMonth,
   dayLabelFormat = dayLabelFormatFn,
   weekdayLabelFormat = weekdayLabelFormatFn,
   monthLabelFormat = monthLabelFormatFn,
@@ -104,6 +106,7 @@ function App({
       monthLabelFormat={monthLabelFormat}
       onDayRender={onDayRender}
       unavailableDates={unavailableDates}
+      initialVisibleMonth={initialVisibleMonth}
     />
   )
 }
@@ -118,6 +121,18 @@ storiesOf('Datepicker', module)
       showClose={boolean('showClose', true)}
       showSelectedDates={boolean('showSelectedDates', true)}
       displayFormat={text('displayFormat', 'MM/dd/yyyy')}
+    />
+  ))
+  .add('Initial visible month', () => (
+    <App
+      rtl={boolean('rtl', false)}
+      vertical={boolean('vertical', false)}
+      exactMinBookingDays={boolean('exactMinBookingDays', false)}
+      showResetDates={boolean('showResetDates', true)}
+      showClose={boolean('showClose', true)}
+      showSelectedDates={boolean('showSelectedDates', true)}
+      displayFormat={text('displayFormat', 'MM/dd/yyyy')}
+      initialVisibleMonth={addMonths(new Date(), 6)}
     />
   ))
   .add('Minimum booking days (7 days)', () => (

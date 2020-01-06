@@ -1,4 +1,3 @@
-import {MonthType} from './useDatepicker.utils'
 export declare const START_DATE = 'startDate'
 export declare const END_DATE = 'endDate'
 export declare type FocusedInput = 'startDate' | 'endDate' | null
@@ -19,7 +18,7 @@ export interface UseDatepickerProps {
   minBookingDays?: number
   exactMinBookingDays?: boolean
   firstDayOfWeek?: FirstDayOfWeek
-  initialVisibleMonth?(numberOfMonths: number): MonthType[]
+  initialVisibleMonth?: Date
   isDateBlocked?(date: Date): boolean
   unavailableDates?: Date[]
 }
@@ -30,6 +29,7 @@ export declare function useDatepicker({
   minBookingDate,
   maxBookingDate,
   onDatesChange,
+  initialVisibleMonth,
   exactMinBookingDays,
   minBookingDays,
   numberOfMonths,
@@ -38,7 +38,7 @@ export declare function useDatepicker({
   unavailableDates,
 }: UseDatepickerProps): {
   firstDayOfWeek: FirstDayOfWeek
-  activeMonths: MonthType[]
+  activeMonths: import('./useDatepicker.utils').MonthType[]
   isDateSelected: (date: Date) => boolean
   isDateHovered: (date: Date) => boolean
   isFirstOrLastSelectedDate: (date: Date) => boolean

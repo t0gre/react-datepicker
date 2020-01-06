@@ -74,6 +74,10 @@ If `exactMinBookingDays` is `true`, then the range of dates is always the same a
 
 First day of the week.
 
+#### `initialVisibleMonth? Date`
+
+Initial visible month
+
 #### `isDateBlocked: (date: Date) => boolean`
 
 If `isDateBlocked` returns `true`, then the date is blocked.

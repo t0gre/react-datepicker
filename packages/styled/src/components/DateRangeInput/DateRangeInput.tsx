@@ -122,6 +122,7 @@ export interface DateRangeInputProps extends UseDatepickerProps {
   startDateInputId?: string
   endDateInputId?: string
   unavailableDates?: Date[]
+  initialVisibleMonth?: Date
 }
 
 function DateRangeInput({
@@ -139,6 +140,7 @@ function DateRangeInput({
   weekdayLabelFormat,
   monthLabelFormat,
   onDayRender,
+  initialVisibleMonth,
   showClose = true,
   showSelectedDates = true,
   showResetDates = true,
@@ -304,6 +306,7 @@ function DateRangeInput({
               phrases={phrases}
               unavailableDates={unavailableDates}
               ref={ref}
+              initialVisibleMonth={initialVisibleMonth}
             />
           )}
         </Box>

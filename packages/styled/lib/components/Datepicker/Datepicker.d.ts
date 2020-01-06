@@ -10,6 +10,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   showClose?: boolean
   vertical?: boolean
   rtl?: boolean
+  initialVisibleMonth?: Date
   dayLabelFormat?(date: Date): string
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string

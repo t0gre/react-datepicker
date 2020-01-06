@@ -114,7 +114,7 @@ numberOfMonths?: number // Default: 2
 minBookingDays?: number // Default: 1
 exactMinBookingDays?: boolean // Default: false
 firstDayOfWeek?: FirstDayOfWeek // Default: 1
-initialVisibleMonth?(numberOfMonths: number): MonthType[]
+initialVisibleMonth?: Date
 isDateBlocked?(date: Date): boolean
 dayLabelFormat?(date: Date): string
 weekdayLabelFormat?(date: Date): string
@@ -183,7 +183,7 @@ numberOfMonths?: number // Default: 2
 minBookingDays?: number // Default: 1
 exactMinBookingDays?: boolean // Default: false
 firstDayOfWeek?: FirstDayOfWeek // Default: 0
-initialVisibleMonth?(numberOfMonths: number): MonthType[]
+initialVisibleMonth?: Date
 isDateBlocked?(date: Date): boolean
 dayLabelFormat?(date: Date): string
 weekdayLabelFormat?(date: Date): string
@@ -252,7 +252,7 @@ showResetDate?: boolean
 showClose?: boolean
 rtl?: boolean
 placement?: 'top' | 'bottom'
-initialVisibleMonth?(numberOfMonths: number): MonthType[]
+initialVisibleMonth?: Date
 unavailableDates?: Date[] // Default: []
 isDateBlocked?(date: Date): boolean
 onClose?(): void

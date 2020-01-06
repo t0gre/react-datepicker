@@ -135,6 +135,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   showClose?: boolean
   vertical?: boolean
   rtl?: boolean
+  initialVisibleMonth?: Date
   dayLabelFormat?(date: Date): string
   weekdayLabelFormat?(date: Date): string
   monthLabelFormat?(date: Date): string
@@ -154,6 +155,7 @@ function Datepicker(
     weekdayLabelFormat,
     monthLabelFormat,
     onDayRender,
+    initialVisibleMonth,
     vertical = false,
     rtl = false,
     showResetDates = true,
@@ -199,6 +201,7 @@ function Datepicker(
     isDateBlocked,
     exactMinBookingDays,
     unavailableDates,
+    initialVisibleMonth,
     numberOfMonths: numberOfMonthsProp,
     firstDayOfWeek: firstDayOfWeekProp,
   })

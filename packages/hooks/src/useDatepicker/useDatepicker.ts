@@ -7,7 +7,6 @@ import isSameDay from 'date-fns/isSameDay'
 import isSameMonth from 'date-fns/isSameDay'
 import {
   getInitialMonths,
-  MonthType,
   getNextActiveMonth,
   isDateSelected as isDateSelectedFn,
   isDateBlocked as isDateBlockedFn,
@@ -41,7 +40,7 @@ export interface UseDatepickerProps {
   minBookingDays?: number
   exactMinBookingDays?: boolean
   firstDayOfWeek?: FirstDayOfWeek
-  initialVisibleMonth?(numberOfMonths: number): MonthType[]
+  initialVisibleMonth?: Date
   isDateBlocked?(date: Date): boolean
   unavailableDates?: Date[]
 }
@@ -53,6 +52,7 @@ export function useDatepicker({
   minBookingDate,
   maxBookingDate,
   onDatesChange,
+  initialVisibleMonth,
   exactMinBookingDays = false,
   minBookingDays = 1,
   numberOfMonths = 2,
@@ -61,7 +61,9 @@ export function useDatepicker({
   unavailableDates = [],
 }: UseDatepickerProps) {
   const [activeMonths, setActiveMonths] = useState(() =>
-    getInitialMonths(numberOfMonths, startDate),
+    startDate
+      ? getInitialMonths(numberOfMonths, startDate)
+      : getInitialMonths(numberOfMonths, initialVisibleMonth || null),
   )
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null)
   const [focusedDate, setFocusedDate] = useState<Date | null>(startDate)
