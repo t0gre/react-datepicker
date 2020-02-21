@@ -39,11 +39,11 @@
     "styled-components": ">= 4.0.0"
   },
   "devDependencies": {
-    "@types/styled-components": "^4.1.20",
+    "@types/styled-components": "^5.0.0",
     "@types/styled-system": "^5.1.2",
     "csstype": "^2.6.9",
     "date-fns": "^2.9.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.0.0"
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.3.1",
