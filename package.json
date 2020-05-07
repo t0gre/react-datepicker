@@ -84,7 +84,7 @@
     "jest-date-mock": "^1.0.8",
     "jest-environment-jsdom": "^25.1.0",
     "jest-environment-node": "^25.1.0",
-    "jest-runner-eslint": "^0.7.6",
+    "jest-runner-eslint": "^0.8.0",
     "jest-serializer-html": "^7.0.0",
     "jest-styled-components": "^6.3.4",
     "jest-watch-select-projects": "^2.0.0",
