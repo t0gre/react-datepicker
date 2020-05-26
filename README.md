@@ -12,6 +12,8 @@
 
 ![example](./docs/datepicker.gif)
 
+## if anyone would like to continue developing this project, please contact me at sedej.miha@gmail.com and I will transfer the ownership of the project. I don’t intend to maintain the project anymore because I don’t have enough time.
+
 ## How to build your own datepicker?
 
 Simple. Use
