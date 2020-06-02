@@ -92,6 +92,37 @@ describe('useDatepicker', () => {
     clear()
   })
 
+  test('change years and months', () => {
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: null,
+        endDate: null,
+        focusedInput: null,
+        onDatesChange: jest.fn(),
+      }),
+    )
+
+    // first 2 months in 1980
+    act(() => {
+      result.current.goToSpecificMonth(new Date(1980, 0))
+    })
+    expect(result.current.activeMonths[0].year).toBe(1980)
+    expect(result.current.activeMonths[0].month).toBe(0)
+    expect(result.current.activeMonths[1].year).toBe(1980)
+    expect(result.current.activeMonths[1].month).toBe(1)
+
+    // jun and july in 2000
+    act(() => {
+      result.current.goToSpecificMonth(new Date(2000, 5))
+    })
+    expect(result.current.activeMonths[0].year).toBe(2000)
+    expect(result.current.activeMonths[0].month).toBe(5)
+    expect(result.current.activeMonths[1].year).toBe(2000)
+    expect(result.current.activeMonths[1].month).toBe(6)
+
+    clear()
+  })
+
   test('change years, numberOfMonts = 1', () => {
     advanceTo(new Date(2019, 2, 27, 0, 0, 0))
     const {result} = renderHook(() =>
