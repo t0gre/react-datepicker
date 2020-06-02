@@ -140,6 +140,10 @@ Select a date. Which date is selected, depends on `focusedInput`.
 
 Set `focusedDate`.
 
+#### `goToSpecificMonth: (date: Date) => void`
+
+Updates `activeMonths` to specific date.
+
 #### `goToNextMonths: () => void`
 
 Updates `activeMonths` (next months) in accordance with the `numberOfMonths` prop.
