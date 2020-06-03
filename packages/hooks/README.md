@@ -140,7 +140,7 @@ Select a date. Which date is selected, depends on `focusedInput`.
 
 Set `focusedDate`.
 
-#### `goToSpecificMonth: (date: Date) => void`
+#### `goToDate: (date: Date) => void`
 
 Updates `activeMonths` to specific date.
 

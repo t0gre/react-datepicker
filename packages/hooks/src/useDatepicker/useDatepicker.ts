@@ -286,7 +286,7 @@ export function useDatepicker({
     setFocusedDate(null)
   }
 
-  function goToSpecificMonth(date: Date) {
+  function goToDate(date: Date) {
     setActiveMonths(getInitialMonths(numberOfMonths, date))
     setFocusedDate(null)
   }
@@ -322,7 +322,7 @@ export function useDatepicker({
     onDateFocus,
     goToPreviousMonths,
     goToNextMonths,
-    goToSpecificMonth,
+    goToDate,
     goToPreviousYear,
     goToNextYear,
   }

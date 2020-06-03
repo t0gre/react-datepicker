@@ -53,7 +53,7 @@ export declare function useDatepicker({
   onDateFocus: (date: Date) => void
   goToPreviousMonths: () => void
   goToNextMonths: () => void
-  goToSpecificMonth: (date: Date) => void
+  goToDate: (date: Date) => void
   goToPreviousYear: (numYears?: number) => void
   goToNextYear: (numYears?: number) => void
 }

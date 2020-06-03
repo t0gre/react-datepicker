@@ -104,7 +104,7 @@ describe('useDatepicker', () => {
 
     // first 2 months in 1980
     act(() => {
-      result.current.goToSpecificMonth(new Date(1980, 0))
+      result.current.goToDate(new Date(1980, 0))
     })
     expect(result.current.activeMonths[0].year).toBe(1980)
     expect(result.current.activeMonths[0].month).toBe(0)
@@ -113,7 +113,7 @@ describe('useDatepicker', () => {
 
     // jun and july in 2000
     act(() => {
-      result.current.goToSpecificMonth(new Date(2000, 5))
+      result.current.goToDate(new Date(2000, 5))
     })
     expect(result.current.activeMonths[0].year).toBe(2000)
     expect(result.current.activeMonths[0].month).toBe(5)
