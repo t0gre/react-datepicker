@@ -49,7 +49,10 @@ const Wrapper = styled(Box)<WrapperProps>`
     `}
 `
 
-interface InputArrowIconProps extends OpacityProps, ColorProps, RtlProps {}
+interface InputArrowIconProps extends OpacityProps, ColorProps, RtlProps {
+  height?: string
+  width?: string
+}
 
 const composeInputArrowIconStyles = compose(color, opacity)
 
@@ -247,9 +250,9 @@ function DateRangeInput({
           <Flex alignItems="center" justifyContent="center">
             <InputArrowIcon
               // @ts-ignore
-              width={theme.dateRangeArrowIconWidth}
+              width={theme.dateRangeArrowIconWidth as string}
               // @ts-ignore
-              height={theme.dateRangeArrowIconHeight}
+              height={theme.dateRangeArrowIconHeight as string}
               color={theme.dateRangeArrowIconColor}
               opacity={theme.dateRangeArrowIconOpacity}
               rtl={rtl}

@@ -79,7 +79,7 @@ function SelectDate({title, isActive, date, vertical}: SelectDateProps) {
       <StyledDate
         as="span"
         // @ts-ignore
-        color={theme.selectDateDateColor}
+        color={theme.selectDateDateColor as string}
         fontSize={theme.selectDateDateFontSize}
         fontWeight={theme.selectDateDateFontWeight}
         fontFamily={theme.fontFamily}

@@ -337,15 +337,15 @@ function Day({day, date}: DayProps) {
       fontWeight={theme.dayFontWeight}
       fontSize={theme.dayFontSize}
       // @ts-ignore
-      daySelectedHoverBackground={theme.daySelectedHoverBackground}
+      daySelectedHoverBackground={theme.daySelectedHoverBackground as string}
       // @ts-ignore
-      dayHoverBackground={theme.dayHoverBackground}
+      dayHoverBackground={theme.dayHoverBackground as string}
       // @ts-ignore
-      dayHoverColor={theme.dayHoverColor}
+      dayHoverColor={theme.dayHoverColor as string}
       // @ts-ignore
-      daySelectedHoverColor={theme.daySelectedHoverColor}
+      daySelectedHoverColor={theme.daySelectedHoverColor as string}
       // @ts-ignore
-      borderAccessibilityColor={theme.dayAccessibilityBorderColor}
+      borderAccessibilityColor={theme.dayAccessibilityBorderColor as string}
       boxShadow={`1px 0 0 0 ${borderColor},
         0 1px 0 0 ${borderColor},
         1px 1px 0 0 ${borderColor},

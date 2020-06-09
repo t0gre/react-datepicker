@@ -276,7 +276,7 @@ function Input({
         background={theme.inputBackground}
         fontFamily={theme.fontFamily}
         // @ts-ignore
-        color={theme.inputColor}
+        color={theme.inputColor as string}
         fontSize={theme.inputFontSize}
         fontWeight={theme.inputFontWeight}
         placeholderColor={theme.inputPlaceholderColor}

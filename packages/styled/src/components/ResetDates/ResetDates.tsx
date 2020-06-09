@@ -65,11 +65,11 @@ function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
     >
       <RedoIconStyle
         // @ts-ignore
-        height={theme.resetDatesIconHeight}
+        height={theme.resetDatesIconHeight as string}
         // @ts-ignore
-        width={theme.resetDatesIconWidth}
+        width={theme.resetDatesIconWidth as string}
         // @ts-ignore
-        color={theme.resetDatesIconColor}
+        color={theme.resetDatesIconColor as string}
         rtl={rtl}
       />
       <Text
