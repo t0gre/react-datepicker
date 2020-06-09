@@ -149,6 +149,7 @@ const StyledDay = styled('button')<StyledDayProps>`
       opacity: 0.4;
     `}
   
+  // @ts-ignore
   ${({disabledDate, isSelected, isSelectedStartOrEnd, isWithinHoverRange}) => {
     if (!disabledDate && !isSelected && !isSelectedStartOrEnd && !isWithinHoverRange) {
       return css`
@@ -170,6 +171,7 @@ const StyledDay = styled('button')<StyledDayProps>`
   }}
   
   &:focus {
+    // @ts-ignore
     ${({borderAccessibilityColor}) => css`
       box-shadow: none;
       border: 2px solid ${borderAccessibilityColor};
