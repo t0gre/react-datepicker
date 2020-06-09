@@ -17,6 +17,7 @@ export interface DatepickerProps extends UseDatepickerProps {
   onDayRender?(date: Date): React.ReactNode
   unavailableDates?: Date[]
 }
-declare const _default: React.ForwardRefExoticComponent<DatepickerProps &
-  React.RefAttributes<unknown>>
+declare const _default: React.ForwardRefExoticComponent<
+  DatepickerProps & React.RefAttributes<unknown>
+>
 export default _default
