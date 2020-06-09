@@ -38,7 +38,7 @@
     "react": "^16.8.5"
   },
   "dependencies": {
-    "date-fns": "^2.9.0"
+    "date-fns": "^2.14.0"
   },
   "publishConfig": {
     "access": "public"
