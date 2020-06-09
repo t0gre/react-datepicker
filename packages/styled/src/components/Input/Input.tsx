@@ -67,14 +67,7 @@ interface InputLabelProps
     SpaceProps,
     BorderRadiusProps {}
 
-const composeInputLabelStyles = compose(
-  position,
-  border,
-  background,
-  display,
-  borderRadius,
-  space,
-)
+const composeInputLabelStyles = compose(position, border, background, display, borderRadius, space)
 const InputLabel = styled('label')<InputLabelProps>`
   ${composeInputLabelStyles}
 `
@@ -87,14 +80,7 @@ interface CalendarWrapperProps
     HeightProps,
     WidthProps {}
 
-const composeCalendarWrapperStyles = compose(
-  position,
-  left,
-  right,
-  top,
-  height,
-  width,
-)
+const composeCalendarWrapperStyles = compose(position, left, right, top, height, width)
 
 const CalendarWrapper = styled('div')<CalendarWrapperProps>`
   ${composeCalendarWrapperStyles}

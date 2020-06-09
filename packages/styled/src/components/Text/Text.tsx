@@ -23,14 +23,7 @@ interface TextProps
     SpaceProps,
     LineHeightProps {}
 
-const composeStyles = compose(
-  fontFamily,
-  fontSize,
-  fontWeight,
-  color,
-  lineHeight,
-  space,
-)
+const composeStyles = compose(fontFamily, fontSize, fontWeight, color, lineHeight, space)
 
 const Text = styled('div')<TextProps>`
   ${composeStyles}

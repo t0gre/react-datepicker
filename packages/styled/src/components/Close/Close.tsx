@@ -26,13 +26,7 @@ interface TextProps
     FontSizeProps,
     FontFamilyProps,
     FontWeightProps {}
-const composeTextStyles = compose(
-  space,
-  color,
-  fontSize,
-  fontFamily,
-  fontWeight,
-)
+const composeTextStyles = compose(space, color, fontSize, fontFamily, fontWeight)
 const Text = styled('div')<TextProps>`
   ${composeTextStyles}
   float: left;

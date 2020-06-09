@@ -27,13 +27,7 @@ interface StyledNavButtonProps
     SpaceProps,
     BordersProps {}
 
-const composeSyles = compose(
-  width,
-  height,
-  background,
-  space,
-  borders,
-)
+const composeSyles = compose(width, height, background, space, borders)
 
 const StyledNavButton = styled('button')<StyledNavButtonProps>`
   ${composeSyles}
