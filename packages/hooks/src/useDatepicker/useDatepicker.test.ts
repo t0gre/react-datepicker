@@ -722,6 +722,7 @@ describe('useDatepicker', () => {
     act(() => {
       result.current.onDateHover(props.callbackDate)
     })
+    // @ts-ignore
     expect(result.current.isDateHovered(props.expectedHoveredDate)).toBe(props.expected)
     clear()
   })

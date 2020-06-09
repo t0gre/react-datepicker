@@ -332,6 +332,7 @@ function Day({day, date}: DayProps) {
       dayHeight={theme.daySize}
       dayWidth={theme.daySize}
       background={background}
+      // @ts-ignore
       color={color}
       fontFamily={theme.fontFamily}
       fontWeight={theme.dayFontWeight}
