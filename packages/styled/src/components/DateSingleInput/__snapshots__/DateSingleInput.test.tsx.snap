@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`placement top 1`] = `
+.c4 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+  top: unset;
+  right: unset;
+}
+
 .c10 {
   box-sizing: border-box;
   position: relative;
@@ -27,15 +36,6 @@ exports[`placement top 1`] = `
   left: unset;
   right: 0;
   bottom: unset;
-}
-
-.c4 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 65px;
-  left: 0;
-  top: unset;
-  right: unset;
 }
 
 .c1 {
@@ -209,8 +209,8 @@ exports[`placement top 1`] = `
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -323,8 +323,8 @@ exports[`placement top 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -1486,8 +1486,8 @@ exports[`should handle custom id for input field 1`] = `
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -1600,8 +1600,8 @@ exports[`should handle custom id for input field 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -2763,8 +2763,8 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -2877,8 +2877,8 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -4023,8 +4023,8 @@ exports[`should render custom day 1`] = `
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -4137,8 +4137,8 @@ exports[`should render custom day 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -4968,6 +4968,15 @@ exports[`should render custom day 1`] = `
 `;
 
 exports[`should render rtl, variant 1`] = `
+.c4 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: unset;
+  top: unset;
+  right: 0;
+}
+
 .c10 {
   box-sizing: border-box;
   position: relative;
@@ -4994,15 +5003,6 @@ exports[`should render rtl, variant 1`] = `
   left: unset;
   right: 0;
   bottom: unset;
-}
-
-.c4 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 65px;
-  left: unset;
-  top: unset;
-  right: 0;
 }
 
 .c1 {
@@ -5176,8 +5176,8 @@ exports[`should render rtl, variant 1`] = `
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -5297,8 +5297,8 @@ exports[`should render rtl, variant 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   direction: rtl;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -6253,6 +6253,15 @@ exports[`should render rtl, variant 1`] = `
 `;
 
 exports[`should render vertical variant 1`] = `
+.c4 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+  top: unset;
+  right: unset;
+}
+
 .c10 {
   box-sizing: border-box;
   position: relative;
@@ -6261,15 +6270,6 @@ exports[`should render vertical variant 1`] = `
 .c11 {
   box-sizing: border-box;
   margin: 48px 0 0;
-}
-
-.c4 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 65px;
-  left: 0;
-  top: unset;
-  right: unset;
 }
 
 .c25 {
@@ -6452,8 +6452,8 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -6588,8 +6588,8 @@ exports[`should render vertical variant 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -7546,6 +7546,15 @@ exports[`should render vertical variant 1`] = `
 `;
 
 exports[`should render vertical, rtl, variant 1`] = `
+.c4 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: unset;
+  top: unset;
+  right: 0;
+}
+
 .c10 {
   box-sizing: border-box;
   position: relative;
@@ -7563,15 +7572,6 @@ exports[`should render vertical, rtl, variant 1`] = `
   left: unset;
   right: unset;
   bottom: unset;
-}
-
-.c4 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 65px;
-  left: unset;
-  top: unset;
-  right: 0;
 }
 
 .c1 {
@@ -7745,8 +7745,8 @@ exports[`should render vertical, rtl, variant 1`] = `
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -7795,13 +7795,13 @@ exports[`should render vertical, rtl, variant 1`] = `
   transform: rotate(0deg);
 }
 
-.c29 {
+.c27 {
   width: 48px;
   height: 48px;
   background: #ffffff;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
-  border-left: 1px solid #929598;
+  border-left: unset;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7817,13 +7817,13 @@ exports[`should render vertical, rtl, variant 1`] = `
   align-items: center;
 }
 
-.c27 {
+.c29 {
   width: 48px;
   height: 48px;
   background: #ffffff;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
-  border-left: unset;
+  border-left: 1px solid #929598;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7888,8 +7888,8 @@ exports[`should render vertical, rtl, variant 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   direction: rtl;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -8847,9 +8847,23 @@ exports[`should render vertical, rtl, variant 1`] = `
 `;
 
 exports[`should render without calendar icon, reset dates and close component 1`] = `
+.c3 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: unset;
+  top: unset;
+  right: 0;
+}
+
 .c5 {
   box-sizing: border-box;
   position: relative;
+}
+
+.c6 {
+  box-sizing: border-box;
+  margin: unset;
 }
 
 .c17 {
@@ -8868,20 +8882,6 @@ exports[`should render without calendar icon, reset dates and close component 1`
   left: unset;
   right: 0;
   bottom: unset;
-}
-
-.c3 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 65px;
-  left: unset;
-  top: unset;
-  right: 0;
-}
-
-.c6 {
-  box-sizing: border-box;
-  margin: unset;
 }
 
 .c1 {
@@ -9022,8 +9022,8 @@ exports[`should render without calendar icon, reset dates and close component 1`
 }
 
 .c8 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -9078,8 +9078,8 @@ exports[`should render without calendar icon, reset dates and close component 1`
   width: -moz-fit-content;
   width: fit-content;
   direction: rtl;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;

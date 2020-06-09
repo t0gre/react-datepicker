@@ -88,8 +88,8 @@ exports[`Sunday should be first day of the week 1`] = `
 }
 
 .c0 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -853,8 +853,8 @@ exports[`should match snapshot 1`] = `
 }
 
 .c0 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;

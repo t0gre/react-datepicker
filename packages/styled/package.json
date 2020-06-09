@@ -43,7 +43,7 @@
     "@types/styled-system": "^5.1.9",
     "csstype": "^2.6.9",
     "date-fns": "^2.9.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^5.1.1"
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.3.1",

@@ -103,7 +103,7 @@ exports[`should click on select end date 1`] = `
     class="c0"
   >
     <div
-      class="c1"
+      class="sc-AxjAm c1"
       data-testid="DateRangeInputGrid"
     >
       <label
@@ -545,8 +545,8 @@ exports[`should handle custom id for input fields 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -659,8 +659,8 @@ exports[`should handle custom id for input fields 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -2638,37 +2638,6 @@ exports[`should have empty end date and focused end date 1`] = `
   display: block;
 }
 
-.c7 {
-  border: 0;
-  padding: 0 44px;
-  width: 100%;
-  min-height: 46px;
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  color: #001217;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: inset 0px -3px 0 #00aeef;
-  cursor: pointer;
-  box-sizing: border-box;
-  outline: 0;
-}
-
-.c7::-webkit-input-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
-.c7::-moz-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
-.c7:-moz-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
 .c4 {
   border: 0;
   padding: 0 44px;
@@ -2696,6 +2665,37 @@ exports[`should have empty end date and focused end date 1`] = `
 }
 
 .c4:-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c7 {
+  border: 0;
+  padding: 0 44px;
+  width: 100%;
+  min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: inset 0px -3px 0 #00aeef;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.c7::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
 }
@@ -2730,6 +2730,26 @@ exports[`should have empty end date and focused end date 1`] = `
   color: #343132;
 }
 
+.c18 {
+  color: #001217;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
+  padding: 0 0 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.c18:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .c20 {
   color: #001217;
   font-size: 24px;
@@ -2752,26 +2772,6 @@ exports[`should have empty end date and focused end date 1`] = `
 
 .c20:after {
   background: #00aeef;
-}
-
-.c18 {
-  color: #001217;
-  font-size: 24px;
-  font-weight: 500;
-  font-family: Montserrat,sans-serif;
-  padding: 0 0 15px;
-  position: relative;
-  display: inline-block;
-}
-
-.c18:after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
 }
 
 .c30 {
@@ -2820,8 +2820,8 @@ exports[`should have empty end date and focused end date 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -2934,8 +2934,8 @@ exports[`should have empty end date and focused end date 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -4850,6 +4850,15 @@ exports[`should have empty start and end date and focused start date - placement
   margin: 32px 0 0;
 }
 
+.c8 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+  top: unset;
+  right: unset;
+}
+
 .c16 {
   box-sizing: border-box;
   padding: 0;
@@ -4881,15 +4890,6 @@ exports[`should have empty start and end date and focused start date - placement
   left: unset;
   right: 0;
   bottom: unset;
-}
-
-.c8 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 65px;
-  left: 0;
-  top: unset;
-  right: unset;
 }
 
 .c2 {
@@ -5077,8 +5077,8 @@ exports[`should have empty start and end date and focused start date - placement
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -5191,8 +5191,8 @@ exports[`should have empty start and end date and focused start date - placement
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -7332,8 +7332,8 @@ exports[`should have empty start and end date and focused start date 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -7446,8 +7446,8 @@ exports[`should have empty start and end date and focused start date 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -9411,37 +9411,6 @@ exports[`should not render calendar icons 1`] = `
   margin: 0;
 }
 
-.c6 {
-  border: 0;
-  padding: 0 44px;
-  width: 100%;
-  min-height: 46px;
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  color: #001217;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: inset 0px -3px 0 #00aeef;
-  cursor: pointer;
-  box-sizing: border-box;
-  outline: 0;
-}
-
-.c6::-webkit-input-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
-.c6::-moz-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
-.c6:-moz-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
 .c3 {
   border: 0;
   padding: 0 44px;
@@ -9469,6 +9438,37 @@ exports[`should not render calendar icons 1`] = `
 }
 
 .c3:-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c6 {
+  border: 0;
+  padding: 0 44px;
+  width: 100%;
+  min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: inset 0px -3px 0 #00aeef;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.c6::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c6::-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c6:-moz-placeholder {
   font-weight: 500;
   color: #929598;
 }
@@ -9503,6 +9503,26 @@ exports[`should not render calendar icons 1`] = `
   color: #343132;
 }
 
+.c17 {
+  color: #001217;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
+  padding: 0 0 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.c17:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .c19 {
   color: #001217;
   font-size: 24px;
@@ -9525,26 +9545,6 @@ exports[`should not render calendar icons 1`] = `
 
 .c19:after {
   background: #00aeef;
-}
-
-.c17 {
-  color: #001217;
-  font-size: 24px;
-  font-weight: 500;
-  font-family: Montserrat,sans-serif;
-  padding: 0 0 15px;
-  position: relative;
-  display: inline-block;
-}
-
-.c17:after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
 }
 
 .c29 {
@@ -9593,8 +9593,8 @@ exports[`should not render calendar icons 1`] = `
 }
 
 .c23 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -9707,8 +9707,8 @@ exports[`should not render calendar icons 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -11793,8 +11793,8 @@ exports[`should render custom day 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -11907,8 +11907,8 @@ exports[`should render custom day 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -13577,6 +13577,15 @@ exports[`should render rtl variant 1`] = `
   margin: 32px 0 0;
 }
 
+.c8 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: unset;
+  left: unset;
+  top: unset;
+  right: 0;
+}
+
 .c16 {
   box-sizing: border-box;
   padding: 0;
@@ -13610,15 +13619,6 @@ exports[`should render rtl variant 1`] = `
   bottom: unset;
 }
 
-.c8 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: unset;
-  left: unset;
-  top: unset;
-  right: 0;
-}
-
 .c2 {
   display: block;
   position: relative;
@@ -13640,37 +13640,6 @@ exports[`should render rtl variant 1`] = `
 
 .c3 svg {
   display: block;
-}
-
-.c7 {
-  border: 0;
-  padding: 0 44px;
-  width: 100%;
-  min-height: 46px;
-  background: #ffffff;
-  font-family: Montserrat,sans-serif;
-  color: #001217;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: inset 0px -3px 0 #00aeef;
-  cursor: pointer;
-  box-sizing: border-box;
-  outline: 0;
-}
-
-.c7::-webkit-input-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
-.c7::-moz-placeholder {
-  font-weight: 500;
-  color: #929598;
-}
-
-.c7:-moz-placeholder {
-  font-weight: 500;
-  color: #929598;
 }
 
 .c4 {
@@ -13700,6 +13669,37 @@ exports[`should render rtl variant 1`] = `
 }
 
 .c4:-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c7 {
+  border: 0;
+  padding: 0 44px;
+  width: 100%;
+  min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: inset 0px -3px 0 #00aeef;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.c7::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c7::-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
 }
@@ -13734,6 +13734,26 @@ exports[`should render rtl variant 1`] = `
   color: #343132;
 }
 
+.c18 {
+  color: #001217;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Montserrat,sans-serif;
+  padding: 0 0 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.c18:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .c20 {
   color: #001217;
   font-size: 24px;
@@ -13756,26 +13776,6 @@ exports[`should render rtl variant 1`] = `
 
 .c20:after {
   background: #00aeef;
-}
-
-.c18 {
-  color: #001217;
-  font-size: 24px;
-  font-weight: 500;
-  font-family: Montserrat,sans-serif;
-  padding: 0 0 15px;
-  position: relative;
-  display: inline-block;
-}
-
-.c18:after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
 }
 
 .c30 {
@@ -13824,8 +13824,8 @@ exports[`should render rtl variant 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -13945,8 +13945,8 @@ exports[`should render rtl variant 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   direction: rtl;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -15759,15 +15759,15 @@ exports[`should render rtl variant 1`] = `
 `;
 
 exports[`should render vertical variant 1`] = `
-.c27 {
-  display: grid;
-  grid-template-columns: repeat(7,36px);
-}
-
 .c15 {
   display: grid;
   grid-template-columns: 87px 50px 87px;
   grid-template-rows: unset;
+}
+
+.c27 {
+  display: grid;
+  grid-template-columns: repeat(7,36px);
 }
 
 .c5 {
@@ -16101,8 +16101,8 @@ exports[`should render vertical variant 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -16237,8 +16237,8 @@ exports[`should render vertical variant 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -18050,15 +18050,15 @@ exports[`should render vertical variant 1`] = `
 `;
 
 exports[`should render vertical, rtl variant 1`] = `
-.c27 {
-  display: grid;
-  grid-template-columns: repeat(7,36px);
-}
-
 .c15 {
   display: grid;
   grid-template-columns: 87px 50px 87px;
   grid-template-rows: unset;
+}
+
+.c27 {
+  display: grid;
+  grid-template-columns: repeat(7,36px);
 }
 
 .c5 {
@@ -18154,6 +18154,15 @@ exports[`should render vertical, rtl variant 1`] = `
   margin: unset;
 }
 
+.c8 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: unset;
+  left: unset;
+  top: unset;
+  right: 0;
+}
+
 .c16 {
   box-sizing: border-box;
   padding: 0;
@@ -18176,15 +18185,6 @@ exports[`should render vertical, rtl variant 1`] = `
   left: unset;
   right: unset;
   bottom: unset;
-}
-
-.c8 {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: unset;
-  left: unset;
-  top: unset;
-  right: 0;
 }
 
 .c2 {
@@ -18392,8 +18392,8 @@ exports[`should render vertical, rtl variant 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -18442,13 +18442,13 @@ exports[`should render vertical, rtl variant 1`] = `
   transform: rotate(0deg);
 }
 
-.c41 {
+.c39 {
   width: 48px;
   height: 48px;
   background: #ffffff;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
-  border-left: 1px solid #929598;
+  border-left: unset;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -18464,13 +18464,13 @@ exports[`should render vertical, rtl variant 1`] = `
   align-items: center;
 }
 
-.c39 {
+.c41 {
   width: 48px;
   height: 48px;
   background: #ffffff;
   border: 1px solid #929598;
   border-right: 1px solid #929598;
-  border-left: unset;
+  border-left: 1px solid #929598;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -18535,8 +18535,8 @@ exports[`should render vertical, rtl variant 1`] = `
   width: -moz-fit-content;
   width: fit-content;
   direction: rtl;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -20438,6 +20438,11 @@ exports[`should render without reset dates, close and selected dates component 1
   position: relative;
 }
 
+.c11 {
+  box-sizing: border-box;
+  margin: unset;
+}
+
 .c23 {
   box-sizing: border-box;
   position: relative;
@@ -20445,11 +20450,6 @@ exports[`should render without reset dates, close and selected dates component 1
   left: unset;
   right: unset;
   bottom: unset;
-}
-
-.c11 {
-  box-sizing: border-box;
-  margin: unset;
 }
 
 .c2 {
@@ -20598,8 +20598,8 @@ exports[`should render without reset dates, close and selected dates component 1
 }
 
 .c13 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -20675,8 +20675,8 @@ exports[`should render without reset dates, close and selected dates component 1
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
@@ -22317,15 +22317,15 @@ exports[`should render without reset dates, close and selected dates component 1
 `;
 
 exports[`should use dateRangeGridTemplateRows from theme 1`] = `
-.c27 {
-  display: grid;
-  grid-template-columns: repeat(7,36px);
-}
-
 .c15 {
   display: grid;
   grid-template-columns: 4px 5px 6px;
   grid-template-rows: 4fr 5fr 6fr;
+}
+
+.c27 {
+  display: grid;
+  grid-template-columns: repeat(7,36px);
 }
 
 .c5 {
@@ -22648,8 +22648,8 @@ exports[`should use dateRangeGridTemplateRows from theme 1`] = `
 }
 
 .c24 {
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.25s;
   animation-duration: 0.25s;
   -webkit-animation-timing-function: ease-in;
@@ -22762,8 +22762,8 @@ exports[`should use dateRangeGridTemplateRows from theme 1`] = `
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation-name: eMLfYp;
-  animation-name: eMLfYp;
+  -webkit-animation-name: jgQpwH;
+  animation-name: jgQpwH;
   -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
   -webkit-animation-timing-function: ease-in;
