@@ -1,6 +1,6 @@
 {
   "name": "@datepicker-react/hooks",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "React hooks for datepicker.",
   "keywords": [
     "react",
