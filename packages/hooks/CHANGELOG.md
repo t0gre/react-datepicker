@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/tresko/react-datepicker/compare/v2.4.0...v2.4.1) (2020-06-17)
+
+
+### Bug Fixes
+
+* **hooks:** fix losing losing focus in other inputs ([eae4f52](https://github.com/tresko/react-datepicker/commit/eae4f52))
+
+
+
+
+
 # [2.4.0](https://github.com/tresko/react-datepicker/compare/v2.3.1...v2.4.0) (2020-06-09)
 
 
