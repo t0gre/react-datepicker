@@ -4012,32 +4012,25 @@ function Nr(e) {
         c = e.onDateSelect,
         u = e.onDateFocus,
         l = e.onDateHover,
-        p = e.dayRef,
-        f = t.useCallback(
+        p = t.useCallback(
           function () {
             return c(n)
           },
           [n, c],
         ),
-        h = t.useCallback(
+        f = t.useCallback(
           function () {
             return l(n)
           },
           [n, l],
-        )
-      t.useEffect(
-        function () {
-          p && p.current && o(n) && p.current.focus()
-        },
-        [p, n, o],
-      )
-      var g = d(n) && !s(n)
+        ),
+        h = d(n) && !s(n)
       return {
         tabIndex: null === r || o(n) ? 0 : -1,
         isSelected: a(n),
         isSelectedStartOrEnd: i(n),
         isWithinHoverRange: s(n),
-        disabledDate: g,
+        disabledDate: h,
         onKeyDown: function (e) {
           'ArrowRight' === e.key
             ? u(Ne(n, 1))
@@ -4047,8 +4040,8 @@ function Nr(e) {
             ? u(Ne(n, -7))
             : 'ArrowDown' === e.key && u(Ne(n, 7))
         },
-        onClick: g ? function () {} : f,
-        onMouseEnter: h,
+        onClick: h ? function () {} : p,
+        onMouseEnter: f,
       }
     })({
       date: o,

@@ -2708,52 +2708,45 @@ function Pe(t) {
 }
 function Ye(t) {
   var e = t.date,
-    a = t.focusedDate,
-    i = t.isDateSelected,
-    o = t.isDateFocused,
-    u = t.isFirstOrLastSelectedDate,
-    s = t.isDateHovered,
-    c = t.isDateBlocked,
-    d = t.onDateSelect,
-    l = t.onDateFocus,
-    f = t.onDateHover,
-    h = t.dayRef,
-    m = r(
+    n = t.focusedDate,
+    a = t.isDateSelected,
+    i = t.isDateFocused,
+    o = t.isFirstOrLastSelectedDate,
+    u = t.isDateHovered,
+    s = t.isDateBlocked,
+    c = t.onDateSelect,
+    d = t.onDateFocus,
+    l = t.onDateHover,
+    f = r(
       function () {
-        return d(e)
+        return c(e)
       },
-      [e, d],
+      [e, c],
     ),
-    w = r(
+    h = r(
       function () {
-        return f(e)
+        return l(e)
       },
-      [e, f],
-    )
-  n(
-    function () {
-      h && h.current && o(e) && h.current.focus()
-    },
-    [h, e, o],
-  )
-  var g = c(e) && !s(e)
+      [e, l],
+    ),
+    m = s(e) && !u(e)
   return {
-    tabIndex: null === a || o(e) ? 0 : -1,
-    isSelected: i(e),
-    isSelectedStartOrEnd: u(e),
-    isWithinHoverRange: s(e),
-    disabledDate: g,
+    tabIndex: null === n || i(e) ? 0 : -1,
+    isSelected: a(e),
+    isSelectedStartOrEnd: o(e),
+    isWithinHoverRange: u(e),
+    disabledDate: m,
     onKeyDown: function (t) {
       'ArrowRight' === t.key
-        ? l(te(e, 1))
+        ? d(te(e, 1))
         : 'ArrowLeft' === t.key
-        ? l(te(e, -1))
+        ? d(te(e, -1))
         : 'ArrowUp' === t.key
-        ? l(te(e, -7))
-        : 'ArrowDown' === t.key && l(te(e, 7))
+        ? d(te(e, -7))
+        : 'ArrowDown' === t.key && d(te(e, 7))
     },
-    onClick: g ? function () {} : m,
-    onMouseEnter: w,
+    onClick: m ? function () {} : f,
+    onMouseEnter: h,
   }
 }
 export {
