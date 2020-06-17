@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react'
+import React, {useCallback} from 'react'
 import addDays from 'date-fns/addDays'
 
 interface UseDayProps {
@@ -12,7 +12,9 @@ interface UseDayProps {
   onDateFocus(date: Date): void
   onDateSelect(date: Date): void
   onDateHover(date: Date): void
-  dayRef: React.RefObject<HTMLButtonElement>
+
+  // Not used anymore
+  dayRef?: React.RefObject<HTMLButtonElement>
 }
 
 function useDay({
@@ -26,17 +28,9 @@ function useDay({
   onDateSelect,
   onDateFocus,
   onDateHover,
-  dayRef,
 }: UseDayProps) {
   const onClick = useCallback(() => onDateSelect(date), [date, onDateSelect])
   const onMouseEnter = useCallback(() => onDateHover(date), [date, onDateHover])
-
-  useEffect(() => {
-    if (dayRef && dayRef.current && isDateFocused(date)) {
-      dayRef.current.focus()
-    }
-  }, [dayRef, date, isDateFocused])
-
   const disabled = isDateBlocked(date) && !isDateHovered(date)
 
   return {
