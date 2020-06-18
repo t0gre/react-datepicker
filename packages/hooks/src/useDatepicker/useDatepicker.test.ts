@@ -55,7 +55,7 @@ describe('useDatepicker', () => {
     expect(result.current.activeMonths[1].year).toBe(2019)
     expect(result.current.activeMonths[1].month).toBe(3)
 
-    // next 1 months
+    // next 1 month
     act(() => {
       result.current.goToNextMonthsByOneMonth()
     })
@@ -64,7 +64,7 @@ describe('useDatepicker', () => {
     expect(result.current.activeMonths[1].year).toBe(2019)
     expect(result.current.activeMonths[1].month).toBe(4)
 
-    // prev 1 months
+    // prev 1 month
     act(() => {
       result.current.goToPreviousMonthsByOneMonth()
     })
