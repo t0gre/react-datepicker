@@ -2344,12 +2344,12 @@ function ye(t, e) {
     a
   )
 }
-function be(t, e, n) {
-  var r = t[n > 0 ? t.length - 1 : 0].date
+function be(t, e, n, r) {
+  var a = t[r ? (n > 0 ? 0 : t.length - r) : n > 0 ? t.length - 1 : 0].date
   return Array.from(Array(e).keys()).reduce(function (t) {
     return (
-      (r = 0 === t.length ? le(r, n) : le(r, n >= 0 ? 1 : -1)),
-      n > 0 ? t.concat([ge(r)]) : [ge(r)].concat(t)
+      (a = 0 === t.length ? le(a, n) : le(a, n >= 0 ? 1 : -1)),
+      n > 0 ? t.concat([ge(a)]) : [ge(a)].concat(t)
     )
   }, [])
 }
@@ -2679,8 +2679,14 @@ function pe(t) {
       goToPreviousMonths: function () {
         k(be(T, m, -1)), P(null)
       },
+      goToPreviousMonthsByOneMonth: function () {
+        k(be(T, m, -1, 1)), P(null)
+      },
       goToNextMonths: function () {
         k(be(T, m, 1)), P(null)
+      },
+      goToNextMonthsByOneMonth: function () {
+        k(be(T, m, 1, 1)), P(null)
       },
       goToDate: function (t) {
         k(ye(m, t)), P(null)

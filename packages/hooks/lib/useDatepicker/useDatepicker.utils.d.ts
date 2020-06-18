@@ -47,6 +47,7 @@ export declare function getNextActiveMonth(
   activeMonth: MonthType[],
   numberOfMonths: number,
   counter: number,
+  step?: number,
 ): MonthType[]
 export declare type FormatFunction = (date: Date) => string
 export declare function getInputValue(

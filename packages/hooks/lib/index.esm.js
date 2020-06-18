@@ -476,13 +476,13 @@ var D = {
     return n.replace('{{date}}', y(a, e)).replace('{{time}}', b(i, e))
   },
 }
-function p(t) {
+function T(t) {
   return t.getTime() % 6e4
 }
-function T(t) {
+function p(t) {
   var e = new Date(t.getTime()),
     n = Math.ceil(e.getTimezoneOffset())
-  return e.setSeconds(0, 0), 6e4 * n + (n > 0 ? (6e4 + p(e)) % 6e4 : p(e))
+  return e.setSeconds(0, 0), 6e4 * n + (n > 0 ? (6e4 + T(e)) % 6e4 : T(e))
 }
 var k = ['D', 'DD'],
   x = ['YY', 'YYYY']
@@ -590,7 +590,7 @@ function B(t) {
     n = E(e).getTime() - q(e).getTime()
   return Math.round(n / 6048e5) + 1
 }
-function H(t, e) {
+function O(t, e) {
   h(1, arguments)
   var n = e || {},
     r = n.locale,
@@ -603,10 +603,10 @@ function H(t, e) {
   var c = S(s, e)
   return c
 }
-function O(t, e) {
+function H(t, e) {
   h(1, arguments)
   var n = m(t),
-    r = S(n, e).getTime() - H(n, e).getTime()
+    r = S(n, e).getTime() - O(n, e).getTime()
   return Math.round(r / 6048e5) + 1
 }
 var L = /^(1[0-2]|0?\d)/,
@@ -999,7 +999,7 @@ var vt = {
             h(2, arguments)
             var r = m(t),
               a = f(e),
-              i = O(r, n) - a
+              i = H(r, n) - a
             return r.setUTCDate(r.getUTCDate() - 7 * i), r
           })(t, n, r),
           r,
@@ -1620,8 +1620,8 @@ var vt = {
   yt = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g,
   bt = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g,
   Dt = /^'([^]*?)'?$/,
-  pt = /''/g,
-  Tt = /\S/,
+  Tt = /''/g,
+  pt = /\S/,
   kt = /[a-zA-Z]/
 function xt(t, e, n, r) {
   h(3, arguments)
@@ -1640,7 +1640,7 @@ function xt(t, e, n, r) {
     b = null == o.weekStartsOn ? y : f(o.weekStartsOn)
   if (!(b >= 0 && b <= 6)) throw new RangeError('weekStartsOn must be between 0 and 6 inclusively')
   if ('' === i) return '' === a ? m(n) : new Date(NaN)
-  var p,
+  var T,
     k = {firstWeekContainsDate: d, weekStartsOn: b, locale: u},
     x = [{priority: 10, set: Ct, index: 0}],
     S = i
@@ -1652,18 +1652,18 @@ function xt(t, e, n, r) {
       .join('')
       .match(yt),
     P = []
-  for (p = 0; p < S.length; p++) {
-    var Y = S[p]
+  for (T = 0; T < S.length; T++) {
+    var Y = S[T]
     !o.useAdditionalWeekYearTokens && M(Y) && U(Y), !o.useAdditionalDayOfYearTokens && C(Y) && U(Y)
     var E = Y[0],
       N = vt[E]
     if (N) {
       var q = N.incompatibleTokens
       if (Array.isArray(q)) {
-        for (var B = void 0, H = 0; H < P.length; H++) {
-          var O = P[H].token
-          if (-1 !== q.indexOf(O) || O === E) {
-            B = P[H]
+        for (var B = void 0, O = 0; O < P.length; O++) {
+          var H = P[O].token
+          if (-1 !== q.indexOf(H) || H === E) {
+            B = P[O]
             break
           }
         }
@@ -1698,7 +1698,7 @@ function xt(t, e, n, r) {
       a = a.slice(Y.length)
     }
   }
-  if (a.length > 0 && Tt.test(a)) return new Date(NaN)
+  if (a.length > 0 && pt.test(a)) return new Date(NaN)
   var W = x
       .map(function (t) {
         return t.priority
@@ -1721,10 +1721,10 @@ function xt(t, e, n, r) {
       }),
     F = m(n)
   if (isNaN(F)) return new Date(NaN)
-  var Q = g(F, T(F)),
+  var Q = g(F, p(F)),
     R = {}
-  for (p = 0; p < W.length; p++) {
-    var I = W[p]
+  for (T = 0; T < W.length; T++) {
+    var I = W[T]
     if (I.validate && !I.validate(Q, I.value, k)) return new Date(NaN)
     var X = I.set(Q, R, I.value, k)
     X[0] ? ((Q = X[0]), v(R, X[1])) : (Q = X)
@@ -1741,7 +1741,7 @@ function Ct(t, e) {
   )
 }
 function Mt(t) {
-  return t.match(Dt)[1].replace(pt, "'")
+  return t.match(Dt)[1].replace(Tt, "'")
 }
 function Ut(t) {
   h(1, arguments)
@@ -1773,10 +1773,10 @@ var Pt = function (t, e) {
   Bt = function (t, e) {
     return St(t.getUTCMinutes(), e.length)
   },
-  Ht = function (t, e) {
+  Ot = function (t, e) {
     return St(t.getUTCSeconds(), e.length)
   },
-  Ot = function (t, e) {
+  Ht = function (t, e) {
     var n = e.length,
       r = t.getUTCMilliseconds()
     return St(Math.floor(r * Math.pow(10, n - 3)), e.length)
@@ -1897,7 +1897,7 @@ var Lt = 'midnight',
       }
     },
     w: function (t, e, n, r) {
-      var a = O(t, r)
+      var a = H(t, r)
       return 'wo' === e ? n.ordinalNumber(a, {unit: 'week'}) : St(a, e.length)
     },
     I: function (t, e, n) {
@@ -2064,10 +2064,10 @@ var Lt = 'midnight',
       return 'mo' === e ? n.ordinalNumber(t.getUTCMinutes(), {unit: 'minute'}) : Bt(t, e)
     },
     s: function (t, e, n) {
-      return 'so' === e ? n.ordinalNumber(t.getUTCSeconds(), {unit: 'second'}) : Ht(t, e)
+      return 'so' === e ? n.ordinalNumber(t.getUTCSeconds(), {unit: 'second'}) : Ot(t, e)
     },
     S: function (t, e) {
-      return Ot(t, e)
+      return Ht(t, e)
     },
     X: function (t, e, n, r) {
       var a = (r._originalDate || t).getTimezoneOffset()
@@ -2171,14 +2171,14 @@ function $t(t, e, n) {
   if (!i.formatLong) throw new RangeError('locale must contain formatLong property')
   var v = m(t)
   if (!Ut(v)) throw new RangeError('Invalid time value')
-  var y = T(v),
+  var y = p(v),
     b = g(v, y),
-    p = {firstWeekContainsDate: s, weekStartsOn: w, locale: i, _originalDate: v},
+    T = {firstWeekContainsDate: s, weekStartsOn: w, locale: i, _originalDate: v},
     k = r
       .match(Kt)
       .map(function (t) {
         var e = t[0]
-        return 'p' === e || 'P' === e ? (0, D[e])(t, i.formatLong, p) : t
+        return 'p' === e || 'P' === e ? (0, D[e])(t, i.formatLong, T) : t
       })
       .join('')
       .match(jt)
@@ -2191,7 +2191,7 @@ function $t(t, e, n) {
           return (
             !a.useAdditionalWeekYearTokens && M(t) && U(t),
             !a.useAdditionalDayOfYearTokens && C(t) && U(t),
-            n(b, t, i.localize, p)
+            n(b, t, i.localize, T)
           )
         if (e.match(_t))
           throw new RangeError(
@@ -2444,7 +2444,7 @@ function De(t) {
     (a && a(e))
   )
 }
-function pe(t) {
+function Te(t) {
   var e = re(t)
   return {
     year: (function (t) {
@@ -2462,27 +2462,27 @@ function pe(t) {
     date: e,
   }
 }
-function Te() {
-  return pe(me(Date.now()))
+function pe() {
+  return Te(me(Date.now()))
 }
 function ke(t, e) {
-  var n = e ? pe(e) : Te(),
+  var n = e ? Te(e) : pe(),
     r = n.date,
     a = [n]
   return (
     t > 1 &&
       (a = Array.from(Array(t - 1).keys()).reduce(function (t) {
-        return (r = ge(t[t.length - 1].date, 1)), t.concat([pe(r)])
+        return (r = ge(t[t.length - 1].date, 1)), t.concat([Te(r)])
       }, a)),
     a
   )
 }
-function xe(t, e, n) {
-  var r = t[n > 0 ? t.length - 1 : 0].date
+function xe(t, e, n, r) {
+  var a = t[r ? (n > 0 ? 0 : t.length - r) : n > 0 ? t.length - 1 : 0].date
   return Array.from(Array(e).keys()).reduce(function (t) {
     return (
-      (r = 0 === t.length ? ge(r, n) : ge(r, n >= 0 ? 1 : -1)),
-      n > 0 ? t.concat([pe(r)]) : [pe(r)].concat(t)
+      (a = 0 === t.length ? ge(a, n) : ge(a, n >= 0 ? 1 : -1)),
+      n > 0 ? t.concat([Te(a)]) : [Te(a)].concat(t)
     )
   }, [])
 }
@@ -2538,12 +2538,12 @@ function Pe(t) {
           }
         : y,
     D = t.unavailableDates,
-    p = void 0 === D ? [] : D,
-    T = e(function () {
+    T = void 0 === D ? [] : D,
+    p = e(function () {
       return ke(w, r || c || null)
     }),
-    k = T[0],
-    x = T[1],
+    k = p[0],
+    x = p[1],
     C = e(null),
     M = C[0],
     U = C[1],
@@ -2559,7 +2559,7 @@ function Pe(t) {
     )
   })
   var E = function (t) {
-      return ve(p, t) || b(t)
+      return ve(T, t) || b(t)
     },
     N = function (t) {
       Y(t), (!P || (P && !we(t, P))) && x(ke(w, t))
@@ -2692,8 +2692,14 @@ function Pe(t) {
     goToPreviousMonths: function () {
       x(xe(k, w, -1)), Y(null)
     },
+    goToPreviousMonthsByOneMonth: function () {
+      x(xe(k, w, -1, 1)), Y(null)
+    },
     goToNextMonths: function () {
       x(xe(k, w, 1)), Y(null)
+    },
+    goToNextMonthsByOneMonth: function () {
+      x(xe(k, w, 1, 1)), Y(null)
     },
     goToDate: function (t) {
       x(ke(w, t)), Y(null)
@@ -2753,8 +2759,8 @@ export {
   Se as END_DATE,
   Ue as START_DATE,
   ue as dayLabelFormat,
-  Te as getCurrentYearMonthAndDate,
-  pe as getDateMonthAndYear,
+  pe as getCurrentYearMonthAndDate,
+  Te as getDateMonthAndYear,
   oe as getDays,
   ke as getInitialMonths,
   Ce as getInputValue,
