@@ -124,8 +124,16 @@ export function getNextActiveMonth(
   activeMonth: MonthType[],
   numberOfMonths: number,
   counter: number,
+  step?: number,
 ): MonthType[] {
-  const prevMonth = counter > 0 ? activeMonth.length - 1 : 0
+  let prevMonth
+
+  if (step) {
+    prevMonth = counter > 0 ? 0 : activeMonth.length - step
+  } else {
+    prevMonth = counter > 0 ? activeMonth.length - 1 : 0
+  }
+
   let prevMonthDate = activeMonth[prevMonth].date
 
   return Array.from(Array(numberOfMonths).keys()).reduce((m: MonthType[]) => {
