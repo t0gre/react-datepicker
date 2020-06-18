@@ -55,6 +55,24 @@ describe('useDatepicker', () => {
     expect(result.current.activeMonths[1].year).toBe(2019)
     expect(result.current.activeMonths[1].month).toBe(3)
 
+    // next 1 months
+    act(() => {
+      result.current.goToNextMonthsByOneMonth()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(3)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(4)
+
+    // prev 1 months
+    act(() => {
+      result.current.goToPreviousMonthsByOneMonth()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+    expect(result.current.activeMonths[1].year).toBe(2019)
+    expect(result.current.activeMonths[1].month).toBe(3)
+
     // next year
     act(() => {
       result.current.goToNextYear()
@@ -300,6 +318,20 @@ describe('useDatepicker', () => {
     // prev month
     act(() => {
       result.current.goToPreviousMonths()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(2)
+
+    // next month
+    act(() => {
+      result.current.goToNextMonthsByOneMonth()
+    })
+    expect(result.current.activeMonths[0].year).toBe(2019)
+    expect(result.current.activeMonths[0].month).toBe(3)
+
+    // prev month
+    act(() => {
+      result.current.goToPreviousMonthsByOneMonth()
     })
     expect(result.current.activeMonths[0].year).toBe(2019)
     expect(result.current.activeMonths[0].month).toBe(2)

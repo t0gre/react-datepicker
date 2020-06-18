@@ -281,8 +281,18 @@ export function useDatepicker({
     setFocusedDate(null)
   }
 
+  function goToPreviousMonthsByOneMonth() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1, 1))
+    setFocusedDate(null)
+  }
+
   function goToNextMonths() {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1))
+    setFocusedDate(null)
+  }
+
+  function goToNextMonthsByOneMonth() {
+    setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1, 1))
     setFocusedDate(null)
   }
 
@@ -321,7 +331,9 @@ export function useDatepicker({
     onDateSelect,
     onDateFocus,
     goToPreviousMonths,
+    goToPreviousMonthsByOneMonth,
     goToNextMonths,
+    goToNextMonthsByOneMonth,
     goToDate,
     goToPreviousYear,
     goToNextYear,

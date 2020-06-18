@@ -148,9 +148,17 @@ Updates `activeMonths` to specific date.
 
 Updates `activeMonths` (next months) in accordance with the `numberOfMonths` prop.
 
+#### `goToNextMonthsByOneMonth: () => void`
+
+Updates `activeMonths` (next months) by one month.
+
 #### `goToPreviousMonths: () => void`
 
 Updates `activeMonths` (previous months) in accordance with the `numberOfMonths` prop.
+
+#### `goToPreviousMonthsByOneMonth: () => void`
+
+Updates `activeMonths` (previous months) by one month.
 
 #### `goToPreviousYear: (numYears: number = 1) => void`
 
