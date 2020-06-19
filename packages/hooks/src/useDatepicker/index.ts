@@ -10,6 +10,8 @@ import {
 import {
   isDateSelected,
   isFirstOrLastSelectedDate,
+  isStartDate,
+  isEndDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
@@ -26,6 +28,8 @@ export {
   useDatepicker,
   isDateSelected,
   isFirstOrLastSelectedDate,
+  isStartDate,
+  isEndDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,

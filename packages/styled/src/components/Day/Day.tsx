@@ -140,7 +140,7 @@ const StyledDay = styled('button')<StyledDayProps>`
   border: 0;
   padding: 0;
   outline: 0;
-  
+
   ${({disabledDate, isSelectedStartOrEnd}) =>
     disabledDate &&
     !isSelectedStartOrEnd &&
@@ -148,7 +148,7 @@ const StyledDay = styled('button')<StyledDayProps>`
       cursor: initial;
       opacity: 0.4;
     `}
-  
+
   // @ts-ignore
   ${({disabledDate, isSelected, isSelectedStartOrEnd, isWithinHoverRange}) => {
     if (!disabledDate && !isSelected && !isSelectedStartOrEnd && !isWithinHoverRange) {
@@ -169,7 +169,7 @@ const StyledDay = styled('button')<StyledDayProps>`
 
     return ''
   }}
-  
+
   &:focus {
     // @ts-ignore
     ${({borderAccessibilityColor}) => css`
@@ -219,6 +219,8 @@ function Day({day, date}: DayProps) {
     isDateHovered,
     isDateBlocked,
     isFirstOrLastSelectedDate,
+    isStartDate,
+    isEndDate,
     onDateSelect,
     onDateFocus,
     onDateHover,
@@ -233,6 +235,8 @@ function Day({day, date}: DayProps) {
     isDateHovered,
     isDateBlocked,
     isFirstOrLastSelectedDate,
+    isStartDate,
+    isEndDate,
     onDateFocus,
     onDateSelect,
     onDateHover,

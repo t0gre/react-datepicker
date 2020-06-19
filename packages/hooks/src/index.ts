@@ -15,6 +15,8 @@ import {
 import {
   isDateSelected,
   isFirstOrLastSelectedDate,
+  isEndDate,
+  isStartDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
@@ -44,6 +46,8 @@ export {
   CalendarDay,
   isDateSelected,
   isFirstOrLastSelectedDate,
+  isStartDate,
+  isEndDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,
