@@ -519,6 +519,52 @@ describe('useDatepicker', () => {
     clear()
   })
 
+
+  test('should check if date is start date', () => {
+    const onDatesChange = jest.fn()
+    advanceTo(new Date(2019, 2, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: new Date(2019, 3, 3, 0, 0, 0),
+        minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+        maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+        focusedInput: START_DATE,
+        onDatesChange: onDatesChange,
+      }),
+    )
+
+    expect(result.current.isStartDate(new Date(2019, 3, 1, 0, 0, 0))).toBe(true)
+    expect(result.current.isStartDate(new Date(2019, 3, 2, 0, 0, 0))).toBe(false)
+    expect(result.current.isStartDate(new Date(2019, 3, 3, 0, 0, 0))).toBe(false)
+    expect(result.current.isStartDate(new Date(2019, 3, 10, 0, 0, 0))).toBe(false)
+    expect(result.current.isStartDate(new Date(2019, 2, 27, 0, 0, 0))).toBe(false)
+    clear()
+  })
+
+
+  test('should check if date is end date', () => {
+    const onDatesChange = jest.fn()
+    advanceTo(new Date(2019, 3, 27, 0, 0, 0))
+    const {result} = renderHook(() =>
+      useDatepicker({
+        startDate: new Date(2019, 3, 1, 0, 0, 0),
+        endDate: new Date(2019, 3, 3, 0, 0, 0),
+        minBookingDate: new Date(2019, 3, 1, 0, 0, 0),
+        maxBookingDate: new Date(2019, 3, 10, 0, 0, 0),
+        focusedInput: START_DATE,
+        onDatesChange: onDatesChange,
+      }),
+    )
+
+    expect(result.current.isEndDate(new Date(2019, 3, 1, 0, 0, 0))).toBe(false)
+    expect(result.current.isEndDate(new Date(2019, 3, 2, 0, 0, 0))).toBe(false)
+    expect(result.current.isEndDate(new Date(2019, 3, 3, 0, 0, 0))).toBe(true)
+    expect(result.current.isEndDate(new Date(2019, 3, 10, 0, 0, 0))).toBe(false)
+    expect(result.current.isEndDate(new Date(2019, 3, 27, 0, 0, 0))).toBe(false)
+    clear()
+  })
+
   test.each([
     {
       startDate: null,

@@ -91,7 +91,7 @@ const StyledDatepicker = styled('div')<StyledDatepicker>`
     css`
       direction: rtl;
     `}
-  
+
   animation-name: ${opacity0To100};
   animation-duration: 0.15s;
   animation-timing-function: ease-in;
@@ -177,6 +177,8 @@ function Datepicker(
     activeMonths,
     isDateSelected,
     isFirstOrLastSelectedDate,
+    isStartDate,
+    isEndDate,
     isDateHovered,
     firstDayOfWeek,
     onDateSelect,
@@ -281,6 +283,8 @@ function Datepicker(
           isDateSelected,
           isDateHovered,
           isFirstOrLastSelectedDate,
+          isStartDate,
+          isEndDate,
           onDateFocus,
           focusedDate,
           onDateSelect,

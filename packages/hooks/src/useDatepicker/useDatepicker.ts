@@ -11,6 +11,8 @@ import {
   isDateSelected as isDateSelectedFn,
   isDateBlocked as isDateBlockedFn,
   isFirstOrLastSelectedDate as isFirstOrLastSelectedDateFn,
+  isEndDate as isEndDateFn,
+  isStartDate as isStartDateFn,
   canSelectRange,
   isDateHovered as isDateHoveredFn,
   isInUnavailableDates,
@@ -94,6 +96,10 @@ export function useDatepicker({
 
   const isFirstOrLastSelectedDate = (date: Date) =>
     isFirstOrLastSelectedDateFn(date, startDate, endDate)
+
+  const isStartDate = (date: Date) => isStartDateFn(date, startDate)
+
+  const isEndDate = (date: Date) => isEndDateFn(date, endDate)
 
   const isDateBlocked = (date: Date) =>
     isDateBlockedFn({
@@ -321,6 +327,8 @@ export function useDatepicker({
     isDateSelected,
     isDateHovered,
     isFirstOrLastSelectedDate,
+    isStartDate,
+    isEndDate,
     isDateBlocked,
     numberOfMonths,
     isDateFocused,

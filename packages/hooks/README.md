@@ -124,6 +124,14 @@ Returns `true` if a date is focused, otherwise `false`.
 
 Returns `true` if a date is the first or the last date in the selected range, otherwise `false`.
 
+#### `isStartDate: (date: Date) => boolean`
+
+Returns `true` if a date is the first or the last date in the selected range, otherwise `false`.
+
+#### `isEndDate: (date: Date) => boolean`
+
+Returns `true` if a date is the first or the last date in the selected range, otherwise `false`.
+
 #### `onResetDates: () => void`
 
 Reset start and end date.

@@ -47,6 +47,8 @@ test('should not execute onClick callback, because day is disabled', () => {
       isDateSelected: jest.fn(),
       isDateFocused: jest.fn(),
       isFirstOrLastSelectedDate: jest.fn(),
+      isStartDate: jest.fn(),
+      isEndDate: jest.fn(),
       isDateHovered: jest.fn(),
       isDateBlocked: () => true,
       onDateFocus: jest.fn(),
