@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/tresko/react-datepicker/compare/v2.5.0...v2.6.0) (2020-06-22)
+
+
+### Bug Fixes
+
+* remove props from styles and useDay ([e986183](https://github.com/tresko/react-datepicker/commit/e986183))
+
+
+### Features
+
+* add isStartDate and isEndDate ([94f4118](https://github.com/tresko/react-datepicker/commit/94f4118))
+
+
+
+
+
 # [2.5.0](https://github.com/tresko/react-datepicker/compare/v2.4.1...v2.5.0) (2020-06-18)
 
 
