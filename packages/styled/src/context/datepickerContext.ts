@@ -11,8 +11,6 @@ interface DatepickerContext {
   isDateHovered(date: Date): boolean
   isDateBlocked(date: Date): boolean
   isFirstOrLastSelectedDate(date: Date): boolean
-  isStartDate(date: Date): boolean
-  isEndDate(date: Date): boolean
   onDayRender?(date: Date): React.ReactNode
 }
 
@@ -24,8 +22,6 @@ export const datepickerContextDefaultValue = {
   isDateHovered: () => false,
   isDateBlocked: () => false,
   isFirstOrLastSelectedDate: () => false,
-  isStartDate: () => false,
-  isEndDate:() => false,
   onDateFocus: () => {},
   onDateHover: () => {},
   onDateSelect: () => {},

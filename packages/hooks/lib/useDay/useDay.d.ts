@@ -7,8 +7,6 @@ interface UseDayProps {
   isDateHovered(date: Date): boolean
   isDateBlocked(date: Date): boolean
   isFirstOrLastSelectedDate(date: Date): boolean
-  isStartDate(date: Date): boolean
-  isEndDate(date: Date): boolean
   onDateFocus(date: Date): void
   onDateSelect(date: Date): void
   onDateHover(date: Date): void
@@ -20,8 +18,6 @@ declare function useDay({
   isDateSelected,
   isDateFocused,
   isFirstOrLastSelectedDate,
-  isStartDate,
-  isEndDate,
   isDateHovered,
   isDateBlocked,
   onDateSelect,
