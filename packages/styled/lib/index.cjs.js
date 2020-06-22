@@ -2520,6 +2520,16 @@ function ct(e) {
         return !!((t && $e(e, t)) || (n && $e(e, n)))
       })(e, n, r)
     },
+    isStartDate: function (e) {
+      return (function (e, t) {
+        return !(!t || !$e(e, t))
+      })(e, n)
+    },
+    isEndDate: function (e) {
+      return (function (e, t) {
+        return !(!t || !$e(e, t))
+      })(e, r)
+    },
     isDateBlocked: E,
     numberOfMonths: h,
     isDateFocused: function (e) {
@@ -3913,18 +3923,18 @@ var kr,
           '\n  ',
           '\n  ',
           '\n  ',
-          '\n  cursor: pointer;\n  border: 0;\n  padding: 0;\n  outline: 0;\n  \n  ',
-          '\n  \n  // @ts-ignore\n  ',
-          '\n  \n  &:focus {\n    // @ts-ignore\n    ',
+          '\n  cursor: pointer;\n  border: 0;\n  padding: 0;\n  outline: 0;\n\n  ',
+          '\n\n  // @ts-ignore\n  ',
+          '\n\n  &:focus {\n    // @ts-ignore\n    ',
           '\n  }\n',
         ],
         [
           '\n  ',
           '\n  ',
           '\n  ',
-          '\n  cursor: pointer;\n  border: 0;\n  padding: 0;\n  outline: 0;\n  \n  ',
-          '\n  \n  // @ts-ignore\n  ',
-          '\n  \n  &:focus {\n    // @ts-ignore\n    ',
+          '\n  cursor: pointer;\n  border: 0;\n  padding: 0;\n  outline: 0;\n\n  ',
+          '\n\n  // @ts-ignore\n  ',
+          '\n\n  &:focus {\n    // @ts-ignore\n    ',
           '\n  }\n',
         ],
       )),
@@ -4549,13 +4559,13 @@ var fa = r.keyframes(
         [
           '\n  ',
           '\n  ',
-          '\n  \n  animation-name: ',
+          '\n\n  animation-name: ',
           ';\n  animation-duration: 0.15s;\n  animation-timing-function: ease-in;\n',
         ],
         [
           '\n  ',
           '\n  ',
-          '\n  \n  animation-name: ',
+          '\n\n  animation-name: ',
           ';\n  animation-duration: 0.15s;\n  animation-timing-function: ease-in;\n',
         ],
       )),

@@ -12,14 +12,8 @@ export declare function isFirstOrLastSelectedDate(
   startDate: Date | null,
   endDate: Date | null,
 ): boolean
-export declare function isStartDate(
-  date: Date,
-  startDate: Date | null,
-): boolean
-export declare function isEndDate(
-  date: Date,
-  endDate: Date | null,
-): boolean
+export declare function isStartDate(date: Date, startDate: Date | null): boolean
+export declare function isEndDate(date: Date, endDate: Date | null): boolean
 interface IsDateBlockedProps {
   date: Date
   startDate: Date | null

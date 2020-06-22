@@ -2423,7 +2423,13 @@ function ye(t, e, n) {
 function be(t, e, n) {
   return !!((e && we(t, e)) || (n && we(t, n)))
 }
-function De(t) {
+function De(t, e) {
+  return !(!e || !we(t, e))
+}
+function Te(t, e) {
+  return !(!e || !we(t, e))
+}
+function pe(t) {
   var e = t.date,
     n = t.minBookingDate,
     r = t.maxBookingDate,
@@ -2444,7 +2450,7 @@ function De(t) {
     (a && a(e))
   )
 }
-function Te(t) {
+function ke(t) {
   var e = re(t)
   return {
     year: (function (t) {
@@ -2462,34 +2468,34 @@ function Te(t) {
     date: e,
   }
 }
-function pe() {
-  return Te(me(Date.now()))
+function xe() {
+  return ke(me(Date.now()))
 }
-function ke(t, e) {
-  var n = e ? Te(e) : pe(),
+function Ce(t, e) {
+  var n = e ? ke(e) : xe(),
     r = n.date,
     a = [n]
   return (
     t > 1 &&
       (a = Array.from(Array(t - 1).keys()).reduce(function (t) {
-        return (r = ge(t[t.length - 1].date, 1)), t.concat([Te(r)])
+        return (r = ge(t[t.length - 1].date, 1)), t.concat([ke(r)])
       }, a)),
     a
   )
 }
-function xe(t, e, n, r) {
+function Me(t, e, n, r) {
   var a = t[r ? (n > 0 ? 0 : t.length - r) : n > 0 ? t.length - 1 : 0].date
   return Array.from(Array(e).keys()).reduce(function (t) {
     return (
       (a = 0 === t.length ? ge(a, n) : ge(a, n >= 0 ? 1 : -1)),
-      n > 0 ? t.concat([Te(a)]) : [Te(a)].concat(t)
+      n > 0 ? t.concat([ke(a)]) : [ke(a)].concat(t)
     )
   }, [])
 }
-function Ce(t, e, n) {
+function Ue(t, e, n) {
   return t && 'string' == typeof e ? $t(t, e) : t && 'function' == typeof e ? e(t) : n
 }
-function Me(t) {
+function Se(t) {
   var e = t.startDate,
     n = t.endDate,
     r = t.isDateBlocked,
@@ -2512,9 +2518,9 @@ function Me(t) {
         }))
   )
 }
-var Ue = 'startDate',
-  Se = 'endDate'
-function Pe(t) {
+var Pe = 'startDate',
+  Ye = 'endDate'
+function Ee(t) {
   var r = t.startDate,
     a = t.endDate,
     i = t.focusedInput,
@@ -2540,7 +2546,7 @@ function Pe(t) {
     D = t.unavailableDates,
     T = void 0 === D ? [] : D,
     p = e(function () {
-      return ke(w, r || c || null)
+      return Ce(w, r || c || null)
     }),
     k = p[0],
     x = p[1],
@@ -2562,10 +2568,10 @@ function Pe(t) {
       return ve(T, t) || b(t)
     },
     N = function (t) {
-      Y(t), (!P || (P && !we(t, P))) && x(ke(w, t))
+      Y(t), (!P || (P && !we(t, P))) && x(Ce(w, t))
     },
     q = function (t) {
-      return De({
+      return pe({
         date: t,
         minBookingDate: o,
         maxBookingDate: u,
@@ -2584,7 +2590,7 @@ function Pe(t) {
       !P
     ) {
       var e = k[0]
-      N(e.date), x(ke(w, e.date))
+      N(e.date), x(Ce(w, e.date))
     }
   }
   return {
@@ -2627,6 +2633,12 @@ function Pe(t) {
     isFirstOrLastSelectedDate: function (t) {
       return be(t, r, a)
     },
+    isStartDate: function (t) {
+      return De(t, r)
+    },
+    isEndDate: function (t) {
+      return Te(t, a)
+    },
     isDateBlocked: q,
     numberOfMonths: w,
     isDateFocused: function (t) {
@@ -2658,7 +2670,7 @@ function Pe(t) {
       ;('endDate' === i || 'startDate' === i) &&
       h > 0 &&
       l &&
-      Me({
+      Se({
         minBookingDays: h,
         exactMinBookingDays: l,
         minBookingDate: o,
@@ -2670,49 +2682,49 @@ function Pe(t) {
         ? s({startDate: t, endDate: te(t, h - 1), focusedInput: null})
         : (('endDate' === i && r && le(t, r)) || ('startDate' === i && a && fe(t, a))) &&
           !l &&
-          Me({minBookingDays: h, isDateBlocked: E, startDate: t, endDate: null})
+          Se({minBookingDays: h, isDateBlocked: E, startDate: t, endDate: null})
         ? s({endDate: null, startDate: t, focusedInput: 'endDate'})
         : 'startDate' === i &&
           !l &&
-          Me({minBookingDays: h, isDateBlocked: E, endDate: a, startDate: t})
+          Se({minBookingDays: h, isDateBlocked: E, endDate: a, startDate: t})
         ? s({endDate: a, startDate: t, focusedInput: 'endDate'})
         : 'startDate' === i &&
           !l &&
-          Me({minBookingDays: h, isDateBlocked: E, endDate: null, startDate: t})
+          Se({minBookingDays: h, isDateBlocked: E, endDate: null, startDate: t})
         ? s({endDate: null, startDate: t, focusedInput: 'endDate'})
         : 'endDate' === i &&
           r &&
           !le(t, r) &&
           !l &&
-          Me({minBookingDays: h, isDateBlocked: E, startDate: r, endDate: t}) &&
+          Se({minBookingDays: h, isDateBlocked: E, startDate: r, endDate: t}) &&
           s({startDate: r, endDate: t, focusedInput: null}),
-        'endDate' === i || (P && (!P || we(t, P))) || x(ke(w, t))
+        'endDate' === i || (P && (!P || we(t, P))) || x(Ce(w, t))
     },
     onDateFocus: N,
     goToPreviousMonths: function () {
-      x(xe(k, w, -1)), Y(null)
+      x(Me(k, w, -1)), Y(null)
     },
     goToPreviousMonthsByOneMonth: function () {
-      x(xe(k, w, -1, 1)), Y(null)
+      x(Me(k, w, -1, 1)), Y(null)
     },
     goToNextMonths: function () {
-      x(xe(k, w, 1)), Y(null)
+      x(Me(k, w, 1)), Y(null)
     },
     goToNextMonthsByOneMonth: function () {
-      x(xe(k, w, 1, 1)), Y(null)
+      x(Me(k, w, 1, 1)), Y(null)
     },
     goToDate: function (t) {
-      x(ke(w, t)), Y(null)
+      x(Ce(w, t)), Y(null)
     },
     goToPreviousYear: function (t) {
-      void 0 === t && (t = 1), x(xe(k, w, -(12 * t - w + 1))), Y(null)
+      void 0 === t && (t = 1), x(Me(k, w, -(12 * t - w + 1))), Y(null)
     },
     goToNextYear: function (t) {
-      void 0 === t && (t = 1), x(xe(k, w, 12 * t - w + 1)), Y(null)
+      void 0 === t && (t = 1), x(Me(k, w, 12 * t - w + 1)), Y(null)
     },
   }
 }
-function Ye(t) {
+function Ne(t) {
   var e = t.date,
     n = t.focusedDate,
     a = t.isDateSelected,
@@ -2756,22 +2768,24 @@ function Ye(t) {
   }
 }
 export {
-  Se as END_DATE,
-  Ue as START_DATE,
+  Ye as END_DATE,
+  Pe as START_DATE,
   ue as dayLabelFormat,
-  pe as getCurrentYearMonthAndDate,
-  Te as getDateMonthAndYear,
+  xe as getCurrentYearMonthAndDate,
+  ke as getDateMonthAndYear,
   oe as getDays,
-  ke as getInitialMonths,
-  Ce as getInputValue,
+  Ce as getInitialMonths,
+  Ue as getInputValue,
   ie as getWeekdayLabels,
-  De as isDateBlocked,
+  pe as isDateBlocked,
   ye as isDateSelected,
+  Te as isEndDate,
   be as isFirstOrLastSelectedDate,
+  De as isStartDate,
   ce as monthLabelFormat,
   xt as parseDate,
-  Pe as useDatepicker,
-  Ye as useDay,
+  Ee as useDatepicker,
+  Ne as useDay,
   de as useMonth,
   se as weekdayLabelFormat,
 }

@@ -15,8 +15,8 @@ import {
 import {
   isDateSelected,
   isFirstOrLastSelectedDate,
-  isStartDate,
   isEndDate,
+  isStartDate,
   isDateBlocked,
   getCurrentYearMonthAndDate,
   getDateMonthAndYear,

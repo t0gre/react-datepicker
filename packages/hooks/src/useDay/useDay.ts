@@ -23,7 +23,6 @@ function useDay({
   isDateSelected,
   isDateFocused,
   isFirstOrLastSelectedDate,
-
   isDateHovered,
   isDateBlocked,
   onDateSelect,
