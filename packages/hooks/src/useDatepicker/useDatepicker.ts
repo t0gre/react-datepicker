@@ -72,7 +72,9 @@ export function useDatepicker({
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('keydown', handleKeyDown)
+      if (window.addEventListener) {
+         window.addEventListener('keydown', handleKeyDown)
+      }
     }
 
     return () => {
