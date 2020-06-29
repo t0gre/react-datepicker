@@ -76,11 +76,12 @@ export function useDatepicker({
          window.addEventListener('keydown', handleKeyDown)
       }
     }
-    if (window.removeEventListener) {
+   
       return () => {
-        window.removeEventListener('keydown', handleKeyDown)
+        if (window.removeEventListener) {
+          window.removeEventListener('keydown', handleKeyDown)
+        }
       }
-    }
   })
 
   const disabledDatesByUser = (date: Date) => {
