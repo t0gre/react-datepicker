@@ -76,9 +76,10 @@ export function useDatepicker({
          window.addEventListener('keydown', handleKeyDown)
       }
     }
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
+    if (window.removeEventListener) {
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown)
+      }
     }
   })
 
