@@ -2547,9 +2547,11 @@ function Te(t) {
       E = U[1]
     t.useEffect(function () {
       return (
-        'undefined' != typeof window && window.addEventListener('keydown', q),
+        'undefined' != typeof window &&
+          window.addEventListener &&
+          window.addEventListener('keydown', q),
         function () {
-          window.removeEventListener('keydown', q)
+          window.removeEventListener && window.removeEventListener('keydown', q)
         }
       )
     })

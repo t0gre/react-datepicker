@@ -529,7 +529,7 @@ function R(e, t) {
     c = (d < i ? 7 : 0) + d - i
   return s.setUTCDate(s.getUTCDate() - c), s.setUTCHours(0, 0, 0, 0), s
 }
-function W(e, t) {
+function L(e, t) {
   h(1, arguments)
   var n = g(e, t),
     r = n.getUTCFullYear(),
@@ -548,7 +548,7 @@ function W(e, t) {
   var p = R(l, t)
   return n.getTime() >= u.getTime() ? r + 1 : n.getTime() >= p.getTime() ? r : r - 1
 }
-function L(e, t, n) {
+function W(e, t, n) {
   h(2, arguments)
   var r = n || {},
     a = r.locale,
@@ -605,7 +605,7 @@ function O(e, t) {
     a = r && r.options && r.options.firstWeekContainsDate,
     o = null == a ? 1 : f(a),
     i = null == n.firstWeekContainsDate ? o : f(n.firstWeekContainsDate),
-    s = W(e, t),
+    s = L(e, t),
     d = new Date(0)
   d.setUTCFullYear(s, 0, i), d.setUTCHours(0, 0, 0, 0)
   var c = R(d, t)
@@ -799,7 +799,7 @@ var be = {
         return t.isTwoDigitYear || t.year > 0
       },
       set: function (e, t, n, r) {
-        var a = W(e, r)
+        var a = L(e, r)
         if (n.isTwoDigitYear) {
           var o = he(n.year, a)
           return e.setUTCFullYear(o, 0, r.firstWeekContainsDate), e.setUTCHours(0, 0, 0, 0), R(e, r)
@@ -1136,7 +1136,7 @@ var be = {
         return t >= 0 && t <= 6
       },
       set: function (e, t, n, r) {
-        return (e = L(e, n, r)).setUTCHours(0, 0, 0, 0), e
+        return (e = W(e, n, r)).setUTCHours(0, 0, 0, 0), e
       },
       incompatibleTokens: ['D', 'i', 'e', 'c', 't', 'T'],
     },
@@ -1180,7 +1180,7 @@ var be = {
         return t >= 0 && t <= 6
       },
       set: function (e, t, n, r) {
-        return (e = L(e, n, r)).setUTCHours(0, 0, 0, 0), e
+        return (e = W(e, n, r)).setUTCHours(0, 0, 0, 0), e
       },
       incompatibleTokens: [
         'y',
@@ -1240,7 +1240,7 @@ var be = {
         return t >= 0 && t <= 6
       },
       set: function (e, t, n, r) {
-        return (e = L(e, n, r)).setUTCHours(0, 0, 0, 0), e
+        return (e = W(e, n, r)).setUTCHours(0, 0, 0, 0), e
       },
       incompatibleTokens: [
         'y',
@@ -1680,7 +1680,7 @@ var Re = {
     })(e, t)
   },
   Y: function (e, t, n, r) {
-    var a = W(e, r),
+    var a = L(e, r),
       o = a > 0 ? a : 1 - a
     return 'YY' === t
       ? Me(o % 100, 2)
@@ -1968,7 +1968,7 @@ var Re = {
     if (0 === a) return 'Z'
     switch (t) {
       case 'X':
-        return Le(a)
+        return We(a)
       case 'XXXX':
       case 'XX':
         return Ee(a)
@@ -1982,7 +1982,7 @@ var Re = {
     var a = (r._originalDate || e).getTimezoneOffset()
     switch (t) {
       case 'x':
-        return Le(a)
+        return We(a)
       case 'xxxx':
       case 'xx':
         return Ee(a)
@@ -1998,7 +1998,7 @@ var Re = {
       case 'O':
       case 'OO':
       case 'OOO':
-        return 'GMT' + We(a, ':')
+        return 'GMT' + Le(a, ':')
       case 'OOOO':
       default:
         return 'GMT' + Ee(a, ':')
@@ -2010,7 +2010,7 @@ var Re = {
       case 'z':
       case 'zz':
       case 'zzz':
-        return 'GMT' + We(a, ':')
+        return 'GMT' + Le(a, ':')
       case 'zzzz':
       default:
         return 'GMT' + Ee(a, ':')
@@ -2024,7 +2024,7 @@ var Re = {
     return Me((r._originalDate || e).getTime(), t.length)
   },
 }
-function We(e, t) {
+function Le(e, t) {
   var n = e > 0 ? '-' : '+',
     r = Math.abs(e),
     a = Math.floor(r / 60),
@@ -2033,7 +2033,7 @@ function We(e, t) {
   var i = t || ''
   return n + String(a) + i + Me(o, 2)
 }
-function Le(e, t) {
+function We(e, t) {
   return e % 60 == 0 ? (e > 0 ? '-' : '+') + Me(Math.abs(e) / 60, 2) : Ee(e, t)
 }
 function Ee(e, t) {
@@ -2416,16 +2416,18 @@ function ct(e) {
     R = B[1]
   t.useEffect(function () {
     return (
-      'undefined' != typeof window && window.addEventListener('keydown', F),
+      'undefined' != typeof window &&
+        window.addEventListener &&
+        window.addEventListener('keydown', F),
       function () {
-        window.removeEventListener('keydown', F)
+        window.removeEventListener && window.removeEventListener('keydown', F)
       }
     )
   })
-  var W = function (e) {
+  var L = function (e) {
       return tt(w, e) || b(e)
     },
-    L = function (e) {
+    W = function (e) {
       R(e), (!M || (M && !$e(e, M))) && x(rt(h, e))
     },
     E = function (e) {
@@ -2456,7 +2458,7 @@ function ct(e) {
         startDate: n,
         endDate: r,
         minBookingDays: p,
-        isDateBlockedFn: W,
+        isDateBlockedFn: L,
       })
     }
   function F(e) {
@@ -2468,7 +2470,7 @@ function ct(e) {
       !M
     ) {
       var t = k[0]
-      L(t.date), x(rt(h, t.date))
+      W(t.date), x(rt(h, t.date))
     }
   }
   return {
@@ -2512,7 +2514,7 @@ function ct(e) {
         endDate: r,
         minBookingDays: p,
         exactMinBookingDays: u,
-        isDateBlocked: W,
+        isDateBlocked: L,
       })
     },
     isFirstOrLastSelectedDate: function (e) {
@@ -2566,32 +2568,32 @@ function ct(e) {
         exactMinBookingDays: u,
         minBookingDate: o,
         maxBookingDate: i,
-        isDateBlocked: W,
+        isDateBlocked: L,
         startDate: e,
         endDate: null,
       })
         ? s({startDate: e, endDate: Ne(e, p - 1), focusedInput: null})
         : (('endDate' === a && n && Ze(e, n)) || ('startDate' === a && r && Ke(e, r))) &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: W, startDate: e, endDate: null})
+          it({minBookingDays: p, isDateBlocked: L, startDate: e, endDate: null})
         ? s({endDate: null, startDate: e, focusedInput: 'endDate'})
         : 'startDate' === a &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: W, endDate: r, startDate: e})
+          it({minBookingDays: p, isDateBlocked: L, endDate: r, startDate: e})
         ? s({endDate: r, startDate: e, focusedInput: 'endDate'})
         : 'startDate' === a &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: W, endDate: null, startDate: e})
+          it({minBookingDays: p, isDateBlocked: L, endDate: null, startDate: e})
         ? s({endDate: null, startDate: e, focusedInput: 'endDate'})
         : 'endDate' === a &&
           n &&
           !Ze(e, n) &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: W, startDate: n, endDate: e}) &&
+          it({minBookingDays: p, isDateBlocked: L, startDate: n, endDate: e}) &&
           s({startDate: n, endDate: e, focusedInput: null}),
         'endDate' === a || (M && (!M || $e(e, M))) || x(rt(h, e))
     },
-    onDateFocus: L,
+    onDateFocus: W,
     goToPreviousMonths: function () {
       x(at(k, h, -1)), R(null)
     },
@@ -2867,8 +2869,8 @@ var mt = (function () {
     opacity: !0,
   }
 Rt.bg = Rt.backgroundColor
-var Wt = St(Rt),
-  Lt = St({
+var Lt = St(Rt),
+  Wt = St({
     fontFamily: {property: 'fontFamily', scale: 'fonts'},
     fontSize: {
       property: 'fontSize',
@@ -3242,11 +3244,11 @@ var Vt,
   un = Mt.minHeight,
   ln = Mt.display,
   pn = Mt.overflow,
-  fn = Wt.opacity,
-  hn = Lt.fontSize,
-  gn = Lt.fontFamily,
-  mn = Lt.fontWeight,
-  yn = Lt.lineHeight,
+  fn = Lt.opacity,
+  hn = Wt.fontSize,
+  gn = Wt.fontFamily,
+  mn = Wt.fontWeight,
+  yn = Wt.lineHeight,
   bn = Et.alignItems,
   vn = Et.justifyContent,
   wn = Et.flexWrap,
@@ -3259,8 +3261,8 @@ var Vt,
   Bn = Pt.gridAutoColumns,
   Mn = Pt.gridAutoRows,
   Rn = Pt.gridTemplateColumns,
-  Wn = Pt.gridTemplateRows,
-  Ln = Pt.gridTemplateAreas,
+  Ln = Pt.gridTemplateRows,
+  Wn = Pt.gridTemplateAreas,
   En = Pt.gridArea,
   Fn = Ot.borderRadius,
   Pn = Nt.zIndex,
@@ -3307,7 +3309,7 @@ var Vt,
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  Gn = Bt(Bn, Sn, Mn, Cn, xn, Tn, Ln, Rn, Wn, bn, vn, jt),
+  Gn = Bt(Bn, Sn, Mn, Cn, xn, Tn, Wn, Rn, Ln, bn, vn, jt),
   jn = a('div')(
     Vt ||
       (Vt = lt(['\n  display: grid;\n  ', '\n  ', '\n'], ['\n  display: grid;\n  ', '\n  ', '\n'])),
@@ -3410,7 +3412,7 @@ var nr,
       )),
     cr,
   ),
-  lr = Bt(zt, jt, gn, hn, Wt, mn, jt, Ot, dn, un, Xt),
+  lr = Bt(zt, jt, gn, hn, Lt, mn, jt, Ot, dn, un, Xt),
   pr = a('input')(
     ar ||
       (ar = lt(
@@ -3459,12 +3461,12 @@ function fr(e) {
     C = e.onChange,
     T = void 0 === C ? function () {} : C,
     R = t.useState(u),
-    W = R[0],
-    L = R[1],
+    L = R[0],
+    W = R[1],
     E = t.useRef(null)
   t.useEffect(
     function () {
-      L(u)
+      W(u)
     },
     [u],
   )
@@ -3543,11 +3545,11 @@ function fr(e) {
       id: o,
       placeholder: a,
       'aria-label': d,
-      value: W,
+      value: L,
       autoComplete: 'off',
       onChange: function (e) {
         var t = e.target.value
-        L(t),
+        W(t),
           'number' == typeof E.current && clearTimeout(E.current),
           (E.current = setTimeout(function () {
             c()
@@ -3582,17 +3584,17 @@ function fr(e) {
                   .match(ve),
                 R = []
               for (w = 0; w < T.length; w++) {
-                var W = T[w]
-                !i.useAdditionalWeekYearTokens && B(W) && M(W),
-                  !i.useAdditionalDayOfYearTokens && S(W) && M(W)
-                var L = W[0],
-                  E = be[L]
+                var L = T[w]
+                !i.useAdditionalWeekYearTokens && B(L) && M(L),
+                  !i.useAdditionalDayOfYearTokens && S(L) && M(L)
+                var W = L[0],
+                  E = be[W]
                 if (E) {
                   var F = E.incompatibleTokens
                   if (Array.isArray(F)) {
                     for (var P = void 0, H = 0; H < R.length; H++) {
                       var O = R[H].token
-                      if (-1 !== F.indexOf(O) || O === L) {
+                      if (-1 !== F.indexOf(O) || O === W) {
                         P = R[H]
                         break
                       }
@@ -3601,17 +3603,17 @@ function fr(e) {
                       throw new RangeError(
                         "The format string mustn't contain `"
                           .concat(P.fullToken, '` and `')
-                          .concat(W, '` at the same time'),
+                          .concat(L, '` at the same time'),
                       )
                   } else if ('*' === E.incompatibleTokens && R.length)
                     throw new RangeError(
                       "The format string mustn't contain `".concat(
-                        W,
+                        L,
                         '` and any other token at the same time',
                       ),
                     )
-                  R.push({token: L, fullToken: W})
-                  var I = E.parse(a, W, s.match, k)
+                  R.push({token: W, fullToken: L})
+                  var I = E.parse(a, L, s.match, k)
                   if (!I) return new Date(NaN)
                   C.push({
                     priority: E.priority,
@@ -3622,13 +3624,13 @@ function fr(e) {
                   }),
                     (a = I.rest)
                 } else {
-                  if (L.match(Ce))
+                  if (W.match(Ce))
                     throw new RangeError(
-                      'Format string contains an unescaped latin alphabet character `' + L + '`',
+                      'Format string contains an unescaped latin alphabet character `' + W + '`',
                     )
-                  if (("''" === W ? (W = "'") : "'" === L && (W = Se(W)), 0 !== a.indexOf(W)))
+                  if (("''" === L ? (L = "'") : "'" === W && (L = Se(L)), 0 !== a.indexOf(L)))
                     return new Date(NaN)
-                  a = a.slice(W.length)
+                  a = a.slice(L.length)
                 }
               }
               if (a.length > 0 && xe.test(a)) return new Date(NaN)
@@ -3711,7 +3713,7 @@ function hr(e) {
 var gr,
   mr,
   yr,
-  br = Bt(gn, hn, mn, Wt, yn, jt),
+  br = Bt(gn, hn, mn, Lt, yn, jt),
   vr = a('div')(gr || (gr = lt(['\n  ', '\n'], ['\n  ', '\n'])), br),
   wr = a(vr)(
     yr ||
@@ -3860,8 +3862,8 @@ var kr,
     onDateSelect: function () {},
     onDayRender: void 0,
   },
-  Wr = n.createContext(Rr),
-  Lr = Un({
+  Lr = n.createContext(Rr),
+  Wr = Un({
     prop: 'dayHeight',
     cssProperty: 'height',
     key: 'dayHeight',
@@ -3915,7 +3917,7 @@ var kr,
     },
     scale: [0, 4, 8, 16, 32],
   }),
-  Ir = Bt(Xt, zt, Wt, gn, mn, hn),
+  Ir = Bt(Xt, zt, Lt, gn, mn, hn),
   zr = a('button')(
     Sr ||
       (Sr = lt(
@@ -3938,7 +3940,7 @@ var kr,
           '\n  }\n',
         ],
       )),
-    Lr,
+    Wr,
     Er,
     Ir,
     function (e) {
@@ -4006,7 +4008,7 @@ function Nr(e) {
   var a = e.day,
     o = e.date,
     i = t.useRef(null),
-    s = t.useContext(Wr),
+    s = t.useContext(Lr),
     d = s.focusedDate,
     c = s.isDateFocused,
     u = s.isDateSelected,
@@ -4125,7 +4127,7 @@ function Nr(e) {
       },
       [b.isSelected, b.isSelectedStartOrEnd, B, b.isWithinHoverRange],
     ),
-    W = t.useMemo(
+    L = t.useMemo(
       function () {
         return Ur(b.isSelected, b.isSelectedStartOrEnd, b.isWithinHoverRange, {
           selectedFirstOrLast: B.daySelectedFirstOrLastColor,
@@ -4143,7 +4145,7 @@ function Nr(e) {
       dayHeight: B.daySize,
       dayWidth: B.daySize,
       background: R,
-      color: W,
+      color: L,
       fontFamily: B.fontFamily,
       fontWeight: B.dayFontWeight,
       fontSize: B.dayFontSize,
@@ -4480,7 +4482,7 @@ function ia(e) {
 }
 var sa,
   da,
-  ca = Bt(jt, Wt, hn, gn, mn),
+  ca = Bt(jt, Lt, hn, gn, mn),
   ua = a('div')(
     sa ||
       (sa = lt(
@@ -4506,8 +4508,8 @@ var sa,
         ],
       )),
     ua,
-    Wt,
-    Wt,
+    Lt,
+    Lt,
   )
 function pa(e) {
   var a = e.onClick,
@@ -4602,8 +4604,8 @@ var Da,
   Ba,
   Ma,
   Ra,
-  Wa,
   La,
+  Wa,
   Ea = n.forwardRef(function (e, a) {
     var o = e.startDate,
       i = e.endDate,
@@ -4635,8 +4637,8 @@ var Da,
               return !1
             }
           : M,
-      W = e.minBookingDays,
-      L = void 0 === W ? 1 : W,
+      L = e.minBookingDays,
+      W = void 0 === L ? 1 : L,
       E = e.onClose,
       F = void 0 === E ? function () {} : E,
       P = e.numberOfMonths,
@@ -4653,7 +4655,7 @@ var Da,
         onDatesChange: u,
         minBookingDate: s,
         maxBookingDate: d,
-        minBookingDays: L,
+        minBookingDays: W,
         isDateBlocked: R,
         exactMinBookingDays: B,
         unavailableDates: void 0 === N ? [] : N,
@@ -4741,7 +4743,7 @@ var Da,
         },
       },
       n.createElement(
-        Wr.Provider,
+        Lr.Provider,
         {
           value: {
             rtl: v,
@@ -4911,8 +4913,8 @@ var Da,
       r.css(Ba || (Ba = lt(['\n      direction: rtl;\n    '], ['\n      direction: rtl;\n    '])))
     )
   }),
-  Pa = Bt(Wt, fn),
-  Ha = a(hr)(Wa || (Wa = lt(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Pa, function (e) {
+  Pa = Bt(Lt, fn),
+  Ha = a(hr)(La || (La = lt(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Pa, function (e) {
     return (
       e.rtl &&
       r.css(
@@ -4925,7 +4927,7 @@ var Da,
     )
   }),
   Oa = Bt(zt, Ot, Fn),
-  Ia = a(jn)(La || (La = lt(['\n  ', '\n'], ['\n  ', '\n'])), Oa)
+  Ia = a(jn)(Wa || (Wa = lt(['\n  ', '\n'], ['\n  ', '\n'])), Oa)
 var za,
   Ua,
   Na = a(Zn)(Ua || (Ua = lt(['\n  ', '\n  ', '\n'], ['\n  ', '\n  ', '\n'])), Pn, function (e) {
@@ -4961,14 +4963,14 @@ var za,
     B = e.rtl,
     M = void 0 !== B && B,
     R = e.isDateBlocked,
-    W =
+    L =
       void 0 === R
         ? function () {
             return !1
           }
         : R,
-    L = e.minBookingDays,
-    E = void 0 === L ? 1 : L,
+    W = e.minBookingDays,
+    E = void 0 === W ? 1 : W,
     F = e.onClose,
     P = void 0 === F ? function () {} : F,
     H = e.showStartDateCalendarIcon,
@@ -5142,7 +5144,7 @@ var za,
               displayFormat: N,
               onDatesChange: p,
               minBookingDays: E,
-              isDateBlocked: W,
+              isDateBlocked: L,
               exactMinBookingDays: f,
               showResetDates: C,
               vertical: S,
@@ -5195,8 +5197,8 @@ var za,
           : S,
       M = e.onClose,
       R = void 0 === M ? function () {} : M,
-      W = e.showCalendarIcon,
-      L = void 0 === W || W,
+      L = e.showCalendarIcon,
+      W = void 0 === L || L,
       E = e.displayFormat,
       F = void 0 === E ? 'MM/dd/yyyy' : E,
       P = e.phrases,
@@ -5277,7 +5279,7 @@ var za,
             onClick: function () {
               return d(!0)
             },
-            showCalendarIcon: L,
+            showCalendarIcon: W,
             vertical: x,
             isActive: !1,
             padding: G.dateSingleInputPadding,
