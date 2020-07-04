@@ -4776,11 +4776,6 @@ acorn-globals@^6.0.0:
     acorn "^7.1.1"
     acorn-walk "^7.1.1"
 
-acorn-jsx@^5.0.2:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.1.0.tgz#294adb71b57398b0680015f0a38c563ee1db5384"
-  integrity sha512-tMUqwBWfLFbJbizRmEcWSLw6HnFzfdJs2sOJEOwwtVPMoH/0Ay+E703oZz78VSXZiiDcZrQ5XKjPIUQixhmgVw==
-
 acorn-jsx@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.2.0.tgz#4c66069173d6fdd68ed85239fc256226182b2ebe"
@@ -4804,7 +4799,7 @@ acorn@^6.0.1, acorn@^6.0.5, acorn@^6.2.1:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.3.0.tgz#0087509119ffa4fc0a0041d1e93a417e68cb856e"
 
-acorn@^7.0.0, acorn@^7.1.1, acorn@^7.2.0:
+acorn@^7.1.1, acorn@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.2.0.tgz#17ea7e40d7c8640ff54a694c889c26f31704effe"
   integrity sha512-apwXVmYVpQ34m/i71vrApRrRKCWQnZZF1+npOD0WV5xZFfwWOmKGQ2RWlfdy9vWITsenisM8M0Qeq8agcFHNiQ==
@@ -6830,7 +6825,7 @@ cosmiconfig@^4.0.0:
     parse-json "^4.0.0"
     require-from-string "^2.0.1"
 
-cosmiconfig@^5.0.0, cosmiconfig@^5.1.0, cosmiconfig@^5.2.0:
+cosmiconfig@^5.1.0, cosmiconfig@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.2.0.tgz#45038e4d28a7fe787203aede9c25bca4a08b12c8"
   dependencies:
@@ -6889,13 +6884,14 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-jest-runner@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/create-jest-runner/-/create-jest-runner-0.5.3.tgz#1387e2ce70b08e4c989ae55f677005b64f9ba97b"
+create-jest-runner@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/create-jest-runner/-/create-jest-runner-0.6.0.tgz#9ca6583d969acc15cdc21cd07d430945daf83de6"
+  integrity sha512-9ibH8XA4yOJwDLRlzIUv5Ceg2DZFrQFjEtRKplVP6scGKwoz28V27xPHTbXziq2LePAD/xXlJlywhUq1dtF+nw==
   dependencies:
-    chalk "^2.4.2"
-    jest-worker "^24.0.0"
-    throat "^4.1.0"
+    chalk "^3.0.0"
+    jest-worker "^25.1.0"
+    throat "^5.0.0"
 
 create-react-context@<=0.2.2:
   version "0.2.2"
@@ -7962,12 +7958,6 @@ eslint-scope@^5.1.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-utils@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-1.4.2.tgz#166a5180ef6ab7eb462f162fd0e6f2463d7309ab"
-  dependencies:
-    eslint-visitor-keys "^1.0.0"
-
 eslint-utils@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-2.0.0.tgz#7be1cc70f27a72a76cd14aa698bcabed6890e1cd"
@@ -7987,48 +7977,6 @@ eslint-visitor-keys@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.2.0.tgz#74415ac884874495f78ec2a97349525344c981fa"
   integrity sha512-WFb4ihckKil6hu3Dp798xdzSfddwKKU3+nGniKF6HfeW6OLd2OUDEPP7TcHtB5+QXOKg2s6B2DaMPE1Nn/kxKQ==
-
-"eslint@^4.0.0 || ^5.0.0 || ^6.0.0":
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-6.5.1.tgz#828e4c469697d43bb586144be152198b91e96ed6"
-  dependencies:
-    "@babel/code-frame" "^7.0.0"
-    ajv "^6.10.0"
-    chalk "^2.1.0"
-    cross-spawn "^6.0.5"
-    debug "^4.0.1"
-    doctrine "^3.0.0"
-    eslint-scope "^5.0.0"
-    eslint-utils "^1.4.2"
-    eslint-visitor-keys "^1.1.0"
-    espree "^6.1.1"
-    esquery "^1.0.1"
-    esutils "^2.0.2"
-    file-entry-cache "^5.0.1"
-    functional-red-black-tree "^1.0.1"
-    glob-parent "^5.0.0"
-    globals "^11.7.0"
-    ignore "^4.0.6"
-    import-fresh "^3.0.0"
-    imurmurhash "^0.1.4"
-    inquirer "^6.4.1"
-    is-glob "^4.0.0"
-    js-yaml "^3.13.1"
-    json-stable-stringify-without-jsonify "^1.0.1"
-    levn "^0.3.0"
-    lodash "^4.17.14"
-    minimatch "^3.0.4"
-    mkdirp "^0.5.1"
-    natural-compare "^1.4.0"
-    optionator "^0.8.2"
-    progress "^2.0.0"
-    regexpp "^2.0.1"
-    semver "^6.1.2"
-    strip-ansi "^5.2.0"
-    strip-json-comments "^3.0.1"
-    table "^5.2.3"
-    text-table "^0.2.0"
-    v8-compile-cache "^2.0.3"
 
 eslint@^7.2.0:
   version "7.2.0"
@@ -8072,14 +8020,6 @@ eslint@^7.2.0:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-espree@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/espree/-/espree-6.1.1.tgz#7f80e5f7257fc47db450022d723e356daeb1e5de"
-  dependencies:
-    acorn "^7.0.0"
-    acorn-jsx "^5.0.2"
-    eslint-visitor-keys "^1.1.0"
-
 espree@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/espree/-/espree-7.1.0.tgz#a9c7f18a752056735bf1ba14cb1b70adc3a5ce1c"
@@ -8092,12 +8032,6 @@ espree@^7.1.0:
 esprima@^4.0.0, esprima@^4.0.1, esprima@~4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
-
-esquery@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.0.1.tgz#406c51658b1f5991a5f9b62b1dc25b00e3e5c708"
-  dependencies:
-    estraverse "^4.0.0"
 
 esquery@^1.2.0:
   version "1.3.1"
@@ -8112,7 +8046,7 @@ esrecurse@^4.1.0:
   dependencies:
     estraverse "^4.1.0"
 
-estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
+estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
 
@@ -9005,7 +8939,7 @@ global@^4.4.0:
     min-document "^2.19.0"
     process "^0.11.10"
 
-globals@^11.1.0, globals@^11.7.0:
+globals@^11.1.0:
   version "11.12.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
 
@@ -9604,24 +9538,6 @@ inquirer@^6.2.0:
     run-async "^2.2.0"
     rxjs "^6.4.0"
     string-width "^2.1.0"
-    strip-ansi "^5.1.0"
-    through "^2.3.6"
-
-inquirer@^6.4.1:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.5.1.tgz#8bfb7a5ac02dac6ff641ac4c5ff17da112fcdb42"
-  dependencies:
-    ansi-escapes "^4.2.1"
-    chalk "^2.4.2"
-    cli-cursor "^3.1.0"
-    cli-width "^2.0.0"
-    external-editor "^3.0.3"
-    figures "^3.0.0"
-    lodash "^4.17.15"
-    mute-stream "0.0.8"
-    run-async "^2.2.0"
-    rxjs "^6.4.0"
-    string-width "^4.1.0"
     strip-ansi "^5.1.0"
     through "^2.3.6"
 
@@ -10361,15 +10277,14 @@ jest-resolve@^26.0.1:
     resolve "^1.17.0"
     slash "^3.0.0"
 
-jest-runner-eslint@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/jest-runner-eslint/-/jest-runner-eslint-0.9.0.tgz#d10196ed83b989a6ad3b1e729b48f62bce3f2626"
-  integrity sha512-p5NL0OGF8BvPNztVIpjaUwco506ORbwnoVQ3YHXXsQl8hM6zQTzSiyarL0PqPjq44ndbFFC2ifOoDTpzyqqe0g==
+jest-runner-eslint@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/jest-runner-eslint/-/jest-runner-eslint-0.10.0.tgz#5d7197d1e982b2cceea9e65f078dc371cc4a9815"
+  integrity sha512-XXKz2hMLGvyH50i29UcNQDQY2Sj1hLuCn7H3otMdeOB2LOzdHXXif3RXX+8m/eAewflB5RqqqlF1K7FozYZKrg==
   dependencies:
-    chalk "^2.4.1"
-    cosmiconfig "^5.0.0"
-    create-jest-runner "^0.5.3"
-    eslint "^4.0.0 || ^5.0.0 || ^6.0.0"
+    chalk "^3.0.0"
+    cosmiconfig "^6.0.0"
+    create-jest-runner "^0.6.0"
 
 jest-runner@^26.0.1:
   version "26.0.1"
@@ -10525,13 +10440,6 @@ jest-watcher@^26.0.0, jest-watcher@^26.0.1:
     chalk "^4.0.0"
     jest-util "^26.0.1"
     string-length "^4.0.1"
-
-jest-worker@^24.0.0:
-  version "24.6.0"
-  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-24.6.0.tgz#7f81ceae34b7cde0c9827a6980c35b7cdc0161b3"
-  dependencies:
-    merge-stream "^1.0.1"
-    supports-color "^6.1.0"
 
 jest-worker@^25.1.0:
   version "25.1.0"
@@ -10853,13 +10761,6 @@ levenary@^1.1.1:
   dependencies:
     leven "^3.1.0"
 
-levn@^0.3.0, levn@~0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
-  dependencies:
-    prelude-ls "~1.1.2"
-    type-check "~0.3.2"
-
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.4.1.tgz#ae4562c007473b932a6200d403268dd2fffc6ade"
@@ -10867,6 +10768,13 @@ levn@^0.4.1:
   dependencies:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
+
+levn@~0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
+  dependencies:
+    prelude-ls "~1.1.2"
+    type-check "~0.3.2"
 
 lines-and-columns@^1.1.6:
   version "1.1.6"
@@ -11312,12 +11220,6 @@ merge-deep@^3.0.2:
 merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
-
-merge-stream@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-1.0.1.tgz#4041202d508a342ba00174008df0c251b8c135e1"
-  dependencies:
-    readable-stream "^2.0.1"
 
 merge-stream@^2.0.0:
   version "2.0.0"
@@ -12174,7 +12076,7 @@ optimist@^0.6.1:
     minimist "~0.0.1"
     wordwrap "~0.0.2"
 
-optionator@^0.8.1, optionator@^0.8.2:
+optionator@^0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
   dependencies:
@@ -13616,10 +13518,6 @@ regexp.prototype.flags@^1.3.0:
     define-properties "^1.1.3"
     es-abstract "^1.17.0-next.1"
 
-regexpp@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-2.0.1.tgz#8d19d31cf632482b589049f8281f93dbcba4d07f"
-
 regexpp@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-3.0.0.tgz#dd63982ee3300e67b41c1956f850aa680d9d330e"
@@ -14224,7 +14122,7 @@ semver@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.0.0.tgz#05e359ee571e5ad7ed641a6eec1e547ba52dea65"
 
-semver@^6.1.2, semver@^6.2.0, semver@^6.3.0:
+semver@^6.2.0, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
 
@@ -14967,7 +14865,7 @@ strip-indent@^3.0.0:
   dependencies:
     min-indent "^1.0.0"
 
-strip-json-comments@3.0.1, strip-json-comments@^3.0.1:
+strip-json-comments@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
 
@@ -15290,10 +15188,6 @@ thenify-all@^1.0.0:
   resolved "https://registry.yarnpkg.com/thenify/-/thenify-3.3.0.tgz#e69e38a1babe969b0108207978b9f62b88604839"
   dependencies:
     any-promise "^1.0.0"
-
-throat@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
 
 throat@^5.0.0:
   version "5.0.0"
