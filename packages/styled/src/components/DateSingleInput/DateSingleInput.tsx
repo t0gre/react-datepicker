@@ -92,6 +92,7 @@ export interface DateSingleInputProps {
   onDayRender?(date: Date): React.ReactNode
   inputId?: string
   unavailableDates?: Date[]
+  zIndex?: number
 }
 
 function DateSingleInput({
@@ -107,6 +108,7 @@ function DateSingleInput({
   monthLabelFormat,
   onDayRender,
   initialVisibleMonth,
+  zIndex,
   numberOfMonths = 1,
   showClose = true,
   showResetDate = true,
@@ -175,7 +177,7 @@ function DateSingleInput({
   return (
     <ThemeProvider theme={(theme: Record<string, unknown>) => theme || {}}>
       <Wrapper
-        zIndex={theme.dateSingleZIndex}
+        zIndex={zIndex || theme.dateSingleZIndex}
         rtl={rtl}
         position="relative"
         ref={datepickerWrapperRef}
