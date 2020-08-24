@@ -138,6 +138,10 @@ const StyledInput = styled('input')<StyledInputProps>`
     ${placeholderFontWeight}
     ${placeholderColor}
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `
 
 interface InputProps {
@@ -154,6 +158,7 @@ interface InputProps {
   padding?: ResponsiveValue<PaddingProperty<TLengthStyledSystem>>
   onChange?(date: Date): void
   dateFormat: string
+  disabled?: boolean
 }
 
 function Input({
@@ -170,6 +175,7 @@ function Input({
   disableAccessibility,
   dateFormat,
   onChange = () => {},
+  disabled = false,
 }: InputProps) {
   const [searchString, setSearchString] = useState(value)
   const ref = useRef(null)
@@ -290,6 +296,7 @@ function Input({
         onChange={handleOnChange}
         onFocus={onClick}
         data-testid="DatepickerInput"
+        disabled={disabled}
       />
     </InputLabel>
   )

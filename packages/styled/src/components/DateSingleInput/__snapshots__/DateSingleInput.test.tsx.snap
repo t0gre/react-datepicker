@@ -92,6 +92,10 @@ exports[`placement top 1`] = `
   color: #929598;
 }
 
+.c3:disabled {
+  cursor: not-allowed;
+}
+
 .c15 {
   font-family: Montserrat,sans-serif;
   font-size: 14px;
@@ -1367,6 +1371,10 @@ exports[`should handle custom id for input field 1`] = `
 .c3:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -2646,6 +2654,10 @@ exports[`should have empty empty date and opened datepicker 1`] = `
   color: #929598;
 }
 
+.c3:disabled {
+  cursor: not-allowed;
+}
+
 .c15 {
   font-family: Montserrat,sans-serif;
   font-size: 14px;
@@ -3831,6 +3843,132 @@ exports[`should have empty empty date and opened datepicker 1`] = `
 </div>
 `;
 
+exports[`should render a disabled input 1`] = `
+.c4 {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 65px;
+  left: 0;
+  top: unset;
+  right: unset;
+}
+
+.c1 {
+  display: block;
+  position: relative;
+  border: 1px solid #BCBEC0;
+  background: #ffffff;
+  border-radius: 2px;
+  margin: 0;
+}
+
+.c2 {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  top: 16px;
+  left: 16px;
+  right: unset;
+  cursor: pointer;
+}
+
+.c2 svg {
+  display: block;
+}
+
+.c3 {
+  border: 0;
+  padding: 0 44px;
+  width: 100%;
+  min-height: 46px;
+  background: #ffffff;
+  font-family: Montserrat,sans-serif;
+  color: #001217;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.c3::-webkit-input-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c3::-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c3:-moz-placeholder {
+  font-weight: 500;
+  color: #929598;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
+}
+
+.c0 {
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <label
+      class="c1"
+      display="block"
+      for="startDate"
+    >
+      <div
+        class="c2"
+        height="12px"
+        width="12px"
+      >
+        <svg
+          class=""
+          color="#BCBEC0"
+          height="12px"
+          viewBox="0 0 12 12"
+          width="12px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 1H7v1h1V1zM6.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM6 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 6 3zm3.5 5.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0-2h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM9 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 9 3zm-.5 2.5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-3 0h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zm-2 3h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM11 1h-1v1h1v9H1V2h1V1H1a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM3.5 6.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zM5 1H4v1h1V1zm1.5 7.5h-1a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm-4-3h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1zM3 3a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-1 0v2A.5.5 0 0 0 3 3z"
+            fill="currentColor"
+            fill-rule="nonzero"
+          />
+        </svg>
+      </div>
+      <input
+        aria-label="Select date"
+        autocomplete="off"
+        class="c3"
+        color="#001217"
+        data-testid="DatepickerInput"
+        disabled=""
+        font-family="Montserrat, sans-serif"
+        font-size="14px"
+        font-weight="600"
+        id="startDate"
+        placeholder="Select date"
+        tabindex="0"
+        value=""
+        width="100%"
+      />
+    </label>
+    <div
+      class="c4"
+    />
+  </div>
+</div>
+`;
+
 exports[`should render custom day 1`] = `
 .c4 {
   box-sizing: border-box;
@@ -3921,6 +4059,10 @@ exports[`should render custom day 1`] = `
 .c3:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -5057,6 +5199,10 @@ exports[`should render rtl, variant 1`] = `
 .c3:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -6333,6 +6479,10 @@ exports[`should render vertical variant 1`] = `
 .c3:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -7626,6 +7776,10 @@ exports[`should render vertical, rtl, variant 1`] = `
 .c3:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -8924,6 +9078,10 @@ exports[`should render without calendar icon, reset dates and close component 1`
   color: #929598;
 }
 
+.c2:disabled {
+  cursor: not-allowed;
+}
+
 .c10 {
   font-family: Montserrat,sans-serif;
   font-size: 14px;
@@ -10019,6 +10177,10 @@ exports[`should render zIndex 1`] = `
 .c3:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c3:disabled {
+  cursor: not-allowed;
 }
 
 .c15 {

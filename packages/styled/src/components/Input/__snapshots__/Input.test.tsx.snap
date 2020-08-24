@@ -54,6 +54,10 @@ exports[`should render rtl variant 1`] = `
   color: #929598;
 }
 
+.c2:disabled {
+  cursor: not-allowed;
+}
+
 <div>
   <label
     class="c0"
@@ -139,6 +143,10 @@ exports[`should render vertical variant 1`] = `
   color: #929598;
 }
 
+.c1:disabled {
+  cursor: not-allowed;
+}
+
 <div>
   <label
     class="c0"
@@ -216,6 +224,10 @@ exports[`should render with icon 1`] = `
 .c2:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c2:disabled {
+  cursor: not-allowed;
 }
 
 <div>
@@ -303,6 +315,10 @@ exports[`should render with value 1`] = `
   color: #929598;
 }
 
+.c1:disabled {
+  cursor: not-allowed;
+}
+
 <div>
   <label
     class="c0"
@@ -366,6 +382,10 @@ exports[`should render without icon 1`] = `
 .c1:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c1:disabled {
+  cursor: not-allowed;
 }
 
 <div>

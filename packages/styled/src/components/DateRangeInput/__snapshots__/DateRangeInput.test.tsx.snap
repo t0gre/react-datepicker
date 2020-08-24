@@ -79,6 +79,10 @@ exports[`should click on select end date 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c0 {
   box-sizing: border-box;
   position: relative;
@@ -414,6 +418,10 @@ exports[`should handle custom id for input fields 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 44px;
@@ -443,6 +451,10 @@ exports[`should handle custom id for input fields 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -2669,6 +2681,10 @@ exports[`should have empty end date and focused end date 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 44px;
@@ -2698,6 +2714,10 @@ exports[`should have empty end date and focused end date 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -4946,6 +4966,10 @@ exports[`should have empty start and end date and focused start date - placement
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 44px;
@@ -4975,6 +4999,10 @@ exports[`should have empty start and end date and focused start date - placement
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -7201,6 +7229,10 @@ exports[`should have empty start and end date and focused start date 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 44px;
@@ -7230,6 +7262,10 @@ exports[`should have empty start and end date and focused start date 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -9442,6 +9478,10 @@ exports[`should not render calendar icons 1`] = `
   color: #929598;
 }
 
+.c3:disabled {
+  cursor: not-allowed;
+}
+
 .c6 {
   border: 0;
   padding: 0 44px;
@@ -9471,6 +9511,10 @@ exports[`should not render calendar icons 1`] = `
 .c6:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c6:disabled {
+  cursor: not-allowed;
 }
 
 .c16 {
@@ -11662,6 +11706,10 @@ exports[`should render custom day 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 44px;
@@ -11691,6 +11739,10 @@ exports[`should render custom day 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -13673,6 +13725,10 @@ exports[`should render rtl variant 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 44px;
@@ -13702,6 +13758,10 @@ exports[`should render rtl variant 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -15950,6 +16010,10 @@ exports[`should render vertical variant 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 8px 0 32px;
@@ -15979,6 +16043,10 @@ exports[`should render vertical variant 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -18241,6 +18309,10 @@ exports[`should render vertical, rtl variant 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 32px 0 8px;
@@ -18270,6 +18342,10 @@ exports[`should render vertical, rtl variant 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {
@@ -20506,6 +20582,10 @@ exports[`should render without reset dates, close and selected dates component 1
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 8px 0 32px;
@@ -20535,6 +20615,10 @@ exports[`should render without reset dates, close and selected dates component 1
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c15 {
@@ -22517,6 +22601,10 @@ exports[`should use dateRangeGridTemplateRows from theme 1`] = `
   color: #929598;
 }
 
+.c4:disabled {
+  cursor: not-allowed;
+}
+
 .c7 {
   border: 0;
   padding: 0 44px;
@@ -22546,6 +22634,10 @@ exports[`should use dateRangeGridTemplateRows from theme 1`] = `
 .c7:-moz-placeholder {
   font-weight: 500;
   color: #929598;
+}
+
+.c7:disabled {
+  cursor: not-allowed;
 }
 
 .c17 {

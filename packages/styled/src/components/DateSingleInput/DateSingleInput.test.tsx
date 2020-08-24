@@ -156,6 +156,22 @@ test('should render zIndex', () => {
   expect(container).toMatchSnapshot()
 })
 
+test('should render a disabled input', () => {
+  const onDatesChange = jest.fn()
+  const onFocusChange = jest.fn()
+  const {container} = render(
+    <Datepicker
+      disabled
+      showDatepicker={false}
+      onFocusChange={onFocusChange}
+      date={null}
+      onDateChange={onDatesChange}
+      placement="top"
+    />,
+  )
+  expect(container).toMatchSnapshot()
+})
+
 test('should render without calendar icon, reset dates and close component', () => {
   const onDatesChange = jest.fn()
   const onFocusChange = jest.fn()

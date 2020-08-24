@@ -93,6 +93,7 @@ export interface DateSingleInputProps {
   inputId?: string
   unavailableDates?: Date[]
   zIndex?: number
+  disabled?: boolean
 }
 
 function DateSingleInput({
@@ -109,6 +110,7 @@ function DateSingleInput({
   onDayRender,
   initialVisibleMonth,
   zIndex,
+  disabled = false,
   numberOfMonths = 1,
   showClose = true,
   showResetDate = true,
@@ -187,13 +189,14 @@ function DateSingleInput({
           ariaLabel={phrases.dateAriaLabel}
           placeholder={phrases.datePlaceholder}
           value={getInputValue(date, displayFormat, '')}
-          onClick={() => onFocusChange(true)}
+          onClick={() => !disabled && onFocusChange(true)}
           showCalendarIcon={showCalendarIcon}
           vertical={vertical}
           isActive={false}
           padding={theme.dateSingleInputPadding}
           rtl={rtl}
           onChange={handleInputChange}
+          disabled={disabled}
           // @ts-ignore
           dateFormat={displayFormat}
         />
