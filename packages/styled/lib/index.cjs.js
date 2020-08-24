@@ -3424,7 +3424,7 @@ var nr,
           '\n    ',
           '\n  }\n  :-moz-placeholder {\n    /* Firefox 18- */\n    ',
           '\n    ',
-          '\n  }\n',
+          '\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n  }\n',
         ],
         [
           '\n  ',
@@ -3434,7 +3434,7 @@ var nr,
           '\n    ',
           '\n  }\n  :-moz-placeholder {\n    /* Firefox 18- */\n    ',
           '\n    ',
-          '\n  }\n',
+          '\n  }\n\n  &:disabled {\n    cursor: not-allowed;\n  }\n',
         ],
       )),
     lr,
@@ -3460,29 +3460,31 @@ function fr(e) {
     k = e.dateFormat,
     C = e.onChange,
     T = void 0 === C ? function () {} : C,
-    R = t.useState(u),
-    L = R[0],
-    W = R[1],
-    E = t.useRef(null)
+    R = e.disabled,
+    L = void 0 !== R && R,
+    W = t.useState(u),
+    E = W[0],
+    F = W[1],
+    P = t.useRef(null)
   t.useEffect(
     function () {
-      W(u)
+      F(u)
     },
     [u],
   )
-  var F = t.useContext(r.ThemeContext),
-    P = _n({
+  var H = t.useContext(r.ThemeContext),
+    O = _n({
       fontFamily: Jn,
       inputFontWeight: 600,
       inputFontSize: '14px',
-      inputColor: tr('charcoal', $n.charcoal, F),
-      inputBackground: tr('white', $n.white, F),
+      inputColor: tr('charcoal', $n.charcoal, H),
+      inputBackground: tr('white', $n.white, H),
       inputMinHeight: '46px',
       inputWidth: '100%',
       inputPadding: m,
       inputBorder: '0',
       inputPlaceholderFontWeight: 500,
-      inputPlaceholderColor: tr('silverCloud', $n.silverCloud, F),
+      inputPlaceholderColor: tr('silverCloud', $n.silverCloud, H),
       inputCalendarWrapperPosition: 'absolute',
       inputCalendarWrapperHeight: '12px',
       inputCalendarWrapperWidth: '12px',
@@ -3491,67 +3493,67 @@ function fr(e) {
       inputCalendarWrapperRight: v ? (i ? '8px' : '16px') : 'unset',
       inputCalendarIconWidth: '12px',
       inputCalendarIconHeight: '12px',
-      inputCalendarIconColor: tr('graci', $n.graci, F),
+      inputCalendarIconColor: tr('graci', $n.graci, H),
       inputLabelDisplay: 'block',
       inputLabelPosition: 'relative',
-      inputLabelBorder: '1px solid ' + tr('graci', $n.graci, F),
+      inputLabelBorder: '1px solid ' + tr('graci', $n.graci, H),
       inputLabelBorderRadius: '2px',
-      inputLabelBackground: tr('white', $n.white, F),
+      inputLabelBackground: tr('white', $n.white, H),
       inputLabelMargin: '0',
-      inputActiveBoxShadow: 'inset 0px -3px 0 ' + tr('primaryColor', $n.primaryColor, F),
+      inputActiveBoxShadow: 'inset 0px -3px 0 ' + tr('primaryColor', $n.primaryColor, H),
     })
   return n.createElement(
     dr,
     {
       htmlFor: o,
-      display: P.inputLabelDisplay,
-      position: P.inputLabelPosition,
-      border: P.inputLabelBorder,
-      background: P.inputLabelBackground,
-      borderRadius: P.inputLabelBorderRadius,
-      m: P.inputLabelMargin,
+      display: O.inputLabelDisplay,
+      position: O.inputLabelPosition,
+      border: O.inputLabelBorder,
+      background: O.inputLabelBackground,
+      borderRadius: O.inputLabelBorderRadius,
+      m: O.inputLabelMargin,
     },
     l &&
       n.createElement(
         ur,
         {
-          position: P.inputCalendarWrapperPosition,
-          height: P.inputCalendarWrapperHeight,
-          width: P.inputCalendarWrapperWidth,
-          top: P.inputCalendarWrapperTop,
-          left: P.inputCalendarWrapperLeft,
-          right: P.inputCalendarWrapperRight,
+          position: O.inputCalendarWrapperPosition,
+          height: O.inputCalendarWrapperHeight,
+          width: O.inputCalendarWrapperWidth,
+          top: O.inputCalendarWrapperTop,
+          left: O.inputCalendarWrapperLeft,
+          right: O.inputCalendarWrapperRight,
         },
         n.createElement(Kn, {
-          width: P.inputCalendarIconWidth,
-          height: P.inputCalendarIconHeight,
-          color: P.inputCalendarIconColor,
+          width: O.inputCalendarIconWidth,
+          height: O.inputCalendarIconHeight,
+          color: O.inputCalendarIconColor,
         }),
       ),
     n.createElement(pr, {
       tabIndex: w ? -1 : 0,
-      border: P.inputBorder,
-      p: P.inputPadding,
-      width: P.inputWidth,
-      minHeight: P.inputMinHeight,
-      background: P.inputBackground,
-      fontFamily: P.fontFamily,
-      color: P.inputColor,
-      fontSize: P.inputFontSize,
-      fontWeight: P.inputFontWeight,
-      placeholderColor: P.inputPlaceholderColor,
-      placeholderFontWeight: P.inputPlaceholderFontWeight,
-      boxShadow: s ? P.inputActiveBoxShadow : 'none',
+      border: O.inputBorder,
+      p: O.inputPadding,
+      width: O.inputWidth,
+      minHeight: O.inputMinHeight,
+      background: O.inputBackground,
+      fontFamily: O.fontFamily,
+      color: O.inputColor,
+      fontSize: O.inputFontSize,
+      fontWeight: O.inputFontWeight,
+      placeholderColor: O.inputPlaceholderColor,
+      placeholderFontWeight: O.inputPlaceholderFontWeight,
+      boxShadow: s ? O.inputActiveBoxShadow : 'none',
       id: o,
       placeholder: a,
       'aria-label': d,
-      value: L,
+      value: E,
       autoComplete: 'off',
       onChange: function (e) {
         var t = e.target.value
-        W(t),
-          'number' == typeof E.current && clearTimeout(E.current),
-          (E.current = setTimeout(function () {
+        F(t),
+          'number' == typeof P.current && clearTimeout(P.current),
+          (P.current = setTimeout(function () {
             c()
             var e = (function (e, t, n, r) {
               h(3, arguments)
@@ -3668,6 +3670,7 @@ function fr(e) {
       },
       onFocus: c,
       'data-testid': 'DatepickerInput',
+      disabled: L,
     }),
   )
 }
@@ -5178,44 +5181,47 @@ var za,
       f = e.monthLabelFormat,
       h = e.onDayRender,
       g = e.initialVisibleMonth,
-      m = e.numberOfMonths,
-      y = void 0 === m ? 1 : m,
-      b = e.showClose,
-      v = void 0 === b || b,
-      w = e.showResetDate,
-      D = void 0 === w || w,
-      k = e.vertical,
-      x = void 0 !== k && k,
-      C = e.rtl,
-      T = void 0 !== C && C,
-      S = e.isDateBlocked,
-      B =
-        void 0 === S
+      m = e.zIndex,
+      y = e.disabled,
+      b = void 0 !== y && y,
+      v = e.numberOfMonths,
+      w = void 0 === v ? 1 : v,
+      D = e.showClose,
+      k = void 0 === D || D,
+      x = e.showResetDate,
+      C = void 0 === x || x,
+      T = e.vertical,
+      S = void 0 !== T && T,
+      B = e.rtl,
+      M = void 0 !== B && B,
+      R = e.isDateBlocked,
+      L =
+        void 0 === R
           ? function () {
               return !1
             }
-          : S,
-      M = e.onClose,
-      R = void 0 === M ? function () {} : M,
-      L = e.showCalendarIcon,
-      W = void 0 === L || L,
-      E = e.displayFormat,
-      F = void 0 === E ? 'MM/dd/yyyy' : E,
-      P = e.phrases,
-      H = void 0 === P ? An : P,
-      O = e.placement,
-      I = void 0 === O ? 'bottom' : O,
-      z = e.inputId,
-      U = void 0 === z ? 'startDate' : z,
-      N = e.unavailableDates,
-      Y = void 0 === N ? [] : N,
-      A = t.useRef(null),
-      q = t.useRef(null),
-      G = _n(
+          : R,
+      W = e.onClose,
+      E = void 0 === W ? function () {} : W,
+      F = e.showCalendarIcon,
+      P = void 0 === F || F,
+      H = e.displayFormat,
+      O = void 0 === H ? 'MM/dd/yyyy' : H,
+      I = e.phrases,
+      z = void 0 === I ? An : I,
+      U = e.placement,
+      N = void 0 === U ? 'bottom' : U,
+      Y = e.inputId,
+      A = void 0 === Y ? 'startDate' : Y,
+      q = e.unavailableDates,
+      G = void 0 === q ? [] : q,
+      j = t.useRef(null),
+      X = t.useRef(null),
+      Q = _n(
         ut(
           {
             dateSingleZIndex: null,
-            dateSingleInputPadding: x ? (T ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
+            dateSingleInputPadding: S ? (M ? '0 32px 0 8px' : '0 8px 0 32px') : '0 44px',
             dateSingleDatepickerWrapperPosition: 'absolute',
           },
           (function (e, t) {
@@ -5246,18 +5252,18 @@ var za,
                   dateSingleDatepickerWrapperBottom: '65px',
                   dateSingleDatepickerWrapperLeft: '0',
                 }
-          })(I, T),
+          })(N, M),
         ),
       )
-    function j(e) {
-      c && q && q.current && !q.current.contains(e.target) && d(!1)
+    function V(e) {
+      c && X && X.current && !X.current.contains(e.target) && d(!1)
     }
     return (
       t.useEffect(function () {
         return (
-          'undefined' != typeof window && window.addEventListener('click', j),
+          'undefined' != typeof window && window.addEventListener('click', V),
           function () {
-            window.removeEventListener('click', j)
+            window.removeEventListener('click', V)
           }
         )
       }),
@@ -5270,67 +5276,68 @@ var za,
         },
         n.createElement(
           Na,
-          {zIndex: G.dateSingleZIndex, rtl: T, position: 'relative', ref: q},
+          {zIndex: m || Q.dateSingleZIndex, rtl: M, position: 'relative', ref: X},
           n.createElement(fr, {
-            id: U,
-            ariaLabel: H.dateAriaLabel,
-            placeholder: H.datePlaceholder,
-            value: ot(a, F, ''),
+            id: A,
+            ariaLabel: z.dateAriaLabel,
+            placeholder: z.datePlaceholder,
+            value: ot(a, O, ''),
             onClick: function () {
-              return d(!0)
+              return !b && d(!0)
             },
-            showCalendarIcon: W,
-            vertical: x,
+            showCalendarIcon: P,
+            vertical: S,
             isActive: !1,
-            padding: G.dateSingleInputPadding,
-            rtl: T,
+            padding: Q.dateSingleInputPadding,
+            rtl: M,
             onChange: function (e) {
-              A && A.current && A.current.onDateSelect && A.current.onDateSelect(e)
+              j && j.current && j.current.onDateSelect && j.current.onDateSelect(e)
             },
-            dateFormat: F,
+            disabled: b,
+            dateFormat: O,
           }),
           n.createElement(
             Zn,
             {
-              position: G.dateSingleDatepickerWrapperPosition,
-              bottom: G.dateSingleDatepickerWrapperBottom,
-              left: G.dateSingleDatepickerWrapperLeft,
-              top: G.dateSingleDatepickerWrapperTop,
-              right: G.dateSingleDatepickerWrapperRight,
+              position: Q.dateSingleDatepickerWrapperPosition,
+              bottom: Q.dateSingleDatepickerWrapperBottom,
+              left: Q.dateSingleDatepickerWrapperLeft,
+              top: Q.dateSingleDatepickerWrapperTop,
+              right: Q.dateSingleDatepickerWrapperRight,
             },
             c &&
               n.createElement(Ea, {
                 exactMinBookingDays: !0,
                 minBookingDays: 1,
                 onClose: function () {
-                  R(), d(!1)
+                  E(), d(!1)
                 },
                 startDate: a,
                 endDate: a,
                 minBookingDate: o,
                 maxBookingDate: i,
                 firstDayOfWeek: s,
-                numberOfMonths: y,
+                numberOfMonths: w,
                 focusedInput: c ? st : null,
-                displayFormat: F,
+                displayFormat: O,
                 onDatesChange: function (e) {
                   var t = e.focusedInput,
                     n = e.startDate
                   u({showDatepicker: null !== t, date: n})
                 },
-                isDateBlocked: B,
-                showResetDates: D,
-                vertical: x,
+                isDateBlocked: L,
+                showResetDates: C,
+                vertical: S,
                 showSelectedDates: !1,
-                showClose: v,
-                rtl: T,
+                showClose: k,
+                rtl: M,
                 dayLabelFormat: l,
                 weekdayLabelFormat: p,
                 monthLabelFormat: f,
                 onDayRender: h,
-                phrases: H,
-                ref: A,
-                unavailableDates: Y,
+                phrases: z,
+                ref: j,
+                unavailableDates: G,
                 initialVisibleMonth: g,
               }),
           ),

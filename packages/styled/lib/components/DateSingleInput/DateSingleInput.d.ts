@@ -31,6 +31,8 @@ export interface DateSingleInputProps {
   onDayRender?(date: Date): React.ReactNode
   inputId?: string
   unavailableDates?: Date[]
+  zIndex?: number
+  disabled?: boolean
 }
 declare function DateSingleInput({
   date,
@@ -45,6 +47,8 @@ declare function DateSingleInput({
   monthLabelFormat,
   onDayRender,
   initialVisibleMonth,
+  zIndex,
+  disabled,
   numberOfMonths,
   showClose,
   showResetDate,
