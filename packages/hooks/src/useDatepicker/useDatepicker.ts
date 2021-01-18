@@ -45,6 +45,7 @@ export interface UseDatepickerProps {
   initialVisibleMonth?: Date
   isDateBlocked?(date: Date): boolean
   unavailableDates?: Date[]
+  changeActiveMonthOnSelect?: boolean
 }
 
 export function useDatepicker({
@@ -61,6 +62,7 @@ export function useDatepicker({
   firstDayOfWeek = 1,
   isDateBlocked: isDateBlockedProps = () => false,
   unavailableDates = [],
+  changeActiveMonthOnSelect = true,
 }: UseDatepickerProps) {
   const [activeMonths, setActiveMonths] = useState(() =>
     startDate
@@ -73,15 +75,15 @@ export function useDatepicker({
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (window.addEventListener) {
-         window.addEventListener('keydown', handleKeyDown)
+        window.addEventListener('keydown', handleKeyDown)
       }
     }
-   
-      return () => {
-        if (window.removeEventListener) {
-          window.removeEventListener('keydown', handleKeyDown)
-        }
+
+    return () => {
+      if (window.removeEventListener) {
+        window.removeEventListener('keydown', handleKeyDown)
       }
+    }
   })
 
   const disabledDatesByUser = (date: Date) => {
@@ -228,7 +230,8 @@ export function useDatepicker({
 
     if (
       focusedInput !== END_DATE &&
-      (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate)))
+      (!focusedDate || (focusedDate && !isSameMonth(date, focusedDate))) &&
+      changeActiveMonthOnSelect
     ) {
       setActiveMonths(getInitialMonths(numberOfMonths, date))
     }

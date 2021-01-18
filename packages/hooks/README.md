@@ -82,6 +82,10 @@ Initial visible month
 
 If `isDateBlocked` returns `true`, then the date is blocked.
 
+#### `changeActiveMonthOnSelect?: boolean`
+
+If this is false, the active month panel will not change when selecting the start date.
+
 ### `unavailableDates?: Date[]`
 
 Receives unavailable dates in array.
