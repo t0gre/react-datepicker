@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import isBefore from 'date-fns/isBefore'
 import isAfter from 'date-fns/isAfter'
 import addDays from 'date-fns/addDays'
@@ -73,15 +73,15 @@ export function useDatepicker({
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (window.addEventListener) {
-         window.addEventListener('keydown', handleKeyDown)
+        window.addEventListener('keydown', handleKeyDown)
       }
     }
-   
-      return () => {
-        if (window.removeEventListener) {
-          window.removeEventListener('keydown', handleKeyDown)
-        }
+
+    return () => {
+      if (window.removeEventListener) {
+        window.removeEventListener('keydown', handleKeyDown)
       }
+    }
   })
 
   const disabledDatesByUser = (date: Date) => {
@@ -286,44 +286,53 @@ export function useDatepicker({
     }
   }
 
-  function goToPreviousMonths() {
+  const goToPreviousMonths = useCallback(() => {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1))
     setFocusedDate(null)
-  }
+  }, [activeMonths, numberOfMonths])
 
-  function goToPreviousMonthsByOneMonth() {
+  const goToPreviousMonthsByOneMonth = useCallback(() => {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, -1, 1))
     setFocusedDate(null)
-  }
+  }, [activeMonths, numberOfMonths])
 
-  function goToNextMonths() {
+  const goToNextMonths = useCallback(() => {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1))
     setFocusedDate(null)
-  }
+  }, [activeMonths, numberOfMonths])
 
-  function goToNextMonthsByOneMonth() {
+  const goToNextMonthsByOneMonth = useCallback(() => {
     setActiveMonths(getNextActiveMonth(activeMonths, numberOfMonths, 1, 1))
     setFocusedDate(null)
-  }
+  }, [activeMonths, numberOfMonths])
 
-  function goToDate(date: Date) {
-    setActiveMonths(getInitialMonths(numberOfMonths, date))
-    setFocusedDate(null)
-  }
+  const goToDate = useCallback(
+    (date: Date) => {
+      setActiveMonths(getInitialMonths(numberOfMonths, date))
+      setFocusedDate(null)
+    },
+    [numberOfMonths],
+  )
 
-  function goToPreviousYear(numYears: number = 1) {
-    setActiveMonths(
-      getNextActiveMonth(activeMonths, numberOfMonths, -(numYears * 12 - numberOfMonths + 1)),
-    )
-    setFocusedDate(null)
-  }
+  const goToPreviousYear = useCallback(
+    (numYears: number = 1) => {
+      setActiveMonths(
+        getNextActiveMonth(activeMonths, numberOfMonths, -(numYears * 12 - numberOfMonths + 1)),
+      )
+      setFocusedDate(null)
+    },
+    [activeMonths, numberOfMonths],
+  )
 
-  function goToNextYear(numYears: number = 1) {
-    setActiveMonths(
-      getNextActiveMonth(activeMonths, numberOfMonths, numYears * 12 - numberOfMonths + 1),
-    )
-    setFocusedDate(null)
-  }
+  const goToNextYear = useCallback(
+    (numYears: number = 1) => {
+      setActiveMonths(
+        getNextActiveMonth(activeMonths, numberOfMonths, numYears * 12 - numberOfMonths + 1),
+      )
+      setFocusedDate(null)
+    },
+    [activeMonths, numberOfMonths],
+  )
 
   return {
     firstDayOfWeek,
