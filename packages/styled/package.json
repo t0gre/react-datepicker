@@ -35,7 +35,7 @@
     "url": "https://github.com/tresko/react-datepicker/issues"
   },
   "peerDependencies": {
-    "react": "^16.8.5",
+    "react": ">= 16.8.5",
     "styled-components": ">= 4.0.0"
   },
   "devDependencies": {
