@@ -2403,34 +2403,36 @@ function ct(e) {
         : y,
     v = e.unavailableDates,
     w = void 0 === v ? [] : v,
-    D = t.useState(function () {
+    D = e.changeActiveMonthOnSelect,
+    k = void 0 === D || D,
+    x = t.useState(function () {
       return rt(h, n || d || null)
     }),
-    k = D[0],
-    x = D[1],
-    C = t.useState(null),
-    T = C[0],
-    S = C[1],
-    B = t.useState(n),
-    M = B[0],
-    R = B[1]
+    C = x[0],
+    T = x[1],
+    S = t.useState(null),
+    B = S[0],
+    M = S[1],
+    R = t.useState(n),
+    L = R[0],
+    W = R[1]
   t.useEffect(function () {
     return (
       'undefined' != typeof window &&
         window.addEventListener &&
-        window.addEventListener('keydown', F),
+        window.addEventListener('keydown', H),
       function () {
-        window.removeEventListener && window.removeEventListener('keydown', F)
+        window.removeEventListener && window.removeEventListener('keydown', H)
       }
     )
   })
-  var L = function (e) {
+  var E = function (e) {
       return tt(w, e) || b(e)
     },
-    W = function (e) {
-      R(e), (!M || (M && !$e(e, M))) && x(rt(h, e))
+    F = function (e) {
+      W(e), (!L || (L && !$e(e, L))) && T(rt(h, e))
     },
-    E = function (e) {
+    P = function (e) {
       return (function (e) {
         var t = e.date,
           n = e.minBookingDate,
@@ -2458,24 +2460,66 @@ function ct(e) {
         startDate: n,
         endDate: r,
         minBookingDays: p,
-        isDateBlockedFn: L,
+        isDateBlockedFn: E,
       })
     }
-  function F(e) {
+  function H(e) {
     if (
       ('ArrowRight' === e.key ||
         'ArrowLeft' === e.key ||
         'ArrowDown' === e.key ||
         'ArrowUp' === e.key) &&
-      !M
+      !L
     ) {
-      var t = k[0]
-      W(t.date), x(rt(h, t.date))
+      var t = C[0]
+      F(t.date), T(rt(h, t.date))
     }
   }
+  var O = t.useCallback(
+      function () {
+        T(at(C, h, -1)), W(null)
+      },
+      [C, h],
+    ),
+    I = t.useCallback(
+      function () {
+        T(at(C, h, -1, 1)), W(null)
+      },
+      [C, h],
+    ),
+    z = t.useCallback(
+      function () {
+        T(at(C, h, 1)), W(null)
+      },
+      [C, h],
+    ),
+    U = t.useCallback(
+      function () {
+        T(at(C, h, 1, 1)), W(null)
+      },
+      [C, h],
+    ),
+    N = t.useCallback(
+      function (e) {
+        T(rt(h, e)), W(null)
+      },
+      [h],
+    ),
+    Y = t.useCallback(
+      function (e) {
+        void 0 === e && (e = 1), T(at(C, h, -(12 * e - h + 1))), W(null)
+      },
+      [C, h],
+    ),
+    A = t.useCallback(
+      function (e) {
+        void 0 === e && (e = 1), T(at(C, h, 12 * e - h + 1)), W(null)
+      },
+      [C, h],
+    )
   return {
     firstDayOfWeek: m,
-    activeMonths: k,
+    activeMonths: C,
     isDateSelected: function (e) {
       return (function (e, t, n) {
         return !(!t || !n) && _e(e, {start: t, end: n})
@@ -2509,12 +2553,12 @@ function ct(e) {
             )
       })({
         date: e,
-        hoveredDate: T,
+        hoveredDate: B,
         startDate: n,
         endDate: r,
         minBookingDays: p,
         exactMinBookingDays: u,
-        isDateBlocked: L,
+        isDateBlocked: E,
       })
     },
     isFirstOrLastSelectedDate: function (e) {
@@ -2532,20 +2576,20 @@ function ct(e) {
         return !(!t || !$e(e, t))
       })(e, r)
     },
-    isDateBlocked: E,
+    isDateBlocked: P,
     numberOfMonths: h,
     isDateFocused: function (e) {
-      return !!M && $e(e, M)
+      return !!L && $e(e, L)
     },
-    focusedDate: M,
-    hoveredDate: T,
+    focusedDate: L,
+    hoveredDate: B,
     onResetDates: function () {
       s({startDate: null, endDate: null, focusedInput: 'startDate'})
     },
     onDateHover: function (e) {
       if (e) {
         if (e) {
-          var t = !E(e) || (n && $e(e, n)),
+          var t = !P(e) || (n && $e(e, n)),
             a = !o || !Ze(e, Ne(o, -1)),
             s = !i || !Ke(e, i),
             d = Ne(e, p - 1),
@@ -2555,9 +2599,9 @@ function ct(e) {
             h = n && !r && !u && a && s,
             g = !(p > 1 && n) || _e(e, {start: n, end: Ne(n, p - 2)}),
             m = n && $e(e, n) && g
-          t && (f || h || m) ? S(e) : null !== T && S(null)
+          t && (f || h || m) ? M(e) : null !== B && M(null)
         }
-      } else S(null)
+      } else M(null)
     },
     onDateSelect: function (e) {
       ;('endDate' === a || 'startDate' === a) &&
@@ -2568,53 +2612,39 @@ function ct(e) {
         exactMinBookingDays: u,
         minBookingDate: o,
         maxBookingDate: i,
-        isDateBlocked: L,
+        isDateBlocked: E,
         startDate: e,
         endDate: null,
       })
         ? s({startDate: e, endDate: Ne(e, p - 1), focusedInput: null})
         : (('endDate' === a && n && Ze(e, n)) || ('startDate' === a && r && Ke(e, r))) &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: L, startDate: e, endDate: null})
+          it({minBookingDays: p, isDateBlocked: E, startDate: e, endDate: null})
         ? s({endDate: null, startDate: e, focusedInput: 'endDate'})
         : 'startDate' === a &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: L, endDate: r, startDate: e})
+          it({minBookingDays: p, isDateBlocked: E, endDate: r, startDate: e})
         ? s({endDate: r, startDate: e, focusedInput: 'endDate'})
         : 'startDate' === a &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: L, endDate: null, startDate: e})
+          it({minBookingDays: p, isDateBlocked: E, endDate: null, startDate: e})
         ? s({endDate: null, startDate: e, focusedInput: 'endDate'})
         : 'endDate' === a &&
           n &&
           !Ze(e, n) &&
           !u &&
-          it({minBookingDays: p, isDateBlocked: L, startDate: n, endDate: e}) &&
+          it({minBookingDays: p, isDateBlocked: E, startDate: n, endDate: e}) &&
           s({startDate: n, endDate: e, focusedInput: null}),
-        'endDate' === a || (M && (!M || $e(e, M))) || x(rt(h, e))
+        'endDate' !== a && (!L || (L && !$e(e, L))) && k && T(rt(h, e))
     },
-    onDateFocus: W,
-    goToPreviousMonths: function () {
-      x(at(k, h, -1)), R(null)
-    },
-    goToPreviousMonthsByOneMonth: function () {
-      x(at(k, h, -1, 1)), R(null)
-    },
-    goToNextMonths: function () {
-      x(at(k, h, 1)), R(null)
-    },
-    goToNextMonthsByOneMonth: function () {
-      x(at(k, h, 1, 1)), R(null)
-    },
-    goToDate: function (e) {
-      x(rt(h, e)), R(null)
-    },
-    goToPreviousYear: function (e) {
-      void 0 === e && (e = 1), x(at(k, h, -(12 * e - h + 1))), R(null)
-    },
-    goToNextYear: function (e) {
-      void 0 === e && (e = 1), x(at(k, h, 12 * e - h + 1)), R(null)
-    },
+    onDateFocus: F,
+    goToPreviousMonths: O,
+    goToPreviousMonthsByOneMonth: I,
+    goToNextMonths: z,
+    goToNextMonthsByOneMonth: U,
+    goToDate: N,
+    goToPreviousYear: Y,
+    goToNextYear: A,
   }
 }
 /*! *****************************************************************************
