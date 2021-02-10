@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/tresko/react-datepicker/compare/v2.7.0...v2.8.0) (2021-02-10)
+
+
+### Bug Fixes
+
+* **hooks:** memoize some returned methods in useDatepicker ([792f12c](https://github.com/tresko/react-datepicker/commit/792f12c))
+
+
+
+
+
 # [2.7.0](https://github.com/tresko/react-datepicker/compare/v2.6.0...v2.7.0) (2020-06-30)
 
 
