@@ -3,3 +3,5 @@ coverage/
 .idea/
 .vscode/
 **/**/stats.html
+
+**/.env
