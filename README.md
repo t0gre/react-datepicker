@@ -19,7 +19,7 @@ Simple. Use
 
 ## Live Playground
 
-For examples of the datepicker in action, go to https://react-datepicker.netlify.com/.
+For examples of the datepicker in action, go to https://datepicker-react.netlify.com/.
 
 OR
 
