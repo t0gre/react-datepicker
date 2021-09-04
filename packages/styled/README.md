@@ -305,7 +305,7 @@ Simple. Use
 
 Licensed under the MIT License, Copyright © 2019-present Miha Sedej.
 
-See [LICENSE](https://github.com/tresko/react-datepicker/blob/master/LICENSE) for more information.
+See [LICENSE](https://github.com/tomgreenwood1/react-datepicker/blob/master/LICENSE) for more information.
 
 <br/>
 
