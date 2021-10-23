@@ -6,7 +6,7 @@
   "description": "A datepicker library for the web.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tresko/react-datepicker.git"
+    "url": "git+https://github.com/tomgreenwood1/react-datepicker.git"
   },
   "keywords": [
     "react",
@@ -31,7 +31,7 @@
     "bootstrap": "lerna bootstrap",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
-    "lerna:publish": "lerna publish --from-package",
+    "lerna:publish": "lerna publish from-package",
     "lerna:version-prerelease": "lerna version prerelease --github-release --conventional-commits",
     "lerna:version-patch": "lerna version patch --github-release --conventional-commits",
     "lerna:version-minor": "lerna version minor --github-release --conventional-commits",
@@ -41,9 +41,9 @@
   "author": "Miha Sedej",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tresko/react-datepicker/issues"
+    "url": "https://github.com/tomgreenwood1/react-datepicker/issues"
   },
-  "homepage": "https://github.com/tresko/react-datepicker#readme",
+  "homepage": "https://github.com/tomgreenwood1/react-datepicker#readme",
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
