@@ -3,7 +3,7 @@
 [![Gzip size](https://img.shields.io/bundlephobia/minzip/@datepicker-react/styled.svg)](https://img.shields.io/bundlephobia/minzip/@datepicker-react/styled.svg)
 [![Coverage Status](https://coveralls.io/repos/github/tresko/react-datepicker/badge.svg?branch=master)](https://coveralls.io/github/tresko/react-datepicker?branch=master)
 [![Build Status](https://travis-ci.org/tresko/react-datepicker.svg?branch=master)](https://travis-ci.org/tresko/react-datepicker)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0c2c3960-87ee-4f5e-a4dc-1e2aac57d2b4/deploy-status)](https://app.netlify.com/sites/react-datepicker/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b144788-65aa-4c1d-9748-75200d5a7fb7/deploy-status)](https://app.netlify.com/sites/datepicker-react/deploys)
 
 [![NPM](https://nodei.co/npm/@datepicker-react/styled.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/@datepicker-react/styled?downloads=true&downloadRank=true&stars=true)
 
@@ -305,7 +305,7 @@ Simple. Use
 
 Licensed under the MIT License, Copyright © 2019-present Miha Sedej.
 
-See [LICENSE](https://github.com/tresko/react-datepicker/blob/master/LICENSE) for more information.
+See [LICENSE](https://github.com/tomgreenwood1/react-datepicker/blob/master/LICENSE) for more information.
 
 <br/>
 
