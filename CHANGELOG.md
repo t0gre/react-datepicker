@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.4](https://github.com/tomgreenwood1/react-datepicker/compare/v2.8.3...v2.8.4) (2021-10-23)
+
+**Note:** Version bump only for package react-datepicker
+
+
+
+
+
 ## [2.8.3](https://github.com/tresko/react-datepicker/compare/v2.8.2...v2.8.3) (2021-09-04)
 
 **Note:** Version bump only for package react-datepicker
