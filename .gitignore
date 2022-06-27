@@ -5,3 +5,5 @@ coverage/
 **/**/stats.html
 
 **/.env
+
+lerna-debug.log
