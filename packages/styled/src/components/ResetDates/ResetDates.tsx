@@ -62,7 +62,6 @@ function ResetDates({onResetDates, text, rtl}: ResetDatesProps) {
       tabIndex={-1}
       onClick={onResetDates}
       onMouseUp={handleMouseUp}
-      type="button"
     >
       <RedoIconStyle
         // @ts-ignore
