@@ -14,13 +14,6 @@ export interface DateRangeInputPhrases extends DatepickerPhrases {
   endDatePlaceholder: string
 }
 
-export interface DateRangeInputPhrases extends DatepickerPhrases {
-  startDateAriaLabel: string
-  endDateAriaLabel: string
-  startDatePlaceholder: string
-  endDatePlaceholder: string
-}
-
 export interface DateSingleInputPhrases extends DatepickerPhrases {
   dateAriaLabel: string
   datePlaceholder: string
