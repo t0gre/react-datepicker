@@ -10,6 +10,9 @@
 > An easily internationalizable, accessible, mobile-friendly datepicker library for the web, build
 > with styled-components.
 
+## N.B. this project is looking for a new maintainer. I do not have time to maintain it unfortunately. If anyone would like to take it over please file and issue saying you'd like to take it
+over and I will transfer it to you.
+
 ![example](./docs/datepicker.gif)
 
 ## How to build your own datepicker?
