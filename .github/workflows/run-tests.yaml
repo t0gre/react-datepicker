@@ -1,6 +1,6 @@
 name: Test Package
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
