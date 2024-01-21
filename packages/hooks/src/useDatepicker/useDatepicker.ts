@@ -29,7 +29,7 @@ export interface OnDatesChangeProps {
   endDate: Date | null
 }
 
-export type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
+export type FirstDayOfWeek = 6 | 0 | 1 | 2 | 3 | 4 | 5
 
 export interface UseDatepickerProps {
   onDatesChange(data: OnDatesChangeProps): void
