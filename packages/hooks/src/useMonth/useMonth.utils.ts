@@ -7,7 +7,7 @@ import getDay from 'date-fns/getDay'
 import startOfMonth from 'date-fns/startOfMonth'
 import startOfWeek from 'date-fns/startOfWeek'
 
-type FirstDayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6
+type FirstDayOfWeek = 6 | 0 | 1 | 2 | 3 | 4 | 5
 export interface GetWeekdayLabelsProps {
   firstDayOfWeek?: FirstDayOfWeek
   weekdayLabelFormat?(date: Date): string
